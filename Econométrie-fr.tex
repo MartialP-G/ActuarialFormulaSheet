@@ -1,0 +1,200 @@
+
+
+https://github.com/marcelomijas/econometrics-cheatsheet/blob/main/time-series-cheatsheet/time-series-cheatsheet-en.tex
+
+Modèle de régression linéaire SIMPLE / MULTIPLE
+$\checkmark$ Spécification du modèle :
+
+$$
+\begin{gathered}
+	Y_t=\alpha+\beta_1 X_{1 t}+\beta_2 X_{2 t}+\ldots+\beta_k X_{k t}+\varepsilon_t \\
+	\underbrace{\mathbf{y}}_{(T, 1)}-\underbrace{\mathbf{X}}_{(T, k+1)} \underbrace{\beta}_{(k+1,1)}+\underbrace{\boldsymbol{\varepsilon}}_{(T, 1)}
+\end{gathered}
+$$
+
+$\checkmark$ Estimation par MCO : intuition, définition
+
+$$
+\hat{\beta}-\underset{\beta}{\operatorname{ArgMin}} \sum_{t=1}^T e_t^2 \equiv \underset{\beta}{\operatorname{ArgMin}} \mathbf{e}^{\prime} \mathbf{e}
+$$
+
+$\checkmark$ Hypothèses MCO
+$\checkmark$ Estimateurs MCO, $\hat{\beta}$ :
+- définition
+
+$$
+\hat{\beta}-\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime} \mathbf{y}
+$$
+
+- propriétés à distance finie + propriétés asymptotiques
+- matrice de variance covariance, $\mathbf{V}(\hat{\beta}) \equiv \Sigma_{\hat{\boldsymbol{\beta}}}-$ $\sigma_{\varepsilon}^2\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1}$
+- distribution, $\hat{\beta} \sim N(\mathbb{E}(\hat{\beta}), \mathbf{V}(\hat{\beta}))$
+$\checkmark$ Qualité d'ajustement et Analyse de la variance : $R^2$, $\bar{R}^2$ (définition, interprétation)
+
+$$
+\begin{gathered}
+	R^2-\frac{\mathrm{V}(\hat{Y})}{\mathrm{V}(Y)}-1-\frac{\mathrm{V}(e)}{\mathrm{V}(Y)} \\
+	\bar{R}^2-1-\frac{T-1}{T-k-1}\left(1-R^2\right)
+\end{gathered}
+$$
+
+$\checkmark$ Estimateur sans biais, $\hat{\sigma}_{\varepsilon}^2$, de la variance des termes d'erreur, $\hat{\sigma}_{\varepsilon}^2$.
+
+Intervalle de confiance \& Tests statistiques
+$\checkmark$ Intervalle de confiance sur $\beta_i$
+
+$$
+I C\left(\beta_i, 1-p\right)-\left[\hat{\beta}_i \pm t(T-k-1)_{p / 2} \times s_{\hat{\beta}_i}\right]
+$$
+
+$\checkmark$ Niveau de risque versus niveau de confiance
+$\checkmark$ Erreur de type I, Erreur de type II, Puissance du test
+$\checkmark$ Tests sur un coefficient
+\begin{tabular}{lccc} 
+	Test & $H_0$ & $H_1$ & \begin{tabular}{c} 
+		Décision \\
+		Rejet de $H_0$ si
+	\end{tabular} \\
+	\hline Two-tailed test & $\beta-\beta^*$ & $\beta+\beta^*$ & $\left|t_{\text {stat }}\right|>\left|t_{p / 2}(d f)\right|$ \\
+	One-tailed test (upper) & $\beta-\beta^*$ & $\beta>\beta^*$ & $t_{\text {stat }}>t_{1-p}(d f)$ \\
+	One-tailed test (lower) & $\beta-\beta^*$ & $\beta<\beta^*$ & $t_{\text {stat }}<t_p(d f)$ \\
+	\hline
+\end{tabular}
+$\overline{\beta^*}$ est la valeur de $\beta$ sous $H_0, t_p(d f)$ est le quantile d'ordre $p$ d'une distribution de Student avec $d f$ degrés de liberté.
+$\checkmark$ Tests sur plusieurs coefficients
+
+Cas A :
+Test d'hypothèses
+$H_0$ : Restrictions linéaires
+Statistique de test
+
+$$
+F_{s t a t}-\frac{\left(e_{c c}^{\prime} e_c-e_{n c}^{\prime} e_{n c}\right) / c}{e_{n c}^{\prime} e_{n c} /(T-k-1)} \sim F(c, T-k-1)
+$$
+
+avec
+- $e_c^{\prime} e_c$ la somme des carrés des résidus du modèle contraint
+- $e_{n c}^{\prime} e_{n c}$ la somme des carrés des résidus du modèle non-contraint
+- T est le nombre d'observations
+- $k$ est le nombre de variables explicatives dans le modèle non-contraint
+- $c$ est le nombre de restrictions
+
+Décision \&) Conclusion
+
+Cas B :
+Test d'hypothèses
+
+$$
+H_0: \underset{(c, k+1)(k+1,1)}{R} \underset{(c, 1)}{r}
+$$
+
+avec
+$c$ le nombre de restrictions
+$k+1$ le nombre de paramètres à estimer (constante comprise)
+
+Statistique de test
+
+$$
+F_{\text {stat }}=\frac{(R \hat{\beta}-r)^{\prime}\left[\hat{\sigma}_e^2 R\left(X^{\prime} X\right)^{-1} R^{\prime}\right]^{-1}(R \hat{\beta}-r)}{c} \sim F(c, T-k-1)
+$$
+
+Modèle de régression linéaire SIMPLE / MULTIPLE
+$\checkmark$ Spécification du modèle :
+
+$$
+\begin{gathered}
+	Y_t=\alpha+\beta_1 X_{1 t}+\beta_2 X_{2 t}+\ldots+\beta_k X_{k t}+\varepsilon_t \\
+	\underbrace{\mathbf{y}}_{(T, 1)}-\underbrace{\mathbf{X}}_{(T, k+1)} \underbrace{\beta}_{(k+1,1)}+\underbrace{\boldsymbol{\varepsilon}}_{(T, 1)}
+\end{gathered}
+$$
+
+$\checkmark$ Estimation par MCO : intuition, définition
+
+$$
+\hat{\beta}-\underset{\beta}{\operatorname{ArgMin}} \sum_{t=1}^T e_t^2 \equiv \underset{\beta}{\operatorname{ArgMin}} \mathbf{e}^{\prime} \mathbf{e}
+$$
+
+$\checkmark$ Hypothèses MCO
+$\checkmark$ Estimateurs MCO, $\hat{\beta}$ :
+- définition
+
+$$
+\hat{\beta}-\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1} \mathbf{X}^{\prime} \mathbf{y}
+$$
+
+- propriétés à distance finie + propriétés asymptotiques
+- matrice de variance covariance, $\mathbf{V}(\hat{\beta}) \equiv \Sigma_{\hat{\boldsymbol{\beta}}}-$ $\sigma_{\varepsilon}^2\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1}$
+- distribution, $\hat{\beta} \sim N(\mathbb{E}(\hat{\beta}), \mathbf{V}(\hat{\beta}))$
+$\checkmark$ Qualité d'ajustement et Analyse de la variance : $R^2$, $\bar{R}^2$ (définition, interprétation)
+
+$$
+\begin{gathered}
+	R^2-\frac{\mathrm{V}(\hat{Y})}{\mathrm{V}(Y)}-1-\frac{\mathrm{V}(e)}{\mathrm{V}(Y)} \\
+	\bar{R}^2-1-\frac{T-1}{T-k-1}\left(1-R^2\right)
+\end{gathered}
+$$
+
+$\checkmark$ Estimateur sans biais, $\hat{\sigma}_{\varepsilon}^2$, de la variance des termes d'erreur, $\hat{\sigma}_{\varepsilon}^2$.
+
+Intervalle de confiance \& Tests statistiques
+$\checkmark$ Intervalle de confiance sur $\beta_i$
+
+$$
+I C\left(\beta_i, 1-p\right)-\left[\hat{\beta}_i \pm t(T-k-1)_{p / 2} \times s_{\hat{\beta}_i}\right]
+$$
+
+$\checkmark$ Niveau de risque versus niveau de confiance
+$\checkmark$ Erreur de type I, Erreur de type II, Puissance du test
+$\checkmark$ Tests sur un coefficient
+\begin{tabular}{lccc} 
+	Test & $H_0$ & $H_1$ & \begin{tabular}{c} 
+		Décision \\
+		Rejet de $H_0$ si
+	\end{tabular} \\
+	\hline Two-tailed test & $\beta-\beta^*$ & $\beta+\beta^*$ & $\left|t_{\text {stat }}\right|>\left|t_{p / 2}(d f)\right|$ \\
+	One-tailed test (upper) & $\beta-\beta^*$ & $\beta>\beta^*$ & $t_{\text {stat }}>t_{1-p}(d f)$ \\
+	One-tailed test (lower) & $\beta-\beta^*$ & $\beta<\beta^*$ & $t_{\text {stat }}<t_p(d f)$ \\
+	\hline
+\end{tabular}
+$\overline{\beta^*}$ est la valeur de $\beta$ sous $H_0, t_p(d f)$ est le quantile d'ordre $p$ d'une distribution de Student avec $d f$ degrés de liberté.
+$\checkmark$ Tests sur plusieurs coefficients
+
+Cas A :
+Test d'hypothèses
+$H_0$ : Restrictions linéaires
+Statistique de test
+
+$$
+F_{s t a t}-\frac{\left(e_{c c}^{\prime} e_c-e_{n c}^{\prime} e_{n c}\right) / c}{e_{n c}^{\prime} e_{n c} /(T-k-1)} \sim F(c, T-k-1)
+$$
+
+avec
+- $e_c^{\prime} e_c$ la somme des carrés des résidus du modèle contraint
+- $e_{n c}^{\prime} e_{n c}$ la somme des carrés des résidus du modèle non-contraint
+- T est le nombre d'observations
+- $k$ est le nombre de variables explicatives dans le modèle non-contraint
+- $c$ est le nombre de restrictions
+
+Décision \&) Conclusion
+
+Cas B :
+Test d'hypothèses
+
+$$
+H_0: \underset{(c, k+1)(k+1,1)}{R} \underset{(c, 1)}{r}
+$$
+
+avec
+$c$ le nombre de restrictions
+$k+1$ le nombre de paramètres à estimer (constante comprise)
+
+Statistique de test
+
+$$
+F_{\text {stat }}=\frac{(R \hat{\beta}-r)^{\prime}\left[\hat{\sigma}_e^2 R\left(X^{\prime} X\right)^{-1} R^{\prime}\right]^{-1}(R \hat{\beta}-r)}{c} \sim F(c, T-k-1)
+$$
+
+
+Décision \& Conclusion
+
+Décision \& Conclusion

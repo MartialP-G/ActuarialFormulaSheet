@@ -1,0 +1,759 @@
+% !TeX root = ActuarialFormSheet_MBFA-fr.tex
+% !TeX spellcheck = fr_FR
+%\setlength{\parskip}{0cm} % paragraph spacing
+%		\section*{Concepts de base}
+
+	 \begin{f}[Définitions ]
+
+\textbf{Série temporelle} - succession d'observations quantitatives d'un phénomène classées par ordre temporelle.
+	
+Il existe plusieurs variantes de séries temporelles :
+		\begin{itemize}[leftmargin=*]	
+		\item \textbf{Données de panel} - consistant en une série temporelle pour chaque observation d'une section transversale.
+		\item \textbf{Sections transversales regroupées} - combinant des sections transversales de différentes périodes.
+	\end{itemize}	
+%	
+		 \textbf{Processus stochastique} - séquence de variables aléatoires indexées dans le temps.
+	\end{f}    
+	
+	\begin{f}[Composantes d'une série temporelle]{\ }
+
+	\begin{itemize}[leftmargin=*]
+		\item \textbf{Tendance} - mouvement général à long terme d'une série.
+		\item \textbf{Variations saisonnières} - oscillations périodiques qui se produisent sur une période égale ou inférieure à une année et qui peuvent être facilement identifiées d'une année à l'autre (elles sont généralement dues à des raisons climatologiques).
+		\item \textbf{Variations cycliques} - sont des oscillations périodiques qui se produisent sur une période supérieure à une année (elles sont le résultat du cycle économique).
+		\item \textbf{Variations résiduelles} - sont des mouvements qui ne suivent pas une oscillation périodique reconnaissable (elles sont le résultat de phénomènes ponctuels).
+	\end{itemize}
+	
+	\end{f}    
+	
+	\begin{f}[Types de modèles de séries temporelles]{\ }
+		
+
+	\begin{itemize}[leftmargin=*]
+		\item \textbf{Modèles statiques} - la relation entre $y$ et $x$ est contemporaine. Conceptuellement :
+\[y_{t} = \beta_{0} + \beta_{1} x_{t} + u_{t}\]
+		
+		\item \textbf{Modèles à décalage distribué} - la relation entre $y$ et $x$ n'est pas contemporaine. Conceptuellement :
+\[y_{t} = \beta_{0} + \beta_{1} x_{t} + \beta_{2} x_{t - 1} + \cdots + \beta_{s} x_{t - (s - 1)} + u_{t}\]
+		
+		L'effet cumulatif à long terme dans $y$ lorsque $\Delta x$ est :
+			$\beta_{1} + \beta_{2} + \cdots + \beta_{s}$
+		
+		\item \textbf{Modèles dynamiques} - décalages de la variable dépendante (endogénéité). Conceptuellement :
+\[y_{t} = \beta_{0} + \beta_{1} y_{t - 1} + \cdots + \beta_{s} y_{t - s} + u_{t}\]
+		
+		\item \textbf{Combinaisons} de ce qui précède, comme les modèles rationnels à décalage distribué (décalage distribué + dynamique).
+	\end{itemize}	
+
+\end{f} 
+ \hrule 
+ 
+ \begin{f}[Hypothèses du modèle OLS dans le cadre des séries temporelles]
+
+Sous ces hypothèses, l'estimateur OLS présentera de bonnes propriétés. \textbf{Hypothèses de Gauss-Markov} étendues aux séries temporelles :
+
+\begin{enumerate}[leftmargin=*, label=t\arabic{*}.]
+	\item \textbf{Linéarité des paramètres et faible dépendance}.
+	
+	\begin{enumerate}[leftmargin=*, label=\alph{*}.]
+		\item $y_{t}$ doit être une fonction linéaire des $\beta$.
+		\item Le stochastique $\lbrace( x_{t}, y_{t}) : t = 1, 2, \ldots, T \rbrace$ est stationnaire et faiblement dépendant.
+	\end{enumerate}
+	
+	\item \textbf{Pas de colinéarité parfaite}.
+	
+	\begin{itemize}[leftmargin=*]
+		\item Il n'y a pas de variables indépendantes qui sont constantes : $\Var(x_{j}) \neq 0, \; \forall j = 1, \ldots, k$
+		\item Il n'y a pas de relation linéaire exacte entre les variables indépendantes.
+	\end{itemize}
+	
+	\item \textbf{Moyenne conditionnelle nulle et corrélation nulle}.
+	
+	\begin{enumerate}[leftmargin=*, label=\alph{*}.]
+		\item Il n'y a pas d'erreurs systématiques : $\E(u \mid x_{1}, \ldots, x_{k}) = \E(u) = 0 \rightarrow$ \textbf{exogénéité forte} (a implique b).
+		\item Il n'y a pas de variables pertinentes laissées hors du modèle : $\Cov(x_{j} , u) = 0, \; \forall j = 1, \ldots, k \rightarrow$ \textbf{exogénéité faible}.
+	\end{enumerate}
+	
+	\item \textbf{Homoscédasticité}. La variabilité des résidus est la même pour tout $x$ : $\Var(u \mid x_{1}, \ldots, x_{k}) = \sigma^{2}_{u}$
+	\item \textbf{Pas d'autocorrélation}. Les résidus ne contiennent aucune information sur les autres résidus : \\
+	$\Corr(u_{t}, u_{s} \mid x_{1}, \ldots, x_{k}) = 0, \; \forall t \neq s$
+	\item \textbf{Normalité}. Les résidus sont indépendants et identiquement distribués (\textbf{i.i.d.} etc.) : $u \sim \mathcal{N}(0, \sigma^{2}_{u})$
+	\item \textbf{Taille des données}. Le nombre d'observations disponibles doit être supérieur à $(k + 1)$ paramètres à estimer. (Cette condition est déjà satisfaite dans des situations asymptotiques)
+\end{enumerate}
+
+\end{f}    
+
+\begin{f}[Propriétés asymptotiques de l'OLS]
+	
+Sous les hypothèses du modèle économétrique et le théorème de la limite centrale :
+
+\begin{itemize}[leftmargin=*]
+	\item Si t1 à t3a sont vérifiées : l'OLS est \textbf{non biaisée}. $\E(\hat{\beta}_{j}) = \beta_{j}$
+	\item Si t1 à t3 sont vérifiées : l'OLS est \textbf{cohérent}. $\mathrm{plim}(\hat{\beta}_{j}) = \beta_{j}$ (pour t3b, t3a est omis, exogénéité faible, biaisé mais cohérent)
+	\item Maintenir t1 à t5 : \textbf{normalité asymptotique} de l'OLS (alors, t6 est nécessairement satisfait) : $u \underset{a}{\sim}\mathcal{N}(0, \sigma^{2}_{u})$
+	\item Maintenir t1 à t5 : \textbf{estimation non biaisée} de $\sigma^{2}_{u}$. $\E(\hat{\sigma}^{2}_{u}) = \sigma^{2}_{u}$
+	\item Maintenir t1 à t5 : OLS est \textcolor{BleuProfondIRA}{BLUE, \emph{Best Linear Unbiased Estimator}} (meilleur estimateur linéaire non biaisé) ou \textbf{efficace}.
+	\item Maintenir t1 à t6 : les tests d'hypothèse et les intervalles de confiance peuvent être effectués de manière fiable.
+\end{itemize}
+
+
+\end{f}  \hrule
+
+\begin{f}[Tendances et saisonnalité]
+
+\textbf{Régression parasite} - se produit lorsque la relation entre $y$ et $x$ est due à des facteurs qui affectent $y$ et qui sont corrélés à $x$, $\Corr(x_{j}, u) \neq 0$. Il s'agit du \textbf {non-respect de t3}.
+
+
+
+Deux séries temporelles peuvent avoir la même tendance (ou une tendance contraire), ce qui devrait entraîner un niveau élevé de corrélation. Cela peut provoquer une fausse apparence de causalité, le problème étant la \textbf{régression fallacieuse}. Étant donné le modèle :
+%
+\begin{center}
+	$y_{t} = \beta_{0} + \beta_{1} x_{t} + u_{t}$
+\end{center}
+où :
+\begin{center}
+	$y_{t} = \alpha_{0} + \alpha_{1} \mathrm{Tendance} + v_{t}$
+	
+	$x_{t} = \gamma_{0} + \gamma_{1} \mathrm{Tendance} + v_{t}$
+\end{center}
+L'ajout d'une tendance au modèle peut résoudre le problème :
+\begin{center}
+	$y_{t} = \beta_{0} + \beta_{1} x_{t} + \beta_{2} \mathrm{Tendance} + u_{t}$
+\end{center}
+La tendance peut être linéaire ou non linéaire (quadratique, cubique, exponentielle, etc.).
+
+Une autre méthode consiste à utiliser le \textbf{filtre de Hodrick-Prescott} pour extraire la tendance et la composante cyclique.
+
+\end{f}    
+
+\begin{f}[Saisonnalité]
+
+	Une série temporelle peut présenter une saisonnalité. Cela signifie que la série est soumise à des variations ou à des schémas saisonniers, généralement liés aux conditions climatiques.
+	
+	Par exemple, le PIB (en noir) est généralement plus élevé en été et plus faible en hiver. Série corrigée des variations saisonnières (en orange {\color{OrangeProfondIRA}}) à titre de comparaison.
+	
+			\begin{tikzpicture}[xscale=0.4, yscale=.15]
+	% \draw [step=1, gray, very thin] (0, 0) grid (20, 20);
+	\draw [thick, <->] (0, 20) node [anchor=south] {$y$} -- (0, 0) -- (20, 0) node [anchor=south] {$t$};
+	\draw [thick, black] 
+	(0.0, 2.794) -- (0.5, 4.810) -- 
+	(1.0, 2.500) -- (1.5, 7.619) -- 
+	(2.0, 6.031) -- (2.5, 8.840) -- 
+	(3.0, 5.420) -- (3.5, 10.855) -- 
+	(4.0, 8.474) -- (4.5, 9.695) -- 
+	(5.0, 5.481) -- (5.5, 9.512) -- 
+	(6.0, 7.680) -- (6.5, 9.573) -- 
+	(7.0, 5.787) -- (7.5, 10.366) -- 
+	(8.0, 8.291) -- (8.5, 9.451) -- 
+	(9.0, 5.604) -- (9.5, 10.099) -- 
+	(10.0, 8.962) -- (10.5, 11.282) -- 
+	(11.0, 7.130) -- (11.5, 11.709) -- 
+	(12.0, 8.962) -- (12.5, 11.526) -- 
+	(13.0, 8.168) -- (13.5, 13.358) -- 
+	(14.0, 11.099) -- (14.5, 14.213) -- 
+	(15.0, 10.916) -- (15.5, 16.290) -- 
+	(16.0, 14.396) -- (16.5, 16.595) -- 
+	(17.0, 13.419) -- (17.5, 18.000) -- 
+	(18.0, 16.106) -- (18.5, 16.900); 
+	\draw [thick, OrangeProfondIRA] 
+	(0.0, 3.7939) -- (0.5, 3.9982) -- 
+	(1.0, 3.9000) -- (1.5, 4.9183) -- 
+	(2.0, 6.0905) -- (2.5, 6.9397) -- 
+	(3.0, 6.9998) -- (3.5, 7.5450) -- 
+	(4.0, 7.4733) -- (4.5, 7.6947) -- 
+	(5.0, 7.4809) -- (5.5, 7.5115) -- 
+	(6.0, 7.6794) -- (6.5, 7.5725) -- 
+	(7.0, 7.7863) -- (7.5, 8.3336) -- 
+	(8.0, 7.9901) -- (8.5, 8.1504) -- 
+	(9.0, 8.6031) -- (9.5, 8.9008) -- 
+	(10.0, 8.9618) -- (10.5, 8.7176) -- 
+	(11.0, 8.9998) -- (11.5, 9.1901) -- 
+	(12.0, 9.3618) -- (12.5, 9.3733) -- 
+	(13.0, 10.6321) -- (13.5, 11.0588) --
+	(14.0, 11.3992) -- (14.5, 12.2137) -- 
+	(15.0, 12.5160) -- (15.5, 13.5901) -- 
+	(16.0, 14.0969) -- (16.5, 15.2954) -- 
+	(17.0, 15.3198) -- (17.5, 16.2000) -- 
+	(18.0, 16.9069) -- (18.5, 17.2008);
+\end{tikzpicture}
+
+\begin{itemize}[leftmargin=*]
+	\item Ce problème est une \textbf{régression parasite}. Un ajustement saisonnier peut le résoudre.
+\end{itemize}
+
+Un simple \textbf{ajustement saisonnier} pourrait consister à créer des variables binaires stationnaires et à les ajouter au modèle. Par exemple, pour les séries trimestrielles ($Q q_{t}$ sont des variables binaires) :
+
+\begin{center}
+	$y_{t} = \beta_{0} + \beta_{1} Q2_{t} + \beta_{2} Q3_{t} + \beta_{3} Q4_{t} + \beta_{4} x_{1t} + \cdots + \beta_{k} x_{kt} + u_{t}$
+\end{center}
+
+Une autre méthode consiste à ajuster les variables en fonction des variations saisonnières (sa), puis à effectuer la régression avec les variables ajustées :
+
+\begin{center}
+	$z_{t} = \beta_{0} + \beta_{1} Q2_{t} + \beta_{2} Q3_{t} + \beta_{3} Q4_{t} + v_{t} \rightarrow \hat{v}_{t} + \E(z_{t}) = \hat{z}_{t}^{sa}$
+	
+	$\hat{y}_{t}^{sa}= \beta_{0} + \beta_{1} \hat{x}_{1t}^{sa} + \cdots + \beta_{k} \hat{x}_{kt}^{sa} + u_{t}$
+\end{center}
+
+Il existe des méthodes bien plus efficaces et complexes pour ajuster saisonnièrement une série temporelle, comme la méthode \textbf{X-13ARIMA-SEATS}.
+
+\end{f}  \hrule
+
+\begin{f}[Autocorrélation]
+
+Le résidu de toute observation, $u_{t}$, est corrélé avec le résidu de toute autre observation. Les observations ne sont pas indépendantes. Il s'agit d'un cas de \textbf{non-respect} de \textbf{t5}.
+
+\begin{center}
+	$\Corr(u_{t}, u_{s} \mid x_{1}, \ldots, x_{k}) = \Corr(u_{t}, u_{s}) \neq 0, \; \forall t \neq s$
+\end{center}
+
+\end{f}    
+\begin{f}[Conséquences]
+
+\begin{itemize}[leftmargin=*]
+	\item Les estimateurs OLS restent non biaisés.
+	\item Les estimateurs OLS restent cohérents.
+	\item L'OLS n'est \textbf{plus efficace}, mais reste un LUE (estimateur linéaire non biaisé).
+	\item Les \textbf{estimations de variance} des estimateurs sont \textbf{biaisées} : la construction des intervalles de confiance et les tests d'hypothèse ne sont pas fiables.
+\end{itemize}
+
+\end{f}    
+
+\begin{f}[Détection]
+{\ }
+
+\begin{itemize}[leftmargin=*]
+	\item \textbf{Diagrammes de dispersion} - recherchez des modèles de dispersion sur $u_{t - 1}$ par rapport à $u_{t}$.
+	
+	\setlength{\multicolsep}{0pt}
+	\setlength{\columnsep}{6pt}
+	\begin{multicols}{3}
+		\begin{center}
+			\begin{tikzpicture}[scale=0.11]
+				\node at (16, 20) {\textbf{Ac.}}; 
+				\draw [thick, ->] (0, 10) -- (20, 10) node [anchor=south] {$u_{t - 1}$}; 
+				\draw [thick, -] (0, 0) -- (0, 20) node [anchor=west] {$u_{t}$}; 
+				\draw plot [only marks, mark=*, mark size=6, domain=2:18, samples=50] (\x, {-0.2*(\x - 10)^2 + 13 + 6*rnd}); 
+				\draw [thick, dashed, OrangeProfondIRA, -latex] plot [domain=2:18] (\x, {-0.2*(\x - 10)^2 + 16});
+			\end{tikzpicture}
+		\end{center}
+		
+		\columnbreak
+		
+		\begin{center}
+			\begin{tikzpicture}[scale=0.11]
+				\node at (16, 20) {\textbf{Ac. $+$}}; 
+				\draw [thick, ->] (0, 10) -- (20, 10) node [anchor=north] {$u_{t - 1}$}; 
+				\draw [thick, -] (0, 0) -- (0, 20) node [anchor=west] {$u_{t}$}; 
+				\draw plot [only marks, mark=*, mark size=6, domain=2:18, samples=20] (\x, {5*rnd + 2.5 + 0.5*\x}); 
+				\draw [thick, dashed, OrangeProfondIRA, -latex] plot [domain=2:18] (\x, {5 + 0.5*\x});
+			\end{tikzpicture}
+		\end{center}
+		
+		\columnbreak
+		
+		\begin{center}
+			\begin{tikzpicture}[scale=0.11]
+				\node at (16, 20) {\textbf{Ac. $-$}}; 
+				\draw [thick, ->] (0, 10) -- (20, 10) node [anchor=south] {$u_{t - 1}$}; 
+				\draw [thick, -] (0, 0) -- (0, 20) node [anchor=west] {$u_{t}$}; 
+				\draw plot [only marks, mark=*, mark size=6, domain=2:18, samples=20] (\x, {5*rnd + 12.5 - 0.5*\x}); 
+				\draw [thick, dashed, OrangeProfondIRA, -latex] plot [domain=2:18] (\x, {15 - 0.5*\x});
+			\end{tikzpicture}
+		\end{center}
+	\end{multicols}
+	
+	\begin{multicols}{2}
+		\item \textbf{Corrélogramme} - fonction d'autocorrélation (ACF) et fonction d'autocorrélation partielle (PACF).
+		
+		\columnbreak
+		
+		\begin{itemize}[leftmargin=*]
+			\item Axe Y : corrélation.
+			\item Axe X : nombre de décalages.
+			\item Zone grise : $\pm 1,96/T^{0,5}$
+	\end{itemize}
+\end{multicols}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.25]
+% acf plot
+\node at (-2.5, 14) {\small \rotatebox{90}{\textbf{ACF}}}; 
+\node at (-1, 17.5) {\small 1};
+\node at (-1, 14) {\small 0};
+\node at (-1, 10.5) {\small -1}; 
+\fill [lightgray] (0, 13) rectangle (30.5, 15); 
+\draw [dashed, thin] (0, 14) -- (30.5, 14); 
+\draw [thick, |->] (0, 18) -- (0, 10) -- (30.5, 10);
+\fill [OrangeProfondIRA] (2, 14) rectangle (2.5, 17.95);
+\fill [OrangeProfondIRA] (5, 14) rectangle (5.5, 16.96);
+\fill [OrangeProfondIRA] (8, 14) rectangle (8.5, 16.22); 
+\fill [OrangeProfondIRA] (11, 14) rectangle (11.5, 15.67);
+\fill [OrangeProfondIRA] (14, 14) rectangle (14.5, 15.25);
+\fill [OrangeProfondIRA] (17, 14) rectangle (17.5, 14.94);
+\fill [OrangeProfondIRA] (20, 14) rectangle (20.5, 14.70);
+\fill [OrangeProfondIRA] (23, 14) rectangle (23.5, 14.53);
+\fill [OrangeProfondIRA] (26, 14) rectangle (26.5, 14.40);
+\fill [OrangeProfondIRA] (29, 14) rectangle (29.5, 14.30);
+% pacf plot
+\node at (-2.5, 4) {\small \rotatebox{90}{\textbf{PACF}}};
+\node at (-1, 7.5) {\small 1};
+\node at (-1, 4) {\small 0};
+\node at (-1, 0.5) {\small -1};
+\fill [lightgray] (0, 3) rectangle (30.5, 5);
+\draw [dashed, thin] (0, 4) -- (30.5, 4);
+\draw [thick, |->] (0, 8) -- (0, 0) -- (30.5, 0);
+\fill [OrangeProfondIRA] (2, 4) rectangle (2.5, 7.90);
+\fill [OrangeProfondIRA] (5, 4) rectangle (5.5, 7.00);
+\fill [OrangeProfondIRA] (8, 4) rectangle (8.5, 3.47);
+\fill [OrangeProfondIRA]	(11, 4) rectangle (11.5, 4.24);
+\fill [OrangeProfondIRA] (14, 4) rectangle (14.5, 4.43);
+\fill [OrangeProfondIRA] (17, 4) rectangle (17.5, 4.89);
+\fill [OrangeProfondIRA] (20, 4) rectangle (20.5, 3.09);
+\fill [OrangeProfondIRA] (23, 4) rectangle (23.5, 3.58);
+\fill [OrangeProfondIRA] (26, 4) rectangle (26.5, 4.46);
+\fill [OrangeProfondIRA] (29, 4) rectangle (29.5, 4.86);
+\end{tikzpicture}
+\end{center}
+	
+
+	
+	\textbf{Processus MA($q$)}. \underline{ACF} : seuls les premiers coefficients $q$ sont significatifs, les autres sont brusquement annulés. \underline{PACF} : décroissance exponentielle rapide atténuée ou ondes sinusoïdales.
+	
+	\textbf{Processus AR($p$)}. \underline{ACF} : décroissance exponentielle rapide atténuée ou ondes sinusoïdales. \underline{PACF} : seuls les premiers coefficients $p$ sont significatifs, les autres sont brusquement annulés.
+
+	
+	\textbf{Processus ARMA($p, q$)}. \underline{ACF} et \underline{PACF} : les coefficients ne sont pas brusquement annulés et présentent une décroissance rapide.
+	
+	Si les coefficients ACF ne décroissent pas rapidement, cela indique clairement un manque de stationnarité dans la moyenne.
+	
+	\item \textbf{Tests formels} - En général, $H_{0}$ : pas d'autocorrélation.
+	
+	En supposant que $u_{t}$ suit un processus AR(1) :
+	
+	\begin{center}
+		$u_{t} = \rho_{1} u_{t - 1} + \varepsilon_{t}$
+	\end{center}
+	
+	où $\varepsilon_{t}$ est un bruit blanc.
+	
+	\textbf{Test t AR(1)} (régresseurs exogènes) :
+	
+	\begin{center}
+		$t = \dfrac{\hat{\rho}_{1}}{\se(\hat{\rho}_{1})} \sim t_{T - k - 1, \alpha/2}$
+	\end{center}
+	
+	\begin{itemize}[leftmargin=*]
+		\item $H_{1}$ : Autocorrélation d'ordre un, AR(1).
+	\end{itemize}
+	
+	\textbf{Statistique de Durbin-Watson} (régresseurs exogènes et normalité des résidus) :
+	
+	\begin{center}
+		$d = \dfrac{\sum_{t=2}^{n} (\hat{u}_{t} - \hat{u}_{t - 1})^{2}}{\sum_{t=1}^{n} \hat{u}_{t}^{2}} \approx 2 \cdot (1 - \hat{\rho}_{1})$
+	\end{center}
+	
+	Où $0 \leq d \leq 4$
+	
+	\begin{itemize}[leftmargin=*]
+		\item $H_{1}$ : Autocorrélation d'ordre un, AR(1).
+	\end{itemize}
+	
+\begin{center}
+			\begin{tabular}{ c | c | c | c }
+			$d =$          & 0 & 2 & 4  \\ \hline
+			$\rho \approx$ & 1 & 0 & -1
+		\end{tabular}
+
+\end{center}		
+
+	\begin{tikzpicture}[scale=0.3]
+		\fill [lightgray] (5, 0) rectangle (9, 6); 
+		\draw (5, 0) -- (5, 6);
+		\draw (9, 0) -- (9, 6);
+		\fill [lightgray] (16, 0) rectangle (20, 6);
+		\draw (16, 0) -- (16, 6);
+		\draw (20, 0) -- (20, 6);
+		\draw [thick] (0, 6) -- (0, 0) -- (25, 0);
+		\draw [dashed] (12.5, 0) -- (12.5, 6);
+		\node at (-0.5, 6.5) {\small $f(d)$};
+		\node at (0, -0.6) {\small 0};
+		\node at (5, -0.6) {\small $d_{L}$};
+		\node at (9, -0.6) {\small $d_{U}$};
+		\node at (12.5, -0.6) {\small 2};
+		\node at (16.7, -0.6) {\tiny $(4 - d_{U})$};
+		\node at (20.7, -0.6) {\tiny $(4 - d_{L})$};
+		\node at (25, -0.6) {\small 4};
+		\node at (2.5, 3.5) {\small Rej. $H_{0}$};
+		\node at (2.5, 2.5) {\small AR $+$};
+		\node [text=OrangeProfondIRA] at (7, 3) {\textbf{?}};
+		\node at (12.5, 3.5) {\small Not rej. $H_{0}$};
+		\node at (12.5, 2.5) {\small No AR};
+		\node [text=OrangeProfondIRA] at (18, 3) {\textbf{?}};
+		\node at (22.5, 3.5) {\small Rej. $H_{0}$};
+		\node at (22.5, 2.5) {\small AR $-$};
+	\end{tikzpicture}
+
+			\textbf{h de Durbin} (régresseurs endogènes) :
+
+\begin{center}
+	$h = \hat{\rho} \cdot \sqrt{\dfrac{T}{1 - T \cdot \upsilon}}$
+\end{center}
+
+où $\upsilon$ est la variance estimée du coefficient associé à la variable endogène.
+
+\begin{itemize}[leftmargin=*]
+	\item $H_{1}$ : Autocorrélation d'ordre un, AR(1).
+\end{itemize}
+
+\textbf{Test de Breusch-Godfrey} (régresseurs endogènes) : il permet de détecter les processus MA($q$) et AR($p$) ($\varepsilon_{t}$ est w. bruit) :
+
+\begin{itemize}[leftmargin=*]
+	\item MA($q$) : $u_{t} = \varepsilon_{t} - m_{1} u_{t - 1} - \cdots - m_{q} u_{t - q}$
+	\item AR($p$) : $u_{t} = \rho_{1} u_{t - 1} + \cdots + \rho_{p} u_{t - p}+ \varepsilon_{t}$
+\end{itemize}
+
+Sous $H_{0}$ : Pas d'autocorrélation :
+
+\begin {center}
+$\hfill T \cdot R^{2}_{\hat{u}_t}\underset{a}{\sim}\chi^{2}_{q} \hfill \textbf{ou} \hfill T \cdot R^{2}_{\hat{u}_t}\underset{a}{\sim}\chi^{2}_{p} \hfill$
+\end{center}
+
+\begin{itemize}[leftmargin=*]
+\item $H_{1}$ : Autocorrélation d'ordre $q$ (ou $p$).
+\end{itemize}
+
+\textbf{Test Q de Ljung-Box} :
+
+\begin{itemize}[leftmargin=*]
+\item $H_{1}$ : Autocorrélation jusqu'au décalage $h$.
+\end{itemize}
+
+\end{itemize}
+
+
+
+\end{f}  
+
+\begin{f}[Correction]
+
+\begin{itemize}[leftmargin=*]
+\item Utiliser la méthode des moindres carrés ordinaires (OLS) avec un estimateur de matrice de variance-covariance \textbf{robuste à l'hétéroscédasticité et à l'autocorrélation} (HAC), par exemple celui proposé par \textbf{Newey-West}.
+\item Utiliser les \textbf{moindres carrés généralisés} (GLS). Supposons que $y_{t} = \beta_{0} + \beta_{1} x_{t} + u_{t}$, avec $u_{t} = \rho u_{t - 1}+ \varepsilon_{t}$, où $\lvert \rho \rvert < 1$ et $\varepsilon_{t}$ est un \underline{bruit blanc}.
+
+\begin{itemize}[leftmargin=*]
+\item Si $\rho$ est \textbf{connu}, utilisez un \textbf{modèle quasi-différencié} :
+
+\begin{center}
+	$y_{t} - \rho y_{t - 1}= \beta_{0} (1 - \rho) + \beta_{1} (x_{t} - \rho x_{t - 1}) + u_{t} - \rho u_{t - 1}$
+	
+	$y_{t}^{*} = \beta_{0}^{*} + \beta_{1}' x_{t}^{*} + \varepsilon_{t}$
+\end{center}
+
+où $\beta_{1}' = \beta_{1}$ ; et estimez-le par OLS.
+
+\item Si $\rho$ n'est \textbf{pas connu}, l'estimer par exemple par la \textbf{méthode itérative de Cochrane-Orcutt} (la méthode de Prais-Winsten est également valable) :
+
+\begin{enumerate}[leftmargin=*]
+	\item Obtenir $\hat{u}_{t}$ à partir du modèle original.
+	\item Estimez $\hat{u}_{t} = \rho \hat{u}_{t-1} + \varepsilon_{t}$ et obtenez $\hat{\rho}$.
+	\item Créez un modèle quasi-différencié :
+	
+	\begin{center}
+		$y_{t} - \hat{\rho}y_{t - 1} = \beta_{0} (1 - \hat{\rho}) + \beta_{1} (x_{t} - \hat{\rho} x_{t - 1}) + u_{t} - \hat{\rho}u_{t - 1}$
+		
+		$y_{t}^{*} = \beta_{0}^{*} + \beta_{1}' x_{t}^{*} + \varepsilon_{t}$
+	\end{center}
+	
+	où $\beta_{1}' = \beta_{1}$ ; et l'estimer par OLS.
+	
+	\item Obtenir $\hat{u}_{t}^{*} = y_{t} - (\hat{\beta}_{0}^{*} + \hat{\beta}_{1}' x_{t}) \neq y_ {t} - (\hat{\beta}_{0}^{*} + \hat{\beta}_{1}' x_{t}^{*})$.
+	\item Répéter à partir de l'étape 2. L'algorithme se termine lorsque les paramètres estimés varient très peu entre les itérations.
+\end{enumerate}
+\end{itemize}
+
+\item Si le problème n'est pas résolu, rechercher une \textbf{forte dépendance} dans la série.
+\end{itemize}
+
+\end{f}  
+\columnbreak
+
+\hrule
+
+\begin{f}[Lissage exponentiel]
+
+\begin{center}
+	$f_{t} = \alpha y_{t} + (1 - \alpha) f_{t - 1}$
+\end{center}
+
+où $0 < \alpha < 1$ est le paramètre de lissage.
+
+\end{f}  \hrule
+
+\begin{f}[Prévisions]
+
+Deux types de prévisions :
+
+\begin{itemize}[leftmargin=*]
+	\item De la valeur moyenne de $y$ pour une valeur spécifique de $x$.
+	\item D'une valeur individuelle de $y$ pour une valeur spécifique de $x$.
+\end{itemize}
+
+\textbf{Statistique U de Theil} - compare les résultats prévus avec les résultats des prévisions réalisées à partir d'un minimum de données historiques.
+
+\begin{center}
+	$U = \sqrt{\frac{\sum_{t=1}^{T-1} \left( \frac{\hat{y}_{t+1} - y_{t+1}}{y_t} \right)^2}{\sum_{t=1}^{T-1} \left( \frac{y_ {t+1} - y_t}{y_t} \right)^2}}$
+\end{center}
+
+\begin{itemize}[leftmargin=*]
+	\item $< 1$ : la prévision est meilleure qu'une simple estimation.
+	\item $= 1$ : la prévision est à peu près aussi bonne qu'une simple estimation.
+	\item $> 1$ : La prévision est moins bonne qu'une simple estimation.
+\end{itemize}
+
+
+
+\end{f}  \hrule
+
+  \begin{f}[Stationnarité]
+
+La stationnarité permet d'identifier correctement les relations entre les variables qui restent inchangées dans le temps.
+
+\begin{itemize}[leftmargin=*]
+	\item \textbf{Processus stationnaire} (stationnarité stricte) : si un ensemble de variables aléatoires est pris et décalé de $h$ périodes (changements de temps), la distribution de probabilité conjointe doit rester inchangée.
+	\item \textbf{Processus non stationnaire} : par exemple, une série avec une tendance, où au moins la moyenne change avec le temps.
+	\item \textbf{Processus stationnaire de covariance} - il s'agit d'une forme plus faible de stationnarité :
+	
+	\begin{itemize}[leftmargin=*]
+		\begin{multicols}{2}
+			\item $\E(x_{t})$ est constant.
+			
+			\columnbreak
+			
+			\item $\Var(x_{t})$ est constant.
+		\end{multicols}
+		
+		\item Pour tout $t$, $h \geq 1$, $\Cov(x_{t}, x_{t + h})$ dépend uniquement de $h$, et non de $t$.
+	\end{itemize}
+\end{itemize}
+
+\end{f}  \hrule
+
+  \begin{f}[Faible dépendance]
+
+La faible dépendance remplace l'hypothèse d'échantillonnage aléatoire pour les séries temporelles.
+
+\begin{itemize}[leftmargin=*]
+	\item Un processus stationnaire $\lbrace x_{t} \rbrace$ est \textbf{faiblement dépendant} lorsque $x_{t}$ et $x_{t + h}$ sont presque indépendants lorsque $h$ augmente sans limite.
+	\item Un processus stationnaire de covariance est \textbf{faiblement dépendant} si la corrélation entre $x_{t}$ et $x_{t + h}$ tend vers $0$ suffisamment rapidement lorsque $h \rightarrow \infty$ (ils ne sont pas corrélés de manière asymptotique).
+\end{itemize}
+
+Les processus faiblement dépendants sont appelés \textbf{intégrés d'ordre zéro}, I(0). Quelques exemples :
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{Moyenne mobile} - $\lbrace x_{t} \rbrace$ est une moyenne mobile d'ordre $q$, MA($q$) :
+
+\begin{center}
+	$x_{t} = e_{t} + m_{1} e_{t - 1} + \cdots + m_{q} e_{t - q}$
+\end{center}
+
+où $\lbrace e_{t} : t = 0, 1, \ldots, T \rbrace$ est une séquence \textsl{i.i.d.} avec une moyenne nulle et une variance $\sigma^{2}_{e}$.
+
+\item \textbf{Processus autorégressif} - $\lbrace x_{t} \rbrace$ est un processus autorégressif d'ordre $p$, AR($p$) :
+
+\begin{center}
+	$x_{t} = \rho_{1} x_{t - 1} + \cdots + \rho_{p} x_{t - p} + e_{t}$
+\end{center}
+
+où $\lbrace e_{t} : t = 1, 2, \ldots, T \rbrace$ est une séquence \textsl{i.i.d.} avec une moyenne nulle et une variance $\sigma^{2}_{e}$.
+
+\textbf{Condition de stabilité} : si $1 - \rho_{1} z - \cdots - \rho_{p} z^{p} = 0$ pour $\lvert z \rvert > 1$, alors $\lbrace x_{t} \rbrace$ est un processus AR($p$) stable qui est faiblement dépendant. Pour AR(1), la condition est : $\lvert \rho_{1} \rvert < 1$.
+
+\item \textbf{Processus ARMA} - est une combinaison de AR($p$) et MA($q$) ; $\lbrace x_{t} \rbrace$ est un ARMA($p, q$) :
+
+\begin{center}
+	$x_{t} = e_{t} + m_{1} e_{t - 1} + \cdots + m_{q} e_{t - q} + \rho_{1} x_{t - 1} + \cdots + \rho_{p} x_{t - p}$
+\end{center}
+\end{itemize}
+
+
+		\end{f}  \hrule
+
+  \begin{f}[Racines unitaires]
+
+Un processus est I($d$), c'est-à-dire intégré d'ordre $d$, si l'application de différences $d$ fois rend le processus stationnaire.
+
+Lorsque $d \geq 1$, le processus est appelé \textbf{processus à racine unitaire} ou on dit qu'il a une racine unitaire.
+
+Un processus a une racine unitaire lorsque la condition de stabilité n'est pas remplie (il existe des racines sur le cercle unitaire).
+
+\end{f}  \hrule  
+
+\begin{f}[Forte dépendance]
+
+La plupart du temps, les séries économiques sont fortement dépendantes (ou très persistantes). Quelques exemples de \textbf{racine unitaire} I(1) :
+
+\begin{itemize}[leftmargin=*]
+	\item \textbf{Marche aléatoire} - un processus AR(1) avec $\rho_{1} = 1$.
+	
+	\begin{center}
+		$y_{t} = y_{t - 1} + e_{t}$
+	\end{center}
+	
+	où $\lbrace e_{t} : t = 1, 2, \ldots, T \rbrace$ est une séquence \textsl{i.i.d.} avec une moyenne nulle et une variance $\sigma^{2}_{e}$.
+	
+	\item \textbf{Marche aléatoire avec dérive} - un processus AR(1) avec $\rho_{1} = 1$ et une constante.
+	
+	\begin{center}
+		$y_{t} = \beta_{0} + y_{t - 1} + e_{t}$
+	\end{center}
+	
+	où $\lbrace e_{t} : t = 1, 2, \ldots, T \rbrace$ est une séquence \textsl{i.i.d.} avec une moyenne nulle et une variance $\sigma^{2}_{e}$.
+\end{itemize}
+
+\end{f} 
+
+ \begin{f}[Tests de racine unitaire]{\ }
+
+\begin{center}
+	\begin{tabular}{ c | c | c }
+		Test            & $H_{0}$    & Rejeter $H_{0}$                     \\ \hline
+		ADF             & I(1)       & tau \textless \, Valeur critique    \\ \hline
+		KPSS            & Niveau I(0) & mu \textgreater \, Valeur critique  \\
+		& Tendance I(0) & tau \textgreater \, Valeur critique \\ \hline
+		Phillips-Perron & I(1)       & Z-tau \textless \, Valeur critique  \\ \hline
+		Zivot-Andrews   & I(1)       & tau \textless \, Valeur critique
+	\end{tabular}
+\end{center}
+\medskip
+
+\end{f}  
+
+\begin{f}[De la racine unitaire à la faible dépendance]
+
+Intégré d'ordre \textbf{un}, I(1), signifie que \textbf{la première différence} du processus est \textbf{faiblement dépendante} ou I(0) (et généralement stationnaire). Par exemple, soit $\lbrace y_{t} \rbrace$ une marche aléatoire :
+
+\begin{multicols}{2}
+	\begin{center}
+		$\Delta y_{t} = y_{t} - y_{t - 1} = e_{t}$
+	\end{center}
+	
+	où $\lbrace e_{t} \rbrace = \lbrace \Delta y_{t} \rbrace$ est \textsl{i.i.d.} \\
+	
+	Remarque :
+	\begin{itemize}[leftmargin=*]
+		\item La première différence d'une série supprime sa tendance.
+		\item Les logarithmes d'une série stabilisent sa variance.
+	\end{itemize}
+	
+	\columnbreak
+	
+			\begin{tikzpicture}[scale=0.18]
+	% \draw [step=1, gray, very thin] (0, 0) grid (20, 20); 
+	\draw [thick, <->] (0, 20) node [anchor=south west] {$y, {\color{OrangeProfondIRA} \Delta y}$} -- (0, 0) -- (20, 0) node [anchor=south] {$t$}; 
+	\draw [thick, black] 
+	(0.0, 2.000) -- (0.5, 2.459) -- 
+	(1.0, 2.716) -- (1.5, 3.205) -- 
+	(2.0, 3.571) -- (2.5, 3.952) -- 
+	(3.0, 4.047) -- (3.5, 4.514) -- 
+	(4.0, 4.719) -- (4.5, 5.160) -- 
+	(5.0, 5.674) -- (5.5, 5.987) -- 
+	(6.0, 6.242) -- (6.5, 6.471) -- 
+	(7.0, 6.944) -- (7.5, 7.104) -- 
+	(8.0, 7.584) -- (8.5, 8.087) -- 
+	(9.0, 8.112) -- (9.5, 8.834) -- 
+	(10.0, 9.470) -- (10.5, 9.718) -- 
+	(11.0, 10.032) -- (11.5, 10.491) -- 
+	(12.0, 10.748) -- (12.5, 10.805) -- 
+	(13.0, 11.016) -- (13.5, 11.439) --
+	(14.0, 11.810) -- (14.5, 12.247) -- 
+	(15.0, 12.668) -- (15.5, 13.052) -- 
+	(16.0, 13.586) -- (16.5, 14.322) -- 
+	(17.0, 14.913) -- (17.5, 15.704) -- 
+	(18.0, 16.081) -- (18.5, 16.431); 
+	\draw [thick, OrangeProfondIRA] 
+	(0.5, 11.283) -- (1.0, 7.201) -- 
+	(1.5, 11.889) -- (2.0, 9.405) -- 
+	(2.5, 9.701) -- (3.0, 3.926) -- 
+	(3.5, 11.454) -- (4.0, 6.136) -- 
+	(4.5, 10.926) -- (5.0, 12.393) -- 
+	(5.5, 8.345) -- (6.0, 7.157) -- 
+	(6.5, 6.627) -- (7.0, 11.572) -- 
+	(7.5, 5.235) -- (8.0, 11.703) -- 
+	(8.5, 12.186) -- (9.0, 2.513) -- 
+	(9.5, 16.607) -- (10.0, 14.869) -- 
+	(10.5, 7.015) -- (11.0, 8.368) -- 
+	(11.5, 11.283) -- (12.0, 7.196) -- 
+	(12.5, 3.153) -- (13.0, 6.277) -- 
+	(13.5, 10.547) -- (14.0, 9.517) -- 
+	(14.5, 10.834) -- (15.0, 10.526) -- 
+	(15.5, 9.754) -- (16.0, 12.816) -- 
+	(16.5, 16.875) -- (17.0, 13.961) -- 
+	(17.5, 18.000) -- (18.0, 9.644) -- 
+	(18.5, 9.075);
+\end{tikzpicture}
+\end{multicols}
+
+
+
+\subsubsection*{De la racine unitaire au pourcentage de variation}
+
+Lorsqu'une série I(1) est strictement positive, elle est généralement convertie en logarithmes avant de prendre la première différence pour obtenir le pourcentage de variation (approximatif) de la série :
+
+\begin{center}
+	$\Delta \log(y_{t}) = \log(y_{t}) - \log(y_{t - 1}) \approx \dfrac{y_t - y_{t - 1}} {y_{t - 1}}$
+\end{center}
+
+		\end{f}  \hrule
+
+  \begin{f}[Coiintégration]
+
+Lorsque \textbf{deux séries sont I(1), mais qu'une combinaison linéaire de celles-ci est I(0)}. Dans ce cas, la régression d'une série sur l'autre n'est pas fallacieuse, mais exprime quelque chose sur la relation à long terme. Les variables sont dites cointégrées si elles ont une tendance stochastique commune.
+
+Par exemple, $\lbrace x_{t} \rbrace$ et $\lbrace y_{t} \rbrace$ sont I(1), mais $y_{t} - \beta x_{t} = u_{t}$ où $\lbrace u_{t} \rbrace$ est I(0). ($\beta$ est le paramètre de cointégration).
+
+\end{f}  
+
+\begin{f}[Test de cointégration]
+
+En suivant l'exemple ci-dessus :
+
+\begin{enumerate}[leftmargin=*]
+	\item Estimer $y_{t} = \alpha + \beta x_{t} + \varepsilon_{t}$ et obtenir $\hat{\varepsilon}_{t}$.
+	\item Effectuer un test ADF sur $\hat{\varepsilon}_{t}$ avec une distribution modifiée.
+	
+	Le résultat de ce test est équivalent à :
+	
+	\begin{itemize}[leftmargin=*]
+		\item $H_{0}$ : $\beta = 0$ (pas de cointégration)
+		\item $H_{1}$ : $\beta \neq 0$ (cointégration)
+	\end{itemize}
+	
+	si la statistique du test $>$ valeur critique, rejeter $H_0$.
+\end{enumerate}
+
+\end{f}  \hrule
+
+  \begin{f}[Hétéroscédasticité sur les séries temporelles]
+
+L'\textbf{hypothèse} affectée est \textbf{t4}, ce qui conduit à \textbf{une inefficacité de l'OLS}.
+
+Utilisez des tests tels que Breusch-Pagan ou White, où $H_{0}$ : pas d'hétéroscédasticité. Il est \textbf{important} pour que les tests fonctionnent qu'il n'y ait \textbf{pas d'autocorrélation}.
+
+\end{f}  \hrule  
+\begin{f}[ARCH]
+
+Une hétéroscédasticité conditionnelle autorégressive (ARCH) est un modèle permettant d'analyser une forme d'hétéroscédasticité dynamique, où la variance de l'erreur suit un processus AR($p$).
+
+Étant donné le modèle : $y_{t} = \beta_{0} + \beta_{1} z_{t} + u_{t}$ où il y a AR(1) et hétéroscédasticité :
+
+\begin{center}
+	$\E(u^{2}_{t} \mid u_{t - 1}) = \alpha_{0} + \alpha_{1} u^{2}_{t - 1}$
+\end{center}
+
+\end{f}  \hrule 
+ \begin{f}[GARCH]
+
+Un modèle général d'hétéroscédasticité conditionnelle autorégressive (GARCH) est similaire au modèle ARCH, mais dans ce cas, la variance de l'erreur suit un processus ARMA($p, q$).
+\end{f}

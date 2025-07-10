@@ -1,0 +1,481 @@
+% !TeX root = ActuarialFormSheet_MBFA-fr.tex
+% !TeX spellcheck = fr_FR
+
+%\subsection*{Lois utilisées dans la théorie des extrêmes}
+
+
+\begin{f}[Loi de Pareto]
+Soit la variable aléatoire $X$ qui suit une loi de Pareto de paramètres $(x_{\mathrm{m}},k)$, $k$ est l'indice de Pareto:
+$$
+\mathbb{P}(X>x)=\left(\frac{x}{x_{\mathrm{m}}}\right)^{-k}\ \mbox{avec}\ x \geq x_{\mathrm{m}} 
+$$
+
+
+$$
+f_{k,x_\mathrm{m}}(x) = k\,\frac{x_\mathrm{m}^k}{x^{k+1}}\ \mbox{pour}\ x \ge x_\mathrm{m}
+$$
+
+\textbf{	Loi de Pareto généralisée} (GPD) a 3 paramètres $\mu$, $\sigma$ et $\xi$.
+
+
+$$
+F_{\xi,\mu,\sigma}(x) = \begin{cases} 1 - \left(1+ \frac{\xi(x-\mu)}{\sigma}\right)^{-1/\xi} & \text{for }\xi \neq 0, \\ 1 - \exp \left(-\frac{x-\mu}{\sigma}\right) & \text{for }\xi = 0. \end{cases} 
+$$
+pour  $x \geq \mu$  quand $\xi \geq 0$  et $ \mu \leq x \leq \mu - \sigma /\xi$  quand $ \xi < 0$ et où $\mu\in\mathbb{R}$ est la localisation, $\sigma>0$ l'échelle et  $\xi\in\mathbb{R}$ la forme. 
+Notez que certaines références donnent le \og{}paramètre de forme\fg{}, comme $\kappa = - \xi$.
+
+$$
+f_{\xi,\mu,\sigma}(x) = \frac{1}{\sigma}\left(1 + \frac{\xi (x-\mu)}{\sigma}\right)^{\left(-\frac{1}{\xi} - 1\right)}
+=
+ \frac{\sigma^{\frac{1}{\xi}}}{\left(\sigma + \xi (x-\mu)\right)^{\frac{1}{\xi}+1}}
+$$
+%à nouveau, pour  $x \geq \mu$, et $x \leq \mu - \sigma /\xi$ où $\xi < 0$. 
+
+\medskip
+
+\begin{center}
+		{\shorthandoff{:!;}	
+\tikzset{
+	declare function={
+		dParetoGen(\x,\mu,\sigma,\xi) = 
+		(\x>\mu)*(1/\sigma*(1 + \xi* (\x-\mu)/\sigma)^(-1/\xi - 1));}
+}  
+\begin{tikzpicture}[mark=none,samples=100,smooth,domain=0:15]
+	\begin{axis}[ ytick=\empty,xtick pos=left,
+		axis y line=middle,
+		axis x line=bottom,
+		height=.5*\linewidth,width=0.95*\linewidth, ticklabel style ={font=\footnotesize}, legend pos=north east,
+		legend style={font=\tiny}]
+		\addplot[BleuProfondIRA] 	({\x},{dParetoGen({\x},1,1,1)}) ;
+		\addplot[FushiaIRA] 	({\x},{dParetoGen({\x},1,1,5)}) ;
+		\addplot[VertIRA]  	({\x},{dParetoGen({\x},1,1,20)}) ;
+		\addplot[OrangeProfondIRA] 	({\x},{dParetoGen({\x},3,2,5)}) ;
+		%
+		\legend{$\mu$ =  1 $\sigma=1$ $\xi = 1$,$\mu$ =  1  $\sigma=2$ $\xi =5$,$\mu$ =  1  $\sigma=3$ $\xi =20$,$\mu$ = 3  $\sigma=2$ $\xi = 5$};
+	\end{axis} 
+\end{tikzpicture}
+}
+\end{center}
+
+
+%\begin{center}
+%	{\shorthandoff{:!;}	
+%	\tikzset{
+%	declare function={
+%		pParetoGen(\x,\mu,\sigma,\xi) =  (\x > \mu)*( 1-(1+ (\xi*(\x-\mu))/\sigma)^(-1/\xi));}
+%}  
+%\begin{tikzpicture}[mark=none,samples=100,smooth,domain=0:15]
+%	\begin{axis}[ ytick=\empty,xtick pos=left,
+%		axis y line=middle,
+%		axis x line=bottom,
+%		height=.5*\linewidth,width=0.95*\linewidth, ticklabel style ={font=\footnotesize}, legend pos=north east,
+%		legend style={font=\tiny}]
+%		\addplot[BleuProfondIRA] 
+%		({\x},{pParetoGen({\x},1,1,1)}) ;
+%		\addplot[FushiaIRA] 
+%		({\x},{pParetoGen({\x},1,1,5)}) ;
+%		\addplot[VertIRA] 
+%		({\x},{pParetoGen({\x},1,1,20)}) ;
+%		\addplot[OrangeProfondIRA] 
+%		({\x},{pParetoGen({\x},3,2,5)}) ;
+%		%
+%		\legend{$\mu$ =  1 $\sigma=1$ $\xi = 1$,$\mu$ =  1  $\sigma=2$ $\xi =5$,$\mu$ =  1  $\sigma=3$ $\xi =20$,$\mu$ = 3  $\sigma=2$ $\xi = 5$};
+%	\end{axis}	 
+%\end{tikzpicture}
+%}
+%\end{center}
+
+\end{f}
+\hrule
+
+\begin{f}[Loi des valeurs extrême généralisée]
+La fonction de répartition de la loi des extrêmes généralisée est
+$$
+F_{\mu,\sigma,\xi}(x) = \exp\left\{-\left[1+\xi\left(\frac{x-\mu}{\sigma}\right)\right]^{-1/\xi}\right\}
+$$
+pour $1+\xi(x-\mu)/\sigma>0$, où $\mu\in\mathbb{R}$ est la localisation, $\sigma>0$ d'échelle et  $\xi\in\mathbb{R}$ la forme. Pour $\xi = 0$ l'expression est définie par sa limite en 0.
+
+\begin{align*}
+	f_{\mu,\sigma,\xi}(x) =& \frac{1}{\sigma}\left[1+\xi\left(\frac{x-\mu}{\sigma}\right)\right]^{(-1/\xi)-1}\\ &\times\exp\left\{-\left[1+\xi\left(\frac{x-\mu}{\sigma}\right)\right]^{-1/\xi}\right\}
+\end{align*}
+
+$$
+f(x;\mu ,\sigma ,0)={\frac {1}{\sigma }}\exp \left(-{\frac {x-\mu }{\sigma }}\right)\exp \left[-\exp \left(-{\frac {x-\mu }{\sigma }}\right)\right]
+$$
+
+\end{f}
+\hrule
+
+
+
+\begin{f}[Loi de Gumbel]
+
+La fonction de répartition de la \textbf{loi de Gumbel} est :
+$$
+F_{\mu,\sigma}(x) = e^{-e^{(\mu-x)/\sigma}}.\,
+$$
+Pour $\mu = 0 $ et $\sigma = 1$, on obtient la loi standard de Gumbel.
+La loi de Gumbel est un cas particulier de la GEV (avec $\xi=0$).
+
+Sa densité :
+$$
+f_{\mu,\sigma}(x)=\frac{1}{\sigma}e^{\left(\frac{x-\mu}{\sigma}-e^{-(x-\mu)/\sigma}\right)}
+$$
+
+
+\begin{center}
+\begin{tikzpicture}[mark=none,samples=100,smooth,domain=-5:15]
+\begin{axis}[ ytick=\empty,xtick pos=left,
+	axis y line=middle,
+	axis x line=bottom,
+	height=.5*\linewidth,width=0.95*\linewidth, ticklabel style ={font=\footnotesize}, legend pos=north east,
+	legend style={font=\tiny}]
+	\addplot[BleuProfondIRA] 
+	({\x},{dGumbel({\x},0.5,1)}) ;
+	\addplot[FushiaIRA] 
+	plot ({\x},{dGumbel({\x},1,2)}) ;
+	\addplot[VertIRA] 
+	plot ({\x},{dGumbel({\x},1.5,3)}) ;
+	\addplot[OrangeProfondIRA] 
+	plot ({\x},{dGumbel({\x},3,4)}) ;
+	%
+	\legend{$\mu$ =  0.5 $\gamma = 1$,$\mu$ =  1 $\gamma =2$,$\mu$ =  1.5 $\gamma =3$,$\mu$ =  3 $\gamma = 4$};
+\end{axis}	 
+\end{tikzpicture}
+\end{center}
+
+
+%\begin{center}
+%\begin{tikzpicture}[mark=none,samples=100,smooth,domain=-5:15]
+%\begin{axis}[ ytick=\empty,xtick pos=left,
+%	axis y line=middle,
+%	axis x line=bottom,
+%	height=.5*\linewidth,width=0.95*\linewidth, ticklabel style ={font=\footnotesize}, legend pos=north west,
+%	legend style={font=\tiny}]
+%	\addplot[BleuProfondIRA] 
+%	({\x},{pGumbel({\x},0.5,1)}) ;
+%	\addplot[FushiaIRA] 
+%	plot ({\x},{pGumbel({\x},1,2)}) ;
+%	\addplot[VertIRA] 
+%	plot ({\x},{pGumbel({\x},1.5,3)}) ;
+%	\addplot[OrangeProfondIRA] 
+%	plot ({\x},{pGumbel({\x},3,4)}) ;
+%	%
+%	\legend{$\mu$ =  0.5 $\gamma = 1$,$\mu$ =  1 $\gamma =2$,$\mu$ =  1.5 $\gamma =3$,$\mu$ =  3 $\gamma = 4$};
+%\end{axis}	 
+%\end{tikzpicture}
+%\end{center}
+
+%\subsubsubsection{Loi de Weibull}\label{label}
+\end{f}
+\hrule
+
+\begin{f}[Loi de Weibull]
+
+
+La \textbf{loi de Weibull}a pour fonction de répartition est définie par :
+$$
+F_{\alpha,\mu, \sigma}(x) = 1- e^{-((x-\mu)/\sigma)^\alpha}\,
+$$
+où $x >\mu$.
+Sa densité de probabilité est :
+$$
+f_{\alpha,\mu,\sigma}(x) = (\alpha/\sigma) ((x-\mu)/\sigma)^{(\alpha-1)} e^{-((x-\mu)/\sigma)^\alpha}\,
+$$
+où  $\mu\in\mathbb{R}$ est la localisation, $\sigma>0$ d'échelle et  $\alpha=-1/\xi>0 $ la forme.
+
+La distribution de Weibull est souvent utilisée dans le domaine de l'analyse de la durée de vie. C'est un cas particulier de la GEV lorsque $\xi<0$.
+
+Si le taux de pannes diminue au cours du temps alors, $\alpha<1$. Si le taux de panne est constant dans le temps alors, $\alpha=1$. Si le taux de panne augmente avec le temps alors, $\alpha>1$. La compréhension du taux de pannes peut fournir une indication au sujet de la cause des pannes.
+
+
+\begin{center}
+	{\shorthandoff{:!;}	\tikzset{
+	declare function={
+		dWeibull(\x,\sigma,\alpha) = (\alpha/\sigma)*(\x/\sigma)^(\alpha-1)*exp(-(\x/\sigma)^\alpha);}
+}  
+\begin{tikzpicture}[mark=none,samples=100,smooth,domain=0:5]
+	\begin{axis}[ ytick=\empty,xtick pos=left,
+		axis y line=middle,
+		axis x line=bottom,
+		height=.5*\linewidth,width=0.95*\linewidth, ticklabel style ={font=\footnotesize}, legend pos=north east,
+		legend style={font=\tiny}]
+		\addplot[BleuProfondIRA] 
+		({\x},{dWeibull({\x},0.5,1)}) ;
+		\addplot[FushiaIRA] 
+		plot ({\x},{dWeibull({\x},1,2)}) ;
+		\addplot[VertIRA] 
+		plot ({\x},{dWeibull({\x},1.5,3)}) ;
+		\addplot[OrangeProfondIRA] 
+		plot ({\x},{dWeibull({\x},3,4)}) ;
+		%
+		\legend{$\mu$ =  0.5 $\gamma = 1$ ($\alpha=-1/\xi>0$),$\mu$ =  1 $\gamma =2$,$\mu$ =  1.5 $\gamma =3$,$\mu$ =  3 $\gamma = 4$};
+	\end{axis}	 
+\end{tikzpicture}
+}
+%	{\shorthandoff{:!;}	
+%		\tikzset{
+%	declare function={
+%		pWeibull(\x,\sigma,\alpha) = 1- exp(-(\x/\sigma)^\alpha);}
+%}  
+%\begin{tikzpicture}[mark=none,samples=100,smooth,domain=0:5]
+%	\begin{axis}[ ytick=\empty,xtick pos=left,
+%		axis y line=middle,
+%		axis x line=bottom,
+%		height=.5*\linewidth,width=0.95*\linewidth, ticklabel style ={font=\footnotesize}, legend pos= south east,
+%		legend style={font=\tiny}]
+%		\addplot[BleuProfondIRA] 
+%		({\x},{pWeibull({\x},0.5,1)}) ;
+%		\addplot[FushiaIRA] 
+%		plot ({\x},{pWeibull({\x},1,2)}) ;
+%		\addplot[VertIRA] 
+%		plot ({\x},{pWeibull({\x},1.5,3)}) ;
+%		\addplot[OrangeProfondIRA] 
+%		plot ({\x},{pWeibull({\x},3,4)}) ;
+%		%
+%		\legend{$\mu$ =  0.5 $\gamma = 1$ ($\alpha=-1/\xi>0$),$\mu$ =  1 $\gamma =2$,$\mu$ =  1.5 $\gamma =3$,$\mu$ =  3 $\gamma = 4$};
+%	\end{axis}	 
+%\end{tikzpicture}
+%}
+\end{center}
+\end{f}
+
+
+\begin{f}[Loi de Fréchet]
+Sa fonction de répartition de la \textbf{loi de Frechet}\index{D\'efinition! loi de Frechet} est donnée par 
+$$
+F_{\alpha,\mu,\sigma}(x)=\mathbb{P}(X \le x)=\begin{cases} e^{-\left(\frac{x-\mu}{\sigma}\right)^{-\alpha}} & \text{ si } x>\mu \\ 0 &\text{ sinon.}\end{cases} 
+$$
+où  $\mu\in\mathbb{R}$ est la localisation, $\sigma>0$ l'échelle et  $\alpha=1/\xi>0$ la forme. 
+C'est un cas particulier de la GEV lorsque $\xi>0$.
+
+$$
+f_{\alpha,\mu,\sigma}(x)=\frac{\alpha}{\sigma} \left(\frac{x-\mu}{\sigma}\right)^{-1-\alpha}  e^{-(\frac{x-\mu}{\sigma})^{-\alpha}}
+$$
+
+\begin{center}
+%	\includegraphics[width=0.90\textwidth]{../Graph/LoiFrechet.pdf}
+	{\shorthandoff{:!;}	
+		\tikzset{
+declare function={
+	dFrechet(\x,\m,\sigma,\alpha) = (\alpha/\sigma) * (((\x-\m)/\sigma)^(-1-\alpha)) * exp(- ((\x-\m)/\sigma)^(-\alpha) );}
+}  
+\begin{tikzpicture}[mark=none,samples=100,smooth,domain=0:15]
+\begin{axis}[ ytick=\empty,xtick pos=left,
+	axis y line=middle,
+	axis x line=bottom,
+	height=.5*\linewidth,width=0.95*\linewidth, ticklabel style ={font=\footnotesize}, legend pos= north east,
+	legend style={font=\tiny}]
+	\addplot[BleuProfondIRA] 
+	({\x},{dFrechet({\x},0,1,1)}) ;
+	\addplot[FushiaIRA] 
+	({\x},{dFrechet({\x},0,2,1)}) ;
+	\addplot[VertIRA] 
+	({\x},{dFrechet({\x},0,3,1)}) ;
+	\addplot[OrangeProfondIRA] 
+	({\x},{dFrechet({\x},0,2,2)}) ;
+	%
+	\legend{$\mu$ =  0 $\alpha=1$ $\sigma = 1$,$\mu$ =  0  $\alpha=2$ $\sigma =1$,$\mu$ =  0  $\alpha=3$ $\sigma =1$,$\mu$ = 0  $\alpha=2$ $\sigma = 2$};
+\end{axis}	 
+\end{tikzpicture}
+}\end{center}
+
+
+%\begin{center}
+%%	\includegraphics[width=0.90\textwidth]{../Graph/FLoiFrechet.pdf}
+%	{\shorthandoff{:!;}	
+%\tikzset{
+%	declare function={
+%		pFrechet(\x,\m,\sigma,\alpha) = exp( -((\x-\m)/\sigma)^(-\alpha));}
+%}  
+%\begin{tikzpicture}[mark=none,samples=100,smooth,domain=0:15]
+%	\begin{axis}[ ytick=\empty,xtick pos=left,
+%		axis y line=middle,
+%		axis x line=bottom,
+%		height=.5*\linewidth,width=0.95*\linewidth, ticklabel style ={font=\footnotesize}, legend pos= south east,
+%		legend style={font=\tiny}]
+%		\addplot[BleuProfondIRA] 
+%		({\x},{pFrechet({\x},0,1,1)}) ;
+%		\addplot[FushiaIRA] 
+%		({\x},{pFrechet({\x},0,2,1)}) ;
+%		\addplot[VertIRA] 
+%		({\x},{pFrechet({\x},0,3,1)}) ;
+%		\addplot[OrangeProfondIRA] 
+%		({\x},{pFrechet({\x},0,2,2)}) ;
+%		%
+%		\legend{$\mu$ =  0 $\alpha=1$ $\sigma = 1$,$\mu$ =  0  $\alpha=2$ $\sigma =1$,$\mu$ =  0  $\alpha=3$ $\sigma =1$,$\mu$ = 0  $\alpha=2$ $\sigma = 2$};
+%	\end{axis}	 
+%\end{tikzpicture}
+%}
+%\end{center}
+\end{f}
+
+\begin{f}[Lien entre GEV, Gumbel, Fréchet et Weibull]
+
+Le paramètre de forme $\xi$ gouverne le comportement de la queue de distribution. 
+Les sous-familles définies par $\xi= 0$, $\xi>0$ et $\xi<0$ correspondent respectivement aux familles de Gumbel, Fréchet et Weibull~:
+\begin{itemize}
+\item 	 Gumbel ou loi des valeurs extrêmes de type I
+\item     Fréchet ou loi des valeurs extrêmes de type II, si $\xi  = \alpha^{-1}$ avec $\alpha>0$,
+\item    Reversed Weibull ($\overline{F}$) ou loi des valeurs extrêmes de type III, si $\xi =-\alpha^{-1} $, avec $\alpha>0$.
+\end{itemize}
+\end{f}
+\hrule 
+
+\begin{f}[Théorème général des valeurs extrêmes] 
+
+	Soit $X_1, \dots, X_n$  $iid$, $X$ de fonction de répartition $F_X$ et soit $M_n =\max(X_1,\dots,X_n)$.
+	
+	La théorie donne la distribution exacte du maximum :
+\begin{align*}
+		\mathcal{P}(M_n \leq z) = &\Pr(X_1 \leq z, \dots, X_n \leq z) \\
+		 = &\mathcal{P}(X_1 \leq z) \cdots \mathcal{P}(X_n \leq z) = (F_X(z))^n. 
+\end{align*}
+	S'il existe une séquence de paire de nombres réels $(a_n, b_n)$ de telle sorte que $a_n>0$ et $\lim_{n \to \infty}\mathcal{P}\left(\frac{M_n-b_n}{a_n}\leq x\right) = F_X(x)$, où $F_X$ est une fonction de répartition non dégénérée, alors la limite de la fonction $F_X$ appartient à la famille des lois $GEV$. 
+
+\end{f}
+
+\begin{f}[Densité sous-exponentielle]
+	
+	\textbf{Cas des puissances} 
+	
+	Si $\overline{F}_{X}(x)=\mathbb{P}(X > x)\sim c\ x^{-\alpha}$
+		quand $x \to \infty $ pour un $\alpha > 0 $ et une constante $c > 0 $ alors la loi de $X$
+		est sous-exponentielle.
+	
+		Si $F_X$ est une fonction de répartition continue d'espérance $\mathbb{E}[X]$ finie, on appelle l'indice des grands risques par
+		$$
+		D_{F_X}(p)=\frac{1}{\mathbb{E}[X]}\int_{1-p}^{1} F_X^{-1}(t)dt,\, \, p\in [0,1]
+		$$
+
+	Cette distribution en excès décroit moins vite que n'importe quelle distribution exponentielle.
+	Il est possible de considérer cette statistique ~:
+	$$
+	T_n(p)=\frac{X_{(1:n)}+X_{(2:n)}+\ldots + X_{(np:n)}}{\sum_{1\leq i\leq n}(X_i)} \mbox{ où } \frac{1}{n}\leq p\leq 1
+	$$
+	$X_{(i:n)}$ désigne le $i^e$ $\max $ des $X_i$.
+
+\end{f}
+\begin{f}[Théorème de Pickands–Balkema–de Haan (loi des excès)]
+	Soit $X$ de distribution $F_X$, et soit $u$ un seuil élevé. Alors, pour une large classe de lois $F_X$, la loi conditionnelle des excès
+	\[
+	X_u := X - u \mid X > u
+	\]
+	est approximable, pour $u$ suffisamment grand, par une loi de Pareto généralisée (GPD) :
+	
+	\[
+	\mathbb{P}(X - u \le y \mid X > u) \approx G_{\xi, \sigma, \mu=0}(y) :=  1 - \left(1+ \frac{\xi(x-\mu)}{\sigma}\right)^{-1/\xi} 
+	\]
+	
+	$\quad y \ge 0$. Autrement dit, pour $u \to x_F := \sup\{x : F(x) < 1\}$,
+	\[
+	\sup_{0 \le y < x_F - u} \left| \mathbb{P}(X - u \le y \mid X > u) - G_{\xi,\sigma,\mu=0}(y) \right| \to 0.
+	\]
+	
+	Ce théorème justifie l’utilisation de la \textit{loi de Pareto (généralisée)} pour modéliser les excès au-delà d’un seuil, ce qui est précisément le cadre des traités de réassurance en \textit{excess of loss}. 
+\end{f}
+\hrule
+
+
+\begin{f}
+	[Les données en réassurance ]
+
+Comme la réassurance indemnise des agrégations de sinistre ou des sinistres extrêmes, elle utilise souvent des historiques qui devront être utilisé avec prudence~:
+\begin{itemize}
+	\item l'actualisation des données (impact de l'inflation monétaire).
+	\item la revalorisation prend en compte l'évolution du risque :
+	\begin{itemize}
+		\item l'évolution des taux de prime, garanties et modalités des contrats,
+		\item l'évolution des coûts des sinistres (indice des coûts de la construction, indices des coûts de réparation automobile,\ldots)
+		\item l'évolution de l'environnement juridique.
+	\end{itemize}
+	\item le redressement de la statistique pour prendre en compte l'évolution de la base  portefeuille :
+	\begin{itemize}
+		\item profil des polices (nombre, capitaux,\ldots),
+		\item natures des garanties (évolution des franchises, des exclusions\ldots)
+	\end{itemize}
+\end{itemize}
+Après ces corrections, les données sont dites \og as if \fg (en économie, on utilise l'expression contre-factuel)
+
+\end{f}
+
+
+\begin{f}[La prime \emph{Burning Cost}]
+	
+	$x_{i}^{j}$ désigne le $i^{e}$ sinistre  de l'année $j$ \og{}as if\fg{} actualisé, revalorisé et  redressé,
+$n^j$ le nombre de sinistres l'année $j$, $c^{j}$ la charge de l'assureur $c$.
+Le taux pur  par la méthode de \textbf{Burning Cost} est donné par la formule~:
+$$
+BC_{pur}=\frac{1}{s}\sum_{j=1}^{n}\frac{c^{j}}{a_{j}}
+$$ 
+Le Burning Cost n'est qu'une moyenne des ratios $S/P$ croisés~: les sinistres à la charge du réassureur sur les primes reçues par la cédante.
+La prime Burning Cost est alors : $P_{pure}=BC_{pur}\times a_{s+1}$.
+
+Dans le cas d'un $p$ XS $f$), $$
+c^{j}=\sum_{i=1}^{n^j}\max\left(  \left( x_{i}^{j}-f\right),p\right) 1\!\!1_{x^{j}\geq f}
+$$
+Si l'assurance vie calcule des taux de prime en référence au capital, l'assurance non vie utilise comme  référence à la valeur assurée, la réassurance prend elle comme référence le total des primes de la cédante, appelée \textbf{assiette}.
+On note $a_{j}$ désigne l'assiette de prime à l'année $j$ et $a_{s+1}^{*}$ désigne l'assiette estimée de l'année à venir et où $s$ désigne le nombre d'années d'historique.
+\end{f}
+
+
+
+\begin{f}[Le modèle Poisson-Pareto]
+[Prime de l'XS ou de l'XL]
+Soit $p$ et $f$ respectivement la portée et la priorité (franchise) de l'XS, avec la limite $l=p+f$ ($p$ XS $f$).
+
+La prime XS correspond à :
+$$
+\mathbb{E}\left[S_N\right]=\mathbb{E}\left[\sum_{i=1}^{N} Y_{i}\right]=\mathbb{E}[N]\times \mathbb{E}[Y]
+$$
+où
+$$
+\mathbb{E}[Y]= l \mathbb{P}[X>l] - f \times \mathbb{P}[X\geq f] + \mathbb{E}[X\mid f\geq x\geq l]
+$$
+
+
+Si $l=\infty$ et $\alpha \neq 1$ :
+$$
+\mathbb{E}[S_N] = \lambda \frac{x_\mathrm{m}^{\alpha}}{\alpha -1}f^{1-\alpha} 
+$$
+
+si  $l=\infty$ et $\alpha = 1$ il n'y a pas de solution.
+
+Si $l<\infty$ et $\alpha \neq 1$ :
+$$
+\mathbb{E}[S_N] = \lambda \frac{x_\mathrm{m}^{\alpha}}{\alpha -1}\left( f^{1-\alpha} -l^{1-\alpha} \right)
+$$
+
+Si $l<\infty$ et $\alpha = 1$ :
+$$
+\mathbb{E}[S_N] = \lambda x_\mathrm{m} \ln \left(  \frac{1}{f}\right)
+$$
+
+
+\end{f}
+
+
+
+\begin{f}
+[Le modèle Poisson-LogNormal]
+
+Si $X$ suit une $LN(x_\mathrm{m}, \mu, \sigma)$ alors $X-x_\mathrm{m}$ suit une $LN(\mu, \sigma)$
+Il vient :
+$$
+\mathbb{P}[X>f]=\mathbb{P}[X-x_\mathrm{m}>f-x_\mathrm{m}]=1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-\mu}{\sigma}\right)
+$$
+\begin{align*}
+	\mathbb{E}[X\mid X>f] \\ 
+	= & \mathbb{E}\left[ X-x_\mathrm{m}\mid X-x_\mathrm{m}>f-x_\mathrm{m} \right]+x_\mathrm{m} \mathbb{P}[X>f]\\
+	= & e ^{m+\sigma^2/2} \left[1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-(\mu+\sigma^2)}{\sigma}\right) \right]\\
+	& +x_\mathrm{m} \left( 1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-\mu}{\sigma}\right) \right)
+\end{align*}
+Avec franchise et sans limite :
+\begin{align*}
+	\mathbb{E}[S_N] \\ 
+	= & \lambda \left(\mathbb{E}\left[ X-x_\mathrm{m}\mid X-x_\mathrm{m}>f-x_\mathrm{m} \right]+x_\mathrm{m} \mathbb{P}[X>f]-f\mathbb{P}[X>f]\right)\\
+	= & \lambda \left(  e ^{m+\sigma^2/2} \left[1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-(\mu+\sigma^2)}{\sigma}\right) \right]\right)\\
+	& +\lambda (x_\mathrm{m}-l) \left( 1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-\mu}{\sigma}\right) \right)
+\end{align*}
+
+\end{f}

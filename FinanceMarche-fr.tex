@@ -1,0 +1,967 @@
+% !TeX root = ActuarialFormSheet_MBFA-fr.tex
+% !TeX spellcheck = fr_FR
+\def\scaleBS{.95}
+
+\begin{f}[Fonctionnement des marchés]
+	
+La \textbf{Bourse} (\engl{Exchange}) - lieu d'échange - permet, de fait, la rencontre physique entre les demandeurs et offreurs de capitaux.
+Les principales cotations concernent les \textbf{actions} (\engl{equities}), les \textbf{obligations} (\engl{Fixed Income}) et les \textbf{matières premières} (\engl{commodities}).
+Sont cotés des \textbf{titres} comme des actions ou des obligations, des \textbf{fonds} (\engl{Exhange Trade Funds} qui répliquent des indices actions, ETC ou ETN qui répliquent des indices plus spécifiques ou des matières premières, SICAV ou FCP, bons de souscription, \engl{warrant}), des \textbf{contrats à terme},  des \textbf{options}, des \textbf{swaps} ou encore des \textbf{produits structurés}.
+
+L'\textbf{Autorité des marchés financiers} (\href{https://www.amf-france.org/fr}{AMF})  veille :
+\begin{itemize}
+	\item à la protection de l'épargne investie; 
+	\item à l'information des investisseurs ; 
+	\item au bon fonctionnement des marchés. 
+\end{itemize}
+
+\textbf{\href{https://www.euronext.com/fr}{Euronext}} (dont
+\href{https://www.euronext.com/en/markets/amsterdam}{Amsterdam}, 
+\href{https://www.euronext.com/en/markets/brussels}{Brussels}, 
+\href{https://www.euronext.com/en/markets/lisbon}{Lisbon}, 
+et \href{https://www.euronext.com/en/markets/paris}{Paris}) est la principale bourse en France. 
+%
+Ses concurrents sont entre autres \textbf{\href{https://www.deutsche-boerse.com/dbg-en/}{Deutsche Börse}} 
+(dont \href{https://www.eurex.com/}{Eurex}, 
+\href{https://www.eex.com/en/}{eex}) en Europe, 
+%
+ou \textbf{\href{https://www.ice.com/}{ICE}} (dont
+\href{https://www.nyse.com/index}{NYSE (2012)}, 
+\href{https://www.ice.com/about/history}{NYBOT (2005)}, 
+\href{https://www.ice.com/futures-europe}{IPE (2001), LIFFE}) 
+%
+et \textbf{\href{https://www.cmegroup.com/}{CME Group}} (y compris
+\href{https://www.cmegroup.com/company/cbot.html}{CBOT}, 
+\href{https://www.cmegroup.com/company/nymex.html}{NYMEX}, 
+\href{https://www.cmegroup.com/company/comex.html}{COMEX}) aux États-Unis.
+
+Le \textbf{marché de gré à gré} (\textbf{OTC}, \textit{Over-The-Counter}) représente une part majeure des volumes échangés hors marchés organisés.
+Depuis le G20 de Pittsburgh (2009), certains dérivés OTC standardisés doivent être compensés via une entité centrale.
+Ces \textbf{CCP} (\textit{Central Counterparties}) jouent ainsi le rôle de \textbf{chambre de compensation} (\textit{clearing}) : elles remplacent le contrat bilatéral par deux contrats entre chaque partie et la CCP.
+
+\begin{tikzpicture}[scale=.47]
+	\node[businessman,minimum size=1.75cm,monogramtext=MPG,tie=OrangeProfondIRA, shirt=BleuProfondIRA,skin=white,hair=OrangeProfondIRA] at (-8,0) (MPG){Short position};
+	\node[businessman,mirrored,minimum size=1.75cm,monogramtext=SPG,shirt=FushiaIRA, tie=black,skin=FushiaIRA, hair=black] at (8,0) (SPG){Long position};
+	%  	
+	\begin{scope}[yscale=-0.03, xscale=0.03, shift={(-150,-200)}]
+		%  		
+		%Usine
+		\draw [OrangeMoyenIRA!40,fill] (65,132) rectangle (195,225)  node [pos=0.5,text width=1.8cm, align=center] {\color{black}\bfseries Chambre Compensation} ;
+		%Straight Lines [id:da13081779728777443] 
+		%	\draw (65,272) -- (474,272) -- (474,320);
+		%Shape: Polygon [id:ds025531371089408395] 
+		\draw   [GrisLogoIRA] (195,272) -- (65,272) -- (65,129) -- (85,129) -- (85,20) -- (117,20)  -- (117,52)-- (175,52) -- (175,129) -- (195,129) -- cycle ;
+		%Shape: Grid [id:dp09099790819019526] 
+		%	\draw  [draw opacity=0] (117,129) -- (195,129) -- (195,169) -- (117,169) -- cycle ; 
+		\draw  [GrisLogoIRA] (95,100) -- (95,60)(105,100) -- (105,60)(115,100) -- (115,60)(125,100) -- (125,60)(135,100) -- (135,60)(145,100) -- (145,60)(155,100) -- (155,60)(165,100) -- (165,60) ; 
+		\draw  [GrisLogoIRA]  (85,100) -- (175,100)(85,90) -- (175,90)(85,80) -- (175,80)(85,70) -- (175,70)(85,60) -- (175,60) ; 
+		%
+		\draw  (65,175) node (a) {} ;
+		\draw  (195,175) node (b) {} ;
+		%Shape: Rectangle [id:dp30583722611654374] 
+	\end{scope}
+	% 	
+	\draw[->,>=latex, thick] (MPG) to [bend left]  node[pos=0.4, above]{Short} (a);
+	\draw[<-,>=latex, thick,OrangeProfondIRA] (MPG) to [bend right]  node[pos=0.4, below=.2]{payment} (a);
+	\draw[->,>=latex, thick,FushiaIRA] (SPG) to [bend left] node[pos=0.4, below=.2]{No payment}  (b);
+	\draw[->,>=latex, thick] (SPG) to [bend right] node[pos=0.4, above]{Long} (b);
+	%  	
+\end{tikzpicture}
+\medskip
+
+\end{f}
+\hrule
+
+\begin{f}[Le Marché Monétaire]
+Les titres de taux à court terme, négociés sur les marchés monétaires, sont généralement à \textbf{intérêts précomptés}. 
+Les taux nominaux sont alors annuels et les calculs utilisent les \textbf{taux proportionnels} pour s'adapter aux durées inférieures à un an.
+Ces titres sont cotés ou évalués selon le principe de l'escompte et avec  une convention de calendrier Euro-30/360.
+
+Sur le marché américain, les titres de dette publique sont appelés :
+ Bons du Trésor ({T-bills}) : ZC < 1 an,  Obligations du Trésor ({T-notes}) : ZC < 10 ans,
+Obligations du Trésor ({T-bonds}) : obligations à coupon avec une maturité > 10 ans.
+
+
+Ce sont principalement :
+\begin{itemize}
+  \item \textbf{BTF (bons du Trésor à taux fixe, France) :} émis à 13, 26, 52 sem., taux précompté, adjudication hebdo, nominal 1~€, règlement à J+2.
+  
+  \item \textbf{Bons du Trésor > 1 an :} mêmes règles que les obligations (voir section suivante).
+  
+  \item \textbf{Certificats de dépôt (CDN) :} titres émis par banques émis à taux fixe/précompté (court terme) ou à taux variable/postcompté (long terme), aussi appelés BMTN.
+
+  \item \textbf{Eurodollars :} dépôts en USD hors USA, anciennement indexés LIBOR, aujourd’hui en déclin.
+
+  \item \textbf{Billets de trésorerie :} titres non garantis à court terme, émis par grandes entreprises pour financer leur trésorerie.
+\end{itemize}
+
+\textbf{Calculs du prix d'un  Bon du Trésor  à taux fixe et à intérêt précompté}
+
+Dans le cas d'un titre à intérêt précompté selon la convention Euro-30/360, l'escompte $D$ s'écrit :
+$$
+D=F \cdot d \cdot \frac{k}{360}
+$$
+où $F$ désigne la valeur nominale, $d$ le taux d'escompte annuel pour évaluer le titre à escompte et $k$ la maturité en jour.
+
+Si le taux d'escompte $d$ est connu, alors le prix $P$ s'écrit :
+$$
+P=F-D=F\left(1-d \cdot \frac{k}{360}\right)
+$$
+de même, si le prix $P$ est connu, alors le taux d'escompte $d$ se déduit :
+$$
+d=\frac{F-P}{F} \cdot \frac{360}{k}
+$$
+
+
+Les principaux Contrats à Terme  : Federal Funds Futures (US),
+Three-Month SOFR Futures (US),
+ESTR Futures (UE),
+SONIA Futures (UK),
+Euribor Futures (UE).
+
+\end{f}
+\hrule
+
+
+
+\begin{f}[Marché Obligataire]
+
+ Les \textbf{obligations} sont des titres de créance à \textbf{long terme} dans lesquels l'émetteur (gouvernement central ou local, banque, entreprise emprunteuse) promet à l'obligataire (le prêteur) de payer périodiquement des intérêts (\textbf{coupons}) et de rembourser à la date d'échéance la \textbf{valeur nominale} (ou valeur faciale, ou principal). 
+Comme mentionné dans la section précédente \textbf{Les Bons du Trésor de durée supérieure à un an} seront assimilés aux obligations de maturité inférieure à 5 ans parce que leur fonctionnement est similaire.
+
+%Les \textbf{coupons} : sont payés régulièrement à la fin des périodes de coupon (annuelles ou semestrielles) jusqu'à la date d'échéance.
+
+\textbf{Les obligations zéro-coupon} : ne paient que la valeur nominale à l'échéance. Avec $E$ le prix d'émission et $R$ son remboursement :
+	
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    % Draw the x-axis and y-axis.
+    \def\w{11}
+    \def\n{9}
+    \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-0.4909) node[above left] (A) {$E$};	
+    \foreach \y in  {0,...,3} {
+        \draw (\y,0) -- (\y,-0.1);
+        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+        }{
+            \node[above] at (\y,-0.1) {\tiny 0};}
+    }
+    \foreach \y in  {-3,...,1} {
+        \draw (\y+\n,0) -- (\y+\n,-0.1);
+        \ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};}{}
+        \ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};
+            \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1) node[below right] (B) {$R$};}{}
+        \ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+    }
+    \draw[ line width=1] (-.25,0) -- (4,0);
+    \draw[ line width=1, dashed] (4,0) -- (5,0);
+    \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (5,0) -- (\w,0);
+\end{tikzpicture}
+\end{center}
+
+ Les \textbf{obligations à coupon} :
+    \textbf{Les obligations à taux fixe} ont un taux de coupon qui reste constant jusqu'à la date d'échéance.  Avec l'hypothèse d'un remboursement \emph{in fine}, $E$ le prix d'émission, $c$ les coupons et $R$ son remboursement, on peut l'illustrer de la manière suivante :
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    % Draw the x-axis and y-axis.
+    \def\w{11}
+    \def\n{9}
+    \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-1.8) node[above left] (A) {$E$};	
+    \foreach \y in  {0,...,3} {
+        \draw (\y,0) -- (\y,-0.1);
+        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,.25) node [above] {$c$};
+        }{
+            \node[above] at (\y,-0.1) {\tiny 0};}
+        }
+    \foreach \y in  {-3,...,1} {
+        \draw (\y+\n,0) -- (\y+\n,-0.1);
+        \ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};
+        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,.25) node [above] {$c$};}{}
+        \ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};
+        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,2) node[below right] (B) {$R$};
+        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,2) -- (\y+\n,2.25) node[right] (B) {$c$};}{}
+        \ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+    }
+    \draw[ line width=1] (-.25,0) -- (4,0);
+    \draw[ line width=1, dashed] (4,0) -- (5,0);
+    \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (5,0) -- (\w,0);
+\end{tikzpicture}
+\end{center}
+
+ \textbf{Les obligations indexées} (obligations liées à l'inflation) ont les coupons et parfois aussi la valeur nominale indexés à l'inflation ou à un autre indicateur économique, comme les Obligations Assimilables du Trésor
+		indexées sur l'inflation (OATi). Les valeurs de $c$ varient.
+        
+Les obligations \textbf{à taux flottant}, \textbf{à taux variable} ou \textbf{à taux révisable} : ont un taux de coupon variable lié à un taux d'intérêt de référence (par exemple le euro short-
+		term rate (\href{https://www.cmegroup.com/markets/interest-rates/stirs/euro-short-term-rate.quotes.html}{€STR})).
+
+Les obligations \textbf{perpétuelles} n'ont pas de date d'échéance, le principal n'est jamais remboursé.
+ 
+On distingue souvent les obligations d'État (obligations du Trésor, Treasury bonds) des
+ obligations d'entreprises ou \engl{corporate} qui sont émises par des entreprises privées.
+
+
+
+Une obligation se définit principalement par une \textbf{valeur nominale} $F$ pour \engl{Face Value}), le \textbf{Taux nominal} $i$, sa durée ou \textbf{maturité} $n$.
+Dans le cas par défaut, le détenteur de l'obligation confie  le montant $E=F$ à l'émission en 0, reçoit chaque année un coupon $c=i\times F$ et en $n$, le principal ou capital $R=F$ lui est restitué.
+Quand $E=F$, on dit que l'émission est au pair, et quand $R=F$, on dit que la restitution est au pair.
+
+
+Le prix d'une obligation est déterminé par la valeur actuelle des flux de trésorerie futurs attendus (coupons et remboursement du principal) actualisés au taux de rendement du marché $r$.
+
+Le calcul des prix des obligations repose simplement sur la formule de la valeur actualisée :
+\[
+VP = \sum_{k=1}^{n} \frac{c}{(1 + r)^k} + \frac{F}{(1 + i)^n}
+ \]
+où :
+\begin{itemize}
+	\item $VP$ : prix ou valeur présente\index{Valeur Présente} de l'obligation,
+	\item $r$ : taux d'intérêt du marché pour la maturité concernée.
+\end{itemize}
+
+
+Pour les obligations à coupons périodiques, le coupon est divisé par le nombre de périodes ($m$) par an et la formule devient :
+\[ 
+VP = \sum_{k=1}^{mn} \frac{c/m}{(1 + r^{(m)})^k} + \frac{R}{(1 + + r^{(m)})^{mn}}
+ \]
+ où $c/m$ représente le paiement périodique du coupon et $ r^{(m)}$ le taux d'intérêt périodique.
+
+Le rendement de l'obligation est la valeur $ r^{(m)}$, le taux équivalent de $r$ sur $m$ périodes dans l'année,  qui égalise la valeur présente $VP_r$ avec le prix actuel ou de marché de cette obligation. 
+
+\textbf{La cotation d'une obligation} d'une obligation se fait en pourcentage. Ainsi une cotation à 97,9  sur Euronext indique une valeur de cotation à $97,9 /100\times F$. 
+Elle  se fait hors \textbf{coupons courus} , la part du prochain coupon auquel le vendeur a le droit si l'obligation est vendue avant le paiement de ce coupon.
+\end{f}
+\hrule
+
+\begin{f}[Duration \& Convexité]
+
+La duration de Macaulay :
+\[ 		
+D = \sum_{t=1}^{n} t \cdot w_t, \quad \text{où} \quad w_t = \frac{PV(C_t)}{P}.
+ \]	
+Si la fréquence de paiement est $k$ par an, la duration exprimée en années est obtenue en divisant par $k$.
+La duration modifiée $D^*$  :
+\[ 	
+D^* = \frac{D}{1 + i}.
+ \]
+ Ce qui permet d'approximer la variation du portefeuille $\Delta P$ en cas de variation des taux $\Delta_i$
+\[ 
+\Delta P \approx -P\ D^* \Delta_i 
+ \]
+De même, la convexité
+\[ 	
+C = \frac{1}{P(i)} \times \frac{d^2 P(i)}{di^2},
+ \]
+ ce qui permet d’affiner l'approximation de $\Delta P$
+\[ 	
+P(i + \Delta_i) \approx P(i) \left( 1 -D^*\Delta_i + \frac{1}{2} C (\Delta_i)^2 \right).
+ \]
+\end{f}
+\hrule
+
+
+
+\begin{f}[MEDAF]
+  ou CAPM (\textit{Capital Asset Pricing Model})  :
+
+\[
+E(r_i) = r_f + \beta_i (E(r_m) - r_f)
+\]
+
+\begin{itemize}
+    \item \( E(r_i) \) est le rendement espéré de l'actif \( i \),
+    \item \( r_f \) est le taux sans risque,
+    \item \( E(r_m) \) est le rendement espéré du marché,
+    \item \( \beta_i \) est le coefficient de sensibilité de l'actif \( i \) par rapport aux variations observées sur le marché.
+\end{itemize}
+
+Le coefficient \( \beta_i \) mesure la volatilité de l'actif \( i \) par rapport à l'ensemble du marché. 
+
+\end{f}
+\hrule
+
+
+\begin{f}[Marché des dérivés]
+
+Un \textbf{contrat dérivé} (ou actif contingent) est un instrument financier dont la valeur dépend d’un actif ou d’une variable sous-jacente. Les options font partie des contrats dérivés.
+
+
+Une \textbf{option} est un contrat donnant le droit (sans obligation) d’acheter (call) ou de vendre (put) un actif sous-jacent à un prix fixé (prix d’exercice), à une date future, contre paiement d’une prime. 
+L’acheteur (position longue) paie la prime ; le vendeur (position courte) la reçoit.L'\textbf{option européenne}  (exercice possible uniquement à l’échéance) et   
+ \textbf{option américaine} (exercice possible à tout moment jusqu’à l’échéance).
+
+Les options cotées sur actions sont appelées \textit{stock options}.
+
+\end{f}
+\hrule
+
+
+\begin{f}[Les stratégies simples]
+
+\ %
+
+%\textbf{La position longue sur l'option d'achat}
+
+Avec $T$ l'échéance, $K$ le prix d'exercice, $S$ ou $S_T$ le sous-jacent à l'échéance, le retour (\engl{payoff}) est de $\max (0, S_T-K)=( S_T-K)^{+}$.
+En notant $C$ la prime , le profit réalisé est de $\max (0, S_T-K)-C$, avec un profit si  ($S_T<V_{PM}=K + C$)  ($PM$ pour \textbf{point mort}).
+
+		\input{Graph/Acalldef-fr.tex}
+
+
+\medskip
+
+%\textbf{La position courte sur l'option d'achat}
+
+
+À l'échéance, le retour est de $\min (0,K- S_T)=-\max(0, S_T-K)=-( S_T-K)^{+}$ et le profit réalisé est de $C-\max (0, S_T-K)$.
+
+\medskip
+
+		\input{Graph/Vcalldef-fr.tex}
+\medskip
+
+
+%\textbf{La position longue sur l'option de vente}
+
+À l'échéance, le retour est de $\max (0,K- S_T)=(K- S_T)^{+}$.
+En notant $P$ la prime du put, le profit réalisé est de $\max (0,K- S_T)-P$, positif si$V_{PM}=K -P<S_T$.
+
+\medskip
+
+	\input{Graph/APutdef-fr.tex}    	     
+
+%\textbf{La position courte sur l'option de vente}
+
+\medskip
+
+	\input{Graph/VPutdef-fr.tex}    	     
+
+À l'échéance, le retour est de $\min (0, S_T-K)=-(K- S_T)^+$.
+
+
+\end{f}
+\hrule
+
+\begin{f}[Les stratégies d'écart]
+\textbf{Stratégie d'écart} : utilise deux options ou plus du même type (deux options d'achat ou deux options de vente).  
+Si les prix d'exercice varient, c'est un \textbf{écart vertical}.  
+Si les échéances changent, c'est un \textbf{écart horizontal}.
+
+Une stratégie d’écart vertical (\textit{spread trading strategy}) implique une position longue et une position courte sur des options d’achat portant sur le même sous-jacent, de même échéance mais avec des prix d’exercice différents.  
+On distingue : \textbf{écart vertical haussier} (\textit{Bull spread}) et \textbf{écart vertical baissier} (\textit{Bear spread}).
+
+\textbf{Écart vertical haussier} : anticipant une hausse modérée du sous-jacent, l’investisseur prend une position longue sur $C_1$ et courte sur $C_2$ sous la contrainte $E_1 < E_2$.  
+Résultat net à l’échéance :
+
+	\begin{tikzpicture}[scale=.52]
+		\def\riskfreeBS{0.05}
+		\def\xminBS{5}
+		\def\xmaxBS{15}
+		\def\PxExerciceBSa{9}
+		\def\PxExerciceBSb{12}
+		\def\sigmaBS{0.2}
+		\def\TBS{0.75}
+		\def\PremiumBSa{{BSCall(11,{\PxExerciceBSa},{\riskfreeBS},{\TBS},{\sigmaBS})}}
+		\def\PremiumBSb{{BSCall(11,{\PxExerciceBSb},{\riskfreeBS},{\TBS},{\sigmaBS})}}
+		\begin{axis}[ 
+			width=0.8\textwidth,
+			height=0.5\textwidth, 
+			extra tick style={tick style=BleuProfondIRA},
+			clip=false,
+			axis on top,
+			axis lines=middle, axis line style={BleuProfondIRA,thick,->},
+			scale only axis, xmin={\xminBS},xmax={\xmaxBS},enlarge x limits=0.05,
+			enlarge y limits=0.125,
+			color=BleuProfondIRA,
+			%		ylabel near ticks,
+			ylabel={Profit},
+			x label style={={at={(current axis.right of origin)}}},
+			%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
+			%		x label style={at={(1,0.5)}},
+			xlabel={ss-jacent ($T$)},
+			%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+			%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
+			ytick=\empty,
+			xtick=\empty,
+			extra y ticks ={0},
+			extra y tick labels={{0}},
+			extra x ticks ={{\PxExerciceBSa},{\PxExerciceBSb}},
+			extra x tick labels={{$E_1\ \ \ \ \ $},{$E_2$}},
+			extra x tick style={color=BleuProfondIRA,
+				tick label style={yshift=-0mm}	},
+			]
+			%		
+			\addplot[name path=A,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS-1.75}}, samples=21,dashed] {Call(x,\PxExerciceBSa,\PremiumBSa)} 
+			node [pos=0.15, above] {\small Long $C_1$};	
+			\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {-Call(x,\PxExerciceBSb,\PremiumBSb)} 
+			node [pos=0.15, above] {\small  Short $C_2$};	
+			\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=41] {Call(x,\PxExerciceBSa,\PremiumBSa)-Call(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.15, above] {\'Ecart vertical haussier};	
+			%\draw[BleuProfondIRA,thick] \OV{\PxExerciceBSa}{\PremiumBSa}{0.4}{\xminBS}{\xmaxBS} ;
+			%		\addplot[name path=Option,BleuProfondIRA,thick,domain={250:350}, 			 		samples=10,dashdotted,smooth] {BSPut(x,\PxExerciceBSa,\riskfreeBS,\TBS,\sigmaBS)} ;	
+			
+			\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSa},0) -- ({\PxExerciceBSa},{-\PremiumBSa})	;
+			\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSb},0) -- ({\PxExerciceBSb},{\PremiumBSb})	;
+		\end{axis}
+		%
+	\end{tikzpicture}
+
+
+
+\textbf{Écart vertical baissier} : anticipant une baisse modérée du sous-jacent, l’investisseur vend l’option la plus chère et achète la moins chère.
+
+
+	\begin{tikzpicture}[scale=.52]
+		\def\riskfreeBS{0.05}
+		\def\xminBS{5}
+		\def\xmaxBS{15}
+		\def\PxExerciceBSa{9}
+		\def\PxExerciceBSb{12}
+		\def\sigmaBS{0.2}
+		\def\TBS{0.75}
+		\def\PremiumBSa{{BSCall(11,{\PxExerciceBSa},{\riskfreeBS},{\TBS},{\sigmaBS})}}
+		\def\PremiumBSb{{BSCall(11,{\PxExerciceBSb},{\riskfreeBS},{\TBS},{\sigmaBS})}}
+		\begin{axis}[ 
+			width=0.8\textwidth,
+			height=0.5\textwidth, 
+			extra tick style={tick style=BleuProfondIRA},
+			clip=false,
+			axis on top,
+			axis lines=middle, axis line style={BleuProfondIRA,thick,->},
+			scale only axis, xmin={\xminBS},xmax={\xmaxBS},enlarge x limits=0.05,
+			enlarge y limits=0.125,
+			color=BleuProfondIRA,
+			%		ylabel near ticks,
+			ylabel={Profit},
+			x label style={={at={(current axis.right of origin)}}},
+			%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
+			%		x label style={at={(1,0.5)}},
+			xlabel={ss-jacent ($T$)},
+			%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+			%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
+			ytick=\empty,
+			xtick=\empty,
+			extra y ticks ={0},
+			extra y tick labels={{0}},
+			extra x ticks ={{\PxExerciceBSa},{\PxExerciceBSb}},
+			extra x tick labels={{$E_1\ \ \ \ \ $},{$E_2$}},
+			extra x tick style={color=BleuProfondIRA,
+				tick label style={yshift=-0mm}	},
+			]
+			%		
+			\addplot[name path=A,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS-1.75}}, samples=21,dashed] {-Call(x,\PxExerciceBSa,\PremiumBSa)} 
+			node [pos=0.15, above] {\small Short $C_1$};	
+			\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Call(x,\PxExerciceBSb,\PremiumBSb)} 
+			node [pos=0.15, above] {\small  Long $C_2$};		
+			\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=41] {-Call(x,\PxExerciceBSa,\PremiumBSa)+Call(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.15, above] {\'Ecart vertical baissier};	
+			%\draw[BleuProfondIRA,thick] \OV{\PxExerciceBSa}{\PremiumBSa}{0.4}{\xminBS}{\xmaxBS} ;
+			%		\addplot[name path=Option,BleuProfondIRA,thick,domain={250:350}, 			 		samples=10,dashdotted,smooth] {BSPut(x,\PxExerciceBSa,\riskfreeBS,\TBS,\sigmaBS)} ;	
+			
+			\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSa},0) -- ({\PxExerciceBSa},{\PremiumBSa})	;
+			\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSb},0) -- ({\PxExerciceBSb},{-\PremiumBSb})	;
+		\end{axis}
+		%
+	\end{tikzpicture}
+
+% Code TikZ conservé ici (éventuellement inséré)
+
+\textbf{Écart papillon} (\textit{butterfly spread}) : anticipe une faible variation du sous-jacent.  
+C’est la combinaison d’un écart vertical haussier et d’un écart vertical baissier.  
+Stratégie adaptée si de grandes variations sont jugées peu probables.  
+Investissement initial faible.
+
+	\begin{tikzpicture}[scale=.52]
+		\def\riskfreeBS{0.05}
+		\def\xminBS{5}
+		\def\xmaxBS{15}
+		\def\PxExerciceBSa{8}
+		\def\PxExerciceBSb{10}
+		\def\PxExerciceBSc{12}
+		\def\sigmaBS{0.2}
+		\def\TBS{0.75}
+		\def\PremiumBSa{BSCall(11,{\PxExerciceBSa},{\riskfreeBS},{\TBS},{\sigmaBS})}
+		\def\PremiumBSb{BSCall(11,{\PxExerciceBSb},{\riskfreeBS},{\TBS},{\sigmaBS})}
+		\def\PremiumBSc{BSCall(11,{\PxExerciceBSc},{\riskfreeBS},{\TBS},{\sigmaBS})}
+		\begin{axis}[
+			width=0.8\textwidth,
+			height=0.5\textwidth, 
+			extra tick style={tick style=BleuProfondIRA},
+			clip=false,
+			axis on top,
+			axis lines=middle, axis line style={BleuProfondIRA,thick,->},
+			scale only axis, xmin={\xminBS},xmax={\xmaxBS},enlarge x limits=0.05,
+			enlarge y limits=0.125,
+			color=BleuProfondIRA,
+			%		ylabel near ticks,
+			ylabel={Profit},
+			x label style={={at={(current axis.right of origin)}}},
+			%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
+			%		x label style={at={(1,0.5)}},
+			xlabel={ss-jacent ($T$)},
+			%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+			%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
+			ytick=\empty,
+			xtick=\empty,
+			extra y ticks ={0},
+			extra y tick labels={{0}},
+			extra x ticks ={{\PxExerciceBSa},{\PxExerciceBSb},{\PxExerciceBSc}},
+			extra x tick labels={{$E_1\ \ \ \ \ $},{$E_2$},{$E_3$}},
+			extra x tick style={color=BleuProfondIRA,
+				tick label style={yshift=-0mm}	},
+			]
+			%		
+			\addplot[name path=A,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Call(x,\PxExerciceBSa,\PremiumBSa)} 
+			node [pos=0.15, above] {\small Long $C_1$};	
+			\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS-1.75}}, samples=21,dashed] {-2*Call(x,\PxExerciceBSb,\PremiumBSb)} 
+			node [pos=0.15, above] {\small Short $2\ C_2$};	
+			\addplot[name path=C,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Call(x,\PxExerciceBSc,\PremiumBSb)} 
+			node [pos=0.15, above] {\small Long $C_3$};	
+			\addplot[name path=EP,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=41] {
+				Call(x,\PxExerciceBSa,\PremiumBSa) - 2*Call(x,\PxExerciceBSb,\PremiumBSb)+
+				Call(x,\PxExerciceBSc,\PremiumBSc)}
+			node [pos=0.5, below=30pt] { \'Ecart papillon};	
+			\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSa},0) -- ({\PxExerciceBSa},{-\PremiumBSa})	;
+			\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSb},0) -- ({\PxExerciceBSb},{2*\PremiumBSb})	;
+			\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSc},0) -- ({\PxExerciceBSc},{-\PremiumBSc})	;
+		\end{axis}
+		%
+	\end{tikzpicture}
+% Code TikZ conservé ici (éventuellement inséré)
+
+\end{f}
+\hrule
+
+\begin{f}[Les stratégies combinées]
+	
+	Une \textbf{stratégie combinée} utilise à la fois des options d'achat et de vente. On distingue notamment les \textbf{stellages} et les \textbf{strangles}.
+	
+	Un \textbf{stellage} (straddle) combine l'achat d'une option d'achat et d'une option de vente de même échéance et de même prix d'exercice. Cette stratégie parie sur une forte variation du prix, à la hausse ou à la baisse. La perte maximale survient si le prix à l’échéance est égal au prix d’exercice.
+	
+	Un \textbf{strangle} est l’achat d’un call et d’un put de même échéance mais à prix d’exercice différents. Il suppose une très forte variation de la valeur du sous-jacent.
+	
+		\begin{tikzpicture}[scale=.52]
+			\def\xminBS{200}
+			\def\xmaxBS{275}
+			\def\PxExerciceBSa{230}
+			\def\PxExerciceBSb{245}
+			\def\PremiumBSa{20.69}
+			\def\PremiumBSb{23.79}
+			\begin{axis}[ 
+				width=0.8\textwidth,
+				height=0.5\textwidth, 
+				extra tick style={tick style=BleuProfondIRA},
+				clip=false,
+				axis on top,
+				axis lines=middle, axis line style={BleuProfondIRA,thick,->},
+				scale only axis, xmin={\xminBS},xmax={\xmaxBS},enlarge x limits=0.05,
+				enlarge y limits=0.125,
+				color=BleuProfondIRA,
+				ylabel={Profit},
+				x label style={={at={(current axis.right of origin)}}},
+				xlabel={ss-jacent ($T$)},
+				ytick=\empty,
+				extra y ticks ={0},
+				extra y tick labels={{0}},
+				extra x ticks ={{\PxExerciceBSa},{\PxExerciceBSb}},
+				extra x tick labels={{$E_1\ \ \ \ \ $},{$E_2$}},
+				extra x tick style={color=BleuProfondIRA,
+					tick label style={yshift=-10mm}	},
+				]
+				\addplot[name path=A,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS-1.75}}, samples=21,dashed] {Call(x,\PxExerciceBSa,\PremiumBSa)} 
+				node [pos=0.15, below] {\small Long $C_1$};	
+				\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Put(x,\PxExerciceBSb,\PremiumBSb)} 
+				node [pos=0.85, above] {\small  Long $P_2$};		
+				\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=21] {Call(x,\PxExerciceBSa,\PremiumBSa)+Put(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.5, above] {\small Strangle};	
+				\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSa},0) -- ({\PxExerciceBSa},{-\PremiumBSa})	;
+				\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSb},0) -- ({\PxExerciceBSb},{-\PremiumBSb})	;
+			\end{axis}
+		\end{tikzpicture}
+
+
+		\begin{tikzpicture}[scale=.52]
+			\def\xminBS{200}
+			\def\xmaxBS{275}
+			\def\PxExerciceBSa{230}
+			\def\PxExerciceBSb{245}
+			\def\PremiumBSa{15.19}
+			\def\PremiumBSb{14.29}
+			\begin{axis}[ 
+				width=0.8\textwidth,
+				height=0.5\textwidth, 
+				extra tick style={tick style=BleuProfondIRA},
+				clip=false,
+				axis on top,
+				axis lines=middle, axis line style={BleuProfondIRA,thick,->},
+				scale only axis, xmin={\xminBS},xmax={\xmaxBS},enlarge x limits=0.05,
+				enlarge y limits=0.125,
+				color=BleuProfondIRA,
+				ylabel={Profit},
+				x label style={={at={(current axis.right of origin)}}},
+				xlabel={ss-jacent ($T$)},
+				ytick=\empty,
+				extra y ticks ={0},
+				extra y tick labels={{0}},
+				extra x ticks ={{\PxExerciceBSa},{\PxExerciceBSb}},
+				extra x tick labels={{$E_1\ \ \ \ \ $},{$E_2$}},
+				extra x tick style={color=BleuProfondIRA,
+					tick label style={yshift=-10mm}	},
+				]
+				\addplot[name path=A,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Put(x,\PxExerciceBSa,\PremiumBSa)} 
+				node [pos=0.85, below] {\small Long $P_1$};	
+				\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Call(x,\PxExerciceBSb,\PremiumBSb)} 
+				node [pos=0.15, above] {\small  Long $C_2$};		
+				\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=21] {Put(x,\PxExerciceBSa,\PremiumBSa)+Call(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.5, above] {\small Strangle};	
+				\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSa},0) -- ({\PxExerciceBSa},{-\PremiumBSa})	;
+				\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSb},0) -- ({\PxExerciceBSb},{-\PremiumBSb})	;
+			\end{axis}
+		\end{tikzpicture}
+	
+	
+	
+\end{f}
+\hrule
+
+\begin{f}[Absence d'opportunité d'arbitrage]
+Aucun profit sans risque n’est possible par exploitation des écarts de prix. 
+
+\end{f}
+
+\begin{f}[La relation de parité]
+
+L'AOA implique la relation suivante entre le Call et le Put :
+
+$$S_t- C_t + P_t = K e^{-i_{f}.\tau}$$	
+\end{f}
+\hrule
+
+\begin{f}[Le modèle de Cox-Ross-Rubinstein]
+	
+Il repose sur un processus en temps discret avec deux évolutions possibles du prix à chaque période : une hausse (facteur $u$) ou une baisse (facteur $d$), avec $u > 1 + i_{f}$ et $d < 1 + i_{f}$. Le prix à $t = 1$ est alors \( S_{1}^{u} = S_{0} u \) ou \( S_{1}^{d} = S_{0} d \), selon une probabilité $q$ ou $1-q$.
+
+\begin{tikzpicture}
+	[sibling distance=5em,
+	every node/.style = {shape=rectangle, rounded corners, fill=OrangeProfondIRA!20,
+		align=center,  draw=OrangeProfondIRA, text=BleuProfondIRA } ,grow=right,
+	edge from parent/.style={draw=OrangeProfondIRA, thick}]
+	\node (A){$S_0$}
+	child {node  (B) {$S_d$}
+		child {node {$S_{dd}$}}
+		child} 
+	child {node (C) {$S_u$} 
+		child {node  {$S_{du}$}}
+		child {node {$S_{uu}$}}    
+	};
+	\draw [draw=none] 
+	($ (A.east) + (0,0.2) $) -- node[draw=none, fill=none, above left, BleuProfondIRA] {$q$} ($ (C.west) + (0,-0.2) $);
+	\draw [draw=none]  
+	($ (A.east) + (0,-0.2) $) -- node[draw=none, fill=none,below left, BleuProfondIRA] {$1 - q$} ($ (B.west) + (0,0.2) $);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}
+	[sibling distance=5em,
+	every node/.style = {shape=rectangle, rounded corners, fill=OrangeProfondIRA!20,
+		align=center,  draw=OrangeProfondIRA, text=BleuProfondIRA } ,grow=right,
+	edge from parent/.style={draw=OrangeProfondIRA, thick}]
+	\node {$C_0$}
+	child {node  {$C_d$}
+		child {node {$C_{dd}=(S_{dd}-K)^{+}$}}
+		child}
+	child {node {$C_u$} 
+		child {node  {$C_{du}=(S_{du}-K)^{+}$}}
+		child {node  {$C_{uu}=(S_{uu}-K)^{+}$}}  
+	};
+\end{tikzpicture}
+
+Ce modèle s’étend à $n$ périodes avec $n+1$ prix possibles pour $S_T$. À l’échéance, la valeur d’une option d’achat est donnée par \( C_{1}^{u} = (S_{1}^{u} - K)^+ \) et \( C_{1}^{d} = (S_{1}^{d} - K)^+ \).
+
+\textbf{Absence d'opportunité d'arbitrage} implique
+\[
+d < 1 + i_{f} < u
+\]
+et une probabilité risque neutre 
+\[q = \frac{(1 + i_{f}) - d}{u - d}\]
+
+\textbf{Prix du call} (avec \( S_{1}^{d} < K < S_{1}^{u} \)) :
+\[
+C_{0} = \frac{1}{1+i_f} \left[ q C_{1}^{u} + (1 - q) C_{1}^{d} \right]
+\]
+
+On peut aussi construire un portefeuille de réplication composé de $\Delta$ actions et $B$ obligations, tel que :
+\[
+\begin{cases}
+	\Delta = \frac{S_{1}^{u} - K}{S_{1}^{u} - S_{1}^{d}}, \\
+	B = \frac{-S_{1}^{d}}{1+i_f} \cdot \Delta
+\end{cases}
+\quad \Rightarrow \quad \Pi_0 = \Delta S_0 + B
+\]
+
+\textbf{Prix du put} :
+\[
+P_{0} = \frac{1}{1+i_f} \left[ q P_{1}^{u} + (1 - q) P_{1}^{d} \right]
+\]
+
+\textbf{Détermination de $q$, $u$, $d$} :  
+En calibrant le modèle pour retrouver les premiers moments du rendement sous la probabilité risque neutre (espérance $i_f$, variance $\sigma^2 \delta t$), on obtient :
+\[
+e^{i_{f} \delta t} = q u + (1-q) d, \qquad q u^2 + (1-q) d^2 - [q u + (1-q) d]^2 = \sigma^2 \delta t
+\]
+
+Avec la contrainte $u = \frac{1}{d}$, on arrive à :
+\[
+\begin{array}{l}
+	q = \frac{e^{-i_f \delta_t} - d}{u - d} \\
+	u = e^{\sigma \sqrt{\delta t}} \\
+	d = e^{-\sigma \sqrt{\delta t}}
+\end{array}
+\]
+
+\end{f}
+\hrule
+
+\begin{f}[Le modèle de Black \& Scholes]
+Hypothèses du modèle 
+\begin{itemize}
+	\item Le taux sans risque $R$ est constant. On définit $i_f = \ln(1+R)$, ce qui implique $(1+R)^t = e^{i_f t}$.
+	\item Le prix de l'action $S_t$ suit un mouvement brownien géométrique :
+	$$
+	dS_t = \mu S_t dt + \sigma S_t dW_t 
+	$$
+	$$
+	 S_t = S_0 \exp\left(\sigma W_t + \left( \mu - \frac{1}{2}\sigma^2 \right)t \right)
+	$$
+	\item Pas de dividende pendant la durée de vie de l’option.
+	\item L’option est \og{}européenne\fg{} (exercée uniquement à l’échéance).
+	\item Marché sans friction : pas d’impôts ni de coûts de transaction.
+	\item La vente à découvert est autorisée.
+\end{itemize}
+
+L’équation de Black-Scholes-Merton pour évaluer un contrat dérivé $f$ est :
+$$
+\frac{\partial f}{\partial t} + i_f S \frac{\partial f}{\partial S} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 f}{\partial S^2} = i_f f
+$$
+
+À l’échéance, le prix d’une option d’achat est $C(S,T) = \max(0, S_T - K)$, et celui d’une option de vente est $P(S,T) = \max(0, K - S_T)$.
+
+
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Déterminants & \textbf{call}&\textbf{put}\\
+		\hline
+		Cours du sous-jacent	      & +&	-\\
+		Prix d'exercice	              & -&	+\\
+		La maturité	 (ou le temps)    & + (-)&	+ (-)\\
+		Volatilité	              & +&	+\\
+		Taux d'intérêt à court terme  & +&	-\\
+		Versement de dividende	      & -&	+\\
+		\hline
+	\end{tabular}
+\end{center}
+
+Les solutions analytiques sont :
+\begin{align*}
+	C_t &= S_t \Phi(d_1) - Ke^{-i_f \tau} \Phi(d_2) \\
+	P_t &= Ke^{-i_f \tau} \Phi(-d_2) - S_t \Phi(-d_1)
+\end{align*}
+où :
+\begin{align*}
+	d_1 &= \frac{\ln(S_t/K) + (i_f + \frac{1}{2}\sigma^2)\tau}{\sigma \sqrt{\tau}}, \quad
+	d_2 = d_1 - \sigma \sqrt{\tau}
+\end{align*}
+
+%La sensibilité peut être mesurée par cinq paramètres (lettres grecques) :
+
+\begin{itemize}
+	\item \textbf{Delta} $\Delta$ : variation du prix de l’option selon le sous-jacent.
+	\item \textbf{Gamma} $\Gamma$ : sensibilité du delta.
+	\item \textbf{Thêta} $\Theta$ : sensibilité au temps.
+	\item \textbf{Véga} $\mathcal{V}$ : sensibilité à la volatilité.
+	\item \textbf{Rho} $\rho$ : sensibilité au taux d’intérêt.
+\end{itemize}
+
+
+Le \textbf{Delta} mesure l’impact d’une variation du sous-jacent :
+
+\begin{align*}
+	\Delta_C &= \frac{\partial C}{\partial S} = \Phi(d_1), \quad \Delta \in (0,1) \\
+	\Delta_P &= \frac{\partial P}{\partial S} = \Phi(d_1) - 1, \quad \Delta \in (-1,0)
+\end{align*}
+
+
+Le Delta global d’un portefeuille $\Pi$ avec des poids $\omega_i$ est :
+$$
+\frac{\partial \Pi}{\partial S_t} = \sum_{i=1}^{n} \omega_i \Delta_i
+$$
+
+
+
+% Graphique TikZ conservé tel quel :
+
+\begin{center}
+\begin{tikzpicture}[scale=.52]
+\def\riskfreeBS{0.05}
+\def\xminBS{7.5}
+\def\xmaxBS{12.5}
+\def\PxExerciceBS{10}
+\def\sigmaBS{0.3}
+\def\TBS{0.4}
+\def\PremiumBS{BSCall(\PxExerciceBS*exp(-\riskfreeBS*\TBS),\PxExerciceBS,\riskfreeBS,\TBS,\sigmaBS)}
+\def\PxExerciceAct{\PxExerciceBS*exp(-(\riskfreeBS+\sigmaBS*\sigmaBS/2)*\TBS)}
+\begin{axis}[
+	width=0.8\textwidth,
+	height=0.5\textwidth, 
+	extra tick style={tick style=BleuProfondIRA},
+	clip=false,
+	axis on top,
+	axis lines=middle, axis line style={BleuProfondIRA,thick,->},
+	scale only axis, xmin={\xminBS},xmax={\xmaxBS},enlarge x limits=0.05,
+	enlarge y limits=0.1,
+	color=BleuProfondIRA,
+	ylabel={$\Delta$},
+	x label style={at={(axis cs:\xmaxBS+.1,0)},anchor=north east},
+	xlabel={ss-jacent ($T$)},
+	ytick=\empty,
+	xtick=\empty,
+	extra y ticks ={-.5,0,0.5},
+	extra y tick labels={{$-\frac{1}{2}$},{0},{$\frac{1}{2}$}},
+	extra x ticks ={\PxExerciceAct,\PxExerciceBS},
+	extra x tick labels={{\color{BleuProfondIRA}$K'$\ \ \ \ \ \ \ \ },{\color{BleuProfondIRA}\ \ $K$}},
+	extra x tick style={color=BleuProfondIRA,
+		tick label style={yshift=-0mm}	},
+	title ={ \textbf{Delta de l'option}},
+	title style={yshift=-10mm}
+	]
+	\addplot[name path=optionT,OrangeProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21]
+	{normcdf(-ddd(x,\PxExerciceBS,\riskfreeBS,\TBS,\sigmaBS),0,1)} node [above] {Call};
+	\addplot[name path=optionT,OrangeProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21]
+	{normcdf(-ddd(x,\PxExerciceBS,\riskfreeBS,\TBS,\sigmaBS),0,1)-1} node [above] {Put};
+	\draw[dashed,OrangeProfondIRA] 
+	(axis cs:{\pgfkeysvalueof{/pgfplots/xmin}},-0.5) --
+	(axis cs:{\PxExerciceAct},{-.5}) --
+	(axis cs:{\PxExerciceAct},{0.5}) --
+	(axis cs:{\pgfkeysvalueof{/pgfplots/xmin}},0.5);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{f}
+\hrule
+
+
+\begin{f}[La courbe de taux]
+La \textbf{courbe de taux} ou la courbe des rendements ou $r_f(\tau)$, livre une représentation graphique des taux d'intérêt sans risques en fonction de l'échéance (ou maturité).
+Elle est aussi appelé courbe des taux \textbf{zéro coupon} qui font référence à un type d'obligation sans risque et sans coupons (une dette composée uniquement de deux flux de sens opposés, un en $t_0$ et l'autre en $T$).
+Cette courbe offre aussi un aperçu des attentes du marché en matière de taux d'intérêt futurs (taux \engl{forward}).
+\end{f}
+\hrule
+
+
+\begin{f}[Les modèles de  Nelson-Siegel et Svensson]
+
+
+Les fonctions de \textbf{Nelson-Siegel}  prennent la forme
+
+{\small\begin{align*}
+y( m ) =& \beta _0 + \beta _1\frac{{\left[ {1 - \exp \left( { - m/\tau} \right)} \right]}}{m/\tau} + \\
+		&\beta _2 {\left(\frac{{\left[ {1 - \exp \left( { - m/\tau} \right)} \right]}}{m/\tau} - \exp \left( { - m/\tau}\right)\right)}
+\label{MTNSeq}
+\end{align*}}
+%
+où $y\left( m \right)$ et $m$ sont comme ci-dessus, et $\beta _0$, $\beta_1$, $\beta_2$ et $\tau$ sont des paramètres:
+
+
+\begin{itemize}
+
+\item   $\beta_0$ est interprété comme le niveau à long terme des taux d'intérêt (le coefficient est 1, c'est une constante qui ne décroît pas),
+
+\item   $\beta_1$ est le composant à court terme, en notant que :
+\begin{equation*}
+	\lim_{m \rightarrow 0} \frac{{\left[ {1 - \exp \left( { - m/\tau} \right)} \right]}}{m/\tau}=1
+\end{equation*}
+Il résulte que le taux \engl{overnigth} tel que €str\index{Taux d'intérêts! Estr} sera égal à  $\beta_0+\beta_1$ dans ce modèle.
+\item   $\beta_2$ est le composant à moyen terme (il commence à 0, augmente, puis décroît vers zéro, autrement dit en forme de cloche),
+\item   $\tau$ est le facteur d'échelle sur la maturité, il détermine où le terme pondéré par $\beta_2$ atteint son maximum. 
+\end{itemize}
+
+Svensson (1995) ajoute un second terme en forme de cloche, il s'agit du modèle Nelson–Siegel–Svensson. Le terme supplémentaire est :
+%
+\begin{equation*}
++\beta _3 {\left(\frac{{\left[ {1 - \exp \left( { - m/\tau_2} \right)} \right]}}{m/\tau_2} - \exp \left( { - m/\tau_2}\right)\right)}
+\label{MTSveq}
+\end{equation*}
+et l'interprétation est la même que pour $\beta_2$ et $\tau$ ci-dessus, il permet deux points d'inflexion à la courbe de taux.
+
+\newcommand{\traintunnel}{	        
+\draw[thick, OrangeProfondIRA] svg "M 55.448002 56.380001L 40 39L 28 39L 12.552 56.380001M 12 34C 11.729672 21.575853 21.576109 11.281852 34 11C 46.423893 11.281852 56.270329 21.575853 56.000004 34L 56 55C 56 56.104568 55.104568 57 54 57L 14 57C 12.895431 57 12 56.104568 12 55ZM 28 39L 28 34C 28 30.132 30.302 27 34 27C 37.697998 27 40 30.132 40 34L 40 39M 34 51L 34 57M 34 43L 34 45";
+}
+\newcommand{\archibuilding}{
+\draw[OrangeProfondIRA,yscale=-1] svg "M 12.296 28.886L 12.296 54.453999C 12.451618 55.715763 13.58469 56.623463 14.85 56.500004L 53.150002 56.5C 54.415314 56.623463 55.548386 55.715763 55.704002 54.454002L 55.703999 28.886M 12.296 28.886L 34 11.5L 55.703999 28.886M 34 46.296001L 42.212002 46.296001L 42.214001 50.386002L 49.32 50.386002L 49.32 56.5M 12.296 40.285999L 34 40.285999M 34 35.186001L 55.368 35.186001M 34 11.5L 34 56.236M 12.296 32.106003L 34 32.106003M 19.456001 32.106003L 19.456001 40.285999M 26.84 32.106003L 26.84 40.285999";	        
+}
+\newcommand{\familialcar}{	%
+\draw[thick, OrangeProfondIRA] svg "M 21 45L 21 48C 21 48.552284 20.552284 49 20 49L 16 49C 15.447716 49 15 48.552284 15 48L 15 45M 53 45L 53 48C 53 48.552284 52.552284 49 52 49L 48 49C 47.447716 49 47 48.552284 47 48L 47 45M 54 45C 54.552284 45 55 44.552284 55 44L 55 37.414001C 54.999943 37.149296 54.894939 36.895409 54.708 36.708L 49 31L 19 31L 13.292 36.708C 13.105062 36.895409 13.000056 37.149296 13 37.414001L 13 44C 13 44.552284 13.447716 45 14 45ZM 49 31L 45.228001 19.684C 45.092045 19.275806 44.710239 19.000328 44.279999 19L 23.720001 19C 23.289761 19.000328 22.907955 19.275806 22.771999 19.684L 19 31M 19 31L 14 31C 13.447716 31 13 30.552284 13 30L 13 28C 13 27.447716 13.447716 27 14 27L 20.334 27M 47.666 27L 54 27C 54.552284 27 55 27.447716 55 28L 55 30C 55 30.552284 54.552284 31 54 31L 49 31M 13.092 37L 20 37C 20.552284 37 21 37.447716 21 38L 21 40C 21 40.552284 20.552284 41 20 41L 13 41M 55 41L 48 41C 47.447716 41 47 40.552284 47 40L 47 38C 47 37.447716 47.447716 37 48 37L 54.908001 37";
+}
+
+\newcommand{\familialTV}{	        
+\draw[thick, OrangeProfondIRA] svg "M 12 17.5L 56 17.5C 56 17.5 57 17.5 57 18.5L 57 43.5C 57 43.5 57 44.5 56 44.5L 12 44.5C 12 44.5 11 44.5 11 43.5L 11 18.5C 11 18.5 11 17.5 12 17.5M 34 44.5L 34 50.5M 24 50.5L 44 50.5";
+}
+
+\newcommand{\TresorerieMngt}{	
+\draw[OrangeProfondIRA] svg "M 11.008 31C 11.008 32.104568 15.485153 33 21.007999 33C 26.530848 33 31.007999 32.104568 31.007999 31C 31.007999 29.89543 26.530848 29 21.007999 29C 15.485153 29 11.008 29.89543 11.008 31ZM 31 31L 31 37C 31 38.106003 26.524 39 21 39C 15.476 39 11 38.106003 11 37L 11 31M 31 37L 31 43C 31 44.105999 26.524 45 21 45C 15.476 45 11 44.105999 11 43L 11 37M 31 43L 31 49C 31 50.105999 26.524 51 21 51C 15.476 51 11 50.105999 11 49L 11 43M 31 49L 31 55C 31 56.105999 26.524 57 21 57C 15.476 57 11 56.105999 11 55L 11 49M 11 25L 11 13C 11 11.895431 11.895431 11 13 11L 55 11C 56.104568 11 57 11.895431 57 13L 57 37C 57 38.104568 56.104568 39 55 39L 36 39M 28 25C 28.000584 21.94886 30.290909 19.384022 33.32254 19.039516C 36.354168 18.695011 39.161583 20.680555 39.846756 23.65377C 40.531929 26.626984 38.876644 29.640953 36 30.658001M 20 19.5C 20.276142 19.5 20.5 19.723858 20.5 20C 20.5 20.276142 20.276142 20.5 20 20.5C 19.723858 20.5 19.5 20.276142 19.5 20C 19.5 19.723858 19.723858 19.5 20 19.5M 48 29.5C 48.276142 29.5 48.5 29.723858 48.5 30C 48.5 30.276142 48.276142 30.5 48 30.5C 47.723858 30.5 47.5 30.276142 47.5 30C 47.5 29.723858 47.723858 29.5 48 29.5M 15 25L 15 16C 15 15.447716 15.447716 15 16 15L 52 15C 52.552284 15 53 15.447716 53 16L 53 34C 53 34.552284 52.552284 35 52 35L 36 35";	
+}
+
+Ces fonctions de Nelson-Siegel et de Svensson, présentent l'avantage de bien se comporter à long terme, et d'être facile à paramétrer. 
+Elles sont représentées sur la figure où les pictogrammes \begin{tikzpicture}[xscale=0.2, yscale=-0.2]
+\TresorerieMngt\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=-0.2] \familialTV\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=-0.2] \familialcar\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=0.2] \archibuilding\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=-0.2] \traintunnel
+\end{tikzpicture} représentent les différentes maturités usuelles pour ce type de biens ou investissements.
+Elles permettent de modéliser pratiquement une large forme de courbe de taux. 
+Une fois ajustée, l'utilisateur peut alors évaluer des actifs ou définir diverses mesures de sensibilité.
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+\def\MTbetaa{0.03}
+\def\MTbetab{-0.02}
+\def\MTbetac{0.01}
+\def\MTbetad{-0.005}  % Svensson
+\def\MTtaua{4.5}
+\def\MTtaub{11}  % Svensson
+\begin{axis}[
+	width=0.8\textwidth,
+	height=0.5\textwidth, 
+	xlabel={Maturité (années)},ylabel={Taux (\%)},
+	xmin=0, xmax=30,
+	ymin=0, ymax=100*(\MTbetaa+.005),
+	enlarge y limits=0.125,
+	thick,
+	axis x line=bottom,
+	axis y line=left,
+	yticklabel=\pgfmathprintnumber{\tick}\% 
+	]
+	\Large
+	% Courbe de Nelson-Siegel
+	\addplot[OrangeProfondIRA, thick, domain=0.01:27, samples=27] 
+	{100*(\MTbetaa + \MTbetab * ((1 - exp(-x/\MTtaua)) / (x/\MTtaua)) + \MTbetac * (((1 - exp(-x/\MTtaua)) / (x/\MTtaua)) - exp(-x/\MTtaua)))}
+	node  [pos=0.005] (M) {}
+	node  [pos=0.10] (N) {}
+	node  [pos=0.30] (O) {}
+	node  [pos=0.75] (P) {}
+	node  [pos=1] (Q) {};
+	\addplot[dashed, OrangeProfondIRA, thick, domain=0.01:30, samples=27] 
+	{100*(\MTbetaa + \MTbetab * ((1 - exp(-x/\MTtaua)) / (x/\MTtaua)) + \MTbetac * (((1 - exp(-x/\MTtaua)) / (x/\MTtaua)) - exp(-x/\MTtaua)) + \MTbetad * (((1 - exp(-x/\MTtaub)) / (x/\MTtaub)) - exp(-x/\MTtaub)))};
+	% Affichage des paramètres
+	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.15) {\small 
+		$\beta_0 = \MTbetaa$\quad
+		$\beta_1 = \MTbetab$\quad
+		$\beta_2 = \MTbetac$\quad
+		$\tau_1 = \MTtaua$\quad			
+	};	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.05) {\small 
+		$\beta_3 = \MTbetad$\quad
+		$\tau_2 = \MTtaub$			
+	};
+	\node[xscale=0.2, yscale=-0.2, above=25pt] at (M) {\TresorerieMngt};
+	\node[xscale=0.2, yscale=-0.2, above=25pt] at (N) {\familialTV};
+	\node[xscale=0.2, yscale=-0.2, above=20pt] at (O) {\familialcar};
+	\node[xscale=0.2, yscale=-0.2, above=20pt] at (P) {\archibuilding};
+	\node[xscale=0.2, yscale=-0.2, above=20pt] at (Q) {\traintunnel};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{f}

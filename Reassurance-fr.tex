@@ -1,0 +1,503 @@
+% !TeX root = ActuarialFormSheet_MBFA-fr.tex
+% !TeX spellcheck = fr_FR
+
+
+\begin{f}[Schémas de cession/rétrocession ]
+
+\tikzstyle{Sources} = [rectangle, rounded corners, minimum width=5cm, minimum height=1cm,text centered, text width=5cm, draw=black, fill=BleuProfondIRA!40]
+\tikzstyle{projections} = [ellipse, trapezium left angle=70, trapezium right angle=110, minimum height=1cm, text centered, draw=black, fill=FushiaIRA!30]
+\tikzstyle{Calculs} = [rectangle, minimum width=5cm, minimum height=1cm, text centered, text width=5cm, draw=black, fill=OrangeProfondIRA!30]
+\tikzstyle{modalite} = [ellipse, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=BleuProfondIRA!40]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\resizebox{\linewidth}{!}{			%
+\begin{tikzpicture}[node distance=1.5cm]
+\node (Assure) [Sources] {\begin{tabular}{c} ASSURÉ\\ \rowcolor{BleuProfondIRA!40}\tiny souscripteur\end{tabular}};
+\node (Ca) [projections, below left = of Assure, xshift=2.5cm, yshift=.5cm] {Contrat d'assurance};
+\node (AG) [modalite, below right = of Assure, xshift=-2.5cm, yshift=.5cm] {Agent Général / Courtier};
+\node (Assureur) [Calculs, below of=Assure, node distance = 3cm] {\begin{tabular}{c}ASSUREUR DIRECT\\
+\rowcolor{OrangeProfondIRA!30}  \tiny  cédante\end{tabular} };
+\node (ConvR) [projections, below left = of Assureur, xshift=2.5cm, yshift=.5cm] {Convention de réassurance};
+\node (Courtr) [modalite, below right = of Assureur, xshift=-2.5cm, yshift=.5cm] {Courtier de réassurance};
+\node (Reass) [Calculs, below of=Assureur, node distance = 3cm] {R\'EASSUREUR(S)};
+\node (ConvR2) [projections, below left = of Reass, xshift=2.5cm, yshift=.5cm] {Convention de réassurance};
+\node (Courtr2) [modalite, below right = of Reass, xshift=-2.5cm, yshift=.5cm] {Courtier de réassurance};
+\node (Retro) [Calculs, below of=Reass, node distance = 3cm] {R\'ETROCESSIONNAIRE(S)};
+\draw [arrow] (Assure.south) -- (Assureur.north);
+\draw [arrow] (Assureur.south) -- (Reass.north);
+\draw [arrow] (Assureur.south) -- (Reass.north);
+\draw [arrow] (Reass.south) -- (Retro.north);
+%
+\end{tikzpicture}}
+
+\end{f}
+\hrule
+
+
+%https://www.reinsurancene.ws/top-50-reinsurance-groups/
+
+\begin{f}[Les mots clés de la réassurance]
+
+\textbf{Cédante :} client du réassureur, c'est-à-dire l'assureur direct, qui transfère (cède) des risques au réassureur contre le versement
+d'une \textbf{prime de réassurance}.
+
+\textbf{Cession :} transfert de risques par l'assureur direct au réassureur.
+
+\textbf{Capacité (\emph{Value Exposure})} : limite du montant du risque couvert par un contrat de (ré)assurance.
+
+\textbf{Réassurance proportionnelle :} participation proportionnelle du réassureur aux primes et aux sinistres de l'assureur direct.
+
+\textbf{Réassurance en quote-part (\emph{Quota Share}) :} type de réassurance proportionnelle où le  réassureur participe à un pourcentage donné de tous les risques souscrits par un assureur direct dans une branche déterminée.
+
+\textbf{Réassurance en excédent de plein (\emph{Surplus Share}) :} type de réassurance proportionnelle où le  réassureur couvre les risques au delà du plein de
+conservation de l'assureur direct. Ce ratio se calcul sur la capacité du risque souscrit ($\approx$ Sinistre maximal possible).
+
+\textbf{Commission de réassurance :} rémunération que le réassureur accorde à l'assureur ou aux courtiers en dédommagement des frais d'acquisition et de gestion des contrats d'assurance.
+
+\textbf{Réassurance non proportionnelle (ou réassurance en excédent de sinistre, \emph{Excess Reinsurance}) :}
+ prise en charge par le réassureur des sinistres excédant un certain montant, contre le versement par l'assureur direct d'une prime de réassurance spécifique.
+
+\textbf{Rétrocession :}\index{R\'eassurance! R\'etrocession}  part des risques que le réassureur cède à d'autres réassureurs.
+
+\textbf{Coassurance :}\index{R\'eassurance! Coassurance} participation de plusieurs assureurs directs au même risque.
+
+On utilise alors l'expression \textbf{pool de réassurance}. 
+Le réassureur principal est appelé \textbf{apériteur}. 
+
+\textbf{Traité de réassurance :} contrat conclu entre l'assureur direct et le réassureur sur un ou plusieurs portefeuilles de l'assureur.
+
+\textbf{Réassurance facultative :}
+Elle diffère du traité de réassurance par une souscription risque par risque (ou police par police) (du cas par cas, un risque à la fois). 
+
+\end{f}
+\hrule
+
+
+
+
+\begin{f}
+	[Le rôle économique de la réassurance]
+
+L'assurance et la réassurance partagent la même finalité : la mutualisation des risques, en particuliers les risques :
+\begin{itemize}
+	\item indépendants, mais unitairement coûteux (avion, navire, sites industriels\ldots),
+	\item de petits montants (bris, auto, ...) mais corrélés lors d'événements de grandes ampleurs, engendrant des cumuls onéreux,
+	\item agrégés au sein d'un portefeuille de polices d'assurance, 
+	\item mal connus ou nouveaux.
+\end{itemize}
+	
+
+La réassurance permet d'augmenter la capacité d'émission d'affaires , assurer la stabilité financière de l'assureur, surtout en cas de catastrophes, réduire leur besoin en capital, bénéficier de l'expertise du réassureur.
+
+\end{f}	
+\hrule
+
+
+
+\begin{f}
+	[Les types d'ententes en réassurance]
+
+{\color{white}.}	
+
+\begin{center}
+		\resizebox{0.90\linewidth}{!}{\input{Graph/TypeEntentes-fr}}
+\end{center}
+\end{f}
+\hrule
+
+
+\begin{f}[Les types de réassurance à travers un exemple]
+	
+	Notre assureur réassure $N=30$ polices d'assurance, d'un total de  primes est de 10M\EUR{} ($P=\sum_{i=1\ldots30}P_i$).
+	La capacité totale est de180M\EUR{} ($\sum_{i=1\ldots30}K_i$).
+	$S_r$ sera la part de sinistre pris en charge par l'assueur et $P_r$ la prime de réassurance.
+	Voici les polices sinistrées :
+	
+	\begin{center}\footnotesize
+		\renewcommand{\arraystretch}{1.25}
+		\begin{tabular}{|l|rrrrrrrr|}
+			\hline
+			\rowcolor{BleuProfondIRA!40}         Num de sinistre	& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline 
+			Prime  (k\EUR{})		& 500 & 200 & 100 & 100 & 50 & 200 & 500 & 200 \\ 
+			Capacité  (M\EUR{})   	& 8 & 5 & 3 & 2 & 3 & 5 & 8 & 8 \\ 
+			Sinistres  (M\EUR{})   	& 1 & 1 & 1 & 2 & 3 & 3 & 5 & 8 \\ \hline
+		\end{tabular}
+		\renewcommand{\arraystretch}{1}
+	\end{center}
+	
+	Le $S/P$ est de 240\%.
+	
+	
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[axis x line=bottom, axis y line = left,ymin=0,ymax=24,xmin=0, xmax=10, height=7cm,width=5cm, xticklabel style ={font=\footnotesize,align=center},  yticklabel style ={font=\footnotesize}, 
+				legend style={at={(0.5,-0.15)},anchor=north,legend columns=-1,font=\tiny}]
+				\addplot [ybar,fill=BleuProfondIRA!40,mark=none,draw=none] table [x index=0, y index=1] {Graph/ReassuranceSinistre.dat} ;
+				\legend{Sinistres Ordonnées}
+			\end{axis}	
+		\end{tikzpicture}
+		\begin{tikzpicture}
+			\begin{axis}[axis x line=center,axis y line = left,ymin=0,ymax=24,xmin=0, xmax=10,height=7cm,width=5cm, xticklabel style ={font=\footnotesize,align=center},  yticklabel style ={font=\footnotesize}, 
+				legend style={at={(0.5,-0.15)},
+					anchor=north,legend columns=-1,font=\tiny}]
+				\addplot [ybar,fill=BleuProfondIRA!40,mark=none,draw=none] table [x index=0, y index=2] {Graph/ReassuranceSinistre.dat} ;
+				\legend{Sinistres Cumulés}
+			\end{axis}	
+		\end{tikzpicture}
+		%\includegraphics{../../Reassurance_M2/Graph/ReassuranceSinistre.pdf}
+		%\includegraphics{../../Reassurance_M2/Graph/ReassuranceSinistreCum.pdf}
+	\end{center}
+\medskip	
+
+
+\textbf{Quote-part:}
+$$
+S_r=\alpha \sum_{i=1\ldots N}S_i\quad \ \ P_r=\alpha\sum_{i=1\ldots N}P_i 
+$$
+où $\alpha\ \in [0,1]$ (25\% dans la figure) est la part cédé en  Quote-part.
+	
+	%\setlength{\tabcolsep}{1cm}
+
+%\begin{tabular}{|l|rrrrrrrr|}
+%	\hline
+%	\rowcolor{BleuProfondIRA!40}         Num de sinistre		& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline \hline
+%	Sinistres  (M\EUR{})   	& 1 & 1 & 1 & 2 & 3 & 3 & 5 & 8 \\ 
+%	Cédante  (M\EUR{})   	& 0,75 & 0,75 & 0,75 &
+%	1,50 & 2,25 & 2,25 & 
+%	3,75 & 6,00\\
+%	Réassurance  (M\EUR{})  & 0,25 & 0,25 & 0,25 &
+%	0,50 & 0,75 & 0,75 & 
+%	1,25 & 2,00\\
+%	Prime portef conservée  & \multicolumn{2}{r}{\cellcolor{mbfaulmbleu!10}7,5 M\EUR{}} & & & & & &\\
+%	Sinistre conservé  	& \multicolumn{2}{r}{18} & & & & & & \\
+%	S/P conservé  		& \multicolumn{2}{r}{\cellcolor{mbfaulmbleu!10}240\%} & & & & & & \\
+%	\hline
+%\end{tabular}
+	
+\begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[axis x line=bottom, axis y line = left,ymin=0,ymax=24,xmin=0, xmax=10, height=7cm,width=5cm, xticklabel style ={font=\footnotesize,align=center},  yticklabel style ={font=\footnotesize}, 
+			legend style={at={(0.5,-0.15)},anchor=north,legend columns=1,font=\tiny}]
+			\addplot [ybar ,fill=OrangeMoyenIRA!40,mark=none,draw=OrangeMoyenIRA!40] table [x index=0, y index=1] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [ybar ,fill=BleuProfondIRA!40,mark=none,draw=BleuProfondIRA!40] table [x index=0, y index=6] {Graph/ReassuranceSinistre.dat} ;
+			\legend{Sinistres Cédés,Sinistres conservés QP}
+		\end{axis}	
+	\end{tikzpicture}
+	%	
+	\begin{tikzpicture}
+		\begin{axis}[axis x line=center,axis y line = left,ymin=0,ymax=24,xmin=0, xmax=10,height=7cm,width=5cm, xticklabel style ={font=\footnotesize,align=center},  yticklabel style ={font=\footnotesize}, 
+			legend style={at={(0.5,-0.15)},
+				anchor=north,legend columns=1,font=\tiny}]
+			\addplot [ybar ,fill=OrangeMoyenIRA!40,mark=none,draw=OrangeMoyenIRA!40] table [x index=0, y index=2] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [ybar ,fill=BleuProfondIRA!40,mark=none,draw=BleuProfondIRA!40] table [x index=0, y index=7] {Graph/ReassuranceSinistre.dat} ;
+			\legend{Sinistres Cédés,Sinistres conservés QP}
+		\end{axis}	
+	\end{tikzpicture}
+	%\includegraphics{../../Reassurance_M2/Graph/ReassuranceSinistreQuotePart.pdf}
+	%\includegraphics{../../Reassurance_M2/Graph/ReassuranceSinistreCumQuotePart.pdf}
+
+\end{center}
+\medskip
+
+\textbf{Excédent de plein}, le plein est noté $\boldsymbol{K}$ (2M\EUR{} dans l'exemple), $\alpha_i$ représente le taux de cession de la police $i$.
+	$$
+	S_r= \sum_{i=1\ldots N}\underbrace{\left(\frac{\left(K_i-\boldsymbol{K} \right)_+ }{K_i} \right)}_{\alpha_i} S_i\quad \ \ P_r=\sum_{i=1\ldots N}\left(\frac{\left(K_i-\boldsymbol{K} \right)_+ }{K_i} \right)P_i 
+	$$
+	%\renewcommand{\arraystretch}{1.25}
+	%\rowcolors{1}{sectionColor}{white}
+	%\setlength{\tabcolsep}{1cm}
+%\begin{tabular}{|l|rrrrrrrr|}
+%\hline
+%\rowcolor{BleuProfondIRA!40}       Num de sinistre		& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline \hline
+%Sinistres  (M\EUR{})   	& 1 & 1 & 1 & 2 & 3 & 3 & 5 & 8 \\ 
+%Capacité  (M\EUR{})   	& 8 & 5 & 3 & 2 & 3 & 5 & 8 & 8 \\ 
+%Capacité cédante	& \multicolumn{2}{r}{60M\EUR{}} & & & & & & \\
+%Prime cédante		& \multicolumn{2}{r}{\cellcolor{mbfaulmbleu!40}3M\EUR{}} & & & & & & \\
+%Part cédée  (\%)   & 75 & 60 & 33 &
+%0 & 33 & 60 & 
+%75 & 75\\
+%Cédante  (M\EUR{})  & 0,25 & 0,4 & 0,67 &
+%2,00 & 2,00 & 1,20 & 
+%1,25 & 2,00\\
+%Réassurance  (M\EUR{})  & 0,75 & 0,60 & 0,33 &
+%0,00 & 1,00 & 1,80 & 
+%3,75 & 6,00\\
+%Sinistre conservé  	& \multicolumn{2}{r}{\cellcolor{mbfaulmbleu!40}9,77} & & & & & & \\
+%Sinistre cédé  		& \multicolumn{2}{r}{14,23} & & & & & & \\
+%S/P conservée  		& \multicolumn{2}{r}{\cellcolor{mbfaulmbleu!40}325\%} & & & & & & \\
+%\hline
+%\end{tabular}
+
+
+\begin{center}
+		%\includegraphics{../../Reassurance_M2/Graph/ReassuranceSinistreEPlein.pdf}
+	%\includegraphics{../../Reassurance_M2/Graph/ReassuranceSinistreCumEPlein.pdf}
+	\begin{tikzpicture}
+		%format de la date yyyy-mm-dd , pas de nom de colonne vide,
+		\begin{axis}[axis x line=bottom, axis y line = left,ymin=0,ymax=24,xmin=0, xmax=10, height=7cm,width=5cm, xticklabel style ={font=\footnotesize,align=center},  yticklabel style ={font=\footnotesize}, 
+			legend style={at={(0.5,-0.15)},anchor=north,legend columns=2,font=\tiny}]
+			\addplot [ybar ,mark=none,draw=OrangeMoyenIRA!40,fill=OrangeMoyenIRA!40] table [x index=0, y index=1] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [ybar ,mark=none,draw=GrisLogoIRA,mark=none] table [x index=0, y index=11] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [draw=GrisLogoIRA] table [x index=0, y index=4] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [ybar ,fill=BleuProfondIRA!40,mark=none,draw=BleuProfondIRA!40] table [x index=0, y index=12] {Graph/ReassuranceSinistre.dat} ;
+			\legend{Sin Cédés,Capacité, Plein, Sin Conservés}
+		\end{axis}	
+	\end{tikzpicture}
+	%	
+	\begin{tikzpicture}
+		%format de la date yyyy-mm-dd , pas de nom de colonne vide,
+		\begin{axis}[axis x line=center,axis y line = left,ymin=0,ymax=24,xmin=0, xmax=10,height=7cm,width=5cm, xticklabel style ={font=\footnotesize,align=center},  yticklabel style ={font=\footnotesize}, 
+			legend style={at={(0.5,-0.15)},
+				anchor=north,legend columns=1,font=\tiny}]
+			\addplot [ybar ,fill=OrangeMoyenIRA!40,mark=none,draw=OrangeMoyenIRA!40] table [x index=0, y index=2] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [ybar ,fill=BleuProfondIRA!40,mark=none,draw=BleuProfondIRA!40] table [x index=0, y index=13] {Graph/ReassuranceSinistre.dat} ;
+			%		\addplot [ybar interval,fill=BleuProfondIRA,mark=none,draw=BleuProfondIRA] table [x index=0, y index=7] {Graph/ReassuranceSinistre.dat} ;
+			\legend{Sinistres Cédés,Sinistres conservés}
+		\end{axis}	
+	\end{tikzpicture}
+\end{center}
+\medskip
+
+\textbf{Excédent par sinistre}
+	%\renewcommand{\arraystretch}{1.25}
+	%\rowcolors{1}{sectionColor}{white}
+	%\setlength{\tabcolsep}{1cm}
+	
+L'assureur fixe la priorité $a$ et la porté $b$ (respectivement 2M\EUR{} et  4M\EUR{} dans la figure).
+$$
+S_r= \sum_{i=1\ldots N} \min\left( \left( S_i-a\right)^+,b\right)  
+$$
+La prime est fixée par le réassurance, en fonction de son estimation de $\mathbb{E}[S_r]$.
+%\begin{tabular}{|l|rrrrrrrr|}
+%	\hline
+%	\rowcolor{BleuProfondIRA!40}        Num de sinistre		& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline \hline
+%	Sinistres  (M\EUR{})   	& 1 & 1 & 1 & 2 & 3 & 3 & 5 & 8 \\ 
+%	Cédante  (M\EUR{})   	& 1 & 1 & 1 &
+%	2 & 2 & 2 & 
+%	2 & 4\\
+%	Réassurance  (M\EUR{})  & 0 & 0 & 0 &
+%	0 & 1 & 1 & 
+%	3 & 4\\
+%	\hline
+%\end{tabular}
+
+\begin{center}
+		%\includegraphics{../../Reassurance_M2/Graph/ReassuranceSinistreXSsin.pdf}
+	%\includegraphics{../../Reassurance_M2/Graph/ReassuranceSinistreCumXSsin.pdf}
+	\begin{tikzpicture}
+		%format de la date yyyy-mm-dd , pas de nom de colonne vide,
+		\begin{axis}[axis x line=bottom, axis y line = left,ymin=0,ymax=24,xmin=0, xmax=10, height=7cm,width=5cm, xticklabel style ={font=\footnotesize,align=center},  yticklabel style ={font=\footnotesize}, 
+			legend style={at={(0.5,-0.15)},anchor=north,legend columns=2,font=\tiny}]
+			\addplot [ybar ,mark=none,draw=BleuProfondIRA!40,fill=BleuProfondIRA!40] table [x index=0, y index=1] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [ybar ,mark=none,draw=OrangeMoyenIRA!40,fill=OrangeMoyenIRA!40] table [x index=0, y index=10] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [ybar ,mark=none,draw=BleuProfondIRA!40,fill=BleuProfondIRA!40] table [x index=0, y index=8] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [draw=GrisLogoIRA] table [x index=0, y index=4] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [draw=GrisLogoIRA] table [x index=0, y index=5] {Graph/ReassuranceSinistre.dat} ;
+			\legend{Sin Conservés,Sin cédés,, Priorité 2M€, Porté 4M€ }
+		\end{axis}	
+	\end{tikzpicture}
+	%	
+	\begin{tikzpicture}
+		%format de la date yyyy-mm-dd , pas de nom de colonne vide,
+		\begin{axis}[axis x line=center,axis y line = left,ymin=0,ymax=24,xmin=0, xmax=10,height=7cm,width=5cm, xticklabel style ={font=\footnotesize,align=center},  yticklabel style ={font=\footnotesize}, 
+			legend style={at={(0.5,-0.15)},
+				anchor=north,legend columns=1,font=\tiny}]
+			\addplot [ybar ,fill=OrangeMoyenIRA!40,mark=none,draw=OrangeMoyenIRA!40] table [x index=0, y index=2] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [ybar ,fill=BleuProfondIRA!40,mark=none,draw=BleuProfondIRA!40] table [x index=0, y index=9] {Graph/ReassuranceSinistre.dat} ;
+			%		\addplot [ybar ,fill=BleuProfondIRA,mark=none,draw=BleuProfondIRA] table [x index=0, y index=7] {Graph/ReassuranceSinistre.dat} ;
+			\legend{Sinistres Cédés,Sinistres conservés}
+		\end{axis}	
+	\end{tikzpicture}
+	\emph {WXL-R = Working XL per Risk}
+\end{center}
+	\medskip
+
+
+\textbf{Excédent par événement}
+	%\renewcommand{\arraystretch}{1.25}
+	%\rowcolors{1}{sectionColor}{white}
+	%\setlength{\tabcolsep}{1cm}
+	
+	$$
+	S_r= \sum_{\begin{array}{c}
+			Cat_j,\\ i=1\ldots N
+	\end{array}} \min\left( \mathds{1}_{i\in Cat_j}\times \left( S_i-a\right)^+,b\right)  
+	$$
+	
+	Dans l'illustration, les sinistres font référence à un seul événement, avec une priorité à 5M\EUR{}  et une portée à 10M\EUR{}.
+	
+%\begin{tabular}{|l|rrrrrrrr|}
+%	\hline
+%	\rowcolor{BleuProfondIRA!40}        Num de sinistre		& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline \hline
+%	Sinistres  (M\EUR{})   	& 1 & 1 & 1 & 2 & 3 & 3 & 5 & 8 \\ 
+%	Sinistres en Cumulé   	& 1 & 2 & 3 & 5 & 8 & 11 & 16 & 24 \\ 
+%	Cédante en Cumulé   	& 1 & 2 & 3 &
+%	5 & 5 & 5 & 
+%	6 & 14\\
+%	Réassurance en Cumulé  & 0 & 0 & 0 &
+%	0 & 3 & 6 & 
+%	10 & 10\\
+%	\hline
+%\end{tabular}
+
+	
+	%{../../Reassurance_M2/Graph/ReassuranceSinistreXScat.pdf}
+	%\includegraphics{../../Reassurance_M2/Graph/ReassuranceSinistreCumXScat.pdf}
+\begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[axis x line=center,axis y line = left,ymin=0,ymax=24,xmin=0, xmax=10,height=7cm,width=5cm, xticklabel style ={font=\footnotesize,align=center},  yticklabel style ={font=\footnotesize}, 
+			legend style={at={(0.5,-0.15)},
+				anchor=north,legend columns=1,font=\tiny}]
+			\addplot [ybar ,fill=OrangeMoyenIRA!40,mark=none,draw=OrangeMoyenIRA!40] table [x index=0, y index=1] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [ybar ,fill=BleuProfondIRA!40,mark=none,draw=BleuProfondIRA!40] table [x index=0, y index=18] {Graph/ReassuranceSinistre.dat} ;
+			\legend{Sinistres Cédés,Sinistres conservés};
+		\end{axis}	
+	\end{tikzpicture}
+	%	
+	\begin{tikzpicture}
+		\begin{axis}[axis x line=bottom, axis y line = left,ymin=0,ymax=24,xmin=0, xmax=10, height=7cm,width=5cm, xticklabel style ={font=\footnotesize,align=center},  yticklabel style ={font=\footnotesize}, 
+			legend style={at={(0.5,-0.15)},anchor=north,legend columns=2,font=\tiny}]
+			\addplot [ybar ,mark=none,draw=BleuProfondIRA!40,fill=BleuProfondIRA!40] table [x index=0, y index=2] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [ybar ,mark=none,draw=OrangeMoyenIRA!40,fill=OrangeMoyenIRA!40] table [x index=0, y index=16] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [ybar ,mark=none,draw=BleuProfondIRA!40,fill=BleuProfondIRA!40] table [x index=0, y index=17] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [draw=GrisLogoIRA] table [x index=0, y index=14] {Graph/ReassuranceSinistre.dat} ;
+			\addplot [draw=GrisLogoIRA] table [x index=0, y index=15] {Graph/ReassuranceSinistre.dat} ;
+			\legend{Sin Conservés,Sin cédés,, Priorité 2M€, Porté 4M€ };
+		\end{axis}	
+	\end{tikzpicture}
+	\emph{ Cat-XL = Catastrophe XL }
+\end{center}
+\medskip
+
+	
+	
+	%\renewcommand{\arraystretch}{1.25}
+	%\rowcolors{1}{sectionColor}{white}
+	%\setlength{\tabcolsep}{1cm}
+	
+%	L'assureur fixe la priorité à 5M\EUR{}  et la portée à 10M\EUR{}, soit un plafond de 15M\EUR{}.
+%	Dans notre exemple supposons que les 8 sinistres font référence à \textbf{deux événements, une première tempête en octobre, une deuxième en décembre}.
+	
+%\begin{tabular}{|l|rrrrrrrr|}
+%	\hline
+%	\rowcolor{BleuProfondIRA!40}         Num de sinistre		& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline \hline
+%	Événement		&Oct & Oct & Déc & Oct & Déc & Oct & Déc & Déc \\ \hline \hline
+%	Sinistres  (M\EUR{})   	& 1 & 1 & 1 & 2 & 3 & 3 & 5 & 8 \\ 
+%	\hline
+%\end{tabular}
+%\begin{tabular}{|l|rr|r|}
+%	\hline
+%	\rowcolor{BleuProfondIRA!40}        Événement		&Oct &  Déc  & Total\\ \hline \hline
+%	Som de sinistre		& 7 & 17& 24\\ \hline \hline
+%	Cédante  	& 5 & 7& 12 \\
+%	Réassurance en Cumulé  & 2 & 10& 12 \\
+%	\hline
+%\end{tabular}
+
+
+
+\textbf{Excédent de pertes annuelles}
+	
+	
+Cette  réassurance (\emph{Stop Loss}) intervient lorsque le cumul des pertes annuelles est dégradé. 
+Il s'exprime sur la base du ratio $S/P$ avec une priorité et une porté du $XL$ exprimées en \%.
+	
+$$
+S_r= \min\left( \left( \sum_{i=1\ldots N} S_i - a  P\right)^+,bP\right)  
+$$
+
+\end{f}
+\hrule
+	
+\begin{f}[Les principales clauses en réassurance]
+
+\textbf{La franchise} $a^{ag}$ et la \textbf{limite aggregate}  $b^{ag}$  s'appliquent après le calcul du $S_r$. 
+
+$$
+S_r^{ag} = \min\left( \left(S_r - a^{ag}  \right)^+,b^{ag}\right)  
+$$
+\medskip
+
+L'objectif de la \textbf{clause d'indexation} est de conserver les \underline{modalités du traité} sur plusieurs exercices successifs.  Les bornes du traité s'alignent sur un indice économique (salaire, devise, indice de prix ...).
+\medskip
+
+Avec \textbf{clause de stabilisation}, lorsque le sinistre souffre d'un \underline{règlement est long}, voire très long (au moins $\geq 1$ an), les bornes du traité sont actualisées dans le calcul du $S_r$ afin que les parts respectives du réassureur et de la cédante prévues initialement soient globalement respectées.
+\medskip
+	
+
+Avec la \textbf{clause de partage des intérêts}, si lors d'une transaction ou d'un jugement d'un tribunal une distinction a été faite \underline{entre
+		l'indemnité et les intérêts}, les intérêts courus entre la date du sinistre et celle du paiement effectif de l'indemnité seront répartis entre la cédante et le réassureur proportionnellement à
+	leur charge respective résultant de l'application du traité hors intérêts.
+\medskip
+
+
+La \textbf{clause de reconstitution de garantie}
+concerne uniquement les \emph{traités en excédent de sinistre par risque ou par événement} qui pourraient être déclenchée à plusieurs reprises dans l'année.
+Le réassureur \underline{limite sa prestation à $N $ fois la portée} de l'$XS$, contre le versement d'une prime complémentaire. 
+La reconstitution peut se faire au prorata temporis (temps qui reste à courir jusqu'à la date
+d'échéance du traité) ou au prorata des capitaux absorbés, ou les deux (double proata). 
+
+La \textbf{clause de superposition}
+(\emph{Interlocking Clause})
+ est utilisée dans les traités en $XS$ par évènement,
+qui fonctionnent par exercice de souscription et non \underline{par exercice de survenance}.
+La clause de
+superposition qui aura pour effet de recalculer les bornes du traité, parce qu'un même évènement peut déclencher le traité des souscriptions $n$ et $N-1$.
+\end{f}
+\hrule
+
+\begin{f}[La réassurance publique]
+La \href{http://www.ccr.fr}{Caisse Centrale de Réassurance (CCR)} propose, avec la garantie de l'État, des couvertures illimitées pour des branches spécifiques au marché français.
+\begin{itemize}
+\item   les risques exceptionnels liés à un transport,
+\item   la RC des exploitants de navires et installations nucléaires,
+\item   les risques de catastrophes naturelles,
+\item   les risques d'attentats et d'actes de terrorisme,
+\item   le Complément d'Assurance crédit Public (CAP).
+\end{itemize}
+Elle gère également pour le compte de l'État certains Fonds Publics, en particulier le régime Cat Nat.
+
+Également, le \href{http://www.gareat.com/}{GAREAT} est un Groupement d'Intérêt Économique (GIE) à but non lucratif, mandaté par ses adhérents, qui gère la réassurance des risques d'attentats et actes de terrorisme avec le soutien de l'État via la CCR.
+\end{f}
+\hrule
+
+\begin{f}[Titrisation / CatBonds]
+\label{CatBond}
+Pourquoi ? Les capacités financières de tous les assureurs et réassureurs réunies ne  couvrent pas les dégâts d'un tremblement de terre majeur aux État Unis ($\geq$ 200 Md\EUR{}). 
+Cette somme correspond  à moins de 1\% de la capitalisation sur les marchés financiers américains. 
+
+La \textbf{titrisation} transforme un risque assuranciel en titre négociable, souvent en titres obligataires appelés \textbf{Cat-Bonds}. 
+Elle consiste en un échange de principal contre paiement périodique de coupons, dans lequel le paiement des coupons et ou le remboursement du principal sont conditionnés à la survenance d'un événement déclencheur défini \emph{a priori}.
+Les taux de ces obligations sont majorés en fonction du risque, non pas de défaillance ou de contre partie, mais de la survenance de l'événement (inférieur à 1\%). La structure dédiée à cette transformation s'appelle \emph{Special Purpose Vehicle} (SPV).
+
+
+Le déclencheur peut être liés directement aux résultats de la cédente (Indemnitaire), dépendre d'un indice de sinistralité, d'un paramètre mesurable (somme des excédents de pluie, échelle de Richter, taux de mortalité), ou d'un modèle (RMS \& Equecat Storm modelling). 
+
+
+
+	\renewcommand{\arraystretch}{1.25}
+\begin{center}\small
+\begin{tabular}{|m{20mm}|*{4}{>{\centering\arraybackslash}m{14mm}|}}
+\hline \rowcolor{BleuProfondIRA!40}
+\textbf{Critère} & \textbf{Indem\-nitaire} & \textbf{Indice} & \textbf{Paramé\-trique} & \textbf{Modèle} \\
+\hline
+Transparence & $\ominus$ & $\oplus$ & $\oplus$ & $\oplus$ \\
+\hline
+Risque de base & $\oplus$ & $\ominus$ & $\ominus$ & $\oplus$ \\
+\hline
+Aléa moral & $\ominus$ & $\oplus$ & $\oplus$ & $\oplus$ \\
+\hline
+Universalité des périls & $\oplus$ & $\oplus$ & $\ominus$ & $\oplus$ \\
+\hline
+Délai de déclenchement & $\ominus$ & $\ominus$ & $\oplus$ & $\oplus$ \\
+\hline
+\end{tabular}
+\end{center}	\renewcommand{\arraystretch}{1}
+\end{f}
+
+
+
+
+
+

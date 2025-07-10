@@ -1,0 +1,431 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\PassOptionsToPackage{svgnames,table}{xcolor}
+\documentclass[french,a4paper]{article} 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\RequirePackage{eurosym}
+\DeclareUnicodeCharacter{20AC}{\EUR{}}{\tiny }
+\usepackage{lmodern}
+
+\usepackage[top=14pt, bottom=2.5cm, left=0.5cm, right=0.5cm]{geometry}
+%\usepackage[a4paper]{geometry}
+\setlength{\parindent}{0pt}%Cela supprime l'indentation pour tous les paragraphes.
+
+\usepackage{babel}
+\usepackage{epsdice}
+\usepackage{enumitem}
+%
+\usepackage[most]{tcolorbox}
+\definecolor{mbfaulmbleu}{RGB}{15,91,164}
+\definecolor{mbfaulmbleumarine}{RGB}{40,56,120}
+\definecolor{mbfaulmorangesec}{RGB}{228,82,65}
+\definecolor{mbfaulmorange}{RGB}{228,66,45}
+\definecolor{mbfaulmgrissec}{RGB}{91,93,95}
+\definecolor{mbfaulmgris}{RGB}{112,111,111}
+\definecolor{mbfaulmcaption}{RGB}{228,66,45}
+% Couleurs Droit
+\definecolor{DEG}{RGB}{228,0,56}
+% Couleurs IRA
+\definecolor{IRAorange}{RGB}{229,68,46}
+\definecolor{IRAbleu}{RGB}{40,57,121}
+
+\definecolor{FushiaIRA}{HTML}{CC1C4F}
+\definecolor{BleuIRA}{HTML}{0F398C}
+\definecolor{VertIRA}{HTML}{5BA626}
+\definecolor{VertDouxIRA}{HTML}{9BBF17}
+\definecolor{BlancIRA}{HTML}{F2F2F2}
+\definecolor{BleuProfondIRA}{HTML}{1F4E8C}
+\definecolor{BleuMoyenIRA}{HTML}{2D6DA6}
+\definecolor{OrangeProfondIRA}{HTML}{BF3F34}
+\definecolor{OrangePastelIRA}{HTML}{E8AC89}
+\definecolor{OrangeMoyenIRA}{HTML}{D9753B}
+\definecolor{GrisLogoIRA}{HTML}{5A5A5C}
+\usepackage[colorlinks=true,linkcolor=mbfaulmorange,urlcolor=mbfaulmorange,
+citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref} 
+\tcbset{
+  beamerblock/.style={
+    enhanced,
+    colback=white,
+    colframe=OrangeProfondIRA,
+    coltitle=white,
+    colbacktitle=OrangeProfondIRA,
+    boxrule=1pt,
+    arc=2pt,
+    left=6pt,
+    right=6pt,
+    top=6pt,
+    bottom=6pt,
+    fonttitle=\bfseries
+  }
+}
+
+\usepackage{multicol}
+\usepackage{multirow}
+
+\usepackage{tikz}
+\usepackage{tikzpeople}
+\usepackage{pgfplots}
+
+\pgfplotsset{%
+	compat=newest,
+	colormap={whitetoblue}{color(0cm)=(white);
+		color(1cm)=(BleuProfondIRA)},
+  colormap={whitered}{color(0cm)=(white); color(1cm)=(orange!75!red)}
+}
+
+\usepackage{pgfmath}
+\usepackage{pgf-pie}
+\usetikzlibrary{animations} 
+\usepackage{animate}
+\usetikzlibrary{arrows}
+
+\usetikzlibrary{intersections, pgfplots.fillbetween,pgfplots.dateplot}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{calc}
+\usetikzlibrary{math}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric, arrows,arrows.meta,bending}
+\usetikzlibrary{trees}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{svg.path}
+\usetikzlibrary {mindmap}
+
+\newcommand{\Cerceuil}{(0,0) -- +(.5,0) -- +(1,4)  -- +(0.5,5) -- +(-0.5,5) -- +(-1,4) -- +(-0.5,0) -- cycle}
+\newcommand{\engl}[1]{{\foreignlanguage{english}{\sffamily  #1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{latexsym}  
+\usepackage{textcomp}               
+\usepackage{fontawesome}    
+\usepackage{fancyhdr}%                 pour les en-têtes
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{latexsym}
+\usepackage{lifecon}\let\comment\relax % cette commande est en conflit
+%\usepackage{a4wide}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{changes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\dis}{\displaystyle}
+\newcommand{\ve}{ \overrightarrow}
+\mathchardef\times="2202
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\columnseprule}{0.4pt}% the line between colomn paper
+%\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%---EN-TETE-ET-PIED-DE-PAGE----------------------------------------------------
+\pagestyle{fancy}
+%\renewcommand{\headrulewidth}{1,5pt}
+%\renewcommand{\footrulewidth}{1 pt}
+
+\fancyhead{} % clear all header fields
+%\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{\href{https://sites.google.com/site/martialphelippeguinvarch}{\color{OrangeProfondIRA}Martial Ph\'elipp\'e-Guinvarc'h\ } 
+	\href{mailto:Martial.Phelippe-GuinvarcH@univ-lemans.fr?subject=ActuarialFormSheet}{\faAt\ } 
+	\href{https://www.linkedin.com/in/martial-phelippe-guinvarc-h}{\color{OrangeProfondIRA}\faLinkedinSquare} }
+\fancyfoot[R]{MMP}
+%\fancyfoot[LO,CE]{\textbf{TCS \& TCT}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\headheight}{14pt}
+
+
+%\lhead{fhgfgd}
+%\cfoot{\thepage}
+\def\Cset{\mathbb{C}} % complexes
+\def\Hset{\mathbb{H}} % hilbert
+\def\Nset{\mathbb{N}} % entiers naturels
+\def\Qset{\mathbb{Q}} % rationnels
+\def\Rset{\mathbb{R}} % réels
+\def\Zset{\mathbb{Z}} % entiers relatifs
+\def\Dset{\mathbb{D}} % disque unité ouvert
+\def\Eset{\mathbb{E}} % espérance mathématique
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\se}{\mathrm{se}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Corr}{\mathrm{Corr}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tikzset{
+	declare function={
+		normcdf(\x,\m,\s)=1/(1 + exp(-0.07056*((\x-\m)/\s)^3 - 1.5976*(\x-\m)/\s));},
+	%approximation http://dx.doi.org/10.3926/jiem.2009.v2n1.p114-127
+	declare function={
+		normal(\x,\m,\s)=1/(2*\s*sqrt(pi))*exp(-(\x-\m)^2/(2*\s^2));},
+	declare function={
+		lognormal(\x,\m,\s)=1/(2*\s*sqrt(pi))*exp(-(ln(\x)-\m)^2/(2*\s^2));},
+	declare function={
+		expdensity(\x,\s)=\s*exp(-(\s*\x));},
+	declare function={
+		Normale2(\x,\y,\ma,\sa,\mb,\sb,\corel)=
+		1/(2*pi*\sa*\sb*(1-\corel^2)^0.5) * 
+		exp(-((\x-\ma)^2/\sa^2 + (\y-\mb)^2/\sb^2) -2*\corel*((\x-\ma)/\sa*(\y-\mb)/\sb)/(2*(1-\corel^2)));},
+	declare function={
+		CopComonotone(\x,\y)=min(\x,\y);},
+	declare function={
+		CopAntimonotone(\x,\y)=max(\x+\y-1,0);},
+	declare function={ % teta entre -1 et 0 ou entre 0 et infty
+		CopClayton(\x,\y,\theta)=(\x^(-\theta)+\y^(-\theta)-1)^(-1/\theta);},
+	declare function={
+		dGumbel(\x,\mu,\sigma) = exp(-exp((\mu-\x)/\sigma))*exp((\mu-\x)/\sigma)/\sigma;},
+	declare function={
+		pGumbel(\x,\mu,\sigma) = exp(-exp((\mu-\x)/\sigma));},
+	declare function={
+		Put(\x,\Koption,\Premium)= -\Premium + (\x<\Koption) * (\Koption-\x);},
+	declare function={
+		Call(\x,\Koption,\Premium)= -\Premium + (\x>\Koption) * (\x-\Koption);},
+	declare function={
+		ddd(\x,\Koption ,\riskfree,\T,\sigma) = (ln(\x/\Koption)+(\riskfree+pow(\sigma,2)/2)*\T)/(\sigma*(sqrt(\T)));},
+	declare function={
+		dd(\x,\Koption,\riskfree,\T,\sigma) = ddd(\x, \Koption, \riskfree, \T, \sigma) - \sigma *( sqrt(\T));},
+	declare function={
+		BSCall(\S,\Koption,\riskfree,\T,\sigma)= \S*normcdf(ddd(\S, \Koption, \riskfree, \T, \sigma),0,1) - \Koption*exp(-\riskfree*\T)*normcdf(dd(\S, \Koption, \riskfree, \T, \sigma),0,1);},
+	declare function={
+		BSPut(\x,\Koption,\riskfree,\T,\sigma)= \Koption*exp(-\riskfree*\T) * normcdf(-dd(\x, \Koption, \riskfree, \T, \sigma),0,1) - \x*normcdf(-ddd(\x, \Koption, \riskfree, \T, \sigma),0,1);},
+	declare function={
+		Bi(\i)=1.75/(1 +(\i))^1+1.75/(1 +(\i))^2+1.75/(1 +(\i))^3+1.75/(1 +(\i))^4+101.75/(1 +(\i))^5 ;},
+	declare function={
+		BiDur(\i)=98.3132*(1 - 4.72945*(\i-.02109) );},
+	declare function={
+		BiConv(\i)=98.3132*(1 - 4.72945*(\i-.02109) + 22.96406/2*((\i-.02109))^2) ;}
+		}
+
+\newcommand{\N}{2026{}}
+\newcommand{\NN}{2025{}}
+\newcommand{\NNN}{2024{}}
+
+\newcommand{\SASSVG}{ svg "M4.158.001c-.28-.006-.567.026-.862.1-1.364.34-2.89 2.096-1.224 4.12l.995 1.205.28.343c.19.224.497.22.724.033s.293-.496.105-.724l-.114-.138h.005l-.162-.2-.77-.933c-.724-.88-.4-1.964.58-2.58.865-.543 2.453-.35 3 .543C6.37.76 5.366.028 4.158.001z" ;}
+\definecolor{SAS}{HTML}{007CC2}
+\newcommand{\SAS}{\raisebox{-1pt}{%\tikzset{external/export next=false}
+		\begin{tikzpicture}\fill [color=SAS, xscale=-1.1, yscale=-1.1] \SASSVG ;
+		\fill [color=SAS,xscale=-1.1, yscale=-1.1, rotate=180, yshift=-8pt, xshift=-8pt] \SASSVG ;
+	\end{tikzpicture}}SAS }
+\makeatletter
+% isvalinlist: retourne \foundmatch=true si valeur dans liste
+\newcommand{\isvalinlist}[2]{%
+	\def\valtolook{#1}%
+	\def\foundmatch{false}%
+	\@for\item:=#2\do{%
+		\ifthenelse{\equal{\item}{\valtolook}}{%
+			\def\foundmatch{true}%
+		}{}%
+	}%
+}
+\makeatother
+
+% highlightnodeDualList : applique couleur selon la liste
+\newcommand{\highlightnodeDualList}[5]{%
+	\begingroup
+	\edef\currentval{\number\value{higher}}%
+	\isvalinlist{\currentval}{#1}%
+	\ifthenelse{\equal{\foundmatch}{true}}{%
+		\node[#3, fill=OrangeProfondIRA, text=white, draw=none] (#4) {#5};%
+	}{%
+		\isvalinlist{\currentval}{#2}%
+		\ifthenelse{\equal{\foundmatch}{true}}{%
+			\node[#3, fill=BleuProfondIRA, text=white, draw=none] (#4) {#5};%
+		}{%
+			\node[#3, draw=GrisLogoIRA, text=GrisLogoIRA] (#4) {#5};%
+		}%
+	}%
+	\endgroup
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\usepackage{amsthm}
+\makeatletter
+\newtheoremstyle{sansparenthese}
+  {6pt} % space above
+  {6pt} % space below
+  {\normalfont} % body font
+  {0pt} % indent amount
+  {\bfseries} % theorem head font
+  {} % punctuation after theorem head
+  {.5em} % space after theorem head
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ -- #3}\ \newline } % theorem head spec
+\makeatother
+
+\theoremstyle{sansparenthese}
+\newtheorem{f}{}%[section]
+%
+\title{
+\author{}
+\emph{Actuarial Formula Cheat Sheet}\\
+Ma fiche de Révision Actuarielle\\\medskip\small
+Master Économie/Économétrie de l'Assurance\\
+Master Actuariat}
+\begin{document}
+\maketitle
+%
+\newcounter{higher}\newcounter{rep} \setcounter{higher}{1}
+\begin{center}
+%\input{SciencesActuariellesSchema}
+\end{center}
+
+\begin{center}
+	\bigskip
+	
+\section*{Mots clés de l'assurance}
+    \medskip
+\end{center}
+
+
+\begin{multicols}{2}
+	
+\input{MotsClesAssurance-fr}
+\end{multicols}
+
+\newpage
+\begin{center}
+	\section*{Mathématiques Financières}
+	\medskip
+\end{center}
+
+
+\begin{multicols}{2}
+	
+	\input{MathFi-fr}
+\end{multicols}
+
+\begin{center}
+\section*{Finances de Marchés}
+    \medskip
+\end{center}
+
+\begin{multicols}{2}
+
+\input{FinanceMarche-fr}
+\end{multicols}
+
+\newpage
+\begin{center}
+\section*{Actuariat Vie}
+    \medskip
+\end{center}
+
+\begin{multicols}{2}
+	
+\input{ActuariatVie-fr}
+\end{multicols}
+
+
+\newpage
+\begin{center}
+    \section*{Probabilités  \& Statistiques}
+    \medskip
+\end{center}
+
+\begin{multicols}{2}
+
+\input{ProbaStats-fr}
+\end{multicols}
+
+\newpage
+\input{TableLoiStat-fr}
+
+\newpage
+
+\begin{center}
+    \section*{(Micro)-Économie de l'Assurance}
+    \medskip
+\end{center}
+
+
+\begin{multicols}{2}
+	\input{Economie-fr}
+\end{multicols}
+
+\newpage
+\begin{center}
+	\section*{Économétrie \& Séries Temporelles}
+	\medskip
+\end{center}
+
+
+\begin{multicols}{2}
+	\input{SeriesTemporelles-fr}
+\end{multicols}
+
+\newpage
+
+
+\begin{center}
+	\section*{Actuariat Non-Vie}
+	\medskip
+\end{center}
+
+\begin{multicols}{2}	
+	\input{ActuariatNonVie-fr}
+\end{multicols}
+
+\newpage
+
+\begin{center}
+	\section*{Réassurance}
+	\medskip
+\end{center}
+
+\begin{multicols}{2}	
+	\input{Reassurance-fr}
+\end{multicols}
+
+%\newpage
+\begin{center}
+	\section*{Statistiques des extrêmes et tarification en réassurance}
+	\medskip
+\end{center}
+
+\begin{multicols}{2}
+	\input{ProbaStatsExtremes-fr}
+\end{multicols}
+
+\newpage
+
+\begin{center}
+\section*{Rappels Mathématiques Lycée/Prépa}
+\medskip
+\end{center}
+
+\begin{multicols}{2}	
+\input{FormulesElementaires-fr}
+\end{multicols}
+
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south east, xshift=-0.5cm, yshift=2cm,
+        draw=OrangeProfondIRA, rounded corners=4pt, line width=1pt,
+        inner sep=0pt, text width=15.5cm, font=\small]
+    at (current page.south east)
+    {
+    % Titre avec fond coloré inversé
+    \begin{minipage}{\linewidth}
+     \begin{tcolorbox}[beamerblock, title=À propos des auteurs]
+ \href{https://sites.google.com/site/martialphelippeguinvarch}{\color{OrangeProfondIRA}Martial Ph\'elipp\'e-Guinvarc'h} 
+	\href{mailto:Martial.Phelippe-GuinvarcH@univ-lemans.fr?subject=ActuarialFormSheet}{\faAt\ \faEnvelope} 
+	\href{https://www.linkedin.com/in/martial-phelippe-guinvarc-h}{\color{OrangeProfondIRA}\faLinkedinSquare} est Actuaire et Maître de conférences à Le Mans Université depuis 2012 et enseigne également à l'EURIA depuis 2003. Il est actuaire (EURIA, 2006), membre de l'institut des actuaires (IA) et membre de l'association des économistes agricoles européens (EAAE).
+
+Martial Phélippé-Guinvarc'h enseigne les statistiques, l'analyse de données, la modélisation actuarielle,  la programmation, en particulier en SAS et SAS IML, les mathématiques financières, les marchés des matières premières, la finance de marché et des dérivés, l'actuariat non vie, l'actuariat vie, le provisionnement, la solvabilité,  la réassurance, l'économie de l'assurance, la gestion des risques, la gestion actifs passif. Il est SAS Protor, et a obtenu pour le Master MBFA de Le Mans Université le SAS Join certificate \href{https://www.sas.com/fr_fr/learn/academic-programs/specializations/programs.html}{Insurance and  Economic Analytics}.
+
+Macelino Moreno Porras est
+%
+\end{tcolorbox}
+\end{minipage}
+    };
+\end{tikzpicture}
+\end{document}
