@@ -1,0 +1,104 @@
+\begin{animateinline}[autoplay,loop,poster=1]{1}%,timeline=Graph/ShemasTimesLines.txt
+	\whiledo{\thehigher<12}{
+		%		    \setcounter{rep}{0}
+		%		\whiledo{\therep<3}{% répéter 3 fois la même frame pour simuler 3 secondes
+			\begin{tikzpicture}[%
+				node distance=1.25cm and 0.75cm,
+				every node/.style={draw, align=center, rounded corners, font=\small, minimum height=1cm, minimum width=3cm},
+				every path/.style={->, thick},
+				bend/.style={bend left=15},
+				bendrev/.style={bend right=15},
+				]
+				% Définir styles conditionnels
+				% Centre
+				\node[fill=BleuProfondIRA, text=white, scale=2] (actu) {Sciences\\actuarielles};
+				% En bas
+				% Non-Vie
+				\highlightnodeDualList{}{2,5,8}{below=of actu, yshift=-7.5mm}{nonvie}{Non-Vie}
+				% Vie et Santé
+				\highlightnodeDualList{}{1,4,7}{left=of nonvie}{vie}{Vie}
+				\highlightnodeDualList{}{3,6,9}{right=of nonvie}{sante}{Santé}
+				\node[right=of sante, draw=none] (rep1) {};
+				
+				% Primes, Provisions, Droit/Gestion
+				\highlightnodeDualList{1,2,3,11}{4,5,6}{above=of rep1}{primes1}{Primes}
+				\highlightnodeDualList{1,2,3,11}{7,8,9}{above=of primes1}{provisions1}{Provisions}
+				% Réassurance et Solvabilité
+				\node[left=of vie, draw=none] (rep4) {};
+				\highlightnodeDualList{1,2,3,4,5,6,12}{10}{above=of rep4}{solv}{Solvabilité}
+				\highlightnodeDualList{1,2,3,10}{11}{above=of solv}{reass1}{Réassurance}
+				\highlightnodeDualList{10,11}{}{above=of solv, yshift=-11.5mm, xshift=10mm}{ERM}{ERM}
+				
+				\highlightnodeDualList{9,11}{}{above=of provisions1}{Info}{Info\\Programmation}
+				\highlightnodeDualList{9,11}{}{above=of Info, yshift=-10mm}{gestion}{Gestion}
+				\highlightnodeDualList{9,11}{}{above=of gestion, yshift=-10mm}{droit}{Droit}
+				% Math Fi et ses sous-nœuds
+				\highlightnodeDualList{1,4,7,10,11}{}{left=of Info}{mathfi}{Math Fi}
+				\highlightnodeDualList{1,4,7,10,11}{}{above=of mathfi, yshift=-10mm}{taux}{Courbe de taux}
+				\highlightnodeDualList{10}{}{above=of taux, yshift=-10mm}{GP}{Gestion Portefeuille}
+				\highlightnodeDualList{7,10}{}{above=of GP, yshift=-10mm}{ALM}{Actif Passif}
+				\highlightnodeDualList{10,11}{}{above=of ALM, yshift=-10mm}{derive}{Produits dérivés}
+				\highlightnodeDualList{10,11}{}{above=of derive, yshift=-10mm}{titrisation}{Titrisation}
+				
+				% Proba & Stat et ses sous-nœuds
+				\highlightnodeDualList{1,2,3,4,5,6,7,8,9,10,11}{}{left=of mathfi}{proba}{Proba \& Stat}
+				\highlightnodeDualList{2,3,5,6,11}{}{above=of proba, yshift=-10mm}{glm}{GLM}
+				\highlightnodeDualList{2,5,10,11}{}{above=of glm, yshift=-10mm}{extremes}{Théorie\\Extrêmes}
+				\highlightnodeDualList{2,5,10,11}{}{above=of extremes, yshift=-10mm}{copules}{Copules}
+				\highlightnodeDualList{2,3,5,6}{}{above=of copules, yshift=-10mm}{ml}{Machine Learning}
+				\highlightnodeDualList{7,10}{}{above=of ml, yshift=-10mm}{stoch}{Stochastique}
+				
+				% Économie, économétrie et variantes
+				\node[left=of proba, draw=none] (rep3) {};
+				\highlightnodeDualList{2,3,5,6,11}{}{above=of rep3, yshift=-10mm}{econo}{Économétrie}
+				\highlightnodeDualList{}{}{above=of econo, yshift=-10mm}{Temp}{Séries Temporelles}
+				\highlightnodeDualList{4,5}{}{above=of Temp, yshift=-10mm}{Spatial}{Spatiale}
+				\highlightnodeDualList{10}{}{left=of rep3}{eco}{Économie}
+				\highlightnodeDualList{10}{}{above=of eco, yshift=-10mm}{risk}{Éco du risque}
+				\highlightnodeDualList{1,4,10,11}{}{above=of risk, yshift=-10mm}{demographie}{Démographie}
+				
+				
+				% Connexions principales
+				\draw (actu.south)  |- +(0,-.750) -| (vie.north);
+				\draw (actu) -- (nonvie);
+				\draw (actu.south)  |- +(0,-.750) -| (sante.north);
+				%		
+				\draw (actu.east)  -| +(0.75,0) |- (primes1.west);
+				\draw (actu.east)  -| +(0.75,0) |- (provisions1.west);
+				\draw (actu.west)  -| +(-.750,0) |- (reass1.east);
+				\draw (actu.west)  -| +(-.750,0) |- (solv.east);
+				%		
+				\draw (actu.north) |- +(0,.750) -| (proba.south);
+				\draw (actu.north) |- +(0,.750) -| (eco.south);
+				\draw (actu.north) |- +(0,.750) -| (mathfi.south);
+				\draw (actu.north) |- +(0,.750) -| (Info.south);
+				\draw (actu.north) |- +(0,.750) -|  +(+57.5mm,0.750) |-(gestion.west);
+				\draw (actu.north) |- +(0,.750) -|  +(+57.5mm,0.750) |-(droit.west);
+				\draw (proba) -| (econo);
+				\draw (eco) -| (econo);		
+				% Spécialisations Proba
+				\draw (proba.west) |- +(-.25,0) |- (glm.west);
+				\draw (proba.west) |- +(-.25,0) |-  (extremes.west);
+				\draw (proba.west) |- +(-.25,0) |-  (copules.west);
+				\draw (proba.west) |- +(-.25,0) |-  (ml.west);
+				\draw (proba.west) |- +(-.25,0) |-  (stoch.west);		
+				% Réassurance : liens
+				\draw (econo.west) |- +(-.25,0) |- (Temp.west);
+				\draw (econo.west) |- +(-.25,0) |- (Spatial.west);
+				\draw (eco.west) |- +(-.25,0) |- (risk.west);
+				\draw (eco.west) |- +(-.25,0) |- (demographie.west);
+				\draw (mathfi.west) |- +(-.25,0) |- (taux.west);
+				\draw (mathfi.west) |- +(-.25,0) |- (GP.west);
+				\draw (mathfi.west) |- +(-.25,0) |- (ALM.west);
+				\draw (mathfi.west) |- +(-.25,0) |- (derive.west);
+				\draw (mathfi.west) |- +(-.25,0) |- (titrisation.west);
+				
+				%		\draw (reass1) -- (titri);
+				%		\draw (reass1) -- (reass1);
+				%		\draw (reass1) -- (primes1);
+			\end{tikzpicture}
+			%  \stepcounter{rep}
+			\newframe %}
+		\stepcounter{higher}
+	}
+\end{animateinline}

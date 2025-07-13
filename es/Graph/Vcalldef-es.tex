@@ -1,0 +1,67 @@
+	\begin{tikzpicture}[yscale=.75]
+		\def\riskfreeBS{0.05}
+		\def\xminBS{5}
+		\def\xmaxBS{15}
+		\def\PxExerciceBS{10}
+		\def\sigmaBS{0.2}
+		\def\TBS{0.75}
+		\def\PremiumBS{{BSCall(10,{\PxExerciceBS},{\riskfreeBS},{\TBS},{\sigmaBS})}}
+\begin{axis}[ 
+	clip=false,
+	axis on top,
+	axis lines=middle, axis line style={BleuProfondIRA,thick,->},
+	scale only axis, xmin={\xminBS},xmax={\xmaxBS},enlarge x limits=0.05,
+	enlarge y limits=0.125,
+	color=BleuProfondIRA,
+	%		ylabel near ticks,
+	ylabel={Profit},
+	x label style={={at={(current axis.right of origin)}}},
+	%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
+	%		x label style={at={(1,0.5)}},
+	xlabel={ss-jacent ($T$)},
+	%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+	%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
+	ytick=\empty,
+	xtick=\empty,
+	extra y ticks ={0},
+	extra y tick labels={{0}},
+	extra x ticks ={\PxExerciceBS},
+	extra x tick labels={{$E$}},
+	extra x tick style={color=BleuProfondIRA,
+		tick label style={yshift=-0mm}	},
+	title ={ \textbf{Short Call}},
+	title style={yshift=10mm},
+	%	legend style={draw=none,
+		%		legend columns=-1,
+		%		at={(0.5,1)},
+		%		anchor=south,
+		%		outer sep=1em,
+		%		node font=\small,
+		%	},
+	]
+	%		
+\addplot[name path=A,BleuProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashdotted] {-Call(x,\PxExerciceBS,\PremiumBS)} 
+node [pos=0.15,yshift=-4mm,color=BleuProfondIRA] {Gains}
+node [pos=.8,yshift=10mm,color=OrangeProfondIRA] {Pertes};	
+	%\draw[BleuProfondIRA,thick] \OV{\PxExerciceBS}{\PremiumBS}{0.4}{\xminBS}{\xmaxBS} ;
+	%		\addplot[name path=Option,BleuProfondIRA,thick,domain={250:350}, 			 		samples=10,dashdotted,smooth] {BSPut(x,\PxExerciceBS,\riskfreeBS,\TBS,\sigmaBS)} ;	
+	\path [save path=\xaxis,name path=xaxis]
+	({\xminBS},0)		-- ({\xmaxBS},0)		;
+	\addplot [bottom color=OrangeProfondIRA!50, top color=OrangeProfondIRA!10] fill between [
+	of=A and xaxis,
+	split,
+	every segment no 0/.style=
+	{top color = BleuProfondIRA!50, bottom color=BleuProfondIRA!10}] ;
+	%\draw[use path=\xaxis, ->,OrangeProfondIRA,thick];
+	\draw [fill]  ({-\PremiumBS*(-1)+\PxExerciceBS},0) circle (1mm) node [above=5mm] {$S_{PM}$};
+	\draw[BleuProfondIRA, thin] ({\PxExerciceBS},0) -- ({\PxExerciceBS},{\PremiumBS});
+	\node at ({\xminBS+0.25*(\xmaxBS-\xminBS)},{\pgfkeysvalueof{/pgfplots/ymin}+1})
+	{OUT};
+	\node at ({\PxExerciceBS},{\pgfkeysvalueof{/pgfplots/ymin}+1})
+	{AT};
+	\node at ({\xminBS+0.8*(\xmaxBS-\xminBS)},{\pgfkeysvalueof{/pgfplots/ymin}+01})
+	{IN};
+	\draw [<->, xshift=-5mm] ({\pgfkeysvalueof{/pgfplots/xmin}},0) -- ({\pgfkeysvalueof{/pgfplots/xmin}},\PremiumBS) node [pos=0.5, xshift=-2.5mm, rotate=90] {Prime};
+\end{axis}
+%
+	\end{tikzpicture}

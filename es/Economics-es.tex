@@ -1,0 +1,333 @@
+% !TeX root = ActuarialFormSheet_MBFA-es.tex
+% !TeX spellcheck = fr_FR
+\begin{f}[Concept d'utilité]
+	L'utilité modélise les préférences d'un individu entre deux paniers de biens \(x\) et \(y\) dans un ensemble \(S\), via la relation \(x \succcurlyeq y\) (préféré ou indifférent).
+	
+	Une fonction \(U: S \rightarrow \mathbb{R}\) représente les préférences si :
+	\[
+	x \succcurlyeq y \iff U(x) \geq U(y)
+	\]
+	
+	\textbf{Axiomes nécessaires à l'existence d'une fonction d'utilité :}
+	\begin{enumerate}
+		\item \textbf{Complétude :} Pour tout \(x, y \in S\), soit \(x \succcurlyeq y\), soit \(y \succcurlyeq x\)
+		\item \textbf{Transitivité :} Si \(x \succcurlyeq y\) et \(y \succcurlyeq z\), alors \(x \succcurlyeq z\)
+		\item \textbf{Continuité :} Si \(x_n \to x\) et \(y_n \to y\), et \(x_n \succcurlyeq y_n\) pour tout \(n\), alors \(x \succcurlyeq y\)
+	\end{enumerate}
+	
+\end{f}
+
+
+\begin{f}[Fonction d'utilité]
+	Une fonction \(u : \mathbb{R}_+ \rightarrow \mathbb{R}\) représente les préférences d'un agent face à l'incertitude.
+	
+	\textbf{Critère d'utilité espérée :} L’agent préfère \(X\) à \(Y\) si :
+	\[
+	\mathbb{E}[u(X)] > \mathbb{E}[u(Y)]
+	\]
+	Il choisit \(X\) tel que \(\mathbb{E}[u(X)]\) soit maximale.
+	
+	\textbf{Propriétés de \(u\) :}
+	\begin{itemize}
+		\item \(u'\! > 0\) : l’agent préfère plus de richesse (monotonie)
+		\item \(u'' < 0\) : l’agent est averse au risque (concavité)
+	\end{itemize}
+	
+	\textbf{Exemples classiques :}
+	\begin{itemize}
+		\item \textit{Linéaire} (neutre au risque) : \(u(x) = x\)
+		\item \textit{Logarithmique} : \(u(x) = \ln(x)\)
+		\item \textit{CRRA}  (aversion relative constante): \(u(x) = \frac{x^{1 - \gamma}}{1 - \gamma}\), \(\gamma \ne 1\)
+		\item \textit{CARA}  (aversion absolue constante): \(u(x) = -e^{-a x}\)
+	\end{itemize}
+	
+\end{f}
+
+\hrule
+
+\begin{f}[Aversion au risque]
+	Un agent est dit \textbf{averse au risque} (ou risquophobe) si :
+	\[
+	u(\mathbb{E}[X]) > \mathbb{E}[u(X)]
+	\]
+	Ce qui est équivalent à \(u\) concave, c.-à-d. \(u''(x) < 0\)
+\end{f}
+
+\begin{f}[Mesure de l'aversion au risque]
+	\textbf{Indice d'aversion absolue} :
+	\[
+	A_a(x) = -\frac{u''(x)}{u'(x)}
+	\]
+	
+	\textbf{Indice d'aversion relative} :
+	\[
+	A_r(x) = -x \cdot \frac{u''(x)}{u'(x)}
+	\]
+	
+	\textbf{Inégalité de Jensen (cas concave)} :
+	\[
+	u(\mathbb{E}[X]) \geq \mathbb{E}[u(X)]
+	\]
+Avec l'égalité si et seulement si \(X\) est constante.
+\end{f}
+\hrule
+
+
+\begin{f}[Primes de risque]
+	
+La \textbf{prime de risque} \(\pi\) est le montant maximal qu'un individu est prêt à payer pour remplacer une loterie de gain aléatoire \(H\) par son espérance certaine \(\mathbb{E}[H]\). Elle vérifie :
+\[
+\mathbb{E}[u(w + H)] = u(w + \mathbb{E}[H] - \pi)
+\]
+
+
+\(\pi\) est aussi appelée \emph{mesure de Markowitz} : elle capture l'écart entre utilité espérée et utilité certaine.
+
+Inversement, la \textbf{prime compensatoire} \(\tilde{\pi}\) est le montant que l'on doit offrir à un individu pour qu’il accepte la loterie \(H\) au lieu d’un gain certain. Elle vérifie :
+\[
+\mathbb{E}[u(w + H + \tilde{\pi})] = u(w + \mathbb{E}[H])
+\]
+
+\end{f}
+\hrule
+\begin{f}[Diversification et utilité]
+	
+	Soient deux actifs :
+	\begin{itemize}
+		\item \(A\) : risqué
+		\item \(B\) : certain, avec \(\mathbb{E}[A] = B\)
+	\end{itemize}
+	
+	Un agent averse au risque préfère une combinaison \(Z = \alpha A + (1 - \alpha) B\), avec \(0 < \alpha < 1\), à l’actif risqué seul.
+	Si  $u$ est concave, alors
+	\[
+	\mathbb{E}[u(Z)] > \mathbb{E}[u(A)]
+	\]
+	
+	\textbf{Portefeuille optimal} : choix des pondérations \((w_i)\) maximisant l'utilité espérée :
+	\[
+	\max \mathbb{E}[u(X)], \quad \text{où } X = \sum_{i} w_i X_i, \quad \text{s.c. } \sum w_i = 1
+	\]
+	
+	\textbf{Principe} : la diversification réduit le risque (variance) sans affecter l’espérance.
+	
+	
+\end{f}
+\hrule
+
+\begin{f}[Méthode de Lagrange pour l'optimisation sous contrainte]
+	
+	La méthode des multiplicateurs de Lagrange permet de résoudre un problème d'optimisation sous contrainte.
+	
+	\textbf{Objectif} : maximiser/minimiser \(f(\boldsymbol{x})\) sous la contrainte \(g(\boldsymbol{x}) = c\), où \(\boldsymbol{x} \in \mathbb{R}^d\) est un vecteur de variables.
+	
+	\textbf{Étapes de la méthode :}
+	\begin{enumerate}
+		\item \textbf{Identification} : déterminer la fonction objectif \(f(\boldsymbol{x})\) et la contrainte \(g(\boldsymbol{x}) = c\)
+		\item \textbf{Lagrangien} :
+		\[
+		\mathcal{L}(\boldsymbol{x}, \lambda) = f(\boldsymbol{x}) + \lambda (g(\boldsymbol{x}) - c)
+		\]
+		\item \textbf{Système d'équations} : résoudre
+		\[
+		\nabla_{\boldsymbol{x}} \mathcal{L} = \nabla f(\boldsymbol{x}) + \lambda \nabla g(\boldsymbol{x}) = \boldsymbol{0}, \quad
+		\frac{\partial \mathcal{L}}{\partial \lambda} = g(\boldsymbol{x}) - c = 0
+		\]
+		\item \textbf{Résolution} du système pour obtenir \(\boldsymbol{x}^*, \lambda^*\)
+		\item \textbf{Vérification} : s'assurer que les solutions satisfont bien la contrainte et le type d'optimum (max/min)
+	\end{enumerate}
+	
+	\textbf{Exemple (dimension 2)} : maximiser \(f(x, y) = xy\) sous la contrainte \(x + y = 10\)
+	
+	\[
+	\mathcal{L}(x, y, \lambda) = xy + \lambda (x + y - 10)
+	\]
+	
+	On dérive :
+	\[
+	\frac{\partial \mathcal{L}}{\partial x} = y + \lambda = 0, \quad
+	\frac{\partial \mathcal{L}}{\partial y} = x + \lambda = 0, \quad
+	\frac{\partial \mathcal{L}}{\partial \lambda} = x + y - 10 = 0
+	\]
+	
+	On résout le système :
+\[
+\begin{cases}
+	y + \lambda = 0 \\
+	x + \lambda = 0 \\
+	x + y = 10
+\end{cases}
+\Rightarrow 
+\begin{cases}
+	\lambda = -y \\
+	x = -\lambda = y \\
+	x + y = 10 \Rightarrow 2x = 10 
+\end{cases}
+\Rightarrow 
+	\begin{cases} 
+		x^* =  y^*= 5,\\
+		f(5,5) = 25
+	\end{cases}
+\]
+
+		\textbf{Exemple (Choix optimal et contrainte budgétaire)}
+	
+	Un agent rationnel est face à un choix de consommation \((c_1, c_2)\) entre deux biens, sous la contrainte :
+	\[
+	p_1 c_1 + p_2 c_2 = R
+	\]
+	où \(p_1, p_2\) sont les prix et \(R\) le revenu total.
+	
+	\textbf{Problème} :
+	\(
+	\max_{c_1, c_2} u(c_1, c_2) \quad \text{s.c. } p_1 c_1 + p_2 c_2 = R\)
+
+	
+	\textbf{Méthode} : introduire le \textbf{lagrangien}
+	\[
+	\mathcal{L}(c_1, c_2, \lambda) = u(c_1, c_2) + \lambda (R - p_1 c_1 - p_2 c_2)
+	\]
+	
+	\textbf{Conditions du premier ordre (FOC)} :
+	\[
+	\begin{cases}
+		\frac{\partial u}{\partial c_1} = \lambda p_1 \\
+		\frac{\partial u}{\partial c_2} = \lambda p_2 \\
+		p_1 c_1 + p_2 c_2 = R
+	\end{cases}
+	\]
+	
+	En divisant les deux premières équations :
+	\[
+	\frac{\partial u / \partial c_1}{\partial u / \partial c_2} = \frac{p_1}{p_2}
+	\]
+	
+	Ce rapport est appelé \textbf{taux marginal de substitution (TMS)} : il mesure la quantité de bien 2 à laquelle l’agent est prêt à renoncer pour obtenir une unité supplémentaire de bien 1, tout en maintenant son niveau d’utilité constant.
+	
+\end{f}
+\hrule
+
+\begin{f}[Demande d’assurance (Mosin)]
+	
+Un agent possède un patrimoine initial \(w\) et fait face à une perte aléatoire \(L\). Il existe une \textbf{demande d'assurance} pour l'assurance qui verse l'indemnité $0<I(L)<L$ ssi $u(w-\pi_I) \geq \mathbb{E}(u(w-L))$ et l'\textbf{assurance optimale} maximise $u(w-\pi_I)$.
+
+Dans Mosin (1968) ou  Borch (1961) ou Smith (1968), le modèle de perte $L$ se définit simplement par  $s$ compris entre 0 et  \(w\) :
+	$$
+	L=\left\{\begin{array}{l}
+		0 \text { avec proba. } 1-p \\
+		s \text { avec proba. } p
+	\end{array}\right.
+	$$
+La prime devient $\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) p I(s)$ avec $\lambda$ un chargement. On note $\pi$ le cas où $I(L)=L$ avec  $\pi= p s$. Si $\lambda=0$, alors on parle de prime pure ou actuariellement juste. 
+\medskip
+
+\textbf{Coassurance} (partage du risque) :
+ $I(l)=\alpha l$ sachant $L=l$ pour $\alpha \in[0,1]$, $\pi_I(\alpha)=\alpha \pi$ et :
+$$
+w_{f}=w-L+I(L)-\pi(\alpha)=w-L+\alpha L-\alpha \pi=w-(1-\alpha) L-\alpha \pi
+$$
+$$
+U(\alpha)%=\mathbb{E}(u(w-(1-\alpha) L-\alpha \pi))
+=(1-p) u(w-\alpha \pi)+p u(w-(1-\alpha) s-\alpha \pi)
+$$
+
+L'assurance partielle ($\alpha^{\star}<1$) est optimale ssi $\lambda>0$. L'assurance totale ($\alpha^{\star}=1$ ) est optimale si le chargement est nul.
+\medskip
+
+\textbf{L'assurance avec franchise} (part d'autoassurance):
+Avec franchise $d$ l'assureur verse une indemnité $I(l)=(l-d)_{+}$ sachant $L=l$. 
+$$
+\pi(d)=(1+\lambda) E\left((L-d)_{+}\right)=(1+\lambda)(s-d) p
+$$
+$$
+w_{f}=w-X+(L-d)_{+}-\pi(d)=w-\min (X, d)-(1+\lambda)(s-d) p
+$$
+$$
+U(d)=(1-p) u(\underbrace{w+(1+\lambda)(d-s) p}_{w_{f}^{+}})+p u(\underbrace{w-d+(1+\lambda)(d-s) p}_{w_{f}^{-}}) .
+$$
+Dans le modèle avec franchise, l'assurance partielle ($d^{\star}>0$) est optimale ssi la prime n'est pas actuariellement juste. De même,  l'assurance totale ( $d^{\star}=0$ ) est optimale si le chargement est nul.
+\medskip
+
+\textbf{Modèle généralisé :}
+Le risque de perte $L>0$ aléatoire est définit sur $\Re$, avec fonction de répartition $F_L$ ), 
+
+$$
+\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) \int_{0}^{\infty} I(l) d F_{L}(l)
+$$
+
+
+
+\begin{enumerate}
+	\item L'assurance totale \((d^\star = 0)\) ou  \((\alpha^\star = 1)\) est optimale si et seulement si la prime est actuariellement juste .
+	
+	\item Si \(A_a(u, x)\) est décroissante, alors le niveau de franchise \(d^\star\)  ou  le taux de couverture \(\alpha^\star\) augmente avec la richesse initiale.  
+	Pour les préférences CARA, \(d^\star\) est indépendant de \(w\) ou \(\alpha^\star\) est constant .
+	
+	\item Le niveau de couverture  décroît avec le coefficient de chargement \(\lambda\) lorsque \(A_a(u, x)\) est croissante ou constante.
+	
+	\item Un agent plus averse au risque choisit  une couverture plus élevée.
+\end{enumerate}
+\end{f}
+
+\hrule
+
+\begin{f}[Information et assurance]
+	
+	\textbf{Mosin avec hétérogénéïté :} Deux types d'individus : $H$ pour haut risque et $Lo$ pour faible risque. $\theta \in[0,1]$ la proportion d'individu $H$. Les individus de type $i \in\{Lo, H\}$ font face à un risque de même montant $s$  survenant avec une probabilité différente $p_{i}$ telle que $1>p_{H}>p_{Lo}>0$.
+	
+	$$
+	L_{i}=\left\{\begin{array}{l}
+		0 \text { avec probabilité } 1-p_{i}, \\
+		s \text { avec probabilité } p_{i} .
+	\end{array}\right.
+	$$
+La probabilité du marché :
+	$$
+	p_{m}=\theta p_{H}+(1-\theta) p_{Lo} .
+	$$
+\medskip
+
+\textbf{Absence d'antisélection :}  Dans ce modèle, en présence d'information totale, l'assureur préfère une assurance individuelle $I_{i}=s$ et $\pi_{i}=s p_{i}$, $\forall i$.
+
+\textbf{ Le problème d'anti-sélection : }
+L'assureur propose un  contrat non individualisé du marché $M=\left(\pi_{m}=p_{m} I, I_{m}(s)=I(s)\right)$, qui ne dépend pas de $i$. La fortune finale d'un individu de type $i$ est $W_{i}^{m}=w-\pi_{m}-X_{i}+I_{m}$.
+
+En présence d'un contrat unique, les individus de type $H$ préfèrent un contrat d'assurance tel que $I_{H}(s)=s$  et $\pi_{H}=s p_{m}$, tandis que les individus de type $Lo$ préfère une couverture partielle avec $I_{L}^{\star}<s$ et $\pi_{Lo}=I_{L}^{\star} p_{m}$.
+\medskip
+
+\textbf{Aléa moral :}
+L'assurer réduit ou interrompt ses efforts maintenant qu'il est assuré. Les efforts de
+\begin{itemize}
+	\item prévention réduisent la probabilité de sinistre,
+	\item protection réduisent le montant de sinistre.
+\end{itemize}
+
+ En l'absence d'effort $e$ de prévention ou de réduction du risque, la fortune finale $w_{f}$ est simplement définie par
+
+$$
+\begin{cases}w_{f}^{-}=w-s-\pi(I)+I & \text { avec probabilité } p \\ w_{f}^{+}=w-\pi(I) & \text { avec probabilité } 1-p\end{cases}
+$$
+
+S'il y a prévention de risque d'effort $e$, on considère
+
+$$
+\begin{cases}w_{f}^{-}=w-s-\pi(I)+I-e & \text { avec probabilité } p(e) \\ w_{f}^{+}=w-\pi(I)-e & \text { avec probabilité } 1-p(e)\end{cases}
+$$
+
+S'il y a réduction de risque d'effort $e$, on considère
+
+$$
+\begin{cases}w_{f}^{-}=w-s(e)-\pi(I)+I-e & \text { avec probabilité } p \\ w_{f}^{+}=w-\pi(I)-e & \text { avec probabilité } 1-p\end{cases}
+$$
+
+avec
+\begin{itemize}
+	\item $e \mapsto p(e)$ est strictement décroissante et strictement convexe.
+	\item $e \mapsto s(e)$ est strictement décroissante et strictement convexe.\\
+	\item $I \leq s$ implique $w_{f}^{-} \leq w_{f}^{+}$
+\end{itemize}
+
+\end{f}
+\hrule
+
+

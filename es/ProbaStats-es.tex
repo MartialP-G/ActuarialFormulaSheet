@@ -1,0 +1,906 @@
+% !TeX root = ActuarialFormSheet_MBFA-es.tex
+% !TeX spellcheck = fr_FR
+
+\begin{f}[Axiomatique]{\ }
+	
+	Un \textbf{univers} $\Omega$, est l'ensemble de tous les résultats possibles qui peuvent être obtenus au cours d'une expérience aléatoire.
+	
+	L'\textbf{événement aléatoire} est un événement $\omega_i$ de l'univers dont l'issue (le résultat) n'est pas certaine.
+	
+	
+	L'\textbf{événement élémentaire :}
+	\begin{itemize}
+		\item deux événements élémentaires distincts $\omega_i$ et $\omega_j$ sont incompatibles,
+		\item la réunion de tous les événements élémentaires de l'univers $\Omega $ correspond à la certitude.
+	\end{itemize}
+	
+	Les \textbf{ensembles} :
+	\begin{itemize}
+		\item  $E=\lbrace \omega_{i1},\ldots , \omega_{ik}\rbrace$ un sous-ensemble de $\Omega$ ($k$ éléments).
+		\item $\overline{E}$ le complémentaire de $E$,
+		\item $E\cap F$ l'intersection de $E$ et $F$,
+		\item $E\cup F$ l'union de $E$ et $F$,
+		\item $E\setminus F= E\cap\overline{F}$  $E$ moins $F$,
+		\item $\varnothing$ l'événement impossible ou vide.
+	\end{itemize}
+	
+	Soit $E$ un ensemble. On appelle \textbf{tribu} ou \textbf{$\sigma-$algèbre} sur $E$, un ensemble $\mathcal{A}$ de parties de $E$ qui vérifie :
+	\begin{itemize}
+		\item     $\mathcal{A} \not=\varnothing$,
+		\item     $\forall A \in \mathcal{A} , \overline{A} \in\mathcal{A}$,
+		\item     si $\forall n \in \mathbb{N}$, $A_n \in\mathcal{A}$ alors $\cup_{n\in\mathbb{N} } A_n \in\mathcal{A}$.
+	\end{itemize}
+	
+	On appelle \textbf{probabilité} $\mathbb{P}$ toute application de l'ensemble des évènements $\mathcal{A}$ dans l'intervalle $[0,1]$, telle que :      $$\mathbb{P} :      \mathcal{A}  \mapsto   [0,1]$$
+	satisfaisant les propriétés (ou axiomes) suivantes~:
+	\begin{description}
+		\item[(P1)] $A \subseteq \mathcal{A} $    alors  $ \mathbb{P}(A) \geq 0$,
+		\item[(P2)] $ \mathbb{P}(\Omega) = 1$,
+		\item[(P3)] $A, B \subseteq \mathcal{A}$,  si  $A\cap B =\varnothing$    alors   $\mathbb{P}(A\cup B)=\mathbb{P}(A) + \mathbb{P}(B)$.
+	\end{description}
+	
+	L'\textbf{espace de probabilité}\index{D\'efinition! espace de probabilité} se définit par 
+	\[ \lbrace \Omega, \mathcal{A}, \mathbb{P}(.) \rbrace \]
+	
+	L'\textbf{égalité de poincarré} s'écrit~:
+	$$\forall A \in F, \forall B \in F, \mathbb{P} (A \cup B) = \mathbb{P} (A) + \mathbb{P} (B) - \mathbb{P} (A \cap B)$$
+	
+\end{f}
+\hrule
+
+\begin{f}[Bayes]
+	En théorie des probabilités, la \textbf{probabilité conditionnelle} d'un événement $A$, sachant qu'un autre événement $B$ de probabilité non nulle s'est réalisé.
+	$$
+	\mathbb{P}(A|B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}
+	$$
+	Le réel $\mathbb{P}(A|B)$ se lit 'probabilité de $A$, sachant $B$.
+	Le théorème de Bayes permet d'écrire~:
+	
+	$$   \mathbb{P}(A|B) = \frac{\mathbb{P}(B|A)\mathbb{P}(A)}{\mathbb{P}(B)}. $$
+\end{f}
+\hrule
+
+\begin{f}[Variables aléatoires]
+	
+	Soient $ (\Omega, \mathcal{A}, \mathbb{P})$ un espace probabilisé. On appelle \textbf{variable aléatoire} $X$ de $\Omega$ vers $ \Re$, toute fonction mesurable $X:\Omega\mapsto \Re$.
+	
+	$$\lbrace X\leq x \rbrace\equiv \lbrace e\in \Omega \mid X(e)\leq x \rbrace \in   \mathcal{A}$$
+	L'ensemble des événements de $\Omega$ n'est souvent pas explicite.
+	
+	La \textbf{fonction de répartition} $(F_X)$ d'une variable aléatoire réelle caractérise sa loi de probabilité. 
+	$$
+	F_X(x)=\mathbb {P}(X\leq x), x\in \Re
+	$$
+	où le membre de droite représente la probabilité que la variable aléatoire réelle $X$ prenne une valeur inférieure ou égale à $x$.
+	La probabilité que $X$ se trouve dans l'intervalle $]a, b]$ est donc, si $a< b$,
+	$
+	\mathbb{P}(a< X\leq b)\ =\ F_X(b)-F_X(a)
+	$
+	
+	Une loi de probabilité possède une \textbf{densité de probabilité} $f$, si $f$ est une fonction définie sur $\mathbb{R}^{+}$,  Lebesgue-intégrable, telle que la probabilité de l'intervalle $[a, b]$ est donnée par
+	$$
+	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx} \mbox{ pour tous nombres tq }a<x<b.
+	$$
+\end{f}
+\hrule
+\begin{f}[Espérance]{\ }
+	
+	L'espérance mathématique dans le cas discret (variables qualitatives ou quantitatives discrètes)~:
+	$$
+	\mathbb{E}[X]=\sum_{j\in \mathbb{N}}x_j\mathbb{P}(x_j)
+	$$
+	où $\mathbb{P}(x_j)$ est la probabilité associée à chaque événement $x_i$.
+	
+	L'espérance mathématique dans le cas continu~:
+	$$
+	\mathbb{E}[X]=\int_{-\infty}^{\infty} x. f(x)dx
+	$$
+	
+	où $f$ désigne la fonction de densité de la variable aléatoire $x$, définie dans notre cas sur $\mathbb{R}$.
+	S'agissant de somme ou d'intégrale, l'espérance est linéaire, c'est-à-dire~:
+	
+	$$\mathbb{E}[c_0+c_1X_1+c_2X_2]=c_0+c_1\mathbb{E}[X_1]+c_2\mathbb{E}[X_2]$$
+	
+	$$
+	\mathbb{E}[X]=\int x.f(x)dx =\int_0^1 F^{-1}(p)dp= \int \overline{F}(x)dx\\
+	$$ 
+\end{f}
+\hrule
+\begin{f}[Convolution ou loi de la somme]{\ }
+	
+	La convolution de deux fonctions \( f \) et \( g \), notée \( (f * g)(x) \), est définie par :
+	
+	\[
+	(f * g)(x) = \int f(t) g(x - t) \, dt
+	\]
+	Elle est souvent utilisée pour déterminer la loi d'une somme de deux variables aléatoires indépendantes.
+	
+	La convolution mesure comment \( f(t) \) et \( g(t) \) interagissent à différents points tout en tenant compte du décalage (ou translation) entre 
+\end{f}
+\hrule
+\begin{f}
+	[Loi composée ou modèle fréquence/gravité]{\ }
+	
+	Soit $N$ une variable aléatoire discrète dans $\mathbb{N}^+$, $\left(X_i\right)$ une suite de variable aléatoire $iid$ d'espérance et variance finies, alors pour  $\displaystyle S=\sum_{i=1}^{N}X_i$ :
+	$$
+	\mathbb{E}(S) = \mathbb{E} (\mathbb{E} [S \mid N]) = \mathbb{E} (N.\mathbb{E}(X_1)) = \mathbb{E}(N).\mathbb{E}(X_1)
+	$$
+	$$
+	Var (S) = \mathbb{E} (Var [S \mid N]) + Var (\mathbb{E} [S \mid N])
+	$$
+\end{f}
+
+\hrule
+\begin{f}[Théorèmes fondamentaux] {\ }
+	
+	Soit $X$ une variable aléatoire réelle définie sur un espace probabilisé $\left(\Omega,\mathcal A,\mathbb P\right)$, et supposée presque sûrement positive ou nulle. L'\textbf{Inégalité de Markov} donne~:
+	$$
+	\forall \alpha >0, \mathbb P(X\geq \alpha)\leqslant\frac{\mathbb{E}[X]}{\alpha}.
+	$$
+	
+	L'\textbf{inégalité de Bienaymé-Tchebychev} : 
+	Pour tout réel strictement positif $\alpha$, avec $\mathbb{E}[X]=\mu$ et $\operatorname{Var}[X]=\sigma^2$
+	$$
+	\mathbb{P}\left(\left|X-\mu\right| \geq \alpha \right) \leq \frac{\sigma^2}{\alpha^2}.
+	$$
+	
+	La \textbf{loi faible des grands nombres} considère une suite $(X_i)_{i\geq n\in\mathbb{N}^*}$ de variables aléatoires indépendantes définies sur un même espace probabilisé, ayant mêmes espérance et  variance finies notées respectivement $\mathbb{E}[X]$ et $\operatorname{Var}(X)$.
+	
+	$$
+	\forall\varepsilon>0,\quad \lim_{n \to +\infty} \mathbb{P}\left(\left|\frac{X_1+X_2+\cdots+X_n}{n} - \mathbb{E}[X]\right| \geq \varepsilon\right) = 0
+	$$
+	
+	Considérons une suite $(X_n)_{n\in \mathbb{N}}$ de variables aléatoires indépendantes qui suivent la même loi de probabilité, intégrables, i. e. $E(|X_0|)<+\infty$. 
+	
+	En reprenant les notations, la \textbf{loi forte des grands nombres} précise que $(Y_n)_{n\in\mathbb{N}}$ converge vers $E(X)$ \og{} presque sûrement\fg{}.
+	%
+	$$
+	\mathbb{P}\left(\lim_{n \to +\infty} Y_n = E(X)\right)=1
+	$$
+	Considérons la somme $S_n = X_1 + X_2 + \cdots + X_n$.
+	$$   
+	Z_n\ =\ \frac{S_n - n \mu}{\sigma \sqrt{n}}\ =\ \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}},
+	$$
+	
+	l'espérance et l'écart-type de $Z_n$ valent respectivement 0 et 1 : la variable est ainsi dite centrée et réduite.
+	
+	Le \textbf{théorème central limite} stipule alors que la loi de $Z_n$ converge en loi vers la loi normale centrée réduite $\mathcal{N} (0 , 1)$ lorsque $n$ tend vers l'infini. Cela signifie que si $\Phi$ est la fonction de répartition de $\mathcal{N} (0 , 1)$, alors pour tout réel $z$ :
+	$$
+	\lim_{n \to \infty} \mbox{P}(Z_n \le z) = \Phi(z),
+	$$
+	ou, de façon équivalente :
+	$$
+	\lim_{n\to\infty}\mbox{P}\left(\frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}\leq z\right)=\Phi(z)
+	$$
+\end{f}
+\hrule
+
+\begin{f}[Variables multidimensionnelles]
+			
+			
+Une loi de probabilité est dite \textbf{multidimensionnelle}, ou $n-$dimensionnelle, lorsque la loi décrit plusieurs valeurs (aléatoires) d'un phénomène aléatoire.  
+Le caractère multidimensionnel apparaît ainsi lors du transfert, par une variable aléatoire, de l'espace probabilisé $(\Omega,\mathcal{A})$ vers un espace numérique $E^n$ de dimension $n$. 
+
+Soit une variable aléatoire $X$ sur l'espace probabilisé $(\Omega, \mathcal A, \mathbb{P})$, à valeurs dans ${\mathbb{R}}^n$ muni de la tribu borélienne réelle produit ${\mathcal {B}(\mathbb{R})}^{\otimes n}$. 
+La loi de la variable aléatoire $X$ est la mesure de probabilité $\mathbb{P}_X$ définie par~:
+$$
+\mathbb{P}_X(B) = \mathbb{P}\big(X^{-1}(B)\big) = \mathbb{P}(X \in B).
+$$
+pour tout $B \in {\mathcal B(\mathbb R)}^{\otimes n}$.
+
+Le théorème de \textbf{Cramer-Wold} assure que la loi ($n-$dimensionnelle) de ce vecteur aléatoire est entièrement déterminée par les lois (unidimensionnelles) de toutes les combinaisons linéaires de ces composantes : 
+$$\sum_{i = 1}^n a_i X_i\mbox{ pour tous }a_1, a_2, \dots, a_n$$
+
+
+\end{f}
+\hrule
+
+\begin{f}[Loi marginale]
+La loi de probabilité de la $i^e$ coordonnée d'un vecteur aléatoire est appelée la $i^e$ loi marginale. La \textbf{loi marginale} $\mathbb{P}_i$ de $\mathbb{P}$ s'obtient par la formule :
+$$
+\mathbb{P}_i(B) = \mathbb{P}_{X_i}(B) = \iint { \mathds{1}}_{\omega_i\in B} \mathbb{P}(\mathrm{d}(\omega_1,\dots,\omega_n)), \forall  B \in \mathcal B(\mathbb{R}).
+$$
+Les lois marginales d'une loi absolument continue s'expriment à l'aide de leurs densités marginales.
+
+
+La fonction de densité conditionnelle $X_2$ sachant la valeur $x_1$ de $X_1$, peut s'écrire~:
+$$
+f_{X_2}(x_2 \mid X_1=x_1) = \frac{f_{X_1, X_2}(x_1,x_2)}{f_{X_1}(x_1)}, 
+$$
+
+$$
+f_{X_2}(x_2 \mid X_1=x_1)f_{X_1}(x_1) = f_{X_1,X_2}(x_1, x_2) = f_{X_1}(x_1 \mid X_2=x_2)f_{X_2}(x_2). 
+$$
+\end{f}
+\hrule
+
+	\begin{f}[Indépendance]
+$(X_1, X_2, \dots,X_n)$ est une famille de \textbf{variables aléatoires indépendantes} si l'une des deux conditions suivantes est remplie :
+$$
+\forall (A_1,\dots,A_n)\in\mathcal{E}_1\times\dots\times\mathcal{E}_n
+$$
+$$
+\mathbb{P}(X_1\in A_1\text{ et }X_2\in A_2\dots\text{ et }X_n\in A_n)\ =\ \prod_{i=1}^n\mathbb{P}(X_i\in A_i),
+$$
+on a l'égalité
+$$
+\mathbb{E}\left[\prod_{i=1}^n\ \varphi_i(X_i)\right]\ =\ \prod_{i=1}^n\mathbb{E}\left[\varphi_i(X_i)\right],
+$$
+pour n'importe quelle suite de fonctions $\varphi_i$ définies sur $(E_i,\mathcal{E}_i)$, à valeurs dans $\mathbb{R}$, dès que les espérances ci-dessus ont un sens.
+$$
+f_X(x)= \prod_{i=1}^{n}f_{X_i}(x_i)
+$$
+\end{f}
+\hrule
+
+
+
+\begin{f}[Dépendance parfaite en dimension 2]
+Soient $F_1,F_2$ fonctions de répartition $\mathbb{R}\rightarrow [0,1]$.
+
+Les \textbf{classes de Fréchet} $\mathcal{F}_{(F_1,F_2)}$ regroupent l'ensemble des fonctions de répartition $\mathbb{R}^2\rightarrow [0,1]$
+dont les lois marginales sont précisément  $F_1,F_2$.
+	
+Pour tout $F \in \mathcal{F} (F_1,F_2)$, et pour tout $x$ in $\mathbb{R}^d$
+$$
+F^-(\boldsymbol{x})\leq F (\boldsymbol{x})\leq F^+(\boldsymbol{x})
+$$
+où $F^+(\boldsymbol{x}) = \min \{F_1(x_1),F_2(x_2)\}$, et 
+$F^-(\boldsymbol{x}) = \max\{0,F_1(x_1) +F_2(x_2)-1\}$.
+
+
+
+\begin{enumerate}
+	\item Le couple $\boldsymbol{X}=(X_1,X_2)$ est dit comonotone si et seulement s'il  admet $F^+$ comme fonction de répartition.
+	\item Le couple $\boldsymbol{X}=(X_1,X_2)$ est dit antimonotone si et seulement s'il  admet $F^-$ comme fonction de répartition.
+\end{enumerate}
+
+Le couple $\boldsymbol{X}=(X_1,X_2)$ est dit \textbf{comonotone} (\textbf{antimonotone}) s'il existe des fonctions non-décroissantes (non-croissante) $g_1$ et $g_2$ d'une  variable aléatoire $Z$ telles que 
+$$
+\boldsymbol{X}=(g_1(Z),g_2(Z))
+$$
+\end{f}
+\hrule
+
+\begin{f}[Le vecteur gaussien]
+Un vecteur $X=(X_1,\cdots, X_n)$ est dit \textbf{vecteur gaussien}, de loi $\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})$, lorsque toute combinaison linéaire $\sum_{j=1}^{n}\alpha_jX_j$ de ses composantes est la loi normale univariée. % (avec la convention de $\mathcal{N}(\mu, \sigma))$
+En particulier, chaque composante $X_1,\cdots, X_n$ est de loi normale.
+\begin{tikzpicture}[scale=0.8]
+	\def\mua{2}
+	\def\mub{1.5}
+	\def\sigmaa{1}
+	\def\sigmab{1.4}
+	\begin{axis}[
+		colormap name  = whitetoblue,
+		width          = 9cm,
+		view           = {45}{65},
+		enlargelimits  = false,
+		grid           = major,
+		domain         = -1:4,
+		y domain       = -1:4,
+		samples        = 26,
+		xlabel         = {$x_1$},
+		ylabel         = {$x_2$},
+		zlabel         = {},
+		colorbar,
+		colorbar style = {
+			at     = {(1.1,0)},
+			anchor = south west,
+			height = 0.25*\pgfkeysvalueof{/pgfplots/parent axis height},
+			title  = {\ \ \ \ \ \ $f_{X_1,X_2}(x_1,x_2)$}
+		}
+		]
+		\addplot3 [surf] {Normale2(\x,\y,\mua,\sigmaa,\mub,\sigmab,-0.6)};
+		\addplot3 [domain=-1:4,samples=31, samples y=0, thick, smooth]
+		(\x,4,{normal(\x,\mua,\sigmaa)});
+		\addplot3 [domain=-1:4,samples=31, samples y=0, thick, smooth]
+		(-1,\x,{normal(\x,\mub,\sigmab)});
+		%		
+		\draw [black!50] (axis cs:-1,0,0) -- (axis cs:4,0,0);
+		\draw [black!50] (axis cs:0,-1,0) -- (axis cs:0,4,0);
+		%
+		\node at (axis cs:-1,4,-0.15) [pin=165:$f_{X_1}(x_1)$] {};
+		\node at (axis cs:0,4,0.1) [pin=-15:$f_{X_2}(x_2)$] {};
+	\end{axis}
+\end{tikzpicture}
+
+
+\begin{itemize}
+	\item $\boldsymbol{\mu}$ de $\mathbb{R}^N$ sa localisation,
+	\item  $\boldsymbol{\Sigma}$ semi-définie positive de $\mathcal{M}_N(\mathbb{R})$, sa variance-covariance.
+\end{itemize} 
+
+Si $\boldsymbol{\Sigma}$ est bien définie positive, donc inversible, alors
+% $f_{\left(\boldsymbol{\mu},\boldsymbol{\Sigma}\right)} :\mathbb{R}^N \to \mathbb{R}$ :
+$$
+f_{\left(\boldsymbol{\mu},\boldsymbol{\Sigma}\right)}\left(\boldsymbol{x}\right)= \frac{1} {(2\pi)^{N/2} \left| \boldsymbol{\Sigma}\right|^{1/2}}e^{ -\frac{1}{2}\left(\boldsymbol{x}-\boldsymbol{\mu}\right)^\top\boldsymbol{\Sigma}^{-1}\left(\boldsymbol{x}-\boldsymbol{\mu}\right) }.
+$$
+où $\left| \boldsymbol{\Sigma}\right|$ est le déterminant de $\boldsymbol{\Sigma}$.
+
+\end{f}
+\hrule
+
+\begin{f}[Trois mesures de lien (corrélations)]
+
+On nomme le coefficient de \textbf{corrélation linéaire de Pearson} la valeur
+$$
+\rho_P = \frac{\sigma_{xy}}{\sigma_x \sigma_y}
+$$
+où $\sigma_{xy}$ désigne la covariance entre les variables $x$ et $y$, et $\sigma_x$, $\sigma_y$ leur écart type.
+$\rho$ prend ses valeurs dans $[-1,1]$ (application du théorème de Cauchy-Schwartz).
+
+$X\bot Y \Rightarrow \rho_P=0$, Attention, $\rho_P=0 \nRightarrow X\bot Y $. 
+
+
+ 
+
+Le \textbf{tau de Kendall} se définit par
+$$
+\tau_K=\mathbb{P}((X-X')(Y-Y')>0)-P((X-X')(Y-Y')<0)
+$$
+où $(X,Y)$  $(X',Y')$  sont deux couples indépendant de même densité jointe. Cela correspond à  la probabilité des concordants diminuée de celle des discordants :
+\begin{align*}
+\tau_K	=&\mathbb{P}\left(\operatorname{sgn}(X-X')=\mathbb{P}(\operatorname{sgn}(Y-Y')\right)-\\
+		&\mathbb{P}\left(\operatorname{sgn}(X-X')\neq \operatorname{sgn}(Y-Y')\right)\\
+=&\mathbb{E}\left[ \operatorname{sgn}(X-X')\operatorname{sgn}(Y-Y')\right]\\
+=&\operatorname{Cov}(\operatorname{sgn}(X-X'),\operatorname{sgn}(Y-Y'))\\
+=&4\mathbb{P}(X<X',Y<Y')-1 
+\end{align*}
+
+Le coefficient de corrélation \textbf{rho de Spearman} de $(X,Y)$ est défini comme le coefficient de corrélation de Pearson des rangs des variables aléatoires $X$ et $Y$.
+Pour un échantillon $n$, les $n$ valeurs $X_i$, $Y_i$ sont converties par leurs rangs $x_i$, $y_i$, et $\rho$ est calculé~:
+$$
+\rho_S = \frac{1/n\,\sum_i(x_i-\mathbb{E}[x])(y_i-\mathbb{E}[y])}{\sqrt{1/n\,\sum_i (x_i-\mathbb{E}[x])^2 \times 1/n\sum_i(y_i-\mathbb{E}[y])^2}}.
+$$
+Si on note $x_i= R(X_i)$ de 1 à $N$ et  $d_i = x_i - y_i$~:
+$$    \rho_S = 1- {\frac {6 \sum_i d_i^2}{n(n^2 - 1)}}$$
+
+\end{f}
+\hrule
+
+\begin{f}[Copule]
+Une \textbf{copule} est une fonction de répartition, notée $\mathcal{C}$, définie sur $[0,1]^d$ dont les marges sont uniformes sur $[0,1]$. 
+Une caractérisation est alors que $\mathcal{C}(u_1,...,u_d)=0$ si une des composantes $u_i$ est nulle, $\mathcal{C}(1,...,1,u_i,1,...,1)=u_i$, et $\mathcal{C}$ est $d-$croissante.
+\medskip
+		
+Soit $F^{(d)}$ une fonction de répartition en dimension $d$  où les $F_i$ sont les lois marginales de $F$. 
+
+Le\textbf{ théorème de Sklar} indique que $F^{(d)}$ admet une représentation copule~:
+$$
+F^{(d)} (x_1,...,x_d) = \mathcal{C} (F_1(x_1),...,F_d(x_d))
+$$
+Si ces lois marginales sont toutes continues, la copule $\mathcal{C}$ est alors unique, et donnée par la relation 
+$$
+\mathcal{C}(u_1,...,u_d)=F^{(d)}(F_1^{-1} (u_1),...,F_d^{-1} (u_d))
+$$
+Dans ce cas, on pourra alors parler de la copule associée à un vecteur aléatoire $(X_1,...,X_d)$.	
+Ce théorème est très important puisque nous pouvons séparer la partie marge de distribution de la partie dépendance. 
+\medskip
+	
+La \textbf{Copule Gaussienne} est une distribution sur le cube unitaire de dimension $d$, $[0,1]^d$. 
+Elle est construite sur la base d'une loi normale de dimension $d$ sur  $\mathbb{R}^d$.
+
+Soit la matrice de corrélation  $\Sigma\in\mathbb{R}^{d\times d}$, la copule Gaussienne de paramètre  $\Sigma$ peut s'écrire~:
+$$
+\mathcal{C}_\Sigma^{Gauss}(u) = \Phi_\Sigma\left(\Phi^{-1}(u_1),\dots, \Phi^{-1}(u_d) \right), 
+$$
+où $\Phi^{-1}$ est la fonction de répartition inverse de la loi normale standard et  $\Phi_\Sigma$ est la distribution jointe d'une loi normale de dimension $d$, de moyenne nulle et de matrice de covariance égale à la matrice de corrélation  $\Sigma$.
+\medskip	
+
+	Une copule $\mathcal{C}$ est qualifiée d'\textbf{archimédienne} si elle admet la représentation suivante~:
+$$
+\mathcal{C}(u_1,\dots,u_d) = \psi^{-1}\left(\psi(u_1)+\dots+\psi(u_d)\right)\,
+$$
+où $\psi$ est alors appelé \textbf{générateur}.
+
+Souvent, les copules  admettent une formulation explicite de  $\mathcal{C}$. 
+Un seul paramètre permet d'accentuer la dépendance de toute la copule, quelque soit sa dimension $d$.
+
+
+Cette formule fournit une copule si et seulement si $\psi\,$ est $d$-monotone sur $[0,\infty)$ \emph{i.e.} la dérivé $k^e$  de $\psi\,$ satisfait
+$$
+(-1)^k\psi^{(k)}(x) \geq 0
+$$
+pour tout $x\geq 0$ et $k=0,1,\dots,d-2$ et $(-1)^{d-2}\psi^{d-2}(x)$ est non-croissante et convexe.
+\medskip
+
+Les générateurs suivants sont tous monotones, i.e. $d$-monotone pour tout $d\in\mathbb{N}$.
+
+\footnotesize
+\renewcommand\arraystretch{1.3}
+\begin{tabular}{|m{10mm}|ccc|}	\rowcolor{BleuProfondIRA!40} 
+	\hline
+ Nom 		& Générateur $\psi^{-1}(t)$, 	& $\psi(t)$ &	Paramètre\\
+	\hline
+	Ali-Mikhail-Haq 	&$\frac{1-\theta}{\exp(t)-\theta} $	
+	&$\log\left(\frac{1-\theta+\theta t}{t}\right)$ 	
+	&$\theta\in[0,1)$\\
+	Clayton		&$\left(1+\theta t\right)^{-1/\theta} 	$
+	&$\frac1\theta\,(t^{-\theta}-1)\, 	$
+	&$\theta\in(0,\infty)$\\
+	Frank 		&$-\frac{1}{\theta}\exp(-t)$
+	&$-\log\left(\frac{\exp(-\theta t)-1}{\exp(-\theta)-1}\right)$
+	&$\theta\in(0,\infty)$\\
+	&$\times\log(1-(1-\exp(-\theta)))$
+	&
+	&\\
+	Gumbel 		&$\exp\left(-t^{1/\theta}\right) $	
+	&$\left(-\log(t)\right)^\theta$	
+	&$\theta\in[1,\infty)$\\
+	$\perp$ 	&$\exp(-t)\,$
+	&$-\log(t)\,$ 	
+	& \\
+	Joe		&$1-\left(1-\exp(-t)\right)^{1/\theta}$
+	&$-\log\left(1-(1-t)^\theta\right)$
+	&$\theta\in[1,\infty)$\\
+	\hline
+\end{tabular}
+\renewcommand\arraystretch{1}
+\end{f}
+\hrule
+
+\begin{f}[Mouvement brownien, filtration et martingales]
+	
+Une \textbf{filtration} $(\mathcal{F}_t)_{t \geq 0}$ est une famille croissante de $\sigma$-algèbres ou tribu représentant l’information disponible jusqu’au temps $t$. Un processus $(X_t)$ est dit \textbf{$\mathcal{F}_t$-adapté} si $X_t$ est mesurable par rapport à $\mathcal{F}_t$ pour tout $t$.
+	
+Un processus $(B_t)_{t \geq 0}$ est un \textbf{mouvement brownien standard} (ou processus de Wiener) s’il vérifie :
+	\begin{itemize} 
+		\item $B_0 = 0$ ;
+		\item accroissements indépendants : $B_t - B_s$  indépendant de $\mathcal{F}_s$ ;
+		\item accroissements stationnaires : $B_t - B_s \sim \mathcal{N}(0, t - s)$ ;
+		\item trajectoires continues presque sûrement.
+	\end{itemize}
+	
+	Un processus $(M_t)$ est une \textbf{martingale} (par rapport à $\mathcal{F}_t$) si :
+	\[
+	\mathbb{E}[|M_t|] < \infty \quad \text{et} \quad \mathbb{E}[M_t \mid \mathcal{F}_s] = M_s \quad \forall\, 0 \leq s < t
+	\]
+	Exemples : le mouvement brownien, les intégrales stochastiques de la forme $\int_0^t \theta_s dB_s$ (sous conditions) sont des martingales.
+	\medskip
+	
+	\textbf{Variation quadratique} est noté $
+	\langle B \rangle_t = t, \quad \langle cB \rangle_t = c^2 t$
+	
+\textbf{Covariation} : pour deux processus d’Itô $X, Y$,
+\[
+\langle X, Y \rangle_t := \lim_{\|\Pi\| \to 0} \sum_{i} (X_{t_{i+1}} - X_{t_i})(Y_{t_{i+1}} - Y_{t_i})
+\]
+convergence en probabilité, où $\Pi = \{t_0 = 0 < t_1 < \dots < t_n = t\}$ est une partition de $[0,t]$.
+\end{f}
+
+
+\begin{f}[Processus d'Itô et calcul différentiel stochastique]
+	
+Un processus $(X_t)$ est un \textbf{processus d’Itô} s’il peut s’écrire :
+	\[
+	X_t = X_0 + \int_0^t \phi_s\, ds + \int_0^t \theta_s\, dB_s
+	\]
+	ou en différentielle
+	\[dX_t = \phi_t dt + \theta_t dB_t\]
+	avec $\phi_t$, $\theta_t$ $\mathcal{F}_t$-adaptés et $L^2$-intégrables.
+	
+	\textbf{Formule d’Itô (1D)} : pour $f \in C^2(\mathbb{R})$, on a :
+	\[
+	df(X_t) = f'(X_t) dX_t + \frac{1}{2} f''(X_t) d\langle X \rangle_t
+	\]
+	
+	Exemple : si $dX_t = \mu dt + \sigma dB_t$ alors :
+	\[
+	dX_t^2 = 2X_t dX_t + d\langle X \rangle_t
+	\]
+	
+	\textbf{Formule d’Itô (multi-dimension)} :\\
+	Si $X = (X^1, \dots, X^d)$ est un processus d’Itô, $f \in C^2(\mathbb{R}^d)$ :
+	\[
+	df(X_t) = \sum_i \frac{\partial f}{\partial x_i}(X_t) dX^i_t
+	+ \frac{1}{2} \sum_{i,j} \frac{\partial^2 f}{\partial x_i \partial x_j}(X_t) d\langle X^i, X^j \rangle_t
+	\]
+	
+	\textbf{Intégration par parties (Itô)} :
+	\[
+	d(X_t Y_t) = X_t dY_t + Y_t dX_t + d\langle X, Y \rangle_t
+	\]
+	
+\end{f}
+
+\begin{f}[Équations différentielles stochastiques (EDS)]
+	
+	Une EDS (\emph{SDE}) est une équation stochastique de la forme :
+	\[
+	dX_t = b(t, X_t) dt + a(t, X_t) dB_t, \quad X_0 = x
+	\]
+	où :
+	\begin{itemize}
+		\item $b(t,x)$ est la \textbf{dérive} (\emph{drift}) : fonction $\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}$ ;
+		\item $a(t,x)$ est la \textbf{diffusion} : fonction $\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}$ ;
+		\item $B_t$ est un mouvement brownien ;
+		\item $X_t$ est la solution, processus stochastique adapté.
+	\end{itemize}
+	
+	\textbf{Forme intégrale} :
+	\[
+	X_t = x + \int_0^t b(s, X_s) ds + \int_0^t a(s, X_s) dB_s
+	\]
+	
+	\textbf{Conditions d’existence et d’unicité} :
+	\begin{itemize}
+		\item \textbf{Lipschitz} : il existe $L > 0$ tel que :
+		\[
+		|b(t,x) - b(t,y)| + |a(t,x) - a(t,y)| \leq L |x - y|
+		\]
+		\item \textbf{Croissance linéaire} :
+		\[
+		|b(t,x)|^2 + |a(t,x)|^2 \leq C(1 + |x|^2)
+		\]
+	\end{itemize}
+	
+Exemples classique :
+	\begin{itemize}
+		\item \textbf{Brownien géométrique} : $dS_t = \mu S_t dt + \sigma S_t dB_t$
+		\item \textbf{Ornstein–Uhlenbeck} : $dX_t = \theta(\mu - X_t) dt + \sigma dB_t$
+	\end{itemize}
+	
+	\textbf{Méthodes numériques} : Euler–Maruyama, Milstein.
+	
+\end{f}
+
+\begin{f}[Probabilité risque neutre]
+	
+	Une probabilité $\mathbb{Q}$ est dite \textbf{risque neutre} si, sous $\mathbb{Q}$, 
+	tout actif  $S_t$ a un prix actualisé $ \frac{S_t}{B_t}$ qui est une martingale
+	où $(B_t)$ est le numéraire (par exemple $B_t = e^{rt}$).
+	
+	L'absence d'arbitrage $\iff \exists\, \mathbb{Q} \sim \mathbb{P}$ telle que les prix actualisés soient des martingales.
+	C’est le \textbf{théorème fondamental de l’évaluation des actifs}.
+	
+	\textbf{Application} :\\
+	Sous $\mathbb{Q}$, la valeur à l’instant $t$ d’un actif donnant un retour $H$ à la date $T$ est :
+	\[
+	S_t = B_t\, \mathbb{E}^\mathbb{Q} \left[ \left. \frac{H}{B_T} \right\|  \mathcal{F}_t \right]
+	\]
+	
+	\textbf{Remarque} :\\
+	La mesure $\mathbb{Q}$ est équivalente à $\mathbb{P}$, mais reflète un monde "sans préférence pour le risque", utile en valorisation.
+	
+\end{f}
+\newcolumn
+
+%
+%\begin{f}[Processus stochastiques en actuariat]
+%	
+%	\textbf{Brownien standard} $W_t$ :
+%	\begin{itemize}
+%		\item $W_0 = 0$ a.s.
+%		\item $W_t$ est à accroissements indépendants et stationnaires
+%		\item $W_t - W_s \sim \mathcal{N}(0, t-s)$ pour $t > s$
+%		\item Trajectoires continues presque sûrement
+%	\end{itemize}
+%	
+%	\textbf{Martingale} :
+%	Un processus $(M_t)_{t \geq 0}$ adapté à une filtration $(\mathcal{F}_t)$ est une \textit{martingale} si :
+%	\[
+%	\mathbb{E}[|M_t|] < \infty \quad \text{et} \quad \mathbb{E}[M_t \mid \mathcal{F}_s] = M_s \quad \forall s < t
+%	\]
+%	
+%	\textbf{Lemme d’Itô (dimension 1)} :\\
+%	Soit $X_t$ une EDS : $\mathrm{d}X_t = \mu_t \,\mathrm{d}t + \sigma_t \,\mathrm{d}W_t$,\\
+%	et $f : \mathbb{R} \to \mathbb{R}$ de classe $C^2$, alors :
+%	\[
+%	\mathrm{d}f(X_t) = f'(X_t) \,\mathrm{d}X_t + \frac{1}{2} f''(X_t) \,\sigma_t^2 \,\mathrm{d}t
+%	\]
+%	
+%	\textbf{Équation différentielle stochastique (EDS)} :
+%	\[
+%	\mathrm{d}X_t = \mu(X_t, t)\,\mathrm{d}t + \sigma(X_t, t)\,\mathrm{d}W_t
+%	\]
+%	
+%	\textbf{Exemple classique : processus de Black-Scholes} :
+%	\[
+%	\mathrm{d}S_t = \mu S_t\,\mathrm{d}t + \sigma S_t\,\mathrm{d}W_t
+%	\quad \Rightarrow \quad
+%	S_t = S_0 \exp\left((\mu - \frac{\sigma^2}{2})t + \sigma W_t\right)
+%	\]
+%	
+%	\textbf{Mouvement brownien géométrique} :
+%	\[
+%	S_t = S_0 \exp(X_t), \quad \text{où } X_t = (\mu - \frac{\sigma^2}{2})t + \sigma W_t
+%	\]
+%	
+%	\textbf{Lien avec Bachelier (1900)} :
+%	Premier modèle de prix avec mouvement brownien additif :
+%	\[
+%	S_t = S_0 + \mu t + \sigma W_t
+%	\quad \text{(modèle abandonné à cause de } S_t < 0 \text{ possible)}
+%	\]
+%	
+%	\textbf{Lien avec Norbert Wiener} :\\
+%	Formalisation rigoureuse du mouvement brownien comme processus stochastique à temps continu.
+%	
+%\end{f}
+%\hrule
+
+\begin{f}[Les simulations]
+	\tikz{
+		\def\m{2};
+		\def\s{1};
+	}
+	%
+	
+	Les simulations permettent en particulier d'approximer l'espérance par la moyenne empirique des réalisations $x_1,\ldots,x_n$:
+	$$
+	\frac{1}{n}(x_1+\ldots+x_n)\approx \int xdF(x)=\mathbb{E}[X]
+	$$
+	Ensuite, en vertu du TLC, nous estimons l'incertitude ou intervalle de confiance sur la base de la loi normale:
+	$$
+	\left[\overline{x}-1,96\frac{S_n}{\sqrt{n}},\overline{x}+1,96\frac{S_n}{\sqrt{n}}\right]
+	$$
+	où $S_n$ estime sans biais la variance de $X$~:
+	$$
+	S_n^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\overline{x})^2
+	$$
+	
+	la convergence est dite en $\mathcal{O}(\frac{\sigma}{\sqrt{n}})$. 	
+	Cet intervalle permet de décider le nombre de simulation à réaliser.
+\end{f}
+
+\begin{f}[Générateur pseudo aléatoire sur ${[}0,1{]}^d$]
+L'ordinateur ne sait pas lancer le dé ($\Omega=\{ \epsdice{1}, \epsdice{2}, \epsdice{3}, \epsdice{4}, \epsdice{5}, \epsdice{6} \}$).
+Il génère un pseudo aléa, c'est à dire un algorithme déterministe qui ressemble à un événement aléatoire.
+Les générateurs produisent généralement un aléa sur $[0,1]^d$.
+Si la valeur initiale (\emph{seed}) est définie ou identifiée, les tirages suivants sont connus et répliquables.
+
+
+L'algorithme le plus simple es  appelée méthode des congruences linéaires.
+$$
+x_{n+1}=\Phi(x_n)= (a\times x_n+c) \mod m
+$$ \small
+chaque $x_n$ est un entier compris entre 0 et $m-1$.
+$a$ le multiplicateur [\emph{multiplier}], $c$ l'accroissement [\emph{increment}], et $m$ le modulo [\emph{modulus}] de la forme $2^p-1$, c'est-à-dire un nombre premier de Mersenne ( $ p $ nécessairement premier) :
+
+Générateur de Marsaglia: $a=69069, b=0, m=2^{32}$
+
+Générateur Knuth\&Lewis: $a=1664525, b=1013904223, m=2^{32}$
+
+Générateur de Haynes: $a=6364136223846793005, b=0, m=2^{64}$
+
+%Le générateur de Tausworthe est une extension du générateur congruentiel linéaire qui consiste à ne  plus utiliser seulement $x_{╔n-1}$ pour fabriquer un nouvel élément mais plutôt un ensemble de valeurs précédentes
+Le générateur de Tausworthe, constitue une extension 'autorégressive' :
+$$
+x_{n}=(a_{1}\times x_{n-1}+a_{2}\times x_{n-2}+\cdots +a_{k}\times x_{n-k}) \mod m \text{ avec } n\geq k
+$$
+La période du générateur est $m^k-1$, avec tous les $a_i$ premiers entre eux. Si $m$ est de la forme $2^p$ , les temps de calculs machine sont réduits. 
+
+
+Le générateur aléatoire par défaut est généralement l'algorithme de Mersenne-Twister. Il est basé sur une récurrence linéaire sur une matrice $F_{2}$ (matrice dont les valeurs sont en base 2, i.e. 0 ou 1). 
+Son nom provient du fait que la longueur de la période choisie pour être un nombre premier de Mersenne. 
+\begin{enumerate}
+	\item     sa période est de $2^{19937}-1 $
+	\item     il est uniformément distribué sur un grand nombre de dimensions (623 pour les nombres de 32 bits) ;
+	\item     il est plus rapide que la plupart des autres générateurs ,
+	\item     il est aléatoire quel que soit le poids du bit considéré, et passe les tests Diehard.
+\end{enumerate}
+\end{f}
+%
+
+\begin{f}[Simuler une variable aléatoire]
+	
+Simuler $X$ d'une loi quelconque $F_X$ revient souvent à simuler $\left(p_i\right)_{i\in [1,n]}$ de loi $\mathcal{U}ni(0,1)$.
+
+\textbf{ Si $F_X$ est inversible},  $x_i=F^{-1}_X(p_i)$ (ou fonction quantile) livre $\left(x_i\right)_{i\in [1,n]}$ un jeu de $n$ simulations de loi $F_X$.
+			
+	\begin{center}
+		%\tikzmath{
+			%	\m = 2; 
+			%	\s = 1;
+			%}	
+		
+		\begin{tikzpicture}[xscale=.8,yscale=2]
+			
+			% define normal distribution function 'normaltwo'
+			%	\def\normaltwo{\x,{4*1/exp(((\x-3)^2)/2)}}
+			
+			% input y parameter
+			\def\z{3.5}
+			\def\m{2};
+			\def\s{1};
+			
+			% this line calculates f(y)
+			\def\fz{normcdf(\z,\m, \s)}
+			
+			
+			\draw[color=blue] plot [domain=-1:6] ({\x}, {normcdf(\x,\m, \s)})
+			node[right] {\color{blue} $F_X(x)$};;
+			
+			% Add dashed line dropping down from normal.
+			\draw[dashed] (0,{\fz}) node[left] {$p_i$};
+			\draw[dashed,->]   (0,{\fz}) -- ({\z},{\fz}) -- ({\z},0) node[below] {$x_i=\Phi^{-1}(p_i)$};
+			
+			% Optional: Add axis labels 
+			\draw (6,0) node[below] {$x$};
+			
+			% Optional: Add axes
+			\draw[->] (-1.2,0) -- (6.2,0) node[right] {};
+			\draw[->] (0,0) -- (0,1.2) node[above] {};
+			
+		\end{tikzpicture}
+	\end{center}	
+	
+Si c'est une variable discrète ($F^{-1}$ n'existe pas) $X_\ell=\min_{\ell} F(X_\ell)> p_i$, où $ \left(X_{\ell}\right)_{\ell}$ l'ensemble dénombrable des valeurs possibles, ordonnées de manière croissante.
+
+Dans la méthode du \textbf{changement de variable}, on suppose qu'on sait simuler une loi $X$, et qu'il existe $\phi$ tel que $Y=\varphi(X)$ suit une loi $F_Y$. L'exemple naturelle est celui de $X\sim \mathcal{N}(0,1)$ et de faire le changement $Y=\exp(X)$ pour obtenir Y qui suit une loi lognormale.
+
+\textbf{La méthode du rejet} est utilisée dans des cas plus complexe, par exemple lorsque $F^{-1}$ n'est pas explicite ou exige beaucoup de temps de calcul. 
+Soit $f$ une fonction de densité de probabilités. On suppose qu'il existe une densité de probabilités $g$ telle que :
+$$
+{\displaystyle \exists K>0\ ,\ \forall x\in \mathbb {R} \ ,\ f(x)\leq Kg(x)}
+$$
+On simule alors $Z$ suivant la loi de densité $g$, et ${\displaystyle Y\sim {\mathcal {U}}([0;Kg(Z)])} $.
+Alors la variable aléatoire ${\displaystyle X=\lbrace Z|Y\leq f(Z)\rbrace } $ suit la loi de densité $f$.
+
+
+
+\begin{tikzpicture}[domain=-4:10,scale=0.6]
+	%   \draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
+	\draw[->] (-4.2,0) -- (10.2,0) node[right] {$x$};
+	\draw[->] (0,0) -- (0,6) node[above] {$f(x)$};
+	\draw[BleuProfondIRA] (-4,0) -- (-4,6) ;
+	\draw[BleuProfondIRA] (10,0) -- (10,6) ;
+	\draw[name path=melange,color=OrangeProfondIRA,smooth] plot ({\x},{20*normal(\x,2,2)+10*normal(\x,6,1)}) node[below=.5,left] {$f(x)$ , mélange loi normale};
+	\draw[name path=g,color=BleuProfondIRA,smooth] plot  ({\x},{60*normal(\x,3,3)})   node[above=3.5,left] {$K\times g(x)$, densité de  loi normale };
+	\tikzfillbetween[of=melange and g]{BleuProfondIRA, opacity=0.1};
+\end{tikzpicture}
+
+La performance de l'algorithme dépend du nombre de rejet, représenté par la surface bleu sur le graphique.
+\end{f}
+\hrule
+
+%
+
+\begin{f}[Méthodes de Monte Carlo]
+
+Les \textbf{méthodes de Monte Carlo} reposent sur la simulation répétée de variables aléatoires pour approximer des quantités numériques.
+
+\textbf{Convergence} :
+\begin{itemize}[nosep]
+	\item Par la \textbf{loi des grands nombres}, l’estimateur converge presque sûrement vers la valeur attendue.
+	\item Par le \textbf{théorème central limite}, l’erreur standard est en $\mathcal{O}(N^{-1/2})$ :
+	\[
+	\sqrt{N}(\hat{\mu}_N - \mu) \xrightarrow{d} \mathcal{N}(0, \sigma^2)
+	\]
+	\item Cette convergence lente justifie l’usage de techniques d’\textbf{amélioration de la convergence}.
+\end{itemize}
+
+\textbf{Techniques de réduction de variance} :
+\begin{itemize}
+	\item \textbf{Variables antithétiques} : on simule $X$ et $-X$ (ou $1-U$ si $U \sim \mathcal{U}[0,1]$), puis on moyenne les résultats. Réduction efficace si $f$ est monotone.
+	\item \textbf{Méthode de contrôle} : si $\mathbb{E}[Y]$ est connue, on simule $(f(X), Y)$ et on corrige :
+	\[
+	\hat{\mu}_\text{corr} = \hat{\mu} - \beta(\bar{Y} - \mathbb{E}[Y])
+	\]
+	où $\beta$ optimal minimise la variance.
+	\item \textbf{Stratification} : on divise l’espace des simulations en strates (sous-ensembles), et on simule proportionnellement dans chaque strate.
+	\item \textbf{Importance sampling} : on modifie la loi de simulation pour accentuer les événements rares, puis on repondère :
+	\[
+	\mathbb{E}[f(X)] = \mathbb{E}^{Q}\left[f(X) \frac{\mathrm{d}P}{\mathrm{d}Q}(X)\right]
+	\]
+	utilisée notamment pour estimer les queues de distribution (VaR, TVaR).
+\end{itemize}
+
+\end{f}
+\begin{f}[Le bootstrap]
+	
+	Le \textbf{bootstrap} est une méthode de \textit{rééchantillonnage} permettant d’estimer l’incertitude d’un estimateur sans supposer de forme paramétrique pour la loi sous-jacente.
+	
+	Soit un échantillon $\xi = (X_1, X_2, \ldots, X_n)$ de variables iid suivant une loi inconnue $F$. On cherche à estimer une statistique $\theta = T(F)$ (ex. moyenne, médiane, variance), via son estimateur empirique $\hat{\theta} = T(\hat{F}_n)$.
+	
+	\begin{enumerate}
+		\item On approxime $F$ par la fonction de répartition empirique :
+		\[
+		\hat{F}_n(x) = \frac{1}{n} \sum_{k=1}^n \mathbf{1}_{\{X_k \le x\}}
+		\]
+		
+		\item On génère $B$ échantillons bootstrap $\xi^{\ast(b)} = (X_1^{\ast(b)}, \ldots, X_n^{\ast(b)})$ en tirant \textbf{avec remise} dans l’échantillon initial.
+		
+		\item Pour chaque échantillon simulé, on calcule l’estimation $T^{\ast(b)} = T(\hat{F}_n^{\ast(b)})$.
+	\end{enumerate}
+	
+	Les réalisations $T^{\ast(1)}, \ldots, T^{\ast(B)}$ forment une approximation de la distribution de l’estimateur $\hat{\theta}$.
+	
+	On peut en déduire :
+	\begin{itemize}[nosep]
+		\item un \textbf{biais estimé} : $\widehat{\text{bias}} = \overline{T^\ast} - \hat{\theta}$ ;
+		\item un \textbf{intervalle de confiance} à $(1-\alpha)$ : $[q_{\alpha/2},\ q_{1 - \alpha/2}]$ des quantiles empiriques de $T^{\ast(b)}$ ;
+		\item une estimation de la \textbf{variance} : $\widehat{\mathrm{Var}}(T^\ast)$.
+	\end{itemize}
+	
+	\textbf{Remarque} : Le bootstrap est particulièrement utile lorsque la distribution de $T$ est inconnue ou difficile à estimer analytiquement.
+	
+\end{f}
+\begin{f}[Bootstrap paramétrique]
+	
+	Le \textbf{bootstrap paramétrique} repose sur l’hypothèse que les données suivent une famille de lois paramétrée $\{F_\theta\}$.
+	
+	Soit $\xi = (X_1, \ldots, X_n)$ un échantillon $iid$ selon une loi $F_\theta$ inconnue. On procède comme suit :
+	\begin{enumerate}
+		\item Estimer le paramètre $\hat{\theta}$ à partir de $\xi$ (ex. par maximum de vraisemblance).
+		\item Générer $B$ échantillons $\xi^{\ast(b)}$ de taille $n$, simulés selon la loi $F_{\hat{\theta}}$.
+		\item Calculer $T^{\ast(b)} = T(\xi^{\ast(b)})$ pour chaque échantillon.
+	\end{enumerate}
+	
+	Ce procédé approxime la distribution de l’estimateur $T(\xi)$ en supposant connue la forme de $F$. Il est plus efficace que le bootstrap non paramétrique si l’hypothèse de modèle est bien spécifiée. Le bootstrap paramétrique est plus rapide, mais hérite des biais du modèle.
+	
+\end{f}
+
+\begin{f}[Validation croisée]
+	
+	La \textbf{validation croisée} est une méthode d’évaluation de la performance prédictive d’un modèle statistique, utilisée notamment en machine learning ou en tarification.
+	
+	\textbf{Principe} :
+	\begin{itemize}
+		\item Diviser les données en $K$ blocs (ou folds).
+		\item Pour chaque $k = 1,\ldots,K$ :
+		\begin{itemize}
+			\item Entraîner le modèle sur les $K-1$ autres blocs.
+			\item Évaluer la performance (erreur, log-vraisemblance...) sur le $k$-ième bloc.
+		\end{itemize}
+		\item Agréger les erreurs pour obtenir une estimation globale de la performance hors-échantillon.
+	\end{itemize}
+	
+\end{f}
+
+%
+\begin{f}[Méthodes quasi-Monte Carlo]
+	
+	Les méthodes \textbf{quasi-Monte Carlo} visent à \textbf{accélérer la convergence} de l’estimateur d’espérance sans recourir à l’aléatoire. L’erreur typique est de l’ordre :
+	\[
+	\mathcal{O}\left( \frac{(\ln N)^s}{N} \right)
+	\]
+	où $N$ est la taille de l’échantillon et $s$ la dimension du problème.
+	
+	Ces méthodes reposent sur l’utilisation de suites \textbf{à discrépance faible} dans $[0,1]^s$. La discrépance à l'origine (\emph{star discrepancy}), notée  $D^*_N(P)$ pour un ensemble de points $P = \{x_1, \ldots, x_N\}$, mesure l’écart maximal entre la proportion de points contenus dans des rectangles \emph{ancrés à l’origine} et leur volume. Elle est définie par :
+	\[
+	D^*_N(P) = \sup_{u \in [0,1]^s} \left| \frac{1}{N} \sum_{i=1}^N \mathbf{1}_{[0,u)}(x_i) - \lambda_s([0,u)) \right|
+	\]
+	avec :
+	\begin{itemize}
+		\item $[0,u) = \prod_{j=1}^s [0, u_j)$ un rectangle ancré à l’origine dans $[0,1]^s$,
+		\item $\mathbf{1}_{[0,u)}(x_i)$ l’indicatrice de l’appartenance de $x_i$ à ce rectangle,
+		\item $\lambda_s([0,u)) = \prod_{j=1}^s u_j$ le volume de ce rectangle.
+	\end{itemize}
+	Une discrépance faible signifie que les points sont bien répartis dans l’espace, ce qui améliore la convergence de l’estimation.
+	
+	\medskip
+	\textbf{Suite de van der Corput (dimension 1)} :
+	Soit $n$ un entier. On l’écrit en base $b$ :
+	\[
+	n = \sum_{k=0}^{L-1} d_k(n)\, b^k
+	\]
+	puis on inverse les chiffres autour de la virgule pour obtenir :
+	\[
+	g_b(n) = \sum_{k=0}^{L-1} d_k(n)\, b^{-k-1}
+	\]
+	Par exemple, pour $b = 5$ et $n = 146$, on a $146 = (1\,0\,4\,1)_5$, donc :
+	\[
+	g_5(146) = \frac{1}{5^4} + \frac{0}{5^3} + \frac{4}{5^2} + \frac{1}{5} = 0{,}3616
+	\]
+	
+	\medskip
+	\textbf{Séquence de Halton (dimension $s$)} :
+	On généralise la suite de van der Corput en utilisant $s$ bases entières premières distinctes $b_1, \dots, b_s$ :
+	\[
+	x(n) = \big( g_{b_1}(n), \dots, g_{b_s}(n) \big)
+	\]
+	Cette construction fournit une suite de points bien répartis dans $[0,1]^s$.
+	
+	\medskip
+	\textbf{Inégalité de Koksma–Hlawka}\\
+	Pour une fonction $f$ de variation finie $V(f)$ (au sens de Hardy–Krause) sur $[0,1]^s$ :
+	\[
+	\left| \int_{[0,1]^s} f(u)\, du - \frac{1}{N} \sum_{i=1}^N f(x_i) \right| \leq V(f)\, D_N
+	\]
+	où $D_N$ est la discrépance de la suite utilisée.
+	
+{\footnotesize	Cette borne explique pourquoi les méthodes quasi-Monte Carlo sont souvent plus efficaces que les méthodes de Monte Carlo.}
+	
+	
+\end{f}

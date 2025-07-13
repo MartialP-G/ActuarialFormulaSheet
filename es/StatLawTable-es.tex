@@ -1,0 +1,190 @@
+\newpage
+\renewcommand{\arraystretch}{2.6}
+\begin{center}
+    
+\begin{tabular}{clll}
+\hline\rowcolor{BleuProfondIRA!40}  Distribution & Densité \& support & \begin{tabular}{c}
+       Moments  \& \\ 
+        fonction de répartition
+    \end{tabular} &     \begin{tabular}{c}
+        Fonction génératrice \\ 
+        de moment 
+    \end{tabular}  \\
+\hline 
+$\begin{gathered}
+\mathcal{B}in(m,q)\\
+(0<p<1, m \in \mathbb{N})
+\end{gathered}$ & 
+$\begin{gathered}
+\binom{m}{x} p^x(1-p)^{m-x} \\
+x=0,1, \ldots, m
+\end{gathered}$
+ & $
+\begin{aligned}
+& E=m p, \operatorname{Var}=m p(1-p) \\
+& \gamma=\frac{m p(1-p)(1-2 p)}{\sigma^3}
+\end{aligned}
+$ & $\displaystyle
+\left(1-p+p e^t\right)^m
+$ \\
+\hline $\mathcal{B}er(q)$  & $\equiv \operatorname{Binomial}(1, p)$ & & \\
+\hline
+$\begin{gathered}
+   \mathcal{D}\mathcal{U}ni(n) \\
+(n>0)
+\end{gathered}$  & $\displaystyle
+ \frac{1}{n}, x=0,1, \ldots n
+$ & $
+\begin{aligned}
+& \mathbb{E}=(n+1)/2 \\
+&\operatorname{Var}=\left(n^{2}-1\right)/{12} 
+\end{aligned}
+$ & $\displaystyle\frac{e^t (1 - e^{nt})}{n(1 - e^t)}$
+\\\hline
+$\begin{gathered}
+    \mathcal{P}ois(\lambda)\\
+(\lambda>0)
+\end{gathered}$  & $\displaystyle
+e^{-\lambda} \frac{\lambda^x}{x!}, x=0,1, \ldots
+$ & $
+\begin{aligned}
+& \mathbb{E}=\operatorname{Var}=\lambda \\
+& \gamma=1 / \sqrt{\lambda} \\
+& \kappa_j=\lambda, j=1,2, \ldots
+\end{aligned}
+$ & $\exp \left[\lambda\left(e^t-1\right)\right]$ \\
+\hline $
+\begin{aligned}
+\mathcal{N}\mathcal{B}in(m,q)\\
+(m>0,0<p<1)
+\end{aligned}$
+ & $
+\begin{gathered}
+\binom{m+x-1}{x} p^m(1-p)^x \\
+x=0,1,2, \ldots
+\end{gathered}
+$ & $
+\begin{aligned}
+& \mathbb{E}=m(1-p) / p \\
+& \mathrm{Var}=\mathbb{E} / p \\
+& \gamma=\frac{(2-p)}{p \sigma}
+\end{aligned}
+$ & $\displaystyle
+\left(\frac{p}{1-(1-p) e^t}\right)^m
+$ \\
+\hline
+$\mathcal{G}eo(q)$ & $\equiv\mathcal{N}\mathcal{B}in(1,q)$
+ \\ \hline
+$
+\begin{aligned}
+& \mathcal{C}\mathcal{U}ni(a,b) \\
+& (a<b)
+\end{aligned}
+$ & $\displaystyle
+\frac{1}{b-a} ; a<x<b
+$ & $
+\begin{aligned}
+&\mathbb{E}=(a+b) / 2, \\
+&\operatorname{Var}=(b-a)^2 / 12,  \\
+&\gamma=0 
+\end{aligned}
+$ & $\displaystyle\frac{e^{b t}-e^{a t}}{(b-a) t}$\\
+\hline $
+\begin{aligned}
+& \mathcal{N}\left(\mu, \sigma^2\right) \\
+& (\sigma>0)
+\end{aligned}
+$ & $\displaystyle
+\frac{1}{\sigma \sqrt{2 \pi}} \exp \frac{-(x-\mu)^2}{2 \sigma^2}
+$ & $
+\begin{aligned}
+& \mathbb{E}=\mu, \mathrm{Var}=\sigma^2, \gamma=0 \\
+& \left(\kappa_j=0, j \geq 3\right)
+\end{aligned}
+$& $\exp \left(\mu t+\frac{1}{2} \sigma^2 t^2\right)$ \\
+\hline $
+\begin{aligned}
+& \mathcal{G}am(k,\theta) \\
+& (k, \theta>0)
+\end{aligned}
+$ & $\displaystyle
+\frac{\theta^k}{\Gamma(k)} x^{k-1} e^{-\theta x}, x>0
+$ & $
+\begin{aligned}
+& \mathbb{E}=k / \theta, \mathrm{Var}=k / \theta^2, \\
+& \gamma=2 / \sqrt{k}
+\end{aligned}
+$ &$\displaystyle \left(\frac{\theta}{\theta-t}\right)^k(t<\theta)$\\
+\hline  $\mathcal{E}_{xp}(\lambda)$ & $\equiv \mathcal{G}am(1,\lambda )$ & 
+$\begin{aligned}
+& \mathbb{E}=1/\lambda\\
+& \operatorname{Var}=1/\lambda^2
+\end{aligned}
+$\\
+\hline $\chi^2(k)(k \in \mathbb{N})$ & $\equiv \mathcal{G}am(  k / 2,1 / 2)$ & \\
+\hline 
+$
+\begin{gathered}
+\mathcal{I}\mathcal{N}(\alpha, \beta) \\
+(\alpha>0, \beta>0)
+\end{gathered}
+$ & $\displaystyle
+\frac{\alpha x^{-3 / 2}}{\sqrt{2 \pi \beta}} \exp \left(\frac{-(\alpha-\beta x)^2}{2 \beta x}\right) 
+$ & \multicolumn{2}{l}{$
+\begin{array}{ll}
+\mathbb{E}=\alpha / \beta, \mathrm{Var}=\alpha / \beta^2, & e^{\alpha(1-\sqrt{1-2 t / \beta})} \\
+\gamma=3 / \sqrt{\alpha} & (t \leq \beta / 2) 
+\end{array}
+$ }\\
+& \multicolumn{3}{l}{
+$F(x)=\Phi\left(\frac{-\alpha}{\sqrt{\beta x}}+\sqrt{\beta x}\right)
++e^{2 \alpha} \Phi\left(\frac{-\alpha}{\sqrt{\beta x}}-\sqrt{\beta x}\right),  x>0$}\\
+\hline $
+\begin{aligned}
+& \mathcal{B}eta(\alpha, \beta) \\
+& (\alpha>0,\beta>0)
+\end{aligned}
+$ & $\displaystyle
+\Gamma(\alpha+\beta)\frac{x^{(\alpha-1}(1-x)^{\beta-1}}{\Gamma(\alpha)\Gamma(\beta) }, 0<x<1
+$ & $\displaystyle
+\mathbb{E}=\frac{\alpha}{\alpha+\beta}, \operatorname{Var}=\frac{\mathbb{E}(1-\mathbb{E})}{\alpha+\beta+1}
+$ \\
+\hline $
+\begin{aligned}
+& \mathcal{L}\mathcal{N}orm\left(\mu, \sigma^2\right) \\
+& (\sigma>0)
+\end{aligned}
+$ & $\displaystyle
+\frac{1}{x \sigma \sqrt{2 \pi}} \exp \frac{-(\log x-\mu)^2}{2 \sigma^2},x>0
+$ & \multicolumn{2}{l}{$
+\begin{aligned}
+& \mathbb{E}=e^{\mu+\sigma^2 / 2}, \operatorname{Var}=e^{2 \mu+2 \sigma^2}-e^{2 \mu+\sigma^2} \\
+& \gamma=c^3+3 c \text { où } c^2=\operatorname{Var} / \mathbb{E}^2
+\end{aligned}
+$ }\\
+\hline $
+\begin{aligned}
+& \mathcal{P}areto\left(\alpha, x_\mathrm{m}\right) \\
+& \left(\alpha, x_\mathrm{m}>0\right)
+\end{aligned}
+$ & $\displaystyle
+\frac{\alpha x_\mathrm{m}^\alpha}{x^{\alpha+1}}, x>x_\mathrm{m}
+$ & \multicolumn{2}{l}{$\displaystyle
+\mathbb{E}=\frac{\alpha x_\mathrm{m}}{\alpha-1} \quad \alpha>1, \mathrm{Var}=\frac{\alpha x_\mathrm{m}^2}{(\alpha-1)^2(\alpha-2)} \quad \alpha>2
+$} \\\hline 
+$
+\begin{aligned}
+    \mathcal{W}eibull (\alpha, \beta)  \\
+(\alpha, \beta>0)     
+\end{aligned}$
+ & $\alpha \beta(\beta y)^{\alpha-1} e^{-(\beta y)^\alpha}, x>0$ & \multicolumn{2}{l}{$
+\begin{aligned}
+& \mathbb{E}=\Gamma(1+1 / \alpha) / \beta \\
+& \mathrm{Var}=\Gamma(1+2 / \alpha) / \beta^2-\mathbb{E}^2 \\
+& \mathbb{E}\left[Y^t\right]=\Gamma(1+t / \alpha) / \beta^t
+\end{aligned}
+$} \\
+\hline
+\end{tabular}
+\end{center}
+\renewcommand{\arraystretch}{1}

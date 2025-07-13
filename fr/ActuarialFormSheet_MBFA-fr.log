@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  10 JUL 2025 08:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  13 JUL 2025 17:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1542,7 +1542,11 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/doublestroke/dsfont.s
 ty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
-) (./lifecon.sty
+) (../_Common/lifecon.sty
+
+LaTeX Warning: You have requested package `../_Common/lifecon',
+               but the package provides `lifecon'.
+
 Package: lifecon 2004/07/27 v2.1 (Eddy Trivedi)
 Package lifecon Info: Provides Commands to typeset Life Contingencies' Symbols 
 on input line 5.
@@ -1550,95 +1554,22 @@ on input line 5.
 \LC@tempw=\skip81
 \LC@templ=\skip82
 \LC@tempwtwo=\skip83
-)
-(c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/changes/changes.sty
-Package: changes 2021/07/15 v4.2.1 changes package
-
-*** changes package 2021/07/15 v4.2.1 ***
-(c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
-
-(c:/Program Files (x86)/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-
-(c:/Program Files (x86)/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.te
-x
-\XKV@toks=\toks56
-\XKV@tempa@toks=\toks57
-)
-\XKV@depth=\count411
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(c:/Program Files (x86)/texlive/2025/texmf-dist/tex/generic/xstring/xstring.sty
-
-(c:/Program Files (x86)/texlive/2025/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count412
-\xs_countb=\count413
-)
-Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-)
-ulem-option 'normalem,normalbf', passed to package ulem
-truncate-option 'breakall,fit', passed to package truncate
-(c:/Program Files (x86)/texlive/2025/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box156
-\UL@hyphenbox=\box157
-\UL@skip=\skip84
-\UL@hook=\toks58
-\UL@height=\dimen340
-\UL@pe=\count414
-\UL@pixel=\dimen341
-\ULC@box=\box158
-Package: ulem 2019/11/18
-\ULdepth=\dimen342
-)
-(c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/todonotes/todonotes.s
-ty
-Package: todonotes 2024/01/05 v1.1.7 Todonotes source and documentation.
-Package: todonotes 2024/01/05
-\c@@todonotes@numberoftodonotes=\count415
-)
-\c@Changes@AuthorCount=\count416
-\c@Changes@Author=\count417
-\c@Changes@addedCount=\count418
-\c@Changes@deletedCount=\count419
-\c@Changes@replacedCount=\count420
-\c@Changes@highlightCount=\count421
-\c@Changes@commentCount=\count422
-\c@authorcommentcount=\count423
-
-
-! Package changes Error: Command comment is already defined..
-
-See the changes package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.783 \Changes@set@commandname{comment}
-                                       
-Try package option commandnameprefix with "always" or "ifneeded", e.g. usepacka
-ge[commandnameprefix=always]{changes}
-
-
-(c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/truncate/truncate.sty
-Package: truncate 2001/08/20  ver 3.6
-\@Trunc@RestHyph=\toks59
-)
-\Changestruncatewidth=\skip85
-\Changes@summary@width=\skip86
 ) (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks60
-\thm@bodyfont=\toks61
-\thm@headfont=\toks62
-\thm@notefont=\toks63
-\thm@headpunct=\toks64
-\thm@preskip=\skip87
-\thm@postskip=\skip88
-\thm@headsep=\skip89
-\dth@everypar=\toks65
+\thm@style=\toks56
+\thm@bodyfont=\toks57
+\thm@headfont=\toks58
+\thm@notefont=\toks59
+\thm@headpunct=\toks60
+\thm@preskip=\skip84
+\thm@postskip=\skip85
+\thm@headsep=\skip86
+\dth@everypar=\toks61
 )
-\c@f=\count424
+\c@f=\count411
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 27
 3.
+
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1710,17 +1641,17 @@ LaTeX Info: Redefining \up on input line 273.
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count425
-\scratchdimen=\dimen343
-\scratchbox=\box159
-\nofMPsegments=\count426
-\nofMParguments=\count427
-\everyMPshowfont=\toks66
-\MPscratchCnt=\count428
-\MPscratchDim=\dimen344
-\MPnumerator=\count429
-\makeMPintoPDFobject=\count430
-\everyMPtoPDFconversion=\toks67
+\scratchcounter=\count412
+\scratchdimen=\dimen340
+\scratchbox=\box156
+\nofMPsegments=\count413
+\nofMParguments=\count414
+\everyMPshowfont=\toks62
+\MPscratchCnt=\count415
+\MPscratchDim=\dimen341
+\MPnumerator=\count416
+\makeMPintoPDFobject=\count417
+\everyMPtoPDFconversion=\toks63
 )
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf
 -base.sty
@@ -1733,7 +1664,7 @@ sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count431
+\c@lstlisting=\count418
 Package hyperref Info: Link coloring ON on input line 273.
  (./ActuarialFormSheet_MBFA-fr.out) (./ActuarialFormSheet_MBFA-fr.out)
 \@outlinefile=\write4
@@ -1789,10 +1720,10 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 276
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\c@higher=\count432
-\c@rep=\count433
+\c@higher=\count419
+\c@rep=\count420
 
-(./MotsClesAssurance-fr.tex
+(./InsuranceKeywords-fr.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 53.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1830,7 +1761,7 @@ x.enc}{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mat
 hsy.enc}{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/enc/dvips/fontawe
 some/fontawesomeone.enc}{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/e
 nc/dvips/fontawesome/fontawesometwo.enc}] (./MathFi-fr.tex
-(./AnnuiteTikz-fr.tex
+(./AnnuityTikz-fr.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
@@ -1857,13 +1788,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--234
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
-[]| \T1/lmr/bx/n/8 Amor-tis-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
-\T1/lmr/bx/n/8 se-ments
+Overfull \hbox (3.30797pt too wide) in paragraph at lines 238--238
+[]|\T1/lmr/bx/n/8 Amortissements
  []
 
 
@@ -1908,7 +1834,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--242
 
 )
 
-[4] (./FinanceMarche-fr.tex
+[4] (./MarketFinance-fr.tex
 Missing character: There is no * in font nullfont!
 Missing character: There is no 5 in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -1942,22 +1868,22 @@ Overfull \hbox (2.13174pt too wide) in paragraph at lines 188--189
 [5] (./Graph/Acalldef-fr.tex
 Package pgfplots info on input line 63: fill between: activating layered graphi
 cs
-\pgf@layerbox@axis background=\box160
-\pgf@layerboxsaved@axis background=\box161
-\pgf@layerbox@axis grid=\box162
-\pgf@layerboxsaved@axis grid=\box163
-\pgf@layerbox@axis ticks=\box164
-\pgf@layerboxsaved@axis ticks=\box165
-\pgf@layerbox@axis lines=\box166
-\pgf@layerboxsaved@axis lines=\box167
-\pgf@layerbox@axis tick labels=\box168
-\pgf@layerboxsaved@axis tick labels=\box169
-\pgf@layerbox@pre main=\box170
-\pgf@layerboxsaved@pre main=\box171
-\pgf@layerbox@axis descriptions=\box172
-\pgf@layerboxsaved@axis descriptions=\box173
-\pgf@layerbox@axis foreground=\box174
-\pgf@layerboxsaved@axis foreground=\box175
+\pgf@layerbox@axis background=\box157
+\pgf@layerboxsaved@axis background=\box158
+\pgf@layerbox@axis grid=\box159
+\pgf@layerboxsaved@axis grid=\box160
+\pgf@layerbox@axis ticks=\box161
+\pgf@layerboxsaved@axis ticks=\box162
+\pgf@layerbox@axis lines=\box163
+\pgf@layerboxsaved@axis lines=\box164
+\pgf@layerbox@axis tick labels=\box165
+\pgf@layerboxsaved@axis tick labels=\box166
+\pgf@layerbox@pre main=\box167
+\pgf@layerboxsaved@pre main=\box168
+\pgf@layerbox@axis descriptions=\box169
+\pgf@layerboxsaved@axis descriptions=\box170
+\pgf@layerbox@axis foreground=\box171
+\pgf@layerboxsaved@axis foreground=\box172
 Package pgfplots info on input line 63: Setting layers 'axis background,axis gr
 id,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis 
 foreground'...
@@ -2011,7 +1937,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 964.
 )
 
-[9] (./ActuariatVie-fr.tex
+[9] (./LifeActuarial-fr.tex
 Underfull \hbox (badness 10000) in paragraph at lines 138--186
 [][]
  []
@@ -2117,19 +2043,10 @@ Overfull \hbox (1.3917pt too wide) in paragraph at lines 411--439
  []
 
 [14]
-! Extra }, or forgotten \endgroup.
-l.537 Exemples classique}
-                          :
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 [15]
-<dice.pdf, id=318, 258.9675pt x 86.3225pt>
+<dice.pdf, id=322, 258.9675pt x 86.3225pt>
 File: dice.pdf Graphic file (type pdf)
 <use dice.pdf>
 Package pdftex.def Info: dice.pdf  used on input line 647.
@@ -2188,9 +2105,9 @@ Overfull \vbox (6.34885pt too high) has occurred while \output is active []
 
 
 
-[17] (./TableLoiStat-fr.tex)
+[17] (./StatLawTable-fr.tex)
 
-[18] (./Economie-fr.tex
+[18] (./Economics-fr.tex
 Overfull \hbox (8.3019pt too wide) detected at line 171
 [] \OMS/lmsy/m/n/10 ) [] ) []
  []
@@ -2224,7 +2141,7 @@ Overfull \vbox (2.72572pt too high) has occurred while \output is active []
 
 
 
-[20] (./SeriesTemporelles-fr.tex [21]
+[20] (./TimeSeries-fr.tex [21]
 Underfull \hbox (badness 10000) in paragraph at lines 268--269
 \T1/lmr/m/n/10 fonc-tion d'au-to-cor-ré-la-tion
  []
@@ -2241,38 +2158,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 646--647
 
 )
 
-[24] (./ActuariatNonVie-fr.tex [25])
+[24] (./NonLifeActuarial-fr.tex [25])
 
-[26] (./Reassurance-fr.tex (./Graph/TypeEntentes-fr.tex)
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
+[26] (./Reinsurance-fr.tex (./Graph/TypeAgreements-fr.tex)
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
  [27]
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 
 Missing character: There is no ; in font nullfont!
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
-PGFPlots: reading {Graph/ReassuranceSinistre.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
+PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 Missing character: There is no ; in font nullfont!
 [28]
 Underfull \hbox (badness 10000) in paragraph at lines 487--487
@@ -2385,15 +2302,15 @@ Overfull \hbox (19.86086pt too wide) detected at line 479
 
 )
 
-[31] (./FormulesElementaires-fr.tex <a0,fr0> <a0,fr1> <a0,fr2> <a0,fr3>
-<a0,fr4> <a0,fr5> <a0,fr6> <a0,fr7> <a0,fr8> <a0,fr9> <a0,fr10> <a0,fr11>
-<a0,fr12> <a0,fr13> <a0,fr14> <a0,fr15> <a0,fr16> <a0,fr17> <a0,fr18>
-<a0,fr19> <a0,fr20> <a0,fr21> <a0,fr22> <a0,fr23> [32]
-\c@numberofdiscretisation=\count434
- <a1,fr0> <a1,fr1>
-<a1,fr2> <a1,fr3> <a1,fr4> <a1,fr5> <a1,fr6> <a1,fr7> <a1,fr8> <a1,fr9>
-<a1,fr10> <a1,fr11> <a1,fr12> <a1,fr13> <a1,fr14> <a1,fr15> <a1,fr16>
-<a1,fr17> <a1,fr18> [33] [34])
+[31] (./ElementaryFormulas-fr.tex <a0,fr0> <a0,fr1> <a0,fr2> <a0,fr3> <a0,fr4>
+<a0,fr5> <a0,fr6> <a0,fr7> <a0,fr8> <a0,fr9> <a0,fr10> <a0,fr11> <a0,fr12>
+<a0,fr13> <a0,fr14> <a0,fr15> <a0,fr16> <a0,fr17> <a0,fr18> <a0,fr19>
+<a0,fr20> <a0,fr21> <a0,fr22> <a0,fr23> [32]
+\c@numberofdiscretisation=\count421
+ <a1,fr0> <a1,fr1> <a1,fr2>
+<a1,fr3> <a1,fr4> <a1,fr5> <a1,fr6> <a1,fr7> <a1,fr8> <a1,fr9> <a1,fr10>
+<a1,fr11> <a1,fr12> <a1,fr13> <a1,fr14> <a1,fr15> <a1,fr16> <a1,fr17>
+<a1,fr18> [33] [34])
 Underfull \hbox (badness 10000) in paragraph at lines 419--422
 [][][][]\T1/lmr/m/n/9 Martial Phélippé-Guinvarc'h[][][] [][]\U/fontawesomeone/m
 /n/9 [ \U/fontawesometwo/m/n/9 R[][] [][][]°[][][] \T1/lmr/m/n/9 est Ac-tuaire 
@@ -2436,12 +2353,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 423--424
  MBFA de Le Mans Uni-ver-sité le SAS Join
  []
 
-\Changes@OutFile=\write5
-\openout5 = `ActuarialFormSheet_MBFA-fr.soc'.
-
-\tf@loc=\write6
-\openout6 = `ActuarialFormSheet_MBFA-fr.loc'.
-
 
 
 [35] (./ActuarialFormSheet_MBFA-fr.aux)
@@ -2454,10 +2365,10 @@ ged.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 59080 strings out of 473189
- 1417612 string characters out of 5709504
- 2397237 words of memory out of 5000000
- 80965 multiletter control sequences out of 15000+600000
+ 57934 strings out of 473189
+ 1395371 string characters out of 5709504
+ 2368310 words of memory out of 5000000
+ 79845 multiletter control sequences out of 15000+600000
  691955 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,18n,127p,1381b,2740s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2505,10 +2416,10 @@ msy9.pfb><c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msam10.pfb><c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb><c:/Program Files (x86)/texlive/2025/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on ActuarialFormSheet_MBFA-fr.pdf (35 pages, 1151811 bytes).
+Output written on ActuarialFormSheet_MBFA-fr.pdf (35 pages, 1151789 bytes).
 PDF statistics:
- 1052 PDF objects out of 1200 (max. 8388607)
- 824 compressed objects within 9 object streams
- 248 named destinations out of 1000 (max. 500000)
+ 1056 PDF objects out of 1200 (max. 8388607)
+ 828 compressed objects within 9 object streams
+ 252 named destinations out of 1000 (max. 500000)
  542 words of extra memory for PDF output out of 10000 (max. 10000000)
 

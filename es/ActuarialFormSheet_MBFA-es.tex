@@ -5,7 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \RequirePackage{eurosym}
-\DeclareUnicodeCharacter{20AC}{\EUR{}}{\tiny }
+\DeclareUnicodeCharacter{20AC}{\EUR{}}{\tiny}
 \usepackage{lmodern}
 
 \usepackage[top=14pt, bottom=2.5cm, left=0.5cm, right=0.5cm]{geometry}
@@ -77,7 +77,7 @@ citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref}
 \usepackage{pgfmath}
 \usepackage{pgf-pie}
 \usetikzlibrary{animations} 
-\usepackage{animate}
+\usepackage[final]{animate}
 \usetikzlibrary{arrows}
 
 \usetikzlibrary{intersections, pgfplots.fillbetween,pgfplots.dateplot}
@@ -108,11 +108,11 @@ citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref}
 \usepackage{amssymb}
 \usepackage{dsfont}
 \usepackage{latexsym}
-\usepackage{lifecon}
+\usepackage{../_Common/lifecon}\let\comment\relax % cette commande est en conflit
 %\usepackage{a4wide}
 \usepackage{array}
 \usepackage{graphicx}
-\usepackage[]{comment}
+%\usepackage{changes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\dis}{\displaystyle}
 \newcommand{\ve}{ \overrightarrow}
@@ -288,7 +288,7 @@ Master Actuariat}
 
 \begin{multicols}{2}
 	
-\input{InsuranceKeywords}
+\input{InsuranceKeywords-es}
 \end{multicols}
 
 \newpage
@@ -300,7 +300,7 @@ Master Actuariat}
 
 \begin{multicols}{2}
 	
-	\input{MathFi}
+	\input{MathFi-es}
 \end{multicols}
 
 \begin{center}
@@ -310,7 +310,7 @@ Master Actuariat}
 
 \begin{multicols}{2}
 
-\input{MarketFinance}
+\input{MarketFinance-es}
 \end{multicols}
 
 \newpage
@@ -321,7 +321,7 @@ Master Actuariat}
 
 \begin{multicols}{2}
 	
-\input{LifeActuarial}
+\input{LifeActuarial-es}
 \end{multicols}
 
 
@@ -333,11 +333,11 @@ Master Actuariat}
 
 \begin{multicols}{2}
 
-\input{ProbaStats}
+\input{ProbaStats-es}
 \end{multicols}
 
 \newpage
-\input{StatLawTable}
+\input{StatLawTable-es}
 
 \newpage
 
@@ -348,7 +348,7 @@ Master Actuariat}
 
 
 \begin{multicols}{2}
-	\input{Economics}
+	\input{Economics-es}
 \end{multicols}
 
 \newpage
@@ -359,7 +359,7 @@ Master Actuariat}
 
 
 \begin{multicols}{2}
-	\input{TimeSeries}
+	\input{TimeSeries-es}
 \end{multicols}
 
 \newpage
@@ -371,7 +371,7 @@ Master Actuariat}
 \end{center}
 
 \begin{multicols}{2}	
-	\input{NonLifeActuarial}
+	\input{NonLifeActuarial-es}
 \end{multicols}
 
 \newpage
@@ -382,7 +382,7 @@ Master Actuariat}
 \end{center}
 
 \begin{multicols}{2}	
-	\input{Reinsurance}
+	\input{Reinsurance-es}
 \end{multicols}
 
 %\newpage
@@ -392,7 +392,7 @@ Master Actuariat}
 \end{center}
 
 \begin{multicols}{2}
-	\input{ProbaStatsExtremes}
+	\input{ProbaStatsExtremes-es}
 \end{multicols}
 
 \newpage
@@ -403,7 +403,7 @@ Master Actuariat}
 \end{center}
 
 \begin{multicols}{2}	
-\input{ElementaryFormulas}
+\input{ElementaryFormulas-es}
 \end{multicols}
 
 
