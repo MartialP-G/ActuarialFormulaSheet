@@ -747,7 +747,8 @@ Alors la variable aléatoire ${\displaystyle X=\lbrace Z|Y\leq f(Z)\rbrace } $ s
 	\draw[BleuProfondIRA] (10,0) -- (10,6) ;
 	\draw[name path=melange,color=OrangeProfondIRA,smooth] plot ({\x},{20*normal(\x,2,2)+10*normal(\x,6,1)}) node[below=.5,left] {$f(x)$ , mélange loi normale};
 	\draw[name path=g,color=BleuProfondIRA,smooth] plot  ({\x},{60*normal(\x,3,3)})   node[above=3.5,left] {$K\times g(x)$, densité de  loi normale };
-	\tikzfillbetween[of=melange and g]{BleuProfondIRA, opacity=0.1};
+
+	\tikzfillbetween[of=melange and g,on layer=main]{BleuProfondIRA, opacity=0.1};
 \end{tikzpicture}
 
 La performance de l'algorithme dépend du nombre de rejet, représenté par la surface bleu sur le graphique.

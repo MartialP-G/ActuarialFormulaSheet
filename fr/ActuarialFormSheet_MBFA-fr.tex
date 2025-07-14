@@ -81,6 +81,7 @@ citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref}
 \usetikzlibrary{arrows}
 
 \usetikzlibrary{intersections, pgfplots.fillbetween,pgfplots.dateplot}
+\usetikzlibrary{fillbetween}
 \usetikzlibrary{datavisualization}
 \usetikzlibrary{calc}
 \usetikzlibrary{math}
@@ -275,12 +276,13 @@ Master Actuariat}
 %
 \newcounter{higher}\newcounter{rep} \setcounter{higher}{1}
 \begin{center}
-%\input{ActuarialSciencesDiagram}
+\input{ActuarialSciencesDiagram-fr}
 \end{center}
+\newpage
 
 \begin{center}
 	\bigskip
-	
+
 \section*{Mots clés de l'assurance}
     \medskip
 \end{center}
@@ -291,7 +293,7 @@ Master Actuariat}
 \input{InsuranceKeywords-fr}
 \end{multicols}
 
-\newpage
+%\newpage
 \begin{center}
 	\section*{Mathématiques Financières}
 	\medskip
@@ -303,6 +305,7 @@ Master Actuariat}
 	\input{MathFi-fr}
 \end{multicols}
 
+\newpage
 \begin{center}
 \section*{Finances de Marchés}
     \medskip

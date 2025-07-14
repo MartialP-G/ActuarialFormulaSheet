@@ -967,18 +967,161 @@ Une fois ajustée, l'utilisateur peut alors évaluer des actifs ou définir dive
 \end{f}
 \hrule
 
-\begin{f}[Vasicek]
+
+\begin{f}[Modèle de Vasicek]
+	
+	Sous une probabilité risque-neutre $\mathbb{Q}$, le taux court $(r_t)$ suit un processus d’Ornstein–Uhlenbeck à coefficients constants :
+	\[
+	dr_t = \kappa(\theta - r_t)\, dt + \sigma\, dW_t, \quad r_0 \in \mathbb{R}
+	\]
+	où :
+	\begin{itemize}[nosep]
+		\item $\kappa > 0$ est la vitesse de retour à la moyenne,
+		\item $\theta$ est le niveau moyen de long terme,
+		\item $\sigma > 0$ est la volatilité,
+		\item $W_t$ est un brownien standard sous $\mathbb{Q}$.
+	\end{itemize}
+	
+La solution de l’EDS (application du lemme d'Itô à $Y_{t}=r(t) e^{\kappa t}$):
+	\[
+	r_t = r_s e^{-\kappa(t-s)} + \theta(1 - e^{-\kappa(t-s)}) + \sigma \int_s^t e^{-\kappa(t-u)} dW_u
+	\]
+	
+	\textbf{Ainsi} :
+	\[
+	\begin{aligned}
+		\mathbb{E}_\mathbb{Q}[r_t \mid \mathcal{F}_s] &= r_s e^{-\kappa(t-s)} + \theta(1 - e^{-\kappa(t-s)}) \\
+		\operatorname{Var}_\mathbb{Q}[r_t \mid \mathcal{F}_s] &= \frac{\sigma^2}{2\kappa} \left(1 - e^{-2\kappa(t-s)}\right)
+	\end{aligned}
+	\]
+Le processus $(r_t)$ est gaussien, les taux négatifs sont possibles.
 	
 \end{f}
 
-\begin{f}[CIR]
+\begin{f}[Prix d'une obligation zéro-coupon (Vasicek)]
+
+Le prix à l’instant $t$ d’une obligation zéro-coupon de maturité $T$ est donné par :
+\[
+ZC(t, T) = A(t, T) \, e^{-B(t, T)\, r_t}
+\]
+où :
+\[
+\begin{aligned}
+	B(t, T) &= \frac{1 - e^{-\kappa(T - t)}}{\kappa} \\
+	A(t, T) &= \exp \left[ \left(\theta - \frac{\sigma^2}{2\kappa^2}\right) (B(t, T) - (T - t)) - \frac{\sigma^2}{4\kappa} B(t, T)^2 \right]
+\end{aligned}
+\]
+
+Cette formulation est possible grâce au fait que $\int_t^T r_s ds$ soit une variable gaussienne conditionnellement à $\mathcal{F}_t$.
+
+\[
+ZC(t, T) = \mathbb{E}_\mathbb{Q} \left[ \exp\left( -\int_t^T r_s\, ds \right) \Big| \mathcal{F}_t \right]
+\]
+
+\end{f}
+\hrule
+
+\begin{f}[Modèle Cox–Ingersoll–Ross (CIR)]
 	
+Sous la mesure risque-neutre $\mathbb{Q}$, le taux court $(r_t)$ suit la dynamique :
+\[
+dr_t = \kappa(\theta - r_t)\,dt + \sigma \sqrt{r_t}\, dW_t, \quad r_0 \geq 0
+\]
+avec :
+\begin{itemize}[nosep]
+	\item $\kappa > 0$ : vitesse de retour à la moyenne,
+	\item $\theta > 0$ : niveau de long terme,
+	\item $\sigma > 0$ : volatilité,
+	\item $W_t$ : mouvement brownien sous $\mathbb{Q}$.
+\end{itemize}
+
+\textbf{Ainsi} :
+\begin{itemize}
+	\item La racine carrée $\sqrt{r_t}$ garantit $r_t \geq 0$ si $2\kappa\theta \geq \sigma^2$ (condition de Feller).
+	\item Le processus $(r_t)$ est un processus de diffusion non gaussien mais à trajectoires continues.
+	\item Le taux est \textbf{mean-reverting} autour de $\theta$.
+\end{itemize}
+
+Ainsi, le processus $(r_t)$ est une diffusion à lois conditionnelles explicites (sous $\mathbb{Q}$) :
+
+Pour $s < t$, la variable $r_t$ suit une loi de type $\chi^2$ non centrale :
+\[
+r_t \mid \mathcal{F}_s \sim c \cdot \chi^2_{d}(\lambda)
+\]
+avec :
+\begin{itemize}[nosep]
+	\item $\displaystyle c = \frac{\sigma^2 (1 - e^{-\kappa (t - s)})}{4\kappa}$
+	\item $\displaystyle d = \frac{4\kappa\theta}{\sigma^2}$ : degrés de liberté
+	\item $\displaystyle \lambda = \frac{4\kappa e^{-\kappa (t - s)} r_s}{\sigma^2 (1 - e^{-\kappa (t - s)})}$
+\end{itemize}
+
+et
+\[
+\begin{aligned}
+	\mathbb{E}_\mathbb{Q}[r_t \mid \mathcal{F}_s] =& r_s e^{-\kappa(t-s)} + \theta (1 - e^{-\kappa(t-s)}) \\
+	\operatorname{Var}_\mathbb{Q}[r_t \mid \mathcal{F}_s] =& \frac{\sigma^2 r_s e^{-\kappa(t-s)} (1 - e^{-\kappa(t-s)})}{\kappa} \\
+			&+ \frac{\theta \sigma^2}{2\kappa} (1 - e^{-\kappa(t-s)})^2
+\end{aligned}
+\]
+
+\end{f}
+\begin{f}[Prix d’une obligation zéro-coupon (CIR)]
+Dans le modèle CIR, le prix d’une obligation zéro-coupon à l’instant $t$ de maturité $T$ s’écrit :
+\[
+ZC(t, T) = A(t, T) \cdot e^{-B(t, T)\, r_t}
+\]
+avec :
+\[
+\begin{aligned}
+	B(t, T) &= \frac{2 (e^{\gamma (T - t)} - 1)}{(\gamma + \kappa)(e^{\gamma (T - t)} - 1) + 2\gamma} \\
+	A(t, T) &= \left[ \frac{2\gamma e^{\frac{(\kappa + \gamma)}{2}(T - t)}}{(\gamma + \kappa)(e^{\gamma (T - t)} - 1) + 2\gamma} \right]^{\frac{2\kappa\theta}{\sigma^2}}
+\end{aligned}
+\]
+où :
+\[
+\gamma = \sqrt{\kappa^2 + 2\sigma^2}
+\]
+
+\end{f}
+\hrule
+
+\begin{f}[Swaption, modèle de  Black]
+
+Une \textbf{swaption} est une option sur un swap de taux. Elle donne le droit (et non l'obligation) de contracter un swap à une date future $T$.
+
+\begin{itemize}[nosep]
+	\item \textbf{Payer swaption} : droit de \emph{payer le taux fixe} et \emph{recevoir le taux variable}.
+	\item \textbf{Receiver swaption} : droit de \emph{recevoir le taux fixe} et \emph{payer le taux variable}.
+\end{itemize}
+
+\textbf{Notations} :
+\begin{itemize}[nosep]
+	\item $T$ : date d’exercice de la swaption
+	\item $K$ : taux fixe (strike)
+	\item $S(T)$ : taux swap à la date $T$
+	\item $A(T)$ : valeur actuelle des flux fixes futurs.
+	\item $\sigma$ : volatilité du taux swap
+\end{itemize}
+
+Le modèle de Black (1976) est une adaptation du modèle Black–Scholes pour les produits à taux d'intérêt. Ici, le taux swap $S(T)$ joue le rôle de l’actif sous-jacent, avec un payoff de type option européenne.
+
+\textbf{Formule de Black pour une payer swaption} :
+\[
+\text{SW}_{\text{payer}} = A(T) \left[ S_0 N(d_1) - K N(d_2) \right]
+\]
+où :
+\[
+\begin{aligned}
+	d_1 &= \frac{\ln(S_0 / K) + \frac{1}{2} \sigma^2 T}{\sigma \sqrt{T}} \\
+	d_2 &= d_1 - \sigma \sqrt{T}
+\end{aligned}
+\]
+et $N(\cdot)$ est la fonction de répartition de la loi normale standard.
+
+\textbf{Formule pour une receiver swaption} :
+\[
+\text{SW}_{\text{receiver}} = A(T) \left[ K N(-d_2) - S_0 N(-d_1) \right]
+\]
+
 \end{f}
 
-\begin{f}[Évaluation des obligations]
-	
-\end{f}
-
-\begin{f}[Swaption]
-	
-\end{f}

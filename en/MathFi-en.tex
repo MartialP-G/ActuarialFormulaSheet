@@ -126,29 +126,49 @@ Par un remboursement constant ou par annuité constante: la somme de l'amortisse
 % Draw the x-axis and y-axis.
 \def\w{11}
 \def\n{9}
-\def\duree{23}
-\def\a{16.713332269}
+\def\cap{13} % Capital initial
+\def\a{1.2334723} % annuité exacte
+
 \def\v{1.031415^(-1)} 
-\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-2);
-\foreach \y in  {0,...,3} {
+\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (0,0) -- (0,-\n);
+\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-\n);
+\foreach \y in  {0,...,10} {
+	\ifthenelse{\y=0}{\def\caprd{9.000000}}{\def\caprd{0.000000}}
+	\ifthenelse{\y=1}{\def\caprd{8.174923}}{}
+	\ifthenelse{\y=2}{\def\caprd{7.323926}}{}
+	\ifthenelse{\y=3}{\def\caprd{6.446194}}{}
+
+	\ifthenelse{\y=6}{\def\caprd{4.569466}}{}
+	\ifthenelse{\y=7}{\def\caprd{3.4795435}}{}
+	\ifthenelse{\y=8}{\def\caprd{2.355381}}{}
+	\ifthenelse{\y=9}{\def\caprd{0.000000}}{}
+\ifthenelse{\y=0}{	
 	\draw (\y,0) -- (\y,-0.1);
-	\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
-	\pgfmathpow{\v}{\duree-\y} 	
-	\let\Interet\pgfmathresult
-		\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,\Interet);
-		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,\Interet) -- (\y,1);}{
-		\node[below] at (\y,-0.1) {\tiny 0};}
-}
-\foreach \y in  {-3,...,1} {
-	\pgfmathpow{\v}{-\y+1} 	
-	\let\Interet\pgfmathresult
-	\draw (\y+\n,0) -- (\y+\n,-0.1);
-	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};}{}
-	\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};}{}
-	\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
-	\ifthenelse{\y<1 }{	
-		\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,\Interet);
-		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,\Interet) -- (\y+\n,1);}
+	\node[below left] at (\y,-0.1) {\tiny 0};}{}
+\ifthenelse{\y<4 \AND \y>0}{
+	\draw (\y,0) -- (\y,-0.1);
+	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+	\pgfmathparse{\a-\cap*0.031415*\v^(\y) }
+	\let\amortissement\pgfmathresult
+		\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (\y,0) -- (\y,-\caprd);
+		\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,\amortissement);
+		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,\amortissement) -- (\y,\a);
+		}{}
+\ifthenelse{\y>5 }{
+	\draw (\y,0) -- (\y,-0.1);
+	\pgfmathparse{\a-\cap*0.031415*\v^(\y+4) }
+	\let\amortissement\pgfmathresult
+	\pgfmathparse{\y-\n} 	
+	\let\zdec\pgfmathresult
+	\pgfmathtruncatemacro{\z}{\zdec}
+	\ifthenelse{\y<\n }{\node[below] at (\y,-0.1) {\tiny $\scriptstyle n \z$};}{}
+	\ifthenelse{\y=\n }{\node[below] at (\y,-0.1) {\tiny $\scriptstyle n $};}{}
+	\ifthenelse{\y>\n}{	\node[below] at (\y,-0.1) {\tiny $\scriptstyle n+\z$};}{}
+	\ifthenelse{\y<\n \OR \y=\n}{
+		\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (\y,0) -- (\y,-\caprd);
+		\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,\amortissement);
+		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,\amortissement) -- (\y,\a);}{}
+}{}
 }
 \draw[ line width=1] (-.25,0) -- (4,0);
 \draw[ line width=1, dashed] (4,0) -- (5,0);
@@ -163,17 +183,21 @@ Par un remboursement constant ou par annuité constante: la somme de l'amortisse
 % Draw the x-axis and y-axis.
 \def\w{11}
 \def\n{9}
-\def\duree{23}
+\def\duree{13}
 \def\i{0.031415}
-\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-2);
+\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (0,0) -- (0,-\n);
+\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-\n);
 \foreach \y in  {0,...,3} {
 \draw (\y,0) -- (\y,-0.1);
 \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
 	\pgfmathparse{(\duree-\y)*\i} 	
 	\let\Interet\pgfmathresult
+	\pgfmathparse{(\n) *(1-\y/\n))} 	
+	\let\Cap\pgfmathresult
+	\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (\y,0) -- (\y,-\Cap);
 	\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,1);
 	\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,1) -- (\y,1+\Interet);}{
-	\node[below] at (\y,-0.1) {\tiny 0};}
+	\node[below left] at (\y,-0.1) {\tiny 0};}
 }
 \foreach \y in  {-3,...,1} {
 	\pgfmathparse{(-\y+1)*\i} 	
@@ -183,8 +207,9 @@ Par un remboursement constant ou par annuité constante: la somme de l'amortisse
 \ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};}{}
 \ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
 \ifthenelse{\y<1 }{	
+	\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (\y+\n,0) -- (\y+\n,\y);
 	\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);
-\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,1) -- (\y+\n,1+\Interet);}{}
+	\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,1) -- (\y+\n,1+\Interet);}{}
 }
 \draw[ line width=1] (-.25,0) -- (4,0);
 \draw[ line width=1, dashed] (4,0) -- (5,0);
@@ -202,17 +227,20 @@ Par un remboursement in fine, où l'intérêt est constant. Seuls les intérêts
 \def\n{9}
 \def\duree{23}
 \def\i{3*0.031415}
-\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-2);
+\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (0,0) -- (0,-\n);
+\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-\n);
 \foreach \y in  {0,...,3} {
 	\draw (\y,0) -- (\y,-0.1);
 	\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
 %				\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,1);
+		\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (\y,0) -- (\y,-\n);
 		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,2*\i);}{
-		\node[below] at (\y,-0.1) {\tiny 0};}
+		\node[below left] at (\y,-0.1) {\tiny 0};}
 }
 \foreach \y in  {-3,...,1} {
 	\draw (\y+\n,0) -- (\y+\n,-0.1);
 	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};
+		\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (\y+\n,0) -- (\y+\n,-\n);
 		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,2*\i);}{}
 	\ifthenelse{\y=0 }{
 		\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,2);
@@ -222,7 +250,7 @@ Par un remboursement in fine, où l'intérêt est constant. Seuls les intérêts
 }
 \draw[ line width=1] (-.25,0) -- (4,0);
 \draw[ line width=1, dashed] (4,0) -- (5,0);
-\draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (5,0) -- (\w,0);
+\draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (5,0) -- (\n,0);
 \end{tikzpicture}
 \end{center}
 

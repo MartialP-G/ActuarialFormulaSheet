@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  13 JUL 2025 17:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  14 JUL 2025 20:49
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1568,7 +1568,7 @@ Package: amsthm 2020/05/29 v2.20.6
 )
 \c@f=\count411
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 27
-3.
+4.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1576,24 +1576,24 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (./ActuarialFormSheet_MBFA-fr.aux)
 \openout1 = `ActuarialFormSheet_MBFA-fr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 273.
-LaTeX Font Info:    ... okay on input line 273.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 273.
-LaTeX Font Info:    ... okay on input line 273.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 273.
-LaTeX Font Info:    ... okay on input line 273.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 273.
-LaTeX Font Info:    ... okay on input line 273.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 273.
-LaTeX Font Info:    ... okay on input line 273.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 273.
-LaTeX Font Info:    ... okay on input line 273.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 273.
-LaTeX Font Info:    ... okay on input line 273.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 273.
-LaTeX Font Info:    ... okay on input line 273.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 273.
-LaTeX Font Info:    ... okay on input line 273.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 274.
+LaTeX Font Info:    ... okay on input line 274.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 274.
+LaTeX Font Info:    ... okay on input line 274.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 274.
+LaTeX Font Info:    ... okay on input line 274.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 274.
+LaTeX Font Info:    ... okay on input line 274.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 274.
+LaTeX Font Info:    ... okay on input line 274.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 274.
+LaTeX Font Info:    ... okay on input line 274.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 274.
+LaTeX Font Info:    ... okay on input line 274.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 274.
+LaTeX Font Info:    ... okay on input line 274.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 274.
+LaTeX Font Info:    ... okay on input line 274.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1629,14 +1629,14 @@ LaTeX Font Info:    ... okay on input line 273.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \degres on input line 273.
+LaTeX Info: Redefining \degres on input line 274.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 273.
+(french.ldf)             reported on input line 274.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 273.
-LaTeX Info: Redefining \up on input line 273.
+(french.ldf)             reported on input line 274.
+LaTeX Info: Redefining \up on input line 274.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.
 mkii
@@ -1665,7 +1665,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count418
-Package hyperref Info: Link coloring ON on input line 273.
+Package hyperref Info: Link coloring ON on input line 274.
  (./ActuarialFormSheet_MBFA-fr.out) (./ActuarialFormSheet_MBFA-fr.out)
 \@outlinefile=\write4
 \openout4 = `ActuarialFormSheet_MBFA-fr.out'.
@@ -1674,47 +1674,47 @@ Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-76.
+77.
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-76.
+77.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-276.
+277.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-276.
+277.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 276.
+(Font)              <12> on input line 277.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 276.
+(Font)              <8> on input line 277.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 276.
+(Font)              <6> on input line 277.
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 27
-6.
+7.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 276
+LaTeX Font Info:    Trying to load font information for U+msa on input line 277
 .
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 276
+LaTeX Font Info:    Trying to load font information for U+msb on input line 277
 .
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1723,45 +1723,45 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \c@higher=\count419
 \c@rep=\count420
 
-(./InsuranceKeywords-fr.tex
+(./ActuarialSciencesDiagram-fr.tex{c:/Program Files (x86)/texlive/2025/texmf-va
+r/fonts/map/pdftex/updmap/pdftex.map}{c:/Program Files (x86)/texlive/2025/texmf
+-dist/fonts/enc/dvips/lm/lm-ec.enc} <a0,fr0> <a0,fr1> <a0,fr2> <a0,fr3>
+<a0,fr4> <a0,fr5> <a0,fr6> <a0,fr7> <a0,fr8> <a0,fr9> <a0,fr10> <a0,fr11>)
+
+[1
+
+] (./InsuranceKeywords-fr.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 53.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 53.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 53.
- [1
-
-{c:/Program Files (x86)/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.m
-ap}{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
-}{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.e
-nc}{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
-}]
-Overfull \hbox (27.96306pt too wide) in paragraph at lines 176--221
- [] 
- []
-
-)
-
 LaTeX Font Info:    Trying to load font information for U+fontawesomeone on inp
-ut line 294.
+ut line 142.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/fontawesome/ufontawes
 omeone.fd
 File: ufontawesomeone.fd 2016/05/22 Font definitions for U/fontawesomeone.
 )
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 294.
+ut line 142.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/fontawesome/ufontawes
 ometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
-) [2{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathe
+) [2{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathi
+t.enc}{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.
+enc}{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathe
 x.enc}{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mat
 hsy.enc}{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/enc/dvips/fontawe
 some/fontawesomeone.enc}{c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/e
-nc/dvips/fontawesome/fontawesometwo.enc}] (./MathFi-fr.tex
-(./AnnuityTikz-fr.tex
+nc/dvips/fontawesome/fontawesometwo.enc}]
+Overfull \hbox (27.96306pt too wide) in paragraph at lines 176--221
+ [] 
+ []
+
+) (./MathFi-fr.tex [3] (./AnnuityTikz-fr.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
@@ -1776,65 +1776,64 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-[3])
+))
 Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
 
-Overfull \hbox (3.30797pt too wide) in paragraph at lines 238--238
+Overfull \hbox (3.30797pt too wide) in paragraph at lines 266--266
 []|\T1/lmr/bx/n/8 Amortissements
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 []|\T1/lmr/bx/n/8 Annuités
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--239
+Underfull \hbox (badness 10000) in paragraph at lines 267--267
 []|\T1/lmr/m/n/8 Capital
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--239
+Underfull \hbox (badness 10000) in paragraph at lines 267--267
 \T1/lmr/m/n/8 res-tant
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--240
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 []|\T1/lmr/m/n/8 Intérêts
  []
 
 
-Overfull \hbox (3.08893pt too wide) in paragraph at lines 240--241
+Overfull \hbox (3.08893pt too wide) in paragraph at lines 268--269
 []|$\OML/lmm/m/it/8 K []$| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 269--269
 []|\T1/lmr/m/n/8 Amortis-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
+Underfull \hbox (badness 10000) in paragraph at lines 269--269
 \T1/lmr/m/n/8 sements
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--242
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
 []|\T1/lmr/m/n/8 Annuité
  []
 
 )
 
-[4] (./MarketFinance-fr.tex
+[5] (./MarketFinance-fr.tex
 Missing character: There is no * in font nullfont!
 Missing character: There is no 5 in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -1865,7 +1864,7 @@ Overfull \hbox (2.13174pt too wide) in paragraph at lines 188--189
  [] 
  []
 
-[5] (./Graph/Acalldef-fr.tex
+[6] (./Graph/Acalldef-fr.tex
 Package pgfplots info on input line 63: fill between: activating layered graphi
 cs
 \pgf@layerbox@axis background=\box157
@@ -1905,7 +1904,8 @@ ou want other layers.
 Package pgfplots info on input line 65: Setting layers 'axis background,pre mai
 n,main,axis grid,axis ticks,axis lines,axis tick labels,axis descriptions,axis 
 foreground'...
-) (./Graph/APutdef-fr.tex
+) [7]
+(./Graph/APutdef-fr.tex
 Package pgfplots info on input line 66: fill between: activating layered graphi
 cs
 Package pgfplots info on input line 66: Setting layers 'axis background,axis gr
@@ -1917,7 +1917,7 @@ ou want other layers.
 Package pgfplots info on input line 66: Setting layers 'axis background,pre mai
 n,main,axis grid,axis ticks,axis lines,axis tick labels,axis descriptions,axis 
 foreground'...
-) [6] (./Graph/VPutdef-fr.tex
+) (./Graph/VPutdef-fr.tex
 Package pgfplots info on input line 64: fill between: activating layered graphi
 cs
 Package pgfplots info on input line 64: Setting layers 'axis background,axis gr
@@ -1932,12 +1932,12 @@ foreground'...
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 403.
- [7] [8]
+ [8] [9]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 964.
-)
+ [10])
 
-[9] (./LifeActuarial-fr.tex
+[11] (./LifeActuarial-fr.tex
 Underfull \hbox (badness 10000) in paragraph at lines 138--186
 [][]
  []
@@ -1962,7 +1962,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 298--395
 []
  []
 
-[10]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 433--458
 [][]
  []
@@ -1989,7 +1989,7 @@ Overfull \hbox (11.66594pt too wide) in paragraph at lines 602--603
 
 )
 
-[11] (./ProbaStats-fr.tex [12]
+[13] (./ProbaStats-fr.tex [14]
 Underfull \hbox (badness 10000) in paragraph at lines 191--192
 []\T1/lmr/m/n/10 Le théo-rème de \T1/lmr/bx/n/10 Cramer-Wold \T1/lmr/m/n/10 as-
 sure que la loi
@@ -2017,7 +2017,7 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 246.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 246.
-[13]
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 415--415
 []|\T1/lmr/m/n/8 Ali-
  []
@@ -2042,11 +2042,11 @@ Overfull \hbox (1.3917pt too wide) in paragraph at lines 411--439
 [][] 
  []
 
-[14]
+[16]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-[15]
-<dice.pdf, id=322, 258.9675pt x 86.3225pt>
+[17]
+<dice.pdf, id=381, 258.9675pt x 86.3225pt>
 File: dice.pdf Graphic file (type pdf)
 <use dice.pdf>
 Package pdftex.def Info: dice.pdf  used on input line 647.
@@ -2086,16 +2086,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 736--739
 \T1/lmr/m/n/10 et $[]$. Alors la va-riable aléa-toire
  []
 
-
-Package pgfplots Warning: 'fill between': Could not activate graphics layer 'pr
-e main'. Filled path will be on top of the other ones. Please ensure that 'pre 
-main' is somewhere in the layer list (or set '/tikz/fill between/on layer='). o
-n input line 750.
-
 Missing character: There is no ; in font nullfont!
-[16 <c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/epsdice/dice.pdf>
+[18 <c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/epsdice/dice.pdf>
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 802--803
+Underfull \hbox (badness 10000) in paragraph at lines 803--804
 []\T1/lmr/m/n/10 On gé-nère $\OML/lmm/m/it/10 B$ \T1/lmr/m/n/10 échan-tillons b
 oots-trap $\OML/lmm/m/it/10 ^^X[] \OT1/lmr/m/n/10 =
  []
@@ -2105,14 +2099,14 @@ Overfull \vbox (6.34885pt too high) has occurred while \output is active []
 
 
 
-[17] (./StatLawTable-fr.tex)
+[19] (./StatLawTable-fr.tex)
 
-[18] (./Economics-fr.tex
+[20] (./Economics-fr.tex
 Overfull \hbox (8.3019pt too wide) detected at line 171
 [] \OMS/lmsy/m/n/10 ) [] ) []
  []
 
-[19]
+[21]
 Overfull \hbox (11.12909pt too wide) detected at line 247
 \OML/lmm/m/it/10 U\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 d\OT1/lmr/m/n/10 ) = (1 \OM
 S/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 p\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 u\OT1/lmr
@@ -2141,12 +2135,12 @@ Overfull \vbox (2.72572pt too high) has occurred while \output is active []
 
 
 
-[20] (./TimeSeries-fr.tex [21]
+[22] (./TimeSeries-fr.tex [23]
 Underfull \hbox (badness 10000) in paragraph at lines 268--269
 \T1/lmr/m/n/10 fonc-tion d'au-to-cor-ré-la-tion
  []
 
-[22] [23]
+[24] [25]
 Underfull \hbox (badness 10000) in paragraph at lines 642--643
 
  []
@@ -2158,16 +2152,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 646--647
 
 )
 
-[24] (./NonLifeActuarial-fr.tex [25])
+[26] (./NonLifeActuarial-fr.tex [27])
 
-[26] (./Reinsurance-fr.tex (./Graph/TypeAgreements-fr.tex)
+[28] (./Reinsurance-fr.tex (./Graph/TypeAgreements-fr.tex)
 PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
- [27]
+ [29]
 PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
@@ -2191,7 +2185,7 @@ PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 PGFPlots: reading {..\\_Common\\ReinsuranceClaim.dat}
 Missing character: There is no ; in font nullfont!
-[28]
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 487--487
 []|\T1/lmr/m/n/9 Risque de
  []
@@ -2223,7 +2217,7 @@ Missing character: There is no 1 in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no ; in font nullfont!
-[29]
+[31]
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
@@ -2295,67 +2289,67 @@ Missing character: There is no t in font nullfont!
 NOTE: coordinate (0Y0.0e0],5Y0.0e0]) has been dropped because it is unbounded (
 in y). (see also unbounded coords=jump). 
 Missing character: There is no ; in font nullfont!
-[30]
+[32]
 Overfull \hbox (19.86086pt too wide) detected at line 479
 []
  []
 
 )
 
-[31] (./ElementaryFormulas-fr.tex <a0,fr0> <a0,fr1> <a0,fr2> <a0,fr3> <a0,fr4>
-<a0,fr5> <a0,fr6> <a0,fr7> <a0,fr8> <a0,fr9> <a0,fr10> <a0,fr11> <a0,fr12>
-<a0,fr13> <a0,fr14> <a0,fr15> <a0,fr16> <a0,fr17> <a0,fr18> <a0,fr19>
-<a0,fr20> <a0,fr21> <a0,fr22> <a0,fr23> [32]
+[33] (./ElementaryFormulas-fr.tex <a1,fr0> <a1,fr1> <a1,fr2> <a1,fr3> <a1,fr4>
+<a1,fr5> <a1,fr6> <a1,fr7> <a1,fr8> <a1,fr9> <a1,fr10> <a1,fr11> <a1,fr12>
+<a1,fr13> <a1,fr14> <a1,fr15> <a1,fr16> <a1,fr17> <a1,fr18> <a1,fr19>
+<a1,fr20> <a1,fr21> <a1,fr22> <a1,fr23> [34]
 \c@numberofdiscretisation=\count421
- <a1,fr0> <a1,fr1> <a1,fr2>
-<a1,fr3> <a1,fr4> <a1,fr5> <a1,fr6> <a1,fr7> <a1,fr8> <a1,fr9> <a1,fr10>
-<a1,fr11> <a1,fr12> <a1,fr13> <a1,fr14> <a1,fr15> <a1,fr16> <a1,fr17>
-<a1,fr18> [33] [34])
-Underfull \hbox (badness 10000) in paragraph at lines 419--422
+ <a2,fr0> <a2,fr1> <a2,fr2>
+<a2,fr3> <a2,fr4> <a2,fr5> <a2,fr6> <a2,fr7> <a2,fr8> <a2,fr9> <a2,fr10>
+<a2,fr11> <a2,fr12> <a2,fr13> <a2,fr14> <a2,fr15> <a2,fr16> <a2,fr17>
+<a2,fr18> [35] [36])
+Underfull \hbox (badness 10000) in paragraph at lines 422--425
 [][][][]\T1/lmr/m/n/9 Martial Phélippé-Guinvarc'h[][][] [][]\U/fontawesomeone/m
 /n/9 [ \U/fontawesometwo/m/n/9 R[][] [][][]°[][][] \T1/lmr/m/n/9 est Ac-tuaire 
 et Maître de confé-rences à Le Mans Uni-ver-sité de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 419--422
+Underfull \hbox (badness 10000) in paragraph at lines 422--425
 \T1/lmr/m/n/9 puis 2012 et en-seigne éga-le-ment à l'EU-RIA de-puis 2003. Il es
 t ac-tuaire (EU-RIA, 2006), membre de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
 []\T1/lmr/m/n/9 Martial Phélippé-Guinvarc'h en-seigne les sta-tis-tiques, l'ana
 -lyse de don-nées, la mo-dé-li-sa-tion ac-tua-rielle,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
 \T1/lmr/m/n/9 la pro-gram-ma-tion, en par-ti-cu-lier en SAS et SAS IML, les ma-
 thé-ma-tiques fi-nan-cières, les mar-chés des
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
 \T1/lmr/m/n/9 ma-tières pre-mières, la fi-nance de mar-ché et des dé-ri-vés, l'
 ac-tua-riat non vie, l'ac-tua-riat vie, le pro-vi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
 \T1/lmr/m/n/9 sion-ne-ment, la sol-va-bi-lité, la ré-as-su-rance, l'éco-no-mie 
 de l'as-su-rance, la ges-tion des risques, la ges-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
 \T1/lmr/m/n/9 ac-tifs pas-sif. Il est SAS Pro-tor, et a ob-tenu pour le Mas-ter
  MBFA de Le Mans Uni-ver-sité le SAS Join
  []
 
 
 
-[35] (./ActuarialFormSheet_MBFA-fr.aux)
+[37] (./ActuarialFormSheet_MBFA-fr.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2365,10 +2359,10 @@ ged.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 57934 strings out of 473189
- 1395371 string characters out of 5709504
- 2368310 words of memory out of 5000000
- 79845 multiletter control sequences out of 15000+600000
+ 61519 strings out of 473189
+ 1478234 string characters out of 5709504
+ 2374838 words of memory out of 5000000
+ 83424 multiletter control sequences out of 15000+600000
  691955 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,18n,127p,1381b,2740s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2416,10 +2410,10 @@ msy9.pfb><c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msam10.pfb><c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb><c:/Program Files (x86)/texlive/2025/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on ActuarialFormSheet_MBFA-fr.pdf (35 pages, 1151789 bytes).
+Output written on ActuarialFormSheet_MBFA-fr.pdf (37 pages, 1219164 bytes).
 PDF statistics:
- 1056 PDF objects out of 1200 (max. 8388607)
- 828 compressed objects within 9 object streams
- 252 named destinations out of 1000 (max. 500000)
- 542 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1118 PDF objects out of 1200 (max. 8388607)
+ 874 compressed objects within 9 object streams
+ 255 named destinations out of 1000 (max. 500000)
+ 622 words of extra memory for PDF output out of 10000 (max. 10000000)
 
