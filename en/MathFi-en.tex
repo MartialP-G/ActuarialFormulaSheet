@@ -1,7 +1,7 @@
 % !TeX root = ActuarialFormSheet_MBFA-en.tex
-% !TeX spellcheck = fr_FR
+% !TeX spellcheck = en_US
 
-\begin{f}[Capitalisation Actualisation]
+\begin{f}[Capitalization Discounting]
 
 \begin{tikzpicture}[scale=0.85]
 % Draw the x-axis and y-axis.
@@ -24,7 +24,7 @@
 \draw[ line width=1] (-.25,0) -- (4,0);
 \draw[ line width=1, dashed] (4,0) -- (5,0);
 \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (5,0) -- (\w,0);
-\draw[arrows={-Stealth[length=4, inset=0]},color=OrangeProfondIRA] (B)  to [bend right]  node [pos=0.5, below=10pt] {Actualisation}(A) ;
+\draw[arrows={-Stealth[length=4, inset=0]},color=OrangeProfondIRA] (B)  to [bend right]  node [pos=0.5, below=10pt] {Discounting}(A) ;
 \end{tikzpicture}
 
 \begin{tikzpicture}[scale=0.85]
@@ -48,78 +48,78 @@
 \draw[ line width=1] (-.25,0) -- (4,0);
 \draw[ line width=1, dashed] (4,0) -- (5,0);
 \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (5,0) -- (\w,0);
-\draw[arrows={-Stealth[length=4, inset=0]},color=OrangeProfondIRA] (A)  to [bend left]  node [pos=0.55, below=10pt] {Capitalisation}(B) ;
+\draw[arrows={-Stealth[length=4, inset=0]},color=OrangeProfondIRA] (A)  to [bend left]  node [pos=0.55, below=10pt] {Capitalization}(B) ;
 \end{tikzpicture}
 
 \end{f}
 \hrule
 
-\begin{f}[Les Intérêts]
+\begin{f}[Interests]
 
-\emph{Escompte ou taux précompté $d$}
+\emph{Discount rate $d$}
      $$d=i/(1+i)$$
-\emph{Intérêt simple $i$}
+\emph{Simple interest $i$}
 $$
 I_t=P i t=P i \frac{k}{365}
 $$
-\emph{Intérêt composés $i$}
+\emph{Compound interest $i$}
 $$
 V_n=P(1+i)^n=P\left(1+\frac{p}{100}\right)^n
 $$
-\emph{Intérêt continu $r$}
+\emph{Continuous interest $r$}
 $$V_t=V_0\ e^{rt}$$
 
-\emph{Taux effectif $i_e$}
+\emph{Effective rate $i_e$}
 $$
 i_e=\left( 1+\frac{i}{m}\right) ^{m}-1
 $$
-où $i$ est le taux nominal et $m$ le nombre de périodes sur un an.
+where $i$ is the nominal rate and $m$ the number of periods in a year.
 
-\emph{Taux équivalent $i^{(m)}$}
+\emph{Equivalent rate $i^{(m)}$}
 $$
 i^{(m)}=m(1+i)^{1 / m}-1
 $$
 
-\emph{Taux nominal $i$ et taux périodique}
+\emph{Nominal rate $i$ and periodic rate}
 
-Le taux \textbf{nominal} ou taux \textbf{facial} permet de calculer les intérêts dus sur un an.
-Le taux \textbf{périodique} correspond au taux nominal divisé par le nombre de périodes sur un an $i/m$.
-Si le taux périodique est hebdomadaire, le taux nominal sera divisé par 52.
+The \textbf{nominal} or \textbf{face} rate allows calculating the interest due over one year.
+The \textbf{periodic} rate corresponds to the nominal rate divided by the number of periods in a year $i/m$.
+If the periodic rate is weekly, the nominal rate will be divided by 52.
 \end{f}
 \hrule
 
-\begin{f}[Valeur actuelle et valeur future]
+\begin{f}[Present Value and Future Value]
 
-La valeur actuelle (VA)  ou valeur présente (VP)  représente le capital qui doit être investi aujourd'hui à un taux d'intérêt composé annuel $i$ pour obtenir des flux de trésorerie futurs ($F_k$) aux moments $t_k$:
+The present value (PV) represents the capital that must be invested today at an annual compound interest rate $i$ to obtain future cash flows ($F_k$) at times $t_k$:
 \begin{equation}
-	VP = \sum_{k=1}^{n} F_k \times \frac{1}{(1+i)^{t_k}}
+	PV = \sum_{k=1}^{n} F_k \times \frac{1}{(1+i)^{t_k}}
 \label{ValeurActuelle}
 \end{equation}
-Lorsque les $F_k$ sont constants
+When the $F_k$ are constant
 \begin{equation}
-	VP = K  \frac{1 - (1+i)^{-n}} {i}
+	PV = K  \frac{1 - (1+i)^{-n}} {i}
 \label{ValeurActuelleFluxCt}
 \end{equation}
 
-La valeur future (VF) représente la valeur du capital en $T$ qui, avec un taux d'intérêt composé annuel $i$,  capitalise les flux de trésorerie futurs ($F_k$) aux moments $t_k$.
+The future value (FV) represents the value of the capital at $T$ which, with an annual compound interest rate $i$, capitalizes the future cash flows ($F_k$) at times $t_k$.
 \begin{equation}
-	VF=V_n = \sum_{k=1}^{n} F_k \times (1+i)^{n-t_k}
+	FV=V_n = \sum_{k=1}^{n} F_k \times (1+i)^{n-t_k}
 \end{equation}
-Plus généralement $VF= (1+i)^{n}VP$.
+More generally $FV= (1+i)^{n}PV$.
 \end{f}
 \hrule
 
-\begin{f}[Annuités]
+\begin{f}[Annuities]
 \input{AnnuityTikz-en}
 \end{f}
 \hrule
 
-\begin{f}[L'emprunt (Indivis)]
+\begin{f}[The Loan (Indivisible)]
 \ \newline
 
-La principale propriété de l'emprunt est de considéré séparément les intérêts du remboursement (ou de l'amortissement).
+The main property of the loan is to consider separately the interest from the repayment (or amortization).
 
-Par un remboursement constant ou par annuité constante: la somme de l'amortissement et de l'intérêt à chaque période est constante. 
+By constant repayment or constant annuity: the sum of the amortization and the interest at each period is constant.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -177,7 +177,7 @@ Par un remboursement constant ou par annuité constante: la somme de l'amortisse
 \end{center}
 	
     
-    Par un amortissement constant.
+    By constant amortization.
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
 % Draw the x-axis and y-axis.
@@ -218,7 +218,7 @@ Par un remboursement constant ou par annuité constante: la somme de l'amortisse
 \end{center}
 
     
-Par un remboursement in fine, où l'intérêt est constant. Seuls les intérêts sont versés périodiquement jusqu'au terme, moment où le remboursement total est effectué.
+By a bullet repayment, where the interest is constant. Only the interests are paid periodically until maturity, when the total repayment is made.
 	
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -257,17 +257,17 @@ Par un remboursement in fine, où l'intérêt est constant. Seuls les intérêts
 \end{f}
 \hrule \
 
-\begin{f} [Tableau d'amortissement de l'emprunt]
+\begin{f} [Loan Amortization Schedule]
 \ \newline
 
 	\footnotesize
 \renewcommand{\arraystretch}{2}
 \begin{tabular}{|m{10ex}|m{19ex}|m{19ex}|m{17ex}|}
-\rowcolor{BleuProfondIRA!40}   	\hline &\textbf{In fine}			&   	\textbf{Amortissements  constants} &  		\textbf{Annuités  constantes} \\
-	\hline Capital restant dû $S_k$ & $T_k=S_0$, $T_n=0$& $S_{0}\left(1-\frac{k}{n}\right)$ & $S_{0} \frac{1-v^{n-k}}{1-v^{n}}$\\
-	\hline Intérêts $U_k$ 		& $i\times S_0$ & $S_{0}\left(1-\frac{k-1}{n}\right) i$ & $K\left(1-v^{n-k+1}\right)$ \\
-	\hline Amortis\-sements $T_k$ &	$T_k=O$, $T_n=S_0$ & $\frac{S_{0}}{n}$ & $K v^{n-k+1}$ \\
-	\hline Annuité $K_k$ & 	$K_k=i S_0$, $K_n=(1+i)S_0$ 	 & $\frac{S_{0}}{n}(1-(n-k+1) i) $ & $K=S_{0} \frac{i}{1-v^{n}} $ \\
+\rowcolor{BleuProfondIRA!40}   	\hline &\textbf{In fine}			&   	\textbf{Constant amortizations} &  		\textbf{Constant annuities} \\
+	\hline Outstan\-ding principal $S_k$ & $T_k=S_0$, $T_n=0$& $S_{0}\left(1-\frac{k}{n}\right)$ & $S_{0} \frac{1-v^{n-k}}{1-v^{n}}$\\
+	\hline Interest $U_k$ 		& $i\times S_0$ & $S_{0}\left(1-\frac{k-1}{n}\right) i$ & $K\left(1-v^{n-k+1}\right)$ \\
+	\hline Amortiz\-ations $T_k$ &	$T_k=O$, $T_n=S_0$ & $\frac{S_{0}}{n}$ & $K v^{n-k+1}$ \\
+	\hline Annuity $K_k$ & 	$K_k=i S_0$, $K_n=(1+i)S_0$ 	 & $\frac{S_{0}}{n}(1-(n-k+1) i) $ & $K=S_{0} \frac{i}{1-v^{n}} $ \\
 %	\hline Coût de l'emprunt & $1 \times K \times N$ & $1 \times K \times \frac{N+1}{2}$ & $K\left(\frac{N i}{1-(1+i)^{-N}}-1\right)$ \\
 	\hline
 \end{tabular}
