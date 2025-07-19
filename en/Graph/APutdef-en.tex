@@ -18,7 +18,7 @@
 		x label style={={at={(current axis.right of origin)},below=5mm}},
 		%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
 		%		x label style={at={(1,0.5)}},
-		xlabel={ss-jacent ($T$)},
+		xlabel={underlying ($T$)},
 		%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
 		%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
 		ytick=\empty,
@@ -40,8 +40,8 @@
 			%	},
 		]		%		
 		\addplot[name path=A,BleuProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashdotted] {Put(x,\PxExerciceBS,\PremiumBS)} 
-		node [pos=0.15,yshift=-15mm,color=BleuProfondIRA] {Gains}
-		node [pos=.75,yshift=4mm,color=OrangeProfondIRA] {Perte};	
+		node [pos=0.15,yshift=-15mm,color=BleuProfondIRA] {Earnings}
+		node [pos=.75,yshift=4mm,color=OrangeProfondIRA] {Losses};	
 		%\draw[BleuProfondIRA,thick] \OV{\PxExerciceBS}{\PremiumBS}{0.4}{\xminBS}{\xmaxBS} ;
 		%	\addplot[BleuProfondIRA,thick,dashdotted] {Call(x,50,2)};
 		%	\addplot[BleuProfondIRA,thick] {Put(x,50,3)+Call(x,50,2)};
@@ -62,7 +62,7 @@
 		{AT};
 		\node at ({\xminBS+0.8*(\xmaxBS-\xminBS)},{\pgfkeysvalueof{/pgfplots/ymin}})
 		{OUT};
-		\draw [<->, xshift=-5mm] ({\pgfkeysvalueof{/pgfplots/xmin}},0) -- ({\pgfkeysvalueof{/pgfplots/xmin}},-\PremiumBS) node [pos=0.5, xshift=-2.5mm, rotate=90] {Prime};
+		\draw [<->, xshift=-5mm] ({\pgfkeysvalueof{/pgfplots/xmin}},0) -- ({\pgfkeysvalueof{/pgfplots/xmin}},-\PremiumBS) node [pos=0.5, xshift=-2.5mm, rotate=90] {Premium};
 	\end{axis}
 	%
 \end{tikzpicture}

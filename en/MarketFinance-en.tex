@@ -125,10 +125,9 @@ Euribor Futures (EU).
 
 
 \begin{f}[Bond Market]
-	
+
 \textbf{Bonds} are long-term debt securities in which the issuer (central or local government, bank, borrowing company) promises the bondholder (the lender) to pay interest (\textbf{coupons}) periodically and to repay the \textbf{nominal value} (or face value, or principal) at maturity.
 As mentioned in the previous section, \textbf{Treasury bills with a maturity greater than one year} will be treated as bonds with maturities under 5 years because their functioning is similar.
-
 
 %Les \textbf{coupons} : sont payés régulièrement à la fin des périodes de coupon (annuelles ou semestrielles) jusqu'à la date d'échéance.
 
@@ -189,15 +188,16 @@ As mentioned in the previous section, \textbf{Treasury bills with a maturity gre
 \end{tikzpicture}
 \end{center}
 
-\textbf{Indexed bonds} (inflation-linked bonds) have coupons and sometimes also the nominal value indexed to inflation or another economic indicator, such as Treasury Assimilable Bonds
-indexed to inflation (OATi). The values of $c$ vary.
+ \textbf{Indexed bonds} (inflation-linked bonds) have coupons and sometimes also the nominal value indexed to inflation or another economic indicator, such as Treasury Assimilable Bonds
+		indexed to inflation (OATi). The values of $c$ vary.
         
-Bonds with \textbf{floating rate}, \textbf{variable rate}, or \textbf{resettable rate}: have a coupon rate linked to a reference interest rate (for example, the euro short-term rate (\href{https://www.cmegroup.com/markets/interest-rates/stirs/euro-short-term-rate.quotes.html}{€STR})).
+Bonds with \textbf{floating rate}, \textbf{variable rate}, or \textbf{resettable rate}: have a coupon rate linked to a reference interest rate (for example, the euro short-
+		term rate (\href{https://www.cmegroup.com/markets/interest-rates/stirs/euro-short-term-rate.quotes.html}{€STR})).
 
 \textbf{Perpetual bonds} have no maturity date; the principal is never repaid.
-
+ 
 A distinction is often made between government bonds (Treasury bonds) and
-corporate bonds issued by private companies.
+ corporate bonds issued by private companies.
 
 
 
@@ -205,8 +205,9 @@ A bond is mainly defined by a \textbf{nominal value} $F$ (Face Value), the \text
 In the default case, the bondholder lends the amount $E=F$ at issuance at time 0, receives each year a coupon $c = i \times F$, and at $n$, the principal or capital $R=F$ is returned.
 When $E=F$, the issue is said to be at par, and when $R=F$, the redemption is said to be at par.
 
-The price of a bond is determined by the present value of the expected future cash flows (coupons and principal repayment) discounted at the market yield rate $r$.
 
+The price of a bond is determined by the present value of the expected future cash flows (coupons and principal repayment) discounted at the market yield rate $r$.
+ 
 The price calculation of bonds simply relies on the present value formula:
 \[
 VP = \sum_{k=1}^{n} \frac{c}{(1 + r)^k} + \frac{F}{(1 + i)^n}
@@ -232,7 +233,7 @@ It is quoted excluding \textbf{accrued coupons}, the portion of the next coupon 
 \hrule
 
 \begin{f}[Duration \& Convexity]
-	
+
 The Macaulay duration:
 \[ 		
 D = \sum_{t=1}^{n} t \cdot w_t, \quad \text{où} \quad w_t = \frac{PV(C_t)}{P}.
@@ -242,7 +243,7 @@ The modified duration $D^*$:
 \[ 	
 D^* = \frac{D}{1 + i}.
  \]
-Which allows approximating the portfolio change $\Delta P$ in case of interest rate changes $\Delta_i$
+ Which allows approximating the portfolio change $\Delta P$ in case of interest rate changes $\Delta_i$
 \[ 
 \Delta P \approx -P\ D^* \Delta_i 
  \]
@@ -260,19 +261,18 @@ P(i + \Delta_i) \approx P(i) \left( 1 -D^*\Delta_i + \frac{1}{2} C (\Delta_i)^2 
 
 
 \begin{f}[CAPM]
-	Capital Asset Pricing Model:
+  Capital Asset Pricing Model :
 
 \[
 E(r_i) = r_f + \beta_i (E(r_m) - r_f)
 \]
 
 \begin{itemize}
-	\item \( E(r_i) \) is the expected return of asset \( i \),
-	\item \( r_f \) is the risk-free rate,
-	\item \( E(r_m) \) is the expected market return,
-	\item \( \beta_i \) is the sensitivity coefficient of asset \( i \) with respect to market variations.
+    \item \( E(r_i) \) is the expected return of asset \( i \),
+    \item \( r_f \) is the risk-free rate,
+    \item \( E(r_m) \) is the expected market return,
+    \item \( \beta_i \) is the sensitivity coefficient of asset \( i \) with respect to market variations.
 \end{itemize}
-
 
 The coefficient \( \beta_i \) measures the volatility of asset \( i \) relative to the overall market.
 
@@ -280,29 +280,29 @@ The coefficient \( \beta_i \) measures the volatility of asset \( i \) relative 
 \hrule
 
 
-\begin{f}[Marché des dérivés]
+\begin{f}[Derivatives Market]
 
-Un \textbf{contrat dérivé} (ou actif contingent) est un instrument financier dont la valeur dépend d’un actif ou d’une variable sous-jacente. Les options font partie des contrats dérivés.
+A \textbf{derivative contract} (or contingent asset) is a financial instrument whose value depends on an underlying asset or variable. Options are part of derivative contracts.
 
 
-Une \textbf{option} est un contrat donnant le droit (sans obligation) d’acheter (call) ou de vendre (put) un actif sous-jacent à un prix fixé (prix d’exercice), à une date future, contre paiement d’une prime. 
-L’acheteur (position longue) paie la prime ; le vendeur (position courte) la reçoit.L'\textbf{option européenne}  (exercice possible uniquement à l’échéance) et   
- \textbf{option américaine} (exercice possible à tout moment jusqu’à l’échéance).
+An \textbf{option} is a contract that gives the right (without obligation) to buy (call) or sell (put) an underlying asset at a fixed price (strike price) at a future date, in exchange for the payment of a premium.
+The buyer (long position) pays the premium; the seller (short position) receives it. \textbf{European option} (exercise possible only at maturity) and  
+ \textbf{American option} (exercise possible at any time until maturity).
 
-Les options cotées sur actions sont appelées \textit{stock options}.
+Options listed on stocks are called \textit{stock options}.
 
 \end{f}
 \hrule
 
 
-\begin{f}[Les stratégies simples]
+\begin{f}[Simple Strategies]
 
 \ %
 
 %\textbf{La position longue sur l'option d'achat}
 
-Avec $T$ l'échéance, $K$ le prix d'exercice, $S$ ou $S_T$ le sous-jacent à l'échéance, le retour (\engl{payoff}) est de $\max (0, S_T-K)=( S_T-K)^{+}$.
-En notant $C$ la prime , le profit réalisé est de $\max (0, S_T-K)-C$, avec un profit si  ($S_T<V_{PM}=K + C$)  ($PM$ pour \textbf{point mort}).
+With $T$ the maturity, $K$ the strike price, $S$ or $S_T$ the underlying at maturity, the payoff is $\max (0, S_T-K)=( S_T-K)^{+}$.
+Letting $C$ be the premium, the profit realized is $\max (0, S_T-K)-C$, with a profit if ($S_T<V_{PM}=K + C$) ($PM$ stands for \textbf{break-even point}).
 
 		\input{Graph/Acalldef-en.tex}
 
@@ -312,7 +312,7 @@ En notant $C$ la prime , le profit réalisé est de $\max (0, S_T-K)-C$, avec un
 %\textbf{La position courte sur l'option d'achat}
 
 
-À l'échéance, le retour est de $\min (0,K- S_T)=-\max(0, S_T-K)=-( S_T-K)^{+}$ et le profit réalisé est de $C-\max (0, S_T-K)$.
+At maturity, the payoff is $\min (0,K- S_T)=-\max(0, S_T-K)=-( S_T-K)^{+}$ and the profit realized is $C-\max (0, S_T-K)$.
 
 \medskip
 
@@ -322,8 +322,8 @@ En notant $C$ la prime , le profit réalisé est de $\max (0, S_T-K)-C$, avec un
 
 %\textbf{La position longue sur l'option de vente}
 
-À l'échéance, le retour est de $\max (0,K- S_T)=(K- S_T)^{+}$.
-En notant $P$ la prime du put, le profit réalisé est de $\max (0,K- S_T)-P$, positif si$V_{PM}=K -P<S_T$.
+At maturity, the payoff is $\max (0,K- S_T)=(K- S_T)^{+}$.
+Letting $P$ be the put premium, the profit realized is $\max (0,K- S_T)-P$, positive if $V_{PM}=K -P<S_T$.
 
 \medskip
 
@@ -335,22 +335,22 @@ En notant $P$ la prime du put, le profit réalisé est de $\max (0,K- S_T)-P$, p
 
 	\input{Graph/VPutdef-en.tex}    	     
 
-À l'échéance, le retour est de $\min (0, S_T-K)=-(K- S_T)^+$.
+At maturity, the payoff is $\min (0, S_T-K)=-(K- S_T)^+$.
 
 
 \end{f}
 \hrule
 
-\begin{f}[Les stratégies d'écart]
-\textbf{Stratégie d'écart} : utilise deux options ou plus du même type (deux options d'achat ou deux options de vente).  
-Si les prix d'exercice varient, c'est un \textbf{écart vertical}.  
-Si les échéances changent, c'est un \textbf{écart horizontal}.
+\begin{f}[Spread Strategies]
+\textbf{Spread strategy}: uses two or more options of the same type (two call options or two put options).  
+If the strike prices vary, it is a \textbf{vertical spread}.  
+If the maturities change, it is a \textbf{horizontal spread}.
 
-Une stratégie d’écart vertical (\textit{spread trading strategy}) implique une position longue et une position courte sur des options d’achat portant sur le même sous-jacent, de même échéance mais avec des prix d’exercice différents.  
-On distingue : \textbf{écart vertical haussier} (\textit{Bull spread}) et \textbf{écart vertical baissier} (\textit{Bear spread}).
+A vertical spread strategy (\textit{spread trading strategy}) involves a long position and a short position on call options on the same underlying asset, with the same maturity but different strike prices.  
+We distinguish: \textbf{bull vertical spread} (\textit{Bull spread}) and \textbf{bear vertical spread} (\textit{Bear spread}).
 
-\textbf{Écart vertical haussier} : anticipant une hausse modérée du sous-jacent, l’investisseur prend une position longue sur $C_1$ et courte sur $C_2$ sous la contrainte $E_1 < E_2$.  
-Résultat net à l’échéance :
+\textbf{Bull vertical spread}: anticipating a moderate rise in the underlying asset, the investor takes a long position on $C_1$ and a short position on $C_2$ under the condition $E_1 < E_2$.  
+Net result at maturity :
 
 	\begin{tikzpicture}[scale=.52]
 		\def\riskfreeBS{0.05}
@@ -377,7 +377,7 @@ Résultat net à l’échéance :
 			x label style={={at={(current axis.right of origin)}}},
 			%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
 			%		x label style={at={(1,0.5)}},
-			xlabel={ss-jacent ($T$)},
+			xlabel={underlying ($T$)},
 			%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
 			%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
 			ytick=\empty,
@@ -394,7 +394,7 @@ Résultat net à l’échéance :
 			node [pos=0.15, above] {\small Long $C_1$};	
 			\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {-Call(x,\PxExerciceBSb,\PremiumBSb)} 
 			node [pos=0.15, above] {\small  Short $C_2$};	
-			\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=41] {Call(x,\PxExerciceBSa,\PremiumBSa)-Call(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.15, above] {\'Ecart vertical haussier};	
+			\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=41] {Call(x,\PxExerciceBSa,\PremiumBSa)-Call(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.15, above] {Bull vertical spread};	
 			%\draw[BleuProfondIRA,thick] \OV{\PxExerciceBSa}{\PremiumBSa}{0.4}{\xminBS}{\xmaxBS} ;
 			%		\addplot[name path=Option,BleuProfondIRA,thick,domain={250:350}, 			 		samples=10,dashdotted,smooth] {BSPut(x,\PxExerciceBSa,\riskfreeBS,\TBS,\sigmaBS)} ;	
 			
@@ -406,7 +406,7 @@ Résultat net à l’échéance :
 
 
 
-\textbf{Écart vertical baissier} : anticipant une baisse modérée du sous-jacent, l’investisseur vend l’option la plus chère et achète la moins chère.
+\textbf{Bear vertical spread}: anticipating a moderate decline in the underlying asset, the investor sells the more expensive option and buys the cheaper one.
 
 
 	\begin{tikzpicture}[scale=.52]
@@ -434,7 +434,7 @@ Résultat net à l’échéance :
 			x label style={={at={(current axis.right of origin)}}},
 			%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
 			%		x label style={at={(1,0.5)}},
-			xlabel={ss-jacent ($T$)},
+			xlabel={underlying ($T$)},
 			%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
 			%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
 			ytick=\empty,
@@ -451,7 +451,7 @@ Résultat net à l’échéance :
 			node [pos=0.15, above] {\small Short $C_1$};	
 			\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Call(x,\PxExerciceBSb,\PremiumBSb)} 
 			node [pos=0.15, above] {\small  Long $C_2$};		
-			\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=41] {-Call(x,\PxExerciceBSa,\PremiumBSa)+Call(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.15, above] {\'Ecart vertical baissier};	
+			\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=41] {-Call(x,\PxExerciceBSa,\PremiumBSa)+Call(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.15, above] {Bear vertical spread};	
 			%\draw[BleuProfondIRA,thick] \OV{\PxExerciceBSa}{\PremiumBSa}{0.4}{\xminBS}{\xmaxBS} ;
 			%		\addplot[name path=Option,BleuProfondIRA,thick,domain={250:350}, 			 		samples=10,dashdotted,smooth] {BSPut(x,\PxExerciceBSa,\riskfreeBS,\TBS,\sigmaBS)} ;	
 			
@@ -463,10 +463,10 @@ Résultat net à l’échéance :
 
 % Code TikZ conservé ici (éventuellement inséré)
 
-\textbf{Écart papillon} (\textit{butterfly spread}) : anticipe une faible variation du sous-jacent.  
-C’est la combinaison d’un écart vertical haussier et d’un écart vertical baissier.  
-Stratégie adaptée si de grandes variations sont jugées peu probables.  
-Investissement initial faible.
+\textbf{Butterfly spread}: anticipates a small movement in the underlying asset.  
+It is a combination of a bull vertical spread and a bear vertical spread.  
+This strategy is suitable when large movements are considered unlikely.  
+Requires a low initial investment.
 
 	\begin{tikzpicture}[scale=.52]
 		\def\riskfreeBS{0.05}
@@ -495,7 +495,7 @@ Investissement initial faible.
 			x label style={={at={(current axis.right of origin)}}},
 			%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
 			%		x label style={at={(1,0.5)}},
-			xlabel={ss-jacent ($T$)},
+			xlabel={underlying ($T$)},
 			%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
 			%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
 			ytick=\empty,
@@ -517,7 +517,7 @@ Investissement initial faible.
 			\addplot[name path=EP,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=41] {
 				Call(x,\PxExerciceBSa,\PremiumBSa) - 2*Call(x,\PxExerciceBSb,\PremiumBSb)+
 				Call(x,\PxExerciceBSc,\PremiumBSc)}
-			node [pos=0.5, below=30pt] { \'Ecart papillon};	
+			node [pos=0.5, below=30pt] {Butterfly spread};	
 			\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSa},0) -- ({\PxExerciceBSa},{-\PremiumBSa})	;
 			\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSb},0) -- ({\PxExerciceBSb},{2*\PremiumBSb})	;
 			\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSc},0) -- ({\PxExerciceBSc},{-\PremiumBSc})	;
@@ -529,13 +529,13 @@ Investissement initial faible.
 \end{f}
 \hrule
 
-\begin{f}[Les stratégies combinées]
+\begin{f}[Combined strategies]
 	
-	Une \textbf{stratégie combinée} utilise à la fois des options d'achat et de vente. On distingue notamment les \textbf{stellages} et les \textbf{strangles}.
+	A \textbf{combined strategy} uses both call and put options. Notably, we distinguish between \textbf{straddles} and \textbf{strangles}.
 	
-	Un \textbf{stellage} (straddle) combine l'achat d'une option d'achat et d'une option de vente de même échéance et de même prix d'exercice. Cette stratégie parie sur une forte variation du prix, à la hausse ou à la baisse. La perte maximale survient si le prix à l’échéance est égal au prix d’exercice.
+	A \textbf{straddle} combines the purchase of a call option and a put option with the same expiration date and strike price. This strategy bets on a large price movement, either upward or downward. The maximum loss occurs if the price at expiration is equal to the strike price.
 	
-	Un \textbf{strangle} est l’achat d’un call et d’un put de même échéance mais à prix d’exercice différents. Il suppose une très forte variation de la valeur du sous-jacent.
+	A \textbf{strangle} is the purchase of a call and a put with the same expiration date but different strike prices. It assumes a very large movement in the value of the underlying asset.
 	
 		\begin{tikzpicture}[scale=.52]
 			\def\xminBS{200}
@@ -556,7 +556,7 @@ Investissement initial faible.
 				color=BleuProfondIRA,
 				ylabel={Profit},
 				x label style={={at={(current axis.right of origin)}}},
-				xlabel={ss-jacent ($T$)},
+				xlabel={underlying ($T$)},
 				ytick=\empty,
 				extra y ticks ={0},
 				extra y tick labels={{0}},
@@ -595,7 +595,7 @@ Investissement initial faible.
 				color=BleuProfondIRA,
 				ylabel={Profit},
 				x label style={={at={(current axis.right of origin)}}},
-				xlabel={ss-jacent ($T$)},
+				xlabel={underlying ($T$)},
 				ytick=\empty,
 				extra y ticks ={0},
 				extra y tick labels={{0}},
@@ -619,22 +619,22 @@ Investissement initial faible.
 \end{f}
 \hrule
 
-\begin{f}[Absence d'opportunité d'arbitrage]
-Aucun profit sans risque n’est possible par exploitation des écarts de prix. 
+\begin{f}[Absence of arbitrage opportunity]
+No risk-free profit is possible by exploiting price differences. 
 
 \end{f}
 
-\begin{f}[La relation de parité]
-
-L'AOA implique la relation suivante entre le Call et le Put :
+\begin{f}[Parity relation]
+	
+AAO implies the following relationship between the Call and the Put:
 
 $$S_t- C_t + P_t = K e^{-i_{f}.\tau}$$	
 \end{f}
 \hrule
 
-\begin{f}[Le modèle de Cox-Ross-Rubinstein]
+\begin{f}[The Cox-Ross-Rubinstein model]
 	
-Il repose sur un processus en temps discret avec deux évolutions possibles du prix à chaque période : une hausse (facteur $u$) ou une baisse (facteur $d$), avec $u > 1 + i_{f}$ et $d < 1 + i_{f}$. Le prix à $t = 1$ est alors \( S_{1}^{u} = S_{0} u \) ou \( S_{1}^{d} = S_{0} d \), selon une probabilité $q$ ou $1-q$.
+It is based on a discrete-time process with two possible price movements at each period: an increase (factor $u$) or a decrease (factor $d$), with $u > 1 + i_{f}$ and $d < 1 + i_{f}$. The price at $t = 1$ is then \( S_{1}^{u} = S_{0} u \) or \( S_{1}^{d} = S_{0} d \), according to a probability $q$ or $1-q$.
 
 \begin{tikzpicture}
 	[sibling distance=5em,
@@ -670,21 +670,21 @@ Il repose sur un processus en temps discret avec deux évolutions possibles du p
 	};
 \end{tikzpicture}
 
-Ce modèle s’étend à $n$ périodes avec $n+1$ prix possibles pour $S_T$. À l’échéance, la valeur d’une option d’achat est donnée par \( C_{1}^{u} = (S_{1}^{u} - K)^+ \) et \( C_{1}^{d} = (S_{1}^{d} - K)^+ \).
+This model extends to $n$ periods with $n+1$ possible prices for $S_T$. At expiration, the value of a call option is given by \( C_{1}^{u} = (S_{1}^{u} - K)^+ \) and \( C_{1}^{d} = (S_{1}^{d} - K)^+ \).
 
-\textbf{Absence d'opportunité d'arbitrage} implique
+\textbf{Absence of arbitrage opportunity} implies
 \[
 d < 1 + i_{f} < u
 \]
-et une probabilité risque neutre 
+and a risk-neutral probability
 \[q = \frac{(1 + i_{f}) - d}{u - d}\]
 
-\textbf{Prix du call} (avec \( S_{1}^{d} < K < S_{1}^{u} \)) :
+\textbf{Call price} (with \( S_{1}^{d} < K < S_{1}^{u} \)) :
 \[
 C_{0} = \frac{1}{1+i_f} \left[ q C_{1}^{u} + (1 - q) C_{1}^{d} \right]
 \]
 
-On peut aussi construire un portefeuille de réplication composé de $\Delta$ actions et $B$ obligations, tel que :
+We can also construct a replication portfolio composed of $\Delta$ shares and $B$ bonds, such that :
 \[
 \begin{cases}
 	\Delta = \frac{S_{1}^{u} - K}{S_{1}^{u} - S_{1}^{d}}, \\
@@ -693,18 +693,18 @@ On peut aussi construire un portefeuille de réplication composé de $\Delta$ ac
 \quad \Rightarrow \quad \Pi_0 = \Delta S_0 + B
 \]
 
-\textbf{Prix du put} :
+\textbf{Put price} :
 \[
 P_{0} = \frac{1}{1+i_f} \left[ q P_{1}^{u} + (1 - q) P_{1}^{d} \right]
 \]
 
-\textbf{Détermination de $q$, $u$, $d$} :  
-En calibrant le modèle pour retrouver les premiers moments du rendement sous la probabilité risque neutre (espérance $i_f$, variance $\sigma^2 \delta t$), on obtient :
+\textbf{Determination of $q$, $u$, $d$}:  
+By calibrating the model to match the first moments of the return under the risk-neutral probability (expected value $i_f$, variance $\sigma^2 \delta t$), we obtain :
 \[
 e^{i_{f} \delta t} = q u + (1-q) d, \qquad q u^2 + (1-q) d^2 - [q u + (1-q) d]^2 = \sigma^2 \delta t
 \]
 
-Avec la contrainte $u = \frac{1}{d}$, on arrive à :
+With the constraint $u = \frac{1}{d}$, we obtain:
 \[
 \begin{array}{l}
 	q = \frac{e^{-i_f \delta_t} - d}{u - d} \\
@@ -716,52 +716,52 @@ Avec la contrainte $u = \frac{1}{d}$, on arrive à :
 \end{f}
 \hrule
 
-\begin{f}[Le modèle de Black \& Scholes]
-Hypothèses du modèle 
+\begin{f}[The Black \& Scholes Model]
+Assumptions of the model
 \begin{itemize}
-	\item Le taux sans risque $R$ est constant. On définit $i_f = \ln(1+R)$, ce qui implique $(1+R)^t = e^{i_f t}$.
-	\item Le prix de l'action $S_t$ suit un mouvement brownien géométrique :
+	\item The risk-free rate $R$ is constant. We define $i_f = \ln(1+R)$, which implies $(1+R)^t = e^{i_f t}$.
+	\item The stock price $S_t$ follows a geometric Brownian motion :
 	$$
 	dS_t = \mu S_t dt + \sigma S_t dW_t 
 	$$
 	$$
 	 S_t = S_0 \exp\left(\sigma W_t + \left( \mu - \frac{1}{2}\sigma^2 \right)t \right)
 	$$
-	\item Pas de dividende pendant la durée de vie de l’option.
-	\item L’option est \og{}européenne\fg{} (exercée uniquement à l’échéance).
-	\item Marché sans friction : pas d’impôts ni de coûts de transaction.
-	\item La vente à découvert est autorisée.
+	\item No dividend during the option's lifetime.  
+	\item The option is "European" (exercised only at maturity).  
+	\item Frictionless market : no taxes or transaction costs.  
+	\item Short selling is allowed. 
 \end{itemize}
 
-L’équation de Black-Scholes-Merton pour évaluer un contrat dérivé $f$ est :
+The Black-Scholes-Merton equation for valuing a derivative contract $f$ is:
 $$
 \frac{\partial f}{\partial t} + i_f S \frac{\partial f}{\partial S} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 f}{\partial S^2} = i_f f
 $$
 
-À l’échéance, le prix d’une option d’achat est $C(S,T) = \max(0, S_T - K)$, et celui d’une option de vente est $P(S,T) = \max(0, K - S_T)$.
+At maturity, the price of a call option is $C(S,T) = \max(0, S_T - K)$, and that of a put option is $P(S,T) = \max(0, K - S_T)$.
 
 
 \begin{center}
 	\begin{tabular}{|c|c|c|}
 		\hline
-		Déterminants & \textbf{call}&\textbf{put}\\
+		Determinants & \textbf{call}&\textbf{put}\\
 		\hline
-		Cours du sous-jacent	      & +&	-\\
-		Prix d'exercice	              & -&	+\\
-		La maturité	 (ou le temps)    & + (-)&	+ (-)\\
-		Volatilité	              & +&	+\\
-		Taux d'intérêt à court terme  & +&	-\\
-		Versement de dividende	      & -&	+\\
+		Underlying price	      & +&	-\\
+		Strike price	              & -&	+\\
+		Maturity (or time)    & + (-)&	+ (-)\\
+		Volatility	              & +&	+\\
+		Short-term interest rates  & +&	-\\
+		Dividend payment	      & -&	+\\
 		\hline
 	\end{tabular}
 \end{center}
 
-Les solutions analytiques sont :
+The analytical solutions are :
 \begin{align*}
 	C_t &= S_t \Phi(d_1) - Ke^{-i_f \tau} \Phi(d_2) \\
 	P_t &= Ke^{-i_f \tau} \Phi(-d_2) - S_t \Phi(-d_1)
 \end{align*}
-où :
+or :
 \begin{align*}
 	d_1 &= \frac{\ln(S_t/K) + (i_f + \frac{1}{2}\sigma^2)\tau}{\sigma \sqrt{\tau}}, \quad
 	d_2 = d_1 - \sigma \sqrt{\tau}
@@ -770,15 +770,15 @@ où :
 %La sensibilité peut être mesurée par cinq paramètres (lettres grecques) :
 
 \begin{itemize}
-	\item \textbf{Delta} $\Delta$ : variation du prix de l’option selon le sous-jacent.
-	\item \textbf{Gamma} $\Gamma$ : sensibilité du delta.
-	\item \textbf{Thêta} $\Theta$ : sensibilité au temps.
-	\item \textbf{Véga} $\mathcal{V}$ : sensibilité à la volatilité.
-	\item \textbf{Rho} $\rho$ : sensibilité au taux d’intérêt.
+	\item \textbf{Delta} $\Delta$ : variation in the option price depending on the underlying.
+	\item \textbf{Gamma} $\Gamma$ : delta sensitivity.
+	\item \textbf{Thêta} $\Theta$ : sensitivity to time.
+	\item \textbf{Véga} $\mathcal{V}$ : sensitivity to volatility.
+	\item \textbf{Rho} $\rho$ : interest rate sensitivity.
 \end{itemize}
 
 
-Le \textbf{Delta} mesure l’impact d’une variation du sous-jacent :
+The \textbf{Delta} measures the impact of a change in the underlying asset :
 
 \begin{align*}
 	\Delta_C &= \frac{\partial C}{\partial S} = \Phi(d_1), \quad \Delta \in (0,1) \\
@@ -786,7 +786,7 @@ Le \textbf{Delta} mesure l’impact d’une variation du sous-jacent :
 \end{align*}
 
 
-Le Delta global d’un portefeuille $\Pi$ avec des poids $\omega_i$ est :
+The global Delta of a portfolio $\Pi$ with weights $\omega_i$ is :
 $$
 \frac{\partial \Pi}{\partial S_t} = \sum_{i=1}^{n} \omega_i \Delta_i
 $$
@@ -817,7 +817,7 @@ $$
 	color=BleuProfondIRA,
 	ylabel={$\Delta$},
 	x label style={at={(axis cs:\xmaxBS+.1,0)},anchor=north east},
-	xlabel={ss-jacent ($T$)},
+	xlabel={underlying ($T$)},
 	ytick=\empty,
 	xtick=\empty,
 	extra y ticks ={-.5,0,0.5},
@@ -826,7 +826,7 @@ $$
 	extra x tick labels={{\color{BleuProfondIRA}$K'$\ \ \ \ \ \ \ \ },{\color{BleuProfondIRA}\ \ $K$}},
 	extra x tick style={color=BleuProfondIRA,
 		tick label style={yshift=-0mm}	},
-	title ={ \textbf{Delta de l'option}},
+	title ={ \textbf{Delta of the option}},
 	title style={yshift=-10mm}
 	]
 	\addplot[name path=optionT,OrangeProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21]
@@ -846,18 +846,18 @@ $$
 \hrule
 
 
-\begin{f}[La courbe de taux]
-La \textbf{courbe de taux} ou la courbe des rendements ou $r_f(\tau)$, livre une représentation graphique des taux d'intérêt sans risques en fonction de l'échéance (ou maturité).
-Elle est aussi appelé courbe des taux \textbf{zéro coupon} qui font référence à un type d'obligation sans risque et sans coupons (une dette composée uniquement de deux flux de sens opposés, un en $t_0$ et l'autre en $T$).
-Cette courbe offre aussi un aperçu des attentes du marché en matière de taux d'intérêt futurs (taux \engl{forward}).
+\begin{f}[The Yield Curve]
+The \textbf{yield curve}, or the curve of returns, or $r_f(\tau)$, provides a graphical representation of risk-free interest rates as a function of maturity (or term).
+It is also called the \textbf{zero-coupon} yield curve, referring to a type of risk-free bond with no coupons (a debt composed only of two opposite cash flows, one at $t_0$ and the other at $T$).
+This curve also provides insight into market expectations regarding future interest rates (\engl{forward} rates).
 \end{f}
 \hrule
 
 
-\begin{f}[Les modèles de  Nelson-Siegel et Svensson]
+\begin{f}[The Nelson-Siegel and Svensson models]
 
 
-Les fonctions de \textbf{Nelson-Siegel}  prennent la forme
+The \textbf{Nelson-Siegel} functions take the form
 
 {\small\begin{align*}
 y( m ) =& \beta _0 + \beta _1\frac{{\left[ {1 - \exp \left( { - m/\tau} \right)} \right]}}{m/\tau} + \\
@@ -865,29 +865,29 @@ y( m ) =& \beta _0 + \beta _1\frac{{\left[ {1 - \exp \left( { - m/\tau} \right)}
 \label{MTNSeq}
 \end{align*}}
 %
-où $y\left( m \right)$ et $m$ sont comme ci-dessus, et $\beta _0$, $\beta_1$, $\beta_2$ et $\tau$ sont des paramètres:
+where $y\left( m \right)$ and $m$ are as above, and $\beta_0$, $\beta_1$, $\beta_2$, and $\tau$ are parameters:
 
 
 \begin{itemize}
 
-\item   $\beta_0$ est interprété comme le niveau à long terme des taux d'intérêt (le coefficient est 1, c'est une constante qui ne décroît pas),
+\item   $\beta_0$ is interpreted as the long-term level of interest rates (the coefficient is 1, it is a constant that does not decrease),
 
-\item   $\beta_1$ est le composant à court terme, en notant que :
+\item   $\beta_1$ is the short-term component, noting that :
 \begin{equation*}
 	\lim_{m \rightarrow 0} \frac{{\left[ {1 - \exp \left( { - m/\tau} \right)} \right]}}{m/\tau}=1
 \end{equation*}
-Il résulte que le taux \engl{overnigth} tel que €str\index{Taux d'intérêts! Estr} sera égal à  $\beta_0+\beta_1$ dans ce modèle.
-\item   $\beta_2$ est le composant à moyen terme (il commence à 0, augmente, puis décroît vers zéro, autrement dit en forme de cloche),
-\item   $\tau$ est le facteur d'échelle sur la maturité, il détermine où le terme pondéré par $\beta_2$ atteint son maximum. 
+It follows that the overnight rate such as €str\index{Taux d'intérêts! Estr} will equal $\beta_0 + \beta_1$ in this model.
+\item $\beta_2$ is the medium-term component (it starts at 0, increases, then decreases back toward zero — i.e., bell-shaped),
+\item $\tau$ is the scale factor on maturity; it determines where the term weighted by $\beta_2$ reaches its maximum.
 \end{itemize}
 
-Svensson (1995) ajoute un second terme en forme de cloche, il s'agit du modèle Nelson–Siegel–Svensson. Le terme supplémentaire est :
+Svensson (1995) adds a second bell-shaped term; this is the Nelson–Siegel–Svensson model. The additional term is :
 %
 \begin{equation*}
 +\beta _3 {\left(\frac{{\left[ {1 - \exp \left( { - m/\tau_2} \right)} \right]}}{m/\tau_2} - \exp \left( { - m/\tau_2}\right)\right)}
 \label{MTSveq}
 \end{equation*}
-et l'interprétation est la même que pour $\beta_2$ et $\tau$ ci-dessus, il permet deux points d'inflexion à la courbe de taux.
+and the interpretation is the same as for $\beta_2$ and $\tau$ above; it allows for two inflection points on the yield curve.
 
 \newcommand{\traintunnel}{	        
 \draw[thick, OrangeProfondIRA] svg "M 55.448002 56.380001L 40 39L 28 39L 12.552 56.380001M 12 34C 11.729672 21.575853 21.576109 11.281852 34 11C 46.423893 11.281852 56.270329 21.575853 56.000004 34L 56 55C 56 56.104568 55.104568 57 54 57L 14 57C 12.895431 57 12 56.104568 12 55ZM 28 39L 28 34C 28 30.132 30.302 27 34 27C 37.697998 27 40 30.132 40 34L 40 39M 34 51L 34 57M 34 43L 34 45";
@@ -907,12 +907,12 @@ et l'interprétation est la même que pour $\beta_2$ et $\tau$ ci-dessus, il per
 \draw[OrangeProfondIRA] svg "M 11.008 31C 11.008 32.104568 15.485153 33 21.007999 33C 26.530848 33 31.007999 32.104568 31.007999 31C 31.007999 29.89543 26.530848 29 21.007999 29C 15.485153 29 11.008 29.89543 11.008 31ZM 31 31L 31 37C 31 38.106003 26.524 39 21 39C 15.476 39 11 38.106003 11 37L 11 31M 31 37L 31 43C 31 44.105999 26.524 45 21 45C 15.476 45 11 44.105999 11 43L 11 37M 31 43L 31 49C 31 50.105999 26.524 51 21 51C 15.476 51 11 50.105999 11 49L 11 43M 31 49L 31 55C 31 56.105999 26.524 57 21 57C 15.476 57 11 56.105999 11 55L 11 49M 11 25L 11 13C 11 11.895431 11.895431 11 13 11L 55 11C 56.104568 11 57 11.895431 57 13L 57 37C 57 38.104568 56.104568 39 55 39L 36 39M 28 25C 28.000584 21.94886 30.290909 19.384022 33.32254 19.039516C 36.354168 18.695011 39.161583 20.680555 39.846756 23.65377C 40.531929 26.626984 38.876644 29.640953 36 30.658001M 20 19.5C 20.276142 19.5 20.5 19.723858 20.5 20C 20.5 20.276142 20.276142 20.5 20 20.5C 19.723858 20.5 19.5 20.276142 19.5 20C 19.5 19.723858 19.723858 19.5 20 19.5M 48 29.5C 48.276142 29.5 48.5 29.723858 48.5 30C 48.5 30.276142 48.276142 30.5 48 30.5C 47.723858 30.5 47.5 30.276142 47.5 30C 47.5 29.723858 47.723858 29.5 48 29.5M 15 25L 15 16C 15 15.447716 15.447716 15 16 15L 52 15C 52.552284 15 53 15.447716 53 16L 53 34C 53 34.552284 52.552284 35 52 35L 36 35";	
 }
 
-Ces fonctions de Nelson-Siegel et de Svensson, présentent l'avantage de bien se comporter à long terme, et d'être facile à paramétrer. 
-Elles sont représentées sur la figure où les pictogrammes \begin{tikzpicture}[xscale=0.2, yscale=-0.2]
+These Nelson-Siegel and Svensson functions have the advantage of behaving well in the long term and being easy to parameterize.  
+They are illustrated in the figure where the pictograms \begin{tikzpicture}[xscale=0.2, yscale=-0.2]
 \TresorerieMngt\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=-0.2] \familialTV\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=-0.2] \familialcar\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=0.2] \archibuilding\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=-0.2] \traintunnel
-\end{tikzpicture} représentent les différentes maturités usuelles pour ce type de biens ou investissements.
-Elles permettent de modéliser pratiquement une large forme de courbe de taux. 
-Une fois ajustée, l'utilisateur peut alors évaluer des actifs ou définir diverses mesures de sensibilité.
+\end{tikzpicture} represent the different usual maturities for this type of property or investment.
+They allow for the modeling of a broad yield curve.
+Once adjusted, the user can then evaluate assets or define various sensitivity measures.
 
 
 \begin{center}
@@ -926,7 +926,7 @@ Une fois ajustée, l'utilisateur peut alors évaluer des actifs ou définir dive
 \begin{axis}[
 	width=0.8\textwidth,
 	height=0.5\textwidth, 
-	xlabel={Maturité (années)},ylabel={Taux (\%)},
+	xlabel={Maturity (years)},ylabel={Rate (\%)},
 	xmin=0, xmax=30,
 	ymin=0, ymax=100*(\MTbetaa+.005),
 	enlarge y limits=0.125,
@@ -968,39 +968,39 @@ Une fois ajustée, l'utilisateur peut alors évaluer des actifs ou définir dive
 \hrule
 
 
-\begin{f}[Modèle de Vasicek]
+\begin{f}[Vasicek model]
 	
-	Sous une probabilité risque-neutre $\mathbb{Q}$, le taux court $(r_t)$ suit un processus d’Ornstein–Uhlenbeck à coefficients constants :
+	Under a risk-neutral probability $\mathbb{Q}$, the short rate $(r_t)$ follows an Ornstein–Uhlenbeck process with constant coefficients:
 	\[
 	dr_t = \kappa(\theta - r_t)\, dt + \sigma\, dW_t, \quad r_0 \in \mathbb{R}
 	\]
 	où :
 	\begin{itemize}[nosep]
-		\item $\kappa > 0$ est la vitesse de retour à la moyenne,
-		\item $\theta$ est le niveau moyen de long terme,
-		\item $\sigma > 0$ est la volatilité,
-		\item $W_t$ est un brownien standard sous $\mathbb{Q}$.
+		\item $\kappa > 0$ is the speed of mean reversion,
+		\item $\theta$ is the long-term mean level,
+		\item $\sigma > 0$ is the volatility,
+		\item $W_t$ is a standard Brownian motion under $\mathbb{Q}$.
 	\end{itemize}
 	
-La solution de l’EDS (application du lemme d'Itô à $Y_{t}=r(t) e^{\kappa t}$):
+The EDS solution (application of Itô’s lemma to $Y_{t}=r(t) e^{\kappa t}$):
 	\[
 	r_t = r_s e^{-\kappa(t-s)} + \theta(1 - e^{-\kappa(t-s)}) + \sigma \int_s^t e^{-\kappa(t-u)} dW_u
 	\]
 	
-	\textbf{Ainsi} :
+	\textbf{So} :
 	\[
 	\begin{aligned}
 		\mathbb{E}_\mathbb{Q}[r_t \mid \mathcal{F}_s] &= r_s e^{-\kappa(t-s)} + \theta(1 - e^{-\kappa(t-s)}) \\
 		\operatorname{Var}_\mathbb{Q}[r_t \mid \mathcal{F}_s] &= \frac{\sigma^2}{2\kappa} \left(1 - e^{-2\kappa(t-s)}\right)
 	\end{aligned}
 	\]
-Le processus $(r_t)$ est gaussien, les taux négatifs sont possibles.
+The process $(r_t)$ is Gaussian; negative rates are possible.
 	
 \end{f}
 
-\begin{f}[Prix d'une obligation zéro-coupon (Vasicek)]
+\begin{f}[Price of a zero-coupon bond (Vasicek)]
 
-Le prix à l’instant $t$ d’une obligation zéro-coupon de maturité $T$ est donné par :
+The price at time $t$ of a zero-coupon bond maturing at $T$ is given by :
 \[
 ZC(t, T) = A(t, T) \, e^{-B(t, T)\, r_t}
 \]
@@ -1012,7 +1012,7 @@ où :
 \end{aligned}
 \]
 
-Cette formulation est possible grâce au fait que $\int_t^T r_s ds$ soit une variable gaussienne conditionnellement à $\mathcal{F}_t$.
+This formulation is possible due to the fact that $\int_t^T r_s ds$ is a Gaussian random variable conditional on $\mathcal{F}_t$.
 
 \[
 ZC(t, T) = \mathbb{E}_\mathbb{Q} \left[ \exp\left( -\int_t^T r_s\, ds \right) \Big| \mathcal{F}_t \right]
@@ -1021,41 +1021,41 @@ ZC(t, T) = \mathbb{E}_\mathbb{Q} \left[ \exp\left( -\int_t^T r_s\, ds \right) \B
 \end{f}
 \hrule
 
-\begin{f}[Modèle Cox–Ingersoll–Ross (CIR)]
+\begin{f}[Cox–Ingersoll–Ross (CIR) model]
 	
-Sous la mesure risque-neutre $\mathbb{Q}$, le taux court $(r_t)$ suit la dynamique :
+Under the risk-neutral measure $\mathbb{Q}$, the short rate $(r_t)$ follows the dynamics :
 \[
 dr_t = \kappa(\theta - r_t)\,dt + \sigma \sqrt{r_t}\, dW_t, \quad r_0 \geq 0
 \]
-avec :
+with :
 \begin{itemize}[nosep]
-	\item $\kappa > 0$ : vitesse de retour à la moyenne,
-	\item $\theta > 0$ : niveau de long terme,
-	\item $\sigma > 0$ : volatilité,
-	\item $W_t$ : mouvement brownien sous $\mathbb{Q}$.
+	\item $\kappa > 0$ : mean reversion speed,
+	\item $\theta > 0$ : long-term level,
+	\item $\sigma > 0$ : volatility,
+	\item $W_t$ : Brownian motion under $\mathbb{Q}$.
 \end{itemize}
 
-\textbf{Ainsi} :
+\textbf{So} :
 \begin{itemize}
-	\item La racine carrée $\sqrt{r_t}$ garantit $r_t \geq 0$ si $2\kappa\theta \geq \sigma^2$ (condition de Feller).
-	\item Le processus $(r_t)$ est un processus de diffusion non gaussien mais à trajectoires continues.
-	\item Le taux est \textbf{mean-reverting} autour de $\theta$.
+	\item The square root $\sqrt{r_t}$ guarantees $r_t \geq 0$ if $2\kappa\theta \geq \sigma^2$ (Feller condition).
+	\item The process $(r_t)$ is a non-Gaussian diffusion process but with continuous trajectories.
+	\item The rate is \textbf{mean-reverting} around $\theta$.
 \end{itemize}
 
-Ainsi, le processus $(r_t)$ est une diffusion à lois conditionnelles explicites (sous $\mathbb{Q}$) :
+Thus, the process $(r_t)$ is a diffusion with explicit conditional distributions (under $\mathbb{Q}$) :
 
-Pour $s < t$, la variable $r_t$ suit une loi de type $\chi^2$ non centrale :
+For $s < t$, the variable $r_t$ follows a non-central $\chi^2$ distribution:
 \[
 r_t \mid \mathcal{F}_s \sim c \cdot \chi^2_{d}(\lambda)
 \]
-avec :
+with :
 \begin{itemize}[nosep]
 	\item $\displaystyle c = \frac{\sigma^2 (1 - e^{-\kappa (t - s)})}{4\kappa}$
-	\item $\displaystyle d = \frac{4\kappa\theta}{\sigma^2}$ : degrés de liberté
+	\item $\displaystyle d = \frac{4\kappa\theta}{\sigma^2}$ : degrees of freedom
 	\item $\displaystyle \lambda = \frac{4\kappa e^{-\kappa (t - s)} r_s}{\sigma^2 (1 - e^{-\kappa (t - s)})}$
 \end{itemize}
 
-et
+and
 \[
 \begin{aligned}
 	\mathbb{E}_\mathbb{Q}[r_t \mid \mathcal{F}_s] =& r_s e^{-\kappa(t-s)} + \theta (1 - e^{-\kappa(t-s)}) \\
@@ -1065,19 +1065,19 @@ et
 \]
 
 \end{f}
-\begin{f}[Prix d’une obligation zéro-coupon (CIR)]
-Dans le modèle CIR, le prix d’une obligation zéro-coupon à l’instant $t$ de maturité $T$ s’écrit :
+\begin{f}[Price of a zero-coupon bond (CIR)]
+In the CIR model, the price of a zero-coupon bond at time $t$ with maturity $T$ is given by :
 \[
 ZC(t, T) = A(t, T) \cdot e^{-B(t, T)\, r_t}
 \]
-avec :
+with :
 \[
 \begin{aligned}
 	B(t, T) &= \frac{2 (e^{\gamma (T - t)} - 1)}{(\gamma + \kappa)(e^{\gamma (T - t)} - 1) + 2\gamma} \\
 	A(t, T) &= \left[ \frac{2\gamma e^{\frac{(\kappa + \gamma)}{2}(T - t)}}{(\gamma + \kappa)(e^{\gamma (T - t)} - 1) + 2\gamma} \right]^{\frac{2\kappa\theta}{\sigma^2}}
 \end{aligned}
 \]
-où :
+or :
 \[
 \gamma = \sqrt{\kappa^2 + 2\sigma^2}
 \]
@@ -1085,40 +1085,40 @@ où :
 \end{f}
 \hrule
 
-\begin{f}[Swaption, modèle de  Black]
+\begin{f}[Swaption, Black model]
 
-Une \textbf{swaption} est une option sur un swap de taux. Elle donne le droit (et non l'obligation) de contracter un swap à une date future $T$.
+A \textbf{swaption} is an option on an interest rate swap. It gives the right (but not the obligation) to enter into a swap at a future date $T$.
 
 \begin{itemize}[nosep]
-	\item \textbf{Payer swaption} : droit de \emph{payer le taux fixe} et \emph{recevoir le taux variable}.
-	\item \textbf{Receiver swaption} : droit de \emph{recevoir le taux fixe} et \emph{payer le taux variable}.
+	\item \textbf{Payer swaption}: right to \emph{pay the fixed rate} and \emph{receive the floating rate}.
+	\item \textbf{Receiver swaption}: right to \emph{receive the fixed rate} and \emph{pay the floating rate}.
 \end{itemize}
 
-\textbf{Notations} :
+\textbf{Notation} :
 \begin{itemize}[nosep]
-	\item $T$ : date d’exercice de la swaption
-	\item $K$ : taux fixe (strike)
-	\item $S(T)$ : taux swap à la date $T$
-	\item $A(T)$ : valeur actuelle des flux fixes futurs.
-	\item $\sigma$ : volatilité du taux swap
+	\item $T$ : swaption exercise date
+	\item $K$ : fixed rate (strike)
+	\item $S(T)$ : swap rate on the date $T$
+	\item $A(T)$ : present value of future fixed flows.
+	\item $\sigma$ : swap rate volatility
 \end{itemize}
 
-Le modèle de Black (1976) est une adaptation du modèle Black–Scholes pour les produits à taux d'intérêt. Ici, le taux swap $S(T)$ joue le rôle de l’actif sous-jacent, avec un payoff de type option européenne.
+The Black (1976) model is an adaptation of the Black–Scholes model for interest rate products. Here, the swap rate $S(T)$ plays the role of the underlying asset, with a European option-type payoff.
 
-\textbf{Formule de Black pour une payer swaption} :
+\textbf{Black's formula for a payer swaption} :
 \[
 \text{SW}_{\text{payer}} = A(T) \left[ S_0 N(d_1) - K N(d_2) \right]
 \]
-où :
+or :
 \[
 \begin{aligned}
 	d_1 &= \frac{\ln(S_0 / K) + \frac{1}{2} \sigma^2 T}{\sigma \sqrt{T}} \\
 	d_2 &= d_1 - \sigma \sqrt{T}
 \end{aligned}
 \]
-et $N(\cdot)$ est la fonction de répartition de la loi normale standard.
+and $N(\cdot)$ is the cumulative distribution function of the standard normal distribution.
 
-\textbf{Formule pour une receiver swaption} :
+\textbf{Formula for a receiver swaption} :
 \[
 \text{SW}_{\text{receiver}} = A(T) \left[ K N(-d_2) - S_0 N(-d_1) \right]
 \]
