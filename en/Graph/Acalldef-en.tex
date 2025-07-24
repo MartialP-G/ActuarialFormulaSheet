@@ -16,7 +16,7 @@ color=BleuProfondIRA,
 %		ylabel near ticks,
 ylabel={Profit},
 x label style={at={(axis cs:\xmaxBS+.1,0)},anchor=north east},
-xlabel={ss-jacent ($T$)},
+xlabel={underlying ($T$)},
 %		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
 %		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
 ytick=\empty,
@@ -39,8 +39,8 @@ title ={ \textbf{Long Call}},
 ]
 %		
 \addplot[name path=A,BleuProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashdotted] {Call(x,\PxExerciceBS,\PremiumBS)} 
-node [pos=0.15,yshift=3mm,color=OrangeProfondIRA] {Pertes}
-node [pos=.8,yshift=-15mm,color=BleuProfondIRA] {Gains};	
+node [pos=0.15,yshift=3mm,color=OrangeProfondIRA] {Losses}
+node [pos=.8,yshift=-15mm,color=BleuProfondIRA] {Earnings};	
 %\draw[BleuProfondIRA,thick] \OV{\PxExerciceBS}{\PremiumBS}{0.4}{\xminBS}{\xmaxBS} ;
 %		\addplot[name path=Option,BleuProfondIRA,thick,domain={250:350}, 			 		samples=10,dashdotted,smooth] {BSPut(x,\PxExerciceBS,\riskfreeBS,\TBS,\sigmaBS)} ;	
 \path [save path=\xaxis,name path=xaxis]
@@ -59,7 +59,7 @@ every segment no 1/.style=
 {AT};
 \node at ({\xminBS+0.8*(\xmaxBS-\xminBS)},{\pgfkeysvalueof{/pgfplots/ymin}})
 {IN};
-\draw [<->, xshift=-5mm] ({\pgfkeysvalueof{/pgfplots/xmin}},0) -- ({\pgfkeysvalueof{/pgfplots/xmin}},-\PremiumBS) node [pos=0.5, xshift=-2.5mm, rotate=90] {Prime};
+\draw [<->, xshift=-5mm] ({\pgfkeysvalueof{/pgfplots/xmin}},0) -- ({\pgfkeysvalueof{/pgfplots/xmin}},-\PremiumBS) node [pos=0.5, xshift=-2.5mm, rotate=90] {Premium};
 \end{axis}
 %
 \end{tikzpicture}

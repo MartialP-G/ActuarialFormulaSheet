@@ -1,59 +1,59 @@
 % !TeX root = ActuarialFormSheet_MBFA-en.tex
-% !TeX spellcheck = fr_FR
+% !TeX spellcheck = en_US
 
-\begin{f}[Notations sur les tables de survie]
+\begin{f}[Life Table Notations]
 
-L'âge $x$, $y$, $z$...    
+Age $x$, $y$, $z$...    
 
-$l_x$ est le nombre de personnes vivantes, par rapport à une cohorte initiale, à l'âge $x$
+$l_x$ is the number of people alive, relative to an initial cohort, at age $x$
 
-$\omega$ est l'âge limite des tables de mortalité.
+$\omega$ is the age limit of mortality tables.
 
-$d_x=l_x-l_{x+1}$ est le nombre de personnes qui meurent entre l'âge $x$ et l'âge $x+1$.
+$d_x=l_x-l_{x+1}$ is the number of people who die between the age $x$ and age $x+1$.
 
-$q_x$ est la probabilité de décès entre les âges de $x$ et l'âge $x+1$.
+$q_x$ is the probability of death between the ages of $x$ et age $x+1$.
 $$
 \,q_x = d_x / l_x 
 $$
 
-$p_x$ est la probabilité que l'individu agé de $x$ survive à l'âge $x+1$.
+$p_x$ is the probability that the individual aged $x$ survives age $x+1$.
 $$
 \,p_x+q_x=1 
 $$
 
-De même, 
-$\,_nd_x = d_x + d_{x+1} + \cdots + d_{x+n-1} = l_x - l_{x+n}$ montre le nombre de personnes qui meurent entre l'âge $x$ et l'âge $x+n$.
+Likewise,
+$\,_nd_x = d_x + d_{x+1} + \cdots + d_{x+n-1} = l_x - l_{x+n}$ shows the number of people who die between the age $x$ and age $x+n$.
 
-$\,_nq_x$ est la probabilité de décès entre les âges de $x$ et l'âge $x+n$.
+$\,_nq_x$ is the probability of death between the ages of $x$ and age $x+n$.
 
 $$
 \,_nq_x = {}_nd_x / l_x
 $$
-$\,_np_x$ est la probabilité d'une personne d'âge $x$ de survivre à l'âge $x+n$.
+$\,_np_x$ is the probability of a person of age $x$ to survive the age $x+n$.
 $$
 \,_np_x = l_{x+n} / l_x 
 $$
 
 
-${}_{m|}q_{x}$, la probabilité que l'individu d'âge $x$ meurt dans la ${m+1}^e$ année.
+${}_{m|}q_{x}$, the probability that the individual of age $x$ dies in the ${m+1}^e$ year.
 $${}_{m|}q_{x}=\frac{d_{x+m}}{l_x}=\frac{l_{x+m}-l_{x+m+1}}{l_x}$$
 
-$\,e_x$  est l'espérance de vie pour une personne encore en vie à l'âge $x$. 
-C'est le nombre espéré d'anniversaires à vivre.
+$\,e_x$ is the life expectancy for a person still alive at the age $x$. 
+This is the number of birthdays you hope to live.
 $$
 \,e_x = \sum_{t=1}^{\infty} \ _tp_x 
 $$
 \end{f}
 \hrule
 
-\begin{f}[Coefficient ou commutations]
+\begin{f}[Coefficient or commutations]
 
 
-Ces coefficients ou commutations établies par des fonctions actuarielles qui dépendent d'une table de mortalité et d'un taux $i$ ($v=1/(1+i)$) pour établir la table actuarielle. 
+These coefficients or commutations established by actuarial functions which depend on a mortality table and a rate $i$ ($v=1/(1+i)$) to establish the actuarial table.
 $$
 D_x=l_x .v^x
 $$
-peut être vu "comme" le nombre de survivants actualisés. Les sommes 
+can be seen "as" the actualized number of survivors. The sums
 
 $$
 N_x=\sum_{k\geq 0} D_{x+k}=\sum_{k= 0}^{\omega-x} D_{x+k}
@@ -62,12 +62,12 @@ $$
 $$
 S_x=\sum_{k\geq 0} N_{x+k}=\sum_{k\geq 0}(k+1). D_{x+k}
 $$
-seront utilisés pour simplifier les calculs.
-De même
+will be used to simplify the calculations.
+Likewise
 $$
 C_x = d_x v^{ x+1} 
 $$
-peut être vu "comme" le nombre de décès  actualisés à l'âge $x$. Les sommes
+can be seen "as" the number of deaths discounted to age $x$. The sums
 
 $$
 M_x=\sum_{k= 0}^{\omega-x} C_{x+k}
@@ -75,14 +75,14 @@ $$
 $$
 R_x=\sum_{k= 0}^{\omega-x} M_{x+k}
 $$
-seront utilisés pour simplifier les calculs.
+will be used to simplify the calculations.
 
-Les  coefficients $D_x$ $N_x$ et $S_x$ seront utilisés pour les calculs sur les opérations en cas de vie et $C_x$ $M_x$ et $R_x$  pour les opérations en cas de décès.
+The coefficients $D_x$ $N_x$ and $S_x$ will be used for calculations on operations in case of life and $C_x$ $M_x$ and $R_x$ for operations in case of death.
 
 \end{f} 
 \hrule
 
-\begin{f}[Les annuités viagères ou rentes]
+\begin{f}[Life annuities or annuities]
 
 
 \medskip
@@ -196,16 +196,16 @@ $$\ddot{a}_x
 =	\frac{N_{x}}{D_{x}} 
 $$
 
-Si la périodicité correspond à $m$ période par an:
+If the periodicity corresponds to $m$ periods per year:
 $$\ddot{a}_{x}^{(m)} 
 =\sum_{k=0}^{\infty}\frac{1}{m}{}_{\frac{k}{m}}p_{x} v^{\frac{k}{m}}\approx\ddot{a}_x -\frac{m-1}{2m}
 $$
-De même, s'il paie $1/m$ en début des $m$ périodes
+Similarly, if he pays $1/m$ at the start of the $m$ periods
 $$a_{x}^{(m)}\approx a_x +\frac{m-1}{2m}
 $$
 
 
-\textbf{Les annuités viagères temporaires} (\engl{Whole life annuity guaranteed for n years})
+\textbf{Temporary life annuities}. Whole life annuity guaranteed for n years
 $$
 a_{x:\lcroof{n}} =
 \sum_{k=1}^{n}{}_{k}p_{x} v^{k}
@@ -219,8 +219,8 @@ $$
 $$
 
 
-\textbf{Les annuités viagères différées}
-${}_{m|}a_{x}$ (\engl{Deferred life annuity}) représentent les rentes sur l'individu d'âge $x$ différée $m$ années. Le premier paiement intervient dans $m+1$ ans en cas de vie.
+\textbf{Deferred life annuities}
+${}_{m|}a_{x}$ represent the annuities on the individual of age $x$ deferred $m$ years. The first payment occurs in $m+1$ years in the case of life.
 
 	%	\includegraphics[width=1\linewidth]{../../LifeActuarial/Graph/RenteViagereDifferee}
 \begin{tikzpicture}[scale=0.75]
@@ -280,22 +280,22 @@ ${}_{m|}a_{x}$ (\engl{Deferred life annuity}) représentent les rentes sur l'ind
 \end{f}
 \hrule
 
-\begin{f}[Capitaux décès ou survie]
+\begin{f}[Death or survival benefits]
 
-% !TeX spellcheck = fr_FR
-\textbf{Les capitaux décès}(\engl{Whole life insurance } \engl{noted} ${SP}_{x}$ or ${A}_{x}$)
+% !TeX spellcheck = en_US
+\textbf{Death benefits} (Whole life insurance noted ${SP}_{x}$ or ${A}_{x}$)
 
-$A_x$ indique une prestation au décès à la fin de l'année de la mort (montant de 1), quelque que soit la date de survenance, pour un individu assuré à l'âge $x$ lors de la souscription.
+$A_x$ indicates a death benefit at the end of the year of death (amount of 1), regardless of the date of occurrence, for an individual insured at age $x$ at the time of subscription.
 
-$A_{x:\lcroof{n}}$ désigne un capital versé au décès s'il survient et  au plus tard dans $n$ années (\engl{Endowment}).
+$A_{x:\lcroof{n}}$ denotes a capital paid upon death if it occurs and at the latest in $n$ years (Endowment).
 
 $\lcterm{A}{x}{n}$ % ou $\termins{x}{n}$ 
-désigne un capital décès versé si $x$ décède dans les $n$ années à venir (\engl{Term insurance}).
+denotes a death benefit paid if $x$ dies within the next $n$ years (Term insurance).
 
 
-$A_x^{(12)}$ indique une prestation   payable à la fin du mois du décès.
+$A_x^{(12)}$ indicates a benefit payable at the end of the month of death.
 
-$\overline{A}_x$  indique une prestation  payée à la date du décès.
+$\overline{A}_x$ indicates a benefit paid on the date of death.
 \begin{tikzpicture}[scale=0.75]
 % Draw the x-axis and y-axis.
 \def\w{11}
@@ -395,7 +395,7 @@ $\overline{A}_x$  indique une prestation  payée à la date du décès.
 
 \medskip
 
-Capital décès (\engl{Whole life})
+Whole life benefit
 $$A_{x}=\sum_{k=0}^{\infty} {}_{k|}q_x\ \nu^{k+1}=\frac{M_x}{D_x}$$
 	
 $$\termins{x}{n}=\sum_{k=0}^{n-1} {}_{k|}q_x\ \nu^{k+1}=\frac{M_x-M_{x+n}}{D_x}
@@ -404,8 +404,8 @@ $$
 
 
 \medskip    
-\textbf{Capital différé (\engl{Pure Endowment}, capital unique en cas de survie)} noté $\lcend{A}{x}{n}$ %$\pureend{x}{n}$ 
-ou ${}_n E_x$.
+\textbf{Deferred capital (Pure Endowment, unique capital in the event of survival)} noted $\lcend{A}{x}{n}$ %$\pureend{x}{n}$
+or ${}_n E_x$.
 
 \begin{tikzpicture}[scale=0.75]
 % Draw the x-axis and y-axis.
@@ -458,29 +458,29 @@ ou ${}_n E_x$.
 	$$
 	={}_n E_x={}_n p_x .v^n=\frac{l_{x+n}}{l_x} . v^n =\frac{D_{x+n}}{D_{x}}
 	$$
-Capital décès avec versement du capital en cas de survie (\engl{Endowment})
+Death benefit with payment of the capital in the event of survival (Endowment)
 $$A_{x:\lcroof{n}}=\termins{x}{n}+\lcend{A}{x}{n}$$
 
 \end{f}
 \hrule
 
-\begin{f}[L'assurance vie sur plusieurs individus] 
+\begin{f}[Life insurance on several individuals] 
 
-$a_{xyz}$ est une rente annuelle, payée dès la fin de la première année et tant que vivent $(x)$, $(y)$ et $(z)$.
+$a_{xyz}$ is an annual annuity, paid at the end of the first year and for as long as they live $(x)$, $(y)$ and $(z)$.
 
-$a_{\overline{xyz}}$ est une rente annuelle, payée dès la fin de la première année et tant que vivent $(x)$, $(y)$ ou $(z)$.
+$a_{\overline{xyz}}$ is an annual annuity, paid at the end of the first year and for as long as they live $(x)$, $(y)$ or $(z)$.
 
 $$
 a_{\overline{xy}}=a_{y}+a_{x}-a_{xy}
 $$
 
-$A_{xyz}$ est une assurance qui intervient à la fin de l'année du premier décès de $(x)$, $(y)$ et $(z)$.
+$A_{xyz}$ is an insurance that comes into effect at the end of the year of the first death of $(x)$, $(y)$ and $(z)$.
 
-La barre verticale indique la conditionnalité :
+The vertical bar indicates conditionality :
 
-$a_{x|y}$ est une rente de réversion qui profite à $(x)$ après le décès de $(y)$.
+$a_{x|y}$ is a survivor's annuity which benefits $(x)$ after the death of $(y)$.
 
-$A_{x|yz}$ est une assurance au premier décès de  $(y)$ et $(z)$.	
+$A_{x|yz}$ is a first-to-die insurance $(y)$ and $(z)$.	
 
 
 \begin{tikzpicture}[scale=0.85]
@@ -565,7 +565,7 @@ $A_{x|yz}$ est une assurance au premier décès de  $(y)$ et $(z)$.
 \end{tikzpicture}
 \end{f}
 
-\begin{f}[Schémas simplifié de tarification des primes périodiques et provisions]
+\begin{f}[Simplified pricing schemes for periodic premiums and provisions]
 	
 \tikzstyle{startstop} = [rectangle, rounded corners, text width=4cm, minimum height=1cm,text centered, draw=black, fill=BleuProfondIRA!40]
 \tikzstyle{process} = [rectangle, minimum width=4cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=OrangeProfondIRA!40]
@@ -574,20 +574,20 @@ $A_{x|yz}$ est une assurance au premier décès de  $(y)$ et $(z)$.
 
 \centering
 \begin{tikzpicture}[node distance=35mm and 100mm]
-	\node (pu) [startstop] {Prime Unique de la prestation\\  notée $PU(.)$ ou $PV_0(.)$};
-	\node  [below left of=pu, text width=55mm, node distance=18mm, xshift=12mm] {Le point est $A$ ou $a$ ou $E$ ou ...\\
+	\node (pu) [startstop] {Single Premium of the service\\ noted $PU(.)$ or $PV_0(.)$};
+	\node  [below left of=pu, text width=55mm, node distance=18mm, xshift=12mm] {The point is $A$ or $a$ or $E$ or ...\\
 	avec $x,k,n,m,K...$};
-	\node (puu) [startstop, right of=pu, node distance=50mm] {Valeur d'une prime périodique unitaire\\  notée $PPU_0$ ou $VP_P$};
+	\node (puu) [startstop, right of=pu, node distance=50mm] {Value of a unitary periodic premium\\ noted $PPU_0$ or $VP_P$};
 	\node  [below of=puu, text width=3cm, node distance=12mm] { $PPU=_{m'|}\ddot{a}_{x:\lcroof{n'}}^{(k')} $};
-	\node (ppp) [startstop, below of=pu] {Prime Pure Périodique\\ $PPP$};
+	\node (ppp) [startstop, below of=pu] {Pure Periodic Premium\\ $PPP$};
 	\node  [below right of=ppp, text width=3cm, node distance=25mm, yshift=6mm] {$\displaystyle PPP=\frac{PU(.)}{PPU_0}$};
-	\node (ppc) [startstop, right of=ppp, node distance=50mm] {Prime Périodique Chargée $PPC$};
+	\node (ppc) [startstop, right of=ppp, node distance=50mm] {Periodic Premium Charged $PPC$};
 	\node  [below of=ppc, node distance=12mm] {$\displaystyle PPC=\frac{PPP(1+\lambda)}{1-com}$};
-	\node (Prov) [startstop, below of=ppp] {Provision mathématique $t^e$ année\\  notée $PM_t$ ou $V_t$ };
+	\node (Prov) [startstop, below of=ppp] {Mathematical provision $t^e$ year\\ noted $PM_t$ or $V_t$};
 	\node (provt) [below right of=Prov,text width=10cm, node distance=30mm] {$V_t=PV_t(.)-PPP\times PPU_t$ \\
-	$PV_t(.)$ recalculée avec  $x+t,k,n,m-t,K...\ si\ t\geq m$ \\
-	ou $x+t,k,n-(t-m),m=0,K...\ si\ t>m$\\
-	de même	$PPU_t=_{(m'-t)^+|}\ddot{a}_{x+t:\lcroof{n'-(t-m)^+}}^{(k')} $};
+	$PV_t(.)$ recalculated with  $x+t,k,n,m-t,K...\ if\ t\geq m$ \\
+	or $x+t,k,n-(t-m),m=0,K...\ si\ t>m$\\
+	likewise $PPU_t=_{(m'-t)^+|}\ddot{a}_{x+t:\lcroof{n'-(t-m)^+}}^{(k')} $};
 %	\node (pro2b) [startstop, right of=dec1, xshift=2cm] {Process 2b};
 %	\node (stop) [startstop, below of=pro2b] {Stop};
 	
