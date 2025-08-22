@@ -130,51 +130,52 @@ provisions suivantes:
 
 \begin{f}[Chain Ladder déterministe]
 	%
-		Soit $C_{i k}$ le montant, cumulé jusqu'en l'année de développement $k$, des sinistres survenus en l'année d'accident $i$, pour $1 \leq i, k \leq n$. $C_{i k}$ peut représenter soit le montant payé, soit le cout total estimé (paiement déjà effectué plus réserve) du sinistre. Les montants $C_{i k}$ sont connus pour $i+k \leq n+1$ et on cherche à estimer les valeurs des $C_{i k}$ pour $i+k>n+1,$ et en particulier les valeurs ultimes $C_{i n}$ pour $2 \leq i \leq n$. Ces notations sont illustrées dans le triangle suivant:
-		%	$$
-		%	C=\left(\begin{array}{ccccc}
-			%	\rowcolor{white}	C_{1,1} & C_{1,2} & \cdots & C_{1, n-1} & C_{1, n} \\
-			%	\rowcolor{white}	C_{2,1} & C_{2,2} & \cdots & C_{2, n-1} & \\
-			%	\rowcolor{white}	\vdots & \vdots & \ddots & & \\
-			%	\rowcolor{white}	C_{n-1,1} & C_{n-1,2} & & &  \\
-			%	\rowcolor{white}	C_{n, 1} & & & 
-			%	\end{array}\right)
-		%	$$
-		La méthode de Chain Ladder estime les montants inconnus, $C_{i k}$ pour $i+k>n+1,$ par
-		\begin{equation}\label{CL1}
-			\hat{C}_{i k}=C_{i, n+1-i} \cdot \hat{f}_{n+1-i} \cdots \hat{f}_{k-1} \quad i+k>n+1
-		\end{equation}	où
-		\begin{equation}\label{CL2}
-			\hat{f}_{k}=\frac{\color{OrangeProfondIRA}\sum_{i=1}^{n-k} C_{i, k+1}}{\color{BleuProfondIRA}\sum_{i=1}^{n-k} C_{i k}} \quad 1 \leq k \leq n-1 .
-		\end{equation}
-		La réserve de sinistre pour l'année d'accident ($R_{i}$, $2 \leq i \leq n$), est alors estimée par
-\begin{align*}
-			\hat{R}_{i}=&C_{in }-C_{i, n+1-i}\\
-			&=C_{i, n+1-i} \cdot \hat{f}_{n+1-i} \cdots \hat{f}_{n-1}-C_{i, n+1-i} 
-\end{align*}
-		
-\tikzset{BarreStyle/.style =   {opacity=.3,line width=15 mm,line cap=round,color=#1}}
-\begin{tikzpicture}[baseline=(A.center)]
-	%	
-	\matrix (A) [matrix of math nodes,%
-	left delimiter  = (,%
-	right delimiter =)]%
-	{%
-		C_{1,1} & C_{1,2} & \cdots &C_{1, n+1-i} & \cdots & C_{1, n-1} & \node (A-1-7) {\color{BleuProfondIRA}C_{1, n}}; \\
-		C_{2,1} & C_{2,2} & \cdots &C_{2, n+1-i} & \cdots & \node (A-2-6) {\color{BleuProfondIRA}C_{2, n-1} };& \\
-		\vdots & \vdots & \cdots & \vdots & \ddots & & \\
-		C_{i,1} & 	C_{i,2} & \cdots & \node (A-4-4){\color{BleuProfondIRA} C_{i,n+1-i}}; &  & & \\
-		\vdots & \vdots & \ddots & & \\
-		C_{n-1,1} &\node (A-6-2) {\color{BleuProfondIRA}C_{n-1,2}}; & & & & & \\
-		\node (A-7-1) {\color{BleuProfondIRA}C_{n, 1}}; & & & & & &\\
-	};
-	\node [draw,above=10pt] at (A.north) 	{ Délais de réglement};
-	\node [draw,left=20pt,rotate=90, align=right, xshift=-1cm] at (A.north west) 	{ Années d'origine $i$};
-	\draw[BarreStyle=BleuProfondIRA] (A-7-1.south west) to  (A-1-7.north east) ;
-	\draw  (A.south east) node [ left,color=BleuProfondIRA, align=right] {Réglements de l'année $n$\\ (où $i+j=n+1$)};
-	\draw[color=BleuProfondIRA,thick] (A-7-1) to[bend right] (A-6-2) to[bend right=40] node[below right, pos=1] {$\sum$}  (A-4-4) to[bend right=40]   (A-2-6) to[bend right]   (A-1-7);
-\end{tikzpicture}
-
+	Soit $C_{i k}$ le montant, cumulé jusqu'en l'année de développement $k$, des sinistres survenus en l'année d'accident $i$, pour $1 \leq i, k \leq n$. $C_{i k}$ peut représenter soit le montant payé, soit le cout total estimé (paiement déjà effectué plus réserve) du sinistre. Les montants $C_{i k}$ sont connus pour $i+k \leq n+1$ et on cherche à estimer les valeurs des $C_{i k}$ pour $i+k>n+1,$ et en particulier les valeurs ultimes $C_{i n}$ pour $2 \leq i \leq n$. Ces notations sont illustrées dans le triangle suivant:
+	%	$$
+	%	C=\left(\begin{array}{ccccc}
+		%	\rowcolor{white}	C_{1,1} & C_{1,2} & \cdots & C_{1, n-1} & C_{1, n} \\
+		%	\rowcolor{white}	C_{2,1} & C_{2,2} & \cdots & C_{2, n-1} & \\
+		%	\rowcolor{white}	\vdots & \vdots & \ddots & & \\
+		%	\rowcolor{white}	C_{n-1,1} & C_{n-1,2} & & &  \\
+		%	\rowcolor{white}	C_{n, 1} & & & 
+		%	\end{array}\right)
+	%	$$
+	
+	La méthode de Chain Ladder estime les montants inconnus, $C_{i k}$ pour $i+k>n+1,$ par
+	\begin{equation}\label{CL1}
+		\hat{C}_{i k}=C_{i, n+1-i} \cdot \hat{f}_{n+1-i} \cdots \hat{f}_{k-1} \quad i+k>n+1
+	\end{equation}	où
+	\begin{equation}\label{CL2}
+		\hat{f}_{k}=\frac{\color{OrangeProfondIRA}\sum_{i=1}^{n-k} C_{i, k+1}}{\color{BleuProfondIRA}\sum_{i=1}^{n-k} C_{i k}} \quad 1 \leq k \leq n-1 .
+	\end{equation}
+	La réserve de sinistre pour l'année d'accident ($R_{i}$, $2 \leq i \leq n$), est alors estimée par
+	\begin{align*}
+		\hat{R}_{i}=&C_{in }-C_{i, n+1-i}\\
+		&=C_{i, n+1-i} \cdot \hat{f}_{n+1-i} \cdots \hat{f}_{n-1}-C_{i, n+1-i} 
+	\end{align*}
+	
+	\tikzset{BarreStyle/.style =   {opacity=.3,line width=15 mm,line cap=round,color=#1}}
+	\begin{tikzpicture}[baseline=(A.center)]
+		%	
+		\matrix (A) [matrix of math nodes,%
+		left delimiter  = (,%
+		right delimiter =)]%
+		{%
+			C_{1,1} & C_{1,2} & \cdots &C_{1, n+1-i} & \cdots & C_{1, n-1} & \node (A-1-7) {\color{BleuProfondIRA}C_{1, n}}; \\
+			C_{2,1} & C_{2,2} & \cdots &C_{2, n+1-i} & \cdots & \node (A-2-6) {\color{BleuProfondIRA}C_{2, n-1} };& \\
+			\vdots & \vdots & \cdots & \vdots & \ddots & & \\
+			C_{i,1} & 	C_{i,2} & \cdots & \node (A-4-4){\color{BleuProfondIRA} C_{i,n+1-i}}; &  & & \\
+			\vdots & \vdots & \ddots & & \\
+			C_{n-1,1} &\node (A-6-2) {\color{BleuProfondIRA}C_{n-1,2}}; & & & & & \\
+			\node (A-7-1) {\color{BleuProfondIRA}C_{n, 1}}; & & & & & &\\
+		};
+		\node [draw,above=10pt] at (A.north) 	{ Délais de réglement};
+		\node [draw,left=20pt,rotate=90, align=right, xshift=-1cm] at (A.north west) 	{ Années d'origine $i$};
+		\draw[BarreStyle=BleuProfondIRA] (A-7-1.south west) to  (A-1-7.north east) ;
+		\draw  (A.south east) node [ left,color=BleuProfondIRA, align=right] {Réglements de l'année $n$\\ (où $i+j=n+1$)};
+		\draw[color=BleuProfondIRA,thick] (A-7-1) to[bend right] (A-6-2) to[bend right=40] node[below right, pos=1] {$\sum$}  (A-4-4) to[bend right=40]   (A-2-6) to[bend right]   (A-1-7);
+	\end{tikzpicture}
+	
 \end{f}
 
 
@@ -244,7 +245,7 @@ $$
 
 \begin{f}[Le modèle risque collectif]
 Le modèle collectif est le modèle de base en actuariat non-vie?
-	 $X_{i}$ désigne le montant du $i^e$, $N$ désigne le nombre de sinistres et $S$ le montant total au cours d'une année
+	 $X_{i}$ désigne le montant du $i^e$ sinistre, $N$ désigne le nombre de sinistres et $S$ le montant total au cours d'une année
 	$$
 	S=\sum_{i=1}^{N} X_{i}
 	$$
@@ -291,7 +292,7 @@ Si $E[X]=m$
 
 \begin{f}[La classe de distributions $(a, b, 0)$]
 	
-	Une distribution de comptage est dite  $(a, b, 0)$ si sa fonction de probabilité $\left\{p_{n}\right]_{n=0}^{\infty}$ peut être calculée de manière récursive à partir de la formule
+	Une distribution de comptage est dite  $(a, b, 0)$ si sa fonction de probabilité $\left\{p_{n}\right\}_{n=0}^{\infty}$ peut être calculée de manière récursive à partir de la formule
 	$$
 	p_{n}=\left(a+\frac{b}{n}\right) p_{n-1}
 	$$
@@ -337,6 +338,7 @@ Comme $S=\sum_{i=1}^{N} X_{i}$, il s'ensuit que $S=0$ si $N=0$ ou si $N=n$ et $\
 		\end{cases}	
 	\end{equation*}
 $g_{x}$ est exprimé en fonction de $g_{0}, g_{1}, \ldots, g_{x-1},$ de sorte que le calcul de la fonction de probabilité est récursif. Dans toutes les applications pratiques de cette formule, un ordinateur est nécessaire pour effectuer les calculs. Cependant, l'avantage de la formule de récursivité de Panjer par rapport à la formule pour $g_{x}$ est qu'il n'est pas nécessaire de calculer les convolutions, ce qui est beaucoup plus efficace d'un point de vue computationnel.
+L'algorithme de Panjer nécessite la discrétisation de la variable $X_i$.
 \end{f}
 
 
@@ -351,6 +353,7 @@ $g_{x}$ est exprimé en fonction de $g_{0}, g_{1}, \ldots, g_{x-1},$ de sorte qu
 
 \begin{f}[Panjer et la loi de Poisson]
 	Lorsque la fréquence suit une loi de Poisson, cela implique que {\color{OrangeProfondIRA} $a=0$ et $b=\lambda$.}
+	Le résultat se simplifie :
 	$$
 \begin{cases}
 		g_0= e^{-\lambda (1-f_0)}
@@ -359,7 +362,6 @@ $g_{x}$ est exprimé en fonction de $g_{0}, g_{1}, \ldots, g_{x-1},$ de sorte qu
 \end{cases}	
 $$
 	
-	L'algorithme de Panjer nécessite la discrétisation de la variable $Y_i$, l'excédent de sinistre entre la la franchise et la limite.
 \end{f}
 
 \begin{f}[Panjer et Pollaczeck-Khinchine-Beekman]

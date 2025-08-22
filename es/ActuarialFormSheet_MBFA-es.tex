@@ -77,7 +77,8 @@ citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref}
 \usepackage{pgfmath}
 \usepackage{pgf-pie}
 \usetikzlibrary{animations} 
-\usepackage[final]{animate}
+%\usepackage[final]{animate}
+\usepackage{animate}
 \usetikzlibrary{arrows}
 
 \usetikzlibrary{intersections, pgfplots.fillbetween,pgfplots.dateplot}
@@ -133,8 +134,17 @@ citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref}
 %\fancyfoot{} % clear all footer fields
 \fancyfoot[L]{\href{https://sites.google.com/site/martialphelippeguinvarch}{\color{OrangeProfondIRA}Martial Ph\'elipp\'e-Guinvarc'h\ } 
 	\href{mailto:Martial.Phelippe-GuinvarcH@univ-lemans.fr?subject=ActuarialFormSheet}{\faAt\ } 
-	\href{https://www.linkedin.com/in/martial-phelippe-guinvarc-h}{\color{OrangeProfondIRA}\faLinkedinSquare} }
-\fancyfoot[R]{MMP}
+	\href{https://www.linkedin.com/in/martial-phelippe-guinvarc-h}{\color{OrangeProfondIRA}\faLinkedinSquare}
+	\href{https://orcid.org/0000-0002-9894-803X}{\tikz[scale=0.75]{\fill[OrangeProfondIRA] (0, 0) circle (0.35); 
+			\node[white,font=\sffamily\bfseries\small] at (0, 0) {ID};}
+		\href{https://github.com/MartialP-G}{\color{OrangeProfondIRA} \faGithub} 
+	}
+	\fancyfoot[R]{\href{https://scholar.google.com/citations?user=oZITlTQAAAAJ}{\color{OrangeProfondIRA}Marcelo Moreno Porras} 
+		\href{mailto:marcelo.moreno@urjc.es}{\faAt\ \faEnvelope} 
+		\href{https://www.linkedin.com/in/marcelomorenop/}{\color{OrangeProfondIRA}\faLinkedinSquare}
+		\href{https://orcid.org/0009-0007-1714-6507}{\tikz[scale=0.75]{\fill[OrangeProfondIRA] (0, 0) circle (0.35); 
+				\node[white,font=\sffamily\bfseries\small] at (0, 0) {ID};}
+			\href{https://github.com/marcelomijas}{\color{OrangeProfondIRA} \faGithub} }
 %\fancyfoot[LO,CE]{\textbf{TCS \& TCT}}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}

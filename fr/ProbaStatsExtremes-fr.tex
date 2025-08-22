@@ -173,7 +173,7 @@ $$
 \begin{f}[Loi de Weibull]
 
 
-La \textbf{loi de Weibull}a pour fonction de répartition est définie par :
+La \textbf{loi de Weibull} a pour fonction de répartition est définie par :
 $$
 F_{\alpha,\mu, \sigma}(x) = 1- e^{-((x-\mu)/\sigma)^\alpha}\,
 $$
@@ -372,7 +372,7 @@ Les sous-familles définies par $\xi= 0$, $\xi>0$ et $\xi<0$ correspondent respe
 	\sup_{0 \le y < x_F - u} \left| \mathbb{P}(X - u \le y \mid X > u) - G_{\xi,\sigma,\mu=0}(y) \right| \to 0.
 	\]
 	
-	Ce théorème justifie l’utilisation de la \textit{loi de Pareto (généralisée)} pour modéliser les excès au-delà d’un seuil, ce qui est précisément le cadre des traités de réassurance en \textit{excess of loss}. 
+	Ce théorème justifie l’utilisation de la \textit{loi de Pareto (généralisée)} pour modéliser les excès au-delà d’un seuil, ce qui est précisément le cadre des traités de réassurance en \textit{excess of loss} par risque, par événement ou de cumul annuel. 
 \end{f}
 \hrule
 
@@ -395,14 +395,14 @@ Comme la réassurance indemnise des agrégations de sinistre ou des sinistres ex
 		\item natures des garanties (évolution des franchises, des exclusions\ldots)
 	\end{itemize}
 \end{itemize}
-Après ces corrections, les données sont dites \og as if \fg (en économie, on utilise l'expression contre-factuel)
+Après ces corrections, les données sont dites \og as if \fg (en économie, on utilise l'expression contre-factuel).
 
 \end{f}
 
 
 \begin{f}[La prime \emph{Burning Cost}]
 	
-	$x_{i}^{j}$ désigne le $i^{e}$ sinistre  de l'année $j$ \og{}as if\fg{} actualisé, revalorisé et  redressé,
+	$X_{i}^{j}$ désigne le $i^{e}$ sinistre  de l'année $j$ \og{}as if\fg{} actualisé, revalorisé et  redressé,
 $n^j$ le nombre de sinistres l'année $j$, $c^{j}$ la charge de l'assureur $c$.
 Le taux pur  par la méthode de \textbf{Burning Cost} est donné par la formule~:
 $$
@@ -412,7 +412,7 @@ Le Burning Cost n'est qu'une moyenne des ratios $S/P$ croisés~: les sinistres �
 La prime Burning Cost est alors : $P_{pure}=BC_{pur}\times a_{s+1}$.
 
 Dans le cas d'un $p$ XS $f$), $$
-c^{j}=\sum_{i=1}^{n^j}\max\left(  \left( x_{i}^{j}-f\right),p\right) 1\!\!1_{x^{j}\geq f}
+c^{j}=\sum_{i=1}^{n^j}\max\left(  \left( X_{i}^{j}-f\right),p\right) 1\!\!1_{x^{j}\geq f}
 $$
 Si l'assurance vie calcule des taux de prime en référence au capital, l'assurance non vie utilise comme  référence à la valeur assurée, la réassurance prend elle comme référence le total des primes de la cédante, appelée \textbf{assiette}.
 On note $a_{j}$ désigne l'assiette de prime à l'année $j$ et $a_{s+1}^{*}$ désigne l'assiette estimée de l'année à venir et où $s$ désigne le nombre d'années d'historique.
@@ -450,8 +450,6 @@ Si $l<\infty$ et $\alpha = 1$ :
 $$
 \mathbb{E}[S_N] = \lambda x_\mathrm{m} \ln \left(  \frac{1}{f}\right)
 $$
-
-
 \end{f}
 
 
@@ -459,7 +457,7 @@ $$
 \begin{f}
 [Le modèle Poisson-LogNormal]
 
-Si $X$ suit une $LN(x_\mathrm{m}, \mu, \sigma)$ alors $X-x_\mathrm{m}$ suit une $LN(\mu, \sigma)$
+Si $X$ suit une $\mathcal{L}\mathcal{N}orm(x_\mathrm{m}, \mu, \sigma)$ alors $X-x_\mathrm{m}$ suit une $\mathcal{L}\mathcal{N}orm(\mu, \sigma)$
 Il vient :
 $$
 \mathbb{P}[X>f]=\mathbb{P}[X-x_\mathrm{m}>f-x_\mathrm{m}]=1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-\mu}{\sigma}\right)

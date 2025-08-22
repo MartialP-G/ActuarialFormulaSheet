@@ -1,0 +1,1820 @@
+%******************************************************************************************************************             
+%                                      
+%
+% NOM DU PROJET :  Style pour modèle de document Université Le Mans
+
+% Adapté du projet :  Style pour modèle de document IMT Atlantique dont les auteur(s) sont : Charles DUCHÊNE, Guillaume ANSEL, Thierry LE GALL (SC), Thomas GUILMENT version 3.7
+%
+%AUTEUR : Martial Phélippé-Guinvarc'h
+% HISTORIQUE :
+%
+% Date          Nom(s)           Version  Description
+% ------------  ---------------- -------  ----------------------------------------------------------------------------
+% 02-jan-2022   MPG             0           version initiale 
+% 21-mar-2024   MPG             1           Revision lst pour SAS tikz changes correctif bugs
+% 20-aou-2025   MPG                         SAS STATREP CONFIGURATION
+%                                           ADD PACKAGE BABEL FONT AMS 
+%                                           ADD SOME COLORS  :IRA       
+%                                           CHANGE CHAPTER APPARENCE         
+%                                           ADD Descriptionauteur
+%                                           REDEFINE LST STYLE mbfaulmSAS         
+         
+%
+% NOTES/COMMENTAIRES :
+%
+% - 
+%
+% REFERENCES :
+%
+% - 
+% 
+%**********************************************************************************************************************
+
+% Suppression d'un warning « You have requested package `../sty/mbfaulm', but the package provides `mbfaulm'. »
+\RequirePackage{silence}
+\WarningFilter{latex}{You have requested package `../sty/mbfaulm'}
+\NeedsTeXFormat{LaTeX2e}               
+\def\mbfaulm@CLASSNAME{mbfaulm}
+\def\mbfaulm@VERSION{0}
+\def\mbfaulm@DATE{2022/01/04}
+\def\mbfaulm@DATE@fr{04/01/2022}
+\def\mbfaulm@AUTHOR{Etudiant Nométdudiant}
+
+\ProvidesClass{\mbfaulm@CLASSNAME}[\mbfaulm@DATE]
+\RequirePackage[color,SASViya]{statrep}
+\RequirePackage{parskip,xspace,setspace}
+\newcommand*{\Statrep}{\mbox{\textsf{StatRep}}\xspace}
+\newcommand*{\Code}[1]{\texttt{\textbf{#1}}}
+\newcommand*{\cs}[1]{\texttt{\textbf{\textbackslash#1}}}
+
+\definecolor{shadecolor}{rgb}{0.97,0.97,0.97}
+\def\SRdefaultdests{listing}
+\def\SRlatexstyle{htmlblue}
+\def\SRcaptionfont{\normalfont\normalsize}
+
+
+
+\setcounter{secnumdepth}{0}
+\RequirePackage[french]{babel}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{t1enc}
+
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amsfonts}
+\RequirePackage{amstext}
+%\usepackage{lifecon}
+\RequirePackage[cyr]{aeguill}
+
+\RequirePackage[utf8x]{inputenc}
+\RequirePackage{eurosym}
+\DeclareUnicodeCharacter{20AC}{\EUR{}}{\tiny }
+\RequirePackage{graphicx}
+\RequirePackage{fontawesome}
+\RequirePackage[page,toc]{appendix}
+\RequirePackage[compact,pagestyles]{titlesec}
+\RequirePackage[dotinlabels]{titletoc}
+\RequirePackage{eso-pic}
+\RequirePackage[overlay,absolute]{textpos}
+\RequirePackage{geometry}
+\RequirePackage{newtxmath}
+\RequirePackage{caption}
+\RequirePackage{array}
+\RequirePackage{multirow}
+\RequirePackage{multicol}
+\RequirePackage{tabularx}
+\RequirePackage{longtable}
+
+
+\RequirePackage[most]{tcolorbox} % Permet d'inclure des blocs de style "beamer" dans un document de classe "article"
+\RequirePackage{booktabs}
+\RequirePackage[calc, useregional]{datetime2} % Définition de formats de dates personalisés
+\tcbuselibrary{skins,breakable}
+\RequirePackage{latexsym}
+\RequirePackage{textcomp} 
+\RequirePackage{fontawesome}    
+\RequirePackage{tikz}
+\RequirePackage{pgfplots}
+
+\pgfplotsset{%
+	compat=newest,
+	colormap={whitetoblue}{color(0cm)=(white);
+		color(1cm)=(blue!75!blue)},
+  colormap={whitered}{color(0cm)=(white); color(1cm)=(orange!75!red)}
+}
+
+\RequirePackage{pgfmath}
+\RequirePackage{pgf-pie}
+%\RequirePackage{pst-func}
+    \usetikzlibrary{intersections, pgfplots.fillbetween,pgfplots.dateplot}
+    \usetikzlibrary{datavisualization}
+    \usetikzlibrary{calc}
+	\usetikzlibrary{math}
+	\usetikzlibrary{shapes}
+	\usetikzlibrary{decorations.pathmorphing}
+	\usetikzlibrary{shapes.geometric, arrows,arrows.meta,bending}
+    \usetikzlibrary{trees}
+    \usetikzlibrary{matrix}
+    \usetikzlibrary{positioning}
+	\usetikzlibrary{svg.path}
+%	\usetikzlibrary{external}
+
+
+
+%----------------- Déclaration des options du package ----------------
+
+\DeclareOption{version}{\PackageWarning{mbfaulm}{L'option "version" est obsolete. Le numero de version est affiche automatiquement si la commande \protect \version{} est utilisee}}
+
+% Option copyright
+% Affichage de la mention « © IMT Atlantique ... » sur la dernière de couverture
+\newif\if@mbfaulmcopyright \@mbfaulmcopyrightfalse
+\DeclareOption{copyright}{\@mbfaulmcopyrighttrue}
+
+\ProcessOptions
+
+%--------------- Fin déclaration des options du package --------------
+
+
+%------------------------- BUGFIX_21092017_1 -------------------------
+\usepackage{etoolbox}
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+%---------------------------------------------------------------------
+
+
+\addto\captionsfrench{
+	\renewcommand{\contentsname}{Table des matières}
+	\renewcommand{\listfigurename}{Liste des figures}
+	\renewcommand{\listtablename}{Liste des tableaux}
+	\renewcommand\lstlistlistingname{Liste des codes de programmation}
+	\renewcommand{\lstlistingname}{Code}
+	\renewcommand{\refname}{Références}
+	\renewcommand{\appendixtocname}{Annexes}
+	\renewcommand{\appendixpagename}{Annexes}
+}
+
+% Définition des couleurs selon la charte mbfaulm
+
+\definecolor{mbfaulmbleu}{RGB}{15,91,164}
+\definecolor{mbfaulmbleumarine}{RGB}{40,56,120}
+\definecolor{mbfaulmorangesec}{RGB}{228,82,65}
+\definecolor{mbfaulmorange}{RGB}{228,66,45}
+\definecolor{mbfaulmgrissec}{RGB}{91,93,95}
+\definecolor{mbfaulmgris}{RGB}{112,111,111}
+\definecolor{mbfaulmcaption}{RGB}{228,66,45}
+% Couleurs Droit
+\definecolor{DEG}{RGB}{228,0,56}
+% Couleurs IRA
+\definecolor{IRAorange}{RGB}{229,68,46}
+\definecolor{IRAbleu}{RGB}{40,57,121}
+
+\definecolor{FushiaIRA}{HTML}{CC1C4F}
+\definecolor{BleuIRA}{HTML}{0F398C}
+\definecolor{VertIRA}{HTML}{5BA626}
+\definecolor{VertDouxIRA}{HTML}{9BBF17}
+\definecolor{BlancIRA}{HTML}{F2F2F2}
+\definecolor{BleuProfondIRA}{HTML}{1F4E8C}
+\definecolor{BleuMoyenIRA}{HTML}{2D6DA6}
+\definecolor{OrangeProfondIRA}{HTML}{BF3F34}
+\definecolor{OrangePastelIRA}{HTML}{E8AC89}
+\definecolor{OrangeMoyenIRA}{HTML}{D9753B}
+\definecolor{GrisLogoIRA}{HTML}{5A5A5C}
+
+
+% Application des paramètres de police et de couleur pour les légendes
+\DeclareCaptionFont{TBcaption}{\color{mbfaulmcaption}}
+\captionsetup{labelfont={TBcaption},textfont={TBcaption}}
+
+% Format des titres dans le corps du document (cf. package titlesec)
+  \titleformat{\chapter} % command
+[display] % shape
+{\color{mbfaulmbleumarine}\bfseries\LARGE} % format
+{ Chapitre  \thechapter} % label
+{0.5ex} % sep
+{
+	\rule{\textwidth}{1pt}
+	\vspace{.5ex}~\newline
+	\centering
+} % before-code
+[
+\vspace{0.5ex}%
+\rule{\textwidth}{1pt}
+] % after-code
+\titleformat{\section}{\Large\bfseries\color{mbfaulmorange}}{\thesection.}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{mbfaulmbleumarine}}{\hspace{1em}\thesubsection.}{1em}{}
+\titleformat{\subsubsection}{\bfseries\color{mbfaulmbleumarine}}{\hspace{2em}\thesubsubsection.}{1em}{}
+\titleformat{\paragraph}{\itshape\bfseries\color{mbfaulmbleumarine}}{}{}{}
+\titlespacing*{\section}{0pt}{1.5\baselineskip}{0.5\baselineskip}
+\titlespacing*{\subsection}{0pt}{1.5\baselineskip}{0.5\baselineskip}
+\titlespacing*{\subsubsection}{0pt}{1.5\baselineskip}{0.5\baselineskip}
+
+% define a user command to choose the image
+% this command also creates an internal command to insert the image
+\newcommand{\partimage}[2][]{\gdef\@partimage{\includegraphics[#1]{#2}}\relax{}}
+% redefine the amsbook part code to include the \@partimage insertion command
+\newcommand{\particitation}[2][]{\gdef\@partimage{\includegraphics[#1]{#2}}\relax{}}
+\def\@part[#1]#2{%
+	\ifnum \c@secnumdepth >-2\relax \refstepcounter{part}%
+	\addcontentsline{toc}{part}{\Large\thepart.
+		\protect\enspace\protect\noindent#1}%
+	\else
+	\addcontentsline{toc}{part}{#1}\fi
+	\begingroup\centering
+	\ifnum \c@secnumdepth >-2\relax
+	{\color{mbfaulmbleumarine}\fontsize{\@xviipt}{22}\bfseries
+		\partname\ \thepart} \vskip 20\p@ \fi
+	\fontsize{\@xxpt}{25}\bfseries\color{mbfaulmbleumarine}
+	#1\vfil\@partimage\vfil\endgroup \newpage\thispagestyle{empty}\relax{}}
+\makeatother
+
+% Définition de niveaux de titres supplémentaires pour les annexes
+\newcommand{\mbfaulmsubsubsubsection}{}
+
+% Déclaration de commande de section mbfaulmsubsubsubsection (utilisée pour les sous-sous-sections (subsubsection) dans les annexes)
+\titleclass{\mbfaulmsubsubsubsection}{straight}[\subsubsection]
+\newcounter{mbfaulmsubsubsubsection}[subsubsection]
+\renewcommand{\thembfaulmsubsubsubsection}{\thesubsubsection.\arabic{mbfaulmsubsubsubsection}}
+\titlespacing{\mbfaulmsubsubsubsection}{0pt}{*1}{*1}
+
+
+% Ajustement des niveaux de section des différents types de sections créés et des paragraphes
+\def\toclevel@mbfaulmsubsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@subparagraph{6}
+\def\l@mbfaulmsubsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+
+% Modification du niveau jusqu'au quel on affiche les numéros dans les titres (eg. 2.1.1.)
+% On veut pouvoir voir les numéros des sous-sous sections dans les annexes (correspond au niveau 4)
+\setcounter{secnumdepth}{4}
+
+% Format des titres dans la table des matières (cf. package titletoc)
+\titlecontents{part}[0em]{\color{mbfaulmorange}\vspace{0.8em}\bfseries\large}{\thecontentslabel. \hspace{0.5em}}{}{\color{mbfaulmorange}\normalfont\titlerule*[5pt]{.}\contentspage[\bfseries\thecontentspage]}
+\titlecontents{chapter}[0.5em]{\color{mbfaulmorange}\vspace{0.8em}\bfseries\large}{\thecontentslabel. \hspace{0.5em}}{}{\color{mbfaulmorange}\normalfont\titlerule*[5pt]{.}\contentspage[\bfseries\thecontentspage]}
+\titlecontents{section}[1.8em]{\color{mbfaulmorange}\vspace{0.5em}\bfseries}{\thecontentslabel. \hspace{0.5em}}{}{\color{mbfaulmorange}\normalfont\titlerule*[5pt]{.}\contentspage[\bfseries\thecontentspage]}
+\titlecontents{subsection}[4.6em]{\footnotesize}{\color{mbfaulmorange}\thecontentslabel. \hspace{0.5em}}{}{\color{mbfaulmorange}\normalfont\titlerule*[5pt]{.}\contentspage[\thecontentspage]}
+\titlecontents{subsubsection}[6.6em]{\footnotesize}{\color{mbfaulmorange}\footnotesize\thecontentslabel. \hspace{0.5em}}{}{\color{mbfaulmorange}\normalfont\titlerule*[5pt]{.}\contentspage}
+
+% Marges
+%\usepackage[,margin=1in,heightrounded,showframe]{geometry}
+\geometry{paperheight=9.5in,
+	paperwidth=6in,
+	headheight=0.5cm,
+	headsep=0.6cm,
+	foot=0.7cm,
+	vmargin=2.4cm,
+	hmargin=2.0cm
+}
+
+% Commande pour avoir l'année courante
+\newcommand{\currentyear}{\@dtm@year}
+% Commande pour avoir le mois et l'année courante
+\newcommand{\currentmonthyear}{\DTMMonthname{\@dtm@month} \@dtm@year}
+
+% définition de nouvelles macros pour le document
+% Bloc "Entité" en haut à gauche de la couverture
+\def\@entity{}
+\newcommand{\entity}[1]{\gdef\@entity{#1}}
+
+\makeatletter
+
+%descripition de l'auteur
+\newif\if@Descriptionauteur \@Descriptionauteurfalse
+\def\@descriptionauteur{}
+\newcommand{\descriptionauteur}[1]{\@Descriptionauteurtrue\gdef\@descriptionauteur{#1}}
+
+%définition du résumé
+
+
+\newif\if@Resume \@Resumefalse
+\def\@resume{}
+\newcommand\resume[1]{\@Resumetrue\gdef\@resume{#1}}
+
+% Version du document sur la couverture
+\newif\if@Version \@Versionfalse
+\def\@version{}
+\newcommand{\version}[1]{\@Versiontrue\gdef\@version{#1} }
+
+% Description du document, sous le titre
+\newif\if@Description \@Descriptionfalse
+\def\@description{}
+\newcommand{\docdescription}[1]{\@Descriptiontrue\gdef\@description{#1}}
+
+% Type de document
+\newif\if@DT \@DTfalse
+\def\@documentType{}
+\newcommand{\DocumentType}[1]{\@DTtrue\gdef\@documentType{#1} }
+
+% Liste de contributeurs
+\def\@referents{}
+\newcommand{\referents}[1]{\gdef\@referents{\\#1}}
+
+% Numéro de rapport de recherche, sous le type de document sur la couverture
+\def\thereportnumber{}
+\newcommand{\ReportNumber}[1]{\gdef\thereportnumber{#1}}
+
+%Macro pour le contenu du pied de page
+\def\@mbfaulmfooter{\@title}
+\newcommand{\mbfaulmfooter}[1]{\gdef\@mbfaulmfooter{#1}}
+
+% Définition du style des en-têtes et des pieds de page
+\newpagestyle{mbfaulmfancy}{%
+	\headrule % Affichage ligne de séparation de l'en-tête
+	\footrule % Affichage ligne de séparation du pied de page
+	
+	% Définition en-tête
+	\sethead{\bottitlemarks\textit{\ifthesection{\thesection.~}{}\sectiontitle}} % Titre et numéro de section en haut à gauche en italique
+	{} % Rien au milieu
+	%{\bottitlemarks\textit{\ifthesubsection{\thesubsection.~}{}\subsectiontitle}} % Titre et numéro de sous-section en haut à droite en italique (mise à jour 2.6)
+	{} % Rien en haut à droite
+	% Définition pied de page
+	\setfoot{\textit{\@mbfaulmfooter}} % Description fournie par l'utilisateur
+	{} % Rien au milieu
+	{\thepage/\pageref{LastPage}} % Numéro de page en bas à droite et nombre total de pages
+}
+
+% Définition de la command \and pour séparer plusieurs auteurs : saut de ligne
+\renewcommand\and{\\[0.3\baselineskip]}
+
+% -----------------------------------------------------------
+%Définition de la page de couverture : redéfinition de maketitle
+
+% alias \mbfaulmfrontcover pour maketitle
+\newcommand{\mbfaulmfrontcover}{\maketitle}
+
+
+% Commandes pour générer sommaire, liste des figures et des tableaux
+\newcommand{\mbfaulmsommaire}{%
+	% Formattage du titre "Sommaire", cf http://tex.stackexchange.com/questions/83378/babel-and-contentsname-how-to-add-extra-customization
+	\renewcommand{\tableofcontents}{%
+		\noindent{\bfseries\centering\Large\color{mbfaulmbleu}\contentsname\par}%
+		\sectionmark{\contentsname}
+		\@starttoc{toc}
+	}	\pagestyle{empty}
+	\tableofcontents
+	\addtocontents{toc}{\protect\thispagestyle{empty}}
+}
+\newcommand{\mbfaulmlistefigures}{
+	\renewcommand{\listoffigures}{%
+		\noindent{\bfseries\centering\Large\color{mbfaulmbleu}\listfigurename\par}%
+		\sectionmark{\listfigurename}
+		\vspace{5mm}%
+		\@starttoc{lof}
+		\vspace{5mm}%
+	}
+	\listoffigures
+}
+\newcommand{\mbfaulmlistetableaux}{	
+	\renewcommand{\listoftables}{%
+		\noindent{\bfseries\centering\Large\color{mbfaulmbleu}\listtablename\par}%
+		\sectionmark{\listtablename}
+		\vspace{5mm}%
+		\@starttoc{lot}
+		\vspace{5mm}%
+	}
+	\listoftables
+}
+
+\newcommand{\mbfaulmlistecodes}{
+	\renewcommand{\lstlistoflistings}{%
+		\noindent{\bfseries\centering\Large\color{mbfaulmbleu}\lstlistlistingname\par}%
+		\sectionmark{\lstlistlistingname}
+		\vspace{5mm}%
+		\@starttoc{lol}
+		\vspace{5mm}%
+	}
+	\lstlistoflistings
+}
+% ---------- Début déclaration commandes pour Bibliographie ----------
+\newcommand{\mbfaulmbiblioname}{Références}
+% ----------- Fin déclaration commandes pour Bibliographie -----------
+
+% ------------- Début déclaration commandes pour Annexes -------------
+
+\newcommand{\mbfaulmdebutannexes}{
+	\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
+	\clearpage
+	
+	\let\appendixpagenameorig\appendixpagename
+	\renewcommand{\appendixpagename}{\centering\textcolor{mbfaulmbleu}{\Large\textbf{\appendixpagenameorig}}}
+	
+	% "Bricolage" : on définit une nouvelle commande mbfaulmannexe pour commencer chaque annexe, en réalité une section
+	% On décale les autres niveaux de section pour que la commande \section (en réalité \subsection) ait le même style que dans le reste du document
+	% De même pour \subsection, etc.
+	\let\@oldsection\section
+	\let\@oldsubsection\subsection
+	\let\@oldsubsubsection\subsubsection
+	\let\TBannexe\section
+	\let\mbfaulmannexe\TBannexe
+	\let\section\subsection
+	\let\subsection\subsubsection
+	\let\subsubsection\mbfaulmsubsubsubsection
+	\titleformat{\section}{\Large\bfseries\color{mbfaulmbleumarine}\centering}{\appendixname~\thesection\enskip--}{0.5em}{\vspace{0.5em}}
+	\titleformat{\subsection}{\Large\bfseries}{\thesubsection.}{1em}{}
+	\titleformat{\subsubsection}{\large\bfseries\color{mbfaulmbleu}}{\hspace{1em}\thesubsubsection.}{1em}{}
+	\titleformat{\mbfaulmsubsubsubsection}{\bfseries\color{mbfaulmbleumarine}}{\hspace{2em}\thembfaulmsubsubsubsection.}{1em}{}
+	\titlecontents{section}[0em]{\vspace{0.8em}\bfseries\large}{Annexe \thecontentslabel~--~}{}{\normalfont\titlerule*[5pt]{.}\contentspage[\bfseries\thecontentspage]}
+}
+
+\newcommand{\mbfaulmfinannexes}{
+	% On restore le comportement d'origine des commandes \section, ...
+	\let\section\@oldsection
+	\let\subsection\@oldsubsection
+	\let\subsubsection\@oldsubsubsection
+	\titleformat{\section}{\Large\bfseries}{\thesection.}{1em}{}
+	\titleformat{\subsection}{\large\bfseries\color{mbfaulmbleu}}{\hspace{1em}\thesubsection.}{1em}{}
+	\titleformat{\subsubsection}{\bfseries\color{mbfaulmbleumarine}}{\hspace{2em}\thesubsubsection.}{1em}{}
+	\titlecontents{section}[0em]{\vspace{0.8em}\bfseries\large}{\thecontentslabel. \hspace{0.5em}}{}{\normalfont\titlerule*[5pt]{.}\contentspage[\bfseries\thecontentspage]}
+}
+
+% Définition de l'environnement des annexes
+\newenvironment{mbfaulmannexes}{
+	\mbfaulmdebutannexes
+	\begin{appendices}
+		% Utilisation de nombres pour numéroter les annexes (BUGFIX_21092017_2)
+		\renewcommand{\theHsection}{\theH@pps.\arabic{section}}
+		\renewcommand\thesection{\arabic{section}}
+	}
+	{
+	\end{appendices}
+	\mbfaulmfinannexes
+}
+
+%---------------------------------------- Dernière de couverture
+\newcommand{\mbfaulmcoverpage}{
+	\label{LastPage}
+	\clearpage
+	
+	% Saut de page optionnel pour s'assurer que l'on soit bien sur la 4eme de couverture (page paire)
+	\ifodd\value{page}\else\null\thispagestyle{empty}\clearpage\fi
+	
+	\thispagestyle{empty}
+	
+	% imprime la carte des implantations et le logoT sur la dernière de couverture
+%	\AddToShipoutPicture*{\unitlength=1cm
+		%\put(1, 13){\includegraphics[width=5cm]{../sty/logo_LEMANS_UNIVERSITE_Noir-01}}
+%    	\put(2, 2){\includegraphics[width=7cm]{sty/mbfaulm_logo}
+%	\hspace*{2cm}
+%	\includegraphics[width=7cm]{sty/IRAmbfaulm_logo}
+%};
+%}
+	
+	% marges
+	\newgeometry{top=8cm, left=2cm, right=2cm, bottom=4cm}
+	  \color{mbfaulmbleumarine} 
+	\begin{center}
+	  \bfseries \LARGE \@title
+	\end{center}
+	\ifx\@resume\empty
+	{}
+	\else
+	{	\hspace{1cm}
+%	\begin{small}
+	\small  \noindent  \@resume
+%	\end{abstract}
+	\hspace{3cm}}
+	\fi
+	% imprime les adresses et les numéros de tel. des campus et des sites
+ 
+\begin{tikzpicture}[overlay,remember picture]
+	% set a new origin [1]
+	\coordinate (O) at (current page.south west);
+	\coordinate (NW) at (current page.north west);
+	\coordinate (NE) at (current page.north east);
+	\coordinate (SE) at (current page.south east);
+
+\fill[color=mbfaulmorangesec, opacity=0.8] ($(O)+(0,.5\paperheight)$) -- ($(NW)+(.46\paperwidth,0)$) -- ($(NW)$) -- cycle;
+\fill[color=mbfaulmorange, opacity=1]  ($(NW)+(.46\paperwidth,4)$) -- ($(NW)+(0,4)$) -- ++(0,-0.5\paperheight)-- cycle;
+
+%\node [align=left,anchor=south west ] () at ($(O)+(0.1\paperwidth,0.15\paperheight)$) {
+%\color{mbfaulmbleumarine}
+%		\textbf{Le Mans Université}\\
+%		Avenue Olivier Messiaen\\
+%		72085
+%LE MANS cedex 9\\
+%		France\\
+%		T +33 (0)2 43 83 30 00 \\
+%    \textbf{\href{http://www.univ-lemans.fr}{http://www.univ-lemans.fr}}\\
+%};
+
+	\ifx\@descriptionauteur\empty
+{}
+\else
+{
+\node[anchor=south east, xshift=-1cm, yshift=1cm,
+	draw=OrangeProfondIRA, rounded corners=4pt, line width=1pt,
+	inner sep=0pt, text width=11.5cm, font=\small]
+	at (SE)
+	{
+		% Titre avec fond coloré inversé
+\begin{minipage}{\linewidth}
+	\begin{tcolorbox}[beamer, title=À propos de l'auteur]
+\@descriptionauteur
+	\end{tcolorbox}
+\end{minipage}
+	};
+}	
+\fi
+\end{tikzpicture}
+}
+
+
+% -------------- Fin déclaration commandes pour Annexes --------------
+
+% ------------ Déclaration d'environnement pour les blocs ------------
+
+\newenvironment{beamerblock}[1]{%
+	\tcolorbox[beamer,%
+	noparskip,breakable,
+	colback=white, colframe=mbfaulmbleu,%
+	colbacklower=mbfaulmbleu!10!mbfaulmbleu,%
+	title=#1]}%
+{\endtcolorbox}				
+
+% ------------------------- Dossier des images ----------------------
+
+\graphicspath{{../img/}}
+
+
+%---------------------- Pakage lstlisting  ---------------------------
+
+\RequirePackage{listingsutf8}
+\lstset{%
+	language=R,
+	breaklines=true,
+	%
+	extendedchars=true,
+}
+
+\lstdefinestyle{mbfaulmR} {% general command to set parameter(s)
+	language=R,
+	inputencoding=utf8/latin1,
+	backgroundcolor=\color{mbfaulmgrissec!5},   
+	frame=lines,
+	basicstyle=\footnotesize\ttfamily, % print whole listing small
+	keywordstyle = {\bfseries\color{mbfaulmbleumarine}\scshape},
+	identifierstyle=\color{mbfaulmbleu},
+	stringstyle ={\ttfamily\color{mbfaulmorangesec}},% typewriter type for strings
+	% underlined bold black keywords
+	commentstyle=\color{gray}, % white comments
+	showstringspaces=false,
+	numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt, %
+	rulesepcolor=\color{black},
+	columns=fullflexible,
+	breaklines=true,
+	breakatwhitespace=false,
+	emph={[1] (,),[,]}, emphstyle={[1] \color{mbfaulmorange}},
+	emph={[2] {,}}, emphstyle={[2] \color{green}}
+	literate=
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{À}{{\`A}}1 {à}{{\`a}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\EUR}}1 {£}{{\pounds}}1
+} 
+
+
+
+% ---------------------------------------------------------------------
+% Program: listings-sas.tex
+% Author:  github.com/mcaceresb
+% Purpose: SAS language definition for LaTeX listings package
+% Usage:   Add \input{listings-sas.tex} to your preamble
+
+% Syntax from
+% - syntax/sas.vim by James Kidd <james.kidd@covance.com>
+
+
+% ---------------------------------------------------------------------
+% SAS language definition
+
+\lstdefinelanguage{SAS}{
+	sensitive=true,
+	alsoletter={\%\&},
+	%
+	% User variables
+	keywordsprefix=\&,
+	%
+	% Comments
+	morecomment=[f][\color{DarkOliveGreen}][0]*,
+	morecomment=[s][\color{DarkOliveGreen}]{***}{;},
+	morecomment=[s][\color{DarkOliveGreen}]{/*}{*/},
+	morecomment=[n][\color{DarkOliveGreen}]{/*}{*/},
+	morecomment=[l][\color{mbfaulmgrissec!5}]{\%*;},
+	morecomment=[l][\color{mbfaulmgrissec!5}]{*;},
+	%
+	% Strings
+	morestring=[b]",
+	morestring=[d]',
+	%
+	% Datalines and cards
+	morecomment=[s][\itshape\color{mbfaulmbleu!50}]{datalines;}{;},
+	morecomment=[s][\itshape\color{mbfaulmbleu!50}]{cards;}{;},
+	%%
+	% Distinct highlight for proc <proc>, data, run, quit
+	%morecomment=[s][\bfseries\color{mbfaulmbleumarine}\slshape]{proc\ }{\ },
+%	morekeywords={},
+	morekeywords=[2]{
+		DATA ,PROC ,RUN ,QUIT, ODS,OPTIONS,SOLVE
+	},
+	%
+%	escapechar=|,
+	% Macros
+	morekeywords=[3]{
+\%BQUOTE ,\%NRBQUOTE ,\%CMPRES ,\%QCMPRES ,\%COMPSTOR ,\%DATATYP
+,\%DISPLAY ,\%DO ,\%ELSE ,\%END ,\%EVAL ,\%GLOBAL ,\%GOTO ,\%IF
+,\%INDEX ,\%INPUT ,\%KEYDEF ,\%LABEL ,\%LEFT ,\%LENGTH ,\%LET
+,\%LOCAL ,\%LOWCASE ,\%MACRO ,\%MEND ,\%NRBQUOTE ,\%NRQUOTE
+,\%NRSTR ,\%PUT ,\%QCMPRES ,\%QLEFT ,\%QLOWCASE ,\%QSCAN ,\%QSUBSTR
+,\%QSYSFUNC ,\%QTRIM ,\%QUOTE ,\%QUPCASE ,\%SCAN ,\%STR ,\%SUBSTR
+,\%SUPERQ ,\%SYSCALL ,\%SYSEVALF ,\%SYSEXEC ,\%SYSFUNC ,\%SYSGET
+,\%SYSLPUT ,\%SYSPROD ,\%SYSRC ,\%SYSRPUT ,\%THEN ,\%TO ,\%TRIM
+,\%UNQUOTE ,\%UNTIL ,\%UPCASE ,\%VERIFY ,\%WHILE ,\%WINDOW	},
+	%
+	% Statements
+	morekeywords=[4]{
+		% conditionals
+		DO ,IF ,THEN ,ELSE ,END ,UNTIL ,WHILE
+% SAS
+,ABORT ,ARRAY ,ATTRIB ,BY ,CALL ,CARDS ,CARDS4 ,CATNAME ,CONTINUE
+,DATALINES ,DATALINES4 ,DELETE ,DELIM ,DELIMITER ,DISPLAY ,DM ,DROP
+,ENDSAS ,ERROR ,FILE ,FILENAME ,FOOTNOTE ,FORMAT ,GOTO ,IN ,INFILE
+,INFORMAT ,INPUT ,KEEP ,LABEL ,LEAVE ,LENGTH ,LIBNAME ,LINK ,LIST
+,LOSTCARD ,MERGE ,MISSING ,MODIFY ,OPTIONS ,OUTPUT ,OUT ,PAGE ,PUT
+,REDIRECT ,REMOVE ,RENAME ,REPLACE ,RETAIN ,RETURN ,SELECT ,SET
+,SKIP ,STARTSAS ,STOP ,TITLE ,UPDATE ,WAITSAS ,WHERE ,WINDOW ,X
+,SYSTASK,SCATTER, HBAR, VAR, VBAR, SERIES, HISTOGRAM,
+NOPRINT, PLOT=
+% SQL
+,ADD ,AND ,ALTER ,AS ,CASCADE ,CHECK ,CREATE ,DELETE ,DESCRIBE
+,DISTINCT ,DROP ,FOREIGN ,FROM ,GROUP ,HAVING ,INDEX ,INSERT ,INTO
+,IN ,KEY ,LIKE ,MESSAGE ,MODIFY ,MSGTYPE ,NOT ,ON ,OR ,ORDER
+,PRIMARY ,REFERENCES ,RESET ,RESTRICT ,SELECT ,SET ,TABLE ,UNIQUE
+,UPDATE ,VALIDATE ,VIEW ,WHERE,
+% IML
+READ ,CON ,NUM 	},
+	%
+	% Built-in functions
+	morekeywords=[5]{
+		START,
+		FINISH,
+		USE,
+		RETURN,
+		STORE,
+		DIMENSION,
+ABS	,
+ADDR	,
+ADDRLONG	,
+AIRY	,
+ALLCOMB	,
+ALLPERM	,
+ANORM420	,
+ANYALNUM	,
+ANYALPHA	,
+ANYCNTRL	,
+ANYDIGIT	,
+ANYFIRST	,
+ANYGRAPH	,
+ANYLOWER	,
+ANYNAME	,
+ANYPRINT	,
+ANYPUNCT	,
+ANYSPACE	,
+ANYUPPER	,
+ANYXDIGIT	,
+ARCOS	,
+ARCOSH	,
+ARSIN	,
+ARSINH	,
+ARTANH	,
+ATAN	,
+ATAN2	,
+ATTRC	,
+ATTRN	,
+AVG	,
+BAND	,
+BASECHAR	,
+BETA	,
+BETAINV	,
+BITFNBOR	,
+BLACKCLPRC	,
+BLACKPTPRC	,
+BLKSHCLPRC	,
+BLKSHPTPRC	,
+BLSHIFT	,
+BNOT	,
+BOR	,
+BRSHIFT	,
+BXOR	,
+BYTE	,
+CAST	,
+CAT	,
+CATQ	,
+CATS	,
+CATT	,
+CATX	,
+CDF	,
+CEIL	,
+CEILZ	,
+CEXIST	,
+CHAR	,
+CHARACTER_LENGTH	,
+CHOOSEC	,
+CHOOSEN	,
+CINV	,
+CLIBEXIST	,
+CLOSE	,
+CMISS	,
+CMP	,
+CMPT	,
+CNONCT	,
+COALESCE	,
+COALESCEC	,
+COLLATE	,
+COMB	,
+COMPARE	,
+COMPBL	,
+COMPFUZZ	,
+COMPGED	,
+COMPLEV	,
+COMPOUND	,
+COMPRESS	,
+CONSTANT	,
+CONVX	,
+CONVXP	,
+COS	,
+COSH	,
+COT	,
+COUNT	,
+COUNTC	,
+COUNTW	,
+CSC	,
+CSS	,
+CUMIPMT	,
+CUMPRINC	,
+CUROBS	,
+CURRENT_DATE	,
+CURRENT_LOCALE	,
+CURRENT_TIME	,
+CURRENT_TIME_GMT	,
+CURRENT_TIMESTAMP	,
+CURRENT_TIMESTAMP_GMT	,
+CV	,
+DACCDB	,
+DACCDBSL	,
+DACCSL	,
+DACCSYD	,
+DACCTAB	,
+DAIRY	,
+DATDIF	,
+DATE	,
+DATEJUL	,
+DATEPART	,
+DATETIME	,
+DAY	,
+DCLOSE	,
+DCREATE	,
+DEGREES	,
+DEPDB	,
+DEPDBSL	,
+DEPSL	,
+DEPSYD	,
+DEPTAB	,
+DEQUOTE	,
+DEVIANCE	,
+DHMS	,
+DIF	,
+DIGAMMA	,
+DIM	,
+DINFO	,
+DIVIDE	,
+DNUM	,
+DOPEN	,
+DOPTNAME	,
+DOPTNUM	,
+DOSUBL	,
+DREAD	,
+DROPNOTE	,
+DSNAME	,
+DSNCATLGD	,
+DUR	,
+DURP	,
+E	,
+EFFRATE	,
+ENCODCOMPAT	,
+ENCODISVALID	,
+ENVLEN	,
+ERF	,
+ERFC	,
+EUCLID	,
+EUROCURR	,
+EXIST	,
+EXP	,
+FACT	,
+FAPPEND	,
+FCLOSE	,
+FCOL	,
+FCOPY	,
+FDELETE	,
+FETCH	,
+FETCHOBS	,
+FEXIST	,
+FGET	,
+FILEEXIST	,
+FILENAME	,
+FILEREF	,
+FINANCE	,
+FIND	,
+FINDC	,
+FINDW	,
+FINFO	,
+FINV	,
+FIPNAME	,
+FIPNAMEL	,
+FIPSTATE	,
+FIRST	,
+FLOOR	,
+FLOORZ	,
+FMTINFO	,
+FNONCT	,
+FNOTE	,
+FOPEN	,
+FOPTNAME	,
+FOPTNUM	,
+FPOINT	,
+FPOS	,
+FPUT	,
+FREAD	,
+FREWIND	,
+FRLEN	,
+FROOT ,
+FSEP	,
+FUZZ	,
+FWRITE	,
+GAMINV	,
+GAMMA	,
+GARKHCLPRC	,
+GARKHPTPRC	,
+GCD	,
+GEODIST	,
+GEOMEAN	,
+GEOMEANZ	,
+GETCASURL	,
+GETLCASLIB	,
+GETLOCENV	,
+GETLSESSREF	,
+GETLTAG	,
+GETOPTION	,
+GETPXLANGUAGE	,
+GETPXLOCALE	,
+GETPXREGION	,
+GETSESSOPT	,
+GETVARC	,
+GETVARN	,
+GITFN_CLONE	,
+GITFN_CO_BRANCH	,
+GITFN_COMMIT	,
+GITFN_COMMIT_GET	,
+GITFN_COMMIT_LOG	,
+GITFN_COMMITFREE	,
+GITFN_DEL_BRANCH	,
+GITFN_DEL_REPO	,
+GITFN_DIFF	,
+GITFN_DIFF_FREE	,
+GITFN_DIFF_GET	,
+GITFN_DIFF_IDX_F	,
+GITFN_IDX_ADD	,
+GITFN_IDX_REMOVE	,
+GITFN_MRG_BRANCH	,
+GITFN_NEW_BRANCH	,
+GITFN_PULL	,
+GITFN_PUSH	,
+GITFN_RESET	,
+GITFN_RESET_FILE	,
+GITFN_STATUS	,
+GITFN_STATUS_GET	,
+GITFN_STATUSFREE	,
+GITFN_VERSION	,
+GRAYCODE	,
+GRDSVC_ENABLE	,
+GRDSVC_GETADDR	,
+GRDSVC_GETINFO	,
+GRDSVC_GETNAME	,
+GRDSVC_HOSTLIST	,
+GRDSVC_NNODES	,
+GRDSVC_OPTSETS	,
+HARMEAN	,
+HARMEANZ	,
+HASHING	,
+HASHING_FILE	,
+HASHING_HMAC	,
+HASHING_HMAC_FILE	,
+HASHING_HMAC_INIT	,
+HASHING_INIT	,
+HASHING_PART	,
+HASHING_TERM	,
+HBOUND	,
+HMS	,
+HOLIDAY	,
+HOLIDAYCK	,
+HOLIDAYCOUNT	,
+HOLIDAYNAME	,
+HOLIDAYNX	,
+HOLIDAYNY	,
+HOLIDAYTEST	,
+HOUR	,
+HTMLDECODE	,
+HTMLENCODE	,
+IBESSEL	,
+IFC	,
+IFN	,
+IFNULL	,
+INDEX	,
+INDEXC	,
+INDEXW	,
+INPUT	,
+INPUTC	,
+INPUTN	,
+INT	,
+INTCINDEX	,
+INTCK	,
+INTCYCLE	,
+INTDT	,
+INTFIT	,
+INTFMT	,
+INTGET	,
+INTINDEX	,
+INTNEST	,
+INTNX	,
+INTRR	,
+INTSEAS	,
+INTSHIFT	,
+INTTEST	,
+INTTS	,
+INTZ	,
+IORCMSG	,
+IPMT	,
+IQR	,
+IRR	,
+ISSKIPPED ,
+ISEMPTY ,
+JBESSEL	,
+JULDATE	,
+JULDATE7	,
+KCOMPARE	,
+KCOMPRESS	,
+KCOUNT	,
+KCOUNTC	,
+KCOUNTW	,
+KCOUNTX	,
+KCVT	,
+KFIND	,
+KFINDC	,
+KFINDW	,
+KINDEX	,
+KINDEXB	,
+KINDEXC	,
+KINDEXCB	,
+KLEFT	,
+KLENGTH	,
+KLOWCASE	,
+KPROPCASE	,
+KPROPCHAR	,
+KPROPDATA	,
+KREVERSE	,
+KRIGHT	,
+KSCAN	,
+KSCANX	,
+KSTRCAT	,
+KSTRIP	,
+KSUBSTR	,
+KSUBSTRB	,
+KSUBSTRN	,
+KTRANSLATE	,
+KTRIM	,
+KTRUNCATE	,
+KUPCASE	,
+KUPDATE	,
+KUPDATEB	,
+KUPDATES	,
+KURTOSIS	,
+KVERIFY	,
+KVERIFYB	,
+LAG	,
+LARGEST	,
+LBOUND	,
+LCM	,
+LCOMB	,
+LEFT	,
+LENGTH	,
+LENGTHC	,
+LENGTHM	,
+LENGTHN	,
+LEXCOMB	,
+LEXCOMBI	,
+LEXPERK	,
+LEXPERM	,
+LFACT	,
+LGAMMA	,
+LIBNAME	,
+LIBREF	,
+LOG	,
+LOG10	,
+LOG1PX	,
+LOG2	,
+LOG4SAS_APPENDER	,
+LOG4SAS_LOGEVENT	,
+LOG4SAS_LOGGER	,
+LOGBETA	,
+LOGCDF	,
+LOGISTIC	,
+LOGPDF	,
+LOGSDF	,
+LOWCASE	,
+LPERM	,
+LPNORM	,
+MAD	,
+MAKEDATE	,
+MAKETIME	,
+MAKETIMESTAMP	,
+MARGRCLPRC	,
+MARGRPTPRC	,
+MAX	,
+MCIPISLP	,
+MCIPISTR	,
+MD5	,
+MDY	,
+MEAN	,
+MEDIAN	,
+MIN	,
+MINUTE	,
+MISSING	,
+MOD	,
+MODEXIST	,
+MODULE	,
+MODULEC	,
+MODULEN	,
+MODZ	,
+MONTH	,
+MOPEN	,
+MORT	,
+MSPLINT	,
+MVALID	,
+N	,
+NDIMS	,
+NETPV	,
+NLDATE	,
+NLDATM	,
+NLITERAL	,
+NLTIME	,
+NMISS	,
+NOMRATE	,
+NORMAL	,
+NOTALNUM	,
+NOTALPHA	,
+NOTCNTRL	,
+NOTDIGIT	,
+NOTE	,
+NOTFIRST	,
+NOTGRAPH	,
+NOTLOWER	,
+NOTNAME	,
+NOTPRINT	,
+NOTPUNCT	,
+NOTSPACE	,
+NOTUPPER	,
+NOTXDIGIT	,
+NPV	,
+NULL	,
+NVALID	,
+NWKDOM	,
+OCTET_LENGTH	,
+OPEN	,
+ORDINAL	,
+PATHNAME	,
+PCTL	,
+PDF	,
+PEEK	,
+PEEKC	,
+PEEKCLONG	,
+PEEKLONG	,
+PERM	,
+PI	,
+PMT	,
+POINT	,
+POISSON	,
+POWER	,
+PPMT	,
+PROBBETA	,
+PROBBNML	,
+PROBBNRM	,
+PROBCHI	,
+PROBDF	,
+PROBF	,
+PROBGAM	,
+PROBHYPR	,
+PROBIT	,
+PROBMC	,
+PROBMED	,
+PROBNEGB	,
+PROBNORM	,
+PROBT	,
+PROPCASE	,
+PRXCHANGE	,
+PRXMATCH	,
+PRXPAREN	,
+PRXPARSE	,
+PRXPOSN	,
+PTRLONGADD	,
+PUT	,
+PUTC	,
+PUTN	,
+PVP	,
+QTR	,
+QUANTILE	,
+QUOTE	,
+RADIANS	,
+RANBIN	,
+RANCAU	,
+RAND	,
+RANEXP	,
+RANGAM	,
+RANGE	,
+RANK	,
+RANNOR	,
+RANPOI	,
+RANTBL	,
+RANTRI	,
+RANUNI	,
+RENAME	,
+REPEAT	,
+RESOLVE	,
+REVERSE	,
+REWIND	,
+RIGHT	,
+RMS	,
+ROUND	,
+ROUNDE	,
+ROUNDZ	,
+SASMSG	,
+SASMSGL	,
+SAVING	,
+SAVINGS	,
+SCAN	,
+SDF	,
+SEC	,
+SECOND	,
+SESSBUSY	,
+SETLOCALE	,
+SHA256	,
+SHA256HEX	,
+SHA256HMACHEX	,
+SIGN	,
+SIN	,
+SINH	,
+SKEWNESS	,
+SLEEP	,
+SMALLEST	,
+SOAPWEB	,
+SOAPWEBMETA	,
+SOAPWIPSERVICE	,
+SOAPWIPSRS	,
+SOAPWS	,
+SOAPWSMETA	,
+SORT	,
+SORTKEY	,
+SOUNDEX	,
+SPEDIS	,
+SQLEXEC	,
+SQRT	,
+SQUANTILE	,
+STD	,
+STDDEV	,
+STDERR	,
+STFIPS	,
+STNAME	,
+STNAMEL	,
+STPSRV_HEADER	,
+STPSRV_SESSION	,
+STPSRV_UNQUOTE2	,
+STPSRVGETC	,
+STPSRVGETN	,
+STPSRVSET	,
+STREAMINIT	,
+STRIP	,
+STUDENTS_T	,
+SUBPAD	,
+SUBSTR	,
+SUBSTRING	,
+SUBSTRN	,
+SUM	,
+SUMABS	,
+SYMEXIST	,
+SYMGET	,
+SYMGLOBL	,
+SYMLOCAL	,
+SYSEXIST	,
+SYSGET	,
+SYSMSG	,
+SYSPARM	,
+SYSPROCESSID	,
+SYSPROCESSNAME	,
+SYSPROD	,
+SYSRC	,
+SYSTEM	,
+TAN	,
+TANH	,
+TIME	,
+TIMEPART	,
+TIMEVALUE	,
+TINV	,
+TNONCT	,
+TO_DATE	,
+TO_DOUBLE	,
+TO_TIME	,
+TO_TIMESTAMP	,
+TODAY	,
+TRANSLATE	,
+TRANSTRN	,
+TRANTAB	,
+TRANWRD	,
+TRIGAMMA	,
+TRIM	,
+TRIMN	,
+TRUNC	,
+TYPEOF	,
+TZONEDSTNAME	,
+TZONEDSTOFF	,
+TZONEID	,
+TZONENAME	,
+TZONEOFF	,
+TZONES2U	,
+TZONESTTNAME	,
+TZONESTTOFF	,
+TZONEU2S	,
+UNICODE	,
+UNICODEC	,
+UNICODELEN	,
+UNICODEWIDTH	,
+UNIFORM	,
+UPCASE	,
+URLDECODE	,
+URLENCODE	,
+USS	,
+UUIDGEN	,
+VAR	,
+VARFMT	,
+VARIANCE	,
+VARINFMT	,
+VARLABEL	,
+VARLEN	,
+VARNAME	,
+VARNUM	,
+VARRAY	,
+VARRAYX	,
+VARTRANSCODE	,
+VARTYPE	,
+VERIFY	,
+VFORMAT	,
+VFORMATD	,
+VFORMATDX	,
+VFORMATN	,
+VFORMATNX	,
+VFORMATW	,
+VFORMATWX	,
+VFORMATX	,
+VINARRAY	,
+VINARRAYX	,
+VINFORMAT	,
+VINFORMATD	,
+VINFORMATDX	,
+VINFORMATN	,
+VINFORMATNX	,
+VINFORMATW	,
+VINFORMATWX	,
+VINFORMATX	,
+VLABEL	,
+VLABELX	,
+VLENGTH	,
+VLENGTHX	,
+VNAME	,
+VNAMEX	,
+VTRANSCODE	,
+VTRANSCODEX	,
+VTYPE	,
+VTYPEX	,
+VVALUE	,
+VVALUEX	,
+WAKEUP	,
+WEEK	,
+WEEKDAY	,
+WHICHC	,
+WHICHN	,
+YEAR	,
+YIELDP	,
+YRDIF	,
+YYQ	,
+ZDSATTR	,
+ZDSIDNM	,
+ZDSLIST	,
+ZDSNUM	,
+ZDSRATT	,
+ZDSXATT	,
+ZDSYATT	,
+ZIPCITY	,
+ZIPCITYDISTANCE	,
+ZIPFIPS	,
+ZIPNAME	,
+ZIPNAMEL	,
+ZIPSTATE	,
+ZVOLLIST	,
+},
+	%
+	morekeywords=[6]{
+		_NULL_ ,NULL ,MISSING ,_ALL_ ,_AUTOMATIC_ ,_CHARACTER_ ,_N_ ,_INFILE_
+,_NAME_ ,_NUMERIC_ ,_USER_ ,_WEBOUT_	},
+	%proc
+	morekeywords=[7]{ACECLUS	,
+		ADAPTIVEREG	,
+		ANOM	,
+		ANOVA	,
+		APPEND	,
+		ARIMA	,
+		AUTHLIB	,
+		AUTOREG	,
+		BCHOICE	,
+		BGLIMM	,
+		BOM	,
+		BOXPLOT	,
+		CALENDAR	,
+		CALIS	,
+		CANCORR	,
+		CANDISC	,
+		CAPABILITY	,
+		CATALOG	,
+		CATMOD	,
+		CAUSALGRAPH	,
+		CAUSALMED	,
+		CAUSALTRT	,
+		CHART	,
+		CIMPORT	,
+		CLP	,
+		CLUSTER	,
+		COMPARE	,
+		COMPUTAB	,
+		CONTENTS	,
+		COPULA	,
+		COPY	,
+		CORR	,
+		CORRESP	,
+		COUNTREG	,
+		CPM	,
+		CPORT	,
+		CUSUM	,
+		DATASETS	,
+		DATASOURCE	,
+		DATEKEYS	,
+		DELETE	,
+		DISCRIM	,
+		DISPLAY	,
+		DISTANCE	,
+		DS2	,
+		DSTODS2	,
+		DTREE	,
+		ENTROPY	,
+		ESM	,
+		EXPAND	,
+		EXPORT	,
+		FACTEX	,
+		FACTOR	,
+		FASTCLUS	,
+		FCMP	,
+		FEDSQL	,
+		FMM	,
+		FMTC2ITM	,
+		FONTREG	,
+		FORMAT	,
+		FREQ	,
+		FREQ	,
+		FSLIST	,
+		G3D	,
+		G3GRID	,
+		GA	,
+		GAM	,
+		GAMPL	,
+		GANNO	,
+		GANTT	,
+		GAREABAR	,
+		GBARLINE	,
+		GCHART	,
+		GCONTOUR	,
+		GDEVICE	,
+		GEE	,
+		GENMOD	,
+		GEOCODE	,
+		GFONT	,
+		GINSIDE	,
+		GIS	,
+		GKPI	,
+		GLIMMIX	,
+		GLM	,
+		GLMMOD	,
+		GLMPOWER	,
+		GLMSELECT	,
+		GMAP	,
+		GOPTIONS	,
+		GPLOT	,
+		GPROJECT	,
+		GRADAR	,
+		GREDUCE	,
+		GREMOVE	,
+		GREPLAY	,
+		GROOVY	,
+		GSLIDE	,
+		GTILE	,
+		HADOOP	,
+		HDMD	,
+		HP4SCORE	,
+		HPBIN	,
+		HPBNET	,
+		HPBOOLRULE	,
+		HPCANDISC	,
+		HPCDM	,
+		HPCDM	,
+		HPCLUS	,
+		HPCOPULA	,
+		HPCOPULA	,
+		HPCORR	,
+		HPCOUNTREG	,
+		HPCOUNTREG	,
+		HPDECIDE	,
+		HPDMDB	,
+		HPDS2	,
+		HPF	,
+		HPFARIMASPEC	,
+		HPFDIAGNOSE	,
+		HPFENGINE	,
+		HPFESMSPEC	,
+		HPFEVENTS	,
+		HPFEXMSPEC	,
+		HPFIDMSPEC	,
+		HPFMM	,
+		HPFOREST	,
+		HPFRECONCILE	,
+		HPFREPOSITORY	,
+		HPFSELECT	,
+		HPFTEMPRECON	,
+		HPFUCMSPEC	,
+		HPGENSELECT	,
+		HPIMPUTE	,
+		HPLMIXED	,
+		HPLOGISTIC	,
+		HPMIXED	,
+		HPNEURAL	,
+		HPNLMOD	,
+		HPPANEL	,
+		HPPANEL	,
+		HPPLS	,
+		HPPRINCOMP	,
+		HPQLIM	,
+		HPQLIM	,
+		HPQUANTSELECT	,
+		HPREDUCE	,
+		HPREG	,
+		HPSAMPLE	,
+		HPSEVERITY	,
+		HPSEVERITY	,
+		HPSPLIT	,
+		HPSUMMARY	,
+		HPSVM	,
+		HPTMINE	,
+		HPTMSCORE	,
+		HTTP	,
+		ICLIFETEST	,
+		ICPHREG	,
+		IML	,
+		IMPORT	,
+		INBREED	,
+		INSIGHT ,
+		IRT	,
+		ISHIKAWA	,
+		JAVAINFO	,
+		JSON	,
+		KDE	,
+		KRIGE2D	,
+		LATTICE	,
+		LIFEREG	,
+		LIFETEST	,
+		LOAN	,
+		LOESS	,
+		LOGISTIC	,
+		LUA	,
+		MACONTROL	,
+		MAPIMPORT	,
+		MCMC	,
+		MDC	,
+		MDS	,
+		MEANS	,
+		MI	,
+		MIANALYZE	,
+		MIGRATE	,
+		MIXED	,
+		MODECLUS	,
+		MODEL	,
+		MULTTEST	,
+		MVPDIAGNOSE	,
+		MVPMODEL	,
+		MVPMONITOR	,
+		NESTED	,
+		NETDRAW	,
+		NLIN	,
+		NLMIXED	,
+		NPAR1WAY	,
+		OPTEX	,
+		OPTGRAPH	,
+		OPTIONS	,
+		OPTLOAD	,
+		OPTLP	,
+		OPTLSO	,
+		OPTMILP	,
+		OPTMODEL	,
+		OPTNET	,
+		OPTQP	,
+		OPTSAVE	,
+		ORTHOREG	,
+		PANEL	,
+		PARETO	,
+		PDLREG	,
+		PHREG	,
+		PLAN	,
+		PLM	,
+		PLOT	,
+		PLS	,
+		PM	,
+		PMENU	,
+		POWER	,
+		PRESENV	,
+		PRINCOMP	,
+		PRINQUAL	,
+		PRINT	,
+		PRINTTO	,
+		PROBIT	,
+		PRODUCT_STATUS	,
+		PROTO	,
+		PRTDEF	,
+		PRTEXP	,
+		PSMATCH	,
+		PWENCODE	,
+		QDEVICE	,
+		QLIM	,
+		QUANTLIFE	,
+		QUANTREG	,
+		QUANTSELECT	,
+		RANK	,
+		RAREEVENTS	,
+		REG	,
+		REGISTRY	,
+		RELIABILITY	,
+		REPORT	,
+		RMSTREG	,
+		ROBUSTREG	,
+		RSREG	,
+		S3	,
+		SCAPROC	,
+		SCORE	,
+		SCOREACCEL	,
+		SEQDESIGN	,
+		SEQTEST	,
+		SEVERITY	,
+		SGPLOT	,
+		SGMAP	,
+		SHEWHART	,
+		SIM2D	,
+		SIMILARITY	,
+		SIMLIN	,
+		SIMNORMAL	,
+		SOAP	,
+		SORT	,
+		SPATIALREG	,
+		SPECTRA	,
+		SPP	,
+		SQL	,
+		SQOOP	,
+		SSM	,
+		STANDARD	,
+		STATESPACE	,
+		STDIZE	,
+		STDRATE	,
+		STEPDISC	,
+		STREAM	,
+		SUMMARY	,
+		SURVEYFREQ	,
+		SURVEYIMPUTE	,
+		SURVEYLOGISTIC	,
+		SURVEYMEANS	,
+		SURVEYPHREG	,
+		SURVEYREG	,
+		SURVEYSELECT	,
+		SYSLIN	,
+		TABULATE	,
+		TIMEDATA	,
+		TIMEID	,
+		TIMEPLOT	,
+		TIMESERIES	,
+		TMODEL	,
+		TPSPLINE	,
+		TRANSPOSE	,
+		TRANSREG	,
+		TREE	,
+		TSCSREG	,
+		TTEST	,
+		UCM	,
+		UNIVARIATE	,
+		VARCLUS	,
+		VARCOMP	,
+		VARIOGRAM	,
+		VARMAX	,
+		X11	,
+		X12	,
+		X13	,
+		XSL	
+	},
+	otherkeywords={!,!=,~,\&,_,<,>=,=<,>}
+	,
+}
+
+% ---------------------------------------------------------------------
+% SAS enhanced editor style
+
+\providecommand{\textcolordummy}[2]{#2}
+\lstalias{sas}{SAS}
+\lstdefinestyle{mbfaulmSAS}{
+	language          = SAS,
+	basicstyle={\normalfont\footnotesize},
+	inputencoding=utf8/latin1,
+	backgroundcolor=\color{mbfaulmgrissec!10},   
+	%
+	showstringspaces  = false,   % Don't underline spaces in strings
+	showspaces        = false,   % Don't underline spaces
+	breaklines        = true,    % automatic line breaking
+	breakatwhitespace = true,    % breaks only at white space.
+	columns=fullflexible,	%
+	% User variables
+%	keywordstyle = {\bfseries\color{mbfaulmbleumarine}\let\textcolor\textcolordummy},
+	%
+	% Distinct highlight for proc <proc>, data, run, quit
+	keywordstyle = [2]{\normalfont\bfseries\color{mbfaulmbleumarine}},
+	%
+	% Built-in macro functions
+	keywordstyle = [3]{\normalfont\color{mbfaulmbleu}},
+	%
+	% Statements put
+	keywordstyle = [4]{\normalfont\color{mbfaulmbleumarine}},
+	%
+	% Built-in functions
+	keywordstyle = [5]{\normalfont\color{mbfaulmbleu}},
+	%
+	% Built-in functions _null_
+	keywordstyle = [6]{\normalfont\bfseries\color{mbfaulmbleu}},
+	%
+	% proc name
+	keywordstyle = [7]{\normalfont\bfseries\color{mbfaulmbleumarine}\scshape },
+	%
+	% Strings and comments
+	stringstyle ={\normalfont\color{mbfaulmorangesec}},% typewriter type for strings
+	commentstyle = {\normalfont\color{mbfaulmorangesec}},
+%	identifierstyle={\normalfont\color{gray}},
+	%
+	% Numbers Hack (I legit forget why I needed this)
+	literate=%{0}{{\bfseries{0}}}{1}%
+%	{1}{{\bfseries{1}}}{1}%
+%	{2}{{\bfseries{2}}}{1}%
+%	{3}{{\bfseries{3}}}{1}%
+%	{4}{{\bfseries{4}}}{1}%
+%	{5}{{\bfseries{5}}}{1}%
+%	{6}{{\bfseries{6}}}{1}%
+%	{7}{{\bfseries{7}}}{1}%
+%	{8}{{\bfseries{8}}}{1}%
+%	{9}{{\bfseries{9}}}{1}%
+%	{.0}{{\bfseries{.0}}}{2}%
+%	{.1}{{\bfseries{.1}}}{2}%
+%	{.2}{{\bfseries{.2}}}{2}%
+%	{.3}{{\bfseries{.3}}}{2}%
+%	{.4}{{\bfseries{.4}}}{2}%
+%	{.5}{{\bfseries{.5}}}{2}%
+%	{.6}{{\bfseries{.6}}}{2}%
+%	{.7}{{\bfseries{.7}}}{2}%
+%	{.8}{{\bfseries{.8}}}{2}%
+%	{.9}{{\bfseries{.9}}}{2}%
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{À}{{\`A}}1 {à}{{\`a}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\EUR}}1 {£}{{\pounds}}1
+	%
+}
+
+% ---------------------------------------------------------------------
+% Suggested settings
+
+% \lstset{
+	%   basicstyle        = \setmonofont{DejaVu Sans Mono}\footnotesize\ttfamily,
+	%   tabsize           = 4,      % Tab size
+	%   showstringspaces  = false,  % Don't underline spaces in strings
+	%   showspaces        = false,  % Don't underline spaces
+	%   breaklines        = true,   % automatic line breaking
+	%   breakatwhitespace = true,   % breaks only at white space.
+	%   lineskip          = 1.5pt,  % Sparing between lines of code
+	%   commentstyle      = \color{black!50}\itshape \let\textcolor\textcolordummy,
+	% }
+
+\lstdefinestyle{mbfaulmPython}{
+	language=Python,
+	inputencoding=utf8/latin1,
+	backgroundcolor=\color{mbfaulmgrissec!10},   
+	commentstyle=\color{mbfaulmorangesec},
+	keywordstyle = {\bfseries\color{mbfaulmbleumarine}\scshape },
+	identifierstyle=\color{mbfaulmbleu},
+	stringstyle ={\ttfamily\color{mbfaulmorange}},% typewriter type for strings
+	basicstyle={\ttfamily\footnotesize},
+	breakatwhitespace=true,         
+	breaklines=true,                 
+	keepspaces=true,                 
+	numbers=left,       
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2,
+	literate=
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{À}{{\`A}}1 {à}{{\`a}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\EUR}}1 {£}{{\pounds}}1
+}
+
+
+\lstdefinestyle{mbfaulmVBA}{
+	extendedchars=\true,
+	language={[Visual]Basic},
+	inputencoding=utf8/latin1,
+	backgroundcolor=\color{mbfaulmgrissec!10},   
+	commentstyle = \color{mbfaulmorangesec}\slshape,
+	identifierstyle=\color{mbfaulmbleu},
+	keywordstyle = {\color{mbfaulmbleumarine}},
+	stringstyle ={\ttfamily\color{mbfaulmorange}},% typewriter type for strings
+	basicstyle={\ttfamily\footnotesize},
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	keepspaces=true,                 
+	numbers=left,       
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2,
+	literate=
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{À}{{\`A}}1 {à}{{\`a}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\EUR}}1 {£}{{\pounds}}1
+}
+
+
+
+%**********************************************************************************************************************
+%                                                  FIN DU FICHIER
+\endinput
+
+%**********************************************************************************************************************

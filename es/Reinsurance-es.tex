@@ -79,7 +79,8 @@ Elle diffère du traité de réassurance par une souscription risque par risque 
 \begin{f}
 	[Le rôle économique de la réassurance]
 
-L'assurance et la réassurance partagent la même finalité : la mutualisation des risques, en particuliers les risques :
+L'assurance et la réassurance partagent la même finalité : la mutualisation des risques.
+La réassurance intervient en particuliers sur les risques :
 \begin{itemize}
 	\item indépendants, mais unitairement coûteux (avion, navire, sites industriels\ldots),
 	\item de petits montants (bris, auto, ...) mais corrélés lors d'événements de grandes ampleurs, engendrant des cumuls onéreux,
@@ -88,7 +89,7 @@ L'assurance et la réassurance partagent la même finalité : la mutualisation d
 \end{itemize}
 	
 
-La réassurance permet d'augmenter la capacité d'émission d'affaires , assurer la stabilité financière de l'assureur, surtout en cas de catastrophes, réduire leur besoin en capital, bénéficier de l'expertise du réassureur.
+La réassurance permet d'augmenter la capacité d'émission d'affaires, assurer la stabilité financière de l'assureur, surtout en cas de catastrophes, réduire leur besoin en capital, bénéficier de l'expertise du réassureur.
 
 \end{f}	
 \hrule
@@ -109,10 +110,10 @@ La réassurance permet d'augmenter la capacité d'émission d'affaires , assurer
 
 \begin{f}[Les types de réassurance à travers un exemple]
 	
-	Notre assureur réassure $N=30$ polices d'assurance, d'un total de  primes est de 10M\EUR{} ($P=\sum_{i=1\ldots30}P_i$).
-	La capacité totale est de180M\EUR{} ($\sum_{i=1\ldots30}K_i$).
-	$S_r$ sera la part de sinistre pris en charge par l'assueur et $P_r$ la prime de réassurance.
-	Voici les polices sinistrées :
+Notre assureur réassure $N=30$ polices d'assurance, d'un total de  primes est de 10M\EUR{} ($P=\sum_{i=1\ldots N}P_i$).
+La capacité totale est de180M\EUR{} ($\sum_{i=1\ldots30}K_i$).
+$S_r$ sera la part totale de sinistre pris en charge par l'assureur et $P_r$ la prime totale de réassurance.
+Voici les $n=8$ polices sinistrées ($1\geq i \geq n$), les sinistres des autres polices  étant  nuls ($S_i=0, \forall i>n$) :
 	
 	\begin{center}\footnotesize
 		\renewcommand{\arraystretch}{1.25}
@@ -153,7 +154,7 @@ La réassurance permet d'augmenter la capacité d'émission d'affaires , assurer
 
 \textbf{Quote-part:}
 $$
-S_r=\alpha \sum_{i=1\ldots N}S_i\quad \ \ P_r=\alpha\sum_{i=1\ldots N}P_i 
+S_r=\alpha \sum_{i=1\ldots n}S_i\quad \ \ P_r=\alpha\sum_{i=1\ldots N}P_i 
 $$
 où $\alpha\ \in [0,1]$ (25\% dans la figure) est la part cédé en  Quote-part.
 	
@@ -202,7 +203,7 @@ où $\alpha\ \in [0,1]$ (25\% dans la figure) est la part cédé en  Quote-part.
 
 \textbf{Excédent de plein}, le plein est noté $\boldsymbol{K}$ (2M\EUR{} dans l'exemple), $\alpha_i$ représente le taux de cession de la police $i$.
 	$$
-	S_r= \sum_{i=1\ldots N}\underbrace{\left(\frac{\left(K_i-\boldsymbol{K} \right)_+ }{K_i} \right)}_{\alpha_i} S_i\quad \ \ P_r=\sum_{i=1\ldots N}\left(\frac{\left(K_i-\boldsymbol{K} \right)_+ }{K_i} \right)P_i 
+	S_r= \sum_{i=1\ldots n}\underbrace{\left(\frac{\left(K_i-\boldsymbol{K} \right)_+ }{K_i} \right)}_{\alpha_i} S_i\quad \ \ P_r=\sum_{i=1\ldots N}\left(\frac{\left(K_i-\boldsymbol{K} \right)_+ }{K_i} \right)P_i 
 	$$
 	%\renewcommand{\arraystretch}{1.25}
 	%\rowcolors{1}{sectionColor}{white}
@@ -266,7 +267,7 @@ où $\alpha\ \in [0,1]$ (25\% dans la figure) est la part cédé en  Quote-part.
 	
 L'assureur fixe la priorité $a$ et la porté $b$ (respectivement 2M\EUR{} et  4M\EUR{} dans la figure).
 $$
-S_r= \sum_{i=1\ldots N} \min\left( \left( S_i-a\right)^+,b\right)  
+S_r= \sum_{i=1\ldots n} \min\left( \left( S_i-a\right)^+,b\right)  
 $$
 La prime est fixée par le réassurance, en fonction de son estimation de $\mathbb{E}[S_r]$.
 %\begin{tabular}{|l|rrrrrrrr|}
@@ -422,7 +423,7 @@ $$
 L'objectif de la \textbf{clause d'indexation} est de conserver les \underline{modalités du traité} sur plusieurs exercices successifs.  Les bornes du traité s'alignent sur un indice économique (salaire, devise, indice de prix ...).
 \medskip
 
-Avec \textbf{clause de stabilisation}, lorsque le sinistre souffre d'un \underline{règlement est long}, voire très long (au moins $\geq 1$ an), les bornes du traité sont actualisées dans le calcul du $S_r$ afin que les parts respectives du réassureur et de la cédante prévues initialement soient globalement respectées.
+Avec \textbf{clause de stabilisation}, lorsque le sinistre souffre d'un \underline{règlement long}, voire très long (au moins $\geq 1$ an), les bornes du traité sont actualisées dans le calcul du $S_r$ afin que les parts respectives du réassureur et de la cédante prévues initialement soient globalement respectées.
 \medskip
 	
 

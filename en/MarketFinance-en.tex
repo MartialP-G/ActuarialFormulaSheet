@@ -210,7 +210,7 @@ The price of a bond is determined by the present value of the expected future ca
  
 The price calculation of bonds simply relies on the present value formula:
 \[
-VP = \sum_{k=1}^{n} \frac{c}{(1 + r)^k} + \frac{F}{(1 + i)^n}
+VP = \sum_{k=1}^{n} \frac{c}{(1 + r)^k} + \frac{F}{(1 + r)^n}
  \]
 where:
 \begin{itemize}
@@ -620,13 +620,13 @@ Requires a low initial investment.
 \hrule
 
 \begin{f}[Absence of arbitrage opportunity]
-No risk-free profit is possible by exploiting price differences. 
+It is impossible to realize a risk-free gain from a zero initial investment. Thus, no risk-free profit is possible by exploiting price differences. 
 
 \end{f}
 
 \begin{f}[Parity relation]
 	
-AAO implies the following relationship between the Call and the Put:
+AAO implies the following relationship between the Call and the Put (stock):
 
 $$S_t- C_t + P_t = K e^{-i_{f}.\tau}$$	
 \end{f}
@@ -947,20 +947,20 @@ Once adjusted, the user can then evaluate assets or define various sensitivity m
 	\addplot[dashed, OrangeProfondIRA, thick, domain=0.01:30, samples=27] 
 	{100*(\MTbetaa + \MTbetab * ((1 - exp(-x/\MTtaua)) / (x/\MTtaua)) + \MTbetac * (((1 - exp(-x/\MTtaua)) / (x/\MTtaua)) - exp(-x/\MTtaua)) + \MTbetad * (((1 - exp(-x/\MTtaub)) / (x/\MTtaub)) - exp(-x/\MTtaub)))};
 	% Affichage des paramètres
-	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.15) {\small 
-		$\beta_0 = \MTbetaa$\quad
-		$\beta_1 = \MTbetab$\quad
-		$\beta_2 = \MTbetac$\quad
-		$\tau_1 = \MTtaua$\quad			
-	};	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.05) {\small 
-		$\beta_3 = \MTbetad$\quad
-		$\tau_2 = \MTtaub$			
-	};
-	\node[xscale=0.2, yscale=-0.2, above=25pt] at (M) {\TresorerieMngt};
-	\node[xscale=0.2, yscale=-0.2, above=25pt] at (N) {\familialTV};
-	\node[xscale=0.2, yscale=-0.2, above=20pt] at (O) {\familialcar};
-	\node[xscale=0.2, yscale=-0.2, above=20pt] at (P) {\archibuilding};
-	\node[xscale=0.2, yscale=-0.2, above=20pt] at (Q) {\traintunnel};
+	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.15) { 
+	$\beta_0 = \MTbetaa$\quad
+	$\beta_1 = \MTbetab$\quad
+	$\beta_2 = \MTbetac$\quad
+	$\tau_1 = \MTtaua$\quad			
+};	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.05) { 
+	$\beta_3 = \MTbetad$\quad
+	$\tau_2 = \MTtaub$			
+};
+\node[xscale=0.3, yscale=-0.3, above=35pt] at (M) {\TresorerieMngt};
+\node[xscale=0.3, yscale=-0.3, above=35pt] at (N) {\familialTV};
+\node[xscale=0.3, yscale=-0.3, above=30pt] at (O) {\familialcar};
+\node[xscale=0.3, yscale=-0.3, above=30pt] at (P) {\archibuilding};
+\node[xscale=0.3, yscale=-0.3, above=30pt] at (Q) {\traintunnel};
 \end{axis}
 \end{tikzpicture}
 \end{center}

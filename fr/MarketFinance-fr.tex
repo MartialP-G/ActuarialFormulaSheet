@@ -210,7 +210,7 @@ Le prix d'une obligation est déterminé par la valeur actuelle des flux de tré
 
 Le calcul des prix des obligations repose simplement sur la formule de la valeur actualisée :
 \[
-VP = \sum_{k=1}^{n} \frac{c}{(1 + r)^k} + \frac{F}{(1 + i)^n}
+VP = \sum_{k=1}^{n} \frac{c}{(1 + r)^k} + \frac{F}{(1 + r)^n}
  \]
 où :
 \begin{itemize}
@@ -286,7 +286,8 @@ Un \textbf{contrat dérivé} (ou actif contingent) est un instrument financier d
 
 
 Une \textbf{option} est un contrat donnant le droit (sans obligation) d’acheter (call) ou de vendre (put) un actif sous-jacent à un prix fixé (prix d’exercice), à une date future, contre paiement d’une prime. 
-L’acheteur (position longue) paie la prime ; le vendeur (position courte) la reçoit.L'\textbf{option européenne}  (exercice possible uniquement à l’échéance) et   
+L’acheteur (position longue) paie la prime ; le vendeur (position courte) la reçoit.
+L'\textbf{option européenne}  (exercice possible uniquement à l’échéance) et   
  \textbf{option américaine} (exercice possible à tout moment jusqu’à l’échéance).
 
 Les options cotées sur actions sont appelées \textit{stock options}.
@@ -620,13 +621,14 @@ Investissement initial faible.
 \hrule
 
 \begin{f}[Absence d'opportunité d'arbitrage]
-Aucun profit sans risque n’est possible par exploitation des écarts de prix. 
+Il est impossible de réaliser un gain sans risque à partir d’un investissement initial nul. 
+Ainsi, aucun profit sans risque n’est possible par exploitation des écarts de prix. 
 
 \end{f}
 
 \begin{f}[La relation de parité]
 
-L'AOA implique la relation suivante entre le Call et le Put :
+L'AOA implique la relation suivante entre le Call et le Put, sur le marché action :
 
 $$S_t- C_t + P_t = K e^{-i_{f}.\tau}$$	
 \end{f}
@@ -672,7 +674,7 @@ Il repose sur un processus en temps discret avec deux évolutions possibles du p
 
 Ce modèle s’étend à $n$ périodes avec $n+1$ prix possibles pour $S_T$. À l’échéance, la valeur d’une option d’achat est donnée par \( C_{1}^{u} = (S_{1}^{u} - K)^+ \) et \( C_{1}^{d} = (S_{1}^{d} - K)^+ \).
 
-\textbf{Absence d'opportunité d'arbitrage} implique
+\textbf{Absence d'opportunité d'arbitrage} implique que :
 \[
 d < 1 + i_{f} < u
 \]
@@ -704,7 +706,7 @@ En calibrant le modèle pour retrouver les premiers moments du rendement sous la
 e^{i_{f} \delta t} = q u + (1-q) d, \qquad q u^2 + (1-q) d^2 - [q u + (1-q) d]^2 = \sigma^2 \delta t
 \]
 
-Avec la contrainte $u = \frac{1}{d}$, on arrive à :
+Si on ajoute la contrainte $u = \frac{1}{d}$, on arrive à :
 \[
 \begin{array}{l}
 	q = \frac{e^{-i_f \delta_t} - d}{u - d} \\
@@ -848,7 +850,7 @@ $$
 
 \begin{f}[La courbe de taux]
 La \textbf{courbe de taux} ou la courbe des rendements ou $r_f(\tau)$, livre une représentation graphique des taux d'intérêt sans risques en fonction de l'échéance (ou maturité).
-Elle est aussi appelé courbe des taux \textbf{zéro coupon} qui font référence à un type d'obligation sans risque et sans coupons (une dette composée uniquement de deux flux de sens opposés, un en $t_0$ et l'autre en $T$).
+Elle est aussi appelée courbe des taux \textbf{zéro coupon} qui font référence à un type d'obligation (ZC) sans risque et sans coupons.
 Cette courbe offre aussi un aperçu des attentes du marché en matière de taux d'intérêt futurs (taux \engl{forward}).
 \end{f}
 \hrule
@@ -947,20 +949,20 @@ Une fois ajustée, l'utilisateur peut alors évaluer des actifs ou définir dive
 	\addplot[dashed, OrangeProfondIRA, thick, domain=0.01:30, samples=27] 
 	{100*(\MTbetaa + \MTbetab * ((1 - exp(-x/\MTtaua)) / (x/\MTtaua)) + \MTbetac * (((1 - exp(-x/\MTtaua)) / (x/\MTtaua)) - exp(-x/\MTtaua)) + \MTbetad * (((1 - exp(-x/\MTtaub)) / (x/\MTtaub)) - exp(-x/\MTtaub)))};
 	% Affichage des paramètres
-	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.15) {\small 
+	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.15) { 
 		$\beta_0 = \MTbetaa$\quad
 		$\beta_1 = \MTbetab$\quad
 		$\beta_2 = \MTbetac$\quad
 		$\tau_1 = \MTtaua$\quad			
-	};	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.05) {\small 
+	};	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.05) { 
 		$\beta_3 = \MTbetad$\quad
 		$\tau_2 = \MTtaub$			
 	};
-	\node[xscale=0.2, yscale=-0.2, above=25pt] at (M) {\TresorerieMngt};
-	\node[xscale=0.2, yscale=-0.2, above=25pt] at (N) {\familialTV};
-	\node[xscale=0.2, yscale=-0.2, above=20pt] at (O) {\familialcar};
-	\node[xscale=0.2, yscale=-0.2, above=20pt] at (P) {\archibuilding};
-	\node[xscale=0.2, yscale=-0.2, above=20pt] at (Q) {\traintunnel};
+	\node[xscale=0.3, yscale=-0.3, above=35pt] at (M) {\TresorerieMngt};
+	\node[xscale=0.3, yscale=-0.3, above=35pt] at (N) {\familialTV};
+	\node[xscale=0.3, yscale=-0.3, above=30pt] at (O) {\familialcar};
+	\node[xscale=0.3, yscale=-0.3, above=30pt] at (P) {\archibuilding};
+	\node[xscale=0.3, yscale=-0.3, above=30pt] at (Q) {\traintunnel};
 \end{axis}
 \end{tikzpicture}
 \end{center}

@@ -63,6 +63,7 @@ Annuité contingente $\ddot{a}_{x}$: ses paiements sont conditionnés à un év�
 
 \end{center}
 La date du décès est représenté ici par un petit cercueil. Cette forme d'annuité sera largement étudiée dans la partie actuariat vie.
+
 Annuité à terme échu (\engl{immédiate}) $a_{\lcroof{n}}$ : ses paiements périodiques sont effectués à la fin de chaque période de paiement, comme pour le salaire payé en fin de mois. C'est le cas par défaut, illustré précédemment pour l'annuité certaine.
 $$
 \ddot{a}_{\lcroof{n}}=1+v+\cdots+v^{n-1}=\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{d}
@@ -105,7 +106,7 @@ $$
 $$
 	\mathrm{PV}_{\lcroof{n}}^{\mathrm{im}}=K a_{\lcroof{n}}=K \frac{1-v^{n}}{i} 
 $$
-Annuité  perpétuelle $a$ ou  $a_{\lcroof{n\infty}}$: 
+Annuité  perpétuelle $a$ ou  $a_{\lcroof{\infty}}$: 
 $$
 a=1/i
 $$
@@ -142,7 +143,7 @@ Annuité différée $_{m|}a_{\lcroof{n}}$: ses paiements ne commencent pas dans 
 \end{center}
 
 
-Annuité périodique / mensuelle $a^{(m)}$ : la périodicité par défaut est un an, mais le paiement  unitaire peut être aussi réparti sur $m$ périodes dans l'année.
+Annuité ou série périodique / mensuelle $a^{(m)}$ : la périodicité par défaut est un an, mais le paiement  unitaire peut être aussi réparti sur $m$ périodes dans l'année.
 
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
@@ -179,7 +180,7 @@ Annuité périodique / mensuelle $a^{(m)}$ : la périodicité par défaut est un
 
  Si    $i^{(m)}$ représente le taux d'intérêt (annuel) nominal équivalent avec $m$ période annuelle $i^{(m)}= m\left((1+i)^{1 / m}-1\right)$ .
 
-De même $d^{(m)} $ taux d'escompte nominal conforme à $i$ et $m$ : $d^{(m)}= m\left(1-(1-d)^{1 / m}\right)$.
+De même $d^{(m)} $ taux d'escompte nominal conforme à $d$ et $m$ : $d^{(m)}= m\left(1-(1-d)^{1 / m}\right)$.
 
 $$
 \ddot{a}_{\lcroof{n}}^{(m)}=\frac{1}{m} \sum_{k=0}^{m n-1} v^{\frac{k}{m}}=\frac{d}{d^{(m)}} \ddot{a}_{\lcroof{n}}=\frac{1-v^{n}}{d^{(m)}} \approx \ddot{a}_{\lcroof{n}}+\frac{m-1}{2 m}\left(1-v^{n}\right)

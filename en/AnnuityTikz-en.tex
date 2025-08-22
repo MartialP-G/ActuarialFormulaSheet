@@ -63,6 +63,7 @@ Contingent annuity $\ddot{a}_{x}$: its payments are conditional on a random even
 
 \end{center}
 The date of death is represented here by a small coffin. This type of annuity will be extensively studied in the life actuarial section.
+
 Annuity in arrears (immediate) $a_{\lcroof{n}}$: its periodic payments are made at the end of each payment period, as with a salary paid at the end of the month. This is the default case, previously illustrated for the certain annuity.
 $$
 \ddot{a}_{\lcroof{n}}=1+v+\cdots+v^{n-1}=\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{d}
@@ -105,7 +106,7 @@ $$
 $$
 	\mathrm{PV}_{\lcroof{n}}^{\mathrm{im}}=K a_{\lcroof{n}}=K \frac{1-v^{n}}{i} 
 $$
-Perpetuity $a$ or $a_{\lcroof{n\infty}}$:
+Perpetuity $a$ or $a_{\lcroof{\infty}}$:
 $$
 a=1/i
 $$
@@ -179,7 +180,7 @@ Periodic / monthly annuity $a^{(m)}$ : the default periodicity is one year, but 
 
 If $i^{(m)}$ represents the equivalent nominal (annual) interest rate with $m$ periods per year, then $i^{(m)}= m\left((1+i)^{1 / m}-1\right)$ .
 
-Similarly, $d^{(m)} $ is the nominal discount rate consistent with $i$ and $m$ : $d^{(m)}= m\left(1-(1-d)^{1 / m}\right)$.
+Similarly, $d^{(m)} $ is the nominal discount rate consistent with $d$ and $m$ : $d^{(m)}= m\left(1-(1-d)^{1 / m}\right)$.
 
 $$
 \ddot{a}_{\lcroof{n}}^{(m)}=\frac{1}{m} \sum_{k=0}^{m n-1} v^{\frac{k}{m}}=\frac{d}{d^{(m)}} \ddot{a}_{\lcroof{n}}=\frac{1-v^{n}}{d^{(m)}} \approx \ddot{a}_{\lcroof{n}}+\frac{m-1}{2 m}\left(1-v^{n}\right)

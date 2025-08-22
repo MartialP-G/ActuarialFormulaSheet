@@ -113,9 +113,13 @@
 	\[
 	(f * g)(x) = \int f(t) g(x - t) \, dt
 	\]
-	Elle est souvent utilisée pour déterminer la loi d'une somme de deux variables aléatoires indépendantes.
 	
 	La convolution mesure comment \( f(t) \) et \( g(t) \) interagissent à différents points tout en tenant compte du décalage (ou translation) entre 
+	Si \(X\) et \(Y\) sont deux variables aléatoires indépendantes de densités respectives \(f_X\) et \(f_Y\), alors la densité de la somme \(Z = X + Y\) est donnée par :
+	\[
+	f_Z(x) = (f_X * f_Y)(x) = \int_{-\infty}^{+\infty} f_X(t)\, f_Y(x - t)\, dt.
+	\]
+	
 \end{f}
 \hrule
 \begin{f}
@@ -713,7 +717,7 @@ Simuler $X$ d'une loi quelconque $F_X$ revient souvent à simuler $\left(p_i\rig
 			
 			% Add dashed line dropping down from normal.
 			\draw[dashed] (0,{\fz}) node[left] {$p_i$};
-			\draw[dashed,->]   (0,{\fz}) -- ({\z},{\fz}) -- ({\z},0) node[below] {$x_i=\Phi^{-1}(p_i)$};
+			\draw[dashed,->]   (0,{\fz}) -- ({\z},{\fz}) -- ({\z},0) node[below] {$x_i=F^{-1}(p_i)$};
 			
 			% Optional: Add axis labels 
 			\draw (6,0) node[below] {$x$};
@@ -900,7 +904,7 @@ Les \textbf{méthodes de Monte Carlo} reposent sur la simulation répétée de v
 	\]
 	où $D_N$ est la discrépance de la suite utilisée.
 	
-{\footnotesize	Cette borne explique pourquoi les méthodes quasi-Monte Carlo sont souvent plus efficaces que les méthodes de Monte Carlo.}
+Cette borne explique pourquoi les méthodes quasi-Monte Carlo sont souvent plus efficaces que les méthodes de Monte Carlo.
 	
 	
 \end{f}
