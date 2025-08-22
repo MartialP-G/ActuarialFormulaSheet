@@ -1,3 +1,5 @@
+% !TeX root = ActuarialFormSheet_MBFA-en.tex
+% !TeX spellcheck = en_US
 \begin{animateinline}[autoplay,loop,poster=1]{1}%,timeline=Graph/ShemasTimesLines.txt
 	\whiledo{\thehigher<12}{
 		%		    \setcounter{rep}{0}
@@ -11,7 +13,7 @@
 				]
 				% Définir styles conditionnels
 				% Centre
-				\node[fill=BleuProfondIRA, text=white, scale=2] (actu) {Actuarial\\sciences};
+				\node[fill=BleuProfondIRA, text=white, scale=2] (actu) {Actuarial\\Sciences};
 				% En bas
 				% Non-Vie
 				\highlightnodeDualList{}{2,5,8}{below=of actu, yshift=-7.5mm}{nonvie}{Non-Life}
@@ -21,8 +23,8 @@
 				\node[right=of sante, draw=none] (rep1) {};
 				
 				% Primes, Provisions, Droit/Gestion
-				\highlightnodeDualList{1,2,3,11}{4,5,6}{above=of rep1}{primes1}{Bonuses}
-				\highlightnodeDualList{1,2,3,11}{7,8,9}{above=of primes1}{provisions1}{Provisions}
+				\highlightnodeDualList{1,2,3,11}{4,5,6}{above=of rep1}{primes1}{Premiums}
+				\highlightnodeDualList{1,2,3,11}{7,8,9}{above=of primes1}{provisions1}{Reserves}
 				% Réassurance et Solvabilité
 				\node[left=of vie, draw=none] (rep4) {};
 				\highlightnodeDualList{1,2,3,4,5,6,12}{10}{above=of rep4}{solv}{Solvency}
@@ -31,10 +33,10 @@
 				
 				\highlightnodeDualList{9,11}{}{above=of provisions1}{Info}{Programming\\Info}
 				\highlightnodeDualList{9,11}{}{above=of Info, yshift=-10mm}{gestion}{Management}
-				\highlightnodeDualList{9,11}{}{above=of gestion, yshift=-10mm}{droit}{Right}
+				\highlightnodeDualList{9,11}{}{above=of gestion, yshift=-10mm}{droit}{Law}
 				% Math Fi et ses sous-nœuds
-				\highlightnodeDualList{1,4,7,10,11}{}{left=of Info}{mathfi}{Math Fi}
-				\highlightnodeDualList{1,4,7,10,11}{}{above=of mathfi, yshift=-10mm}{taux}{Courbe de taux}
+				\highlightnodeDualList{1,4,7,10,11}{}{left=of Info}{mathfi}{Financial Math}
+				\highlightnodeDualList{1,4,7,10,11}{}{above=of mathfi, yshift=-10mm}{taux}{Yield Curves}
 				\highlightnodeDualList{10}{}{above=of taux, yshift=-10mm}{GP}{Portfolio\\Management}
 				\highlightnodeDualList{7,10}{}{above=of GP, yshift=-10mm}{ALM}{Active Passive}
 				\highlightnodeDualList{10,11}{}{above=of ALM, yshift=-10mm}{derive}{Derivatives}
@@ -50,7 +52,7 @@
 				
 				% Économie, économétrie et variantes
 				\node[left=of proba, draw=none] (rep3) {};
-				\highlightnodeDualList{2,3,5,6,11}{}{above=of rep3, yshift=-10mm}{econo}{Économétrie}
+				\highlightnodeDualList{2,3,5,6,11}{}{above=of rep3, yshift=-10mm}{econo}{Econometrics}
 				\highlightnodeDualList{}{}{above=of econo, yshift=-10mm}{Temp}{Time Series}
 				\highlightnodeDualList{4,5}{}{above=of Temp, yshift=-10mm}{Spatial}{Spatial}
 				\highlightnodeDualList{10}{}{left=of rep3}{eco}{Economy}

@@ -58,7 +58,7 @@ to compensate claims without surplus or profit, overall $C_t = \mathbb{E}[S]$
 	
 	The \textbf{gross premium} is the net premium + overhead expenses + commissions + expected profit + taxes.
 	
-	For commercial reasons, the gross premium actually charged may differ from the technical premium.
+	For commercial reasons, the premium actually charged may differ significantly from the technical premium.
 
 	\textbf{Written premium:} premium charged to the insured to cover claims that may occur during the 
 coverage period defined by the contract (generally 1 year in Property and Casualty insurance).
@@ -82,7 +82,7 @@ one policy year.
 	\draw[thick,<->,>=latex,VertIRA] ($(JuilNN.south) +(0,-1)$) -- ($(JuilN.south) +(0,-1)$) node [below, midway] {\footnotesize Written premium 600€} ;
 	\draw[thick,<->,>=latex,OrangeProfondIRA] ($(JuilNN.south) +(0,-1.6)$) -- ($(JanN.south) +(0,-1.6)$) node [below, midway] {\footnotesize Earned 300€} ;
 	\draw[thick,<->,>=latex,OrangeProfondIRA,densely dotted] ($(JanN.south) +(0,-1.6)$) -- ($(JuilN.south) +(0,-1.6)$) node [below, midway,align=right] 
-	{\footnotesize Unearned 300€ \\\footnotesize  Provisioned for the period \N } ;
+	{\footnotesize Unearned 300€ \\\footnotesize  Reserved for the period \N } ;
 	%	
 \end{tikzpicture}
 }
@@ -94,7 +94,7 @@ The $S/P$ is the key indicator. For the insurer to make a profit the $S/P\ll 1$.
 	
 	Insurance accounting is broken down by the \textbf{accident year} of the claim. 
 	If a premium covers multiple calendar years, a proportional part will be allocated to each.
-	Each payment and each claim provisioning is assigned to the accident year. 
+	Each payment and each claim reserving is assigned to the accident year. 
 	The monitoring of payments or expenses is expressed through a triangle (triangular matrix):
 	
 	$$
@@ -123,7 +123,7 @@ The $S/P$ is the key indicator. For the insurer to make a profit the $S/P\ll 1$.
 		\begin{itemize}
 			\item \textbf{SCR} (Solvency Capital Requirement) : capital to absorb an extreme shock (99.5\% over 1 year),
 			\item \textbf{MCR} (Minimum Capital Requirement) : absolute minimum threshold,
-			\item admissible assets to cover technical provisions and capital requirements.
+			\item admissible assets to cover technical reserves and capital requirements.
 		\end{itemize}
 		
 		\item \textbf{Pillar 2: Governance, Internal Control, and Risk Management} \\
@@ -229,7 +229,7 @@ The $S/P$ is the key indicator. For the insurer to make a profit the $S/P\ll 1$.
 	In practice, the actuary:
 	\begin{itemize}[nosep]
 		\item prices insurance and welfare products,
-		\item estimates technical provisions,
+		\item estimates technical reserves,
 		\item projects cash flows and values long-term liabilities,
 		\item measures economic capital (SCR, ORSA) and contributes to ERM,
 		\item advises management on strategy, solvency, and regulatory compliance.
