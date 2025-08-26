@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  22 AUG 2025 11:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  25 AUG 2025 08:09
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1567,8 +1567,8 @@ Package: amsthm 2020/05/29 v2.20.6
 \dth@everypar=\toks61
 )
 \c@f=\count411
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 28
-4.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 29
+5.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1576,24 +1576,24 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (./ActuarialFormSheet_MBFA-fr.aux)
 \openout1 = `ActuarialFormSheet_MBFA-fr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 284.
-LaTeX Font Info:    ... okay on input line 284.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 284.
-LaTeX Font Info:    ... okay on input line 284.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 284.
-LaTeX Font Info:    ... okay on input line 284.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 284.
-LaTeX Font Info:    ... okay on input line 284.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 284.
-LaTeX Font Info:    ... okay on input line 284.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 284.
-LaTeX Font Info:    ... okay on input line 284.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 284.
-LaTeX Font Info:    ... okay on input line 284.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 284.
-LaTeX Font Info:    ... okay on input line 284.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 284.
-LaTeX Font Info:    ... okay on input line 284.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 295.
+LaTeX Font Info:    ... okay on input line 295.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1629,14 +1629,14 @@ LaTeX Font Info:    ... okay on input line 284.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \degres on input line 284.
+LaTeX Info: Redefining \degres on input line 295.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 284.
+(french.ldf)             reported on input line 295.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 284.
-LaTeX Info: Redefining \up on input line 284.
+(french.ldf)             reported on input line 295.
+LaTeX Info: Redefining \up on input line 295.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.
 mkii
@@ -1665,7 +1665,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count418
-Package hyperref Info: Link coloring ON on input line 284.
+Package hyperref Info: Link coloring ON on input line 295.
  (./ActuarialFormSheet_MBFA-fr.out) (./ActuarialFormSheet_MBFA-fr.out)
 \@outlinefile=\write4
 \openout4 = `ActuarialFormSheet_MBFA-fr.out'.
@@ -1674,47 +1674,47 @@ Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-87.
+98.
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-87.
+98.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-287.
+298.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-287.
+298.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 287.
+(Font)              <12> on input line 298.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 287.
+(Font)              <8> on input line 298.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 287.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 28
-7.
+(Font)              <6> on input line 298.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 29
+8.
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 287
+LaTeX Font Info:    Trying to load font information for U+msa on input line 298
 .
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 287
+LaTeX Font Info:    Trying to load font information for U+msb on input line 298
 .
 
 (c:/Program Files (x86)/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -2305,12 +2305,12 @@ Overfull \hbox (19.86086pt too wide) detected at line 477
 <a2,fr3> <a2,fr4> <a2,fr5> <a2,fr6> <a2,fr7> <a2,fr8> <a2,fr9> <a2,fr10>
 <a2,fr11> <a2,fr12> <a2,fr13> <a2,fr14> <a2,fr15> <a2,fr16> <a2,fr17>
 <a2,fr18> [37] [38])
-Underfull \hbox (badness 10000) in paragraph at lines 433--434
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
 
  []
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 447--454
+Underfull \hbox (badness 10000) in paragraph at lines 458--465
 [][][][]\T1/lmr/m/n/9 Martial Phélippé-Guinvarc'h [][][] [][][]\U/fontawesomeon
 e/m/n/9 [ \U/fontawesometwo/m/n/9 R[][][] [][][]°[][][] [][][][][] [][][]\U/fon
 tawesometwo/m/n/12 ‡[][][] \T1/lmr/m/n/9 est Ac-tuaire et Maître de confé-rence
@@ -2318,101 +2318,89 @@ s à Le Mans Uni-ver-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 447--454
+Underfull \hbox (badness 10000) in paragraph at lines 458--465
 \T1/lmr/m/n/9 sité de-puis 2012 et en-seigne éga-le-ment à l'EU-RIA de-puis 200
 3. Il est ac-tuaire (EU-RIA, 2006), membre
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--456
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
 []\T1/lmr/m/n/9 Martial Phélippé-Guinvarc'h en-seigne les sta-tis-tiques, l'ana
 -lyse de don-nées, la mo-dé-li-sa-tion ac-tua-rielle,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--456
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
 \T1/lmr/m/n/9 la pro-gram-ma-tion, en par-ti-cu-lier en SAS et SAS IML, les ma-
 thé-ma-tiques fi-nan-cières, les mar-chés des
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--456
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
 \T1/lmr/m/n/9 ma-tières pre-mières, la fi-nance de mar-ché et des dé-ri-vés, l'
 ac-tua-riat non vie, l'ac-tua-riat vie, le pro-vi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--456
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
 \T1/lmr/m/n/9 sion-ne-ment, la sol-va-bi-lité, la ré-as-su-rance, l'éco-no-mie 
 de l'as-su-rance, la ges-tion des risques, la ges-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--456
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
 \T1/lmr/m/n/9 ac-tifs pas-sif. Il est SAS Pro-tor, et a ob-tenu pour le Mas-ter
  MBFA de Le Mans Uni-ver-sité le SAS Join
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
+Underfull \hbox (badness 10000) in paragraph at lines 469--476
 [][][][]\T1/lmr/m/n/9 Marcelo Mo-reno Por-ras[][][] [][][]\U/fontawesomeone/m/n
 /9 [ \U/fontawesometwo/m/n/9 R[][][] [][][]°[][][] [][][][][] [][][]\U/fontawes
-ometwo/m/n/12 ‡[][][] \T1/lmr/m/n/9 est Pro-fes-seur as-so-cié à l'Uni-ver-sité
- Rey Juan Car-los (Ma-
+ometwo/m/n/12 ‡[][][] \T1/lmr/m/n/9 est pro-fes-seur as-so-cié au dé-par-te-men
+t d'éco-no-mie ap-pli-quée I
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-\T1/lmr/m/n/9 drid) de-puis 2023, spé-cia-lisé en éco-no-mé-trie, théo-rie ma-c
-roé-co-no-mique et sta-tis-tique ap-pli-quée. Il est
+Underfull \hbox (badness 10000) in paragraph at lines 469--476
+\T1/lmr/m/n/9 et d'his-toire et d'ins-ti-tu-tions éco-no-miques de l'Uni-ver-si
+-dad Rey Juan Car-los (Ma-drid, Es-pagne) de-puis
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-\T1/lmr/m/n/9 éga-le-ment Dé-ve-lop-peur de lo-gi-ciels et Spé-cia-liste TI che
-z Na-vi-copy Im-pre-siones Di-gi-tales (Mi-jas, Es-
+Underfull \hbox (badness 10000) in paragraph at lines 469--476
+\T1/lmr/m/n/9 2023, spé-cia-lisé dans l'éco-no-mé-trie, la ma-croé-co-no-mie et
+ la pro-gram-ma-tion. Il est éga-le-ment dé-ve-lop-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-\T1/lmr/m/n/9 pagne), où il dé-ve-loppe des so-lu-tions en Py-thon et SQL, la v
-ir-tua-li-sa-tion et l'au-to-ma-ti-sa-tion de bases
+Underfull \hbox (badness 10000) in paragraph at lines 469--476
+\T1/lmr/m/n/9 peur de lo-gi-ciels et spé-cia-liste des tech-no-lo-gies de l'in-
+for-ma-tion dans une en-tre-prise pri-vée à Mi-jas (Es-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-\T1/lmr/m/n/9 de don-nées. Mar-celo en-seigne l'éco-no-mie mo-né-taire et fi-na
-n-cière, la ma-croé-co-no-mie, la mi-croé-co-no-
+Underfull \hbox (badness 10000) in paragraph at lines 469--476
+\T1/lmr/m/n/9 pagne).   Il est l'au-teur de plu-sieurs contri-bu-tions à l'in-n
+o-va-tion pé-da-go-gique, co-au-teur de pu-bli-ca-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-\T1/lmr/m/n/9 mie ap-pli-quée, la po-li-tique éco-no-mique et l'éco-no-mie in-t
-er-na-tio-nale, tant en es-pa-gnol qu'en an-glais, au
+Underfull \hbox (badness 10000) in paragraph at lines 469--476
+\T1/lmr/m/n/9 sur l'in-té-gra-tion des ob-jec-tifs de dé-ve-lop-pe-ment du-rabl
+e dans l'en-sei-gne-ment de l'éco-no-mie, et pos-sède
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-\T1/lmr/m/n/9 ni-veau li-cence et mas-ter. Il est l'au-teur de plu-sieurs ini-t
-ia-tives pé-da-go-giques in-no-vantes, et co-auteur
+Underfull \hbox (badness 10000) in paragraph at lines 469--476
+\T1/lmr/m/n/9 une ex-per-tise tech-nique sur plu-sieurs lan-gages de pro-gram-m
+a-tion et ou-tils sta-tis-tiques. Son par-cours
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-\T1/lmr/m/n/9 de tra-vaux sur l'in-té-gra-tion des Ob-jec-tifs de Dé-ve-lop-pe-
-ment Du-rable (ODD) dans l'en-sei-gne-ment de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-\T1/lmr/m/n/9 l'éco-no-mie. Sa for-ma-tion aca-dé-mique com-prend un Mas-ter en
- Ana-lyse Éco-no-mique Mo-derne (URJC),
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 458--470
-\T1/lmr/m/n/9 un Mas-ter en Sta-tis-tique ap-pli-quée avec R (Uni-ver-sité Ne-b
-rija), ainsi qu'une Li-cence en Éco-no-mie
+Underfull \hbox (badness 10000) in paragraph at lines 469--476
+\T1/lmr/m/n/9 uni-ver-si-taire com-prend une li-cence en éco-no-mie (URJC, clas
+-se-ment na-tio-nal de 1 %), un mas-ter en
  []
 
 
@@ -2427,10 +2415,10 @@ ged.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 61533 strings out of 473189
- 1478442 string characters out of 5709504
- 2375292 words of memory out of 5000000
- 83433 multiletter control sequences out of 15000+600000
+ 61536 strings out of 473189
+ 1478473 string characters out of 5709504
+ 2377767 words of memory out of 5000000
+ 83436 multiletter control sequences out of 15000+600000
  700584 words of font info for 141 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,18n,127p,1381b,2740s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2478,7 +2466,7 @@ msy9.pfb><c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msam10.pfb><c:/Program Files (x86)/texlive/2025/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb><c:/Program Files (x86)/texlive/2025/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on ActuarialFormSheet_MBFA-fr.pdf (40 pages, 1244150 bytes).
+Output written on ActuarialFormSheet_MBFA-fr.pdf (40 pages, 1244942 bytes).
 PDF statistics:
  1427 PDF objects out of 1440 (max. 8388607)
  1177 compressed objects within 12 object streams
