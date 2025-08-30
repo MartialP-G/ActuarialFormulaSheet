@@ -1,44 +1,44 @@
 % !TeX root = ActuarialFormSheet_MBFA-en.tex
-% !TeX spellcheck = fr_FR
-\begin{f}[Concept d'utilité]
-	L'utilité modélise les préférences d'un individu entre deux paniers de biens \(x\) et \(y\) dans un ensemble \(S\), via la relation \(x \succcurlyeq y\) (préféré ou indifférent).
+% !TeX spellcheck = en_US
+\begin{f}[Concept of utility]
+	Utility models an individual's preferences between two baskets of goods \(x\) and \(y\) in a set \(S\), via the relation \(x \succcurlyeq y\) (preferred or indifferent).
 	
-	Une fonction \(U: S \rightarrow \mathbb{R}\) représente les préférences si :
+	A function \(U: S \rightarrow \mathbb{R}\) represents preferences if :
 	\[
 	x \succcurlyeq y \iff U(x) \geq U(y)
 	\]
 	
-	\textbf{Axiomes nécessaires à l'existence d'une fonction d'utilité :}
+	\textbf{Axioms necessary for the existence of a utility function :}
 	\begin{enumerate}
-		\item \textbf{Complétude :} Pour tout \(x, y \in S\), soit \(x \succcurlyeq y\), soit \(y \succcurlyeq x\)
-		\item \textbf{Transitivité :} Si \(x \succcurlyeq y\) et \(y \succcurlyeq z\), alors \(x \succcurlyeq z\)
-		\item \textbf{Continuité :} Si \(x_n \to x\) et \(y_n \to y\), et \(x_n \succcurlyeq y_n\) pour tout \(n\), alors \(x \succcurlyeq y\)
+		\item \textbf{Completeness:} For all \(x, y \in S\), either \(x \succcurlyeq y\), or \(y \succcurlyeq x\)
+		\item \textbf{Transitivity:} If \(x \succcurlyeq y\) and \(y \succcurlyeq z\), then \(x \succcurlyeq z\)
+		\item \textbf{Continuity:} If \(x_n \to x\) and \(y_n \to y\), and \(x_n \succcurlyeq y_n\) for all \(n\), then \(x \succcurlyeq y\)
 	\end{enumerate}
 	
 \end{f}
 
 
-\begin{f}[Fonction d'utilité]
-	Une fonction \(u : \mathbb{R}_+ \rightarrow \mathbb{R}\) représente les préférences d'un agent face à l'incertitude.
+\begin{f}[Utility function]
+	A function \(u : \mathbb{R}_+ \rightarrow \mathbb{R}\) represents an agent's preferences in the face of uncertainty.
 	
-	\textbf{Critère d'utilité espérée :} L’agent préfère \(X\) à \(Y\) si :
+	\textbf{Expected utility criterion:} The agent prefers \(X\) to \(Y\) if :
 	\[
 	\mathbb{E}[u(X)] > \mathbb{E}[u(Y)]
 	\]
-	Il choisit \(X\) tel que \(\mathbb{E}[u(X)]\) soit maximale.
+	He chooses \(X\) such that \(\mathbb{E}[u(X)]\) is maximal.
 	
-	\textbf{Propriétés de \(u\) :}
+	\textbf{Properties of \(u\):}
 	\begin{itemize}
-		\item \(u'\! > 0\) : l’agent préfère plus de richesse (monotonie)
-		\item \(u'' < 0\) : l’agent est averse au risque (concavité)
+		\item \(u'\! > 0\) : the agent prefers more wealth (monotonicity)
+		\item \(u'' < 0\) : the agent is risk averse (concavity)
 	\end{itemize}
 	
-	\textbf{Exemples classiques :}
+	\textbf{Classic examples:}
 	\begin{itemize}
-		\item \textit{Linéaire} (neutre au risque) : \(u(x) = x\)
-		\item \textit{Logarithmique} : \(u(x) = \ln(x)\)
-		\item \textit{CRRA}  (aversion relative constante): \(u(x) = \frac{x^{1 - \gamma}}{1 - \gamma}\), \(\gamma \ne 1\)
-		\item \textit{CARA}  (aversion absolue constante): \(u(x) = -e^{-a x}\)
+		\item \textit{Linear} (risk neutral): \(u(x) = x\)
+		\item \textit{Logarithmic} : \(u(x) = \ln(x)\)
+		\item \textit{CRRA}  (constant relative risk aversion): \(u(x) = \frac{x^{1 - \gamma}}{1 - \gamma}\), \(\gamma \ne 1\)
+		\item \textit{CARA}  (constant absolute risk aversion): \(u(x) = -e^{-a x}\)
 	\end{itemize}
 	
 \end{f}
@@ -46,111 +46,111 @@
 \hrule
 
 \begin{f}[Aversion au risque]
-	Un agent est dit \textbf{averse au risque} (ou risquophobe) si :
+	An agent is said to be \textbf{risk-averse} (or risk-phobic) if:
 	\[
 	u(\mathbb{E}[X]) > \mathbb{E}[u(X)]
 	\]
-	Ce qui est équivalent à \(u\) concave, c.-à-d. \(u''(x) < 0\)
+	Which is equivalent to \(u\) concave, i.e. \(u''(x) < 0\)
 \end{f}
 
-\begin{f}[Mesure de l'aversion au risque]
-	\textbf{Indice d'aversion absolue} :
+\begin{f}[Measurement of risk aversion]
+	\textbf{Absolute Aversion Index} :
 	\[
 	A_a(x) = -\frac{u''(x)}{u'(x)}
 	\]
 	
-	\textbf{Indice d'aversion relative} :
+	\textbf{Relative Aversion Index} :
 	\[
 	A_r(x) = -x \cdot \frac{u''(x)}{u'(x)}
 	\]
 	
-	\textbf{Inégalité de Jensen (cas concave)} :
+	\textbf{Jensen's inequality (concave case)} :
 	\[
 	u(\mathbb{E}[X]) \geq \mathbb{E}[u(X)]
 	\]
-Avec l'égalité si et seulement si \(X\) est constante.
+With equality if and only if \(X\) is constant.
 \end{f}
 \hrule
 
 
-\begin{f}[Primes de risque]
+\begin{f}[Risk premiums]
 	
-La \textbf{prime de risque} \(\pi\) est le montant maximal qu'un individu est prêt à payer pour remplacer une loterie de gain aléatoire \(H\) par son espérance certaine \(\mathbb{E}[H]\). Elle vérifie :
+The \textbf{risk premium} \(\pi\) is the maximum amount an individual is willing to pay to replace a random lottery win \(H\) with its certain expectation \(\mathbb{E}[H]\). It verifies:
 \[
 \mathbb{E}[u(w + H)] = u(w + \mathbb{E}[H] - \pi)
 \]
 
 
-\(\pi\) est aussi appelée \emph{mesure de Markowitz} : elle capture l'écart entre utilité espérée et utilité certaine.
+\(\pi\) is also called \emph{Markowitz measure}: it captures the gap between expected utility and certain utility.
 
-Inversement, la \textbf{prime compensatoire} \(\tilde{\pi}\) est le montant que l'on doit offrir à un individu pour qu’il accepte la loterie \(H\) au lieu d’un gain certain. Elle vérifie :
+Conversely, the \textbf{compensatory bonus} \(\tilde{\pi}\) is the amount that must be offered to an individual so that he accepts the lottery \(H\) instead of a certain gain. It checks:
 \[
 \mathbb{E}[u(w + H + \tilde{\pi})] = u(w + \mathbb{E}[H])
 \]
 
 \end{f}
 \hrule
-\begin{f}[Diversification et utilité]
+\begin{f}[Diversification and utility]
 	
-	Soient deux actifs :
+	Let's have two assets:
 	\begin{itemize}
-		\item \(A\) : risqué
-		\item \(B\) : certain, avec \(\mathbb{E}[A] = B\)
+		\item \(A\) : risk
+		\item \(B\) : certain, with \(\mathbb{E}[A] = B\)
 	\end{itemize}
 	
-	Un agent averse au risque préfère une combinaison \(Z = \alpha A + (1 - \alpha) B\), avec \(0 < \alpha < 1\), à l’actif risqué seul.
-	Si  $u$ est concave, alors
+	A risk-averse agent prefers a combination \(Z = \alpha A + (1 - \alpha) B\), with \(0 < \alpha < 1\), to the risky asset alone.
+	If $u$ is concave, then
 	\[
 	\mathbb{E}[u(Z)] > \mathbb{E}[u(A)]
 	\]
 	
-	\textbf{Portefeuille optimal} : choix des pondérations \((w_i)\) maximisant l'utilité espérée :
+	\textbf{Optimal portfolio}: choice of weights \((w_i)\) maximizing expected utility:
 	\[
 	\max \mathbb{E}[u(X)], \quad \text{où } X = \sum_{i} w_i X_i, \quad \text{s.c. } \sum w_i = 1
 	\]
 	
-	\textbf{Principe} : la diversification réduit le risque (variance) sans affecter l’espérance.
+	\textbf{Principle}: diversification reduces risk (variance) without affecting expectation.
 	
 	
 \end{f}
 \hrule
 
-\begin{f}[Méthode de Lagrange pour l'optimisation sous contrainte]
+\begin{f}[Lagrange method for constrained optimization]
 	
-	La méthode des multiplicateurs de Lagrange permet de résoudre un problème d'optimisation sous contrainte.
+	The Lagrange multiplier method is used to solve a constrained optimization problem.
 	
-	\textbf{Objectif} : maximiser/minimiser \(f(\boldsymbol{x})\) sous la contrainte \(g(\boldsymbol{x}) = c\), où \(\boldsymbol{x} \in \mathbb{R}^d\) est un vecteur de variables.
+	\textbf{Objective}: maximize/minimize \(f(\boldsymbol{x})\) under the constraint \(g(\boldsymbol{x}) = c\), where \(\boldsymbol{x} \in \mathbb{R}^d\) is a vector of variables.
 	
-	\textbf{Étapes de la méthode :}
+	\textbf{Steps of the method:}
 	\begin{enumerate}
-		\item \textbf{Identification} : déterminer la fonction objectif \(f(\boldsymbol{x})\) et la contrainte \(g(\boldsymbol{x}) = c\)
-		\item \textbf{Lagrangien} :
+		\item \textbf{Identification} : determine the objective function \(f(\boldsymbol{x})\) and the constraint \(g(\boldsymbol{x}) = c\)
+		\item \textbf{Lagrangian} :
 		\[
 		\mathcal{L}(\boldsymbol{x}, \lambda) = f(\boldsymbol{x}) + \lambda (g(\boldsymbol{x}) - c)
 		\]
-		\item \textbf{Système d'équations} : résoudre
+		\item \textbf{System of equations} : solve
 		\[
 		\nabla_{\boldsymbol{x}} \mathcal{L} = \nabla f(\boldsymbol{x}) + \lambda \nabla g(\boldsymbol{x}) = \boldsymbol{0}, \quad
 		\frac{\partial \mathcal{L}}{\partial \lambda} = g(\boldsymbol{x}) - c = 0
 		\]
-		\item \textbf{Résolution} du système pour obtenir \(\boldsymbol{x}^*, \lambda^*\)
-		\item \textbf{Vérification} : s'assurer que les solutions satisfont bien la contrainte et le type d'optimum (max/min)
+		\item \textbf{Resolution} of the system to obtain \(\boldsymbol{x}^*, \lambda^*\)
+		\item \textbf{Verification}: ensure that the solutions satisfy the constraint and the type of optimum (max/min)
 	\end{enumerate}
 	
-	\textbf{Exemple (dimension 2)} : maximiser \(f(x, y) = xy\) sous la contrainte \(x + y = 10\)
+	\textbf{Example (dimension 2)} : maximize \(f(x, y) = xy\) under the constraint \(x + y = 10\)
 	
 	\[
 	\mathcal{L}(x, y, \lambda) = xy + \lambda (x + y - 10)
 	\]
 	
-	On dérive :
+	We derive:
 	\[
 	\frac{\partial \mathcal{L}}{\partial x} = y + \lambda = 0, \quad
 	\frac{\partial \mathcal{L}}{\partial y} = x + \lambda = 0, \quad
 	\frac{\partial \mathcal{L}}{\partial \lambda} = x + y - 10 = 0
 	\]
 	
-	On résout le système :
+	We solve the system:
 \[
 \begin{cases}
 	y + \lambda = 0 \\
@@ -170,25 +170,25 @@ Inversement, la \textbf{prime compensatoire} \(\tilde{\pi}\) est le montant que 
 	\end{cases}
 \]
 
-		\textbf{Exemple (Choix optimal et contrainte budgétaire)}
+		\textbf{Example (Optimal choice and budget constraint)}
 	
-	Un agent rationnel est face à un choix de consommation \((c_1, c_2)\) entre deux biens, sous la contrainte :
+	A rational agent is faced with a consumption choice \((c_1, c_2)\) between two goods, under the constraint :
 	\[
 	p_1 c_1 + p_2 c_2 = R
 	\]
-	où \(p_1, p_2\) sont les prix et \(R\) le revenu total.
+	where \(p_1, p_2\) are prices and \(R\) total revenue.
 	
-	\textbf{Problème} :
+	\textbf{Issue} :
 	\(
 	\max_{c_1, c_2} u(c_1, c_2) \quad \text{s.c. } p_1 c_1 + p_2 c_2 = R\)
 
 	
-	\textbf{Méthode} : introduire le \textbf{lagrangien}
+	\textbf{Method}: introduce the \textbf{Lagrangian}
 	\[
 	\mathcal{L}(c_1, c_2, \lambda) = u(c_1, c_2) + \lambda (R - p_1 c_1 - p_2 c_2)
 	\]
 	
-	\textbf{Conditions du premier ordre (FOC)} :
+	\textbf{First order conditions (FOC)} :
 	\[
 	\begin{cases}
 		\frac{\partial u}{\partial c_1} = \lambda p_1 \\
@@ -197,32 +197,32 @@ Inversement, la \textbf{prime compensatoire} \(\tilde{\pi}\) est le montant que 
 	\end{cases}
 	\]
 	
-	En divisant les deux premières équations :
+	By dividing the first two equations :
 	\[
 	\frac{\partial u / \partial c_1}{\partial u / \partial c_2} = \frac{p_1}{p_2}
 	\]
 	
-	Ce rapport est appelé \textbf{taux marginal de substitution (TMS)} : il mesure la quantité de bien 2 à laquelle l’agent est prêt à renoncer pour obtenir une unité supplémentaire de bien 1, tout en maintenant son niveau d’utilité constant.
+	This ratio is called the \textbf{marginal rate of substitution (MRS)}: it measures the quantity of good 2 that the agent is willing to give up to obtain an additional unit of good 1, while maintaining his level of utility constant.
 	
 \end{f}
 \hrule
 
-\begin{f}[Demande d’assurance (Mosin)]
+\begin{f}[Insurance Application (Mosin)]
 	
-Un agent possède un patrimoine initial \(w\) et fait face à une perte aléatoire \(L\). Il existe une \textbf{demande d'assurance} pour l'assurance qui verse l'indemnité $0<I(L)<L$ ssi $u(w-\pi_I) \geq \mathbb{E}(u(w-L))$ et l'\textbf{assurance optimale} maximise $u(w-\pi_I)$.
+An agent has an initial wealth \(w\) and faces a random loss \(L\). There exists an \textbf{insurance demand} for the insurance that pays the indemnity $0<I(L)<L$ iff $u(w-\pi_I) \geq \mathbb{E}(u(w-L))$ and the \textbf{optimal insurance} maximizes $u(w-\pi_I)$.
 
-Dans Mosin (1968) ou  Borch (1961) ou Smith (1968), le modèle de perte $L$ se définit simplement par  $s$ compris entre 0 et  \(w\) :
+In Mosin (1968) or Borch (1961) or Smith (1968), the loss model $L$ is simply defined by $s$ between 0 and \(w\) :
 	$$
 	L=\left\{\begin{array}{l}
-		0 \text { avec proba. } 1-p \\
-		s \text { avec proba. } p
+		0 \text { with prob. } 1-p \\
+		s \text { with prob. } p
 	\end{array}\right.
 	$$
-La prime devient $\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) p I(s)$ avec $\lambda$ un chargement. On note $\pi$ le cas où $I(L)=L$ avec  $\pi= p s$. Si $\lambda=0$, alors on parle de prime pure ou actuariellement juste. 
+The premium becomes $\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) p I(s)$ with $\lambda$ a loading. We denote by $\pi$ the case where $I(L)=L$ with $\pi= p s$. If $\lambda=0$, then we speak of a pure or actuarially fair premium.
 \medskip
 
-\textbf{Coassurance} (partage du risque) :
- $I(l)=\alpha l$ sachant $L=l$ pour $\alpha \in[0,1]$, $\pi_I(\alpha)=\alpha \pi$ et :
+\textbf{Co-insurance} (risk sharing) :
+$I(l)=\alpha l$ knowing $L=l$ for $\alpha \in[0,1]$, $\pi_I(\alpha)=\alpha \pi$ and :
 $$
 w_{f}=w-L+I(L)-\pi(\alpha)=w-L+\alpha L-\alpha \pi=w-(1-\alpha) L-\alpha \pi
 $$
@@ -231,11 +231,11 @@ U(\alpha)%=\mathbb{E}(u(w-(1-\alpha) L-\alpha \pi))
 =(1-p) u(w-\alpha \pi)+p u(w-(1-\alpha) s-\alpha \pi)
 $$
 
-L'assurance partielle ($\alpha^{\star}<1$) est optimale ssi $\lambda>0$. L'assurance totale ($\alpha^{\star}=1$ ) est optimale si le chargement est nul.
+Partial insurance ($\alpha^{\star}<1$) is optimal iff $\lambda>0$. Total insurance ($\alpha^{\star}=1$) is optimal if the loading is zero.
 \medskip
 
-\textbf{L'assurance avec franchise} (part d'autoassurance):
-Avec franchise $d$ l'assureur verse une indemnité $I(l)=(l-d)_{+}$ sachant $L=l$. 
+\textbf{Insurance with deductible} (self-insurance portion):
+With deductible $d$ the insurer pays an indemnity $I(l)=(l-d)_{+}$ knowing $L=l$.
 $$
 \pi(d)=(1+\lambda) E\left((L-d)_{+}\right)=(1+\lambda)(s-d) p
 $$
@@ -245,11 +245,11 @@ $$
 $$
 U(d)=(1-p) u(\underbrace{w+(1+\lambda)(d-s) p}_{w_{f}^{+}})+p u(\underbrace{w-d+(1+\lambda)(d-s) p}_{w_{f}^{-}}) .
 $$
-Dans le modèle avec franchise, l'assurance partielle ($d^{\star}>0$) est optimale ssi la prime n'est pas actuariellement juste. De même,  l'assurance totale ( $d^{\star}=0$ ) est optimale si le chargement est nul.
+In the deductible model, partial insurance ($d^{\star}>0$) is optimal iff the premium is not actuarially fair. Similarly, full insurance ($d^{\star}=0$) is optimal if the loading is zero.
 \medskip
 
-\textbf{Modèle généralisé :}
-Le risque de perte $L>0$ aléatoire est définit sur $\Re$, avec fonction de répartition $F_L$ ), 
+\textbf{Generalized model:}
+The random loss risk $L>0$ is defined on $\Re$, with distribution function $F_L$ ),
 
 $$
 \pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) \int_{0}^{\infty} I(l) d F_{L}(l)
@@ -258,73 +258,73 @@ $$
 
 
 \begin{enumerate}
-	\item L'assurance totale \((d^\star = 0)\) ou  \((\alpha^\star = 1)\) est optimale si et seulement si la prime est actuariellement juste .
+	\item Total insurance \((d^\star = 0)\) or \((\alpha^\star = 1)\) is optimal if and only if the premium is actuarially fair.
 	
-	\item Si \(A_a(u, x)\) est décroissante, alors le niveau de franchise \(d^\star\)  ou  le taux de couverture \(\alpha^\star\) augmente avec la richesse initiale.  
-	Pour les préférences CARA, \(d^\star\) est indépendant de \(w\) ou \(\alpha^\star\) est constant .
+	\item If \(A_a(u, x)\) is decreasing, then the deductible level \(d^\star\) or the coverage rate \(\alpha^\star\) increases with initial wealth.
+	For CARA preferences, \(d^\star\) is independent of \(w\) or \(\alpha^\star\) is constant.
 	
-	\item Le niveau de couverture  décroît avec le coefficient de chargement \(\lambda\) lorsque \(A_a(u, x)\) est croissante ou constante.
+	\item The coverage level decreases with the loading coefficient \(\lambda\) when \(A_a(u, x)\) is increasing or constant.
 	
-	\item Un agent plus averse au risque choisit  une couverture plus élevée.
+	\item A more risk-averse agent chooses higher coverage.
 \end{enumerate}
 \end{f}
 
 \hrule
 
-\begin{f}[Information et assurance]
+\begin{f}[Information and insurance]
 	
-	\textbf{Mosin avec hétérogénéïté :} Deux types d'individus : $H$ pour haut risque et $Lo$ pour faible risque. $\theta \in[0,1]$ la proportion d'individu $H$. Les individus de type $i \in\{Lo, H\}$ font face à un risque de même montant $s$  survenant avec une probabilité différente $p_{i}$ telle que $1>p_{H}>p_{Lo}>0$.
+	\textbf{Mosin with heterogeneity:} Two types of individuals: $H$ for high risk and $Lo$ for low risk. $\theta \in[0,1]$ the proportion of individuals $H$. Individuals of type $i \in\{Lo, H\}$ face a risk of the same amount $s$ occurring with a different probability $p_{i}$ such that $1>p_{H}>p_{Lo}>0$.
 	
 	$$
 	L_{i}=\left\{\begin{array}{l}
-		0 \text { avec probabilité } 1-p_{i}, \\
-		s \text { avec probabilité } p_{i} .
+		0 \text { with probability } 1-p_{i}, \\
+		s \text { with probability } p_{i} .
 	\end{array}\right.
 	$$
-La probabilité du marché :
+Market probability :
 	$$
 	p_{m}=\theta p_{H}+(1-\theta) p_{Lo} .
 	$$
 \medskip
 
-\textbf{Absence d'antisélection :}  Dans ce modèle, en présence d'information totale, l'assureur préfère une assurance individuelle $I_{i}=s$ et $\pi_{i}=s p_{i}$, $\forall i$.
+\textbf{Absence of adverse selection:} In this model, in the presence of total information, the insurer prefers individual insurance $I_{i}=s$ and $\pi_{i}=s p_{i}$, $\forall i$.
 
-\textbf{Le problème d'anti-sélection : }
-L'assureur propose un  contrat non individualisé du marché $M=\left(\pi_{m}=p_{m} I, I_{m}(s)=I(s)\right)$, qui ne dépend pas de $i$. La fortune finale d'un individu de type $i$ est $W_{i}^{m}=w-\pi_{m}-X_{i}+I_{m}$.
+\textbf{The adverse selection problem : }
+The insurer offers a non-individualized contract from the market $M=\left(\pi_{m}=p_{m} I, I_{m}(s)=I(s)\right)$, which does not depend on $i$. The final fortune of an individual of type $i$ is $W_{i}^{m}=w-\pi_{m}-X_{i}+I_{m}$.
 
-En présence d'un contrat unique, les individus de type $H$ préfèrent un contrat d'assurance tel que $I_{H}(s)=s$  et $\pi_{H}=s p_{m}$, tandis que les individus de type $Lo$ préfèrent une couverture partielle avec $I_{L}^{\star}<s$ et $\pi_{Lo}=I_{L}^{\star} p_{m}$.
+In the presence of a single contract, individuals of type $H$ prefer an insurance contract such that $I_{H}(s)=s$ and $\pi_{H}=s p_{m}$, while individuals of type $Lo$ prefer partial coverage with $I_{L}^{\star}<s$ and $\pi_{Lo}=I_{L}^{\star} p_{m}$.
 \medskip
 
-\textbf{Aléa moral :}
-L'assurer réduit ou interrompt ses efforts maintenant qu'il est assuré. Les efforts de
+\textbf{Moral hazard :}
+Insuring him reduces or interrupts his efforts now that he is insured. The efforts of
 \begin{itemize}
-	\item prévention réduisent la probabilité de sinistre,
-	\item protection réduisent le montant de sinistre.
+	\item prevention reduces the probability of disaster,
+	\item protection reduces the amount of loss.
 \end{itemize}
 
- En l'absence d'effort $e$ de prévention ou de réduction du risque, la fortune finale $w_{f}$ est simplement définie par
+ In the absence of any effort $e$ to prevent or reduce risk, the final fortune $w_{f}$ is simply defined by
 
 $$
-\begin{cases}w_{f}^{-}=w-s-\pi(I)+I & \text { avec probabilité } p \\ w_{f}^{+}=w-\pi(I) & \text { avec probabilité } 1-p\end{cases}
+\begin{cases}w_{f}^{-}=w-s-\pi(I)+I & \text { with probability } p \\ w_{f}^{+}=w-\pi(I) & \text { with probability } 1-p\end{cases}
 $$
 
-S'il y a un effort $e$ de prévention des risques, on considère
+If there is an effort $e$ to prevent risks, we consider
 
 $$
-\begin{cases}w_{f}^{-}=w-s-\pi(I)+I-e & \text { avec probabilité } p(e) \\ w_{f}^{+}=w-\pi(I)-e & \text { avec probabilité } 1-p(e)\end{cases}
+\begin{cases}w_{f}^{-}=w-s-\pi(I)+I-e & \text { with probability } p(e) \\ w_{f}^{+}=w-\pi(I)-e & \text { with probability } 1-p(e)\end{cases}
 $$
 
-S'il y a un effort $e$ de protection des risques, on considère
+If there is an effort $e$ to protect against risks, we consider
 
 $$
-\begin{cases}w_{f}^{-}=w-s(e)-\pi(I)+I-e & \text { avec probabilité } p \\ w_{f}^{+}=w-\pi(I)-e & \text { avec probabilité } 1-p\end{cases}
+\begin{cases}w_{f}^{-}=w-s(e)-\pi(I)+I-e & \text { with probability } p \\ w_{f}^{+}=w-\pi(I)-e & \text { with probability } 1-p\end{cases}
 $$
 
-avec
+with
 \begin{itemize}
-	\item $e \mapsto p(e)$ est strictement décroissante et strictement convexe.
-	\item $e \mapsto s(e)$ est strictement décroissante et strictement convexe.\\
-	\item $I \leq s$ implique $w_{f}^{-} \leq w_{f}^{+}$
+	\item $e \mapsto p(e)$ is strictly decreasing and strictly convex.
+	\item $e \mapsto s(e)$ is strictly decreasing and strictly convex.\\
+	\item $I \leq s$ implies $w_{f}^{-} \leq w_{f}^{+}$
 \end{itemize}
 
 \end{f}
