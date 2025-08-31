@@ -1,112 +1,112 @@
 % !TeX root = ActuarialFormSheet_MBFA-en.tex
-% !TeX spellcheck = fr_FR
+% !TeX spellcheck = en_US
 %\setlength{\parskip}{0cm} % paragraph spacing
 %		\section*{Concepts de base}
 
-	 \begin{f}[Définitions ]
+	 \begin{f}[Definitions ]
 
-\textbf{Série temporelle} - succession d'observations quantitatives d'un phénomène classées par ordre temporelle.
+\textbf{Time series} - is a succession of quantitative observations of a phenomena ordered in time.
 	
-Il existe plusieurs variantes de séries temporelles :
+There are some variations of time series :
 		\begin{itemize}[leftmargin=*]	
-		\item \textbf{Données de panel} - consistant en une série temporelle pour chaque observation d'une section transversale.
-		\item \textbf{Sections transversales regroupées} - combinant des sections transversales de différentes périodes.
+		\item \textbf{Panel data} - consist of a time series for each observation of a cross section.
+		\item \textbf{Pooled cross sections} - combines cross sections from different time periods.
 	\end{itemize}	
 %	
-		 \textbf{Processus stochastique} - séquence de variables aléatoires indexées dans le temps.
+		 \textbf{Stochastic process} - sequence of random variables that are indexed in time.
 	\end{f}    
 	
-	\begin{f}[Composantes d'une série temporelle]{\ }
+	\begin{f}[Components of a time series]{\ }
 
 	\begin{itemize}[leftmargin=*]
-		\item \textbf{Tendance} - mouvement général à long terme d'une série.
-		\item \textbf{Variations saisonnières} - oscillations périodiques qui se produisent sur une période égale ou inférieure à une année et qui peuvent être facilement identifiées d'une année à l'autre (elles sont généralement dues à des raisons climatologiques).
-		\item \textbf{Variations cycliques} - sont des oscillations périodiques qui se produisent sur une période supérieure à une année (elles sont le résultat du cycle économique).
-		\item \textbf{Variations résiduelles} - sont des mouvements qui ne suivent pas une oscillation périodique reconnaissable (elles sont le résultat de phénomènes ponctuels).
+		\item \textbf{Trend} - is the long-term general movement of a series.
+		\item \textbf{Seasonal variations} - are periodic oscillations that are produced in a period equal or inferior to a year, and can be easily identified on different years (usually are the result of climatology reasons).
+		\item \textbf{Cyclical variations} - are periodic oscillations that are produced in a period greater than a year (are the result of the economic cycle).
+		\item \textbf{Residual variations} - are movements that do not follow a recognizable periodic oscillation (are the result of eventual phenomena).
 	\end{itemize}
 	
 	\end{f}    
 	
-	\begin{f}[Types de modèles de séries temporelles]{\ }
+	\begin{f}[Type of time series models]{\ }
 		
 
 	\begin{itemize}[leftmargin=*]
-		\item \textbf{Modèles statiques} - la relation entre $y$ et $x$ est contemporaine. Conceptuellement :
+		\item \textbf{Static models} - the relation between $y$ and $x$ is contemporary. Conceptually :
 \[y_{t} = \beta_{0} + \beta_{1} x_{t} + u_{t}\]
 		
-		\item \textbf{Modèles à décalage distribué} - la relation entre $y$ et $x$ n'est pas contemporaine. Conceptuellement :
+		\item \textbf{Distributed-lag models} - the relation between $y$ and $x$ is not contemporary. Conceptually :
 \[y_{t} = \beta_{0} + \beta_{1} x_{t} + \beta_{2} x_{t - 1} + \cdots + \beta_{s} x_{t - (s - 1)} + u_{t}\]
 		
-		L'effet cumulatif à long terme dans $y$ lorsque $\Delta x$ est :
+		The long term cumulative effect in $y$ when $\Delta x$ is :
 			$\beta_{1} + \beta_{2} + \cdots + \beta_{s}$
 		
-		\item \textbf{Modèles dynamiques} - décalages de la variable dépendante (endogénéité). Conceptuellement :
+		\item \textbf{Dynamic models} - lags of the dependent variable (endogeneity). Conceptually :
 \[y_{t} = \beta_{0} + \beta_{1} y_{t - 1} + \cdots + \beta_{s} y_{t - s} + u_{t}\]
 		
-		\item \textbf{Combinaisons} de ce qui précède, comme les modèles rationnels à décalage distribué (décalage distribué + dynamique).
+		\item Combinations of the above, like the rational distributed-lag models (distributed-lag + dynamic).
 	\end{itemize}	
 
 \end{f} 
  \hrule 
  
- \begin{f}[Hypothèses du modèle OLS dans le cadre des séries temporelles]
+ \begin{f}[OLS model assumptions under time series]
 
-Sous ces hypothèses, l'estimateur OLS présentera de bonnes propriétés. \textbf{Hypothèses de Gauss-Markov} étendues aux séries temporelles :
+Under this assumptions, the OLS estimator will present good properties. \textbf{Gauss-Markov assumptions} extended applied to time series :
 
 \begin{enumerate}[leftmargin=*, label=t\arabic{*}.]
-	\item \textbf{Linéarité des paramètres et faible dépendance}.
+	\item \textbf{Parameters linearity and weak dependence}.
 	
 	\begin{enumerate}[leftmargin=*, label=\alph{*}.]
-		\item $y_{t}$ doit être une fonction linéaire des $\beta$.
-		\item Le stochastique $\lbrace( x_{t}, y_{t}) : t = 1, 2, \ldots, T \rbrace$ est stationnaire et faiblement dépendant.
+		\item $y_{t}$ must be a linear function of the $\beta$'s.
+		\item The stochastic $\lbrace( x_{t}, y_{t}) : t = 1, 2, \ldots, T \rbrace$ is stationary and weakly dependent.
 	\end{enumerate}
 	
-	\item \textbf{Pas de colinéarité parfaite}.
+	\item \textbf{No perfect collinearity}.
 	
 	\begin{itemize}[leftmargin=*]
-		\item Il n'y a pas de variables indépendantes qui sont constantes : $\Var(x_{j}) \neq 0, \; \forall j = 1, \ldots, k$
-		\item Il n'y a pas de relation linéaire exacte entre les variables indépendantes.
+		\item There are no independent variables that are constant : $\Var(x_{j}) \neq 0, \; \forall j = 1, \ldots, k$
+		\item There is not an exact linear relation between independent variables.
 	\end{itemize}
 	
-	\item \textbf{Moyenne conditionnelle nulle et corrélation nulle}.
+	\item \textbf{Conditional mean zero and correlation zero}.
 	
 	\begin{enumerate}[leftmargin=*, label=\alph{*}.]
-		\item Il n'y a pas d'erreurs systématiques : $\E(u \mid x_{1}, \ldots, x_{k}) = \E(u) = 0 \rightarrow$ \textbf{exogénéité forte} (a implique b).
-		\item Il n'y a pas de variables pertinentes laissées hors du modèle : $\Cov(x_{j} , u) = 0, \; \forall j = 1, \ldots, k \rightarrow$ \textbf{exogénéité faible}.
+		\item There are no systematic errors : $\E(u \mid x_{1}, \ldots, x_{k}) = \E(u) = 0 \rightarrow$ \textbf{strong exogeneity} (a implies b).
+		\item There are no relevant variables left out of the model : $\Cov(x_{j} , u) = 0, \; \forall j = 1, \ldots, k \rightarrow$ \textbf{weak exogeneity}.
 	\end{enumerate}
 	
-	\item \textbf{Homoscédasticité}. La variabilité des résidus est la même pour tout $x$ : $\Var(u \mid x_{1}, \ldots, x_{k}) = \sigma^{2}_{u}$
-	\item \textbf{Pas d'autocorrélation}. Les résidus ne contiennent aucune information sur les autres résidus : \\
+	\item \textbf{Homoscedasticity}. The variability of the residuals is the same for any $x$ : $\Var(u \mid x_{1}, \ldots, x_{k}) = \sigma^{2}_{u}$
+	\item \textbf{No autocorrelation}. Residuals do not contain information about any other residuals : \\
 	$\Corr(u_{t}, u_{s} \mid x_{1}, \ldots, x_{k}) = 0, \; \forall t \neq s$
-	\item \textbf{Normalité}. Les résidus sont indépendants et identiquement distribués (\textbf{i.i.d.} etc.) : $u \sim \mathcal{N}(0, \sigma^{2}_{u})$
-	\item \textbf{Taille des données}. Le nombre d'observations disponibles doit être supérieur à $(k + 1)$ paramètres à estimer. (Cette condition est déjà satisfaite dans des situations asymptotiques)
+	\item \textbf{Normality}. Residuals are independent and identically distributed (\textbf{i.i.d.}) : $u \sim \mathcal{N}(0, \sigma^{2}_{u})$
+	\item \textbf{Data size}. The number of observations available must be greater than $(k + 1)$ parameters to estimate. (It is already satisfied under asymptotic situations)
 \end{enumerate}
 
 \end{f}    
 
-\begin{f}[Propriétés asymptotiques de l'OLS]
+\begin{f}[Asymptotic properties of OLS]
 	
-Sous les hypothèses du modèle économétrique et le théorème de la limite centrale :
+Under the econometric model assumptions and the Central Limit Theorem :
 
 \begin{itemize}[leftmargin=*]
-	\item Si t1 à t3a sont vérifiées : l'OLS est \textbf{non biaisée}. $\E(\hat{\beta}_{j}) = \beta_{j}$
-	\item Si t1 à t3 sont vérifiées : l'OLS est \textbf{cohérent}. $\mathrm{plim}(\hat{\beta}_{j}) = \beta_{j}$ (pour t3b, t3a est omis, exogénéité faible, biaisé mais cohérent)
-	\item Maintenir t1 à t5 : \textbf{normalité asymptotique} de l'OLS (alors, t6 est nécessairement satisfait) : $u \underset{a}{\sim}\mathcal{N}(0, \sigma^{2}_{u})$
-	\item Maintenir t1 à t5 : \textbf{estimation non biaisée} de $\sigma^{2}_{u}$. $\E(\hat{\sigma}^{2}_{u}) = \sigma^{2}_{u}$
-	\item Maintenir t1 à t5 : OLS est \textcolor{BleuProfondIRA}{BLUE, \emph{Best Linear Unbiased Estimator}} (meilleur estimateur linéaire non biaisé) ou \textbf{efficace}.
-	\item Maintenir t1 à t6 : les tests d'hypothèse et les intervalles de confiance peuvent être effectués de manière fiable.
+	\item Hold t1 to t3a : OLS is \textbf{unbiased}. $\E(\hat{\beta}_{j}) = \beta_{j}$
+	\item Hold t1 to t3 : OLS is \textbf{consistent}. $\mathrm{plim}(\hat{\beta}_{j}) = \beta_{j}$ (to t3b left out t3a, weak exogeneity, biased but consistent)
+	\item Hold t1 to t5: \textbf{asymptotic normality} of OLS (then, t6 is necessarily satisfied) : $u \underset{a}{\sim}\mathcal{N}(0, \sigma^{2}_{u})$
+	\item Hold t1 to t5 : \textbf{unbiased estimate} of $\sigma^{2}_{u}$. $\E(\hat{\sigma}^{2}_{u}) = \sigma^{2}_{u}$
+	\item Hold t1 to t5: OLS is \textcolor{blue}{BLUE} (Best Linear Unbiased Estimator) or \textbf{efficient}.
+	\item Hold t1 to t6: hypothesis testing and confidence intervals can be done reliably.
 \end{itemize}
 
 
 \end{f}  \hrule
 
-\begin{f}[Tendances et saisonnalité]
+\begin{f}[Trends and seasonality]
 
-\textbf{Régression parasite} - se produit lorsque la relation entre $y$ et $x$ est due à des facteurs qui affectent $y$ et qui sont corrélés à $x$, $\Corr(x_{j}, u) \neq 0$. Il s'agit du \textbf {non-respect de t3}.
+\textbf{Spurious regression} - is when the relation between $y$ and $x$ is due to factors that affect $y$ and have correlation with $x$, $\Corr(x_{j}, u) \neq 0$. Is the \textbf {non-fulfillment of t3}.
 
 
 
-Deux séries temporelles peuvent avoir la même tendance (ou une tendance contraire), ce qui devrait entraîner un niveau élevé de corrélation. Cela peut provoquer une fausse apparence de causalité, le problème étant la \textbf{régression fallacieuse}. Étant donné le modèle :
+Two time series can have the same (or contrary) trend, that should lend to a high level of correlation. This can provoke a false appearance of causality, the problem is \textbf{spurious regression}. Given the model :
 %
 \begin{center}
 	$y_{t} = \beta_{0} + \beta_{1} x_{t} + u_{t}$
