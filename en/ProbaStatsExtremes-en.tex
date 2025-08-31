@@ -1,28 +1,28 @@
 % !TeX root = ActuarialFormSheet_MBFA-en.tex
-% !TeX spellcheck = fr_FR
+% !TeX spellcheck = en_GB
 
 %\subsection*{Lois utilisées dans la théorie des extrêmes}
 
 
-\begin{f}[Loi de Pareto]
-Soit la variable aléatoire $X$ qui suit une loi de Pareto de paramètres $(x_{\mathrm{m}},k)$, $k$ est l'indice de Pareto:
+\begin{f}[Pareto's Law]
+Let the random variable $X$ follow a Pareto distribution with parameters $(x_{\mathrm{m}},k)$, $k$ is the Pareto index:
 $$
-\mathbb{P}(X>x)=\left(\frac{x}{x_{\mathrm{m}}}\right)^{-k}\ \mbox{avec}\ x \geq x_{\mathrm{m}} 
-$$
-
-
-$$
-f_{k,x_\mathrm{m}}(x) = k\,\frac{x_\mathrm{m}^k}{x^{k+1}}\ \mbox{pour}\ x \ge x_\mathrm{m}
+\mathbb{P}(X>x)=\left(\frac{x}{x_{\mathrm{m}}}\right)^{-k}\ \mbox{with}\ x \geq x_{\mathrm{m}} 
 $$
 
-\textbf{	Loi de Pareto généralisée} (GPD) a 3 paramètres $\mu$, $\sigma$ et $\xi$.
+
+$$
+f_{k,x_\mathrm{m}}(x) = k\,\frac{x_\mathrm{m}^k}{x^{k+1}}\ \mbox{for}\ x \ge x_\mathrm{m}
+$$
+
+\textbf{	Generalized Pareto Law} (GPD) has 3 parameters $\mu$, $\sigma$ and $\xi$.
 
 
 $$
 F_{\xi,\mu,\sigma}(x) = \begin{cases} 1 - \left(1+ \frac{\xi(x-\mu)}{\sigma}\right)^{-1/\xi} & \text{for }\xi \neq 0, \\ 1 - \exp \left(-\frac{x-\mu}{\sigma}\right) & \text{for }\xi = 0. \end{cases} 
 $$
-pour  $x \geq \mu$  quand $\xi \geq 0$  et $ \mu \leq x \leq \mu - \sigma /\xi$  quand $ \xi < 0$ et où $\mu\in\mathbb{R}$ est la localisation, $\sigma>0$ l'échelle et  $\xi\in\mathbb{R}$ la forme. 
-Notez que certaines références donnent le \og{}paramètre de forme\fg{}, comme $\kappa = - \xi$.
+for  $x \geq \mu$  when $\xi \geq 0$  and $ \mu \leq x \leq \mu - \sigma /\xi$  when $ \xi < 0$ et où $\mu\in\mathbb{R}$ is the location, $\sigma>0$ the scale and  $\xi\in\mathbb{R}$ the form. 
+Note that some references give the \og{}shape parameter\fg{}, as $\kappa = - \xi$.
 
 $$
 f_{\xi,\mu,\sigma}(x) = \frac{1}{\sigma}\left(1 + \frac{\xi (x-\mu)}{\sigma}\right)^{\left(-\frac{1}{\xi} - 1\right)}
@@ -88,12 +88,12 @@ $$
 \end{f}
 \hrule
 
-\begin{f}[Loi des valeurs extrême généralisée]
-La fonction de répartition de la loi des extrêmes généralisée est
+\begin{f}[Generalized extreme value law]
+The distribution function of the generalized law of extremes is
 $$
 F_{\mu,\sigma,\xi}(x) = \exp\left\{-\left[1+\xi\left(\frac{x-\mu}{\sigma}\right)\right]^{-1/\xi}\right\}
 $$
-pour $1+\xi(x-\mu)/\sigma>0$, où $\mu\in\mathbb{R}$ est la localisation, $\sigma>0$ d'échelle et  $\xi\in\mathbb{R}$ la forme. Pour $\xi = 0$ l'expression est définie par sa limite en 0.
+for $1+\xi(x-\mu)/\sigma>0$, or $\mu\in\mathbb{R}$ is the location, $\sigma>0$ of scale and  $\xi\in\mathbb{R}$ the form. For $\xi = 0$ the expression is defined by its limit at 0.
 
 \begin{align*}
 	f_{\mu,\sigma,\xi}(x) =& \frac{1}{\sigma}\left[1+\xi\left(\frac{x-\mu}{\sigma}\right)\right]^{(-1/\xi)-1}\\ &\times\exp\left\{-\left[1+\xi\left(\frac{x-\mu}{\sigma}\right)\right]^{-1/\xi}\right\}
@@ -108,16 +108,16 @@ $$
 
 
 
-\begin{f}[Loi de Gumbel]
+\begin{f}[Gumbel's Law]
 
-La fonction de répartition de la \textbf{loi de Gumbel} est :
+The distribution function of Gumbel's law is :
 $$
 F_{\mu,\sigma}(x) = e^{-e^{(\mu-x)/\sigma}}.\,
 $$
-Pour $\mu = 0 $ et $\sigma = 1$, on obtient la loi standard de Gumbel.
-La loi de Gumbel est un cas particulier de la GEV (avec $\xi=0$).
+For $\mu = 0 $ et $\sigma = 1$, we obtain the standard Gumbel law.
+Gumbel's law is a special case of GEV (with $\xi=0$).
 
-Sa densité :
+Its density :
 $$
 f_{\mu,\sigma}(x)=\frac{1}{\sigma}e^{\left(\frac{x-\mu}{\sigma}-e^{-(x-\mu)/\sigma}\right)}
 $$
@@ -170,23 +170,23 @@ $$
 \end{f}
 \hrule
 
-\begin{f}[Loi de Weibull]
+\begin{f}[Weibull's Law]
 
 
-La \textbf{loi de Weibull} a pour fonction de répartition est définie par :
+The \textbf{Weibull distribution} has the distribution function defined by :
 $$
 F_{\alpha,\mu, \sigma}(x) = 1- e^{-((x-\mu)/\sigma)^\alpha}\,
 $$
-où $x >\mu$.
-Sa densité de probabilité est :
+or $x >\mu$.
+Its probability density is :
 $$
 f_{\alpha,\mu,\sigma}(x) = (\alpha/\sigma) ((x-\mu)/\sigma)^{(\alpha-1)} e^{-((x-\mu)/\sigma)^\alpha}\,
 $$
-où  $\mu\in\mathbb{R}$ est la localisation, $\sigma>0$ d'échelle et  $\alpha=-1/\xi>0 $ la forme.
+or  $\mu\in\mathbb{R}$ is the location, $\sigma>0$ of scale and  $\alpha=-1/\xi>0 $ the form.
 
-La distribution de Weibull est souvent utilisée dans le domaine de l'analyse de la durée de vie. C'est un cas particulier de la GEV lorsque $\xi<0$.
+The Weibull distribution is often used in the field of lifetime analysis. It is a special case of the GEV when $\xi<0$.
 
-Si le taux de pannes diminue au cours du temps alors, $\alpha<1$. Si le taux de panne est constant dans le temps alors, $\alpha=1$. Si le taux de panne augmente avec le temps alors, $\alpha>1$. La compréhension du taux de pannes peut fournir une indication au sujet de la cause des pannes.
+If the failure rate decreases over time then, $\alpha<1$. If the failure rate is constant over time then, $\alpha=1$. If the failure rate increases over time then, $\alpha>1$. Understanding the failure rate can provide insight into the cause of failures.
 
 
 \begin{center}
@@ -241,13 +241,13 @@ Si le taux de pannes diminue au cours du temps alors, $\alpha<1$. Si le taux de 
 \end{f}
 
 
-\begin{f}[Loi de Fréchet]
-Sa fonction de répartition de la \textbf{loi de Frechet}\index{D\'efinition! loi de Frechet} est donnée par 
+\begin{f}[Fréchet's Law]
+Its distribution function of \textbf{Frechet's law}\index{D\'efinition! loi de Frechet} is given by
 $$
-F_{\alpha,\mu,\sigma}(x)=\mathbb{P}(X \le x)=\begin{cases} e^{-\left(\frac{x-\mu}{\sigma}\right)^{-\alpha}} & \text{ si } x>\mu \\ 0 &\text{ sinon.}\end{cases} 
+F_{\alpha,\mu,\sigma}(x)=\mathbb{P}(X \le x)=\begin{cases} e^{-\left(\frac{x-\mu}{\sigma}\right)^{-\alpha}} & \text{ if } x>\mu \\ 0 &\text{ otherwise.}\end{cases} 
 $$
-où  $\mu\in\mathbb{R}$ est la localisation, $\sigma>0$ l'échelle et  $\alpha=1/\xi>0$ la forme. 
-C'est un cas particulier de la GEV lorsque $\xi>0$.
+or  $\mu\in\mathbb{R}$ is the location, $\sigma>0$ the scale and  $\alpha=1/\xi>0$ the form. 
+This is a special case of GEV when $\xi>0$.
 
 $$
 f_{\alpha,\mu,\sigma}(x)=\frac{\alpha}{\sigma} \left(\frac{x-\mu}{\sigma}\right)^{-1-\alpha}  e^{-(\frac{x-\mu}{\sigma})^{-\alpha}}
@@ -310,121 +310,121 @@ declare function={
 %\end{center}
 \end{f}
 
-\begin{f}[Lien entre GEV, Gumbel, Fréchet et Weibull]
+\begin{f}[Link between GEV, Gumbel, Fréchet and Weibull]
 
-Le paramètre de forme $\xi$ gouverne le comportement de la queue de distribution. 
-Les sous-familles définies par $\xi= 0$, $\xi>0$ et $\xi<0$ correspondent respectivement aux familles de Gumbel, Fréchet et Weibull~:
+The shape parameter $\xi$ governs the behavior of the distribution tail.
+The subfamilies defined by $\xi= 0$, $\xi>0$ and $\xi<0$ correspond respectively to the Gumbel, Fréchet and Weibull families :
 \begin{itemize}
-\item 	 Gumbel ou loi des valeurs extrêmes de type I
-\item     Fréchet ou loi des valeurs extrêmes de type II, si $\xi  = \alpha^{-1}$ avec $\alpha>0$,
-\item    Reversed Weibull ($\overline{F}$) ou loi des valeurs extrêmes de type III, si $\xi =-\alpha^{-1} $, avec $\alpha>0$.
+\item 	 Gumbel or type I extreme value law
+\item     Fréchet or type II extreme value law, if $\xi  = \alpha^{-1}$ with $\alpha>0$,
+\item    Reversed Weibull ($\overline{F}$) or type III extreme value law, if $\xi =-\alpha^{-1} $, with $\alpha>0$.
 \end{itemize}
 \end{f}
 \hrule 
 
-\begin{f}[Théorème général des valeurs extrêmes] 
+\begin{f}[General Extreme Value Theorem] 
 
-	Soit $X_1, \dots, X_n$  $iid$, $X$ de fonction de répartition $F_X$ et soit $M_n =\max(X_1,\dots,X_n)$.
+	Either $X_1, \dots, X_n$  $iid$, $X$ distribution function $F_X$ and either $M_n =\max(X_1,\dots,X_n)$.
 	
-	La théorie donne la distribution exacte du maximum :
+	The theory gives the exact distribution of the maximum :
 \begin{align*}
 		\mathcal{P}(M_n \leq z) = &\Pr(X_1 \leq z, \dots, X_n \leq z) \\
 		 = &\mathcal{P}(X_1 \leq z) \cdots \mathcal{P}(X_n \leq z) = (F_X(z))^n. 
 \end{align*}
-	S'il existe une séquence de paire de nombres réels $(a_n, b_n)$ de telle sorte que $a_n>0$ et $\lim_{n \to \infty}\mathcal{P}\left(\frac{M_n-b_n}{a_n}\leq x\right) = F_X(x)$, où $F_X$ est une fonction de répartition non dégénérée, alors la limite de la fonction $F_X$ appartient à la famille des lois $GEV$. 
+	If there exists a sequence of pairs of real numbers $(a_n, b_n)$ such that $a_n>0$ and $\lim_{n \to \infty}\mathcal{P}\left(\frac{M_n-b_n}{a_n}\leq x\right) = F_X(x)$, or $F_X$ is a non-degenerate distribution function, then the limit of the function $F_X$ belongs to the family of $GEV$ laws. 
 
 \end{f}
 
-\begin{f}[Densité sous-exponentielle]
+\begin{f}[Sub-exponential density]
 	
-	\textbf{Cas des puissances} 
+	\textbf{Case of powers} 
 	
-	Si $\overline{F}_{X}(x)=\mathbb{P}(X > x)\sim c\ x^{-\alpha}$
-		quand $x \to \infty $ pour un $\alpha > 0 $ et une constante $c > 0 $ alors la loi de $X$
-		est sous-exponentielle.
+	If $\overline{F}_{X}(x)=\mathbb{P}(X > x)\sim c\ x^{-\alpha}$
+		when $x \to \infty $ for one $\alpha > 0 $ and a constant $c > 0 $ then the law of $X$
+		is sub-exponential.
 	
-		Si $F_X$ est une fonction de répartition continue d'espérance $\mathbb{E}[X]$ finie, on appelle l'indice des grands risques par
+		If $F_X$ is a continuous distribution function of expectation $\mathbb{E}[X]$ finished, we call the index of major risks by
 		$$
 		D_{F_X}(p)=\frac{1}{\mathbb{E}[X]}\int_{1-p}^{1} F_X^{-1}(t)dt,\, \, p\in [0,1]
 		$$
 
-	Cette distribution en excès décroit moins vite que n'importe quelle distribution exponentielle.
-	Il est possible de considérer cette statistique ~:
+	This excess distribution decays less quickly than any exponential distribution.
+	It is possible to consider this statistic :
 	$$
 	T_n(p)=\frac{X_{(1:n)}+X_{(2:n)}+\ldots + X_{(np:n)}}{\sum_{1\leq i\leq n}(X_i)} \mbox{ où } \frac{1}{n}\leq p\leq 1
 	$$
-	$X_{(i:n)}$ désigne le $i^e$ $\max $ des $X_i$.
+	$X_{(i:n)}$ designates the $i^e$ $\max $ of the $X_i$.
 
 \end{f}
-\begin{f}[Théorème de Pickands–Balkema–de Haan (loi des excès)]
-	Soit $X$ de distribution $F_X$, et soit $u$ un seuil élevé. Alors, pour une large classe de lois $F_X$, la loi conditionnelle des excès
+\begin{f}[Pickands-Balkema-de Haan theorem (law of excesses)]
+	Let $X$ be of distribution $F_X$, and let $u$ be a high threshold. Then, for a large class of $F_X$ distributions, the conditional excess distribution
 	\[
 	X_u := X - u \mid X > u
 	\]
-	est approximable, pour $u$ suffisamment grand, par une loi de Pareto généralisée (GPD) :
+	is approximated, for $u$ sufficiently large, by a generalized Pareto distribution (GPD) :
 	
 	\[
 	\mathbb{P}(X - u \le y \mid X > u) \approx G_{\xi, \sigma, \mu=0}(y) :=  1 - \left(1+ \frac{\xi(x-\mu)}{\sigma}\right)^{-1/\xi} 
 	\]
 	
-	$\quad y \ge 0$. Autrement dit, pour $u \to x_F := \sup\{x : F(x) < 1\}$,
+	$\quad y \ge 0$. In other words, for $u \to x_F := \sup\{x : F(x) < 1\}$,
 	\[
 	\sup_{0 \le y < x_F - u} \left| \mathbb{P}(X - u \le y \mid X > u) - G_{\xi,\sigma,\mu=0}(y) \right| \to 0.
 	\]
 	
-	Ce théorème justifie l’utilisation de la \textit{loi de Pareto (généralisée)} pour modéliser les excès au-delà d’un seuil, ce qui est précisément le cadre des traités de réassurance en \textit{excess of loss} par risque, par événement ou de cumul annuel. 
+	This theorem justifies the use of the \textit{Pareto law (generalized)} to model excesses beyond a threshold, which is precisely the framework of reinsurance treaties in \textit{excess of loss} by risk, by event or annual accumulation.
 \end{f}
 \hrule
 
 
 \begin{f}
-	[Les données en réassurance ]
+	[Reinsurance data ]
 
-Comme la réassurance indemnise des agrégations de sinistre ou des sinistres extrêmes, elle utilise souvent des historiques qui devront être utilisé avec prudence~:
+As reinsurance compensates for aggregations of losses or extreme losses, it often uses historical data which should be used with caution :
 \begin{itemize}
-	\item l'actualisation des données (impact de l'inflation monétaire).
-	\item la revalorisation prend en compte l'évolution du risque :
+	\item updating of data (impact of monetary inflation).
+	\item the revaluation takes into account the evolution of the risk :
 	\begin{itemize}
-		\item l'évolution des taux de prime, garanties et modalités des contrats,
-		\item l'évolution des coûts des sinistres (indice des coûts de la construction, indices des coûts de réparation automobile,\ldots)
-		\item l'évolution de l'environnement juridique.
+		\item changes in premium rates, guarantees and terms of contracts,
+		\item the evolution of claims costs (construction cost index, car repair cost index,\ldots)
+		\item the evolution of the legal environment.
 	\end{itemize}
-	\item le redressement de la statistique pour prendre en compte l'évolution de la base  portefeuille :
+	\item the adjustment of the statistics to take into account the evolution of the portfolio base :
 	\begin{itemize}
-		\item profil des polices (nombre, capitaux,\ldots),
-		\item natures des garanties (évolution des franchises, des exclusions\ldots)
+		\item font profile (number, capitals, \ldots),
+		\item nature of guarantees (evolution of deductibles, exclusions\ldots)
 	\end{itemize}
 \end{itemize}
-Après ces corrections, les données sont dites \og as if \fg (en économie, on utilise l'expression contre-factuel).
+After these corrections, the data are said to be \og as if \fg (in economics, we use the expression counterfactual).
 
 \end{f}
 
 
-\begin{f}[La prime \emph{Burning Cost}]
+\begin{f}[Burning Cost]
 	
-	$X_{i}^{j}$ désigne le $i^{e}$ sinistre  de l'année $j$ \og{}as if\fg{} actualisé, revalorisé et  redressé,
-$n^j$ le nombre de sinistres l'année $j$, $c^{j}$ la charge de l'assureur $c$.
-Le taux pur  par la méthode de \textbf{Burning Cost} est donné par la formule~:
+	$X_{i}^{j}$ designates the $i^{e}$ disaster of the year $j$ \og{}as if\fg{} updated, revalued and corrected,
+$n^j$ the number of claims per year $j$, $c^{j}$ the insurer's responsibility $c$.
+The pure rate by the \textbf{Burning Cost} method is given by the formula :
 $$
 BC_{pur}=\frac{1}{s}\sum_{j=1}^{n}\frac{c^{j}}{a_{j}}
 $$ 
-Le Burning Cost n'est qu'une moyenne des ratios $S/P$ croisés~: les sinistres à la charge du réassureur sur les primes reçues par la cédante.
-La prime Burning Cost est alors : $P_{pure}=BC_{pur}\times a_{s+1}$.
+The Burning Cost is only an average of the crossed $S/P$ ratios : the claims payable by the reinsurer on the premiums received by the ceding company.
+The Burning Cost premium is then : $P_{pure}=BC_{pur}\times a_{s+1}$.
 
-Dans le cas d'un $p$ XS $f$), $$
+In the case of a $p$ XS $f$), $$
 c^{j}=\sum_{i=1}^{n^j}\max\left(  \left( X_{i}^{j}-f\right),p\right) 1\!\!1_{x^{j}\geq f}
 $$
-Si l'assurance vie calcule des taux de prime en référence au capital, l'assurance non vie utilise comme  référence à la valeur assurée, la réassurance prend elle comme référence le total des primes de la cédante, appelée \textbf{assiette}.
-On note $a_{j}$ désigne l'assiette de prime à l'année $j$ et $a_{s+1}^{*}$ désigne l'assiette estimée de l'année à venir et où $s$ désigne le nombre d'années d'historique.
+While life insurance calculates premium rates with reference to capital, non-life insurance uses the insured value as a reference, reinsurance takes the total premiums of the ceding company as a reference, called the \textbf{base}.
+We note $a_{j}$ denotes the premium base for year $j$ and $a_{s+1}^{*}$ denotes the estimated base for the coming year and where $s$ denotes the number of years of history.
 \end{f}
 
 
 
-\begin{f}[Le modèle Poisson-Pareto]
-[Prime de l'XS ou de l'XL]
-Soit $p$ et $f$ respectivement la portée et la priorité (franchise) de l'XS, avec la limite $l=p+f$ ($p$ XS $f$).
+\begin{f}[The Poisson-Pareto model]
+[Bonus of XS or XL]
+Let $p$ and $f$ be the scope and priority (franchise) of the XS, respectively, with the limit $l=p+f$ ($p$ XS $f$).
 
-La prime XS correspond à :
+The XS bonus corresponds to :
 $$
 \mathbb{E}\left[S_N\right]=\mathbb{E}\left[\sum_{i=1}^{N} Y_{i}\right]=\mathbb{E}[N]\times \mathbb{E}[Y]
 $$
@@ -434,19 +434,19 @@ $$
 $$
 
 
-Si $l=\infty$ et $\alpha \neq 1$ :
+If $l=\infty$ and $\alpha \neq 1$ :
 $$
 \mathbb{E}[S_N] = \lambda \frac{x_\mathrm{m}^{\alpha}}{\alpha -1}f^{1-\alpha} 
 $$
 
-si  $l=\infty$ et $\alpha = 1$ il n'y a pas de solution.
+if  $l=\infty$ and $\alpha = 1$ there is no solution.
 
-Si $l<\infty$ et $\alpha \neq 1$ :
+If $l<\infty$ and $\alpha \neq 1$ :
 $$
 \mathbb{E}[S_N] = \lambda \frac{x_\mathrm{m}^{\alpha}}{\alpha -1}\left( f^{1-\alpha} -l^{1-\alpha} \right)
 $$
 
-Si $l<\infty$ et $\alpha = 1$ :
+If $l<\infty$ and $\alpha = 1$ :
 $$
 \mathbb{E}[S_N] = \lambda x_\mathrm{m} \ln \left(  \frac{1}{f}\right)
 $$
@@ -455,10 +455,10 @@ $$
 
 
 \begin{f}
-[Le modèle Poisson-LogNormal]
+[The Poisson-LogNormal Model]
 
-Si $X$ suit une $\mathcal{L}\mathcal{N}orm(x_\mathrm{m}, \mu, \sigma)$ alors $X-x_\mathrm{m}$ suit une $\mathcal{L}\mathcal{N}orm(\mu, \sigma)$
-Il vient :
+If $X$ follows a $\mathcal{L}\mathcal{N}orm(x_\mathrm{m}, \mu, \sigma)$ then $X-x_\mathrm{m}$ follows a $\mathcal{L}\mathcal{N}orm(\mu, \sigma)$
+It comes :
 $$
 \mathbb{P}[X>f]=\mathbb{P}[X-x_\mathrm{m}>f-x_\mathrm{m}]=1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-\mu}{\sigma}\right)
 $$
@@ -468,7 +468,7 @@ $$
 	= & e ^{m+\sigma^2/2} \left[1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-(\mu+\sigma^2)}{\sigma}\right) \right]\\
 	& +x_\mathrm{m} \left( 1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-\mu}{\sigma}\right) \right)
 \end{align*}
-Avec franchise et sans limite :
+With frankness and without limits :
 \begin{align*}
 	\mathbb{E}[S_N] \\ 
 	= & \lambda \left(\mathbb{E}\left[ X-x_\mathrm{m}\mid X-x_\mathrm{m}>f-x_\mathrm{m} \right]+x_\mathrm{m} \mathbb{P}[X>f]-f\mathbb{P}[X>f]\right)\\
