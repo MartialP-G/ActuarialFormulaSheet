@@ -1,8 +1,8 @@
-% !TeX root = ActuarialFormSheet_MBFA_MPG.tex
-% !TeX spellcheck = fr_FR
+% !TeX root = ActuarialFormSheet_MBFA-en.tex
+% !TeX spellcheck = en_GB
 
-\begin{f}[Pythagore]
-Dans un triangle rectangle, le carré de l’hypoténuse est égal à la somme des carrés des deux autres côtés. Si $ABC$  est rectangle en $C$, alors 
+\begin{f}[Pythagoras]
+In a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides. If $ABC$ is right-angled at $C$, then
 
 %
 \begin{tikzpicture}[scale=.85]
@@ -33,8 +33,8 @@ Dans un triangle rectangle, le carré de l’hypoténuse est égal à la somme d
 \end{tikzpicture}
 \end{f}
 
-\begin{f}[Thalès]
-Soient deux droites \textbf{sécantes en un point} \( A \), et soient deux droites \( (BC) \) et \( (DE) \) \textbf{parallèles}, coupant les deux droites en \( B, D \) et \( C, E \), alors :
+\begin{f}[Thales]
+Let two lines \textbf{intersect at a point} \( A \), and let two lines \( (BC) \) and \( (DE) \) \textbf{parallel}, intersecting the two lines at \( B, D \) and \( C, E \), then :
 \[
 \frac{AB}{AD} = \frac{AC}{AE} = \frac{BC}{DE}
 \]
@@ -73,43 +73,43 @@ Soient deux droites \textbf{sécantes en un point} \( A \), et soient deux droit
 \end{f}
 \hrule
 
-\begin{f} [Équation du second degré] 
+\begin{f} [Quadratic equation] 
      \[
     ax^2 + bx + c = 0
     \]
 
-    Le discriminant est défini par :
+    The discriminant is defined by :
     
     \[
     \Delta = b^2 - 4ac
     \]
        
     \begin{itemize}
-        \item Si \(\Delta > 0\), l'équation a deux solutions distinctes :
+        \item If \(\Delta > 0\), the equation has two distinct solutions :
         \[
         x_1 = \frac{-b + \sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b - \sqrt{\Delta}}{2a}
         \]
-        \item Si \(\Delta = 0\), l'équation a une solution double :
+        \item If \(\Delta = 0\), the equation has a double solution :
         \[
         x = \frac{-b}{2a}
         \]
-        \item Si \(\Delta < 0\), l'équation a une solution dans les imaginaires
+        \item If \(\Delta < 0\), the equation has a solution in the imaginary
         \[
         x_1 = \frac{-b + i\sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b - i\sqrt{\Delta}}{2a}
         \]
     \end{itemize}
 \end{f}
 \hrule
-\begin{f} [Fonctions factorielle, dénombrement et Gamma] 
+\begin{f} [Factorial, Counting and Gamma Functions] 
 
-La fonction \textbf{factorielle} (de $\mathbb{N}$ dans $\mathbb{N}$ ) est définie par $0!=1$ et $n!=n \times(n-1) \times \cdots \times 2 \times 1=$ permutations de $n$ éléments $\displaystyle C_n^k=\binom{k}{n}=\frac{n!}{k!(n-k)!}=$ choix de $k$ éléments parmi $n$ les $C_n^k$ se calculent aussi par le triangle de Pascal et vérifient:
+The \textbf{factorial} function (of $\mathbb{N}$ in $\mathbb{N}$ ) is defined by $0!=1$ and $n!=n \times(n-1) \times \cdots \times 2 \times 1=$ permutations of $n$ elements $\displaystyle C_n^k=\binom{k}{n}=\frac{n!}{k!(n-k)!}=$ choice of $k$ elements among $n$ the $C_n^k$ are also calculated by Pascal's triangle and verify:
 
 $$
 C_n^k=C_n^{n-k}, C_n^k+C_n^{k+1}=C_{n+1}^{k+1} .
 $$
 
 
-Soit $E$ un ensemble de cardinal $\operatorname{Card}(E)$ et de parties $\mathcal{P}(E)$ :
+Let $E$ be a set of cardinal $\operatorname{Card}(E)$ and parts $\mathcal{P}(E)$ :
 
 $$
 \begin{aligned}
@@ -119,23 +119,23 @@ $$
 \end{aligned}
 $$
 \[ \Gamma(n) = \int_0^\infty t^{n-1} e^{-t} \, dt \]
-La fonction $\Gamma$ peut être vue comme le prolongement de la factorielle : $\Gamma(n+1)=n!$.
+The function $\Gamma$ can be seen as the extension of the factorial : $\Gamma(n+1)=n!$.
 \end{f}
 
 \hrule
 \begin{f}
-	[Développement binomial] 
+	[Binomial expansion] 
 	
-	Pour un entier positif $n$,
+	For a positive integer $n$,
 	$$
 	(x+y)^n=\sum_{i=0}^n\binom{n}{i} x^i y^{n-i}
 	$$
 	
 \end{f}
 \hrule
-\begin{f}[Suites]  
+\begin{f}[Sequences]  
 	
-	Les suites arithmétiques de raison $r$
+	Arithmetic sequences of reason $r$
 	
 	$$
 	\left\{\begin{array} { r l } 
@@ -147,61 +147,61 @@ La fonction $\Gamma$ peut être vue comme le prolongement de la factorielle : $\
 	\end{array}\right.\right.
 	$$
 	
-	suites géométriques de raison $q\left\{\begin{array}{rll}u_{n+1} & = & q \times u_n \\ u_0 & \in & \mathbb{R}\end{array}\right.$
+	geometric sequences of reason $q\left\{\begin{array}{rll}u_{n+1} & = & q \times u_n \\ u_0 & \in & \mathbb{R}\end{array}\right.$
 	
 	$$
 	\Rightarrow\left\{\begin{array}{rlr}
 		u_n & =u_0 \times q^n \\
 		\sum_{k=0}^n u_k & =\left\{\begin{array}{rl}
-			(n+1) u_0 & \text { si } \\
-			u_0 \frac{1-q^{n+1}}{1-q} & \text { sinon }
+			(n+1) u_0 & \text { if } \\
+			u_0 \frac{1-q^{n+1}}{1-q} & \text { otherwise }
 		\end{array} \quad q=1\right.
 	\end{array}\right.
 	$$
 	
 \end{f}
 \hrule
-\begin{f}[Exponentielle et Logarithme]
-	La fonction exponentielle \( e^x \) peut être définie par le développement en série entière suivant :
+\begin{f}[Exponential and Logarithm]
+	The exponential function \( e^x \) can be defined by the following power series expansion :
 	
 	\[
 	e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots
 	\]
 	
-	Cette série converge pour tout \( x \in \mathbb{R} \) et permet de définir l'exponentielle comme une somme infinie.
+	This series converges for all \( x \in \mathbb{R} \) and allows us to define the exponential as an infinite sum.
 	
 	
-	La fonction logarithme naturel \( \ln(x) \) est définie comme la primitive de la fonction \( \frac{1}{x} \). Autrement dit :
+	The natural logarithm function \( \ln(x) \) is defined as the antiderivative of the function \( \frac{1}{x} \). In other words :
 	
 	\[
 	\frac{d}{dx} \ln(x) = \frac{1}{x}
 	\]
 	
-	avec la condition \( \ln(1) = 0 \). Cette définition permet d'établir le lien entre l'exponentielle et le logarithme via l'inversion : \( e^{\ln(x)} = x \) pour \( x > 0 \).
+	with the condition \( \ln(1) = 0 \). This definition allows us to establish the link between the exponential and the logarithm via inversion : \( e^{\ln(x)} = x \) for \( x > 0 \).
 	
 \end{f}
 
 
 
 \hrule
-\begin{f}[Relation de congruence]
-	Soit $m > 0$. On dit que deux réels $a$ et $b$ sont congrus modulo $m$ s'il existe un entier relatif $k \in \mathbb{Z}$ tel que :
+\begin{f}[Congruence relationship]
+	Let $m > 0$. We say that two real numbers $a$ and $b$ are congruent modulo $m$ if there exists a relative integer $k \in \mathbb{Z}$ such that :
 	\[
 	a = b + km.
 	\]
 	On note $a \equiv b \pmod{m}$.
 	
-	En trigonométrie, on choisit souvent $m = 2\pi$ ou $m = \pi$.
+	In trigonometry, we often choose $m = 2\pi$ or $m = \pi$.
 \end{f}
 
 \begin{f}
-	[Cercle trigonométrique — sinus, cosinus, tangente]
+	[Trigonometric circle — sine, cosine, tangent]
 	
 		\begin{animateinline}[poster=first, autoplay,loop]{1}
 			\multiframe{24}{i=0+1}{%
 				\begin{tikzpicture}[scale=3,yrange=-4:4]
 \node[text width=9cm, align=left] at (0,3.75) {\ $\displaystyle M = (\cos \theta, \sin \theta)$};
-\node[text width=9cm, align=left] at (0,3.5) {\ Si $\theta \not\equiv \frac{\pi}{2} \pmod{\pi}$, on définit :
+\node[text width=9cm, align=left] at (0,3.5) {\ If $\theta \not\equiv \frac{\pi}{2} \pmod{\pi}$, we define :
 	$\displaystyle
 	\tan \theta = \frac{\sin \theta}{\cos \theta}
 	$};
@@ -236,10 +236,10 @@ La fonction $\Gamma$ peut être vue comme le prolongement de la factorielle : $\
 \end{tabular}
  \\ \vspace{2mm}
 \ $\cos x = \cos y \iff \begin{cases}
-	x \equiv y \pmod{2\pi} \text{ ou }\\ x \equiv -y \pmod{2\pi}
+	x \equiv y \pmod{2\pi} \text{ or }\\ x \equiv -y \pmod{2\pi}
 \end{cases} $ \\
 \ $\sin x = \sin y \iff \begin{cases}
-	 x \equiv y \pmod{2\pi} \text{ ou }\\ x \equiv \pi - y \pmod{2\pi}
+	 x \equiv y \pmod{2\pi} \text{ or }\\ x \equiv \pi - y \pmod{2\pi}
 \end{cases}$\\
 \ $\tan x = \tan y \iff x \equiv y \pmod{\pi}$
 };
@@ -304,38 +304,38 @@ La fonction $\Gamma$ peut être vue comme le prolongement de la factorielle : $\
 
 \columnbreak
 \begin{f}
-	[Propriétés de la relation de congruence]
+	[Properties of the congruence relation]
 	
-	Soient $m > 0$ et $a, b, c, d \in \mathbb{R}$. Alors :
+	Let $m > 0$ et $a, b, c, d \in \mathbb{R}$. Then :
 	
 	\begin{itemize}
-		\item \textbf{Réflexivité} : $a \equiv a \pmod{m}$.
-		\item \textbf{Symétrie} : $a \equiv b \pmod{m} \iff b \equiv a \pmod{m}$.
-		\item \textbf{Transitivité} : si $a \equiv b \pmod{m}$ et $b \equiv c \pmod{m}$, alors $a \equiv c \pmod{m}$.
-		\item \textbf{Additivité} : si $a \equiv b \pmod{m}$ et $c \equiv d \pmod{m}$, alors $a + c \equiv b + d \pmod{m}$.
+		\item \textbf{Reflexivity} : $a \equiv a \pmod{m}$.
+		\item \textbf{Symmetry} : $a \equiv b \pmod{m} \iff b \equiv a \pmod{m}$.
+		\item \textbf{Transitivity} : if $a \equiv b \pmod{m}$ and $b \equiv c \pmod{m}$, then $a \equiv c \pmod{m}$.
+		\item \textbf{Additivity} : if $a \equiv b \pmod{m}$ and $c \equiv d \pmod{m}$, then $a + c \equiv b + d \pmod{m}$.
 	\end{itemize}
 	
 \end{f}	
 
 \hrule
-\begin{f}[Dérivées et primitives] 
+\begin{f}[Derivatives and primitives] 
 
 \[
 \begin{aligned}
-& f \text { continue en } x_\mathrm{m} \Leftrightarrow \lim _{x \rightarrow x_\mathrm{m}} f(x)=f\left(x_\mathrm{m}\right) \\
-& f \text { dérivable en } x_\mathrm{m} \Leftrightarrow \exists \lim _{h \rightarrow 0} \frac{f\left(x_\mathrm{m}+h\right)-f\left(x_\mathrm{m}\right)}{h}=: f^{\prime}\left(x_\mathrm{m}\right)
+& f \text { continues in } x_\mathrm{m} \Leftrightarrow \lim _{x \rightarrow x_\mathrm{m}} f(x)=f\left(x_\mathrm{m}\right) \\
+& f \text { derivable in } x_\mathrm{m} \Leftrightarrow \exists \lim _{h \rightarrow 0} \frac{f\left(x_\mathrm{m}+h\right)-f\left(x_\mathrm{m}\right)}{h}=: f^{\prime}\left(x_\mathrm{m}\right)
 \end{aligned}
 \]
  
-L'\textbf{intégrale de Riemann} d'une fonction \( f(x) \) sur un intervalle \([a, b]\) est la limite, si elle existe, de la somme des aires des rectangles approchant l'aire sous la courbe, donnée par :  
+The \textbf{Riemann integral} of a function \(f(x)\) on an interval \([a, b]\) is the limit, if it exists, of the sum of the areas of the rectangles approaching the area under the curve, given by :  
 
 \[
 \int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x_i,
 \]
 \begin{itemize}
-\item \( [x_{i-1}, x_i] \) est une subdivision de \([a, b]\),  
-\item \( \Delta x_i = x_i - x_{i-1} \) est la largeur du sous-intervalle,  
-\item \( x_i^* \in [x_{i-1}, x_i] \) est un point choisi arbitrairement dans chaque sous-intervalle.
+\item \( [x_{i-1}, x_i] \) is a subdivision of \([a, b]\),  
+\item \( \Delta x_i = x_i - x_{i-1} \) is the width of the subinterval,  
+\item \( x_i^* \in [x_{i-1}, x_i] \) is an arbitrarily chosen point in each subinterval.
 \end{itemize}
   
 \newcounter{numberofdiscretisation} \setcounter{numberofdiscretisation}{1}
@@ -371,24 +371,24 @@ L'\textbf{intégrale de Riemann} d'une fonction \( f(x) \) sur un intervalle \([
       }
       
 \end{center}
-      Exemple d'intégrale de Riemann (upper)\href{https://texample.net/media/tikz/examples/TEX/upper-riemann-sum.tex}{$^*$}
+      Example of a Riemann integral (upper)\href{https://texample.net/media/tikz/examples/TEX/upper-riemann-sum.tex}{$^*$}
  
  
 
-L'\textbf{intégrale de Lebesgue} d'une fonction \( f(x) \) sur un ensemble \( E \) est définie en mesurant l'aire sous la courbe en fonction des valeurs prises par \( f \), donnée par :  
+The \textbf{Lebesgue integral} of a function \( f(x) \) on a set \( E \) is defined by measuring the area under the curve as a function of the values taken by \( f \), given by :  
 \[
 \int_E f \, d\mu = \int_0^\infty \mu(\{x \in E : f(x) > t\}) \, dt,
 \]
 \begin{itemize}
-    \item \( \mu \) est une mesure (souvent la mesure de Lebesgue),  
-\item \( \{x \in E : f(x) > t\} \) représente l'ensemble des points où \( f(x) \) dépasse \( t \).  
+    \item \( \mu \) is a measure (often the Lebesgue measure),  
+\item \( \{x \in E : f(x) > t\} \) represents the set of points where \( f(x) \) exceeds \( t \).  
 \end{itemize} 
-À la différence de Riemann, Lebesgue regroupe les points selon leurs valeurs plutôt que selon leur position.
+Unlike Riemann, Lebesgue groups points according to their values rather than their position.
 
 \renewcommand{\arraystretch}{1.5}
 \[
 \begin{array}{|c|c|c|}
-\hline \rowcolor{BleuProfondIRA!40} \text { fonction }(n \in \mathbb{R}) & \text { dérivée } & \text { primitive } \\
+\hline \rowcolor{BleuProfondIRA!40} \text { function }(n \in \mathbb{R}) & \text { derivative } & \text { primitive } \\
 \hline x & 1 & \frac{x^2}{2}+C \\
 \hline x^2 & 2 x & \frac{x^3}{3}+C \\
 \hline 1 / x & -1 / x^2 & \ln (x)+C \\
@@ -419,43 +419,43 @@ L'\textbf{intégrale de Lebesgue} d'une fonction \( f(x) \) sur un ensemble \( E
 
 \hrule
 
-\begin{f} [Intégration par parties] 
+\begin{f} [Integration by parts] 
 
-Soit \( u(x) \) et \( v(x) \) deux fonctions continûment dérivables sur l'intervalle \([a, b]\), alors
+Either \( u(x) \) et \( v(x) \) two continuously differentiable functions on the interval \([a, b]\), then
 
 \[
 \int_a^b u(x) v'(x) \, dx = \left[ u(x) v(x) \right]_a^b - \int_a^b u'(x) v(x) \, dx
 \]
 
-où :
+or :
 \begin{itemize}
-    \item \( u(x) \) est une fonction dont on connaît la dérivée \( u'(x) \),
-    \item \( v'(x) \) est une fonction dont on connaît la primitive \( v(x) \).
+    \item \( u(x) \) is a function whose derivative is known \( u'(x) \),
+    \item \( v'(x) \) is a function whose primitive is known \( v(x) \).
 \end{itemize}
 
 \end{f}
 \hrule
-\begin{f}[Intégration avec changement de variable] 
+\begin{f}[Integration with change of variable] 
 
-Soit \( f(x) \) une fonction continue et \( x = \phi(t) \) un changement de variable, où \( \phi \) est une fonction dérivable. Alors :
+Either \( f(x) \) a continuous function and \( x = \phi(t) \) a change of variable, where \( \phi \) is a differentiable function. Then :
 
 \[
 \int_{a}^{b} f(x) \, dx = \int_{\phi^{-1}(a)}^{\phi^{-1}(b)} f(\phi(t)) \phi'(t) \, dt
 \]
 
-où :
+or :
 \begin{itemize}
-    \item \( x = \phi(t) \) représente le changement de variable,
-    \item \( \phi'(t) \) est la dérivée de \( \phi(t) \),
-    \item les bornes de l'intégrale sont ajustées en fonction du changement de variable.
+    \item \( x = \phi(t) \) represents the change of variable,
+    \item \( \phi'(t) \) is the derivative of \( \phi(t) \),
+    \item the limits of the integral are adjusted according to the change of variable.
 \end{itemize}
 \end{f}
 
 \hrule
 \begin{f}
- [Formule de Taylor] 
+ [Taylor formula] 
  
-Soit \( f(x) \) une fonction \( n \) - fois dérivable en un point \( a \). Le développement de Taylor de \( f(x) \) autour de \( a \) est donné par :
+Either \( f(x) \) a function \( n \) - times differentiable at a point \( a \). Taylor's development of \( f(x) \) around \( a \) is given by :
 
 \begin{align*}
  f(x) =& f(a) + f'(a)(x - a) + \frac{f''(a)}{2!}(x - a)^2 \\
@@ -465,43 +465,43 @@ Soit \( f(x) \) une fonction \( n \) - fois dérivable en un point \( a \). Le d
 
 où :
 \begin{itemize}
-    \item \( f^{(n)}(a) \) est la \( n \)\ieme{} dérivée de \( f \) évaluée en \( a \),
-    \item \( \mathcal{O}_n(x) \) est le reste du développement de Taylor, représentant l'erreur d'approximation lorsque l'on tronque la série après le terme d'ordre \( n \), avec 
+    \item \( f^{(n)}(a) \) is the \( n \)\ieme{} derived from \( f \) evaluated in \( a \),
+    \item \( \mathcal{O}_n(x) \) is the remainder of the Taylor development, representing the approximation error when truncating the series after the order term \( n \), then 
     \[
     \lim_{x\rightarrow 0}\frac{\mathcal{O}_n(x) }{x^n}\Rightarrow 0
     \]
 \end{itemize}
 \end{f}
 \hrule
-\begin{f}[Théorème des valeurs intermédiaires] 
+\begin{f}[Intermediate Value Theorem] 
 
-Soit \( f \) une fonction continue sur un intervalle fermé \([a, b]\) et \( f(a) \neq f(b) \). Le théorème des valeurs intermédiaires affirme que pour tout réel \( c \) compris entre \( f(a) \) et \( f(b) \), il existe un point \( x \in [a, b] \) tel que :
+Either \( f \) a continuous function on a closed interval \([a, b]\) and \( f(a) \neq f(b) \). The intermediate value theorem states that for any real number \( c \) between \( f(a) \) and \( f(b) \), there is a point \( x \in [a, b] \) such as :
 
 \[
 f(x) = c
 \]
 
-Autrement dit, si une fonction est continue sur un intervalle, elle prend toutes les valeurs comprises entre \( f(a) \) et \( f(b) \) au moins une fois.
+In other words, if a function is continuous on an interval, it takes all the values between \( f(a) \) and \( f(b) \) at least once.
 \end{f}
 \hrule
-\begin{f}[Matrices et propriétés]
+\begin{f}[Matrices and properties]
   
-\textbf{Matrices diagonales :}
-Une matrice est dite diagonale si tous les éléments en dehors de la diagonale principale sont nuls. Pour une matrice \( A \in \mathbb{R}^{n \times n} \), cela s'écrit :
+\textbf{Diagonal matrices :}
+A matrix is said to be diagonal if all elements outside the main diagonal are zero. For a matrix \( A \in \mathbb{R}^{n \times n} \), it is written :
 \[
 A = \text{diag}(a_1, a_2, \dots, a_n)
 \]
-où \( a_i \) sont les éléments diagonaux.
+where \( a_i \) are the diagonal elements.
 
-\textbf{Matrices triangulaires :}
-Une matrice est triangulaire supérieure si tous les éléments en dessous de la diagonale sont nuls, c'est-à-dire \( A_{ij} = 0 \) pour \( i > j \). Inversement, elle est triangulaire inférieure si \( A_{ij} = 0 \) pour \( i < j \).
+\textbf{Triangular matrices :}
+A matrix is upper triangular if all elements below the diagonal are zero, that is, \( A_{ij} = 0 \) for \( i > j \). Conversely, it is lower triangular if \( A_{ij} = 0 \) for \( i < j \).
 \end{f}
-\begin{f}[Déterminant d'une matrice]
+\begin{f}[Determinant of a matrix]
   
-Le déterminant d'une matrice carrée \( A \in \mathbb{R}^{n \times n} \) est un scalaire, noté \( \det(A) \) :
+The determinant of a square matrix \( A \in \mathbb{R}^{n \times n} \) is a scalar, denoted \( \det(A) \) :
 \begin{itemize}
-    \item Si \( A \) est une matrice carrée \( n \times n \), alors \( A \) est inversible si et seulement si \( \det(A) \neq 0 \).
-    \item Le déterminant d'une matrice triangulaire (supérieure ou inférieure) ou d'une matrice diagonale :
+    \item If \( A \) is a square matrix \( n \times n \), then \( A \) is invertible if and only if \( \det(A) \neq 0 \).
+    \item The determinant of an upper or lower triangular matrix or a diagonal matrix :
     \[
     \det(A) = \prod_{i=1}^{n} A_{ii}
     \]
@@ -513,51 +513,51 @@ Le déterminant d'une matrice carrée \( A \in \mathbb{R}^{n \times n} \) est un
     \[
     \det(A^T) = \det(A)
     \]
-    \item Si une matrice \( A \) contient deux lignes ou colonnes identiques, alors \( \det(A) = 0 \).
+    \item If a matrix \( A \) contains two identical rows or columns, then \( \det(A) = 0 \).
 \end{itemize}
 
-\textbf{Calcul du déterminant :}
-Le déterminant d'une matrice \( 2 \times 2 \) se calcule simplement par :
+\textbf{Calculation of the determinant :}
+The determinant of a matrix \( 2 \times 2 \) is simply calculated by :
 \[
 \det\begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc
 \]
-Pour une matrice \( 3 \times 3 \), il est donné par :
+For a matrix \( 3 \times 3 \), it is given by :
 \[
 \det\begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)
 \]
-Pour des matrices de dimension supérieure, le déterminant peut être calculé par cofacteurs ou via une méthode de réduction (par exemple, la méthode de Gauss).
+For higher-dimensional matrices, the determinant can be calculated by cofactors or via a reduction method (e.g., Gauss's method).
 
 \end{f}
 \hrule
-\begin{f}[Inversibilité d'une matrice] 
-Une matrice \( A \in \mathbb{R}^{n \times n} \) est inversible s'il existe une matrice \( A^{-1} \) telle que :
+\begin{f}[Invertibility of a matrix] 
+A matrix \( A \in \mathbb{R}^{n \times n} \) is invertible if there exists a matrix \( A^{-1} \) such as :
 \[
 A A^{-1} = A^{-1} A = I_n
 \]
-où \( I_n \) est la matrice identité. L'inversibilité d'une matrice est garantie par \( \det(A) \neq 0 \).
+or \( I_n \) is the identity matrix. The invertibility of a matrix is guaranteed by \( \det(A) \neq 0 \).
 
 \textbf{Trace :}
-La trace d'une matrice carrée \( A \), notée \( \text{Tr}(A) \), est la somme de ses éléments diagonaux :
+The trace of a square matrix \( A \), noted \( \text{Tr}(A) \), is the sum of its diagonal elements :
 \[
 \text{Tr}(A) = \sum_{i=1}^{n} A_{ii}
 \]
-Elle représente souvent des grandeurs liées à la somme des valeurs propres d'une matrice.
+It often represents quantities linked to the sum of the eigenvalues of a matrix.
 
-\textbf{Décomposition de Cholesky :}
-La décomposition de Cholesky est applicable aux matrices symétriques définies positives. Elle permet de factoriser une matrice \( A \in \mathbb{R}^{n \times n} \) en un produit de la forme :
+\textbf{Cholesky decomposition :}
+Cholesky decomposition is applicable to positive definite symmetric matrices. It allows a matrix to be factorized \( A \in \mathbb{R}^{n \times n} \) into a product of the form :
 \[
 A = LL^T
 \]
-où \( L \) est une matrice triangulaire inférieure. Cette décomposition est utile dans les calculs numériques et les algorithmes d'optimisation.
+or \( L \) is a lower triangular matrix. This decomposition is useful in numerical calculations and optimization algorithms.
 
 \end{f}
 \hrule
 
-\begin{f}[Gradient et matrice Hessienne]
-	Pour une fonction \( f : \mathbb{R}^n \rightarrow \mathbb{R} \) de classe \( C^2 \), on définit :
+\begin{f}[Gradient and Hessian matrix]
+	For a function \( f : \mathbb{R}^n \rightarrow \mathbb{R} \) of class \( C^2 \), we define :
 	
 	\begin{itemize}
-		\item Le \textbf{gradient} \( \nabla f(x) \) comme le vecteur des dérivées partielles premières :
+		\item The \textbf{gradient} \( \nabla f(x) \) as the vector of first partial derivatives :
 		$$
 		\nabla f(x) = 
 		\begin{pmatrix}
@@ -567,7 +567,7 @@ où \( L \) est une matrice triangulaire inférieure. Cette décomposition est u
 		\end{pmatrix}
 		$$
 		
-		\item La \textbf{matrice Hessienne} \( \nabla^2 f(x) \) comme la matrice symétrique des dérivées secondes :
+		\item The \textbf{Hessian matrix} \( \nabla^2 f(x) \) as the symmetric matrix of second derivatives :
 		$$
 		\nabla^2 f(x) =
 		\begin{pmatrix}
@@ -580,17 +580,17 @@ où \( L \) est une matrice triangulaire inférieure. Cette décomposition est u
 	
 \end{f}
 
-\begin{f}[Théorème des fonctions implicites]
-	Soit \( F : \mathbb{R}^2 \rightarrow \mathbb{R} \) une fonction de classe \( C^1 \), et supposons que \( F(a^\star, b) = 0 \) pour un certain couple \( (a^\star, b) \in \mathbb{R}^2 \). Si
+\begin{f}[Implicit Function Theorem]
+	Either \( F : \mathbb{R}^2 \rightarrow \mathbb{R} \) a class function \( C^1 \), and suppose that \( F(a^\star, b) = 0 \) for a certain couple \( (a^\star, b) \in \mathbb{R}^2 \). If
 	\[
 	\frac{\partial F}{\partial y}(a^\star, b) \neq 0,
 	\]
-	alors il existe un réel \( h > 0 \) et une unique fonction \( \varphi \), définie sur un voisinage \( (a^\star - h, a^\star + h) \), telle que
+	so there is a real \( h > 0 \) and a single function \( \varphi \), defined on a neighbourhood \( (a^\star - h, a^\star + h) \), such as
 	\[
 	\varphi(a^\star) = b \quad \text{et} \quad \forall x \in (a^\star - h, a^\star + h), \quad F(x, \varphi(x)) = 0
 	\]
 	
-	De plus, la fonction implicite \( \varphi \) est de classe \( C^1 \) et sa dérivée est donnée par :
+	In addition, the implicit function \( \varphi \) is of class \( C^1 \) and its derivative is given by :
 	\[
 	\varphi'(x) = - \left. \frac{\partial F / \partial x}{\partial F / \partial y} \right|_{y = \varphi(x)}
 	\]

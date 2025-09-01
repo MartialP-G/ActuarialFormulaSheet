@@ -1,5 +1,5 @@
 % !TeX root = ActuarialFormSheet_MBFA-en.tex
-% !TeX spellcheck = en_US
+% !TeX spellcheck = en_GB
 %\setlength{\parskip}{0cm} % paragraph spacing
 %		\section*{Concepts de base}
 
@@ -102,7 +102,7 @@ Under the econometric model assumptions and the Central Limit Theorem :
 
 \begin{f}[Trends and seasonality]
 
-\textbf{Spurious regression} - is when the relation between $y$ and $x$ is due to factors that affect $y$ and have correlation with $x$, $\Corr(x_{j}, u) \neq 0$. Is the \textbf {non-fulfillment of t3}.
+\textbf{Spurious regression} - is when the relation between $y$ and $x$ is due to factors that affect $y$ and have correlation with $x$, $\Corr(x_{j}, u) \neq 0$. Is the \textbf {non-fulfilment of t3}.
 
 
 
@@ -111,27 +111,27 @@ Two time series can have the same (or contrary) trend, that should lend to a hig
 \begin{center}
 	$y_{t} = \beta_{0} + \beta_{1} x_{t} + u_{t}$
 \end{center}
-où :
+where :
 \begin{center}
 	$y_{t} = \alpha_{0} + \alpha_{1} \mathrm{Tendance} + v_{t}$
 	
 	$x_{t} = \gamma_{0} + \gamma_{1} \mathrm{Tendance} + v_{t}$
 \end{center}
-L'ajout d'une tendance au modèle peut résoudre le problème :
+Adding a trend to the model can solve the problem :
 \begin{center}
 	$y_{t} = \beta_{0} + \beta_{1} x_{t} + \beta_{2} \mathrm{Tendance} + u_{t}$
 \end{center}
-La tendance peut être linéaire ou non linéaire (quadratique, cubique, exponentielle, etc.).
+The trend can be linear or non-linear (quadratic, cubic, exponential, etc.)
 
-Une autre méthode consiste à utiliser le \textbf{filtre de Hodrick-Prescott} pour extraire la tendance et la composante cyclique.
+Another way is to make use of the \textbf{Hodrick-Prescott filter} to extract the trend and the cyclical component.
 
 \end{f}    
 
-\begin{f}[Saisonnalité]
+\begin{f}[Seasonality]
 
-	Une série temporelle peut présenter une saisonnalité. Cela signifie que la série est soumise à des variations ou à des schémas saisonniers, généralement liés aux conditions climatiques.
+	A time series with can manifest seasonality. That is, the series is subject to a seasonal variations or patterns, usually related to climatology conditions.
 	
-	Par exemple, le PIB (en noir) est généralement plus élevé en été et plus faible en hiver. Série corrigée des variations saisonnières (en orange {\color{OrangeProfondIRA}}) à titre de comparaison.
+	For example, GDP (black) is usually higher in summer and lower in winter. Seasonally adjusted series (in {\color{OrangeProfondIRA}}) for comparison.
 	
 			\begin{tikzpicture}[xscale=0.4, yscale=.15]
 	% \draw [step=1, gray, very thin] (0, 0) grid (20, 20);
@@ -179,16 +179,16 @@ Une autre méthode consiste à utiliser le \textbf{filtre de Hodrick-Prescott} p
 \end{tikzpicture}
 
 \begin{itemize}[leftmargin=*]
-	\item Ce problème est une \textbf{régression parasite}. Un ajustement saisonnier peut le résoudre.
+	\item This problem is a \textbf{spurious regression}. Seasonal adjustment can solve it.
 \end{itemize}
 
-Un simple \textbf{ajustement saisonnier} pourrait consister à créer des variables binaires stationnaires et à les ajouter au modèle. Par exemple, pour les séries trimestrielles ($Q q_{t}$ sont des variables binaires) :
+A simple \textbf{seasonal adjustment} could consist of creating stationary binary variables and adding them to the model. For example, for quarterly series ($Q q_{t}$ are binary variables) :
 
 \begin{center}
 	$y_{t} = \beta_{0} + \beta_{1} Q2_{t} + \beta_{2} Q3_{t} + \beta_{3} Q4_{t} + \beta_{4} x_{1t} + \cdots + \beta_{k} x_{kt} + u_{t}$
 \end{center}
 
-Une autre méthode consiste à ajuster les variables en fonction des variations saisonnières (sa), puis à effectuer la régression avec les variables ajustées :
+Another way is to seasonally adjust (sa) the variables, and then, do the regression with the adjusted variables :
 
 \begin{center}
 	$z_{t} = \beta_{0} + \beta_{1} Q2_{t} + \beta_{2} Q3_{t} + \beta_{3} Q4_{t} + v_{t} \rightarrow \hat{v}_{t} + \E(z_{t}) = \hat{z}_{t}^{sa}$
@@ -196,35 +196,35 @@ Une autre méthode consiste à ajuster les variables en fonction des variations 
 	$\hat{y}_{t}^{sa}= \beta_{0} + \beta_{1} \hat{x}_{1t}^{sa} + \cdots + \beta_{k} \hat{x}_{kt}^{sa} + u_{t}$
 \end{center}
 
-Il existe des méthodes bien plus efficaces et complexes pour ajuster saisonnièrement une série temporelle, comme la méthode \textbf{X-13ARIMA-SEATS}.
+There are much better and complex methods to seasonally adjust a time series, like the \textbf{X-13ARIMA-SEATS}.
 
 \end{f}  \hrule
 
-\begin{f}[Autocorrélation]
+\begin{f}[Autocorrelation]
 
-Le résidu de toute observation, $u_{t}$, est corrélé avec le résidu de toute autre observation. Les observations ne sont pas indépendantes. Il s'agit d'un cas de \textbf{non-respect} de \textbf{t5}.
+The residual of any observation, $u_{t}$, is correlated with the residual of any other observation. The observations are not independent. Is the \textbf{non-fulfilment} of \textbf{t5}.
 
 \begin{center}
 	$\Corr(u_{t}, u_{s} \mid x_{1}, \ldots, x_{k}) = \Corr(u_{t}, u_{s}) \neq 0, \; \forall t \neq s$
 \end{center}
 
 \end{f}    
-\begin{f}[Conséquences]
+\begin{f}[Consequences]
 
 \begin{itemize}[leftmargin=*]
-	\item Les estimateurs OLS restent non biaisés.
-	\item Les estimateurs OLS restent cohérents.
-	\item L'OLS n'est \textbf{plus efficace}, mais reste un LUE (estimateur linéaire non biaisé).
-	\item Les \textbf{estimations de variance} des estimateurs sont \textbf{biaisées} : la construction des intervalles de confiance et les tests d'hypothèse ne sont pas fiables.
+	\item OLS estimators are still unbiased.
+	\item OLS estimators are still consistent.
+	\item OLS is \textbf{not efficient} any more, but still a LUE (Linear Unbiased Estimator).
+	\item \textbf{Variance estimations} of the estimators are \textbf{biased}: the construction of confidence intervals and the hypothesis testing is not reliable.
 \end{itemize}
 
 \end{f}    
 
-\begin{f}[Détection]
+\begin{f}[Detection]
 {\ }
 
 \begin{itemize}[leftmargin=*]
-	\item \textbf{Diagrammes de dispersion} - recherchez des modèles de dispersion sur $u_{t - 1}$ par rapport à $u_{t}$.
+	\item \textbf{Scatter plots} - look for scatter patterns on $u_{t - 1}$ vs. $u_{t}$.
 	
 	\setlength{\multicolsep}{0pt}
 	\setlength{\columnsep}{6pt}
@@ -265,14 +265,14 @@ Le résidu de toute observation, $u_{t}$, est corrélé avec le résidu de toute
 	\end{multicols}
 	
 	\begin{multicols}{2}
-		\item \textbf{Corrélogramme} - fonction d'autocorrélation (ACF) et fonction d'autocorrélation partielle (PACF).
+		\textbf{Correlogram} - autocorrelation function (ACF) and partial ACF (PACF).
 		
 		\columnbreak
 		
 		\begin{itemize}[leftmargin=*]
-			\item Axe Y : corrélation.
-			\item Axe X : nombre de décalages.
-			\item Zone grise : $\pm 1,96/T^{0,5}$
+			\item Y axis : correlation.
+			\item X axis : lag number.
+			\item Grey area : $\pm 1,96/T^{0,5}$
 	\end{itemize}
 \end{multicols}
 
@@ -319,36 +319,36 @@ Le résidu de toute observation, $u_{t}$, est corrélé avec le résidu de toute
 	
 
 	
-	\textbf{Processus MA($q$)}. \underline{ACF} : seuls les premiers coefficients $q$ sont significatifs, les autres sont brusquement annulés. \underline{PACF} : décroissance exponentielle rapide atténuée ou ondes sinusoïdales.
+	\textbf{MA($q$) process}. \underline{ACF} : \underline{ACF}: only the first $q$ coefficients are significant, the remaining are abruptly cancelled. \underline{PACF}: attenuated exponential fast decay or sine waves.
 	
-	\textbf{Processus AR($p$)}. \underline{ACF} : décroissance exponentielle rapide atténuée ou ondes sinusoïdales. \underline{PACF} : seuls les premiers coefficients $p$ sont significatifs, les autres sont brusquement annulés.
+	\textbf{AR($p$) process}. \underline{ACF}: attenuated exponential fast decay or sine waves. \underline{PACF}: only the first $p$ coefficients are significant, the remaining are abruptly cancelled.
 
 	
-	\textbf{Processus ARMA($p, q$)}. \underline{ACF} et \underline{PACF} : les coefficients ne sont pas brusquement annulés et présentent une décroissance rapide.
+	\textbf{ARMA($p, q$) process}. \underline{ACF} and \underline{PACF}: the coefficients are not abruptly cancelled and present a fast decay.
 	
-	Si les coefficients ACF ne décroissent pas rapidement, cela indique clairement un manque de stationnarité dans la moyenne.
+	If the ACF coefficients do not decay rapidly, there is a clear indicator of a lack of stationarity in mean.
 	
-	\item \textbf{Tests formels} - En général, $H_{0}$ : pas d'autocorrélation.
+	\item \textbf{Formal tests} - Generally, $H_{0}$ : No autocorrelation.
 	
-	En supposant que $u_{t}$ suit un processus AR(1) :
+	Supposing that $u_{t}$ follows an AR(1) process :
 	
 	\begin{center}
 		$u_{t} = \rho_{1} u_{t - 1} + \varepsilon_{t}$
 	\end{center}
 	
-	où $\varepsilon_{t}$ est un bruit blanc.
+	where $\varepsilon_{t}$ is white noise.
 	
-	\textbf{Test t AR(1)} (régresseurs exogènes) :
+	\textbf{AR(1) t test} (exogenous regressors) :
 	
 	\begin{center}
 		$t = \dfrac{\hat{\rho}_{1}}{\se(\hat{\rho}_{1})} \sim t_{T - k - 1, \alpha/2}$
 	\end{center}
 	
 	\begin{itemize}[leftmargin=*]
-		\item $H_{1}$ : Autocorrélation d'ordre un, AR(1).
+		\item $H_{1}$ : Autocorrelation of order one, AR(1).
 	\end{itemize}
 	
-	\textbf{Statistique de Durbin-Watson} (régresseurs exogènes et normalité des résidus) :
+	\textbf{Durbin-Watson statistic} (exogenous regressors and residual normality) :
 	
 	\begin{center}
 		$d = \dfrac{\sum_{t=2}^{n} (\hat{u}_{t} - \hat{u}_{t - 1})^{2}}{\sum_{t=1}^{n} \hat{u}_{t}^{2}} \approx 2 \cdot (1 - \hat{\rho}_{1})$
@@ -357,7 +357,7 @@ Le résidu de toute observation, $u_{t}$, est corrélé avec le résidu de toute
 	Où $0 \leq d \leq 4$
 	
 	\begin{itemize}[leftmargin=*]
-		\item $H_{1}$ : Autocorrélation d'ordre un, AR(1).
+		\item $H_{1}$ : Autocorrelation of order one, AR(1).
 	\end{itemize}
 	
 \begin{center}
@@ -395,39 +395,39 @@ Le résidu de toute observation, $u_{t}$, est corrélé avec le résidu de toute
 		\node at (22.5, 2.5) {\small AR $-$};
 	\end{tikzpicture}
 
-			\textbf{h de Durbin} (régresseurs endogènes) :
+			\textbf{Durbin's h} (endogenous regressors) :
 
 \begin{center}
 	$h = \hat{\rho} \cdot \sqrt{\dfrac{T}{1 - T \cdot \upsilon}}$
 \end{center}
 
-où $\upsilon$ est la variance estimée du coefficient associé à la variable endogène.
+where $\upsilon$ is the estimated variance of the coefficient associated with the endogenous variable.
 
 \begin{itemize}[leftmargin=*]
-	\item $H_{1}$ : Autocorrélation d'ordre un, AR(1).
+	\item $H_{1}$ : Autocorrelation of order one, AR(1).
 \end{itemize}
 
-\textbf{Test de Breusch-Godfrey} (régresseurs endogènes) : il permet de détecter les processus MA($q$) et AR($p$) ($\varepsilon_{t}$ est w. bruit) :
+\textbf{Breusch-Godfrey test} (endogenous regressors) : it can detect MA($q$) and AR($p$) processes ($\varepsilon_{t}$ is w. noise) :
 
 \begin{itemize}[leftmargin=*]
 	\item MA($q$) : $u_{t} = \varepsilon_{t} - m_{1} u_{t - 1} - \cdots - m_{q} u_{t - q}$
 	\item AR($p$) : $u_{t} = \rho_{1} u_{t - 1} + \cdots + \rho_{p} u_{t - p}+ \varepsilon_{t}$
 \end{itemize}
 
-Sous $H_{0}$ : Pas d'autocorrélation :
+Under $H_{0}$ : No autocorrelation :
 
-\begin {center}
-$\hfill T \cdot R^{2}_{\hat{u}_t}\underset{a}{\sim}\chi^{2}_{q} \hfill \textbf{ou} \hfill T \cdot R^{2}_{\hat{u}_t}\underset{a}{\sim}\chi^{2}_{p} \hfill$
+\begin{center}
+$\hfill T \cdot R^{2}_{\hat{u}_t}\underset{a}{\sim}\chi^{2}_{q} \hfill \textbf{or} \hfill T \cdot R^{2}_{\hat{u}_t}\underset{a}{\sim}\chi^{2}_{p} \hfill$
 \end{center}
 
 \begin{itemize}[leftmargin=*]
-\item $H_{1}$ : Autocorrélation d'ordre $q$ (ou $p$).
+\item $H_{1}$ : Autocorrelation of order $q$ (or $p$).
 \end{itemize}
 
-\textbf{Test Q de Ljung-Box} :
+\textbf{Ljung-Box Q test} :
 
 \begin{itemize}[leftmargin=*]
-\item $H_{1}$ : Autocorrélation jusqu'au décalage $h$.
+\item $H_{1}$ : Autocorrelation up to lag $h$.
 \end{itemize}
 
 \end{itemize}
@@ -439,11 +439,11 @@ $\hfill T \cdot R^{2}_{\hat{u}_t}\underset{a}{\sim}\chi^{2}_{q} \hfill \textbf{o
 \begin{f}[Correction]
 
 \begin{itemize}[leftmargin=*]
-\item Utiliser la méthode des moindres carrés ordinaires (OLS) avec un estimateur de matrice de variance-covariance \textbf{robuste à l'hétéroscédasticité et à l'autocorrélation} (HAC), par exemple celui proposé par \textbf{Newey-West}.
-\item Utiliser les \textbf{moindres carrés généralisés} (GLS). Supposons que $y_{t} = \beta_{0} + \beta_{1} x_{t} + u_{t}$, avec $u_{t} = \rho u_{t - 1}+ \varepsilon_{t}$, où $\lvert \rho \rvert < 1$ et $\varepsilon_{t}$ est un \underline{bruit blanc}.
+\item Use OLS with a variance-covariance matrix estimator that is \textbf{robust to heteroscedasticity and autocorrelation} (HAC), for example, the one proposed by \textbf{Newey-West}.
+\item Use \textbf{Generalized Least Squares} (GLS). Supposing $y_{t} = \beta_{0} + \beta_{1} x_{t} + u_{t}$, where $u_{t} = \rho u_{t - 1}+ \varepsilon_{t}$, and $\lvert \rho \rvert < 1$ et $\varepsilon_{t}$ is \underline{white noise}.
 
 \begin{itemize}[leftmargin=*]
-\item Si $\rho$ est \textbf{connu}, utilisez un \textbf{modèle quasi-différencié} :
+\item If $\rho$ is \textbf{known}, use a \textbf{quasi-differentiated model} :
 
 \begin{center}
 	$y_{t} - \rho y_{t - 1}= \beta_{0} (1 - \rho) + \beta_{1} (x_{t} - \rho x_{t - 1}) + u_{t} - \rho u_{t - 1}$
@@ -451,14 +451,14 @@ $\hfill T \cdot R^{2}_{\hat{u}_t}\underset{a}{\sim}\chi^{2}_{q} \hfill \textbf{o
 	$y_{t}^{*} = \beta_{0}^{*} + \beta_{1}' x_{t}^{*} + \varepsilon_{t}$
 \end{center}
 
-où $\beta_{1}' = \beta_{1}$ ; et estimez-le par OLS.
+where $\beta_{1}' = \beta_{1}$ ; and estimate it by OLS.
 
-\item Si $\rho$ n'est \textbf{pas connu}, l'estimer par exemple par la \textbf{méthode itérative de Cochrane-Orcutt} (la méthode de Prais-Winsten est également valable) :
+\item If $\rho$ is \textbf{not known}, estimate it by -for example- the \textbf{Cochrane-Orcutt iterative method} (Prais-Winsten's method is also good) :
 
 \begin{enumerate}[leftmargin=*]
-	\item Obtenir $\hat{u}_{t}$ à partir du modèle original.
-	\item Estimez $\hat{u}_{t} = \rho \hat{u}_{t-1} + \varepsilon_{t}$ et obtenez $\hat{\rho}$.
-	\item Créez un modèle quasi-différencié :
+	\item Obtain $\hat{u}_{t}$ from the original model.
+	\item Estimate $\hat{u}_{t} = \rho \hat{u}_{t-1} + \varepsilon_{t}$ and obtain $\hat{\rho}$.
+	\item Create a quasi-differentiated model :
 	
 	\begin{center}
 		$y_{t} - \hat{\rho}y_{t - 1} = \beta_{0} (1 - \hat{\rho}) + \beta_{1} (x_{t} - \hat{\rho} x_{t - 1}) + u_{t} - \hat{\rho}u_{t - 1}$
@@ -466,14 +466,14 @@ où $\beta_{1}' = \beta_{1}$ ; et estimez-le par OLS.
 		$y_{t}^{*} = \beta_{0}^{*} + \beta_{1}' x_{t}^{*} + \varepsilon_{t}$
 	\end{center}
 	
-	où $\beta_{1}' = \beta_{1}$ ; et l'estimer par OLS.
+	where $\beta_{1}' = \beta_{1}$ ; and estimate it by OLS.
 	
-	\item Obtenir $\hat{u}_{t}^{*} = y_{t} - (\hat{\beta}_{0}^{*} + \hat{\beta}_{1}' x_{t}) \neq y_ {t} - (\hat{\beta}_{0}^{*} + \hat{\beta}_{1}' x_{t}^{*})$.
-	\item Répéter à partir de l'étape 2. L'algorithme se termine lorsque les paramètres estimés varient très peu entre les itérations.
+	\item Obtain $\hat{u}_{t}^{*} = y_{t} - (\hat{\beta}_{0}^{*} + \hat{\beta}_{1}' x_{t}) \neq y_ {t} - (\hat{\beta}_{0}^{*} + \hat{\beta}_{1}' x_{t}^{*})$.
+	\item Repeat from step 2. The algorithm ends when the estimated parameters vary very little between iterations.
 \end{enumerate}
 \end{itemize}
 
-\item Si le problème n'est pas résolu, rechercher une \textbf{forte dépendance} dans la série.
+\item If not solved, look for \textbf{high dependence} in the series.
 \end{itemize}
 
 \end{f}  
@@ -481,96 +481,96 @@ où $\beta_{1}' = \beta_{1}$ ; et estimez-le par OLS.
 
 \hrule
 
-\begin{f}[Lissage exponentiel]
+\begin{f}[Exponential smoothing]
 
 \begin{center}
 	$f_{t} = \alpha y_{t} + (1 - \alpha) f_{t - 1}$
 \end{center}
 
-où $0 < \alpha < 1$ est le paramètre de lissage.
+where $0 < \alpha < 1$ is the smoothing factor.
 
 \end{f}  \hrule
 
-\begin{f}[Prévisions]
+\begin{f}[Forecasts]
 
-Deux types de prévisions :
+Two types of forecasts :
 
 \begin{itemize}[leftmargin=*]
-	\item De la valeur moyenne de $y$ pour une valeur spécifique de $x$.
-	\item D'une valeur individuelle de $y$ pour une valeur spécifique de $x$.
+	\item Of the mean value of $y$ for a specific value of $x$.
+	\item Of an individual value of $y$ for a specific value of $x$.
 \end{itemize}
 
-\textbf{Statistique U de Theil} - compare les résultats prévus avec les résultats des prévisions réalisées à partir d'un minimum de données historiques.
+\textbf{Theil's U statistic} - compares the forecast results with the ones of forecasting with minimal historical data.
 
 \begin{center}
 	$U = \sqrt{\frac{\sum_{t=1}^{T-1} \left( \frac{\hat{y}_{t+1} - y_{t+1}}{y_t} \right)^2}{\sum_{t=1}^{T-1} \left( \frac{y_ {t+1} - y_t}{y_t} \right)^2}}$
 \end{center}
 
 \begin{itemize}[leftmargin=*]
-	\item $< 1$ : la prévision est meilleure qu'une simple estimation.
-	\item $= 1$ : la prévision est à peu près aussi bonne qu'une simple estimation.
-	\item $> 1$ : La prévision est moins bonne qu'une simple estimation.
+	\item $< 1$ : The forecast is better than guessing.
+	\item $= 1$ : The forecast is about as good as guessing.
+	\item $> 1$ : The forecast is worse than guessing.
 \end{itemize}
 
 
 
 \end{f}  \hrule
 
-  \begin{f}[Stationnarité]
+  \begin{f}[Stationarity]
 
-La stationnarité permet d'identifier correctement les relations entre les variables qui restent inchangées dans le temps.
+Stationarity allows to correctly identify relations --that stay unchanged with time-- between variables.
 
 \begin{itemize}[leftmargin=*]
-	\item \textbf{Processus stationnaire} (stationnarité stricte) : si un ensemble de variables aléatoires est pris et décalé de $h$ périodes (changements de temps), la distribution de probabilité conjointe doit rester inchangée.
-	\item \textbf{Processus non stationnaire} : par exemple, une série avec une tendance, où au moins la moyenne change avec le temps.
-	\item \textbf{Processus stationnaire de covariance} - il s'agit d'une forme plus faible de stationnarité :
+	\item \textbf{Stationary process} (strict stationarity) - the joint probability distribution of the process remains unchanged when shifted $h$ periods.
+	\item \textbf{Non-stationary process} - for example, a series with trend, where at least the mean changes with time.
+	\item \textbf{Covariance stationary process} - it is a weaker form of stationarity :
 	
 	\begin{itemize}[leftmargin=*]
 		\begin{multicols}{2}
-			\item $\E(x_{t})$ est constant.
+			\item $\E(x_{t})$ is constant.
 			
 			\columnbreak
 			
-			\item $\Var(x_{t})$ est constant.
+			\item $\Var(x_{t})$ is constant.
 		\end{multicols}
 		
-		\item Pour tout $t$, $h \geq 1$, $\Cov(x_{t}, x_{t + h})$ dépend uniquement de $h$, et non de $t$.
+		\item For any $t$, $h \geq 1$, $\Cov(x_{t}, x_{t + h})$ depends only of $h$, not of $t$.
 	\end{itemize}
 \end{itemize}
 
 \end{f}  \hrule
 
-  \begin{f}[Faible dépendance]
+  \begin{f}[Weak dependence]
 
-La faible dépendance remplace l'hypothèse d'échantillonnage aléatoire pour les séries temporelles.
+Weak dependence replaces the random sampling assumption for time series.
 
 \begin{itemize}[leftmargin=*]
-	\item Un processus stationnaire $\lbrace x_{t} \rbrace$ est \textbf{faiblement dépendant} lorsque $x_{t}$ et $x_{t + h}$ sont presque indépendants lorsque $h$ augmente sans limite.
-	\item Un processus stationnaire de covariance est \textbf{faiblement dépendant} si la corrélation entre $x_{t}$ et $x_{t + h}$ tend vers $0$ suffisamment rapidement lorsque $h \rightarrow \infty$ (ils ne sont pas corrélés de manière asymptotique).
+	\item An stationary process $\lbrace x_{t} \rbrace$ is \textbf{weakly dependent} when $x_{t}$ and $x_{t + h}$ are almost independent as $h$ increases without a limit.
+	\item A covariance stationary process is \textbf{weakly dependent} if the correlation between $x_{t}$ and $x_{t + h}$ tends to $0$ fast enough when $h \rightarrow \infty$ (they are not asymptotically correlated).
 \end{itemize}
 
-Les processus faiblement dépendants sont appelés \textbf{intégrés d'ordre zéro}, I(0). Quelques exemples :
+Weakly dependent processes are known as \textbf{integrated of order zero}, I(0). Some examples :
 
 \begin{itemize}[leftmargin=*]
-\item \textbf{Moyenne mobile} - $\lbrace x_{t} \rbrace$ est une moyenne mobile d'ordre $q$, MA($q$) :
+\item \textbf{Moving average} - $\lbrace x_{t} \rbrace$ is a moving average of order $q$, MA($q$) :
 
 \begin{center}
 	$x_{t} = e_{t} + m_{1} e_{t - 1} + \cdots + m_{q} e_{t - q}$
 \end{center}
 
-où $\lbrace e_{t} : t = 0, 1, \ldots, T \rbrace$ est une séquence \textsl{i.i.d.} avec une moyenne nulle et une variance $\sigma^{2}_{e}$.
+where $\lbrace e_{t} : t = 0, 1, \ldots, T \rbrace$ is an \textsl{i.i.d.} sequence with zero mean and $\sigma^{2}_{e}$ variance.
 
-\item \textbf{Processus autorégressif} - $\lbrace x_{t} \rbrace$ est un processus autorégressif d'ordre $p$, AR($p$) :
+\item \textbf{Autoregressive process} - $\lbrace x_{t} \rbrace$ is an autoregressive process of order $p$, AR($p$) :
 
 \begin{center}
 	$x_{t} = \rho_{1} x_{t - 1} + \cdots + \rho_{p} x_{t - p} + e_{t}$
 \end{center}
 
-où $\lbrace e_{t} : t = 1, 2, \ldots, T \rbrace$ est une séquence \textsl{i.i.d.} avec une moyenne nulle et une variance $\sigma^{2}_{e}$.
+where $\lbrace e_{t} : t = 1, 2, \ldots, T \rbrace$ is an \textsl{i.i.d.} sequence with zero mean and $\sigma^{2}_{e}$ variance.
 
-\textbf{Condition de stabilité} : si $1 - \rho_{1} z - \cdots - \rho_{p} z^{p} = 0$ pour $\lvert z \rvert > 1$, alors $\lbrace x_{t} \rbrace$ est un processus AR($p$) stable qui est faiblement dépendant. Pour AR(1), la condition est : $\lvert \rho_{1} \rvert < 1$.
+\textbf{Stability condition} : if $1 - \rho_{1} z - \cdots - \rho_{p} z^{p} = 0$ for $\lvert z \rvert > 1$, then $\lbrace x_{t} \rbrace$ is an AR($p$) stable process that is weakly dependent. For AR(1), the condition is : $\lvert \rho_{1} \rvert < 1$.
 
-\item \textbf{Processus ARMA} - est une combinaison de AR($p$) et MA($q$) ; $\lbrace x_{t} \rbrace$ est un ARMA($p, q$) :
+\item \textbf{ARMA process} - is a combination of AR($p$) and MA($q$) ; $\lbrace x_{t} \rbrace$ is an ARMA($p, q$) :
 
 \begin{center}
 	$x_{t} = e_{t} + m_{1} e_{t - 1} + \cdots + m_{q} e_{t - q} + \rho_{1} x_{t - 1} + \cdots + \rho_{p} x_{t - p}$
@@ -580,71 +580,71 @@ où $\lbrace e_{t} : t = 1, 2, \ldots, T \rbrace$ est une séquence \textsl{i.i.
 
 		\end{f}  \hrule
 
-  \begin{f}[Racines unitaires]
+  \begin{f}[Unit roots]
 
-Un processus est I($d$), c'est-à-dire intégré d'ordre $d$, si l'application de différences $d$ fois rend le processus stationnaire.
+A process is I($d$), that is, integrated of order $d$, if applying differences $d$ times makes the process stationary.
 
-Lorsque $d \geq 1$, le processus est appelé \textbf{processus à racine unitaire} ou on dit qu'il a une racine unitaire.
+When $d \geq 1$, the process is called a \textbf{unit root process} or it is said to have an unit root.
 
-Un processus a une racine unitaire lorsque la condition de stabilité n'est pas remplie (il existe des racines sur le cercle unitaire).
+A process have an unit root when the stability condition is not met (there are roots on the unit circle).
 
 \end{f}  \hrule  
 
-\begin{f}[Forte dépendance]
+\begin{f}[Strong dependence]
 
-La plupart du temps, les séries économiques sont fortement dépendantes (ou très persistantes). Quelques exemples de \textbf{racine unitaire} I(1) :
+Most of the time, economic series are strongly dependent (or high persistent). Some examples of \textbf{unit root} I(1) :
 
 \begin{itemize}[leftmargin=*]
-	\item \textbf{Marche aléatoire} - un processus AR(1) avec $\rho_{1} = 1$.
+	\item \textbf{Random walk} - an AR(1) process with $\rho_{1} = 1$.
 	
 	\begin{center}
 		$y_{t} = y_{t - 1} + e_{t}$
 	\end{center}
 	
-	où $\lbrace e_{t} : t = 1, 2, \ldots, T \rbrace$ est une séquence \textsl{i.i.d.} avec une moyenne nulle et une variance $\sigma^{2}_{e}$.
+	where $\lbrace e_{t} : t = 1, 2, \ldots, T \rbrace$ is an \textsl{i.i.d.} sequence with zero mean and $\sigma^{2}_{e}$ variance.
 	
-	\item \textbf{Marche aléatoire avec dérive} - un processus AR(1) avec $\rho_{1} = 1$ et une constante.
+	\item \textbf{Random walk with a drift} - an AR(1) process with $\rho_{1} = 1$ and a constant.
 	
 	\begin{center}
 		$y_{t} = \beta_{0} + y_{t - 1} + e_{t}$
 	\end{center}
 	
-	où $\lbrace e_{t} : t = 1, 2, \ldots, T \rbrace$ est une séquence \textsl{i.i.d.} avec une moyenne nulle et une variance $\sigma^{2}_{e}$.
+	où $\lbrace e_{t} : t = 1, 2, \ldots, T \rbrace$ is an \textsl{i.i.d.} sequence with zero mean and $\sigma^{2}_{e}$ variance.
 \end{itemize}
 
 \end{f} 
 
- \begin{f}[Tests de racine unitaire]{\ }
+ \begin{f}[Unit root tests]{\ }
 
 \begin{center}
 	\begin{tabular}{ c | c | c }
-		Test            & $H_{0}$    & Rejeter $H_{0}$                     \\ \hline
-		ADF             & I(1)       & tau \textless \, Valeur critique    \\ \hline
-		KPSS            & Niveau I(0) & mu \textgreater \, Valeur critique  \\
-		& Tendance I(0) & tau \textgreater \, Valeur critique \\ \hline
-		Phillips-Perron & I(1)       & Z-tau \textless \, Valeur critique  \\ \hline
-		Zivot-Andrews   & I(1)       & tau \textless \, Valeur critique
+		Test            & $H_{0}$    & Reject $H_{0}$                     \\ \hline
+		ADF             & I(1)       & tau \textless \, Critical value    \\ \hline
+		KPSS            & I(0) level & mu \textgreater \, Critical value  \\
+		& I(0) trend & tau \textgreater \, Critical value \\ \hline
+		Phillips-Perron & I(1)       & Z-tau \textless \, Critical value  \\ \hline
+		Zivot-Andrews   & I(1)       & tau \textless \, Critical value
 	\end{tabular}
 \end{center}
 \medskip
 
 \end{f}  
 
-\begin{f}[De la racine unitaire à la faible dépendance]
+\begin{f}[From unit root to weak dependence]
 
-Intégré d'ordre \textbf{un}, I(1), signifie que \textbf{la première différence} du processus est \textbf{faiblement dépendante} ou I(0) (et généralement stationnaire). Par exemple, soit $\lbrace y_{t} \rbrace$ une marche aléatoire :
+An integrated of \textbf{order one}, I(1), means that the \textbf{first difference} of the process is \textbf{weakly dependent} or I(0) (and usually, stationary). For example, let $\lbrace y_{t} \rbrace$ be a random walk :
 
 \begin{multicols}{2}
 	\begin{center}
 		$\Delta y_{t} = y_{t} - y_{t - 1} = e_{t}$
 	\end{center}
 	
-	où $\lbrace e_{t} \rbrace = \lbrace \Delta y_{t} \rbrace$ est \textsl{i.i.d.} \\
+	where $\lbrace e_{t} \rbrace = \lbrace \Delta y_{t} \rbrace$ est \textsl{i.i.d.} \\
 	
-	Remarque :
+	Note :
 	\begin{itemize}[leftmargin=*]
-		\item La première différence d'une série supprime sa tendance.
-		\item Les logarithmes d'une série stabilisent sa variance.
+		\item The first difference of a series removes its trend.
+		\item Logarithms of a series stabilizes the variance.
 	\end{itemize}
 	
 	\columnbreak
@@ -697,9 +697,9 @@ Intégré d'ordre \textbf{un}, I(1), signifie que \textbf{la première différen
 
 
 
-\subsubsection*{De la racine unitaire au pourcentage de variation}
+\subsubsection*{From unit root to percentage change}
 
-Lorsqu'une série I(1) est strictement positive, elle est généralement convertie en logarithmes avant de prendre la première différence pour obtenir le pourcentage de variation (approximatif) de la série :
+When an I(1) series is strictly positive, it is usually converted to logarithms before taking the first difference to obtain the (approx.) percentage change of the series :
 
 \begin{center}
 	$\Delta \log(y_{t}) = \log(y_{t}) - \log(y_{t - 1}) \approx \dfrac{y_t - y_{t - 1}} {y_{t - 1}}$
@@ -707,46 +707,46 @@ Lorsqu'une série I(1) est strictement positive, elle est généralement convert
 
 		\end{f}  \hrule
 
-  \begin{f}[Coiintégration]
+  \begin{f}[Cointegration]
 
-Lorsque \textbf{deux séries sont I(1), mais qu'une combinaison linéaire de celles-ci est I(0)}. Dans ce cas, la régression d'une série sur l'autre n'est pas fallacieuse, mais exprime quelque chose sur la relation à long terme. Les variables sont dites cointégrées si elles ont une tendance stochastique commune.
+When \textbf{two series are I(1), but a linear combination of them is I(0)}. If the case, the regression of one series over the other is not spurious, but expresses something about the long term relation. Variables are called cointegrated if they have a common stochastic trend.
 
-Par exemple, $\lbrace x_{t} \rbrace$ et $\lbrace y_{t} \rbrace$ sont I(1), mais $y_{t} - \beta x_{t} = u_{t}$ où $\lbrace u_{t} \rbrace$ est I(0). ($\beta$ est le paramètre de cointégration).
+For example, $\lbrace x_{t} \rbrace$ and $\lbrace y_{t} \rbrace$ are I(1), but $y_{t} - \beta x_{t} = u_{t}$ where $\lbrace u_{t} \rbrace$ is I(0). ($\beta$ is the cointegrating parameter).
 
 \end{f}  
 
-\begin{f}[Test de cointégration]
+\begin{f}[Cointegration test]
 
-En suivant l'exemple ci-dessus :
+Following the example above :
 
 \begin{enumerate}[leftmargin=*]
-	\item Estimer $y_{t} = \alpha + \beta x_{t} + \varepsilon_{t}$ et obtenir $\hat{\varepsilon}_{t}$.
-	\item Effectuer un test ADF sur $\hat{\varepsilon}_{t}$ avec une distribution modifiée.
+	\item Estimate $y_{t} = \alpha + \beta x_{t} + \varepsilon_{t}$ and obtain $\hat{\varepsilon}_{t}$.
+	\item Perform an ADF test on $\hat{\varepsilon}_{t}$ with a modified distribution.
 	
-	Le résultat de ce test est équivalent à :
+	The result of this test is equivalent to :
 	
 	\begin{itemize}[leftmargin=*]
-		\item $H_{0}$ : $\beta = 0$ (pas de cointégration)
-		\item $H_{1}$ : $\beta \neq 0$ (cointégration)
+		\item $H_{0}$ : $\beta = 0$ (no cointegration)
+		\item $H_{1}$ : $\beta \neq 0$ (cointegration)
 	\end{itemize}
 	
-	si la statistique du test $>$ valeur critique, rejeter $H_0$.
+	if test statistic $>$ critical value, reject $H_0$.
 \end{enumerate}
 
 \end{f}  \hrule
 
-  \begin{f}[Hétéroscédasticité sur les séries temporelles]
+  \begin{f}[Heteroscedasticity on time series]
 
-L'\textbf{hypothèse} affectée est \textbf{t4}, ce qui conduit à \textbf{une inefficacité de l'OLS}.
+The \textbf{assumption} affected is \textbf{t4}, which leads \textbf{OLS to be not efficient}.
 
-Utilisez des tests tels que Breusch-Pagan ou White, où $H_{0}$ : pas d'hétéroscédasticité. Il est \textbf{important} pour que les tests fonctionnent qu'il n'y ait \textbf{pas d'autocorrélation}.
+Use tests like Breusch-Pagan or White's, where $H_{0}$ : No heteroscedasticity. It is \textbf{important} for the tests to work that there is \textbf{no autocorrelation}.
 
 \end{f}  \hrule  
 \begin{f}[ARCH]
 
-Une hétéroscédasticité conditionnelle autorégressive (ARCH) est un modèle permettant d'analyser une forme d'hétéroscédasticité dynamique, où la variance de l'erreur suit un processus AR($p$).
+An autoregressive conditional heteroscedasticity (ARCH), is a model to analyse a form of dynamic heteroscedasticity, where the error variance follows an AR($p$) process.
 
-Étant donné le modèle : $y_{t} = \beta_{0} + \beta_{1} z_{t} + u_{t}$ où il y a AR(1) et hétéroscédasticité :
+Given the model : $y_{t} = \beta_{0} + \beta_{1} z_{t} + u_{t}$ where, there is AR(1) and heteroscedasticity :
 
 \begin{center}
 	$\E(u^{2}_{t} \mid u_{t - 1}) = \alpha_{0} + \alpha_{1} u^{2}_{t - 1}$
@@ -755,5 +755,5 @@ Une hétéroscédasticité conditionnelle autorégressive (ARCH) est un modèle 
 \end{f}  \hrule 
  \begin{f}[GARCH]
 
-Un modèle général d'hétéroscédasticité conditionnelle autorégressive (GARCH) est similaire au modèle ARCH, mais dans ce cas, la variance de l'erreur suit un processus ARMA($p, q$).
+A general autoregressive conditional heteroscedasticity (GARCH), is a model similar to ARCH, but in this case, the error variance follows an ARMA($p, q$) process.
 \end{f}
