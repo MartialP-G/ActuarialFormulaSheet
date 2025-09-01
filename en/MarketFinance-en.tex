@@ -97,20 +97,20 @@ They are mainly:
 
 \textbf{Price calculations of a fixed-rate Treasury bill with discounted interest}
 
-In the case of a discounted interest security according to the Euro-30/360 convention, the discount $D$ is expressed as :
-$$
+In the case of a discounted interest security according to the Euro-30/360 convention, the discount \(D\) is expressed as :
+\[
 D=F \cdot d \cdot \frac{k}{360}
-$$
-where $F$ denotes the nominal value, $d$ the annual discount rate used to value the discounted security, and $k$ the maturity in days.
+\]
+where \(F\) denotes the nominal value, \(d\) the annual discount rate used to value the discounted security, and \(k\) the maturity in days.
 
-If the discount rate $d$ is known, then the price $P$ is expressed as :
-$$
+If the discount rate \(d\) is known, then the price \(P\) is expressed as :
+\[
 P=F-D=F\left(1-d \cdot \frac{k}{360}\right)
-$$
-Similarly, if the price $P$ is known, then the discount rate $d$ is derived as :
-$$
+\]
+Similarly, if the price \(P\) is known, then the discount rate \(d\) is derived as :
+\[
 d=\frac{F-P}{F} \cdot \frac{360}{k}
-$$
+\]
 
 
 The main Futures Contracts: Federal Funds Futures (US),
@@ -131,26 +131,26 @@ As mentioned in the previous section, \textbf{Treasury bills with a maturity gre
 
 %Les \textbf{coupons} : sont payés régulièrement à la fin des périodes de coupon (annuelles ou semestrielles) jusqu'à la date d'échéance.
 
-\textbf{Zero-coupon bonds}: pay only the nominal value at maturity. With $E$ the issue price and $R$ its redemption value:
+\textbf{Zero-coupon bonds}: pay only the nominal value at maturity. With \(E\) the issue price and \(R\) its redemption value:
 	
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
     % Draw the x-axis and y-axis.
     \def\w{11}
     \def\n{9}
-    \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-0.4909) node[above left] (A) {$E$};	
+    \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-0.4909) node[above left] (A) {\(E\)};	
     \foreach \y in  {0,...,3} {
         \draw (\y,0) -- (\y,-0.1);
-        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};
         }{
             \node[above] at (\y,-0.1) {\tiny 0};}
     }
     \foreach \y in  {-3,...,1} {
         \draw (\y+\n,0) -- (\y+\n,-0.1);
-        \ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};}{}
-        \ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};
-            \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1) node[below right] (B) {$R$};}{}
-        \ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+        \ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \y\)};}{}
+        \ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \)};
+            \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1) node[below right] (B) {\(R\)};}{}
+        \ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n+\y\)};}{}
     }
     \draw[ line width=1] (-.25,0) -- (4,0);
     \draw[ line width=1, dashed] (4,0) -- (5,0);
@@ -159,28 +159,28 @@ As mentioned in the previous section, \textbf{Treasury bills with a maturity gre
 \end{center}
 
 \textbf{Coupon bonds}:
-\textbf{Fixed-rate bonds} have a coupon rate that remains constant until maturity. Assuming a \emph{bullet} repayment, with $E$ the issue price, $c$ the coupons, and $R$ the redemption value, it can be illustrated as follows:
+\textbf{Fixed-rate bonds} have a coupon rate that remains constant until maturity. Assuming a \emph{bullet} repayment, with \(E\) the issue price, \(c\) the coupons, and \(R\) the redemption value, it can be illustrated as follows:
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
     % Draw the x-axis and y-axis.
     \def\w{11}
     \def\n{9}
-    \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-1.8) node[above left] (A) {$E$};	
+    \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-1.8) node[above left] (A) {\(E\)};	
     \foreach \y in  {0,...,3} {
         \draw (\y,0) -- (\y,-0.1);
-        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
-        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,.25) node [above] {$c$};
+        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};
+        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,.25) node [above] {\(c\)};
         }{
             \node[above] at (\y,-0.1) {\tiny 0};}
         }
     \foreach \y in  {-3,...,1} {
         \draw (\y+\n,0) -- (\y+\n,-0.1);
-        \ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};
-        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,.25) node [above] {$c$};}{}
-        \ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};
-        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,2) node[below right] (B) {$R$};
-        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,2) -- (\y+\n,2.25) node[right] (B) {$c$};}{}
-        \ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+        \ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \y\)};
+        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,.25) node [above] {\(c\)};}{}
+        \ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \)};
+        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,2) node[below right] (B) {\(R\)};
+        \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,2) -- (\y+\n,2.25) node[right] (B) {\(c\)};}{}
+        \ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n+\y\)};}{}
     }
     \draw[ line width=1] (-.25,0) -- (4,0);
     \draw[ line width=1, dashed] (4,0) -- (5,0);
@@ -189,7 +189,7 @@ As mentioned in the previous section, \textbf{Treasury bills with a maturity gre
 \end{center}
 
  \textbf{Indexed bonds} (inflation-linked bonds) have coupons and sometimes also the nominal value indexed to inflation or another economic indicator, such as Treasury Assimilable Bonds
-		indexed to inflation (OATi). The values of $c$ vary.
+		indexed to inflation (OATi). The values of \(c\) vary.
         
 Bonds with \textbf{floating rate}, \textbf{variable rate}, or \textbf{resettable rate}: have a coupon rate linked to a reference interest rate (for example, the euro short-
 		term rate (\href{https://www.cmegroup.com/markets/interest-rates/stirs/euro-short-term-rate.quotes.html}{€STR})).
@@ -201,12 +201,12 @@ A distinction is often made between government bonds (Treasury bonds) and
 
 
 
-A bond is mainly defined by a \textbf{nominal value} $F$ (Face Value), the \textbf{nominal rate} $i$, its duration or \textbf{maturity} $n$.
-In the default case, the bondholder lends the amount $E=F$ at issuance at time 0, receives each year a coupon $c = i \times F$, and at $n$, the principal or capital $R=F$ is returned.
-When $E=F$, the issue is said to be at par, and when $R=F$, the redemption is said to be at par.
+A bond is mainly defined by a \textbf{nominal value} \(F\) (Face Value), the \textbf{nominal rate} \(i\), its duration or \textbf{maturity} \(n\).
+In the default case, the bondholder lends the amount \(E=F\) at issuance at time 0, receives each year a coupon \(c = i \times F\), and at \(n\), the principal or capital \(R=F\) is returned.
+When \(E=F\), the issue is said to be at par, and when \(R=F\), the redemption is said to be at par.
 
 
-The price of a bond is determined by the present value of the expected future cash flows (coupons and principal repayment) discounted at the market yield rate $r$.
+The price of a bond is determined by the present value of the expected future cash flows (coupons and principal repayment) discounted at the market yield rate \(r\).
  
 The price calculation of bonds simply relies on the present value formula:
 \[
@@ -214,20 +214,20 @@ VP = \sum_{k=1}^{n} \frac{c}{(1 + r)^k} + \frac{F}{(1 + r)^n}
  \]
 where:
 \begin{itemize}
-    \item $PV$: price or present value\index{Present Value} of the bond,
-	\item $r$: market interest rate for the relevant maturity.
+    \item \(PV\): price or present value\index{Present Value} of the bond,
+	\item \(r\): market interest rate for the relevant maturity.
 \end{itemize}
 
 
-For bonds with periodic coupons, the coupon is divided by the number of periods ($m$) per year and the formula becomes:
+For bonds with periodic coupons, the coupon is divided by the number of periods (\(m\)) per year and the formula becomes:
 \[ 
 PV = \sum_{k=1}^{mn} \frac{c/m}{(1 + r^{(m)})^k} + \frac{R}{(1 + + r^{(m)})^{mn}}
  \]
-where $c/m$ represents the periodic coupon payment and $r^{(m)}$ the periodic interest rate.
+where \(c/m\) represents the periodic coupon payment and \(r^{(m)}\) the periodic interest rate.
 
-The bond yield is the value $r^{(m)}$, the equivalent rate of $r$ over $m$ periods in the year, which equates the present value $VP_r$ with the current or market price of this bond.
+The bond yield is the value \(r^{(m)}\), the equivalent rate of \(r\) over \(m\) periods in the year, which equates the present value \(VP_r\) with the current or market price of this bond.
 
-\textbf{The quotation of a bond} is given as a percentage. Thus, a quotation of 97.9 on Euronext indicates a quoted value of $97.9 / 100 \times F$.  
+\textbf{The quotation of a bond} is given as a percentage. Thus, a quotation of 97.9 on Euronext indicates a quoted value of \(97.9 / 100 \times F\).  
 It is quoted excluding \textbf{accrued coupons}, the portion of the next coupon to which the seller is entitled if the bond is sold before the payment of that coupon.
 \end{f}
 \hrule
@@ -238,12 +238,12 @@ The Macaulay duration:
 \[ 		
 D = \sum_{t=1}^{n} t \cdot w_t, \quad \text{où} \quad w_t = \frac{PV(C_t)}{P}.
  \]	
-If the payment frequency is $k$ per year, the duration expressed in years is obtained by dividing by $k$.
-The modified duration $D^*$:
+If the payment frequency is \(k\) per year, the duration expressed in years is obtained by dividing by \(k\).
+The modified duration \(D^*\):
 \[ 	
 D^* = \frac{D}{1 + i}.
  \]
- Which allows approximating the portfolio change $\Delta P$ in case of interest rate changes $\Delta_i$
+ Which allows approximating the portfolio change \(\Delta P\) in case of interest rate changes \(\Delta_i\)
 \[ 
 \Delta P \approx -P\ D^* \Delta_i 
  \]
@@ -251,7 +251,7 @@ Similarly, the convexity
 \[ 	
 C = \frac{1}{P(i)} \times \frac{d^2 P(i)}{di^2},
  \]
-which allows refining the approximation of $\Delta P$
+which allows refining the approximation of \(\Delta P\)
 \[ 	
 P(i + \Delta_i) \approx P(i) \left( 1 -D^*\Delta_i + \frac{1}{2} C (\Delta_i)^2 \right).
  \]
@@ -301,8 +301,8 @@ Options listed on stocks are called \textit{stock options}.
 
 %\textbf{La position longue sur l'option d'achat}
 
-With $T$ the maturity, $K$ the strike price, $S$ or $S_T$ the underlying at maturity, the payoff is $\max (0, S_T-K)=( S_T-K)^{+}$.
-Letting $C$ be the premium, the profit realized is $\max (0, S_T-K)-C$, with a profit if ($S_T<V_{PM}=K + C$) ($PM$ stands for \textbf{break-even point}).
+With \(T\) the maturity, \(K\) the strike price, \(S\) or \(S_T\) the underlying at maturity, the payoff is \(\max (0, S_T-K)=( S_T-K)^{+}\).
+Letting \(C\) be the premium, the profit realized is \(\max (0, S_T-K)-C\), with a profit if (\(S_T<V_{PM}=K + C\)) (\(PM\) stands for \textbf{break-even point}).
 
 		\input{Graph/Acalldef-en.tex}
 
@@ -312,7 +312,7 @@ Letting $C$ be the premium, the profit realized is $\max (0, S_T-K)-C$, with a p
 %\textbf{La position courte sur l'option d'achat}
 
 
-At maturity, the payoff is $\min (0,K- S_T)=-\max(0, S_T-K)=-( S_T-K)^{+}$ and the profit realized is $C-\max (0, S_T-K)$.
+At maturity, the payoff is \(\min (0,K- S_T)=-\max(0, S_T-K)=-( S_T-K)^{+}\) and the profit realized is \(C-\max (0, S_T-K)\).
 
 \medskip
 
@@ -322,8 +322,8 @@ At maturity, the payoff is $\min (0,K- S_T)=-\max(0, S_T-K)=-( S_T-K)^{+}$ and t
 
 %\textbf{La position longue sur l'option de vente}
 
-At maturity, the payoff is $\max (0,K- S_T)=(K- S_T)^{+}$.
-Letting $P$ be the put premium, the profit realized is $\max (0,K- S_T)-P$, positive if $V_{PM}=K -P<S_T$.
+At maturity, the payoff is \(\max (0,K- S_T)=(K- S_T)^{+}\).
+Letting \(P\) be the put premium, the profit realized is \(\max (0,K- S_T)-P\), positive if \(V_{PM}=K -P<S_T\).
 
 \medskip
 
@@ -335,7 +335,7 @@ Letting $P$ be the put premium, the profit realized is $\max (0,K- S_T)-P$, posi
 
 	\input{Graph/VPutdef-en.tex}    	     
 
-At maturity, the payoff is $\min (0, S_T-K)=-(K- S_T)^+$.
+At maturity, the payoff is \(\min (0, S_T-K)=-(K- S_T)^+\).
 
 
 \end{f}
@@ -349,7 +349,7 @@ If the maturities change, it is a \textbf{horizontal spread}.
 A vertical spread strategy involves a long position and a short position on call options on the same underlying asset, with the same maturity but different strike prices.  
 We distinguish: \textbf{bull vertical spread}  and \textbf{bear vertical spread}.
 
-\textbf{Bull vertical spread}: anticipating a moderate rise in the underlying asset, the investor takes a long position on $C_1$ and a short position on $C_2$ under the condition $E_1 < E_2$.  
+\textbf{Bull vertical spread}: anticipating a moderate rise in the underlying asset, the investor takes a long position on \(C_1\) and a short position on \(C_2\) under the condition \(E_1 < E_2\).  
 Net result at maturity :
 
 	\begin{tikzpicture}[scale=.52]
@@ -377,7 +377,7 @@ Net result at maturity :
 			x label style={={at={(current axis.right of origin)}}},
 			%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
 			%		x label style={at={(1,0.5)}},
-			xlabel={underlying ($T$)},
+			xlabel={underlying (\(T\))},
 			%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
 			%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
 			ytick=\empty,
@@ -385,15 +385,15 @@ Net result at maturity :
 			extra y ticks ={0},
 			extra y tick labels={{0}},
 			extra x ticks ={{\PxExerciceBSa},{\PxExerciceBSb}},
-			extra x tick labels={{$E_1\ \ \ \ \ $},{$E_2$}},
+			extra x tick labels={{\(E_1\ \ \ \ \ \)},{\(E_2\)}},
 			extra x tick style={color=BleuProfondIRA,
 				tick label style={yshift=-0mm}	},
 			]
 			%		
 			\addplot[name path=A,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS-1.75}}, samples=21,dashed] {Call(x,\PxExerciceBSa,\PremiumBSa)} 
-			node [pos=0.15, above] {\small Long $C_1$};	
+			node [pos=0.15, above] {\small Long \(C_1\)};	
 			\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {-Call(x,\PxExerciceBSb,\PremiumBSb)} 
-			node [pos=0.15, above] {\small  Short $C_2$};	
+			node [pos=0.15, above] {\small  Short \(C_2\)};	
 			\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=41] {Call(x,\PxExerciceBSa,\PremiumBSa)-Call(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.15, above] {Bull vertical spread};	
 			%\draw[BleuProfondIRA,thick] \OV{\PxExerciceBSa}{\PremiumBSa}{0.4}{\xminBS}{\xmaxBS} ;
 			%		\addplot[name path=Option,BleuProfondIRA,thick,domain={250:350}, 			 		samples=10,dashdotted,smooth] {BSPut(x,\PxExerciceBSa,\riskfreeBS,\TBS,\sigmaBS)} ;	
@@ -434,7 +434,7 @@ Net result at maturity :
 			x label style={={at={(current axis.right of origin)}}},
 			%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
 			%		x label style={at={(1,0.5)}},
-			xlabel={underlying ($T$)},
+			xlabel={underlying (\(T\))},
 			%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
 			%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
 			ytick=\empty,
@@ -442,15 +442,15 @@ Net result at maturity :
 			extra y ticks ={0},
 			extra y tick labels={{0}},
 			extra x ticks ={{\PxExerciceBSa},{\PxExerciceBSb}},
-			extra x tick labels={{$E_1\ \ \ \ \ $},{$E_2$}},
+			extra x tick labels={{\(E_1\ \ \ \ \ \)},{\(E_2\)}},
 			extra x tick style={color=BleuProfondIRA,
 				tick label style={yshift=-0mm}	},
 			]
 			%		
 			\addplot[name path=A,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS-1.75}}, samples=21,dashed] {-Call(x,\PxExerciceBSa,\PremiumBSa)} 
-			node [pos=0.15, above] {\small Short $C_1$};	
+			node [pos=0.15, above] {\small Short \(C_1\)};	
 			\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Call(x,\PxExerciceBSb,\PremiumBSb)} 
-			node [pos=0.15, above] {\small  Long $C_2$};		
+			node [pos=0.15, above] {\small  Long \(C_2\)};		
 			\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=41] {-Call(x,\PxExerciceBSa,\PremiumBSa)+Call(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.15, above] {Bear vertical spread};	
 			%\draw[BleuProfondIRA,thick] \OV{\PxExerciceBSa}{\PremiumBSa}{0.4}{\xminBS}{\xmaxBS} ;
 			%		\addplot[name path=Option,BleuProfondIRA,thick,domain={250:350}, 			 		samples=10,dashdotted,smooth] {BSPut(x,\PxExerciceBSa,\riskfreeBS,\TBS,\sigmaBS)} ;	
@@ -495,7 +495,7 @@ Requires a low initial investment.
 			x label style={={at={(current axis.right of origin)}}},
 			%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
 			%		x label style={at={(1,0.5)}},
-			xlabel={underlying ($T$)},
+			xlabel={underlying (\(T\))},
 			%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
 			%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
 			ytick=\empty,
@@ -503,17 +503,17 @@ Requires a low initial investment.
 			extra y ticks ={0},
 			extra y tick labels={{0}},
 			extra x ticks ={{\PxExerciceBSa},{\PxExerciceBSb},{\PxExerciceBSc}},
-			extra x tick labels={{$E_1\ \ \ \ \ $},{$E_2$},{$E_3$}},
+			extra x tick labels={{\(E_1\ \ \ \ \ \)},{\(E_2\)},{\(E_3\)}},
 			extra x tick style={color=BleuProfondIRA,
 				tick label style={yshift=-0mm}	},
 			]
 			%		
 			\addplot[name path=A,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Call(x,\PxExerciceBSa,\PremiumBSa)} 
-			node [pos=0.15, above] {\small Long $C_1$};	
+			node [pos=0.15, above] {\small Long \(C_1\)};	
 			\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS-1.75}}, samples=21,dashed] {-2*Call(x,\PxExerciceBSb,\PremiumBSb)} 
-			node [pos=0.15, above] {\small Short $2\ C_2$};	
+			node [pos=0.15, above] {\small Short \(2\ C_2\)};	
 			\addplot[name path=C,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Call(x,\PxExerciceBSc,\PremiumBSb)} 
-			node [pos=0.15, above] {\small Long $C_3$};	
+			node [pos=0.15, above] {\small Long \(C_3\)};	
 			\addplot[name path=EP,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=41] {
 				Call(x,\PxExerciceBSa,\PremiumBSa) - 2*Call(x,\PxExerciceBSb,\PremiumBSb)+
 				Call(x,\PxExerciceBSc,\PremiumBSc)}
@@ -556,19 +556,19 @@ Requires a low initial investment.
 				color=BleuProfondIRA,
 				ylabel={Profit},
 				x label style={={at={(current axis.right of origin)}}},
-				xlabel={underlying ($T$)},
+				xlabel={underlying (\(T\))},
 				ytick=\empty,
 				extra y ticks ={0},
 				extra y tick labels={{0}},
 				extra x ticks ={{\PxExerciceBSa},{\PxExerciceBSb}},
-				extra x tick labels={{$E_1\ \ \ \ \ $},{$E_2$}},
+				extra x tick labels={{\(E_1\ \ \ \ \ \)},{\(E_2\)}},
 				extra x tick style={color=BleuProfondIRA,
 					tick label style={yshift=-10mm}	},
 				]
 				\addplot[name path=A,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS-1.75}}, samples=21,dashed] {Call(x,\PxExerciceBSa,\PremiumBSa)} 
-				node [pos=0.15, below] {\small Long $C_1$};	
+				node [pos=0.15, below] {\small Long \(C_1\)};	
 				\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Put(x,\PxExerciceBSb,\PremiumBSb)} 
-				node [pos=0.85, above] {\small  Long $P_2$};		
+				node [pos=0.85, above] {\small  Long \(P_2\)};		
 				\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=21] {Call(x,\PxExerciceBSa,\PremiumBSa)+Put(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.5, above] {\small Strangle};	
 				\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSa},0) -- ({\PxExerciceBSa},{-\PremiumBSa})	;
 				\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSb},0) -- ({\PxExerciceBSb},{-\PremiumBSb})	;
@@ -595,19 +595,19 @@ Requires a low initial investment.
 				color=BleuProfondIRA,
 				ylabel={Profit},
 				x label style={={at={(current axis.right of origin)}}},
-				xlabel={underlying ($T$)},
+				xlabel={underlying (\(T\))},
 				ytick=\empty,
 				extra y ticks ={0},
 				extra y tick labels={{0}},
 				extra x ticks ={{\PxExerciceBSa},{\PxExerciceBSb}},
-				extra x tick labels={{$E_1\ \ \ \ \ $},{$E_2$}},
+				extra x tick labels={{\(E_1\ \ \ \ \ \)},{\(E_2\)}},
 				extra x tick style={color=BleuProfondIRA,
 					tick label style={yshift=-10mm}	},
 				]
 				\addplot[name path=A,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Put(x,\PxExerciceBSa,\PremiumBSa)} 
-				node [pos=0.85, below] {\small Long $P_1$};	
+				node [pos=0.85, below] {\small Long \(P_1\)};	
 				\addplot[name path=B,BleuProfondIRA,thin,domain={{\xminBS}:{\xmaxBS}}, samples=21,dashed] {Call(x,\PxExerciceBSb,\PremiumBSb)} 
-				node [pos=0.15, above] {\small  Long $C_2$};		
+				node [pos=0.15, above] {\small  Long \(C_2\)};		
 				\addplot[name path=EVH,OrangeProfondIRA,thick,domain={{\xminBS}:{\xmaxBS}}, samples=21] {Put(x,\PxExerciceBSa,\PremiumBSa)+Call(x,\PxExerciceBSb,\PremiumBSb)} node [pos=0.5, above] {\small Strangle};	
 				\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSa},0) -- ({\PxExerciceBSa},{-\PremiumBSa})	;
 				\draw[BleuProfondIRA, thin, dashed] ({\PxExerciceBSb},0) -- ({\PxExerciceBSb},{-\PremiumBSb})	;
@@ -628,31 +628,31 @@ It is impossible to realize a risk-free gain from a zero initial investment. Thu
 	
 AAO implies the following relationship between the Call and the Put (stock):
 
-$$S_t- C_t + P_t = K e^{-i_{f}.\tau}$$	
+\[S_t- C_t + P_t = K e^{-i_{f}.\tau}\]	
 \end{f}
 \hrule
 
 \begin{f}[The Cox-Ross-Rubinstein model]
 	
-It is based on a discrete-time process with two possible price movements at each period: an increase (factor $u$) or a decrease (factor $d$), with $u > 1 + i_{f}$ and $d < 1 + i_{f}$. The price at $t = 1$ is then \( S_{1}^{u} = S_{0} u \) or \( S_{1}^{d} = S_{0} d \), according to a probability $q$ or $1-q$.
+It is based on a discrete-time process with two possible price movements at each period: an increase (factor \(u\)) or a decrease (factor \(d\)), with \(u > 1 + i_{f}\) and \(d < 1 + i_{f}\). The price at \(t = 1\) is then \( S_{1}^{u} = S_{0} u \) or \( S_{1}^{d} = S_{0} d \), according to a probability \(q\) or \(1-q\).
 
 \begin{tikzpicture}
 	[sibling distance=5em,
 	every node/.style = {shape=rectangle, rounded corners, fill=OrangeProfondIRA!20,
 		align=center,  draw=OrangeProfondIRA, text=BleuProfondIRA } ,grow=right,
 	edge from parent/.style={draw=OrangeProfondIRA, thick}]
-	\node (A){$S_0$}
-	child {node  (B) {$S_d$}
-		child {node {$S_{dd}$}}
+	\node (A){\(S_0\)}
+	child {node  (B) {\(S_d\)}
+		child {node {\(S_{dd}\)}}
 		child} 
-	child {node (C) {$S_u$} 
-		child {node  {$S_{du}$}}
-		child {node {$S_{uu}$}}    
+	child {node (C) {\(S_u\)} 
+		child {node  {\(S_{du}\)}}
+		child {node {\(S_{uu}\)}}    
 	};
 	\draw [draw=none] 
-	($ (A.east) + (0,0.2) $) -- node[draw=none, fill=none, above left, BleuProfondIRA] {$q$} ($ (C.west) + (0,-0.2) $);
+	($ (A.east) + (0,0.2) $) -- node[draw=none, fill=none, above left, BleuProfondIRA] {\(q\)} ($ (C.west) + (0,-0.2) $);
 	\draw [draw=none]  
-	($ (A.east) + (0,-0.2) $) -- node[draw=none, fill=none,below left, BleuProfondIRA] {$1 - q$} ($ (B.west) + (0,0.2) $);
+	($ (A.east) + (0,-0.2) $) -- node[draw=none, fill=none,below left, BleuProfondIRA] {\(1 - q\)} ($ (B.west) + (0,0.2) $);
 \end{tikzpicture}
 \quad
 \begin{tikzpicture}
@@ -660,17 +660,17 @@ It is based on a discrete-time process with two possible price movements at each
 	every node/.style = {shape=rectangle, rounded corners, fill=OrangeProfondIRA!20,
 		align=center,  draw=OrangeProfondIRA, text=BleuProfondIRA } ,grow=right,
 	edge from parent/.style={draw=OrangeProfondIRA, thick}]
-	\node {$C_0$}
-	child {node  {$C_d$}
-		child {node {$C_{dd}=(S_{dd}-K)^{+}$}}
+	\node {\(C_0\)}
+	child {node  {\(C_d\)}
+		child {node {\(C_{dd}=(S_{dd}-K)^{+}\)}}
 		child}
-	child {node {$C_u$} 
-		child {node  {$C_{du}=(S_{du}-K)^{+}$}}
-		child {node  {$C_{uu}=(S_{uu}-K)^{+}$}}  
+	child {node {\(C_u\)} 
+		child {node  {\(C_{du}=(S_{du}-K)^{+}\)}}
+		child {node  {\(C_{uu}=(S_{uu}-K)^{+}\)}}  
 	};
 \end{tikzpicture}
 
-This model extends to $n$ periods with $n+1$ possible prices for $S_T$. At expiration, the value of a call option is given by \( C_{1}^{u} = (S_{1}^{u} - K)^+ \) and \( C_{1}^{d} = (S_{1}^{d} - K)^+ \).
+This model extends to \(n\) periods with \(n+1\) possible prices for \(S_T\). At expiration, the value of a call option is given by \( C_{1}^{u} = (S_{1}^{u} - K)^+ \) and \( C_{1}^{d} = (S_{1}^{d} - K)^+ \).
 
 \textbf{Absence of arbitrage opportunity} implies
 \[
@@ -684,7 +684,7 @@ and a risk-neutral probability
 C_{0} = \frac{1}{1+i_f} \left[ q C_{1}^{u} + (1 - q) C_{1}^{d} \right]
 \]
 
-We can also construct a replication portfolio composed of $\Delta$ shares and $B$ bonds, such that :
+We can also construct a replication portfolio composed of \(\Delta\) shares and \(B\) bonds, such that :
 \[
 \begin{cases}
 	\Delta = \frac{S_{1}^{u} - K}{S_{1}^{u} - S_{1}^{d}}, \\
@@ -698,13 +698,13 @@ We can also construct a replication portfolio composed of $\Delta$ shares and $B
 P_{0} = \frac{1}{1+i_f} \left[ q P_{1}^{u} + (1 - q) P_{1}^{d} \right]
 \]
 
-\textbf{Determination of $q$, $u$, $d$}:  
-By calibrating the model to match the first moments of the return under the risk-neutral probability (expected value $i_f$, variance $\sigma^2 \delta t$), we obtain :
+\textbf{Determination of \(q\), \(u\), \(d\)}:  
+By calibrating the model to match the first moments of the return under the risk-neutral probability (expected value \(i_f\), variance \(\sigma^2 \delta t\)), we obtain :
 \[
 e^{i_{f} \delta t} = q u + (1-q) d, \qquad q u^2 + (1-q) d^2 - [q u + (1-q) d]^2 = \sigma^2 \delta t
 \]
 
-With the constraint $u = \frac{1}{d}$, we obtain:
+With the constraint \(u = \frac{1}{d}\), we obtain:
 \[
 \begin{array}{l}
 	q = \frac{e^{-i_f \delta_t} - d}{u - d} \\
@@ -719,26 +719,26 @@ With the constraint $u = \frac{1}{d}$, we obtain:
 \begin{f}[The Black \& Scholes Model]
 Assumptions of the model
 \begin{itemize}
-	\item The risk-free rate $R$ is constant. We define $i_f = \ln(1+R)$, which implies $(1+R)^t = e^{i_f t}$.
-	\item The stock price $S_t$ follows a geometric Brownian motion :
-	$$
+	\item The risk-free rate \(R\) is constant. We define \(i_f = \ln(1+R)\), which implies \((1+R)^t = e^{i_f t}\).
+	\item The stock price \(S_t\) follows a geometric Brownian motion :
+	\[
 	dS_t = \mu S_t dt + \sigma S_t dW_t 
-	$$
-	$$
+	\]
+	\[
 	 S_t = S_0 \exp\left(\sigma W_t + \left( \mu - \frac{1}{2}\sigma^2 \right)t \right)
-	$$
+	\]
 	\item No dividend during the option's lifetime.  
 	\item The option is "European" (exercised only at maturity).  
 	\item Frictionless market : no taxes or transaction costs.  
 	\item Short selling is allowed. 
 \end{itemize}
 
-The Black-Scholes-Merton equation for valuing a derivative contract $f$ is:
-$$
+The Black-Scholes-Merton equation for valuing a derivative contract \(f\) is:
+\[
 \frac{\partial f}{\partial t} + i_f S \frac{\partial f}{\partial S} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 f}{\partial S^2} = i_f f
-$$
+\]
 
-At maturity, the price of a call option is $C(S,T) = \max(0, S_T - K)$, and that of a put option is $P(S,T) = \max(0, K - S_T)$.
+At maturity, the price of a call option is \(C(S,T) = \max(0, S_T - K)\), and that of a put option is \(P(S,T) = \max(0, K - S_T)\).
 
 
 \begin{center}
@@ -770,11 +770,11 @@ or :
 %La sensibilité peut être mesurée par cinq paramètres (lettres grecques) :
 
 \begin{itemize}
-	\item \textbf{Delta} $\Delta$ : variation in the option price depending on the underlying.
-	\item \textbf{Gamma} $\Gamma$ : delta sensitivity.
-	\item \textbf{Thêta} $\Theta$ : sensitivity to time.
-	\item \textbf{Véga} $\mathcal{V}$ : sensitivity to volatility.
-	\item \textbf{Rho} $\rho$ : interest rate sensitivity.
+	\item \textbf{Delta} \(\Delta\) : variation in the option price depending on the underlying.
+	\item \textbf{Gamma} \(\Gamma\) : delta sensitivity.
+	\item \textbf{Thêta} \(\Theta\) : sensitivity to time.
+	\item \textbf{Véga} \(\mathcal{V}\) : sensitivity to volatility.
+	\item \textbf{Rho} \(\rho\) : interest rate sensitivity.
 \end{itemize}
 
 
@@ -786,10 +786,10 @@ The \textbf{Delta} measures the impact of a change in the underlying asset :
 \end{align*}
 
 
-The global Delta of a portfolio $\Pi$ with weights $\omega_i$ is :
-$$
+The global Delta of a portfolio \(\Pi\) with weights \(\omega_i\) is :
+\[
 \frac{\partial \Pi}{\partial S_t} = \sum_{i=1}^{n} \omega_i \Delta_i
-$$
+\]
 
 
 
@@ -815,15 +815,15 @@ $$
 	scale only axis, xmin={\xminBS},xmax={\xmaxBS},enlarge x limits=0.05,
 	enlarge y limits=0.1,
 	color=BleuProfondIRA,
-	ylabel={$\Delta$},
+	ylabel={\(\Delta\)},
 	x label style={at={(axis cs:\xmaxBS+.1,0)},anchor=north east},
-	xlabel={underlying ($T$)},
+	xlabel={underlying (\(T\))},
 	ytick=\empty,
 	xtick=\empty,
 	extra y ticks ={-.5,0,0.5},
-	extra y tick labels={{$-\frac{1}{2}$},{0},{$\frac{1}{2}$}},
+	extra y tick labels={{\(-\frac{1}{2}\)},{0},{\(\frac{1}{2}\)}},
 	extra x ticks ={\PxExerciceAct,\PxExerciceBS},
-	extra x tick labels={{\color{BleuProfondIRA}$K'$\ \ \ \ \ \ \ \ },{\color{BleuProfondIRA}\ \ $K$}},
+	extra x tick labels={{\color{BleuProfondIRA}\(K'\)\ \ \ \ \ \ \ \ },{\color{BleuProfondIRA}\ \ \(K\)}},
 	extra x tick style={color=BleuProfondIRA,
 		tick label style={yshift=-0mm}	},
 	title ={ \textbf{Delta of the option}},
@@ -847,8 +847,8 @@ $$
 
 
 \begin{f}[The Yield Curve]
-The \textbf{yield curve}, or the curve of returns, or $r_f(\tau)$, provides a graphical representation of risk-free interest rates as a function of maturity (or term).
-It is also called the \textbf{zero-coupon} yield curve, referring to a type of risk-free bond with no coupons (a debt composed only of two opposite cash flows, one at $t_0$ and the other at $T$).
+The \textbf{yield curve}, or the curve of returns, or \(r_f(\tau)\), provides a graphical representation of risk-free interest rates as a function of maturity (or term).
+It is also called the \textbf{zero-coupon} yield curve, referring to a type of risk-free bond with no coupons (a debt composed only of two opposite cash flows, one at \(t_0\) and the other at \(T\)).
 This curve also provides insight into market expectations regarding future interest rates (\engl{forward} rates).
 \end{f}
 \hrule
@@ -865,20 +865,20 @@ y( m ) =& \beta _0 + \beta _1\frac{{\left[ {1 - \exp \left( { - m/\tau} \right)}
 \label{MTNSeq}
 \end{align*}}
 %
-where $y\left( m \right)$ and $m$ are as above, and $\beta_0$, $\beta_1$, $\beta_2$, and $\tau$ are parameters:
+where \(y\left( m \right)\) and \(m\) are as above, and \(\beta_0\), \(\beta_1\), \(\beta_2\), and \(\tau\) are parameters:
 
 
 \begin{itemize}
 
-\item   $\beta_0$ is interpreted as the long-term level of interest rates (the coefficient is 1, it is a constant that does not decrease),
+\item   \(\beta_0\) is interpreted as the long-term level of interest rates (the coefficient is 1, it is a constant that does not decrease),
 
-\item   $\beta_1$ is the short-term component, noting that :
+\item   \(\beta_1\) is the short-term component, noting that :
 \begin{equation*}
 	\lim_{m \rightarrow 0} \frac{{\left[ {1 - \exp \left( { - m/\tau} \right)} \right]}}{m/\tau}=1
 \end{equation*}
-It follows that the overnight rate such as €str\index{Taux d'intérêts! Estr} will equal $\beta_0 + \beta_1$ in this model.
-\item $\beta_2$ is the medium-term component (it starts at 0, increases, then decreases back toward zero — i.e., bell-shaped),
-\item $\tau$ is the scale factor on maturity; it determines where the term weighted by $\beta_2$ reaches its maximum.
+It follows that the overnight rate such as €str\index{Taux d'intérêts! Estr} will equal \(\beta_0 + \beta_1\) in this model.
+\item \(\beta_2\) is the medium-term component (it starts at 0, increases, then decreases back toward zero — i.e., bell-shaped),
+\item \(\tau\) is the scale factor on maturity; it determines where the term weighted by \(\beta_2\) reaches its maximum.
 \end{itemize}
 
 Svensson (1995) adds a second bell-shaped term; this is the Nelson–Siegel–Svensson model. The additional term is :
@@ -887,7 +887,7 @@ Svensson (1995) adds a second bell-shaped term; this is the Nelson–Siegel–Sv
 +\beta _3 {\left(\frac{{\left[ {1 - \exp \left( { - m/\tau_2} \right)} \right]}}{m/\tau_2} - \exp \left( { - m/\tau_2}\right)\right)}
 \label{MTSveq}
 \end{equation*}
-and the interpretation is the same as for $\beta_2$ and $\tau$ above; it allows for two inflection points on the yield curve.
+and the interpretation is the same as for \(\beta_2\) and \(\tau\) above; it allows for two inflection points on the yield curve.
 
 \newcommand{\traintunnel}{	        
 \draw[thick, OrangeProfondIRA] svg "M 55.448002 56.380001L 40 39L 28 39L 12.552 56.380001M 12 34C 11.729672 21.575853 21.576109 11.281852 34 11C 46.423893 11.281852 56.270329 21.575853 56.000004 34L 56 55C 56 56.104568 55.104568 57 54 57L 14 57C 12.895431 57 12 56.104568 12 55ZM 28 39L 28 34C 28 30.132 30.302 27 34 27C 37.697998 27 40 30.132 40 34L 40 39M 34 51L 34 57M 34 43L 34 45";
@@ -948,13 +948,13 @@ Once adjusted, the user can then evaluate assets or define various sensitivity m
 	{100*(\MTbetaa + \MTbetab * ((1 - exp(-x/\MTtaua)) / (x/\MTtaua)) + \MTbetac * (((1 - exp(-x/\MTtaua)) / (x/\MTtaua)) - exp(-x/\MTtaua)) + \MTbetad * (((1 - exp(-x/\MTtaub)) / (x/\MTtaub)) - exp(-x/\MTtaub)))};
 	% Affichage des paramètres
 	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.15) { 
-	$\beta_0 = \MTbetaa$\quad
-	$\beta_1 = \MTbetab$\quad
-	$\beta_2 = \MTbetac$\quad
-	$\tau_1 = \MTtaua$\quad			
+	\(\beta_0 = \MTbetaa\)\quad
+	\(\beta_1 = \MTbetab\)\quad
+	\(\beta_2 = \MTbetac\)\quad
+	\(\tau_1 = \MTtaua\)\quad			
 };	\node[anchor=south east, text=BleuProfondIRA] at (rel axis cs:1,0.05) { 
-	$\beta_3 = \MTbetad$\quad
-	$\tau_2 = \MTtaub$			
+	\(\beta_3 = \MTbetad\)\quad
+	\(\tau_2 = \MTtaub\)			
 };
 \node[xscale=0.3, yscale=-0.3, above=35pt] at (M) {\TresorerieMngt};
 \node[xscale=0.3, yscale=-0.3, above=35pt] at (N) {\familialTV};
@@ -970,19 +970,19 @@ Once adjusted, the user can then evaluate assets or define various sensitivity m
 
 \begin{f}[Vasicek model]
 	
-	Under a risk-neutral probability $\mathbb{Q}$, the short rate $(r_t)$ follows an Ornstein–Uhlenbeck process with constant coefficients:
+	Under a risk-neutral probability \(\mathbb{Q}\), the short rate \((r_t)\) follows an Ornstein–Uhlenbeck process with constant coefficients:
 	\[
 	dr_t = \kappa(\theta - r_t)\, dt + \sigma\, dW_t, \quad r_0 \in \mathbb{R}
 	\]
 	où :
 	\begin{itemize}[nosep]
-		\item $\kappa > 0$ is the speed of mean reversion,
-		\item $\theta$ is the long-term mean level,
-		\item $\sigma > 0$ is the volatility,
-		\item $W_t$ is a standard Brownian motion under $\mathbb{Q}$.
+		\item \(\kappa > 0\) is the speed of mean reversion,
+		\item \(\theta\) is the long-term mean level,
+		\item \(\sigma > 0\) is the volatility,
+		\item \(W_t\) is a standard Brownian motion under \(\mathbb{Q}\).
 	\end{itemize}
 	
-The EDS solution (application of Itô’s lemma to $Y_{t}=r(t) e^{\kappa t}$):
+The EDS solution (application of Itô’s lemma to \(Y_{t}=r(t) e^{\kappa t}\)):
 	\[
 	r_t = r_s e^{-\kappa(t-s)} + \theta(1 - e^{-\kappa(t-s)}) + \sigma \int_s^t e^{-\kappa(t-u)} dW_u
 	\]
@@ -994,13 +994,13 @@ The EDS solution (application of Itô’s lemma to $Y_{t}=r(t) e^{\kappa t}$):
 		\operatorname{Var}_\mathbb{Q}[r_t \mid \mathcal{F}_s] &= \frac{\sigma^2}{2\kappa} \left(1 - e^{-2\kappa(t-s)}\right)
 	\end{aligned}
 	\]
-The process $(r_t)$ is Gaussian; negative rates are possible.
+The process \((r_t)\) is Gaussian; negative rates are possible.
 	
 \end{f}
 
 \begin{f}[Price of a zero-coupon bond (Vasicek)]
 
-The price at time $t$ of a zero-coupon bond maturing at $T$ is given by :
+The price at time \(t\) of a zero-coupon bond maturing at \(T\) is given by :
 \[
 ZC(t, T) = A(t, T) \, e^{-B(t, T)\, r_t}
 \]
@@ -1012,7 +1012,7 @@ où :
 \end{aligned}
 \]
 
-This formulation is possible due to the fact that $\int_t^T r_s ds$ is a Gaussian random variable conditional on $\mathcal{F}_t$.
+This formulation is possible due to the fact that \(\int_t^T r_s ds\) is a Gaussian random variable conditional on \(\mathcal{F}_t\).
 
 \[
 ZC(t, T) = \mathbb{E}_\mathbb{Q} \left[ \exp\left( -\int_t^T r_s\, ds \right) \Big| \mathcal{F}_t \right]
@@ -1023,36 +1023,36 @@ ZC(t, T) = \mathbb{E}_\mathbb{Q} \left[ \exp\left( -\int_t^T r_s\, ds \right) \B
 
 \begin{f}[Cox–Ingersoll–Ross (CIR) model]
 	
-Under the risk-neutral measure $\mathbb{Q}$, the short rate $(r_t)$ follows the dynamics :
+Under the risk-neutral measure \(\mathbb{Q}\), the short rate \((r_t)\) follows the dynamics :
 \[
 dr_t = \kappa(\theta - r_t)\,dt + \sigma \sqrt{r_t}\, dW_t, \quad r_0 \geq 0
 \]
 with :
 \begin{itemize}[nosep]
-	\item $\kappa > 0$ : mean reversion speed,
-	\item $\theta > 0$ : long-term level,
-	\item $\sigma > 0$ : volatility,
-	\item $W_t$ : Brownian motion under $\mathbb{Q}$.
+	\item \(\kappa > 0\) : mean reversion speed,
+	\item \(\theta > 0\) : long-term level,
+	\item \(\sigma > 0\) : volatility,
+	\item \(W_t\) : Brownian motion under \(\mathbb{Q}\).
 \end{itemize}
 
 \textbf{So} :
 \begin{itemize}
-	\item The square root $\sqrt{r_t}$ guarantees $r_t \geq 0$ if $2\kappa\theta \geq \sigma^2$ (Feller condition).
-	\item The process $(r_t)$ is a non-Gaussian diffusion process but with continuous trajectories.
-	\item The rate is \textbf{mean-reverting} around $\theta$.
+	\item The square root \(\sqrt{r_t}\) guarantees \(r_t \geq 0\) if \(2\kappa\theta \geq \sigma^2\) (Feller condition).
+	\item The process \((r_t)\) is a non-Gaussian diffusion process but with continuous trajectories.
+	\item The rate is \textbf{mean-reverting} around \(\theta\).
 \end{itemize}
 
-Thus, the process $(r_t)$ is a diffusion with explicit conditional distributions (under $\mathbb{Q}$) :
+Thus, the process \((r_t)\) is a diffusion with explicit conditional distributions (under \(\mathbb{Q}\)) :
 
-For $s < t$, the variable $r_t$ follows a non-central $\chi^2$ distribution:
+For \(s < t\), the variable \(r_t\) follows a non-central \(\chi^2\) distribution:
 \[
 r_t \mid \mathcal{F}_s \sim c \cdot \chi^2_{d}(\lambda)
 \]
 with :
 \begin{itemize}[nosep]
-	\item $\displaystyle c = \frac{\sigma^2 (1 - e^{-\kappa (t - s)})}{4\kappa}$
-	\item $\displaystyle d = \frac{4\kappa\theta}{\sigma^2}$ : degrees of freedom
-	\item $\displaystyle \lambda = \frac{4\kappa e^{-\kappa (t - s)} r_s}{\sigma^2 (1 - e^{-\kappa (t - s)})}$
+	\item \(\displaystyle c = \frac{\sigma^2 (1 - e^{-\kappa (t - s)})}{4\kappa}\)
+	\item \(\displaystyle d = \frac{4\kappa\theta}{\sigma^2}\) : degrees of freedom
+	\item \(\displaystyle \lambda = \frac{4\kappa e^{-\kappa (t - s)} r_s}{\sigma^2 (1 - e^{-\kappa (t - s)})}\)
 \end{itemize}
 
 and
@@ -1066,7 +1066,7 @@ and
 
 \end{f}
 \begin{f}[Price of a zero-coupon bond (CIR)]
-In the CIR model, the price of a zero-coupon bond at time $t$ with maturity $T$ is given by :
+In the CIR model, the price of a zero-coupon bond at time \(t\) with maturity \(T\) is given by :
 \[
 ZC(t, T) = A(t, T) \cdot e^{-B(t, T)\, r_t}
 \]
@@ -1087,7 +1087,7 @@ or :
 
 \begin{f}[Swaption, Black model]
 
-A \textbf{swaption} is an option on an interest rate swap. It gives the right (but not the obligation) to enter into a swap at a future date $T$.
+A \textbf{swaption} is an option on an interest rate swap. It gives the right (but not the obligation) to enter into a swap at a future date \(T\).
 
 \begin{itemize}[nosep]
 	\item \textbf{Payer swaption}: right to \emph{pay the fixed rate} and \emph{receive the floating rate}.
@@ -1096,14 +1096,14 @@ A \textbf{swaption} is an option on an interest rate swap. It gives the right (b
 
 \textbf{Notation} :
 \begin{itemize}[nosep]
-	\item $T$ : swaption exercise date
-	\item $K$ : fixed rate (strike)
-	\item $S(T)$ : swap rate on the date $T$
-	\item $A(T)$ : present value of future fixed flows.
-	\item $\sigma$ : swap rate volatility
+	\item \(T\) : swaption exercise date
+	\item \(K\) : fixed rate (strike)
+	\item \(S(T)\) : swap rate on the date \(T\)
+	\item \(A(T)\) : present value of future fixed flows.
+	\item \(\sigma\) : swap rate volatility
 \end{itemize}
 
-The Black (1976) model is an adaptation of the Black–Scholes model for interest rate products. Here, the swap rate $S(T)$ plays the role of the underlying asset, with a European option-type payoff.
+The Black (1976) model is an adaptation of the Black–Scholes model for interest rate products. Here, the swap rate \(S(T)\) plays the role of the underlying asset, with a European option-type payoff.
 
 \textbf{Black's formula for a payer swaption} :
 \[
@@ -1116,7 +1116,7 @@ or :
 	d_2 &= d_1 - \sigma \sqrt{T}
 \end{aligned}
 \]
-and $N(\cdot)$ is the cumulative distribution function of the standard normal distribution.
+and \(N(\cdot)\) is the cumulative distribution function of the standard normal distribution.
 
 \textbf{Formula for a receiver swaption} :
 \[

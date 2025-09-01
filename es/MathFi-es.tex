@@ -10,16 +10,16 @@
 \draw[ line width=1,dotted, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,0.4909) node (A) {};	
 \foreach \y in  {0,...,3} {
 	\draw (\y,0) -- (\y,-0.1);
-	\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+	\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};
 		}{
 		\node[below] at (\y,-0.1) {\tiny 0};}
 }
 \foreach \y in  {-3,...,1} {
 	\draw (\y+\n,0) -- (\y+\n,-0.1);
-	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};}{}
-	\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};
+	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \y\)};}{}
+	\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \)};
 		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1) node (B) {};}{}
-	\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+	\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n+\y\)};}{}
 }
 \draw[ line width=1] (-.25,0) -- (4,0);
 \draw[ line width=1, dashed] (4,0) -- (5,0);
@@ -34,16 +34,16 @@
 \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,1) node (A) {};	
 \foreach \y in  {0,...,3} {
 	\draw (\y,0) -- (\y,-0.1);
-	\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+	\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};
 	}{
 		\node[below] at (\y,-0.1) {\tiny 0};}
 }
 \foreach \y in  {-3,...,1} {
 	\draw (\y+\n,0) -- (\y+\n,-0.1);
-	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};}{}
-	\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};
+	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \y\)};}{}
+	\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \)};
 		\draw[ line width=1,dotted, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,2.0368) node (B) {};}{}
-	\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+	\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n+\y\)};}{}
 }
 \draw[ line width=1] (-.25,0) -- (4,0);
 \draw[ line width=1, dashed] (4,0) -- (5,0);
@@ -56,56 +56,56 @@
 
 \begin{f}[Les Intérêts]
 
-\emph{Escompte ou taux précompté $d$}
-     $$d=i/(1+i)$$
-\emph{Intérêt simple $i$}
-$$
+\emph{Escompte ou taux précompté \(d\)}
+     \[d=i/(1+i)\]
+\emph{Intérêt simple \(i\)}
+\[
 I_t=P i t=P i \frac{k}{365}
-$$
-\emph{Intérêt composés $i$}
-$$
+\]
+\emph{Intérêt composés \(i\)}
+\[
 V_n=P(1+i)^n=P\left(1+\frac{p}{100}\right)^n
-$$
-\emph{Intérêt continu $r$}
-$$V_t=V_0\ e^{rt}$$
+\]
+\emph{Intérêt continu \(r\)}
+\[V_t=V_0\ e^{rt}\]
 
-\emph{Taux effectif $i_e$}
-$$
+\emph{Taux effectif \(i_e\)}
+\[
 i_e=\left( 1+\frac{i}{m}\right) ^{m}-1
-$$
-où $i$ est le taux nominal et $m$ le nombre de périodes sur un an.
+\]
+où \(i\) est le taux nominal et \(m\) le nombre de périodes sur un an.
 
-\emph{Taux équivalent $i^{(m)}$}
-$$
+\emph{Taux équivalent \(i^{(m)}\)}
+\[
 i^{(m)}=m(1+i)^{1 / m}-1
-$$
+\]
 
-\emph{Taux nominal $i$ et taux périodique}
+\emph{Taux nominal \(i\) et taux périodique}
 
 Le taux \textbf{nominal} ou taux \textbf{facial} permet de calculer les intérêts dus sur un an.
-Le taux \textbf{périodique} correspond au taux nominal divisé par le nombre de périodes sur un an $i/m$.
+Le taux \textbf{périodique} correspond au taux nominal divisé par le nombre de périodes sur un an \(i/m\).
 Si le taux périodique est hebdomadaire, le taux nominal sera divisé par 52.
 \end{f}
 \hrule
 
 \begin{f}[Valeur actuelle et valeur future]
 
-La valeur actuelle (VA)  ou valeur présente (VP)  représente le capital qui doit être investi aujourd'hui à un taux d'intérêt composé annuel $i$ pour obtenir des flux de trésorerie futurs ($F_k$) aux moments $t_k$:
+La valeur actuelle (VA)  ou valeur présente (VP)  représente le capital qui doit être investi aujourd'hui à un taux d'intérêt composé annuel \(i\) pour obtenir des flux de trésorerie futurs (\(F_k\)) aux moments \(t_k\):
 \begin{equation}
 	VP = \sum_{k=1}^{n} F_k \times \frac{1}{(1+i)^{t_k}}
 \label{ValeurActuelle}
 \end{equation}
-Lorsque les $F_k$ sont constants
+Lorsque les \(F_k\) sont constants
 \begin{equation}
 	VP = K  \frac{1 - (1+i)^{-n}} {i}
 \label{ValeurActuelleFluxCt}
 \end{equation}
 
-La valeur future (VF) représente la valeur du capital en $T$ qui, avec un taux d'intérêt composé annuel $i$,  capitalise les flux de trésorerie futurs ($F_k$) aux moments $t_k$.
+La valeur future (VF) représente la valeur du capital en \(T\) qui, avec un taux d'intérêt composé annuel \(i\),  capitalise les flux de trésorerie futurs (\(F_k\)) aux moments \(t_k\).
 \begin{equation}
 	VF=V_n = \sum_{k=1}^{n} F_k \times (1+i)^{n-t_k}
 \end{equation}
-Plus généralement $VF= (1+i)^{n}VP$.
+Plus généralement \(VF= (1+i)^{n}VP\).
 \end{f}
 \hrule
 
@@ -147,7 +147,7 @@ Par un remboursement constant ou par annuité constante: la somme de l'amortisse
 	\node[below left] at (\y,-0.1) {\tiny 0};}{}
 \ifthenelse{\y<4 \AND \y>0}{
 	\draw (\y,0) -- (\y,-0.1);
-	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};
 	\pgfmathparse{\a-\cap*0.031415*\v^(\y) }
 	\let\amortissement\pgfmathresult
 		\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (\y,0) -- (\y,-\caprd);
@@ -161,9 +161,9 @@ Par un remboursement constant ou par annuité constante: la somme de l'amortisse
 	\pgfmathparse{\y-\n} 	
 	\let\zdec\pgfmathresult
 	\pgfmathtruncatemacro{\z}{\zdec}
-	\ifthenelse{\y<\n }{\node[below] at (\y,-0.1) {\tiny $\scriptstyle n \z$};}{}
-	\ifthenelse{\y=\n }{\node[below] at (\y,-0.1) {\tiny $\scriptstyle n $};}{}
-	\ifthenelse{\y>\n}{	\node[below] at (\y,-0.1) {\tiny $\scriptstyle n+\z$};}{}
+	\ifthenelse{\y<\n }{\node[below] at (\y,-0.1) {\tiny \(\scriptstyle n \z\)};}{}
+	\ifthenelse{\y=\n }{\node[below] at (\y,-0.1) {\tiny \(\scriptstyle n \)};}{}
+	\ifthenelse{\y>\n}{	\node[below] at (\y,-0.1) {\tiny \(\scriptstyle n+\z\)};}{}
 	\ifthenelse{\y<\n \OR \y=\n}{
 		\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (\y,0) -- (\y,-\caprd);
 		\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,\amortissement);
@@ -189,7 +189,7 @@ Par un remboursement constant ou par annuité constante: la somme de l'amortisse
 \draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-\n);
 \foreach \y in  {0,...,3} {
 \draw (\y,0) -- (\y,-0.1);
-\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};
 	\pgfmathparse{(\duree-\y)*\i} 	
 	\let\Interet\pgfmathresult
 	\pgfmathparse{(\n) *(1-\y/\n))} 	
@@ -203,9 +203,9 @@ Par un remboursement constant ou par annuité constante: la somme de l'amortisse
 	\pgfmathparse{(-\y+1)*\i} 	
 \let\Interet\pgfmathresult
 \draw (\y+\n,0) -- (\y+\n,-0.1);
-\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};}{}
-\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};}{}
-\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \y\)};}{}
+\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \)};}{}
+\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n+\y\)};}{}
 \ifthenelse{\y<1 }{	
 	\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (\y+\n,0) -- (\y+\n,\y);
 	\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);
@@ -231,7 +231,7 @@ Par un remboursement in fine, où l'intérêt est constant. Seuls les intérêts
 \draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (0,0) -- (0,-\n);
 \foreach \y in  {0,...,3} {
 	\draw (\y,0) -- (\y,-0.1);
-	\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+	\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};
 %				\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,1);
 		\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (\y,0) -- (\y,-\n);
 		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,2*\i);}{
@@ -239,14 +239,14 @@ Par un remboursement in fine, où l'intérêt est constant. Seuls les intérêts
 }
 \foreach \y in  {-3,...,1} {
 	\draw (\y+\n,0) -- (\y+\n,-0.1);
-	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};
+	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \y\)};
 		\draw[ line width=10, color=BleuProfondIRA, opacity=0.2] (\y+\n,0) -- (\y+\n,-\n);
 		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,2*\i);}{}
 	\ifthenelse{\y=0 }{
 		\draw[ line width=1, color=BleuProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,2);
 		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,2) -- (\y+\n,2+2*\i);
-		\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};}{}
-	\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+		\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \)};}{}
+	\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n+\y\)};}{}
 }
 \draw[ line width=1] (-.25,0) -- (4,0);
 \draw[ line width=1, dashed] (4,0) -- (5,0);
@@ -264,11 +264,11 @@ Par un remboursement in fine, où l'intérêt est constant. Seuls les intérêts
 \renewcommand{\arraystretch}{2}
 \begin{tabular}{|m{10ex}|m{19ex}|m{19ex}|m{17ex}|}
 \rowcolor{BleuProfondIRA!40}   	\hline &\textbf{In fine}			&   	\textbf{Amortissements  constants} &  		\textbf{Annuités  constantes} \\
-	\hline Capital restant dû $S_k$ & $T_k=S_0$, $T_n=0$& $S_{0}\left(1-\frac{k}{n}\right)$ & $S_{0} \frac{1-v^{n-k}}{1-v^{n}}$\\
-	\hline Intérêts $U_k$ 		& $i\times S_0$ & $S_{0}\left(1-\frac{k-1}{n}\right) i$ & $K\left(1-v^{n-k+1}\right)$ \\
-	\hline Amortis\-sements $T_k$ &	$T_k=O$, $T_n=S_0$ & $\frac{S_{0}}{n}$ & $K v^{n-k+1}$ \\
-	\hline Annuité $K_k$ & 	$K_k=i S_0$, $K_n=(1+i)S_0$ 	 & $\frac{S_{0}}{n}(1-(n-k+1) i) $ & $K=S_{0} \frac{i}{1-v^{n}} $ \\
-%	\hline Coût de l'emprunt & $1 \times K \times N$ & $1 \times K \times \frac{N+1}{2}$ & $K\left(\frac{N i}{1-(1+i)^{-N}}-1\right)$ \\
+	\hline Capital restant dû \(S_k\) & \(T_k=S_0\), \(T_n=0\)& \(S_{0}\left(1-\frac{k}{n}\right)\) & \(S_{0} \frac{1-v^{n-k}}{1-v^{n}}\)\\
+	\hline Intérêts \(U_k\) 		& \(i\times S_0\) & \(S_{0}\left(1-\frac{k-1}{n}\right) i\) & \(K\left(1-v^{n-k+1}\right)\) \\
+	\hline Amortis\-sements \(T_k\) &	\(T_k=O\), \(T_n=S_0\) & \(\frac{S_{0}}{n}\) & \(K v^{n-k+1}\) \\
+	\hline Annuité \(K_k\) & 	\(K_k=i S_0\), \(K_n=(1+i)S_0\) 	 & \(\frac{S_{0}}{n}(1-(n-k+1) i) \) & \(K=S_{0} \frac{i}{1-v^{n}} \) \\
+%	\hline Coût de l'emprunt & \(1 \times K \times N\) & \(1 \times K \times \frac{N+1}{2}\) & \(K\left(\frac{N i}{1-(1+i)^{-N}}-1\right)\) \\
 	\hline
 \end{tabular}
 

@@ -3,81 +3,81 @@
 
 \begin{f}[Notations sur les tables de survie]
 
-L'âge $x$, $y$, $z$ des individus assurés...    
+L'âge \(x\), \(y\), \(z\) des individus assurés...    
 
-$l_x$ est le nombre de personnes vivantes, par rapport à une cohorte initiale, à l'âge $x$ (ou $y$, $z$...)
+\(l_x\) est le nombre de personnes vivantes, par rapport à une cohorte initiale, à l'âge \(x\) (ou \(y\), \(z\)...)
 
-$\omega$ est l'âge maximal envisagé dans la table de mortalité.
+\(\omega\) est l'âge maximal envisagé dans la table de mortalité.
 
-$d_x=l_x-l_{x+1}$ est le nombre de personnes qui meurent entre l'âge $x$ et l'âge $x+1$.
+\(d_x=l_x-l_{x+1}\) est le nombre de personnes qui meurent entre l'âge \(x\) et l'âge \(x+1\).
 
-$q_x$ est la probabilité de décès entre les âges de $x$ et l $x+1$.
-$$
+\(q_x\) est la probabilité de décès entre les âges de \(x\) et l \(x+1\).
+\[
 \,q_x = d_x / l_x 
-$$
+\]
 
-$p_x$ est la probabilité que l'individu  d'âge $x$ survive à l'âge $x+1$.
-$$
+\(p_x\) est la probabilité que l'individu  d'âge \(x\) survive à l'âge \(x+1\).
+\[
 \,p_x+q_x=1 
-$$
+\]
 
 De même, 
-$\,_nd_x = d_x + d_{x+1} + \cdots + d_{x+n-1} = l_x - l_{x+n}$ montre le nombre de personnes qui meurent entre l'âge $x$ et l'âge $x+n$.
+\(\,_nd_x = d_x + d_{x+1} + \cdots + d_{x+n-1} = l_x - l_{x+n}\) montre le nombre de personnes qui meurent entre l'âge \(x\) et l'âge \(x+n\).
 
-$\,_nq_x$ est la probabilité de décès entre les âges de $x$ et l'âge $x+n$.
+\(\,_nq_x\) est la probabilité de décès entre les âges de \(x\) et l'âge \(x+n\).
 
-$$
+\[
 \,_nq_x = {}_nd_x / l_x
-$$
-$\,_np_x$ est la probabilité d'une personne d'âge $x$ de survivre à l'âge $x+n$.
-$$
+\]
+\(\,_np_x\) est la probabilité d'une personne d'âge \(x\) de survivre à l'âge \(x+n\).
+\[
 \,_np_x = l_{x+n} / l_x 
-$$
+\]
 
 
-${}_{m|}q_{x}$, la probabilité que l'individu d'âge $x$ meurt dans la ${m+1}^e$ année.
-$${}_{m|}q_{x}=\frac{d_{x+m}}{l_x}=\frac{l_{x+m}-l_{x+m+1}}{l_x}$$
+\({}_{m|}q_{x}\), la probabilité que l'individu d'âge \(x\) meurt dans la \({m+1}^e\) année.
+\[{}_{m|}q_{x}=\frac{d_{x+m}}{l_x}=\frac{l_{x+m}-l_{x+m+1}}{l_x}\]
 
-$\,e_x$  est l'espérance de vie pour une personne encore en vie à l'âge $x$. 
+\(\,e_x\)  est l'espérance de vie pour une personne encore en vie à l'âge \(x\). 
 C'est le nombre espéré d'anniversaires à vivre.
-$$
+\[
 \,e_x = \sum_{t=1}^{\infty} \ _tp_x 
-$$
+\]
 \end{f}
 \hrule
 
 \begin{f}[Coefficient ou commutations]
 
 
-Ces coefficients ou commutations sont établies par des fonctions actuarielles qui dépendent d'une table de mortalité et d'un taux $i$ ($v=1/(1+i)$) pour établir la table actuarielle :
-$$
+Ces coefficients ou commutations sont établies par des fonctions actuarielles qui dépendent d'une table de mortalité et d'un taux \(i\) (\(v=1/(1+i)\)) pour établir la table actuarielle :
+\[
 D_x=l_x .v^x
-$$
+\]
 peut être vu "comme" le nombre de survivants actualisés. Les sommes 
 
-$$
+\[
 N_x=\sum_{k\geq 0} D_{x+k}=\sum_{k= 0}^{\omega-x} D_{x+k}
-$$
+\]
 
-$$
+\[
 S_x=\sum_{k\geq 0} N_{x+k}=\sum_{k\geq 0}(k+1). D_{x+k}
-$$
+\]
 seront utilisés pour simplifier les calculs.
 De même
-$$
+\[
 C_x = d_x v^{ x+1} 
-$$
-peut être vu "comme" le nombre de décès  actualisés à l'âge $x$. Les sommes
+\]
+peut être vu "comme" le nombre de décès  actualisés à l'âge \(x\). Les sommes
 
-$$
+\[
 M_x=\sum_{k= 0}^{\omega-x} C_{x+k}
-$$
-$$
+\]
+\[
 R_x=\sum_{k= 0}^{\omega-x} M_{x+k}
-$$
+\]
 seront utilisés pour simplifier les calculs.
 
-Les  coefficients $D_x$ $N_x$ et $S_x$ seront utilisés pour les calculs sur les opérations en cas de vie et $C_x$ $M_x$ et $R_x$  pour les opérations en cas de décès.
+Les  coefficients \(D_x\) \(N_x\) et \(S_x\) seront utilisés pour les calculs sur les opérations en cas de vie et \(C_x\) \(M_x\) et \(R_x\)  pour les opérations en cas de décès.
 
 \end{f} 
 \hrule
@@ -92,22 +92,22 @@ Les  coefficients $D_x$ $N_x$ et $S_x$ seront utilisés pour les calculs sur les
     % Draw the x-axis and y-axis.
     \def\w{11}
     \def\n{6}
-    \node[left] at (-.5,0) {${}_{}a_x$};
+    \node[left] at (-.5,0) {\({}_{}a_x\)};
     
     \begin{scope}[shift={(3.75,.25)}]
         \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
     \end{scope}
     \foreach \y in  {0,...,3} {
         \draw (\y,0) -- (\y,-0.1);
-        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};
+        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};
             \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,1);}{
-            \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+            \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
     }
     \draw (\n,0) -- (\n,-0.1);
-    \node[below] at (\n,-0.1) {\tiny $\scriptstyle  x+n$};
+    \node[below] at (\n,-0.1) {\tiny \(\scriptstyle  x+n\)};
     \foreach \y in  {1,...,3} {
         \draw (\y+\n,0) -- (\y+\n,-0.1);
-        \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};
+        \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};
         %		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);
     }
     \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
@@ -117,21 +117,21 @@ Les  coefficients $D_x$ $N_x$ et $S_x$ seront utilisés pour les calculs sur les
     % Draw the x-axis and y-axis.
     \def\w{11}
     \def\n{6}
-    \node[left] at (-.5,0) {${}_{}a_x$};
+    \node[left] at (-.5,0) {\({}_{}a_x\)};
     
     \begin{scope}[shift={(\n+.5+3,.25)}]
         \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
     \end{scope}
     \foreach \y in  {0,...,3} {
         \draw (\y,0) -- (\y,-0.1);
-        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};
+        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};
             \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,1);}{
-            \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+            \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
     }
     \foreach \y in  {0,...,4} {
         \draw (\y+\n,0) -- (\y+\n,-0.1);
-        \ifthenelse{\y>0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};}{
-            \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n$};}
+        \ifthenelse{\y>0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};}{
+            \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n\)};}
         \ifthenelse{\y<4 }{	\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);}
     }
     \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
@@ -140,22 +140,22 @@ Les  coefficients $D_x$ $N_x$ et $S_x$ seront utilisés pour les calculs sur les
     % Draw the x-axis and y-axis.
     \def\w{11}
     \def\n{6}
-    \node[left] at (-.5,0) {$\ddot{a}_x$};
+    \node[left] at (-.5,0) {\(\ddot{a}_x\)};
     
     \begin{scope}[shift={(3.75,.25)}]
         \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
     \end{scope}
     \foreach \y in  {0,...,3} {
         \draw (\y,0) -- (\y,-0.1);
-        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};}{
-            \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};}{
+            \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
         \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,1);
     }
     \draw (\n,0) -- (\n,-0.1);
-    \node[below] at (\n,-0.1) {\tiny $\scriptstyle  x+n$};
+    \node[below] at (\n,-0.1) {\tiny \(\scriptstyle  x+n\)};
     \foreach \y in  {1,...,4} {
         \draw (\y+\n,0) -- (\y+\n,-0.1);
-        \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};
+        \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};
         %		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);
     }
     \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
@@ -164,86 +164,86 @@ Les  coefficients $D_x$ $N_x$ et $S_x$ seront utilisés pour les calculs sur les
     % Draw the x-axis and y-axis.
     \def\w{11}
     \def\n{6}
-    \node[left] at (-.5,0) {$\ddot{a}_x$};
+    \node[left] at (-.5,0) {\(\ddot{a}_x\)};
     
     \begin{scope}[shift={(\n+.5+3,.25)}]
         \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
     \end{scope}
     \foreach \y in  {0,...,3} {
         \draw (\y,0) -- (\y,-0.1);
-        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};}{
-            \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};}{
+            \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
         \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,1);
     }
     \foreach \y in  {0,...,4} {
         \draw (\y+\n,0) -- (\y+\n,-0.1);
-        \ifthenelse{\y>0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};}{
-            \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n$};}
+        \ifthenelse{\y>0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};}{
+            \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n\)};}
         \ifthenelse{\y<4 }{	\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);}
     }
     \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
 \end{tikzpicture}	
-$$a_x %=\frac{N_{x+1}}{D_x} 
+\[a_x %=\frac{N_{x+1}}{D_x} 
 %=\sum_{k=1}^{\infty}{}_{k|}q_{x} \ddot{a}_{\lcroof{k+1}}
 =\sum_{k=1}^{\infty}{}_{k}p_{x} v^{k}=\ddot{a}_x -1
 =\frac{N_{x+1}}{D_{x}}
-$$
+\]
 
-$$\ddot{a}_x 
+\[\ddot{a}_x 
 %\frac{N_x}{D_x}=
 %=\sum_{k=0}^{\infty}{}_{k|}q_{x} \ddot{a}_{\lcroof{k+1}}
 =\sum_{k=0}^{\infty}{}_{k}p_{x} v^{k}
 =	\frac{N_{x}}{D_{x}} 
-$$
+\]
 
-Si la périodicité correspond à $m$ période par an:
-$$\ddot{a}_{x}^{(m)} 
+Si la périodicité correspond à \(m\) période par an:
+\[\ddot{a}_{x}^{(m)} 
 =\sum_{k=0}^{\infty}\frac{1}{m}{}_{\frac{k}{m}}p_{x} v^{\frac{k}{m}}\approx\ddot{a}_x -\frac{m-1}{2m}
-$$
-De même, s'il paie $1/m$ en début des $m$ périodes
-$$a_{x}^{(m)}\approx a_x +\frac{m-1}{2m}
-$$
+\]
+De même, s'il paie \(1/m\) en début des \(m\) périodes
+\[a_{x}^{(m)}\approx a_x +\frac{m-1}{2m}
+\]
 
 
 \textbf{Les annuités viagères temporaires} (\engl{Whole life annuity guaranteed for n years})
-$$
+\[
 a_{x:\lcroof{n}} =
 \sum_{k=1}^{n}{}_{k}p_{x} v^{k}
 =\frac{N_{x+1}-N_{x+n+1}}{D_{x}}
-$$
+\]
 	
-$$
+\[
 \ddot{a}_{x:\lcroof{n}} =%\frac{N_x - N_{x+n}}{D_x}=
 \sum_{k=0}^{n-1}{}_{k}p_{x} v^{k}
 =\frac{N_{x}-N_{x+n}}{D_{x}}
-$$
+\]
 
 
 \textbf{Les annuités viagères différées}
-${}_{m|}a_{x}$ (\engl{Deferred life annuity}) représentent les rentes sur l'individu d'âge $x$ différée $m$ années. Le premier paiement intervient dans $m+1$ ans en cas de vie.
+\({}_{m|}a_{x}\) (\engl{Deferred life annuity}) représentent les rentes sur l'individu d'âge \(x\) différée \(m\) années. Le premier paiement intervient dans \(m+1\) ans en cas de vie.
 
 	%	\includegraphics[width=1\linewidth]{../../LifeActuarial/Graph/RenteViagereDifferee}
 \begin{tikzpicture}[scale=0.75]
     % Draw the x-axis and y-axis.
     \def\w{11}
     \def\m{6}
-    \node[left] at (-.5,0) {${}_{m|}a_x$};
+    \node[left] at (-.5,0) {\({}_{m|}a_x\)};
     
     \begin{scope}[shift={(4.25,.25)}]
         \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
     \end{scope}
-    \draw[dashed, color=BleuProfondIRA,arrows={Stealth[length=4, inset=0]-Stealth[length=4, inset=0]},  line width=1] (0,.3) -- (\m,.3) node [pos=0.5, above] {$m$};		
+    \draw[dashed, color=BleuProfondIRA,arrows={Stealth[length=4, inset=0]-Stealth[length=4, inset=0]},  line width=1] (0,.3) -- (\m,.3) node [pos=0.5, above] {\(m\)};		
     \draw (0,0) -- (0,-0.1);
-    \node[below] at (0,-0.1) {\tiny $x$};
+    \node[below] at (0,-0.1) {\tiny \(x\)};
     \foreach \y in  {1,...,3} {
         \draw (\y,0) -- (\y,-0.1);
-        \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};
+        \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};
     }
     \draw (\m,0) -- (\m,-0.1);
-    \node[below] at (\m,-0.1) {\tiny $\scriptstyle  x+m$};
+    \node[below] at (\m,-0.1) {\tiny \(\scriptstyle  x+m\)};
     \foreach \y in  {1,...,3} {
         \draw (\y+\m,0) -- (\y+\m,-0.1);
-        \node[below] at (\y+\m,-0.1) {\tiny $\scriptstyle x+m+\y$};
+        \node[below] at (\y+\m,-0.1) {\tiny \(\scriptstyle x+m+\y\)};
         %		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\m,0) -- (\y+\m,1);
         \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
     }
@@ -253,23 +253,23 @@ ${}_{m|}a_{x}$ (\engl{Deferred life annuity}) représentent les rentes sur l'ind
     % Draw the x-axis and y-axis.
     \def\w{11}
     \def\m{6}
-    \node[left] at (-.5,0) {${}_{m|}a_x$};
+    \node[left] at (-.5,0) {\({}_{m|}a_x\)};
     
     \begin{scope}[shift={(\m+.5+3,.25)}]
         \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
     \end{scope}
-    \draw[dashed, color=BleuProfondIRA,arrows={Stealth[length=4, inset=0]-Stealth[length=4, inset=0]},  line width=1] (0,.3) -- (\m,.3) node [pos=0.5, above] {$m$};		
+    \draw[dashed, color=BleuProfondIRA,arrows={Stealth[length=4, inset=0]-Stealth[length=4, inset=0]},  line width=1] (0,.3) -- (\m,.3) node [pos=0.5, above] {\(m\)};		
     \draw (0,0) -- (0,-0.1);
-    \node[below] at (0,-0.1) {\tiny $x$};
+    \node[below] at (0,-0.1) {\tiny \(x\)};
     \foreach \y in  {1,...,3} {
         \draw (\y,0) -- (\y,-0.1);
-        \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};
+        \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};
     }
     \draw (\m,0) -- (\m,-0.1);
-    \node[below] at (\m,-0.1) {\tiny $\scriptstyle  x+m$};
+    \node[below] at (\m,-0.1) {\tiny \(\scriptstyle  x+m\)};
     \foreach \y in  {1,...,3} {
         \draw (\y+\m,0) -- (\y+\m,-0.1);
-        \node[below] at (\y+\m,-0.1) {\tiny $\scriptstyle x+m+\y$};
+        \node[below] at (\y+\m,-0.1) {\tiny \(\scriptstyle x+m+\y\)};
         \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\m,0) -- (\y+\m,1);
     }
     \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
@@ -283,24 +283,24 @@ ${}_{m|}a_{x}$ (\engl{Deferred life annuity}) représentent les rentes sur l'ind
 \begin{f}[Capitaux décès ou survie]
 
 % !TeX spellcheck = fr_FR
-\textbf{Les capitaux décès}(\engl{Whole life insurance } \engl{noted} ${SP}_{x}$ or ${A}_{x}$)
+\textbf{Les capitaux décès}(\engl{Whole life insurance } \engl{noted} \({SP}_{x}\) or \({A}_{x}\))
 
-$A_x$ indique une prestation au décès à la fin de l'année de la mort (montant de 1), quelque que soit la date de survenance, pour un individu assuré à l'âge $x$ lors de la souscription.
+\(A_x\) indique une prestation au décès à la fin de l'année de la mort (montant de 1), quelque que soit la date de survenance, pour un individu assuré à l'âge \(x\) lors de la souscription.
 
-$A_{x:\lcroof{n}}$ désigne un capital versé au décès s'il survient et  au plus tard dans $n$ années (\engl{Endowment}).
+\(A_{x:\lcroof{n}}\) désigne un capital versé au décès s'il survient et  au plus tard dans \(n\) années (\engl{Endowment}).
 
-$\lcterm{A}{x}{n}$ % ou $\termins{x}{n}$ 
-désigne un capital décès versé si $x$ décède dans les $n$ années à venir (\engl{Term insurance}).
+\(\lcterm{A}{x}{n}\) % ou \(\termins{x}{n}\) 
+désigne un capital décès versé si \(x\) décède dans les \(n\) années à venir (\engl{Term insurance}).
 
 
-$A_x^{(12)}$ indique une prestation   payable à la fin du mois du décès.
+\(A_x^{(12)}\) indique une prestation   payable à la fin du mois du décès.
 
-$\overline{A}_x$  indique une prestation  payée à la date du décès.
+\(\overline{A}_x\)  indique une prestation  payée à la date du décès.
 \begin{tikzpicture}[scale=0.75]
 % Draw the x-axis and y-axis.
 \def\w{11}
 \def\n{7}
-\node[left] at (-.5,0) {$A_x$};
+\node[left] at (-.5,0) {\(A_x\)};
 
 \begin{scope}[shift={(3.75,.25)}]
     \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
@@ -308,14 +308,14 @@ $\overline{A}_x$  indique une prestation  payée à la date du décès.
 \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (4,0) -- (4,1);
 \foreach \y in  {0,...,4} {
     \draw (\y,0) -- (\y,-0.1);
-    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};}{
-        \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};}{
+        \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
 }
 \draw (\n,0) -- (\n,-0.1);
-\node[below] at (\n,-0.1) {\tiny $\scriptstyle  x+n$};
+\node[below] at (\n,-0.1) {\tiny \(\scriptstyle  x+n\)};
 \foreach \y in  {1,...,3} {
     \draw (\y+\n,0) -- (\y+\n,-0.1);
-    \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};
+    \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};
     %		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);
 }
 \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
@@ -324,7 +324,7 @@ $\overline{A}_x$  indique une prestation  payée à la date du décès.
 % Draw the x-axis and y-axis.
 \def\w{11}
 \def\n{7}
-\node[left] at (-.5,0) {$A_x$};
+\node[left] at (-.5,0) {\(A_x\)};
 
 \begin{scope}[shift={(\n+.5+2,.25)}]
     \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
@@ -332,14 +332,14 @@ $\overline{A}_x$  indique une prestation  payée à la date du décès.
 \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\n+3,0) -- (\n+3,1);
 \foreach \y in  {0,...,4} {
     \draw (\y,0) -- (\y,-0.1);
-    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};}{
-        \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};}{
+        \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
 }
 \draw (\n,0) -- (\n,-0.1);
-\node[below] at (\n,-0.1) {\tiny $\scriptstyle  x+n$};
+\node[below] at (\n,-0.1) {\tiny \(\scriptstyle  x+n\)};
 \foreach \y in  {1,...,3} {
     \draw (\y+\n,0) -- (\y+\n,-0.1);
-    \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};
+    \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};
     %		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);
 }
 \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
@@ -348,7 +348,7 @@ $\overline{A}_x$  indique une prestation  payée à la date du décès.
 % Draw the x-axis and y-axis.
 \def\w{11}
 \def\n{7}
-\node[left] at (-.5,0) {$\overline{A}_x$};
+\node[left] at (-.5,0) {\(\overline{A}_x\)};
 
 \begin{scope}[shift={(3.75,.25)}]
     \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
@@ -356,14 +356,14 @@ $\overline{A}_x$  indique une prestation  payée à la date du décès.
 \draw[ line width=1, color=black, arrows={-Stealth[length=4, inset=0]}] (3.75,0) -- (3.75,1);
 \foreach \y in  {0,...,4} {
     \draw (\y,0) -- (\y,-0.1);
-    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};}{
-        \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};}{
+        \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
 }
 \draw (\n,0) -- (\n,-0.1);
-\node[below] at (\n,-0.1) {\tiny $\scriptstyle  x+n$};
+\node[below] at (\n,-0.1) {\tiny \(\scriptstyle  x+n\)};
 \foreach \y in  {1,...,3} {
     \draw (\y+\n,0) -- (\y+\n,-0.1);
-    \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};
+    \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};
     %		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);
 }
 \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
@@ -372,7 +372,7 @@ $\overline{A}_x$  indique une prestation  payée à la date du décès.
 % Draw the x-axis and y-axis.
 \def\w{11}
 \def\n{7}
-\node[left] at (-.5,0) {$\overline{A}_x$};
+\node[left] at (-.5,0) {\(\overline{A}_x\)};
 
 \begin{scope}[shift={(\n+.5+2,.25)}]
     \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
@@ -380,14 +380,14 @@ $\overline{A}_x$  indique une prestation  payée à la date du décès.
 \draw[ line width=1, color=black, arrows={-Stealth[length=4, inset=0]}] (\n+.5+2,0) -- (\n+.5+2,1);
 \foreach \y in  {0,...,4} {
     \draw (\y,0) -- (\y,-0.1);
-    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};}{
-        \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};}{
+        \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
 }
 \draw (\n,0) -- (\n,-0.1);
-\node[below] at (\n,-0.1) {\tiny $\scriptstyle  x+n$};
+\node[below] at (\n,-0.1) {\tiny \(\scriptstyle  x+n\)};
 \foreach \y in  {1,...,3} {
     \draw (\y+\n,0) -- (\y+\n,-0.1);
-    \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};
+    \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};
     %		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);
 }
 \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
@@ -396,22 +396,22 @@ $\overline{A}_x$  indique une prestation  payée à la date du décès.
 \medskip
 
 Capital décès (\engl{Whole life})
-$$A_{x}=\sum_{k=0}^{\infty} {}_{k|}q_x\ \nu^{k+1}=\frac{M_x}{D_x}$$
+\[A_{x}=\sum_{k=0}^{\infty} {}_{k|}q_x\ \nu^{k+1}=\frac{M_x}{D_x}\]
 	
-$$\termins{x}{n}=\sum_{k=0}^{n-1} {}_{k|}q_x\ \nu^{k+1}=\frac{M_x-M_{x+n}}{D_x}
-$$
+\[\termins{x}{n}=\sum_{k=0}^{n-1} {}_{k|}q_x\ \nu^{k+1}=\frac{M_x-M_{x+n}}{D_x}
+\]
 
 
 
 \medskip    
-\textbf{Capital différé (\engl{Pure Endowment}, capital unique en cas de survie)} noté $\lcend{A}{x}{n}$ %$\pureend{x}{n}$ 
-ou ${}_n E_x$.
+\textbf{Capital différé (\engl{Pure Endowment}, capital unique en cas de survie)} noté \(\lcend{A}{x}{n}\) %\(\pureend{x}{n}\) 
+ou \({}_n E_x\).
 
 \begin{tikzpicture}[scale=0.75]
 % Draw the x-axis and y-axis.
 \def\w{11}
 \def\n{7}
-\node[left] at (-.5,0) {${}_n E_x$};
+\node[left] at (-.5,0) {\({}_n E_x\)};
 
 \begin{scope}[shift={(3.75,.25)}]
     \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
@@ -419,14 +419,14 @@ ou ${}_n E_x$.
 %		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (4,0) -- (4,1);
 \foreach \y in  {0,...,4} {
     \draw (\y,0) -- (\y,-0.1);
-    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};}{
-        \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};}{
+        \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
 }
 \draw (\n,0) -- (\n,-0.1);
-\node[below] at (\n,-0.1) {\tiny $\scriptstyle  x+n$};
+\node[below] at (\n,-0.1) {\tiny \(\scriptstyle  x+n\)};
 \foreach \y in  {1,...,3} {
     \draw (\y+\n,0) -- (\y+\n,-0.1);
-    \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};
+    \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};
     %		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);
 }
 \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
@@ -435,7 +435,7 @@ ou ${}_n E_x$.
 % Draw the x-axis and y-axis.
 \def\w{11}
 \def\n{7}
-\node[left] at (-.5,0) {${}_n E_x$};
+\node[left] at (-.5,0) {\({}_n E_x\)};
 
 \begin{scope}[shift={(\n+.5+2,.25)}]
     \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
@@ -443,51 +443,51 @@ ou ${}_n E_x$.
 \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\n,0) -- (\n,1);
 \foreach \y in  {0,...,4} {
     \draw (\y,0) -- (\y,-0.1);
-    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};}{
-        \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+    \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};}{
+        \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
 }
 \draw (\n,0) -- (\n,-0.1);
-\node[below] at (\n,-0.1) {\tiny $\scriptstyle  x+n$};
+\node[below] at (\n,-0.1) {\tiny \(\scriptstyle  x+n\)};
 \foreach \y in  {1,...,3} {
     \draw (\y+\n,0) -- (\y+\n,-0.1);
-    \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};
+    \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};
     %		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);
 }
 \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
 \end{tikzpicture}
-	$$
+	\[
 	={}_n E_x={}_n p_x .v^n=\frac{l_{x+n}}{l_x} . v^n =\frac{D_{x+n}}{D_{x}}
-	$$
+	\]
 Capital décès avec versement du capital en cas de survie (\engl{Endowment})
-$$A_{x:\lcroof{n}}=\termins{x}{n}+\lcend{A}{x}{n}$$
+\[A_{x:\lcroof{n}}=\termins{x}{n}+\lcend{A}{x}{n}\]
 
 \end{f}
 \hrule
 
 \begin{f}[L'assurance vie sur plusieurs individus] 
 
-$a_{xyz}$ est une rente annuelle, payée dès la fin de la première année et tant que vivent $(x)$, $(y)$ et $(z)$.
+\(a_{xyz}\) est une rente annuelle, payée dès la fin de la première année et tant que vivent \((x)\), \((y)\) et \((z)\).
 
-$a_{\overline{xyz}}$ est une rente annuelle, payée dès la fin de la première année et tant que vivent $(x)$, $(y)$ ou $(z)$.
+\(a_{\overline{xyz}}\) est une rente annuelle, payée dès la fin de la première année et tant que vivent \((x)\), \((y)\) ou \((z)\).
 
-$$
+\[
 a_{\overline{xy}}=a_{y}+a_{x}-a_{xy}
-$$
+\]
 
-$A_{xyz}$ est une assurance qui intervient à la fin de l'année du premier décès de $(x)$, $(y)$ et $(z)$.
+\(A_{xyz}\) est une assurance qui intervient à la fin de l'année du premier décès de \((x)\), \((y)\) et \((z)\).
 
 La barre verticale indique la conditionnalité :
 
-$a_{x|y}$ est une rente de réversion qui profite à $(x)$ après le décès de $(y)$.
+\(a_{x|y}\) est une rente de réversion qui profite à \((x)\) après le décès de \((y)\).
 
-$A_{x|yz}$ est une assurance au premier décès de  $(y)$ et $(z)$.	
+\(A_{x|yz}\) est une assurance au premier décès de  \((y)\) et \((z)\).	
 
 
 \begin{tikzpicture}[scale=0.85]
     % Draw the x-axis and y-axis.
     \def\w{11}
     \def\n{6}
-    \node[left] at (-.5,0) {$a_{{\color{OrangeProfondIRA}x}|{\color{BleuProfondIRA}y}}$};
+    \node[left] at (-.5,0) {\(a_{{\color{OrangeProfondIRA}x}|{\color{BleuProfondIRA}y}}\)};
     
     \begin{scope}[shift={(9.75,.25)}]
         \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
@@ -499,14 +499,14 @@ $A_{x|yz}$ est une assurance au premier décès de  $(y)$ et $(z)$.
     \draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (9,0) -- (9,1);
     \foreach \y in  {0,...,3} {
         \draw (\y,0) -- (\y,-0.1);
-        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};}{
-            \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};}{
+            \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
     }
     \draw (\n,0) -- (\n,-0.1);
-    \node[below] at (\n,-0.1) {\tiny $\scriptstyle  x+n$};
+    \node[below] at (\n,-0.1) {\tiny \(\scriptstyle  x+n\)};
     \foreach \y in  {1,...,3} {
         \draw (\y+\n,0) -- (\y+\n,-0.1);
-        \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};
+        \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};
     }
     \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
 \end{tikzpicture}
@@ -514,7 +514,7 @@ $A_{x|yz}$ est une assurance au premier décès de  $(y)$ et $(z)$.
     % Draw the x-axis and y-axis.
     \def\w{11}
     \def\n{6}
-    \node[left] at (-.5,0) {$a_{{\color{OrangeProfondIRA}x}|{\color{BleuProfondIRA}y}}$};
+    \node[left] at (-.5,0) {\(a_{{\color{OrangeProfondIRA}x}|{\color{BleuProfondIRA}y}}\)};
     
     \begin{scope}[shift={(8.4,.25)}]
         \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
@@ -527,13 +527,13 @@ $A_{x|yz}$ est une assurance au premier décès de  $(y)$ et $(z)$.
     }
     \foreach \y in  {0,...,3} {
         \draw (\y,0) -- (\y,-0.1);
-        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};}{
-            \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};}{
+            \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
     }
     \foreach \y in  {0,...,4} {
         \draw (\y+\n,0) -- (\y+\n,-0.1);
-        \ifthenelse{\y>0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};}{
-            \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n$};}
+        \ifthenelse{\y>0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};}{
+            \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n\)};}
     }
     \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
 \end{tikzpicture}
@@ -541,7 +541,7 @@ $A_{x|yz}$ est une assurance au premier décès de  $(y)$ et $(z)$.
     % Draw the x-axis and y-axis.
     \def\w{11}
     \def\n{6}
-    \node[left] at (-.5,0) {$a_{{\color{OrangeProfondIRA}x}|{\color{BleuProfondIRA}y}}$};
+    \node[left] at (-.5,0) {\(a_{{\color{OrangeProfondIRA}x}|{\color{BleuProfondIRA}y}}\)};
     
     \begin{scope}[shift={(3.75,.25)}]
         \draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
@@ -551,14 +551,14 @@ $A_{x|yz}$ est une assurance au premier décès de  $(y)$ et $(z)$.
     \end{scope}
     \foreach \y in  {0,...,3} {
         \draw (\y,0) -- (\y,-0.1);
-        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};}{
-            \node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+        \ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};}{
+            \node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
     }
     \draw (\n,0) -- (\n,-0.1);
-    \node[below] at (\n,-0.1) {\tiny $\scriptstyle  x+n$};
+    \node[below] at (\n,-0.1) {\tiny \(\scriptstyle  x+n\)};
     \foreach \y in  {1,...,4} {
         \draw (\y+\n,0) -- (\y+\n,-0.1);
-        \node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};
+        \node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};
         %		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);
     }
     \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
@@ -574,27 +574,27 @@ $A_{x|yz}$ est une assurance au premier décès de  $(y)$ et $(z)$.
 
 \centering
 \begin{tikzpicture}[node distance=35mm and 100mm]
-	\node (pu) [startstop] {Prime Unique de la prestation\\  notée $PU(.)$ ou $PV_0(.)$};
-	\node  [below left of=pu, text width=55mm, node distance=18mm, xshift=12mm] {Le point est $A$ ou $a$ ou $E$ ou ...\\
-	avec $x,k,n,m,K...$};
-	\node (puu) [startstop, right of=pu, node distance=50mm] {Valeur d'une prime périodique unitaire\\  notée $PPU_0$ ou $VP_P$};
-	\node  [below of=puu, text width=3cm, node distance=12mm] { $PPU=_{m'|}\ddot{a}_{x:\lcroof{n'}}^{(k')} $};
-	\node (ppp) [startstop, below of=pu] {Prime Pure Périodique\\ $PPP$};
-	\node  [below right of=ppp, text width=3cm, node distance=25mm, yshift=6mm] {$\displaystyle PPP=\frac{PU(.)}{PPU_0}$};
-	\node (ppc) [startstop, right of=ppp, node distance=50mm] {Prime Périodique Chargée $PPC$};
-	\node  [below of=ppc, node distance=12mm] {$\displaystyle PPC=\frac{PPP(1+\lambda)}{1-com}$};
-	\node (Prov) [startstop, below of=ppp] {Provision mathématique $t^e$ année\\  notée $PM_t$ ou $V_t$ };
-	\node (provt) [below right of=Prov,text width=10cm, node distance=30mm] {$V_t=PV_t(.)-PPP\times PPU_t$ \\
-	$PV_t(.)$ recalculée avec  $x+t,k,n,m-t,K...\ si\ t\geq m$ \\
-	ou $x+t,k,n-(t-m),m=0,K...\ si\ t>m$\\
-	de même	$PPU_t=_{(m'-t)^+|}\ddot{a}_{x+t:\lcroof{n'-(t-m)^+}}^{(k')} $};
+	\node (pu) [startstop] {Prime Unique de la prestation\\  notée \(PU(.)\) ou \(PV_0(.)\)};
+	\node  [below left of=pu, text width=55mm, node distance=18mm, xshift=12mm] {Le point est \(A\) ou \(a\) ou \(E\) ou ...\\
+	avec \(x,k,n,m,K...\)};
+	\node (puu) [startstop, right of=pu, node distance=50mm] {Valeur d'une prime périodique unitaire\\  notée \(PPU_0\) ou \(VP_P\)};
+	\node  [below of=puu, text width=3cm, node distance=12mm] { \(PPU=_{m'|}\ddot{a}_{x:\lcroof{n'}}^{(k')} \)};
+	\node (ppp) [startstop, below of=pu] {Prime Pure Périodique\\ \(PPP\)};
+	\node  [below right of=ppp, text width=3cm, node distance=25mm, yshift=6mm] {\(\displaystyle PPP=\frac{PU(.)}{PPU_0}\)};
+	\node (ppc) [startstop, right of=ppp, node distance=50mm] {Prime Périodique Chargée \(PPC\)};
+	\node  [below of=ppc, node distance=12mm] {\(\displaystyle PPC=\frac{PPP(1+\lambda)}{1-com}\)};
+	\node (Prov) [startstop, below of=ppp] {Provision mathématique \(t^e\) année\\  notée \(PM_t\) ou \(V_t\) };
+	\node (provt) [below right of=Prov,text width=10cm, node distance=30mm] {\(V_t=PV_t(.)-PPP\times PPU_t\) \\
+	\(PV_t(.)\) recalculée avec  \(x+t,k,n,m-t,K...\ si\ t\geq m\) \\
+	ou \(x+t,k,n-(t-m),m=0,K...\ si\ t>m\)\\
+	de même	\(PPU_t=_{(m'-t)^+|}\ddot{a}_{x+t:\lcroof{n'-(t-m)^+}}^{(k')} \)};
 %	\node (pro2b) [startstop, right of=dec1, xshift=2cm] {Process 2b};
 %	\node (stop) [startstop, below of=pro2b] {Stop};
 	
 	\draw [arrow] (pu) -- (ppp);
 	\draw [arrow] (puu) -- (ppp);
 	\draw [arrow] (ppp) -- (ppc);
-	\draw [arrow] (ppp) -- node[anchor=east] {$t$} (Prov);
+	\draw [arrow] (ppp) -- node[anchor=east] {\(t\)} (Prov);
 %	\draw [arrow] (dec1) -- node[anchor=south] {no} (pro2b);
 %	\draw [arrow] (pro2b) |- (ppp);
 %	\draw [arrow] (ppp) -- (stop);

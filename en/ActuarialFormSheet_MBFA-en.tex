@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PassOptionsToPackage{svgnames,table}{xcolor}
-\documentclass[french,a4paper]{article} 
+\documentclass[a4paper]{article} 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \RequirePackage{eurosym}
@@ -12,7 +12,9 @@
 %\usepackage[a4paper]{geometry}
 \setlength{\parindent}{0pt}%Cela supprime l'indentation pour tous les paragraphes.
 
-\usepackage{babel}
+\usepackage[english,french]{babel}
+\usepackage{nth}
+\usepackage[autostyle=true]{csquotes}
 \usepackage{epsdice}
 \usepackage{enumitem}
 %
@@ -43,6 +45,17 @@
 \definecolor{GrisLogoIRA}{HTML}{5A5A5C}
 \usepackage[colorlinks=true,linkcolor=mbfaulmorange,urlcolor=mbfaulmorange,
 citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref} 
+\hypersetup{
+	pdftitle    = {Actuarial Formula Cheat Sheet},
+	pdfauthor   = {Martial Phelippe-Guinvarc h and Marcelo Moreno Porras},
+	pdfsubject  = {Actuarial Science -- Formula Sheet},
+	pdfkeywords = {actuarial science, formula sheet, probability, statistics, finance},
+	pdfproducer = {LaTeX},
+	pdfcreator  = {pdflatex},
+	pdfstartview= FitH,
+	pdfpagemode = UseOutlines,
+	pdfduplex   = DuplexFlipLongEdge % <-- configuration d'impression recto-verso livret
+}
 \tcbset{
   beamerblock/.style={
     enhanced,
@@ -140,7 +153,7 @@ citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref}
 			\node[white,font=\sffamily\bfseries\scriptsize] at (0, 0) {ID};}}
 	\href{https://github.com/MartialP-G}{\color{OrangeProfondIRA} \large \faGithub} 
 }
-\fancyfoot[R]{\href{https://scholar.google.com/citations?user=oZITlTQAAAAJ}{\color{OrangeProfondIRA}Marcelo Moreno Porras} 
+\fancyfoot[R]{\href{https://servicios.urjc.es/pdi/ver/marcelo.moreno}{\color{OrangeProfondIRA}Marcelo Moreno Porras} 
 	\href{mailto:marcelo.moreno@urjc.es?subject=ActuarialFormSheet}{\color{OrangeProfondIRA}\faAt\ \faEnvelope} 
 	\href{https://www.linkedin.com/in/marcelomorenop/}{\color{OrangeProfondIRA}\faLinkedinSquare}
 	\href{https://orcid.org/0009-0007-1714-6507}{\tikz[scale=0.75, baseline=-1ex]{\fill[OrangeProfondIRA] (0, 0) circle (0.25); 
@@ -303,7 +316,7 @@ Master in Actuarial Science}
 \input{InsuranceKeywords-en}
 \end{multicols}
 
-%\newpage
+\newpage
 \begin{center}
 	\section*{Financial Mathematics}
 	\medskip
@@ -398,7 +411,7 @@ Master in Actuarial Science}
 	\input{Reinsurance-en}
 \end{multicols}
 
-%\newpage
+\newpage
 \begin{center}
 	\section*{Extreme statistics and reinsurance pricing}
 	\medskip
@@ -419,6 +432,20 @@ Master in Actuarial Science}
 	\input{ElementaryFormulas-en}
 \end{multicols}
 
+\begin{center}
+\medskip
+
+	\section*{Mes notes personnelles}
+	\medskip
+\end{center}
+
+\begin{multicols}{2}	
+
+\foreach \i in {1,...,67}{%
+	\noindent\textcolor{gray!40}{\rule{\linewidth}{0.4pt}}\\[1.25em]
+}	
+
+\end{multicols}
 
 \begin{tikzpicture}[remember picture, overlay]
 	\node[anchor=south east, xshift=-0.5cm, yshift=2cm,
@@ -445,8 +472,8 @@ Master in Actuarial Science}
 				\href{https://orcid.org/0009-0007-1714-6507}{\tikz[scale=0.75, baseline=-1ex]{\fill[OrangeProfondIRA] (0, 0) circle (0.25); 
 						\node[white,font=\sffamily\bfseries\scriptsize] at (0.175, -0.1) {ID};}}
 				\href{https://github.com/marcelomijas}{\color{OrangeProfondIRA} \large \faGithub} 
-			 is an Associate Professor at the Department of Applied Economics I and Economic History and Institutions at Universidad Rey Juan Carlos (Madrid, Spain) since 2023, specializing in econometrics, macroeconomics, and programming. He is also a Software Developer and IT specialist at a private company in Mijas (Spain).			
-			He is the author of several contributions to teaching innovation, co-author of publications on incorporating Sustainable Development Goals in economics education, and has technical expertise on multiple programming languages and statistical tools. His academic background includes a Bachelor’s degree in Economics (URJC, top 1% national ranking), a Master’s in Modern Economic Analysis (URJC), and a Master’s in Applied Statistics (Nebrija University).%
+			 is an Associate Professor at the Department of Applied Economics I and Economic History and Institutions at Universidad Rey Juan Carlos (Madrid, Spain) since 2023, specializing in econometrics, macroeconomics, and programming. He is also a Software Developer and IT specialist at a private company in Mijas (Spain). He is the author of several contributions to teaching innovation, co-author of publications on incorporating Sustainable Development Goals in economics education, and has technical expertise on multiple programming languages and statistical tools. His academic background includes a Bachelor’s degree in Economics (URJC, top 1% national ranking), a Master’s in Modern Economic Analysis (URJC), and a Master’s in Applied Statistics (Nebrija University).%
+
 			\end{tcolorbox}
 		\end{minipage}
 	};

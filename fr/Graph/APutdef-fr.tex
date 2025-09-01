@@ -18,7 +18,7 @@
 		x label style={={at={(current axis.right of origin)},below=5mm}},
 		%    x label style={at={(axis description cs:1,-0.1)},anchor=south},
 		%		x label style={at={(1,0.5)}},
-		xlabel={ss-jacent ($T$)},
+		xlabel={ss-jacent (\(T\))},
 		%		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
 		%		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
 		ytick=\empty,
@@ -26,7 +26,7 @@
 		extra y ticks ={0},
 		extra y tick labels={{0}},
 		extra x ticks ={\PxExerciceBS},
-		extra x tick labels={{$E$}},
+		extra x tick labels={{\(E\)}},
 		extra x tick style={color=BleuProfondIRA,
 			tick label style={yshift=7mm}	},
 		title ={ \textbf{Long Put}},
@@ -54,7 +54,7 @@
 		every segment no 0/.style=
 		{top color = BleuProfondIRA!50, bottom color=BleuProfondIRA!10}] ;
 		%\draw[use path=\xaxis, ->,OrangeProfondIRA,thick];
-		\draw [fill]  ({-\PremiumBS+\PxExerciceBS},0) circle (1mm) node [above=5mm] {$S_{PM}$};
+		\draw [fill]  ({-\PremiumBS+\PxExerciceBS},0) circle (1mm) node [above=5mm] {\(S_{PM}\)};
 		\draw[BleuProfondIRA, thin] ({\PxExerciceBS},0) -- ({\PxExerciceBS},{-\PremiumBS});
 		\node at ({\xminBS+0.25*(\xmaxBS-\xminBS)},{\pgfkeysvalueof{/pgfplots/ymin}})
 		{IN};

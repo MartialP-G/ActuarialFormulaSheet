@@ -5,36 +5,36 @@
 
 
 \begin{f}[Pareto's Law]
-Let the random variable $X$ follow a Pareto distribution with parameters $(x_{\mathrm{m}},k)$, $k$ is the Pareto index:
-$$
+Let the random variable \(X\) follow a Pareto distribution with parameters \((x_{\mathrm{m}},k)\), \(k\) is the Pareto index:
+\[
 \mathbb{P}(X>x)=\left(\frac{x}{x_{\mathrm{m}}}\right)^{-k}\ \mbox{with}\ x \geq x_{\mathrm{m}} 
-$$
+\]
 
 
-$$
+\[
 f_{k,x_\mathrm{m}}(x) = k\,\frac{x_\mathrm{m}^k}{x^{k+1}}\ \mbox{for}\ x \ge x_\mathrm{m}
-$$
+\]
 
-\textbf{	Generalized Pareto Law} (GPD) has 3 parameters $\mu$, $\sigma$ and $\xi$.
+\textbf{	Generalized Pareto Law} (GPD) has 3 parameters \(\mu\), \(\sigma\) and \(\xi\).
 
 
-$$
+\[
 F_{\xi,\mu,\sigma}(x) = \begin{cases} 1 - \left(1+ \frac{\xi(x-\mu)}{\sigma}\right)^{-1/\xi} & \text{for }\xi \neq 0, \\ 1 - \exp \left(-\frac{x-\mu}{\sigma}\right) & \text{for }\xi = 0. \end{cases} 
-$$
-for  $x \geq \mu$  when $\xi \geq 0$  and $ \mu \leq x \leq \mu - \sigma /\xi$  when $ \xi < 0$ et où $\mu\in\mathbb{R}$ is the location, $\sigma>0$ the scale and  $\xi\in\mathbb{R}$ the form. 
-Note that some references give the \og{}shape parameter\fg{}, as $\kappa = - \xi$.
+\]
+for  \(x \geq \mu\)  when \(\xi \geq 0\)  and \( \mu \leq x \leq \mu - \sigma /\xi\)  when \( \xi < 0\) et où \(\mu\in\mathbb{R}\) is the location, \(\sigma>0\) the scale and  \(\xi\in\mathbb{R}\) the form. 
+Note that some references give the \enquote{shape parameter}, as \(\kappa = - \xi\).
 
-$$
+\[
 f_{\xi,\mu,\sigma}(x) = \frac{1}{\sigma}\left(1 + \frac{\xi (x-\mu)}{\sigma}\right)^{\left(-\frac{1}{\xi} - 1\right)}
 =
  \frac{\sigma^{\frac{1}{\xi}}}{\left(\sigma + \xi (x-\mu)\right)^{\frac{1}{\xi}+1}}
-$$
-%à nouveau, pour  $x \geq \mu$, et $x \leq \mu - \sigma /\xi$ où $\xi < 0$. 
+\]
+%à nouveau, pour  \(x \geq \mu\), et \(x \leq \mu - \sigma /\xi\) où \(\xi < 0\). 
 
 \medskip
 
 \begin{center}
-		{\shorthandoff{:!;}	
+		{\shorthandoff{!;}	
 \tikzset{
 	declare function={
 		dParetoGen(\x,\mu,\sigma,\xi) = 
@@ -51,7 +51,7 @@ $$
 		\addplot[VertIRA]  	({\x},{dParetoGen({\x},1,1,20)}) ;
 		\addplot[OrangeProfondIRA] 	({\x},{dParetoGen({\x},3,2,5)}) ;
 		%
-		\legend{$\mu$ =  1 $\sigma=1$ $\xi = 1$,$\mu$ =  1  $\sigma=2$ $\xi =5$,$\mu$ =  1  $\sigma=3$ $\xi =20$,$\mu$ = 3  $\sigma=2$ $\xi = 5$};
+		\legend{\(\mu\) =  1 \(\sigma=1\) \(\xi = 1\),\(\mu\) =  1  \(\sigma=2\) \(\xi =5\),\(\mu\) =  1  \(\sigma=3\) \(\xi =20\),\(\mu\) = 3  \(\sigma=2\) \(\xi = 5\)};
 	\end{axis} 
 \end{tikzpicture}
 }
@@ -59,7 +59,7 @@ $$
 
 
 %\begin{center}
-%	{\shorthandoff{:!;}	
+%	{\shorthandoff{!;}	
 %	\tikzset{
 %	declare function={
 %		pParetoGen(\x,\mu,\sigma,\xi) =  (\x > \mu)*( 1-(1+ (\xi*(\x-\mu))/\sigma)^(-1/\xi));}
@@ -79,7 +79,7 @@ $$
 %		\addplot[OrangeProfondIRA] 
 %		({\x},{pParetoGen({\x},3,2,5)}) ;
 %		%
-%		\legend{$\mu$ =  1 $\sigma=1$ $\xi = 1$,$\mu$ =  1  $\sigma=2$ $\xi =5$,$\mu$ =  1  $\sigma=3$ $\xi =20$,$\mu$ = 3  $\sigma=2$ $\xi = 5$};
+%		\legend{\(\mu\) =  1 \(\sigma=1\) \(\xi = 1\),\(\mu\) =  1  \(\sigma=2\) \(\xi =5\),\(\mu\) =  1  \(\sigma=3\) \(\xi =20\),\(\mu\) = 3  \(\sigma=2\) \(\xi = 5\)};
 %	\end{axis}	 
 %\end{tikzpicture}
 %}
@@ -90,18 +90,18 @@ $$
 
 \begin{f}[Generalized extreme value law]
 The distribution function of the generalized law of extremes is
-$$
+\[
 F_{\mu,\sigma,\xi}(x) = \exp\left\{-\left[1+\xi\left(\frac{x-\mu}{\sigma}\right)\right]^{-1/\xi}\right\}
-$$
-for $1+\xi(x-\mu)/\sigma>0$, or $\mu\in\mathbb{R}$ is the location, $\sigma>0$ of scale and  $\xi\in\mathbb{R}$ the form. For $\xi = 0$ the expression is defined by its limit at 0.
+\]
+for \(1+\xi(x-\mu)/\sigma>0\), or \(\mu\in\mathbb{R}\) is the location, \(\sigma>0\) of scale and  \(\xi\in\mathbb{R}\) the form. For \(\xi = 0\) the expression is defined by its limit at 0.
 
 \begin{align*}
 	f_{\mu,\sigma,\xi}(x) =& \frac{1}{\sigma}\left[1+\xi\left(\frac{x-\mu}{\sigma}\right)\right]^{(-1/\xi)-1}\\ &\times\exp\left\{-\left[1+\xi\left(\frac{x-\mu}{\sigma}\right)\right]^{-1/\xi}\right\}
 \end{align*}
 
-$$
+\[
 f(x;\mu ,\sigma ,0)={\frac {1}{\sigma }}\exp \left(-{\frac {x-\mu }{\sigma }}\right)\exp \left[-\exp \left(-{\frac {x-\mu }{\sigma }}\right)\right]
-$$
+\]
 
 \end{f}
 \hrule
@@ -111,16 +111,16 @@ $$
 \begin{f}[Gumbel's Law]
 
 The distribution function of Gumbel's law is :
-$$
+\[
 F_{\mu,\sigma}(x) = e^{-e^{(\mu-x)/\sigma}}.\,
-$$
-For $\mu = 0 $ et $\sigma = 1$, we obtain the standard Gumbel law.
-Gumbel's law is a special case of GEV (with $\xi=0$).
+\]
+For \(\mu = 0 \) et \(\sigma = 1\), we obtain the standard Gumbel law.
+Gumbel's law is a special case of GEV (with \(\xi=0\)).
 
 Its density :
-$$
+\[
 f_{\mu,\sigma}(x)=\frac{1}{\sigma}e^{\left(\frac{x-\mu}{\sigma}-e^{-(x-\mu)/\sigma}\right)}
-$$
+\]
 
 
 \begin{center}
@@ -139,7 +139,7 @@ $$
 	\addplot[OrangeProfondIRA] 
 	plot ({\x},{dGumbel({\x},3,4)}) ;
 	%
-	\legend{$\mu$ =  0.5 $\gamma = 1$,$\mu$ =  1 $\gamma =2$,$\mu$ =  1.5 $\gamma =3$,$\mu$ =  3 $\gamma = 4$};
+	\legend{\(\mu\) =  0.5 \(\gamma = 1\),\(\mu\) =  1 \(\gamma =2\),\(\mu\) =  1.5 \(\gamma =3\),\(\mu\) =  3 \(\gamma = 4\)};
 \end{axis}	 
 \end{tikzpicture}
 \end{center}
@@ -161,7 +161,7 @@ $$
 %	\addplot[OrangeProfondIRA] 
 %	plot ({\x},{pGumbel({\x},3,4)}) ;
 %	%
-%	\legend{$\mu$ =  0.5 $\gamma = 1$,$\mu$ =  1 $\gamma =2$,$\mu$ =  1.5 $\gamma =3$,$\mu$ =  3 $\gamma = 4$};
+%	\legend{\(\mu\) =  0.5 \(\gamma = 1\),\(\mu\) =  1 \(\gamma =2\),\(\mu\) =  1.5 \(\gamma =3\),\(\mu\) =  3 \(\gamma = 4\)};
 %\end{axis}	 
 %\end{tikzpicture}
 %\end{center}
@@ -174,23 +174,23 @@ $$
 
 
 The \textbf{Weibull distribution} has the distribution function defined by :
-$$
+\[
 F_{\alpha,\mu, \sigma}(x) = 1- e^{-((x-\mu)/\sigma)^\alpha}\,
-$$
-or $x >\mu$.
+\]
+or \(x >\mu\).
 Its probability density is :
-$$
+\[
 f_{\alpha,\mu,\sigma}(x) = (\alpha/\sigma) ((x-\mu)/\sigma)^{(\alpha-1)} e^{-((x-\mu)/\sigma)^\alpha}\,
-$$
-or  $\mu\in\mathbb{R}$ is the location, $\sigma>0$ of scale and  $\alpha=-1/\xi>0 $ the form.
+\]
+or  \(\mu\in\mathbb{R}\) is the location, \(\sigma>0\) of scale and  \(\alpha=-1/\xi>0 \) the form.
 
-The Weibull distribution is often used in the field of lifetime analysis. It is a special case of the GEV when $\xi<0$.
+The Weibull distribution is often used in the field of lifetime analysis. It is a special case of the GEV when \(\xi<0\).
 
-If the failure rate decreases over time then, $\alpha<1$. If the failure rate is constant over time then, $\alpha=1$. If the failure rate increases over time then, $\alpha>1$. Understanding the failure rate can provide insight into the cause of failures.
+If the failure rate decreases over time then, \(\alpha<1\). If the failure rate is constant over time then, \(\alpha=1\). If the failure rate increases over time then, \(\alpha>1\). Understanding the failure rate can provide insight into the cause of failures.
 
 
 \begin{center}
-	{\shorthandoff{:!;}	\tikzset{
+	{\shorthandoff{!;}	\tikzset{
 	declare function={
 		dWeibull(\x,\sigma,\alpha) = (\alpha/\sigma)*(\x/\sigma)^(\alpha-1)*exp(-(\x/\sigma)^\alpha);}
 }  
@@ -209,11 +209,11 @@ If the failure rate decreases over time then, $\alpha<1$. If the failure rate is
 		\addplot[OrangeProfondIRA] 
 		plot ({\x},{dWeibull({\x},3,4)}) ;
 		%
-		\legend{$\mu$ =  0.5 $\gamma = 1$ ($\alpha=-1/\xi>0$),$\mu$ =  1 $\gamma =2$,$\mu$ =  1.5 $\gamma =3$,$\mu$ =  3 $\gamma = 4$};
+		\legend{\(\mu\) =  0.5 \(\gamma = 1\) (\(\alpha=-1/\xi>0\)),\(\mu\) =  1 \(\gamma =2\),\(\mu\) =  1.5 \(\gamma =3\),\(\mu\) =  3 \(\gamma = 4\)};
 	\end{axis}	 
 \end{tikzpicture}
 }
-%	{\shorthandoff{:!;}	
+%	{\shorthandoff{!;}	
 %		\tikzset{
 %	declare function={
 %		pWeibull(\x,\sigma,\alpha) = 1- exp(-(\x/\sigma)^\alpha);}
@@ -233,7 +233,7 @@ If the failure rate decreases over time then, $\alpha<1$. If the failure rate is
 %		\addplot[OrangeProfondIRA] 
 %		plot ({\x},{pWeibull({\x},3,4)}) ;
 %		%
-%		\legend{$\mu$ =  0.5 $\gamma = 1$ ($\alpha=-1/\xi>0$),$\mu$ =  1 $\gamma =2$,$\mu$ =  1.5 $\gamma =3$,$\mu$ =  3 $\gamma = 4$};
+%		\legend{\(\mu\) =  0.5 \(\gamma = 1\) (\(\alpha=-1/\xi>0\)),\(\mu\) =  1 \(\gamma =2\),\(\mu\) =  1.5 \(\gamma =3\),\(\mu\) =  3 \(\gamma = 4\)};
 %	\end{axis}	 
 %\end{tikzpicture}
 %}
@@ -243,19 +243,19 @@ If the failure rate decreases over time then, $\alpha<1$. If the failure rate is
 
 \begin{f}[Fréchet's Law]
 Its distribution function of \textbf{Frechet's law}\index{D\'efinition! loi de Frechet} is given by
-$$
+\[
 F_{\alpha,\mu,\sigma}(x)=\mathbb{P}(X \le x)=\begin{cases} e^{-\left(\frac{x-\mu}{\sigma}\right)^{-\alpha}} & \text{ if } x>\mu \\ 0 &\text{ otherwise.}\end{cases} 
-$$
-or  $\mu\in\mathbb{R}$ is the location, $\sigma>0$ the scale and  $\alpha=1/\xi>0$ the form. 
-This is a special case of GEV when $\xi>0$.
+\]
+or  \(\mu\in\mathbb{R}\) is the location, \(\sigma>0\) the scale and  \(\alpha=1/\xi>0\) the form. 
+This is a special case of GEV when \(\xi>0\).
 
-$$
+\[
 f_{\alpha,\mu,\sigma}(x)=\frac{\alpha}{\sigma} \left(\frac{x-\mu}{\sigma}\right)^{-1-\alpha}  e^{-(\frac{x-\mu}{\sigma})^{-\alpha}}
-$$
+\]
 
 \begin{center}
 %	\includegraphics[width=0.90\textwidth]{../Graph/LoiFrechet.pdf}
-	{\shorthandoff{:!;}	
+	{\shorthandoff{!;}	
 		\tikzset{
 declare function={
 	dFrechet(\x,\m,\sigma,\alpha) = (\alpha/\sigma) * (((\x-\m)/\sigma)^(-1-\alpha)) * exp(- ((\x-\m)/\sigma)^(-\alpha) );}
@@ -275,7 +275,7 @@ declare function={
 	\addplot[OrangeProfondIRA] 
 	({\x},{dFrechet({\x},0,2,2)}) ;
 	%
-	\legend{$\mu$ =  0 $\alpha=1$ $\sigma = 1$,$\mu$ =  0  $\alpha=2$ $\sigma =1$,$\mu$ =  0  $\alpha=3$ $\sigma =1$,$\mu$ = 0  $\alpha=2$ $\sigma = 2$};
+	\legend{\(\mu\) =  0 \(\alpha=1\) \(\sigma = 1\),\(\mu\) =  0  \(\alpha=2\) \(\sigma =1\),\(\mu\) =  0  \(\alpha=3\) \(\sigma =1\),\(\mu\) = 0  \(\alpha=2\) \(\sigma = 2\)};
 \end{axis}	 
 \end{tikzpicture}
 }\end{center}
@@ -283,7 +283,7 @@ declare function={
 
 %\begin{center}
 %%	\includegraphics[width=0.90\textwidth]{../Graph/FLoiFrechet.pdf}
-%	{\shorthandoff{:!;}	
+%	{\shorthandoff{!;}	
 %\tikzset{
 %	declare function={
 %		pFrechet(\x,\m,\sigma,\alpha) = exp( -((\x-\m)/\sigma)^(-\alpha));}
@@ -303,7 +303,7 @@ declare function={
 %		\addplot[OrangeProfondIRA] 
 %		({\x},{pFrechet({\x},0,2,2)}) ;
 %		%
-%		\legend{$\mu$ =  0 $\alpha=1$ $\sigma = 1$,$\mu$ =  0  $\alpha=2$ $\sigma =1$,$\mu$ =  0  $\alpha=3$ $\sigma =1$,$\mu$ = 0  $\alpha=2$ $\sigma = 2$};
+%		\legend{\(\mu\) =  0 \(\alpha=1\) \(\sigma = 1\),\(\mu\) =  0  \(\alpha=2\) \(\sigma =1\),\(\mu\) =  0  \(\alpha=3\) \(\sigma =1\),\(\mu\) = 0  \(\alpha=2\) \(\sigma = 2\)};
 %	\end{axis}	 
 %\end{tikzpicture}
 %}
@@ -312,26 +312,26 @@ declare function={
 
 \begin{f}[Link between GEV, Gumbel, Fréchet and Weibull]
 
-The shape parameter $\xi$ governs the behavior of the distribution tail.
-The subfamilies defined by $\xi= 0$, $\xi>0$ and $\xi<0$ correspond respectively to the Gumbel, Fréchet and Weibull families :
+The shape parameter \(\xi\) governs the behavior of the distribution tail.
+The subfamilies defined by \(\xi= 0\), \(\xi>0\) and \(\xi<0\) correspond respectively to the Gumbel, Fréchet and Weibull families :
 \begin{itemize}
 \item 	 Gumbel or type I extreme value law
-\item     Fréchet or type II extreme value law, if $\xi  = \alpha^{-1}$ with $\alpha>0$,
-\item    Reversed Weibull ($\overline{F}$) or type III extreme value law, if $\xi =-\alpha^{-1} $, with $\alpha>0$.
+\item     Fréchet or type II extreme value law, if \(\xi  = \alpha^{-1}\) with \(\alpha>0\),
+\item    Reversed Weibull (\(\overline{F}\)) or type III extreme value law, if \(\xi =-\alpha^{-1} \), with \(\alpha>0\).
 \end{itemize}
 \end{f}
 \hrule 
 
 \begin{f}[General Extreme Value Theorem] 
 
-	Either $X_1, \dots, X_n$  $iid$, $X$ distribution function $F_X$ and either $M_n =\max(X_1,\dots,X_n)$.
+	Either \(X_1, \dots, X_n\)  \(iid\), \(X\) distribution function \(F_X\) and either \(M_n =\max(X_1,\dots,X_n)\).
 	
 	The theory gives the exact distribution of the maximum :
 \begin{align*}
 		\mathcal{P}(M_n \leq z) = &\Pr(X_1 \leq z, \dots, X_n \leq z) \\
 		 = &\mathcal{P}(X_1 \leq z) \cdots \mathcal{P}(X_n \leq z) = (F_X(z))^n. 
 \end{align*}
-	If there exists a sequence of pairs of real numbers $(a_n, b_n)$ such that $a_n>0$ and $\lim_{n \to \infty}\mathcal{P}\left(\frac{M_n-b_n}{a_n}\leq x\right) = F_X(x)$, or $F_X$ is a non-degenerate distribution function, then the limit of the function $F_X$ belongs to the family of $GEV$ laws. 
+	If there exists a sequence of pairs of real numbers \((a_n, b_n)\) such that \(a_n>0\) and \(\lim_{n \to \infty}\mathcal{P}\left(\frac{M_n-b_n}{a_n}\leq x\right) = F_X(x)\), or \(F_X\) is a non-degenerate distribution function, then the limit of the function \(F_X\) belongs to the family of \(GEV\) laws. 
 
 \end{f}
 
@@ -339,35 +339,35 @@ The subfamilies defined by $\xi= 0$, $\xi>0$ and $\xi<0$ correspond respectively
 	
 	\textbf{Case of powers} 
 	
-	If $\overline{F}_{X}(x)=\mathbb{P}(X > x)\sim c\ x^{-\alpha}$
-		when $x \to \infty $ for one $\alpha > 0 $ and a constant $c > 0 $ then the law of $X$
+	If \(\overline{F}_{X}(x)=\mathbb{P}(X > x)\sim c\ x^{-\alpha}\)
+		when \(x \to \infty \) for one \(\alpha > 0 \) and a constant \(c > 0 \) then the law of \(X\)
 		is sub-exponential.
 	
-		If $F_X$ is a continuous distribution function of expectation $\mathbb{E}[X]$ finished, we call the index of major risks by
-		$$
+		If \(F_X\) is a continuous distribution function of expectation \(\mathbb{E}[X]\) finished, we call the index of major risks by
+		\[
 		D_{F_X}(p)=\frac{1}{\mathbb{E}[X]}\int_{1-p}^{1} F_X^{-1}(t)dt,\, \, p\in [0,1]
-		$$
+		\]
 
 	This excess distribution decays less quickly than any exponential distribution.
 	It is possible to consider this statistic :
-	$$
+	\[
 	T_n(p)=\frac{X_{(1:n)}+X_{(2:n)}+\ldots + X_{(np:n)}}{\sum_{1\leq i\leq n}(X_i)} \mbox{ où } \frac{1}{n}\leq p\leq 1
-	$$
-	$X_{(i:n)}$ designates the $i^e$ $\max $ of the $X_i$.
+	\]
+	\(X_{(i:n)}\) designates the \(i^{th}\) \(\max \) of the \(X_i\).
 
 \end{f}
 \begin{f}[Pickands-Balkema-de Haan theorem (law of excesses)]
-	Let $X$ be of distribution $F_X$, and let $u$ be a high threshold. Then, for a large class of $F_X$ distributions, the conditional excess distribution
+	Let \(X\) be of distribution \(F_X\), and let \(u\) be a high threshold. Then, for a large class of \(F_X\) distributions, the conditional excess distribution
 	\[
 	X_u := X - u \mid X > u
 	\]
-	is approximated, for $u$ sufficiently large, by a generalized Pareto distribution (GPD) :
+	is approximated, for \(u\) sufficiently large, by a generalized Pareto distribution (GPD) :
 	
 	\[
 	\mathbb{P}(X - u \le y \mid X > u) \approx G_{\xi, \sigma, \mu=0}(y) :=  1 - \left(1+ \frac{\xi(x-\mu)}{\sigma}\right)^{-1/\xi} 
 	\]
 	
-	$\quad y \ge 0$. In other words, for $u \to x_F := \sup\{x : F(x) < 1\}$,
+	\(\quad y \ge 0\). In other words, for \(u \to x_F := \sup\{x : F(x) < 1\}\),
 	\[
 	\sup_{0 \le y < x_F - u} \left| \mathbb{P}(X - u \le y \mid X > u) - G_{\xi,\sigma,\mu=0}(y) \right| \to 0.
 	\]
@@ -395,61 +395,61 @@ As reinsurance compensates for aggregations of losses or extreme losses, it ofte
 		\item nature of guarantees (evolution of deductibles, exclusions\ldots)
 	\end{itemize}
 \end{itemize}
-After these corrections, the data are said to be \og as if \fg (in economics, we use the expression counterfactual).
+After these corrections, the data are said to be \enquote{as if} (in economics, we use the expression counterfactual).
 
 \end{f}
 
 
 \begin{f}[Burning Cost]
 	
-	$X_{i}^{j}$ designates the $i^{e}$ disaster of the year $j$ \og{}as if\fg{} updated, revalued and corrected,
-$n^j$ the number of claims per year $j$, $c^{j}$ the insurer's responsibility $c$.
+	\(X_{i}^{j}\) designates the \(i^{e}\) disaster of the year \(j\) \og{}as if\fg{} updated, revalued and corrected,
+\(n^j\) the number of claims per year \(j\), \(c^{j}\) the insurer's responsibility \(c\).
 The pure rate by the \textbf{Burning Cost} method is given by the formula :
-$$
+\[
 BC_{pur}=\frac{1}{s}\sum_{j=1}^{n}\frac{c^{j}}{a_{j}}
-$$ 
-The Burning Cost is only an average of the crossed $S/P$ ratios : the claims payable by the reinsurer on the premiums received by the ceding company.
-The Burning Cost premium is then : $P_{pure}=BC_{pur}\times a_{s+1}$.
+\] 
+The Burning Cost is only an average of the crossed \(S/P\) ratios : the claims payable by the reinsurer on the premiums received by the ceding company.
+The Burning Cost premium is then : \(P_{pure}=BC_{pur}\times a_{s+1}\).
 
-In the case of a $p$ XS $f$), $$
+In the case of a \(p\) XS \(f\)), \[
 c^{j}=\sum_{i=1}^{n^j}\max\left(  \left( X_{i}^{j}-f\right),p\right) 1\!\!1_{x^{j}\geq f}
-$$
+\]
 While life insurance calculates premium rates with reference to capital, non-life insurance uses the insured value as a reference, reinsurance takes the total premiums of the ceding company as a reference, called the \textbf{base}.
-We note $a_{j}$ denotes the premium base for year $j$ and $a_{s+1}^{*}$ denotes the estimated base for the coming year and where $s$ denotes the number of years of history.
+We note \(a_{j}\) denotes the premium base for year \(j\) and \(a_{s+1}^{*}\) denotes the estimated base for the coming year and where \(s\) denotes the number of years of history.
 \end{f}
 
 
 
 \begin{f}[The Poisson-Pareto model]
 [Bonus of XS or XL]
-Let $p$ and $f$ be the scope and priority (franchise) of the XS, respectively, with the limit $l=p+f$ ($p$ XS $f$).
+Let \(p\) and \(f\) be the scope and priority (franchise) of the XS, respectively, with the limit \(l=p+f\) (\(p\) XS \(f\)).
 
 The XS bonus corresponds to :
-$$
+\[
 \mathbb{E}\left[S_N\right]=\mathbb{E}\left[\sum_{i=1}^{N} Y_{i}\right]=\mathbb{E}[N]\times \mathbb{E}[Y]
-$$
+\]
 où
-$$
+\[
 \mathbb{E}[Y]= l \mathbb{P}[X>l] - f \times \mathbb{P}[X\geq f] + \mathbb{E}[X\mid f\geq x\geq l]
-$$
+\]
 
 
-If $l=\infty$ and $\alpha \neq 1$ :
-$$
+If \(l=\infty\) and \(\alpha \neq 1\) :
+\[
 \mathbb{E}[S_N] = \lambda \frac{x_\mathrm{m}^{\alpha}}{\alpha -1}f^{1-\alpha} 
-$$
+\]
 
-if  $l=\infty$ and $\alpha = 1$ there is no solution.
+if  \(l=\infty\) and \(\alpha = 1\) there is no solution.
 
-If $l<\infty$ and $\alpha \neq 1$ :
-$$
+If \(l<\infty\) and \(\alpha \neq 1\) :
+\[
 \mathbb{E}[S_N] = \lambda \frac{x_\mathrm{m}^{\alpha}}{\alpha -1}\left( f^{1-\alpha} -l^{1-\alpha} \right)
-$$
+\]
 
-If $l<\infty$ and $\alpha = 1$ :
-$$
+If \(l<\infty\) and \(\alpha = 1\) :
+\[
 \mathbb{E}[S_N] = \lambda x_\mathrm{m} \ln \left(  \frac{1}{f}\right)
-$$
+\]
 \end{f}
 
 
@@ -457,11 +457,11 @@ $$
 \begin{f}
 [The Poisson-LogNormal Model]
 
-If $X$ follows a $\mathcal{L}\mathcal{N}orm(x_\mathrm{m}, \mu, \sigma)$ then $X-x_\mathrm{m}$ follows a $\mathcal{L}\mathcal{N}orm(\mu, \sigma)$
+If \(X\) follows a \(\mathcal{L}\mathcal{N}orm(x_\mathrm{m}, \mu, \sigma)\) then \(X-x_\mathrm{m}\) follows a \(\mathcal{L}\mathcal{N}orm(\mu, \sigma)\)
 It comes :
-$$
+\[
 \mathbb{P}[X>f]=\mathbb{P}[X-x_\mathrm{m}>f-x_\mathrm{m}]=1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-\mu}{\sigma}\right)
-$$
+\]
 \begin{align*}
 	\mathbb{E}[X\mid X>f] \\ 
 	= & \mathbb{E}\left[ X-x_\mathrm{m}\mid X-x_\mathrm{m}>f-x_\mathrm{m} \right]+x_\mathrm{m} \mathbb{P}[X>f]\\

@@ -51,7 +51,7 @@ of a \textbf{reinsurance premium}.
 \textbf{Quota Share :} type of proportional reinsurance where the reinsurer participates in a given percentage of all risks underwritten by a direct insurer in a given line of business.
 
 \textbf{Surplus Share :} A type of proportional reinsurance where the reinsurer covers risks beyond the direct insurer's 
-full retention amount. This ratio is calculated on the capacity of the risk subscribed ($\approx$ Maximum possible loss).
+full retention amount. This ratio is calculated on the capacity of the risk subscribed (\(\approx\) Maximum possible loss).
 
 \textbf{Reinsurance commission :} remuneration that the reinsurer grants to the insurer or brokers as compensation for the costs of acquiring and managing insurance contracts.
 
@@ -110,10 +110,10 @@ Reinsurance allows to increase the business issuing capacity, ensure the financi
 
 \begin{f}[Types of reinsurance through an example]
 	
-Our insurer reinsures $N=30$ insurance policies, with a total premium of 10M\EUR{} ($P=\sum_{i=1\ldots N}P_i$).
-The total capacity is 180M\EUR{} ($\sum_{i=1\ldots30}K_i$).
-$S_r$ will be the total share of the loss covered by the insurer and $P_r$ the total reinsurance premium.
-Here are the $n=8$ policies affected by losses ($1\geq i \geq n$), the losses of the other policies being zero ($S_i=0, \forall i>n$) :
+Our insurer reinsures \(N=30\) insurance policies, with a total premium of 10M\EUR{} (\(P=\sum_{i=1\ldots N}P_i\)).
+The total capacity is 180M\EUR{} (\(\sum_{i=1\ldots30}K_i\)).
+\(S_r\) will be the total share of the loss covered by the insurer and \(P_r\) the total reinsurance premium.
+Here are the \(n=8\) policies affected by losses (\(1\geq i \geq n\)), the losses of the other policies being zero (\(S_i=0, \forall i>n\)) :
 	
 	\begin{center}\footnotesize
 		\renewcommand{\arraystretch}{1.25}
@@ -127,7 +127,7 @@ Here are the $n=8$ policies affected by losses ($1\geq i \geq n$), the losses of
 		\renewcommand{\arraystretch}{1}
 	\end{center}
 	
-	The $S/P$ is 240\%.
+	The \(S/P\) is 240\%.
 	
 	
 	\begin{center}
@@ -153,10 +153,10 @@ Here are the $n=8$ policies affected by losses ($1\geq i \geq n$), the losses of
 
 
 \textbf{Quota:}
-$$
+\[
 S_r=\alpha \sum_{i=1\ldots n}S_i\quad \ \ P_r=\alpha\sum_{i=1\ldots N}P_i 
-$$
-where $\alpha\ \in [0,1]$ (25\% in the figure) is the share transferred in Quota.
+\]
+where \(\alpha\ \in [0,1]\) (25\% in the figure) is the share transferred in Quota.
 	
 	%\setlength{\tabcolsep}{1cm}
 
@@ -201,10 +201,10 @@ where $\alpha\ \in [0,1]$ (25\% in the figure) is the share transferred in Quota
 \end{center}
 \medskip
 
-\textbf{Full surplus}, the full is noted $\boldsymbol{K}$ (2M\EUR{} in the example), $\alpha_i$ represents the cession rate of policy $i$.
-	$$
+\textbf{Full surplus}, the full is noted \(\boldsymbol{K}\) (2M\EUR{} in the example), \(\alpha_i\) represents the cession rate of policy \(i\).
+	\[
 	S_r= \sum_{i=1\ldots n}\underbrace{\left(\frac{\left(K_i-\boldsymbol{K} \right)_+ }{K_i} \right)}_{\alpha_i} S_i\quad \ \ P_r=\sum_{i=1\ldots N}\left(\frac{\left(K_i-\boldsymbol{K} \right)_+ }{K_i} \right)P_i 
-	$$
+	\]
 	%\renewcommand{\arraystretch}{1.25}
 	%\rowcolors{1}{sectionColor}{white}
 	%\setlength{\tabcolsep}{1cm}
@@ -265,11 +265,11 @@ where $\alpha\ \in [0,1]$ (25\% in the figure) is the share transferred in Quota
 	%\rowcolors{1}{sectionColor}{white}
 	%\setlength{\tabcolsep}{1cm}
 	
-The insurer sets the priority $a$ and the scope $b$ (respectively 2M\EUR{} and 4M\EUR{} in the figure).
-$$
+The insurer sets the priority \(a\) and the scope \(b\) (respectively 2M\EUR{} and 4M\EUR{} in the figure).
+\[
 S_r= \sum_{i=1\ldots n} \min\left( \left( S_i-a\right)^+,b\right)  
-$$
-The premium is set by the reinsurer, based on its estimate of $\mathbb{E}[S_r]$.
+\]
+The premium is set by the reinsurer, based on its estimate of \(\mathbb{E}[S_r]\).
 %\begin{tabular}{|l|rrrrrrrr|}
 %	\hline
 %	\rowcolor{BleuProfondIRA!40}        Num de sinistre		& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline \hline
@@ -320,11 +320,11 @@ The premium is set by the reinsurer, based on its estimate of $\mathbb{E}[S_r]$.
 	%\rowcolors{1}{sectionColor}{white}
 	%\setlength{\tabcolsep}{1cm}
 	
-	$$
+	\[
 	S_r= \sum_{\begin{array}{c}
 			Cat_j,\\ i=1\ldots N
 	\end{array}} \min\left( \mathds{1}_{i\in Cat_j}\times \left( S_i-a\right)^+,b\right)  
-	$$
+	\]
 	
 	In the illustration, claims refer to a single event, with a priority of 5M\EUR{} and a scope of 10M\EUR{}.
 	
@@ -402,28 +402,28 @@ The premium is set by the reinsurer, based on its estimate of $\mathbb{E}[S_r]$.
 	
 	
 Stop Loss occurs when the cumulative annual losses deteriorate.
-It is expressed on the basis of the ratio $S/P$ with a priority and a scope of $XL$ expressed in \%.
+It is expressed on the basis of the ratio \(S/P\) with a priority and a scope of \(XL\) expressed in \%.
 	
-$$
+\[
 S_r= \min\left( \left( \sum_{i=1\ldots N} S_i - a  P\right)^+,bP\right)  
-$$
+\]
 
 \end{f}
 \hrule
 	
 \begin{f}[The main clauses in reinsurance]
 
-\textbf{The deductible} $a^{ag}$ and the \textbf{aggregate limit} $b^{ag}$ apply after the calculation of $S_r$.
+\textbf{The deductible} \(a^{ag}\) and the \textbf{aggregate limit} \(b^{ag}\) apply after the calculation of \(S_r\).
 
-$$
+\[
 S_r^{ag} = \min\left( \left(S_r - a^{ag}  \right)^+,b^{ag}\right)  
-$$
+\]
 \medskip
 
 The objective of the \textbf{indexation clause} is to maintain the \underline{terms of the treaty} over several successive financial years. The treaty limits are aligned with an economic index (salary, currency, price index, ...).
 \medskip
 
-With \textbf{stabilization clause}, when the claim suffers from a \underline{long settlement}, or even a very long one (at least $\geq 1$ year), the treaty limits are updated in the calculation of the $S_r$ so that the respective shares of the reinsurer and the ceding company initially planned are generally respected.
+With \textbf{stabilization clause}, when the claim suffers from a \underline{long settlement}, or even a very long one (at least \(\geq 1\) year), the treaty limits are updated in the calculation of the \(S_r\) so that the respective shares of the reinsurer and the ceding company initially planned are generally respected.
 \medskip
 	
 
@@ -435,14 +435,14 @@ With the \textbf{interest sharing clause}, if in a transaction or court judgment
 
 The \textbf{guarantee reinstatement clause}
 only concerns \emph{processed in excess of loss by risk or by event} which could be triggered several times during the year.
-The reinsurer limits its benefit to $N$ times the scope of the $XS$, in return for the payment of an additional premium.
+The reinsurer limits its benefit to \(N\) times the scope of the \(XS\), in return for the payment of an additional premium.
 Reconstitution can be done pro rata temporis (time remaining until the expiry date of the treaty) or pro rata to the absorbed capital, or both (double pro rata).
 
 
 
 
 \textbf{Interlocking Clause} is used in event-based XS treaties, which operate by subscription exercise and not \underline{by occurrence exercise}.
-The interlocking clause will have the effect of recalculating the treaty limits, because the same event can trigger the treaty for both $n$ and $N-1$ subscriptions.
+The interlocking clause will have the effect of recalculating the treaty limits, because the same event can trigger the treaty for both \(n\) and \(N-1\) subscriptions.
 
 
 \end{f}
@@ -465,7 +465,7 @@ Also, the \href{http://www.gareat.com/}{GAREAT} is a non-profit Economic Interes
 
 \begin{f}[Securitization / CatBonds]
 \label{CatBond}
-Why? The financial capacity of all insurers and reinsurers combined does not cover the damage of a major earthquake in the United States. ($\geq$ 200 B\EUR{}). 
+Why? The financial capacity of all insurers and reinsurers combined does not cover the damage of a major earthquake in the United States. (\(\geq\) 200 B\EUR{}). 
 This amount corresponds to less than 1\% of the capitalization of American financial markets.
 
 Securitization transforms an insurance risk into a negotiable security, often into bonds called Cat-Bonds.
@@ -483,15 +483,15 @@ The trigger can be directly linked to the results of the predecessor (Compensati
 \hline \rowcolor{BleuProfondIRA!40}
 \textbf{Criteria} & \textbf{Compensative} & \textbf{Hint} & \textbf{Parametric} & \textbf{Model} \\
 \hline
-Transparency & $\ominus$ & $\oplus$ & $\oplus$ & $\oplus$ \\
+Transparency & \(\ominus\) & \(\oplus\) & \(\oplus\) & \(\oplus\) \\
 \hline
-Basis risk & $\oplus$ & $\ominus$ & $\ominus$ & $\oplus$ \\
+Basis risk & \(\oplus\) & \(\ominus\) & \(\ominus\) & \(\oplus\) \\
 \hline
-Moral hazard & $\ominus$ & $\oplus$ & $\oplus$ & $\oplus$ \\
+Moral hazard & \(\ominus\) & \(\oplus\) & \(\oplus\) & \(\oplus\) \\
 \hline
-Universality of perils & $\oplus$ & $\oplus$ & $\ominus$ & $\oplus$ \\
+Universality of perils & \(\oplus\) & \(\oplus\) & \(\ominus\) & \(\oplus\) \\
 \hline
-Trigger delay & $\ominus$ & $\ominus$ & $\oplus$ & $\oplus$ \\
+Trigger delay & \(\ominus\) & \(\ominus\) & \(\oplus\) & \(\oplus\) \\
 \hline
 \end{tabular}
 \end{center}	\renewcommand{\arraystretch}{1}

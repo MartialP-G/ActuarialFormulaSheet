@@ -16,7 +16,7 @@ color=BleuProfondIRA,
 %		ylabel near ticks,
 ylabel={Profit},
 x label style={at={(axis cs:\xmaxBS+.1,0)},anchor=north east},
-xlabel={ss-jacent ($T$)},
+xlabel={ss-jacent (\(T\))},
 %		    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
 %		y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},
 ytick=\empty,
@@ -24,7 +24,7 @@ xtick=\empty,
 extra y ticks ={0},
 extra y tick labels={{0}},
 extra x ticks ={\PxExerciceBS},
-extra x tick labels={{$E$}},
+extra x tick labels={{\(E\)}},
 extra x tick style={color=BleuProfondIRA,
 	tick label style={yshift=7mm}	},
 title ={ \textbf{Long Call}},
@@ -51,7 +51,7 @@ split,
 every segment no 1/.style=
 {top color = BleuProfondIRA!50, bottom color=BleuProfondIRA!10}] ;
 %\draw[use path=\xaxis, ->,OrangeProfondIRA,thick];
-\draw [fill]  ({-\PremiumBS*(-1)+\PxExerciceBS},0) circle (1mm) node [above=5mm] {$S_{PM}$};
+\draw [fill]  ({-\PremiumBS*(-1)+\PxExerciceBS},0) circle (1mm) node [above=5mm] {\(S_{PM}\)};
 \draw[BleuProfondIRA, thin] ({\PxExerciceBS},0) -- ({\PxExerciceBS},{-\PremiumBS});
 \node at ({\xminBS+0.25*(\xmaxBS-\xminBS)},{\pgfkeysvalueof{/pgfplots/ymin}})
 {OUT};

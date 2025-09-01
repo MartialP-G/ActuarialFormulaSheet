@@ -2,34 +2,34 @@
 % !TeX spellcheck = fr_FR
 
 \begin{f}[Pythagore]
-Dans un triangle rectangle, le carré de l’hypoténuse est égal à la somme des carrés des deux autres côtés. Si $ABC$  est rectangle en $C$, alors 
+Dans un triangle rectangle, le carré de l’hypoténuse est égal à la somme des carrés des deux autres côtés. Si \(ABC\)  est rectangle en \(C\), alors 
 
 %
 \begin{tikzpicture}[scale=.85]
 	% Triangle
-	\coordinate [label=above left:$C$] (C) at (0,0);
-	\coordinate [label=above right:$B$] (B) at (4,0);
-	\coordinate [label=below left:$A$] (A) at (0,3);
+	\coordinate [label=above left:\(C\)] (C) at (0,0);
+	\coordinate [label=above right:\(B\)] (B) at (4,0);
+	\coordinate [label=below left:\(A\)] (A) at (0,3);
 	
 	%\draw[thick] (A) -- (B) -- (C) -- cycle;
 	
 	% Carré sur AC
 	\draw[BleuProfondIRA!60] (A) -- (C) ;
-	\node at (-0.6,1.5) {\color{BleuProfondIRA}$AC^2$};
+	\node at (-0.6,1.5) {\color{BleuProfondIRA}\(AC^2\)};
 	
 	% Carré sur BC
 	\draw[VertIRA] (B) -- (C);
-	\node at (2,0.6) {\color{VertIRA}$BC^2$};
+	\node at (2,0.6) {\color{VertIRA}\(BC^2\)};
 	
 	% Carré sur AB
 	\draw[OrangeProfondIRA] (A) -- (B) ;
-	\node at (2.5,1.75) {\color{OrangeProfondIRA}$AB^2$};
+	\node at (2.5,1.75) {\color{OrangeProfondIRA}\(AB^2\)};
 	
 	% Angle droit
 	\draw (C) rectangle +(0.3,0.3);
-	\node[right] at (3.75,1.75) {$
+	\node[right] at (3.75,1.75) {\(
 		\color{OrangeProfondIRA}AB^2 = \color{VertIRA}AC^2 +\color{BleuProfondIRA} BC^2
-		$};
+		\)};
 \end{tikzpicture}
 \end{f}
 
@@ -65,9 +65,9 @@ Soient deux droites \textbf{sécantes en un point} \( A \), et soient deux droit
 		\filldraw[black] (E) circle (2pt) node[right] {\(E\)};
 		
 %		% Parallèles
-%		\draw[<->,blue,thick] (0.8,2.2) -- (3.2,2.2) node[right] {\small $\ell$};
-%		\draw[<->,blue,thick] (0.8,0.8) -- (3.2,0.8) node[right] {\small $\ell'$};
-%		\node at (3.6,1.5) {\small $\ell \parallel \ell'$};
+%		\draw[<->,blue,thick] (0.8,2.2) -- (3.2,2.2) node[right] {\small \(\ell\)};
+%		\draw[<->,blue,thick] (0.8,0.8) -- (3.2,0.8) node[right] {\small \(\ell'\)};
+%		\node at (3.6,1.5) {\small \(\ell \parallel \ell'\)};
 	\end{tikzpicture}
 \end{center}
 \end{f}
@@ -102,42 +102,42 @@ Soient deux droites \textbf{sécantes en un point} \( A \), et soient deux droit
 \hrule
 \begin{f} [Fonctions factorielle, dénombrement et Gamma] 
 
-La fonction \textbf{factorielle} (de $\mathbb{N}$ dans $\mathbb{N}$ ) est définie par $0!=1$ et $n!=n \times(n-1) \times \cdots \times 2 \times 1=$ permutations de $n$ éléments $\displaystyle C_n^k=\binom{k}{n}=\frac{n!}{k!(n-k)!}=$ choix de $k$ éléments parmi $n$ les $C_n^k$ se calculent aussi par le triangle de Pascal et vérifient:
+La fonction \textbf{factorielle} (de \(\mathbb{N}\) dans \(\mathbb{N}\) ) est définie par \(0!=1\) et \(n!=n \times(n-1) \times \cdots \times 2 \times 1=\) permutations de \(n\) éléments \(\displaystyle C_n^k=\binom{k}{n}=\frac{n!}{k!(n-k)!}=\) choix de \(k\) éléments parmi \(n\) les \(C_n^k\) se calculent aussi par le triangle de Pascal et vérifient:
 
-$$
+\[
 C_n^k=C_n^{n-k}, C_n^k+C_n^{k+1}=C_{n+1}^{k+1} .
-$$
+\]
 
 
-Soit $E$ un ensemble de cardinal $\operatorname{Card}(E)$ et de parties $\mathcal{P}(E)$ :
+Soit \(E\) un ensemble de cardinal \(\operatorname{Card}(E)\) et de parties \(\mathcal{P}(E)\) :
 
-$$
+\[
 \begin{aligned}
 \operatorname{Card}(\mathcal{P}(E)) & =2^{\operatorname{Card}(E)} \\
 \operatorname{Card}(A \times B) & =\operatorname{Card}(A) \times \operatorname{Card}(B) \\
 \operatorname{Card}(A \cup B) & =\operatorname{Card}(A)+\operatorname{Card}(B)-\operatorname{Card}(A \cap B)
 \end{aligned}
-$$
+\]
 \[ \Gamma(n) = \int_0^\infty t^{n-1} e^{-t} \, dt \]
-La fonction $\Gamma$ peut être vue comme le prolongement de la factorielle : $\Gamma(n+1)=n!$.
+La fonction \(\Gamma\) peut être vue comme le prolongement de la factorielle : \(\Gamma(n+1)=n!\).
 \end{f}
 
 \hrule
 \begin{f}
 	[Développement binomial] 
 	
-	Pour un entier positif $n$,
-	$$
+	Pour un entier positif \(n\),
+	\[
 	(x+y)^n=\sum_{i=0}^n\binom{n}{i} x^i y^{n-i}
-	$$
+	\]
 	
 \end{f}
 \hrule
 \begin{f}[Suites]  
 	
-	Les suites arithmétiques de raison $r$
+	Les suites arithmétiques de raison \(r\)
 	
-	$$
+	\[
 	\left\{\begin{array} { r l } 
 		{ u _ { n + 1 } } & { = u _ { n } + r } \\
 		{ u _ { 0 } } & { \in \mathbb { R } }
@@ -145,11 +145,11 @@ La fonction $\Gamma$ peut être vue comme le prolongement de la factorielle : $\
 		u_n & =n r+u_0 \\
 		\sum_{k=0}^n u_k & =\frac{(n+1)\left(2 u_0+n r\right)}{2}
 	\end{array}\right.\right.
-	$$
+	\]
 	
-	suites géométriques de raison $q\left\{\begin{array}{rll}u_{n+1} & = & q \times u_n \\ u_0 & \in & \mathbb{R}\end{array}\right.$
+	suites géométriques de raison \(q\left\{\begin{array}{rll}u_{n+1} & = & q \times u_n \\ u_0 & \in & \mathbb{R}\end{array}\right.\)
 	
-	$$
+	\[
 	\Rightarrow\left\{\begin{array}{rlr}
 		u_n & =u_0 \times q^n \\
 		\sum_{k=0}^n u_k & =\left\{\begin{array}{rl}
@@ -157,7 +157,7 @@ La fonction $\Gamma$ peut être vue comme le prolongement de la factorielle : $\
 			u_0 \frac{1-q^{n+1}}{1-q} & \text { sinon }
 		\end{array} \quad q=1\right.
 	\end{array}\right.
-	$$
+	\]
 	
 \end{f}
 \hrule
@@ -185,13 +185,13 @@ La fonction $\Gamma$ peut être vue comme le prolongement de la factorielle : $\
 
 \hrule
 \begin{f}[Relation de congruence]
-	Soit $m > 0$. On dit que deux réels $a$ et $b$ sont congrus modulo $m$ s'il existe un entier relatif $k \in \mathbb{Z}$ tel que :
+	Soit \(m > 0\). On dit que deux réels \(a\) et \(b\) sont congrus modulo \(m\) s'il existe un entier relatif \(k \in \mathbb{Z}\) tel que :
 	\[
 	a = b + km.
 	\]
-	On note $a \equiv b \pmod{m}$.
+	On note \(a \equiv b \pmod{m}\).
 	
-	En trigonométrie, on choisit souvent $m = 2\pi$ ou $m = \pi$.
+	En trigonométrie, on choisit souvent \(m = 2\pi\) ou \(m = \pi\).
 \end{f}
 
 \begin{f}
@@ -200,48 +200,48 @@ La fonction $\Gamma$ peut être vue comme le prolongement de la factorielle : $\
 		\begin{animateinline}[poster=first, autoplay,loop]{1}
 			\multiframe{24}{i=0+1}{%
 				\begin{tikzpicture}[scale=3,yrange=-4:4]
-\node[text width=9cm, align=left] at (0,3.75) {\ $\displaystyle M = (\cos \theta, \sin \theta)$};
-\node[text width=9cm, align=left] at (0,3.5) {\ Si $\theta \not\equiv \frac{\pi}{2} \pmod{\pi}$, on définit :
-	$\displaystyle
+\node[text width=9cm, align=left] at (0,3.75) {\ \(\displaystyle M = (\cos \theta, \sin \theta)\)};
+\node[text width=9cm, align=left] at (0,3.5) {\ Si \(\theta \not\equiv \frac{\pi}{2} \pmod{\pi}\), on définit :
+	\(\displaystyle
 	\tan \theta = \frac{\sin \theta}{\cos \theta}
-	$};
-\node[text width=9cm, align=left] at (0,3.25) {\ $\displaystyle \cos^2 \theta + \sin^2 \theta = 1 $};
+	\)};
+\node[text width=9cm, align=left] at (0,3.25) {\ \(\displaystyle \cos^2 \theta + \sin^2 \theta = 1 \)};
 \node[text width=9cm, align=left] at (0,2.5) {\renewcommand{\arraystretch}{1.5}\begin{tabular}{|c|c|c|c|c|c|}
 		\hline\rowcolor{BleuProfondIRA!40}
-		$\theta$ & $0$ & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{3}$ & $\frac{\pi}{2}$ \\
+		\(\theta\) & \(0\) & \(\frac{\pi}{6}\) & \(\frac{\pi}{4}\) & \(\frac{\pi}{3}\) & \(\frac{\pi}{2}\) \\
 		\hline
-		$\cos \theta$ & $1$ & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{1}{2}$ & $0$ \\
+		\(\cos \theta\) & \(1\) & \(\frac{\sqrt{3}}{2}\) & \(\frac{\sqrt{2}}{2}\) & \(\frac{1}{2}\) & \(0\) \\
 		\hline
-		$\sin \theta$ & $0$ & $\frac{1}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{3}}{2}$ & $1$ \\
+		\(\sin \theta\) & \(0\) & \(\frac{1}{2}\) & \(\frac{\sqrt{2}}{2}\) & \(\frac{\sqrt{3}}{2}\) & \(1\) \\
 		\hline
-		$\tan \theta$ & $0$ & $\frac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & indéfini \\
+		\(\tan \theta\) & \(0\) & \(\frac{\sqrt{3}}{3}\) & \(1\) & \(\sqrt{3}\) & indéfini \\
 		\hline
 \end{tabular}};
 \node[text width=9cm, align=left] at (0,-2.75) {\small\renewcommand{\arraystretch}{1.5}	
 \begin{tabular}{|c|c|c|}
 	\hline\rowcolor{BleuProfondIRA!40}
-	$-\theta$ & $\theta + \pi$ & $\pi - \theta$ \\
+	\(-\theta\) & \(\theta + \pi\) & \(\pi - \theta\) \\
 	\hline
-	$\cos \theta$ & $-\cos \theta$ & $-\cos \theta$ \\
+	\(\cos \theta\) & \(-\cos \theta\) & \(-\cos \theta\) \\
 	\hline
-	$-\sin \theta$ & $-\sin \theta$ & $\sin \theta$ \\
+	\(-\sin \theta\) & \(-\sin \theta\) & \(\sin \theta\) \\
 	\hline
 	\hline\rowcolor{BleuProfondIRA!40}
-	$\theta + 2\pi$ & $\frac{\pi}{2} - \theta$ & $\frac{\pi}{2} + \theta$ \\
+	\(\theta + 2\pi\) & \(\frac{\pi}{2} - \theta\) & \(\frac{\pi}{2} + \theta\) \\
 	\hline
-	$\cos \theta$ & $\sin \theta$ & $-\sin \theta$ \\
+	\(\cos \theta\) & \(\sin \theta\) & \(-\sin \theta\) \\
 	\hline
-	$\sin \theta$ & $\cos \theta$ & $\cos \theta$ \\
+	\(\sin \theta\) & \(\cos \theta\) & \(\cos \theta\) \\
 	\hline
 \end{tabular}
  \\ \vspace{2mm}
-\ $\cos x = \cos y \iff \begin{cases}
+\ \(\cos x = \cos y \iff \begin{cases}
 	x \equiv y \pmod{2\pi} \text{ ou }\\ x \equiv -y \pmod{2\pi}
-\end{cases} $ \\
-\ $\sin x = \sin y \iff \begin{cases}
+\end{cases} \) \\
+\ \(\sin x = \sin y \iff \begin{cases}
 	 x \equiv y \pmod{2\pi} \text{ ou }\\ x \equiv \pi - y \pmod{2\pi}
-\end{cases}$\\
-\ $\tan x = \tan y \iff x \equiv y \pmod{\pi}$
+\end{cases}\)\\
+\ \(\tan x = \tan y \iff x \equiv y \pmod{\pi}\)
 };
 
 
@@ -254,46 +254,46 @@ La fonction $\Gamma$ peut être vue comme le prolongement de la factorielle : $\
 	\coordinate (M) at ({\cosx}, {\siny});
 	
 	% Axes
-	\draw[->] (-0.2,0) -- (1.25,0) node[anchor=west] {$x$};
-	\draw[->] (0,-1.5) -- (0,1.25) node[anchor=south] {$y$};
+	\draw[->] (-0.2,0) -- (1.25,0) node[anchor=west] {\(x\)};
+	\draw[->] (0,-1.5) -- (0,1.25) node[anchor=south] {\(y\)};
 	
 	% Cercle
 	\draw[thick] (0,0) circle(\radius);
 	
 	% OM
-	\draw[->, thick, BleuProfondIRA] (0,0) -- (M) node[above right] {$M$};
+	\draw[->, thick, BleuProfondIRA] (0,0) -- (M) node[above right] {\(M\)};
 	
 	% Projections cosinus et sinus
 	\draw[dashed] (M) -- ({\cosx}, 0);
 	\draw[dashed] (M) -- (0, {\siny});
 	
 	\draw[<->, thick, OrangeProfondIRA] (0, -0.1) -- ({\cosx}, -0.1);
-	\node[below, OrangeProfondIRA] at ({\cosx/2}, -0.1) {$\cos\theta$};
+	\node[below, OrangeProfondIRA] at ({\cosx/2}, -0.1) {\(\cos\theta\)};
 	
 	\draw[<->, thick, VertIRA] (-0.1, 0) -- (-0.1, {\siny});
-	\node[left, VertIRA] at (-0.1, {\siny/2}) {$\sin\theta$};
+	\node[left, VertIRA] at (-0.1, {\siny/2}) {\(\sin\theta\)};
 	
 	% Angle
 	\draw[->, FushiaIRA] (0.5,0) arc[start angle=0, end angle=\angle, radius=0.5];
-	\node at (0.7,0.15) {$\theta$};
+	\node at (0.7,0.15) {\(\theta\)};
 	
 	% Tangente (affich\'ee sauf si angle = 90\textdegree{} ou 270\textdegree{})
 	\pgfmathtruncatemacro{\angleInt}{\angle} % angle en entier
 	\ifnum\angleInt=90
 	\draw[dashed] (1,-4) -- (1,4);
-	\node[right] at (1,1.3) {$x=1$};
+	\node[right] at (1,1.3) {\(x=1\)};
 	\else\ifnum\angleInt=270
 	\draw[dashed] (1,-4) -- (1,4);
-	\node[right] at (1,1.3) {$x=1$};
+	\node[right] at (1,1.3) {\(x=1\)};
 	\else
 	\pgfmathsetmacro{\tany}{tan(\angle)}
 	\draw[dashed, gray] (0,0) -- (1.05, {\tany*1.05});
 	\draw[dashed] (1,-4) -- (1,4);
 	\coordinate (T) at (1, {\tany});
 	\draw[fill=black] (T) circle(0.015);
-	\node[above right] at (T) {$T$};
-	\node[below right] at (T) {$(1,\tan\theta)$};
-	\node[right] at (1,1.3) {$x=1$};
+	\node[above right] at (T) {\(T\)};
+	\node[below right] at (T) {\((1,\tan\theta)\)};
+	\node[right] at (1,1.3) {\(x=1\)};
 	\fi\fi
 \end{tikzpicture}
 			}%
@@ -306,13 +306,13 @@ La fonction $\Gamma$ peut être vue comme le prolongement de la factorielle : $\
 \begin{f}
 	[Propriétés de la relation de congruence]
 	
-	Soient $m > 0$ et $a, b, c, d \in \mathbb{R}$. Alors :
+	Soient \(m > 0\) et \(a, b, c, d \in \mathbb{R}\). Alors :
 	
 	\begin{itemize}
-		\item \textbf{Réflexivité} : $a \equiv a \pmod{m}$.
-		\item \textbf{Symétrie} : $a \equiv b \pmod{m} \iff b \equiv a \pmod{m}$.
-		\item \textbf{Transitivité} : si $a \equiv b \pmod{m}$ et $b \equiv c \pmod{m}$, alors $a \equiv c \pmod{m}$.
-		\item \textbf{Additivité} : si $a \equiv b \pmod{m}$ et $c \equiv d \pmod{m}$, alors $a + c \equiv b + d \pmod{m}$.
+		\item \textbf{Réflexivité} : \(a \equiv a \pmod{m}\).
+		\item \textbf{Symétrie} : \(a \equiv b \pmod{m} \iff b \equiv a \pmod{m}\).
+		\item \textbf{Transitivité} : si \(a \equiv b \pmod{m}\) et \(b \equiv c \pmod{m}\), alors \(a \equiv c \pmod{m}\).
+		\item \textbf{Additivité} : si \(a \equiv b \pmod{m}\) et \(c \equiv d \pmod{m}\), alors \(a + c \equiv b + d \pmod{m}\).
 	\end{itemize}
 	
 \end{f}	
@@ -347,14 +347,14 @@ L'\textbf{intégrale de Riemann} d'une fonction \( f(x) \) sur un intervalle \([
            \draw [->,color=OrangeProfondIRA] (-0.1,0) -- (2.5,0);
           \foreach \x in {1,2}
             \draw [shift={(\x,0)}, color=OrangeProfondIRA] (0pt,2pt)
-                  -- (0pt,-2pt) node [below] {\footnotesize $\x$};
-          \draw [color=OrangeProfondIRA] (2.5,0) node [below] {$x$};
+                  -- (0pt,-2pt) node [below] {\footnotesize \(\x\)};
+          \draw [color=OrangeProfondIRA] (2.5,0) node [below] {\(x\)};
           \draw [->,color=OrangeProfondIRA] (0,-0.1) -- (0,4.5);
           \foreach \y in {1,2,3,4}
             \draw [shift={(0,\y)}, color=OrangeProfondIRA] (2pt,0pt)
-                  -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-          \draw [color=OrangeProfondIRA] (0,4.5) node [right] {$y$};
-          \draw [color=OrangeProfondIRA] (0pt,-10pt) node [left] {\footnotesize $0$};
+                  -- (-2pt,0pt) node[left] {\footnotesize \(\y\)};
+          \draw [color=OrangeProfondIRA] (0,4.5) node [right] {\(y\)};
+          \draw [color=OrangeProfondIRA] (0pt,-10pt) node [left] {\footnotesize \(0\)};
           \draw [color=OrangeProfondIRA, domain=0:2.2, line width=1.0pt] plot (\x,{(\x)^2});
           \clip(0,-0.5) rectangle (3,5);
           \draw (2,0) -- (2,4);
@@ -371,7 +371,7 @@ L'\textbf{intégrale de Riemann} d'une fonction \( f(x) \) sur un intervalle \([
       }
       
 \end{center}
-      Exemple d'intégrale de Riemann (upper)\href{https://texample.net/media/tikz/examples/TEX/upper-riemann-sum.tex}{$^*$}
+      Exemple d'intégrale de Riemann (upper)\href{https://texample.net/media/tikz/examples/TEX/upper-riemann-sum.tex}{\(^*\)}
  
  
 
@@ -558,24 +558,24 @@ où \( L \) est une matrice triangulaire inférieure. Cette décomposition est u
 	
 	\begin{itemize}
 		\item Le \textbf{gradient} \( \nabla f(x) \) comme le vecteur des dérivées partielles premières :
-		$$
+		\[
 		\nabla f(x) = 
 		\begin{pmatrix}
 			\frac{\partial f}{\partial x_1}(x) \\
 			\vdots \\
 			\frac{\partial f}{\partial x_n}(x)
 		\end{pmatrix}
-		$$
+		\]
 		
 		\item La \textbf{matrice Hessienne} \( \nabla^2 f(x) \) comme la matrice symétrique des dérivées secondes :
-		$$
+		\[
 		\nabla^2 f(x) =
 		\begin{pmatrix}
 			\frac{\partial^2 f}{\partial x_1^2}(x) & \cdots & \frac{\partial^2 f}{\partial x_1 \partial x_n}(x) \\
 			\vdots & \ddots & \vdots \\
 			\frac{\partial^2 f}{\partial x_n \partial x_1}(x) & \cdots & \frac{\partial^2 f}{\partial x_n^2}(x)
 		\end{pmatrix}
-		$$
+		\]
 	\end{itemize}
 	
 \end{f}

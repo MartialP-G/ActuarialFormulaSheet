@@ -3,107 +3,107 @@
 
 \begin{f}[Axiomatic]{\ }
 	
-	A \textbf{universe} $\Omega$, is the set of all possible outcomes that can be obtained during a random experiment.
+	A \textbf{universe} \(\Omega\), is the set of all possible outcomes that can be obtained during a random experiment.
 	
-	The \textbf{random event} is an event $\omega\_i$ of the universe whose outcome (the result) is not certain.
+	The \textbf{random event} is an event \(\omega\_i\) of the universe whose outcome (the result) is not certain.
 	
 	
 	The \textbf{elementary event :}
 	\begin{itemize}
-		\item two distinct elementary events $\omega_i$ and $\omega_j$ are incompatible,
-		\item the union of all the elementary events of the universe $\Omega $ corresponds to certainty.
+		\item two distinct elementary events \(\omega_i\) and \(\omega_j\) are incompatible,
+		\item the union of all the elementary events of the universe \(\Omega \) corresponds to certainty.
 	\end{itemize}
 	
 	The \textbf{sets} :
 	\begin{itemize}
-		\item $E=\lbrace \omega_{i1},\ldots , \omega_{ik}\rbrace$ a subset of $\Omega$ ($k$ elements).
-		\item $\overline{E}$ the complement of $E$,
-		\item $E\cap F$ the intersection of $E$ and $F$,
-		\item $E\cup F$ the union of $E$ and $F$,
-		\item $E\setminus F= E\cap\overline{F}$ $E$ minus $F$,
-		\item $\varnothing$ the impossible or empty event.
+		\item \(E=\lbrace \omega_{i1},\ldots , \omega_{ik}\rbrace\) a subset of \(\Omega\) (\(k\) elements).
+		\item \(\overline{E}\) the complement of \(E\),
+		\item \(E\cap F\) the intersection of \(E\) and \(F\),
+		\item \(E\cup F\) the union of \(E\) and \(F\),
+		\item \(E\setminus F= E\cap\overline{F}\) \(E\) minus \(F\),
+		\item \(\varnothing\) the impossible or empty event.
 	\end{itemize}
 	
-	Let $E$ be a set. We call \textbf{trib} or \textbf{$\sigma-$algebra} on $E$, a set $\mathcal{A}$ of parts of $E$ which satisfies :
+	Let \(E\) be a set. We call \textbf{trib} or \textbf{\(\sigma-\)algebra} on \(E\), a set \(\mathcal{A}\) of parts of \(E\) which satisfies :
 	\begin{itemize}
-		\item     $\mathcal{A} \not=\varnothing$,
-		\item     $\forall A \in \mathcal{A} , \overline{A} \in\mathcal{A}$,
-		\item     if $\forall n \in \mathbb{N}$, $A_n \in\mathcal{A}$ then $\cup_{n\in\mathbb{N} } A_n \in\mathcal{A}$.
+		\item     \(\mathcal{A} \not=\varnothing\),
+		\item     \(\forall A \in \mathcal{A} , \overline{A} \in\mathcal{A}\),
+		\item     if \(\forall n \in \mathbb{N}\), \(A_n \in\mathcal{A}\) then \(\cup_{n\in\mathbb{N} } A_n \in\mathcal{A}\).
 	\end{itemize}
 	
-	We call \textbf{probability} $\mathbb{P}$ any application of the set of events $\mathcal{A}$ in the interval $[0,1]$, such that :      $$\mathbb{P} :      \mathcal{A}  \mapsto   [0,1]$$
+	We call \textbf{probability} \(\mathbb{P}\) any application of the set of events \(\mathcal{A}\) in the interval \([0,1]\), such that :      \[\mathbb{P} :      \mathcal{A}  \mapsto   [0,1]\]
 	satisfying the following properties (or axioms)~:
 	\begin{description}
-		\item[(P1)] $A \subseteq \mathcal{A} $    then  $ \mathbb{P}(A) \geq 0$,
-		\item[(P2)] $ \mathbb{P}(\Omega) = 1$,
-		\item[(P3)] $A, B \subseteq \mathcal{A}$,  if  $A\cap B =\varnothing$    then   $\mathbb{P}(A\cup B)=\mathbb{P}(A) + \mathbb{P}(B)$.
+		\item[(P1)] \(A \subseteq \mathcal{A} \)    then  \( \mathbb{P}(A) \geq 0\),
+		\item[(P2)] \( \mathbb{P}(\Omega) = 1\),
+		\item[(P3)] \(A, B \subseteq \mathcal{A}\),  if  \(A\cap B =\varnothing\)    then   \(\mathbb{P}(A\cup B)=\mathbb{P}(A) + \mathbb{P}(B)\).
 	\end{description}
 	
 	The \textbf{probability space}\index{D\'efinition! espace de probabilité} is defined by
 	\[ \lbrace \Omega, \mathcal{A}, \mathbb{P}(.) \rbrace \]
 	
 	The \textbf{Poincaré equality} is written~:
-	$$\forall A \in F, \forall B \in F, \mathbb{P} (A \cup B) = \mathbb{P} (A) + \mathbb{P} (B) - \mathbb{P} (A \cap B)$$
+	\[\forall A \in F, \forall B \in F, \mathbb{P} (A \cup B) = \mathbb{P} (A) + \mathbb{P} (B) - \mathbb{P} (A \cap B)\]
 	
 \end{f}
 \hrule
 
 \begin{f}[Bayes]
-	In probability theory, the \textbf{conditional probability} of an event $A$, given that another event $B$ of non-zero probability has occurred.
-	$$
+	In probability theory, the \textbf{conditional probability} of an event \(A\), given that another event \(B\) of non-zero probability has occurred.
+	\[
 	\mathbb{P}(A|B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}
-	$$
-	The real $\mathbb{P}(A|B)$ is read as 'probability of $A$, given $B$.
+	\]
+	The real \(\mathbb{P}(A|B)\) is read as 'probability of \(A\), given \(B\).
 	Bayes' theorem allows us to write~:
 	
-	$$   \mathbb{P}(A|B) = \frac{\mathbb{P}(B|A)\mathbb{P}(A)}{\mathbb{P}(B)}. $$
+	\[   \mathbb{P}(A|B) = \frac{\mathbb{P}(B|A)\mathbb{P}(A)}{\mathbb{P}(B)}. \]
 \end{f}
 \hrule
 
 \begin{f}[Random variables]
 	
-	Let $ (\Omega, \mathcal{A}, \mathbb{P})$ be a probability space. We call \textbf{random variable} $X$ from $\Omega$ to $ \Re$ any measurable function $X:\Omega\mapsto \Re$.
+	Let \( (\Omega, \mathcal{A}, \mathbb{P})\) be a probability space. We call \textbf{random variable} \(X\) from \(\Omega\) to \( \Re\) any measurable function \(X:\Omega\mapsto \Re\).
 	
-	$$\lbrace X\leq x \rbrace\equiv \lbrace e\in \Omega \mid X(e)\leq x \rbrace \in   \mathcal{A}$$
-	The set of events of $\Omega$ is often not explicit.
+	\[\lbrace X\leq x \rbrace\equiv \lbrace e\in \Omega \mid X(e)\leq x \rbrace \in   \mathcal{A}\]
+	The set of events of \(\Omega\) is often not explicit.
 	
-	The \textbf{distribution function} $(F_X)$ of a real random variable characterizes its probability distribution.
-	$$
+	The \textbf{distribution function} \((F_X)\) of a real random variable characterizes its probability distribution.
+	\[
 	F_X(x)=\mathbb {P}(X\leq x), x\in \Re
-	$$
-	where the right-hand side represents the probability that the real random variable $X$ takes a value less than or equal to $x$.
-	The probability that $X$ is in the interval $]a, b]$ is therefore, if $a< b$,
-	$
+	\]
+	where the right-hand side represents the probability that the real random variable \(X\) takes a value less than or equal to \(x\).
+	The probability that \(X\) is in the interval \(]a, b]\) is therefore, if \(a< b\),
+	\(
 	\mathbb{P}(a< X\leq b)\ =\ F_X(b)-F_X(a)
-	$
+	\)
 	
-	A probability law has a \textbf{probability density} $f$, if $f$ is a function defined on $\mathbb{R}^{+}$, Lebesgue integral, such that the probability of the interval $[a, b]$ is given by
-	$$
+	A probability law has a \textbf{probability density} \(f\), if \(f\) is a function defined on \(\mathbb{R}^{+}\), Lebesgue integral, such that the probability of the interval \([a, b]\) is given by
+	\[
 	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx} \mbox{ pour tous nombres tq }a<x<b.
-	$$
+	\]
 \end{f}
 \hrule
 \begin{f}[Expectations]{\ }
 	
 	The mathematical expectation in the discrete case (discrete qualitative or quantitative variables)~:
-	$$
+	\[
 	\mathbb{E}[X]=\sum_{j\in \mathbb{N}}x_j\mathbb{P}(x_j)
-	$$
-	where $\mathbb{P}(x_j)$ is the probability associated with each event $x_i$.
+	\]
+	where \(\mathbb{P}(x_j)\) is the probability associated with each event \(x_i\).
 	
 	The mathematical expectation in the continuous case~:
-	$$
+	\[
 	\mathbb{E}[X]=\int_{-\infty}^{\infty} x. f(x)dx
-	$$
+	\]
 	
-	where $f$ denotes the density function of the random variable $x$, defined in our case on $\mathbb{R}$.
+	where \(f\) denotes the density function of the random variable \(x\), defined in our case on \(\mathbb{R}\).
 	When it comes to sum or integral, the expectation is linear, that is to say~:
 	
-	$$\mathbb{E}[c_0+c_1X_1+c_2X_2]=c_0+c_1\mathbb{E}[X_1]+c_2\mathbb{E}[X_2]$$
+	\[\mathbb{E}[c_0+c_1X_1+c_2X_2]=c_0+c_1\mathbb{E}[X_1]+c_2\mathbb{E}[X_2]\]
 	
-	$$
+	\[
 	\mathbb{E}[X]=\int x.f(x)dx =\int_0^1 F^{-1}(p)dp= \int \overline{F}(x)dx\\
-	$$ 
+	\] 
 \end{f}
 \hrule
 \begin{f}[Convolution or law of sum]{\ }
@@ -125,150 +125,150 @@
 \begin{f}
 	[Compound law or frequency/gravity model]{\ }
 	
-	Let $N$ be a discrete random variable in $\mathbb{N}^+$, $\left(X_i\right)$ a sequence of $iid$ random variables with finite expectation and variance, then for $\displaystyle S=\sum_{i=1}^{N}X_i$ :
-	$$
+	Let \(N\) be a discrete random variable in \(\mathbb{N}^+\), \(\left(X_i\right)\) a sequence of \(iid\) random variables with finite expectation and variance, then for \(\displaystyle S=\sum_{i=1}^{N}X_i\) :
+	\[
 	\mathbb{E}(S) = \mathbb{E} (\mathbb{E} [S \mid N]) = \mathbb{E} (N.\mathbb{E}(X_1)) = \mathbb{E}(N).\mathbb{E}(X_1)
-	$$
-	$$
+	\]
+	\[
 	Var (S) = \mathbb{E} (Var [S \mid N]) + Var (\mathbb{E} [S \mid N])
-	$$
+	\]
 \end{f}
 
 \hrule
 \begin{f}[Fundamental theorems] {\ }
 	
-	Let $X$ be a real random variable defined on a probability space $\left(\Omega,\mathcal A,\mathbb P\right)$, and assumed to be almost surely positive or zero. The \textbf{Markov Inequality} gives~:
-	$$
+	Let \(X\) be a real random variable defined on a probability space \(\left(\Omega,\mathcal A,\mathbb P\right)\), and assumed to be almost surely positive or zero. The \textbf{Markov Inequality} gives~:
+	\[
 	\forall \alpha >0, \mathbb P(X\geq \alpha)\leqslant\frac{\mathbb{E}[X]}{\alpha}.
-	$$
+	\]
 	
 	The \textbf{Bienaymé-Tchebychev inequality}: 
-	For any strictly positive real number $\alpha$, with $\mathbb{E}[X]=\mu$ and $\operatorname{Var}[X]=\sigma^2$
-	$$
+	For any strictly positive real number \(\alpha\), with \(\mathbb{E}[X]=\mu\) and \(\operatorname{Var}[X]=\sigma^2\)
+	\[
 	\mathbb{P}\left(\left|X-\mu\right| \geq \alpha \right) \leq \frac{\sigma^2}{\alpha^2}.
-	$$
+	\]
 	
-	The \textbf{weak law of large numbers} considers a sequence $(X_i)_{i\geq n\in\mathbb{N}^*}$ of independent random variables defined on the same probability space, having the same finite expectation and variance denoted respectively $\mathbb{E}[X]$ and $\operatorname{Var}(X)$.
+	The \textbf{weak law of large numbers} considers a sequence \((X_i)_{i\geq n\in\mathbb{N}^*}\) of independent random variables defined on the same probability space, having the same finite expectation and variance denoted respectively \(\mathbb{E}[X]\) and \(\operatorname{Var}(X)\).
 	
-	$$
+	\[
 	\forall\varepsilon>0,\quad \lim_{n \to +\infty} \mathbb{P}\left(\left|\frac{X_1+X_2+\cdots+X_n}{n} - \mathbb{E}[X]\right| \geq \varepsilon\right) = 0
-	$$
+	\]
 	
-	Consider a sequence $(X_n)_{n\in \mathbb{N}}$ of independent random variables that follow the same probability law, integrable, i.e. $E(|X_0|)<+\infty$.
+	Consider a sequence \((X_n)_{n\in \mathbb{N}}\) of independent random variables that follow the same probability law, integrable, i.e. \(E(|X_0|)<+\infty\).
 	
-	Using the notations, the \textbf{strong law of large numbers} specifies that $(Y_n)_{n\in\mathbb{N}}$ converges to $E(X)$ \og{} almost surely\fg{}.
+	Using the notations, the \textbf{strong law of large numbers} specifies that \((Y_n)_{n\in\mathbb{N}}\) converges to \(E(X)\) \enquote{salmost surely}.
 	%
-	$$
+	\[
 	\mathbb{P}\left(\lim_{n \to +\infty} Y_n = E(X)\right)=1
-	$$
-	Consider the sum $S_n = X_1 + X_2 + \cdots + X_n$.
-	$$   
+	\]
+	Consider the sum \(S_n = X_1 + X_2 + \cdots + X_n\).
+	\[   
 	Z_n\ =\ \frac{S_n - n \mu}{\sigma \sqrt{n}}\ =\ \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}},
-	$$
+	\]
 	
-	the expectation and the standard deviation of $Z_n$ are respectively 0 and 1: the variable is thus said to be centered and reduced.
+	the expectation and the standard deviation of \(Z_n\) are respectively 0 and 1: the variable is thus said to be centered and reduced.
 	
-	The \textbf{central limit theorem} then states that the distribution of $Z_n$ converges in law to the reduced centered normal distribution $\mathcal{N} (0 , 1)$ as $n$ tends to infinity. This means that if $\Phi$ is the distribution function of $\mathcal{N} (0 , 1)$, then for any real number $z$ :
-	$$
+	The \textbf{central limit theorem} then states that the distribution of \(Z_n\) converges in law to the reduced centered normal distribution \(\mathcal{N} (0 , 1)\) as \(n\) tends to infinity. This means that if \(\Phi\) is the distribution function of \(\mathcal{N} (0 , 1)\), then for any real number \(z\) :
+	\[
 	\lim_{n \to \infty} \mbox{P}(Z_n \le z) = \Phi(z),
-	$$
+	\]
 	or, equivalently :
-	$$
+	\[
 	\lim_{n\to\infty}\mbox{P}\left(\frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}\leq z\right)=\Phi(z)
-	$$
+	\]
 \end{f}
 \hrule
 
 \begin{f}[Multidimensional variables]
 			
 			
-A probability law is said to be \textbf{multidimensional}, or $n-$dimensional, when the law describes several (random) values of a random phenomenon.
-The multidimensional character thus appears during the transfer, by a random variable, of the probabilistic space $(\Omega,\mathcal{A})$ to a numerical space $E^n$ of dimension $n$.
+A probability law is said to be \textbf{multidimensional}, or \(n-\)dimensional, when the law describes several (random) values of a random phenomenon.
+The multidimensional character thus appears during the transfer, by a random variable, of the probabilistic space \((\Omega,\mathcal{A})\) to a numerical space \(E^n\) of dimension \(n\).
 
-Let $X$ be a random variable on the probability space $(\Omega, \mathcal A, \mathbb{P})$, with values in ${\mathbb{R}}^n$ equipped with the real Borel tribe product ${\mathcal {B}(\mathbb{R})}^{\otimes n}$.
-The law of the random variable $X$ is the probability measure $\mathbb{P}_X$ defined by~:
-$$
+Let \(X\) be a random variable on the probability space \((\Omega, \mathcal A, \mathbb{P})\), with values in \({\mathbb{R}}^n\) equipped with the real Borel tribe product \({\mathcal {B}(\mathbb{R})}^{\otimes n}\).
+The law of the random variable \(X\) is the probability measure \(\mathbb{P}_X\) defined by~:
+\[
 \mathbb{P}_X(B) = \mathbb{P}\big(X^{-1}(B)\big) = \mathbb{P}(X \in B).
-$$
-for everything $B \in {\mathcal B(\mathbb R)}^{\otimes n}$.
+\]
+for everything \(B \in {\mathcal B(\mathbb R)}^{\otimes n}\).
 
-The Cramer-Wold theorem ensures that the ($n-$dimensional) law of this random vector is entirely determined by the (one-dimensional) laws of all linear combinations of these components:
-$$\sum_{i = 1}^n a_i X_i\mbox{ for all }a_1, a_2, \dots, a_n$$
+The Cramer-Wold theorem ensures that the (\(n-\)dimensional) law of this random vector is entirely determined by the (one-dimensional) laws of all linear combinations of these components:
+\[\sum_{i = 1}^n a_i X_i\mbox{ for all }a_1, a_2, \dots, a_n\]
 
 
 \end{f}
 \hrule
 
 \begin{f}[Marginal law]
-The probability distribution of the $i^e$ coordinate of a random vector is called the $i^e$ marginal distribution. The \textbf{marginal distribution} $\mathbb{P}_i$ of $\mathbb{P}$ is obtained by the formula :
-$$
+The probability distribution of the \(i^{th}\) coordinate of a random vector is called the \(i^{th}\) marginal distribution. The \textbf{marginal distribution} \(\mathbb{P}_i\) of \(\mathbb{P}\) is obtained by the formula :
+\[
 \mathbb{P}_i(B) = \mathbb{P}_{X_i}(B) = \iint { \mathds{1}}_{\omega_i\in B} \mathbb{P}(\mathrm{d}(\omega_1,\dots,\omega_n)), \forall  B \in \mathcal B(\mathbb{R}).
-$$
+\]
 The marginal laws of an absolutely continuous law are expressed using their marginal densities.
 
 
-The conditional density function $X_2$ given the value $x_1$ of $X_1$, can be written~:
-$$
+The conditional density function \(X_2\) given the value \(x_1\) of \(X_1\), can be written~:
+\[
 f_{X_2}(x_2 \mid X_1=x_1) = \frac{f_{X_1, X_2}(x_1,x_2)}{f_{X_1}(x_1)}, 
-$$
+\]
 
-$$
+\[
 f_{X_2}(x_2 \mid X_1=x_1)f_{X_1}(x_1) = f_{X_1,X_2}(x_1, x_2) = f_{X_1}(x_1 \mid X_2=x_2)f_{X_2}(x_2). 
-$$
+\]
 \end{f}
 \hrule
 
 	\begin{f}[Independence]
-$(X_1, X_2, \dots,X_n)$ is a family of \textbf{independent random variables} if one of the following two conditions is met :
-$$
+\((X_1, X_2, \dots,X_n)\) is a family of \textbf{independent random variables} if one of the following two conditions is met :
+\[
 \forall (A_1,\dots,A_n)\in\mathcal{E}_1\times\dots\times\mathcal{E}_n
-$$
-$$
+\]
+\[
 \mathbb{P}(X_1\in A_1\text{ and }X_2\in A_2\dots\text{ and }X_n\in A_n)\ =\ \prod_{i=1}^n\mathbb{P}(X_i\in A_i),
-$$
+\]
 we have equality
-$$
+\[
 \mathbb{E}\left[\prod_{i=1}^n\ \varphi_i(X_i)\right]\ =\ \prod_{i=1}^n\mathbb{E}\left[\varphi_i(X_i)\right],
-$$
-for any sequence of functions $\varphi_i$ defined on $(E_i,\mathcal{E}_i)$, with values in $\mathbb{R}$, as soon as the above expectations make sense.
-$$
+\]
+for any sequence of functions \(\varphi_i\) defined on \((E_i,\mathcal{E}_i)\), with values in \(\mathbb{R}\), as soon as the above expectations make sense.
+\[
 f_X(x)= \prod_{i=1}^{n}f_{X_i}(x_i)
-$$
+\]
 \end{f}
 \hrule
 
 
 
 \begin{f}[Perfect dependence in dimension 2]
-Let $F_1,F_2$ be distribution functions $\mathbb{R}\rightarrow [0,1]$.
+Let \(F_1,F_2\) be distribution functions \(\mathbb{R}\rightarrow [0,1]\).
 
-The \textbf{Fréchet classes} $\mathcal{F}_{(F_1,F_2)}$ group together the set of distribution functions $\mathbb{R}^2\rightarrow [0,1]$
-whose marginal laws are precisely $F_1,F_2$.
+The \textbf{Fréchet classes} \(\mathcal{F}_{(F_1,F_2)}\) group together the set of distribution functions \(\mathbb{R}^2\rightarrow [0,1]\)
+whose marginal laws are precisely \(F_1,F_2\).
 	
-For every $F \in \mathcal{F} (F_1,F_2)$, and for all $x$ in $\mathbb{R}^d$
-$$
+For every \(F \in \mathcal{F} (F_1,F_2)\), and for all \(x\) in \(\mathbb{R}^d\)
+\[
 F^-(\boldsymbol{x})\leq F (\boldsymbol{x})\leq F^+(\boldsymbol{x})
-$$
-où $F^+(\boldsymbol{x}) = \min \{F_1(x_1),F_2(x_2)\}$, et 
-$F^-(\boldsymbol{x}) = \max\{0,F_1(x_1) +F_2(x_2)-1\}$.
+\]
+où \(F^+(\boldsymbol{x}) = \min \{F_1(x_1),F_2(x_2)\}\), et 
+\(F^-(\boldsymbol{x}) = \max\{0,F_1(x_1) +F_2(x_2)-1\}\).
 
 
 
 \begin{enumerate}
-	\item The pair $\boldsymbol{X}=(X_1,X_2)$ is said to be comonotonic if and only if it admits $F^+$ as a distribution function.
-	\item The pair $\boldsymbol{X}=(X_1,X_2)$ is said to be antimonotonic if and only if it admits $F^-$ as a distribution function.
+	\item The pair \(\boldsymbol{X}=(X_1,X_2)\) is said to be comonotonic if and only if it admits \(F^+\) as a distribution function.
+	\item The pair \(\boldsymbol{X}=(X_1,X_2)\) is said to be antimonotonic if and only if it admits \(F^-\) as a distribution function.
 \end{enumerate}
 
-The pair $\boldsymbol{X}=(X_1,X_2)$ is said to be \textbf{comonotone} (\textbf{antimonotone}) if there exist non-decreasing (non-increasing) functions $g_1$ and $g_2$ of a random variable $Z$ such that
-$$
+The pair \(\boldsymbol{X}=(X_1,X_2)\) is said to be \textbf{comonotone} (\textbf{antimonotone}) if there exist non-decreasing (non-increasing) functions \(g_1\) and \(g_2\) of a random variable \(Z\) such that
+\[
 \boldsymbol{X}=(g_1(Z),g_2(Z))
-$$
+\]
 \end{f}
 \hrule
 
 \begin{f}[The Gaussian vector]
-A vector $X=(X_1,\cdots, X_n)$ is said to be a \textbf{Gaussian vector}, with law $\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})$, when any linear combination $\sum_{j=1}^{n}\alpha_jX_j$ of its components is the univariate normal law. % (avec la convention de $\mathcal{N}(\mu, \sigma))$
-In particular, each component $X_1,\cdots, X_n$ is of normal distribution.
+A vector \(X=(X_1,\cdots, X_n)\) is said to be a \textbf{Gaussian vector}, with law \(\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})\), when any linear combination \(\sum_{j=1}^{n}\alpha_jX_j\) of its components is the univariate normal law. % (avec la convention de \(\mathcal{N}(\mu, \sigma))\)
+In particular, each component \(X_1,\cdots, X_n\) is of normal distribution.
 \begin{tikzpicture}[scale=0.8]
 	\def\mua{2}
 	\def\mub{1.5}
@@ -283,15 +283,15 @@ In particular, each component $X_1,\cdots, X_n$ is of normal distribution.
 		domain         = -1:4,
 		y domain       = -1:4,
 		samples        = 26,
-		xlabel         = {$x_1$},
-		ylabel         = {$x_2$},
+		xlabel         = {\(x_1\)},
+		ylabel         = {\(x_2\)},
 		zlabel         = {},
 		colorbar,
 		colorbar style = {
 			at     = {(1.1,0)},
 			anchor = south west,
 			height = 0.25*\pgfkeysvalueof{/pgfplots/parent axis height},
-			title  = {\ \ \ \ \ \ $f_{X_1,X_2}(x_1,x_2)$}
+			title  = {\ \ \ \ \ \ \(f_{X_1,X_2}(x_1,x_2)\)}
 		}
 		]
 		\addplot3 [surf] {Normale2(\x,\y,\mua,\sigmaa,\mub,\sigmab,-0.6)};
@@ -303,23 +303,23 @@ In particular, each component $X_1,\cdots, X_n$ is of normal distribution.
 		\draw [black!50] (axis cs:-1,0,0) -- (axis cs:4,0,0);
 		\draw [black!50] (axis cs:0,-1,0) -- (axis cs:0,4,0);
 		%
-		\node at (axis cs:-1,4,-0.15) [pin=165:$f_{X_1}(x_1)$] {};
-		\node at (axis cs:0,4,0.1) [pin=-15:$f_{X_2}(x_2)$] {};
+		\node at (axis cs:-1,4,-0.15) [pin=165:\(f_{X_1}(x_1)\)] {};
+		\node at (axis cs:0,4,0.1) [pin=-15:\(f_{X_2}(x_2)\)] {};
 	\end{axis}
 \end{tikzpicture}
 
 
 \begin{itemize}
-	\item $\boldsymbol{\mu}$ of $\mathbb{R}^N$ its location,
-	\item  $\boldsymbol{\Sigma}$ positive semi-definite of $\mathcal{M}_N(\mathbb{R})$, its variance-covariance.
+	\item \(\boldsymbol{\mu}\) of \(\mathbb{R}^N\) its location,
+	\item  \(\boldsymbol{\Sigma}\) positive semi-definite of \(\mathcal{M}_N(\mathbb{R})\), its variance-covariance.
 \end{itemize} 
 
-If $\boldsymbol{\Sigma}$ is well defined positive, therefore invertible, then
-% $f_{\left(\boldsymbol{\mu},\boldsymbol{\Sigma}\right)} :\mathbb{R}^N \to \mathbb{R}$ :
-$$
+If \(\boldsymbol{\Sigma}\) is well defined positive, therefore invertible, then
+% \(f_{\left(\boldsymbol{\mu},\boldsymbol{\Sigma}\right)} :\mathbb{R}^N \to \mathbb{R}\) :
+\[
 f_{\left(\boldsymbol{\mu},\boldsymbol{\Sigma}\right)}\left(\boldsymbol{x}\right)= \frac{1} {(2\pi)^{N/2} \left| \boldsymbol{\Sigma}\right|^{1/2}}e^{ -\frac{1}{2}\left(\boldsymbol{x}-\boldsymbol{\mu}\right)^\top\boldsymbol{\Sigma}^{-1}\left(\boldsymbol{x}-\boldsymbol{\mu}\right) }.
-$$
-where $\left| \boldsymbol{\Sigma}\right|$ is the determinant of $\boldsymbol{\Sigma}$.
+\]
+where \(\left| \boldsymbol{\Sigma}\right|\) is the determinant of \(\boldsymbol{\Sigma}\).
 
 \end{f}
 \hrule
@@ -327,22 +327,22 @@ where $\left| \boldsymbol{\Sigma}\right|$ is the determinant of $\boldsymbol{\Si
 \begin{f}[Three measures of connection (correlations)]
 
 The coefficient of \textbf{Pearson linear correlation} is called the value
-$$
+\[
 \rho_P = \frac{\sigma_{xy}}{\sigma_x \sigma_y}
-$$
-where $\sigma_{xy}$ denotes the covariance between the variables $x$ and $y$, and $\sigma_x$, $\sigma_y$ their standard deviation.
-$\rho$ takes its values in $[-1,1]$ (application of the Cauchy-Schwartz theorem).
+\]
+where \(\sigma_{xy}\) denotes the covariance between the variables \(x\) and \(y\), and \(\sigma_x\), \(\sigma_y\) their standard deviation.
+\(\rho\) takes its values in \([-1,1]\) (application of the Cauchy-Schwartz theorem).
 
-$X\bot Y \Rightarrow \rho_P=0$, Attention, $\rho_P=0 \nRightarrow X\bot Y $. 
+\(X\bot Y \Rightarrow \rho_P=0\), Attention, \(\rho_P=0 \nRightarrow X\bot Y \). 
 
 
  
 
 \textbf{Kendall's tau} is defined by
-$$
+\[
 \tau_K=\mathbb{P}((X-X')(Y-Y')>0)-P((X-X')(Y-Y')<0)
-$$
-where $(X,Y)$  $(X',Y')$ are two independent pairs with the same joint density. This corresponds to the probability of the concordants reduced by that of the discordants :
+\]
+where \((X,Y)\)  \((X',Y')\) are two independent pairs with the same joint density. This corresponds to the probability of the concordants reduced by that of the discordants :
 \begin{align*}
 \tau_K	=&\mathbb{P}\left(\operatorname{sgn}(X-X')=\mathbb{P}(\operatorname{sgn}(Y-Y')\right)-\\
 		&\mathbb{P}\left(\operatorname{sgn}(X-X')\neq \operatorname{sgn}(Y-Y')\right)\\
@@ -351,92 +351,92 @@ where $(X,Y)$  $(X',Y')$ are two independent pairs with the same joint density. 
 =&4\mathbb{P}(X<X',Y<Y')-1 
 \end{align*}
 
-The correlation coefficient \textbf{Spearman's rho} of $(X,Y)$ is defined as the Pearson correlation coefficient of the ranks of the random variables $X$ and $Y$.
-For a sample $n$, the $n$ values $X_i$, $Y_i$ are converted by their ranks $x_i$, $y_i$, and $\rho$ is calculated~:
-$$
+The correlation coefficient \textbf{Spearman's rho} of \((X,Y)\) is defined as the Pearson correlation coefficient of the ranks of the random variables \(X\) and \(Y\).
+For a sample \(n\), the \(n\) values \(X_i\), \(Y_i\) are converted by their ranks \(x_i\), \(y_i\), and \(\rho\) is calculated~:
+\[
 \rho_S = \frac{1/n\,\sum_i(x_i-\mathbb{E}[x])(y_i-\mathbb{E}[y])}{\sqrt{1/n\,\sum_i (x_i-\mathbb{E}[x])^2 \times 1/n\sum_i(y_i-\mathbb{E}[y])^2}}.
-$$
-Si on note $x_i= R(X_i)$ de 1 à $N$ et  $d_i = x_i - y_i$~:
-$$    \rho_S = 1- {\frac {6 \sum_i d_i^2}{n(n^2 - 1)}}$$
+\]
+Si on note \(x_i= R(X_i)\) de 1 à \(N\) et  \(d_i = x_i - y_i\)~:
+\[    \rho_S = 1- {\frac {6 \sum_i d_i^2}{n(n^2 - 1)}}\]
 
 \end{f}
 \hrule
 
 \begin{f}[Copula]
-A \textbf{copula} is a distribution function, denoted $\mathcal{C}$, defined on $[0,1]^d$ whose margins are uniform on $[0,1]$. 
-A characterization is then that $\mathcal{C}(u_1,...,u_d)=0$ if one of the components $u_i$ is zero, $\mathcal{C}(1,...,1,u_i,1,...,1)=u_i$, and $\mathcal{C}$ is $d-$increasing.
+A \textbf{copula} is a distribution function, denoted \(\mathcal{C}\), defined on \([0,1]^d\) whose margins are uniform on \([0,1]\). 
+A characterization is then that \(\mathcal{C}(u_1,...,u_d)=0\) if one of the components \(u_i\) is zero, \(\mathcal{C}(1,...,1,u_i,1,...,1)=u_i\), and \(\mathcal{C}\) is \(d-\)increasing.
 \medskip
 		
-Let $F^{(d)}$ be a distribution function in dimension $d$ where the $F_i$ are the marginal laws of $F$. 
+Let \(F^{(d)}\) be a distribution function in dimension \(d\) where the \(F_i\) are the marginal laws of \(F\). 
 
-\textbf{Sklar's theorem} states that $F^{(d)}$ has a copula representation~:
-$$
+\textbf{Sklar's theorem} states that \(F^{(d)}\) has a copula representation~:
+\[
 F^{(d)} (x_1,...,x_d) = \mathcal{C} (F_1(x_1),...,F_d(x_d))
-$$
-If these marginal laws are all continuous, the copula $\mathcal{C}$ is then unique, and given by the relation 
-$$
+\]
+If these marginal laws are all continuous, the copula \(\mathcal{C}\) is then unique, and given by the relation 
+\[
 \mathcal{C}(u_1,...,u_d)=F^{(d)}(F_1^{-1} (u_1),...,F_d^{-1} (u_d))
-$$
-In this case, we can then speak of the copula associated with a random vector $(X_1,...,X_d)$.
+\]
+In this case, we can then speak of the copula associated with a random vector \((X_1,...,X_d)\).
 This theorem is very important since we can separate the distribution margin part from the dependence part.
 \medskip
 	
-The \textbf{Gaussian Copula} is a distribution on the unit cube of dimension $d$, $[0,1]^d$.
-It is constructed on the basis of a normal law of dimension $d$ on $\mathbb{R}^d$.
+The \textbf{Gaussian Copula} is a distribution on the unit cube of dimension \(d\), \([0,1]^d\).
+It is constructed on the basis of a normal law of dimension \(d\) on \(\mathbb{R}^d\).
 
-Given the correlation matrix $\Sigma\in\mathbb{R}^{d\times d}$, the Gaussian copula with parameter $\Sigma$ can be written~:
-$$
+Given the correlation matrix \(\Sigma\in\mathbb{R}^{d\times d}\), the Gaussian copula with parameter \(\Sigma\) can be written~:
+\[
 \mathcal{C}_\Sigma^{Gauss}(u) = \Phi_\Sigma\left(\Phi^{-1}(u_1),\dots, \Phi^{-1}(u_d) \right), 
-$$
-where $\Phi^{-1}$ is the inverse distribution function of the standard normal distribution and $\Phi_\Sigma$ is the joint distribution of a normal distribution of dimension $d$, with zero mean and covariance matrix equal to the correlation matrix $\Sigma$.
+\]
+where \(\Phi^{-1}\) is the inverse distribution function of the standard normal distribution and \(\Phi_\Sigma\) is the joint distribution of a normal distribution of dimension \(d\), with zero mean and covariance matrix equal to the correlation matrix \(\Sigma\).
 \medskip	
 
-	A copula $\mathcal{C}$ is called \textbf{Archimedean} if it admits the following representation~:
-$$
+	A copula \(\mathcal{C}\) is called \textbf{Archimedean} if it admits the following representation~:
+\[
 \mathcal{C}(u_1,\dots,u_d) = \psi^{-1}\left(\psi(u_1)+\dots+\psi(u_d)\right)\,
-$$
-where $\psi$ is then called \textbf{generator}.
+\]
+where \(\psi\) is then called \textbf{generator}.
 
-Often, copulas admit an explicit formulation of $\mathcal{C}$. 
-A single parameter allows to accentuate the dependence of the entire copula, whatever its dimension $d$.
+Often, copulas admit an explicit formulation of \(\mathcal{C}\). 
+A single parameter allows to accentuate the dependence of the entire copula, whatever its dimension \(d\).
 
 
-This formula provides a copula if and only if $\psi\,$ is $d$-monotonic on $[0,\infty)$ \emph{i.e.} the $k^e$ derivative of $\psi\,$ satisfies
-$$
+This formula provides a copula if and only if \(\psi\,\) is \(d\)-monotonic on \([0,\infty)\) \emph{i.e.} the \(k^{th}\) derivative of \(\psi\,\) satisfies
+\[
 (-1)^k\psi^{(k)}(x) \geq 0
-$$
-for all $x\geq 0$ and $k=0,1,\dots,d-2$ and $(-1)^{d-2}\psi^{d-2}(x)$ is non-increasing and convex.
+\]
+for all \(x\geq 0\) and \(k=0,1,\dots,d-2\) and \((-1)^{d-2}\psi^{d-2}(x)\) is non-increasing and convex.
 \medskip
 
-The following generators are all monotone, i.e. $d$-monotone for all $d\in\mathbb{N}$.
+The following generators are all monotone, i.e. \(d\)-monotone for all \(d\in\mathbb{N}\).
 
 \footnotesize
 \renewcommand\arraystretch{1.3}
 \begin{tabular}{|m{10mm}|ccc|}	\rowcolor{BleuProfondIRA!40} 
 	\hline
- Name 		& Generator $\psi^{-1}(t)$, 	& $\psi(t)$ &	Setting\\
+ Name 		& Generator \(\psi^{-1}(t)\), 	& \(\psi(t)\) &	Setting\\
 	\hline
-	Ali-Mikhail-Haq 	&$\frac{1-\theta}{\exp(t)-\theta} $	
-	&$\log\left(\frac{1-\theta+\theta t}{t}\right)$ 	
-	&$\theta\in[0,1)$\\
-	Clayton		&$\left(1+\theta t\right)^{-1/\theta} 	$
-	&$\frac1\theta\,(t^{-\theta}-1)\, 	$
-	&$\theta\in(0,\infty)$\\
-	Frank 		&$-\frac{1}{\theta}\exp(-t)$
-	&$-\log\left(\frac{\exp(-\theta t)-1}{\exp(-\theta)-1}\right)$
-	&$\theta\in(0,\infty)$\\
-	&$\times\log(1-(1-\exp(-\theta)))$
+	Ali-Mikhail-Haq 	&\(\frac{1-\theta}{\exp(t)-\theta} \)	
+	&\(\log\left(\frac{1-\theta+\theta t}{t}\right)\) 	
+	&\(\theta\in[0,1)\)\\
+	Clayton		&\(\left(1+\theta t\right)^{-1/\theta} 	\)
+	&\(\frac1\theta\,(t^{-\theta}-1)\, 	\)
+	&\(\theta\in(0,\infty)\)\\
+	Frank 		&\(-\frac{1}{\theta}\exp(-t)\)
+	&\(-\log\left(\frac{\exp(-\theta t)-1}{\exp(-\theta)-1}\right)\)
+	&\(\theta\in(0,\infty)\)\\
+	&\(\times\log(1-(1-\exp(-\theta)))\)
 	&
 	&\\
-	Gumbel 		&$\exp\left(-t^{1/\theta}\right) $	
-	&$\left(-\log(t)\right)^\theta$	
-	&$\theta\in[1,\infty)$\\
-	$\perp$ 	&$\exp(-t)\,$
-	&$-\log(t)\,$ 	
+	Gumbel 		&\(\exp\left(-t^{1/\theta}\right) \)	
+	&\(\left(-\log(t)\right)^\theta\)	
+	&\(\theta\in[1,\infty)\)\\
+	\(\perp\) 	&\(\exp(-t)\,\)
+	&\(-\log(t)\,\) 	
 	& \\
-	Joe		&$1-\left(1-\exp(-t)\right)^{1/\theta}$
-	&$-\log\left(1-(1-t)^\theta\right)$
-	&$\theta\in[1,\infty)$\\
+	Joe		&\(1-\left(1-\exp(-t)\right)^{1/\theta}\)
+	&\(-\log\left(1-(1-t)^\theta\right)\)
+	&\(\theta\in[1,\infty)\)\\
 	\hline
 \end{tabular}
 \renewcommand\arraystretch{1}
@@ -445,56 +445,56 @@ The following generators are all monotone, i.e. $d$-monotone for all $d\in\mathb
 
 \begin{f}[Brownian motion, filtration and martingales]
 	
-A \textbf{filtration} $(\mathcal{F}_t)_{t \geq 0}$ is an increasing family of $\sigma$-algebras or tribe representing the information available up to time $t$. A process $(X_t)$ is said to be \textbf{$\mathcal{F}_t$-adapted} if $X_t$ is measurable with respect to $\mathcal{F}_t$ for all $t$.
+A \textbf{filtration} \((\mathcal{F}_t)_{t \geq 0}\) is an increasing family of \(\sigma\)-algebras or tribe representing the information available up to time \(t\). A process \((X_t)\) is said to be \textbf{\(\mathcal{F}_t\)-adapted} if \(X_t\) is measurable with respect to \(\mathcal{F}_t\) for all \(t\).
 	
-A process $(B_t)_{t \geq 0}$ is a \textbf{standard Brownian motion} (or Wiener process) if it verifies :
+A process \((B_t)_{t \geq 0}\) is a \textbf{standard Brownian motion} (or Wiener process) if it verifies :
 	\begin{itemize} 
-		\item $B_0 = 0$ ;
-		\item independent increments : $B_t - B_s$  independent of $\mathcal{F}_s$ ;
-		\item stationary increments : $B_t - B_s \sim \mathcal{N}(0, t - s)$ ;
+		\item \(B_0 = 0\) ;
+		\item independent increments : \(B_t - B_s\)  independent of \(\mathcal{F}_s\) ;
+		\item stationary increments : \(B_t - B_s \sim \mathcal{N}(0, t - s)\) ;
 		\item trajectories continue almost surely.
 	\end{itemize}
 	
-	A process $(M_t)$ is a \textbf{martingale} (with respect to $\mathcal{F}_t$) if :
+	A process \((M_t)\) is a \textbf{martingale} (with respect to \(\mathcal{F}_t\)) if :
 	\[
 	\mathbb{E}[|M_t|] < \infty \quad \text{et} \quad \mathbb{E}[M_t \mid \mathcal{F}_s] = M_s \quad \forall\, 0 \leq s < t
 	\]
-	Examples : Brownian motion, stochastic integrals of the form $\int_0^t \theta_s dB_s$ (under conditions) are martingales.
+	Examples : Brownian motion, stochastic integrals of the form \(\int_0^t \theta_s dB_s\) (under conditions) are martingales.
 	\medskip
 	
-	\textbf{Quadratic variation} is denoted $
-	\langle B \rangle_t = t, \quad \langle cB \rangle_t = c^2 t$
+	\textbf{Quadratic variation} is denoted \(
+	\langle B \rangle_t = t, \quad \langle cB \rangle_t = c^2 t\)
 	
-\textbf{Covariation} : for two Itô processes $X, Y$,
+\textbf{Covariation} : for two Itô processes \(X, Y\),
 \[
 \langle X, Y \rangle_t := \lim_{\|\Pi\| \to 0} \sum_{i} (X_{t_{i+1}} - X_{t_i})(Y_{t_{i+1}} - Y_{t_i})
 \]
-convergence in probability, where $\Pi = \{t_0 = 0 < t_1 < \dots < t_n = t\}$ is a partition of $[0,t]$.
+convergence in probability, where \(\Pi = \{t_0 = 0 < t_1 < \dots < t_n = t\}\) is a partition of \([0,t]\).
 \end{f}
 
 
 \begin{f}[Itô's process and stochastic differential calculus]
 	
-A process $(X_t)$ is an \textbf{Itô process} if it can be written :
+A process \((X_t)\) is an \textbf{Itô process} if it can be written :
 	\[
 	X_t = X_0 + \int_0^t \phi_s\, ds + \int_0^t \theta_s\, dB_s
 	\]
 	or in differential
 	\[dX_t = \phi_t dt + \theta_t dB_t\]
-	with $\phi_t$, $\theta_t$ $\mathcal{F}_t$-adapted and $L^2$-integrable.
+	with \(\phi_t\), \(\theta_t\) \(\mathcal{F}_t\)-adapted and \(L^2\)-integrable.
 	
-	\textbf{Itô's formula (1D)} : for $f \in C^2(\mathbb{R})$, we have :
+	\textbf{Itô's formula (1D)} : for \(f \in C^2(\mathbb{R})\), we have :
 	\[
 	df(X_t) = f'(X_t) dX_t + \frac{1}{2} f''(X_t) d\langle X \rangle_t
 	\]
 	
-	Example : if $dXt = \mu and + \sigma dBt$ then :
+	Example : if \(dXt = \mu and + \sigma dBt\) then :
 	\[
 	dX_t^2 = 2X_t dX_t + d\langle X \rangle_t
 	\]
 	
 	\textbf{Itô's formula (multi-dimensional)} :\\
-	If $X = (X^1, \dots, X^d)$ is an Itô process, $f \in C^2(\mathbb{R}^d)$ :
+	If \(X = (X^1, \dots, X^d)\) is an Itô process, \(f \in C^2(\mathbb{R}^d)\) :
 	\[
 	df(X_t) = \sum_i \frac{\partial f}{\partial x_i}(X_t) dX^i_t
 	+ \frac{1}{2} \sum_{i,j} \frac{\partial^2 f}{\partial x_i \partial x_j}(X_t) d\langle X^i, X^j \rangle_t
@@ -515,10 +515,10 @@ A process $(X_t)$ is an \textbf{Itô process} if it can be written :
 	\]
 	or :
 	\begin{itemize}
-		\item $b(t,x)$ is the \textbf{drift} (\emph{drift}) : function $\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}$ ;
-		\item $a(t,x)$ is the \textbf{diffusion} : function $\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}$ ;
-		\item $B_t$ is a Brownian motion ;
-		\item $X_t$ is the solution, adapted stochastic process.
+		\item \(b(t,x)\) is the \textbf{drift} (\emph{drift}) : function \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\) ;
+		\item \(a(t,x)\) is the \textbf{diffusion} : function \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\) ;
+		\item \(B_t\) is a Brownian motion ;
+		\item \(X_t\) is the solution, adapted stochastic process.
 	\end{itemize}
 	
 	\textbf{Integral form} :
@@ -528,7 +528,7 @@ A process $(X_t)$ is an \textbf{Itô process} if it can be written :
 	
 	\textbf{Conditions of existence and uniqueness} :
 	\begin{itemize}
-		\item \textbf{Lipschitz} : there exists $L > 0$ such that :
+		\item \textbf{Lipschitz} : there exists \(L > 0\) such that :
 		\[
 		|b(t,x) - b(t,y)| + |a(t,x) - a(t,y)| \leq L |x - y|
 		\]
@@ -540,8 +540,8 @@ A process $(X_t)$ is an \textbf{Itô process} if it can be written :
 	
 Classic examples :
 	\begin{itemize}
-		\item \textbf{Geometric Brownian} : $dS_t = \mu S_t dt + \sigma S_t dB_t$
-		\item \textbf{Ornstein–Uhlenbeck} : $dX_t = \theta(\mu - X_t) dt + \sigma dB_t$
+		\item \textbf{Geometric Brownian} : \(dS_t = \mu S_t dt + \sigma S_t dB_t\)
+		\item \textbf{Ornstein–Uhlenbeck} : \(dX_t = \theta(\mu - X_t) dt + \sigma dB_t\)
 	\end{itemize}
 	
 	\textbf{Numerical methods} : Euler–Maruyama, Milstein.
@@ -550,21 +550,21 @@ Classic examples :
 
 \begin{f}[Risk-neutral probability]
 	
-	A probability $\mathbb{Q}$ is said to be \textbf{risk neutral} if, under $\mathbb{Q}$, 
-	any asset $S_t$ has an updated price $ \frac{S_t}{B_t}$ which is a martingale
-	where $(B_t)$ is the numerary (e.g. $B_t = e^{rt}$).
+	A probability \(\mathbb{Q}\) is said to be \textbf{risk neutral} if, under \(\mathbb{Q}\), 
+	any asset \(S_t\) has an updated price \( \frac{S_t}{B_t}\) which is a martingale
+	where \((B_t)\) is the numerary (e.g. \(B_t = e^{rt}\)).
 	
-	The absence of arbitrage $\iff \exists\, \mathbb{Q} \sim \mathbb{P}$ such that the updated prices are martingales.
+	The absence of arbitrage \(\iff \exists\, \mathbb{Q} \sim \mathbb{P}\) such that the updated prices are martingales.
 	This is the \textbf{fundamental theorem of asset pricing}.
 	
 	\textbf{Application} :\\
-	Under $\mathbb{Q}$, the value at time $t$ of an asset giving a return $H$ at date $T$ is :
+	Under \(\mathbb{Q}\), the value at time \(t\) of an asset giving a return \(H\) at date \(T\) is :
 	\[
 	S_t = B_t\, \mathbb{E}^\mathbb{Q} \left[ \left. \frac{H}{B_T} \right\|  \mathcal{F}_t \right]
 	\]
 	
 	\textbf{Note} :\\
-	The measure $\mathbb{Q}$ is equivalent to $\mathbb{P}$, but reflects a "risk-free" world, useful in valuation.
+	The measure \(\mathbb{Q}\) is equivalent to \(\mathbb{P}\), but reflects a "risk-free" world, useful in valuation.
 	
 \end{f}
 \newcolumn
@@ -572,23 +572,23 @@ Classic examples :
 %
 %\begin{f}[Processus stochastiques en actuariat]
 %	
-%	\textbf{Brownien standard} $W_t$ :
+%	\textbf{Brownien standard} \(W_t\) :
 %	\begin{itemize}
-%		\item $W_0 = 0$ a.s.
-%		\item $W_t$ est à accroissements indépendants et stationnaires
-%		\item $W_t - W_s \sim \mathcal{N}(0, t-s)$ pour $t > s$
+%		\item \(W_0 = 0\) a.s.
+%		\item \(W_t\) est à accroissements indépendants et stationnaires
+%		\item \(W_t - W_s \sim \mathcal{N}(0, t-s)\) pour \(t > s\)
 %		\item Trajectoires continues presque sûrement
 %	\end{itemize}
 %	
 %	\textbf{Martingale} :
-%	Un processus $(M_t)_{t \geq 0}$ adapté à une filtration $(\mathcal{F}_t)$ est une \textit{martingale} si :
+%	Un processus \((M_t)_{t \geq 0}\) adapté à une filtration \((\mathcal{F}_t)\) est une \textit{martingale} si :
 %	\[
 %	\mathbb{E}[|M_t|] < \infty \quad \text{et} \quad \mathbb{E}[M_t \mid \mathcal{F}_s] = M_s \quad \forall s < t
 %	\]
 %	
 %	\textbf{Lemme d’Itô (dimension 1)} :\\
-%	Soit $X_t$ une EDS : $\mathrm{d}X_t = \mu_t \,\mathrm{d}t + \sigma_t \,\mathrm{d}W_t$,\\
-%	et $f : \mathbb{R} \to \mathbb{R}$ de classe $C^2$, alors :
+%	Soit \(X_t\) une EDS : \(\mathrm{d}X_t = \mu_t \,\mathrm{d}t + \sigma_t \,\mathrm{d}W_t\),\\
+%	et \(f : \mathbb{R} \to \mathbb{R}\) de classe \(C^2\), alors :
 %	\[
 %	\mathrm{d}f(X_t) = f'(X_t) \,\mathrm{d}X_t + \frac{1}{2} f''(X_t) \,\sigma_t^2 \,\mathrm{d}t
 %	\]
@@ -630,55 +630,55 @@ Classic examples :
 	}
 	%
 	
-	The simulations allow in particular to approximate the expectation by the empirical average of the realizations $x_1,\ldots,x_n$:
-	$$
+	The simulations allow in particular to approximate the expectation by the empirical average of the realizations \(x_1,\ldots,x_n\):
+	\[
 	\frac{1}{n}(x_1+\ldots+x_n)\approx \int xdF(x)=\mathbb{E}[X]
-	$$
+	\]
 	Then, under the TLC, we estimate the uncertainty or confidence interval based on the normal distribution:
-	$$
+	\[
 	\left[\overline{x}-1,96\frac{S_n}{\sqrt{n}},\overline{x}+1,96\frac{S_n}{\sqrt{n}}\right]
-	$$
-	where $S_n$ unbiasedly estimates the variance of $X$~:
-	$$
+	\]
+	where \(S_n\) unbiasedly estimates the variance of \(X\)~:
+	\[
 	S_n^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\overline{x})^2
-	$$
+	\]
 	
-	convergence is said to be in $\mathcal{O}(\frac{\sigma}{\sqrt{n}})$.
+	convergence is said to be in \(\mathcal{O}(\frac{\sigma}{\sqrt{n}})\).
 	This interval allows you to decide the number of simulations to be carried out.
 \end{f}
 
-\begin{f}[Pseudo-random generator on ${[}0,1{]}^d$]
-The computer does not know how to roll the die ($\Omega=\{ \epsdice{1}, \epsdice{2}, \epsdice{3}, \epsdice{4}, \epsdice{5}, \epsdice{6} \}$).
+\begin{f}[Pseudo-random generator on \({[}0,1{]}^d\)]
+The computer does not know how to roll the die (\(\Omega=\{ \epsdice{1}, \epsdice{2}, \epsdice{3}, \epsdice{4}, \epsdice{5}, \epsdice{6} \}\)).
 It generates a pseudo-randomness, that is to say a deterministic algorithm which resembles a random event.
-Generators usually produce a random number on $[0,1]^d$.
+Generators usually produce a random number on \([0,1]^d\).
 If the initial value (\emph{seed}) is defined or identified, the following draws are known and replicable.
 
 
 The simplest algorithm is called the method of linear congruences.
-$$
+\[
 x_{n+1}=\Phi(x_n)= (a\times x_n+c) \mod m
-$$ \small
-each $x_n$ is an integer between 0 and $m-1$.
-$a$ the multiplier, $c$ the increment, and $m$ the modulus of the form $2^p-1$, that is to say a Mersenne prime number ( $ p $ necessarily prime) :
+\] \small
+each \(x_n\) is an integer between 0 and \(m-1\).
+\(a\) the multiplier, \(c\) the increment, and \(m\) the modulus of the form \(2^p-1\), that is to say a Mersenne prime number ( \( p \) necessarily prime) :
 
-Marsaglia generator: $a=69069, b=0, m=2^{32}$
+Marsaglia generator: \(a=69069, b=0, m=2^{32}\)
 
-Knuth\&Lewis generator: $a=1664525, b=1013904223, m=2^{32}$
+Knuth\&Lewis generator: \(a=1664525, b=1013904223, m=2^{32}\)
 
-Haynes Generator: $a=6364136223846793005, b=0, m=2^{64}$
+Haynes Generator: \(a=6364136223846793005, b=0, m=2^{64}\)
 
-%Le générateur de Tausworthe est une extension du générateur congruentiel linéaire qui consiste à ne  plus utiliser seulement $x_{╔n-1}$ pour fabriquer un nouvel élément mais plutôt un ensemble de valeurs précédentes
+%Le générateur de Tausworthe est une extension du générateur congruentiel linéaire qui consiste à ne  plus utiliser seulement \(x_{╔n-1}\) pour fabriquer un nouvel élément mais plutôt un ensemble de valeurs précédentes
 The Tausworth generator constitutes an 'autoregressive' extension:
-$$
+\[
 x_{n}=(a_{1}\times x_{n-1}+a_{2}\times x_{n-2}+\cdots +a_{k}\times x_{n-k}) \mod m \text{ with } n\geq k
-$$
-The generator period is $m^k-1$, with all $a_i$ relatively prime. If $m$ is of the form $2^p$ , machine computation times are reduced.
+\]
+The generator period is \(m^k-1\), with all \(a_i\) relatively prime. If \(m\) is of the form \(2^p\) , machine computation times are reduced.
 
 
-The default random generator is usually the Mersenne-Twister algorithm. It is based on a linear recurrence on a matrix $F_{2}$ (matrix whose values are in base 2, i.e. 0 or 1). 
+The default random generator is usually the Mersenne-Twister algorithm. It is based on a linear recurrence on a matrix \(F_{2}\) (matrix whose values are in base 2, i.e. 0 or 1). 
 Its name comes from the fact that the length of the period chosen is a Mersenne prime number.
 \begin{enumerate}
-	\item     its period is $2^{19937}-1 $
+	\item     its period is \(2^{19937}-1 \)
 	\item     it is uniformly distributed over a large number of dimensions (623 for 32-bit numbers) ;
 	\item     it is faster than most other generators ,
 	\item     it is random regardless of the weight of the bit considered, and passes Diehard tests.
@@ -688,9 +688,9 @@ Its name comes from the fact that the length of the period chosen is a Mersenne 
 
 \begin{f}[Simulate a random variable]
 	
-Simulating $X$ of any law $F_X$ often comes down to simulating $\left(p_i\right)_{i\in [1,n]}$ of law $\mathcal{U}ni(0,1)$.
+Simulating \(X\) of any law \(F_X\) often comes down to simulating \(\left(p_i\right)_{i\in [1,n]}\) of law \(\mathcal{U}ni(0,1)\).
 
-\textbf{ If $F_X$ is invertible},  $x_i=F^{-1}_X(p_i)$ (or quantile function) delivers $\left(x_i\right)_{i\in [1,n]}$ a set of $n$ simulations of law $F_X$.
+\textbf{ If \(F_X\) is invertible},  \(x_i=F^{-1}_X(p_i)\) (or quantile function) delivers \(\left(x_i\right)_{i\in [1,n]}\) a set of \(n\) simulations of law \(F_X\).
 			
 	\begin{center}
 		%\tikzmath{
@@ -713,14 +713,14 @@ Simulating $X$ of any law $F_X$ often comes down to simulating $\left(p_i\right)
 			
 			
 			\draw[color=blue] plot [domain=-1:6] ({\x}, {normcdf(\x,\m, \s)})
-			node[right] {\color{blue} $F_X(x)$};;
+			node[right] {\color{blue} \(F_X(x)\)};;
 			
 			% Add dashed line dropping down from normal.
-			\draw[dashed] (0,{\fz}) node[left] {$p_i$};
-			\draw[dashed,->]   (0,{\fz}) -- ({\z},{\fz}) -- ({\z},0) node[below] {$x_i=F^{-1}(p_i)$};
+			\draw[dashed] (0,{\fz}) node[left] {\(p_i\)};
+			\draw[dashed,->]   (0,{\fz}) -- ({\z},{\fz}) -- ({\z},0) node[below] {\(x_i=F^{-1}(p_i)\)};
 			
 			% Optional: Add axis labels 
-			\draw (6,0) node[below] {$x$};
+			\draw (6,0) node[below] {\(x\)};
 			
 			% Optional: Add axes
 			\draw[->] (-1.2,0) -- (6.2,0) node[right] {};
@@ -729,28 +729,28 @@ Simulating $X$ of any law $F_X$ often comes down to simulating $\left(p_i\right)
 		\end{tikzpicture}
 	\end{center}	
 	
-If it is a discrete variable ($F^{-1}$ does not exist) $X_\ell=\min_{\ell} F(X_\ell)> p_i$, where $ \left(X_{\ell}\right)_{\ell}$ is the countable set of possible values, ordered in ascending order.
+If it is a discrete variable (\(F^{-1}\) does not exist) \(X_\ell=\min_{\ell} F(X_\ell)> p_i\), where \( \left(X_{\ell}\right)_{\ell}\) is the countable set of possible values, ordered in ascending order.
 
-In the \textbf{change of variable} method, we assume that we know how to simulate a law $X$, and that there exists $\phi$ such that $Y=\varphi(X)$ follows a law $F_Y$. The natural example is that of $X\sim \mathcal{N}(0,1)$ and making the change $Y=\exp(X)$ to obtain Y which follows a lognormal law.
+In the \textbf{change of variable} method, we assume that we know how to simulate a law \(X\), and that there exists \(\phi\) such that \(Y=\varphi(X)\) follows a law \(F_Y\). The natural example is that of \(X\sim \mathcal{N}(0,1)\) and making the change \(Y=\exp(X)\) to obtain Y which follows a lognormal law.
 
-\textbf{The rejection method} is used in more complex cases, for example when $F^{-1}$ is not explicit or requires a lot of computation time.
-Let $f$ be a probability density function. Assume that there exists a probability density $g$ such that :
-$$
+\textbf{The rejection method} is used in more complex cases, for example when \(F^{-1}\) is not explicit or requires a lot of computation time.
+Let \(f\) be a probability density function. Assume that there exists a probability density \(g\) such that :
+\[
 {\displaystyle \exists K>0\ ,\ \forall x\in \mathbb {R} \ ,\ f(x)\leq Kg(x)}
-$$
-We then simulate $Z$ according to the density law $g$, and ${\displaystyle Y\sim {\mathcal {U}}([0;Kg(Z)])} $.
-Then the random variable ${\displaystyle X=\lbrace Z|Y\leq f(Z)\rbrace } $ follows the density law $f$.
+\]
+We then simulate \(Z\) according to the density law \(g\), and \({\displaystyle Y\sim {\mathcal {U}}([0;Kg(Z)])} \).
+Then the random variable \({\displaystyle X=\lbrace Z|Y\leq f(Z)\rbrace } \) follows the density law \(f\).
 
 
 
 \begin{tikzpicture}[domain=-4:10,scale=0.6]
 	%   \draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
-	\draw[->] (-4.2,0) -- (10.2,0) node[right] {$x$};
-	\draw[->] (0,0) -- (0,6) node[above] {$f(x)$};
+	\draw[->] (-4.2,0) -- (10.2,0) node[right] {\(x\)};
+	\draw[->] (0,0) -- (0,6) node[above] {\(f(x)\)};
 	\draw[BleuProfondIRA] (-4,0) -- (-4,6) ;
 	\draw[BleuProfondIRA] (10,0) -- (10,6) ;
-	\draw[name path=melange,color=OrangeProfondIRA,smooth] plot ({\x},{20*normal(\x,2,2)+10*normal(\x,6,1)}) node[below=.5,left] {$f(x)$ , normal law mixture};
-	\draw[name path=g,color=BleuProfondIRA,smooth] plot  ({\x},{60*normal(\x,3,3)})   node[above=3.5,left] {$K\times g(x)$, normal distribution density };
+	\draw[name path=melange,color=OrangeProfondIRA,smooth] plot ({\x},{20*normal(\x,2,2)+10*normal(\x,6,1)}) node[below=.5,left] {\(f(x)\) , normal law mixture};
+	\draw[name path=g,color=BleuProfondIRA,smooth] plot  ({\x},{60*normal(\x,3,3)})   node[above=3.5,left] {\(K\times g(x)\), normal distribution density };
 	\tikzfillbetween[of=melange and g,on layer=main]{BleuProfondIRA, opacity=0.1};
 \end{tikzpicture}
 
@@ -767,7 +767,7 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 \textbf{Convergence} :
 \begin{itemize}[nosep]
 	\item By the \textbf{law of large numbers}, the estimator converges almost surely to the expected value.
-	\item By the \textbf{central limit theorem}, the standard error is in $\mathcal{O}(N^{-1/2})$ :
+	\item By the \textbf{central limit theorem}, the standard error is in \(\mathcal{O}(N^{-1/2})\) :
 	\[
 	\sqrt{N}(\hat{\mu}_N - \mu) \xrightarrow{d} \mathcal{N}(0, \sigma^2)
 	\]
@@ -776,12 +776,12 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 
 \textbf{Variance reduction techniques} :
 \begin{itemize}
-	\item \textbf{Antithetical variables} : we simulate $X$ and $-X$ (or $1-U$ if $U \sim \mathcal{U}[0,1]$), then we average the results. Reduction is efficient if $f$ is monotone.
-	\item \textbf{Control method} : if $\mathbb{E}[Y]$ is known, we simulate $(f(X), Y)$ and correct :
+	\item \textbf{Antithetical variables} : we simulate \(X\) and \(-X\) (or \(1-U\) if \(U \sim \mathcal{U}[0,1]\)), then we average the results. Reduction is efficient if \(f\) is monotone.
+	\item \textbf{Control method} : if \(\mathbb{E}[Y]\) is known, we simulate \((f(X), Y)\) and correct :
 	\[
 	\hat{\mu}_\text{corr} = \hat{\mu} - \beta(\bar{Y} - \mathbb{E}[Y])
 	\]
-	where $\beta$ optimal minimizes the variance.
+	where \(\beta\) optimal minimizes the variance.
 	\item \textbf{Stratification} : we divide the simulation space into strata (subsets), and we simulate proportionally in each stratum.
 	\item \textbf{Importance sampling} : we modify the simulation law to accentuate rare events, then we reweight :
 	\[
@@ -795,43 +795,43 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 	
 	The \textbf{bootstrap} is a \textit{resampling} method for estimating the uncertainty of an estimator without assuming a parametric form for the underlying distribution.
 	
-	Let $\xi = (X_1, X_2, \ldots, X_n)$ be a sample of iid variables following an unknown distribution $F$. We seek to estimate a statistic $\theta = T(F)$ (e.g. mean, median, variance), via its empirical estimator $\hat{\theta} = T(\hat{F}_n)$.
+	Let \(\xi = (X_1, X_2, \ldots, X_n)\) be a sample of iid variables following an unknown distribution \(F\). We seek to estimate a statistic \(\theta = T(F)\) (e.g. mean, median, variance), via its empirical estimator \(\hat{\theta} = T(\hat{F}_n)\).
 	
 	\begin{enumerate}
-		\item We approximate $F$ by the empirical distribution function :
+		\item We approximate \(F\) by the empirical distribution function :
 		\[
 		\hat{F}_n(x) = \frac{1}{n} \sum_{k=1}^n \mathbf{1}_{\{X_k \le x\}}
 		\]
 		
-		\item We generate $B$ bootstrap samples $\xi^{\ast(b)} = (X_1^{\ast(b)}, \ldots, X_n^{\ast(b)})$ by drawing \textbf{with replacement} from the initial sample.
+		\item We generate \(B\) bootstrap samples \(\xi^{\ast(b)} = (X_1^{\ast(b)}, \ldots, X_n^{\ast(b)})\) by drawing \textbf{with replacement} from the initial sample.
 		
-		\item For each simulated sample, we calculate the estimate $T^{\ast(b)} = T(\hat{F}_n^{\ast(b)})$.
+		\item For each simulated sample, we calculate the estimate \(T^{\ast(b)} = T(\hat{F}_n^{\ast(b)})\).
 	\end{enumerate}
 	
-	The realizations $T^{\ast(1)}, \ldots, T^{\ast(B)}$ form an approximation of the distribution of the estimator $\hat{\theta}$.
+	The realizations \(T^{\ast(1)}, \ldots, T^{\ast(B)}\) form an approximation of the distribution of the estimator \(\hat{\theta}\).
 	
 	We can deduce from this:
 	\begin{itemize}[nosep]
-		\item an estimated bias : $\widehat{\text{bias}} = \overline{T^\ast} - \hat{\theta}$ ;
-		\item a \textbf{confidence interval} at $(1-\alpha)$ : $[q_{\alpha/2},\ q_{1 - \alpha/2}]$ of the empirical quantiles of $T^{\ast(b)}$ ;
-		\item an estimate of the \textbf{variance} : $\widehat{\mathrm{Var}}(T^\ast)$.
+		\item an estimated bias : \(\widehat{\text{bias}} = \overline{T^\ast} - \hat{\theta}\) ;
+		\item a \textbf{confidence interval} at \((1-\alpha)\) : \([q_{\alpha/2},\ q_{1 - \alpha/2}]\) of the empirical quantiles of \(T^{\ast(b)}\) ;
+		\item an estimate of the \textbf{variance} : \(\widehat{\mathrm{Var}}(T^\ast)\).
 	\end{itemize}
 	
-	\textbf{Note}: Bootstrapping is particularly useful when the distribution of $T$ is unknown or difficult to estimate analytically.
+	\textbf{Note}: Bootstrapping is particularly useful when the distribution of \(T\) is unknown or difficult to estimate analytically.
 	
 \end{f}
 \begin{f}[Parametric Bootstrap]
 	
-	The \textbf{parametric bootstrap} is based on the assumption that the data follow a parameterized family of laws $\{F_\theta\}$.
+	The \textbf{parametric bootstrap} is based on the assumption that the data follow a parameterized family of laws \(\{F_\theta\}\).
 	
-	Let $\xi = (X_1, \ldots, X_n)$ be an $iid$ sample according to an unknown $F_\theta$ distribution. We proceed as follows:
+	Let \(\xi = (X_1, \ldots, X_n)\) be an \(iid\) sample according to an unknown \(F_\theta\) distribution. We proceed as follows:
 	\begin{enumerate}
-		\item Estimate the parameter $\hat{\theta}$ from $\xi$ (e.g. by maximum likelihood).
-		\item Generate $B$ samples $\xi^{\ast(b)}$ of size $n$, simulated according to the law $F_{\hat{\theta}}$.
-		\item Calculate $T^{\ast(b)} = T(\xi^{\ast(b)})$ for each sample.
+		\item Estimate the parameter \(\hat{\theta}\) from \(\xi\) (e.g. by maximum likelihood).
+		\item Generate \(B\) samples \(\xi^{\ast(b)}\) of size \(n\), simulated according to the law \(F_{\hat{\theta}}\).
+		\item Calculate \(T^{\ast(b)} = T(\xi^{\ast(b)})\) for each sample.
 	\end{enumerate}
 	
-	This method approximates the distribution of the estimator $T(\xi)$ assuming the shape of $F$ is known. It is more efficient than the nonparametric bootstrap if the model assumption is well specified. The parametric bootstrap is faster, but inherits the biases of the model.
+	This method approximates the distribution of the estimator \(T(\xi)\) assuming the shape of \(F\) is known. It is more efficient than the nonparametric bootstrap if the model assumption is well specified. The parametric bootstrap is faster, but inherits the biases of the model.
 	
 \end{f}
 
@@ -841,11 +841,11 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 	
 	\textbf{Principle} :
 	\begin{itemize}
-		\item Divide the data into $K$ blocks (or folds).
-		\item For each $k = 1,\ldots,K$ :
+		\item Divide the data into \(K\) blocks (or folds).
+		\item For each \(k = 1,\ldots,K\) :
 		\begin{itemize}
-			\item Train the model on the other $K-1$ blocks.
-			\item Evaluate the performance (error, log-likelihood...) on the $k$-th block.
+			\item Train the model on the other \(K-1\) blocks.
+			\item Evaluate the performance (error, log-likelihood...) on the \(k\)-th block.
 		\end{itemize}
 		\item Aggregate the errors to obtain an overall estimate of out-of-sample performance.
 	\end{itemize}
@@ -859,23 +859,23 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 	\[
 	\mathcal{O}\left( \frac{(\ln N)^s}{N} \right)
 	\]
-	where $N$ is the sample size and $s$ the dimension of the problem.
+	where \(N\) is the sample size and \(s\) the dimension of the problem.
 	
-	These methods rely on the use of \textbf{low-discrepancy} sequences in $[0,1]^s$. The star discrepancy, denoted $D^*_N(P)$ for a set of points $P = \{x_1, \ldots, x_N\}$, measures the maximum difference between the proportion of points contained in rectangles \emph{anchored to the origin} and their volume. It is defined by :
+	These methods rely on the use of \textbf{low-discrepancy} sequences in \([0,1]^s\). The star discrepancy, denoted \(D^*_N(P)\) for a set of points \(P = \{x_1, \ldots, x_N\}\), measures the maximum difference between the proportion of points contained in rectangles \emph{anchored to the origin} and their volume. It is defined by :
 	\[
 	D^*_N(P) = \sup_{u \in [0,1]^s} \left| \frac{1}{N} \sum_{i=1}^N \mathbf{1}_{[0,u)}(x_i) - \lambda_s([0,u)) \right|
 	\]
 	with :
 	\begin{itemize}
-		\item $[0,u) = \prod_{j=1}^s [0, u_j)$ a rectangle anchored at the origin in $[0,1]^s$,
-		\item $\mathbf{1}_{[0,u)}(x_i)$ the indicator of the membership of $x_i$ to this rectangle,
-		\item $\lambda_s([0,u)) = \prod_{j=1}^s u_j$ the volume of this rectangle.
+		\item \([0,u) = \prod_{j=1}^s [0, u_j)\) a rectangle anchored at the origin in \([0,1]^s\),
+		\item \(\mathbf{1}_{[0,u)}(x_i)\) the indicator of the membership of \(x_i\) to this rectangle,
+		\item \(\lambda_s([0,u)) = \prod_{j=1}^s u_j\) the volume of this rectangle.
 	\end{itemize}
 	A low discrepancy means that the points are well distributed in space, which improves the convergence of the estimate.
 	
 	\medskip
 	\textbf{Van der Corput sequence (dimension 1)} :
-	Let $n$ be an integer. We write it in base $b$ :
+	Let \(n\) be an integer. We write it in base \(b\) :
 	\[
 	n = \sum_{k=0}^{L-1} d_k(n)\, b^k
 	\]
@@ -883,26 +883,26 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 	\[
 	g_b(n) = \sum_{k=0}^{L-1} d_k(n)\, b^{-k-1}
 	\]
-	For example, for $b = 5$ and $n = 146$, we have $146 = (1\,0\,4\,1)_5$, so :
+	For example, for \(b = 5\) and \(n = 146\), we have \(146 = (1\,0\,4\,1)_5\), so :
 	\[
 	g_5(146) = \frac{1}{5^4} + \frac{0}{5^3} + \frac{4}{5^2} + \frac{1}{5} = 0{,}3616
 	\]
 	
 	\medskip
-	\textbf{Halton sequence (dimension $s$)} :
-	We generalize the van der Corput sequence using $s$ distinct prime integer bases $b_1, \dots, b_s$ :
+	\textbf{Halton sequence (dimension \(s\))} :
+	We generalize the van der Corput sequence using \(s\) distinct prime integer bases \(b_1, \dots, b_s\) :
 	\[
 	x(n) = \big( g_{b_1}(n), \dots, g_{b_s}(n) \big)
 	\]
-	This construction provides a sequence of points well distributed in $[0,1]^s$.
+	This construction provides a sequence of points well distributed in \([0,1]^s\).
 	
 	\medskip
 	\textbf{Koksma–Hlawka inequality}\\
-	For a function $f$ of finite variation $V(f)$ (in the Hardy–Krause sense) on $[0,1]^s$ :
+	For a function \(f\) of finite variation \(V(f)\) (in the Hardy–Krause sense) on \([0,1]^s\) :
 	\[
 	\left| \int_{[0,1]^s} f(u)\, du - \frac{1}{N} \sum_{i=1}^N f(x_i) \right| \leq V(f)\, D_N
 	\]
-	where $D_N$ is the discrepancy of the sequence used.
+	where \(D_N\) is the discrepancy of the sequence used.
 	
 This bound explains why quasi-Monte Carlo methods are often more efficient than Monte Carlo methods.
 	

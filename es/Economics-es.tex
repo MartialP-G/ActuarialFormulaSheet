@@ -99,7 +99,7 @@ Inversement, la \textbf{prime compensatoire} \(\tilde{\pi}\) est le montant que 
 	\end{itemize}
 	
 	Un agent averse au risque préfère une combinaison \(Z = \alpha A + (1 - \alpha) B\), avec \(0 < \alpha < 1\), à l’actif risqué seul.
-	Si  $u$ est concave, alors
+	Si  \(u\) est concave, alors
 	\[
 	\mathbb{E}[u(Z)] > \mathbb{E}[u(A)]
 	\]
@@ -209,51 +209,51 @@ Inversement, la \textbf{prime compensatoire} \(\tilde{\pi}\) est le montant que 
 
 \begin{f}[Demande d’assurance (Mosin)]
 	
-Un agent possède un patrimoine initial \(w\) et fait face à une perte aléatoire \(L\). Il existe une \textbf{demande d'assurance} pour l'assurance qui verse l'indemnité $0<I(L)<L$ ssi $u(w-\pi_I) \geq \mathbb{E}(u(w-L))$ et l'\textbf{assurance optimale} maximise $u(w-\pi_I)$.
+Un agent possède un patrimoine initial \(w\) et fait face à une perte aléatoire \(L\). Il existe une \textbf{demande d'assurance} pour l'assurance qui verse l'indemnité \(0<I(L)<L\) ssi \(u(w-\pi_I) \geq \mathbb{E}(u(w-L))\) et l'\textbf{assurance optimale} maximise \(u(w-\pi_I)\).
 
-Dans Mosin (1968) ou  Borch (1961) ou Smith (1968), le modèle de perte $L$ se définit simplement par  $s$ compris entre 0 et  \(w\) :
-	$$
+Dans Mosin (1968) ou  Borch (1961) ou Smith (1968), le modèle de perte \(L\) se définit simplement par  \(s\) compris entre 0 et  \(w\) :
+	\[
 	L=\left\{\begin{array}{l}
 		0 \text { avec proba. } 1-p \\
 		s \text { avec proba. } p
 	\end{array}\right.
-	$$
-La prime devient $\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) p I(s)$ avec $\lambda$ un chargement. On note $\pi$ le cas où $I(L)=L$ avec  $\pi= p s$. Si $\lambda=0$, alors on parle de prime pure ou actuariellement juste. 
+	\]
+La prime devient \(\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) p I(s)\) avec \(\lambda\) un chargement. On note \(\pi\) le cas où \(I(L)=L\) avec  \(\pi= p s\). Si \(\lambda=0\), alors on parle de prime pure ou actuariellement juste. 
 \medskip
 
 \textbf{Coassurance} (partage du risque) :
- $I(l)=\alpha l$ sachant $L=l$ pour $\alpha \in[0,1]$, $\pi_I(\alpha)=\alpha \pi$ et :
-$$
+ \(I(l)=\alpha l\) sachant \(L=l\) pour \(\alpha \in[0,1]\), \(\pi_I(\alpha)=\alpha \pi\) et :
+\[
 w_{f}=w-L+I(L)-\pi(\alpha)=w-L+\alpha L-\alpha \pi=w-(1-\alpha) L-\alpha \pi
-$$
-$$
+\]
+\[
 U(\alpha)%=\mathbb{E}(u(w-(1-\alpha) L-\alpha \pi))
 =(1-p) u(w-\alpha \pi)+p u(w-(1-\alpha) s-\alpha \pi)
-$$
+\]
 
-L'assurance partielle ($\alpha^{\star}<1$) est optimale ssi $\lambda>0$. L'assurance totale ($\alpha^{\star}=1$ ) est optimale si le chargement est nul.
+L'assurance partielle (\(\alpha^{\star}<1\)) est optimale ssi \(\lambda>0\). L'assurance totale (\(\alpha^{\star}=1\) ) est optimale si le chargement est nul.
 \medskip
 
 \textbf{L'assurance avec franchise} (part d'autoassurance):
-Avec franchise $d$ l'assureur verse une indemnité $I(l)=(l-d)_{+}$ sachant $L=l$. 
-$$
+Avec franchise \(d\) l'assureur verse une indemnité \(I(l)=(l-d)_{+}\) sachant \(L=l\). 
+\[
 \pi(d)=(1+\lambda) E\left((L-d)_{+}\right)=(1+\lambda)(s-d) p
-$$
-$$
+\]
+\[
 w_{f}=w-X+(L-d)_{+}-\pi(d)=w-\min (X, d)-(1+\lambda)(s-d) p
-$$
-$$
+\]
+\[
 U(d)=(1-p) u(\underbrace{w+(1+\lambda)(d-s) p}_{w_{f}^{+}})+p u(\underbrace{w-d+(1+\lambda)(d-s) p}_{w_{f}^{-}}) .
-$$
-Dans le modèle avec franchise, l'assurance partielle ($d^{\star}>0$) est optimale ssi la prime n'est pas actuariellement juste. De même,  l'assurance totale ( $d^{\star}=0$ ) est optimale si le chargement est nul.
+\]
+Dans le modèle avec franchise, l'assurance partielle (\(d^{\star}>0\)) est optimale ssi la prime n'est pas actuariellement juste. De même,  l'assurance totale ( \(d^{\star}=0\) ) est optimale si le chargement est nul.
 \medskip
 
 \textbf{Modèle généralisé :}
-Le risque de perte $L>0$ aléatoire est définit sur $\Re$, avec fonction de répartition $F_L$ ), 
+Le risque de perte \(L>0\) aléatoire est définit sur \(\Re\), avec fonction de répartition \(F_L\) ), 
 
-$$
+\[
 \pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) \int_{0}^{\infty} I(l) d F_{L}(l)
-$$
+\]
 
 
 
@@ -273,26 +273,26 @@ $$
 
 \begin{f}[Information et assurance]
 	
-	\textbf{Mosin avec hétérogénéïté :} Deux types d'individus : $H$ pour haut risque et $Lo$ pour faible risque. $\theta \in[0,1]$ la proportion d'individu $H$. Les individus de type $i \in\{Lo, H\}$ font face à un risque de même montant $s$  survenant avec une probabilité différente $p_{i}$ telle que $1>p_{H}>p_{Lo}>0$.
+	\textbf{Mosin avec hétérogénéïté :} Deux types d'individus : \(H\) pour haut risque et \(Lo\) pour faible risque. \(\theta \in[0,1]\) la proportion d'individu \(H\). Les individus de type \(i \in\{Lo, H\}\) font face à un risque de même montant \(s\)  survenant avec une probabilité différente \(p_{i}\) telle que \(1>p_{H}>p_{Lo}>0\).
 	
-	$$
+	\[
 	L_{i}=\left\{\begin{array}{l}
 		0 \text { avec probabilité } 1-p_{i}, \\
 		s \text { avec probabilité } p_{i} .
 	\end{array}\right.
-	$$
+	\]
 La probabilité du marché :
-	$$
+	\[
 	p_{m}=\theta p_{H}+(1-\theta) p_{Lo} .
-	$$
+	\]
 \medskip
 
-\textbf{Absence d'antisélection :}  Dans ce modèle, en présence d'information totale, l'assureur préfère une assurance individuelle $I_{i}=s$ et $\pi_{i}=s p_{i}$, $\forall i$.
+\textbf{Absence d'antisélection :}  Dans ce modèle, en présence d'information totale, l'assureur préfère une assurance individuelle \(I_{i}=s\) et \(\pi_{i}=s p_{i}\), \(\forall i\).
 
 \textbf{Le problème d'anti-sélection : }
-L'assureur propose un  contrat non individualisé du marché $M=\left(\pi_{m}=p_{m} I, I_{m}(s)=I(s)\right)$, qui ne dépend pas de $i$. La fortune finale d'un individu de type $i$ est $W_{i}^{m}=w-\pi_{m}-X_{i}+I_{m}$.
+L'assureur propose un  contrat non individualisé du marché \(M=\left(\pi_{m}=p_{m} I, I_{m}(s)=I(s)\right)\), qui ne dépend pas de \(i\). La fortune finale d'un individu de type \(i\) est \(W_{i}^{m}=w-\pi_{m}-X_{i}+I_{m}\).
 
-En présence d'un contrat unique, les individus de type $H$ préfèrent un contrat d'assurance tel que $I_{H}(s)=s$  et $\pi_{H}=s p_{m}$, tandis que les individus de type $Lo$ préfèrent une couverture partielle avec $I_{L}^{\star}<s$ et $\pi_{Lo}=I_{L}^{\star} p_{m}$.
+En présence d'un contrat unique, les individus de type \(H\) préfèrent un contrat d'assurance tel que \(I_{H}(s)=s\)  et \(\pi_{H}=s p_{m}\), tandis que les individus de type \(Lo\) préfèrent une couverture partielle avec \(I_{L}^{\star}<s\) et \(\pi_{Lo}=I_{L}^{\star} p_{m}\).
 \medskip
 
 \textbf{Aléa moral :}
@@ -302,29 +302,29 @@ L'assurer réduit ou interrompt ses efforts maintenant qu'il est assuré. Les ef
 	\item protection réduisent le montant de sinistre.
 \end{itemize}
 
- En l'absence d'effort $e$ de prévention ou de réduction du risque, la fortune finale $w_{f}$ est simplement définie par
+ En l'absence d'effort \(e\) de prévention ou de réduction du risque, la fortune finale \(w_{f}\) est simplement définie par
 
-$$
+\[
 \begin{cases}w_{f}^{-}=w-s-\pi(I)+I & \text { avec probabilité } p \\ w_{f}^{+}=w-\pi(I) & \text { avec probabilité } 1-p\end{cases}
-$$
+\]
 
-S'il y a un effort $e$ de prévention des risques, on considère
+S'il y a un effort \(e\) de prévention des risques, on considère
 
-$$
+\[
 \begin{cases}w_{f}^{-}=w-s-\pi(I)+I-e & \text { avec probabilité } p(e) \\ w_{f}^{+}=w-\pi(I)-e & \text { avec probabilité } 1-p(e)\end{cases}
-$$
+\]
 
-S'il y a un effort $e$ de protection des risques, on considère
+S'il y a un effort \(e\) de protection des risques, on considère
 
-$$
+\[
 \begin{cases}w_{f}^{-}=w-s(e)-\pi(I)+I-e & \text { avec probabilité } p \\ w_{f}^{+}=w-\pi(I)-e & \text { avec probabilité } 1-p\end{cases}
-$$
+\]
 
 avec
 \begin{itemize}
-	\item $e \mapsto p(e)$ est strictement décroissante et strictement convexe.
-	\item $e \mapsto s(e)$ est strictement décroissante et strictement convexe.\\
-	\item $I \leq s$ implique $w_{f}^{-} \leq w_{f}^{+}$
+	\item \(e \mapsto p(e)\) est strictement décroissante et strictement convexe.
+	\item \(e \mapsto s(e)\) est strictement décroissante et strictement convexe.\\
+	\item \(I \leq s\) implique \(w_{f}^{-} \leq w_{f}^{+}\)
 \end{itemize}
 
 \end{f}

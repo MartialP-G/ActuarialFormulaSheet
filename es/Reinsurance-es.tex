@@ -51,7 +51,7 @@ d'une \textbf{prime de réassurance}.
 \textbf{Réassurance en quote-part (\emph{Quota Share}) :} type de réassurance proportionnelle où le  réassureur participe à un pourcentage donné de tous les risques souscrits par un assureur direct dans une branche déterminée.
 
 \textbf{Réassurance en excédent de plein (\emph{Surplus Share}) :} type de réassurance proportionnelle où le  réassureur couvre les risques au delà du plein de
-conservation de l'assureur direct. Ce ratio se calcul sur la capacité du risque souscrit ($\approx$ Sinistre maximal possible).
+conservation de l'assureur direct. Ce ratio se calcul sur la capacité du risque souscrit (\(\approx\) Sinistre maximal possible).
 
 \textbf{Commission de réassurance :} rémunération que le réassureur accorde à l'assureur ou aux courtiers en dédommagement des frais d'acquisition et de gestion des contrats d'assurance.
 
@@ -110,10 +110,10 @@ La réassurance permet d'augmenter la capacité d'émission d'affaires, assurer 
 
 \begin{f}[Les types de réassurance à travers un exemple]
 	
-Notre assureur réassure $N=30$ polices d'assurance, d'un total de  primes est de 10M\EUR{} ($P=\sum_{i=1\ldots N}P_i$).
-La capacité totale est de180M\EUR{} ($\sum_{i=1\ldots30}K_i$).
-$S_r$ sera la part totale de sinistre pris en charge par l'assureur et $P_r$ la prime totale de réassurance.
-Voici les $n=8$ polices sinistrées ($1\geq i \geq n$), les sinistres des autres polices  étant  nuls ($S_i=0, \forall i>n$) :
+Notre assureur réassure \(N=30\) polices d'assurance, d'un total de  primes est de 10M\EUR{} (\(P=\sum_{i=1\ldots N}P_i\)).
+La capacité totale est de180M\EUR{} (\(\sum_{i=1\ldots30}K_i\)).
+\(S_r\) sera la part totale de sinistre pris en charge par l'assureur et \(P_r\) la prime totale de réassurance.
+Voici les \(n=8\) polices sinistrées (\(1\geq i \geq n\)), les sinistres des autres polices  étant  nuls (\(S_i=0, \forall i>n\)) :
 	
 	\begin{center}\footnotesize
 		\renewcommand{\arraystretch}{1.25}
@@ -127,7 +127,7 @@ Voici les $n=8$ polices sinistrées ($1\geq i \geq n$), les sinistres des autres
 		\renewcommand{\arraystretch}{1}
 	\end{center}
 	
-	Le $S/P$ est de 240\%.
+	Le \(S/P\) est de 240\%.
 	
 	
 	\begin{center}
@@ -153,10 +153,10 @@ Voici les $n=8$ polices sinistrées ($1\geq i \geq n$), les sinistres des autres
 
 
 \textbf{Quote-part:}
-$$
+\[
 S_r=\alpha \sum_{i=1\ldots n}S_i\quad \ \ P_r=\alpha\sum_{i=1\ldots N}P_i 
-$$
-où $\alpha\ \in [0,1]$ (25\% dans la figure) est la part cédé en  Quote-part.
+\]
+où \(\alpha\ \in [0,1]\) (25\% dans la figure) est la part cédé en  Quote-part.
 	
 	%\setlength{\tabcolsep}{1cm}
 
@@ -201,10 +201,10 @@ où $\alpha\ \in [0,1]$ (25\% dans la figure) est la part cédé en  Quote-part.
 \end{center}
 \medskip
 
-\textbf{Excédent de plein}, le plein est noté $\boldsymbol{K}$ (2M\EUR{} dans l'exemple), $\alpha_i$ représente le taux de cession de la police $i$.
-	$$
+\textbf{Excédent de plein}, le plein est noté \(\boldsymbol{K}\) (2M\EUR{} dans l'exemple), \(\alpha_i\) représente le taux de cession de la police \(i\).
+	\[
 	S_r= \sum_{i=1\ldots n}\underbrace{\left(\frac{\left(K_i-\boldsymbol{K} \right)_+ }{K_i} \right)}_{\alpha_i} S_i\quad \ \ P_r=\sum_{i=1\ldots N}\left(\frac{\left(K_i-\boldsymbol{K} \right)_+ }{K_i} \right)P_i 
-	$$
+	\]
 	%\renewcommand{\arraystretch}{1.25}
 	%\rowcolors{1}{sectionColor}{white}
 	%\setlength{\tabcolsep}{1cm}
@@ -265,11 +265,11 @@ où $\alpha\ \in [0,1]$ (25\% dans la figure) est la part cédé en  Quote-part.
 	%\rowcolors{1}{sectionColor}{white}
 	%\setlength{\tabcolsep}{1cm}
 	
-L'assureur fixe la priorité $a$ et la porté $b$ (respectivement 2M\EUR{} et  4M\EUR{} dans la figure).
-$$
+L'assureur fixe la priorité \(a\) et la porté \(b\) (respectivement 2M\EUR{} et  4M\EUR{} dans la figure).
+\[
 S_r= \sum_{i=1\ldots n} \min\left( \left( S_i-a\right)^+,b\right)  
-$$
-La prime est fixée par le réassurance, en fonction de son estimation de $\mathbb{E}[S_r]$.
+\]
+La prime est fixée par le réassurance, en fonction de son estimation de \(\mathbb{E}[S_r]\).
 %\begin{tabular}{|l|rrrrrrrr|}
 %	\hline
 %	\rowcolor{BleuProfondIRA!40}        Num de sinistre		& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline \hline
@@ -320,11 +320,11 @@ La prime est fixée par le réassurance, en fonction de son estimation de $\math
 	%\rowcolors{1}{sectionColor}{white}
 	%\setlength{\tabcolsep}{1cm}
 	
-	$$
+	\[
 	S_r= \sum_{\begin{array}{c}
 			Cat_j,\\ i=1\ldots N
 	\end{array}} \min\left( \mathds{1}_{i\in Cat_j}\times \left( S_i-a\right)^+,b\right)  
-	$$
+	\]
 	
 	Dans l'illustration, les sinistres font référence à un seul événement, avec une priorité à 5M\EUR{}  et une portée à 10M\EUR{}.
 	
@@ -402,28 +402,28 @@ La prime est fixée par le réassurance, en fonction de son estimation de $\math
 	
 	
 Cette  réassurance (\emph{Stop Loss}) intervient lorsque le cumul des pertes annuelles est dégradé. 
-Il s'exprime sur la base du ratio $S/P$ avec une priorité et une porté du $XL$ exprimées en \%.
+Il s'exprime sur la base du ratio \(S/P\) avec une priorité et une porté du \(XL\) exprimées en \%.
 	
-$$
+\[
 S_r= \min\left( \left( \sum_{i=1\ldots N} S_i - a  P\right)^+,bP\right)  
-$$
+\]
 
 \end{f}
 \hrule
 	
 \begin{f}[Les principales clauses en réassurance]
 
-\textbf{La franchise} $a^{ag}$ et la \textbf{limite aggregate}  $b^{ag}$  s'appliquent après le calcul du $S_r$. 
+\textbf{La franchise} \(a^{ag}\) et la \textbf{limite aggregate}  \(b^{ag}\)  s'appliquent après le calcul du \(S_r\). 
 
-$$
+\[
 S_r^{ag} = \min\left( \left(S_r - a^{ag}  \right)^+,b^{ag}\right)  
-$$
+\]
 \medskip
 
 L'objectif de la \textbf{clause d'indexation} est de conserver les \underline{modalités du traité} sur plusieurs exercices successifs.  Les bornes du traité s'alignent sur un indice économique (salaire, devise, indice de prix ...).
 \medskip
 
-Avec \textbf{clause de stabilisation}, lorsque le sinistre souffre d'un \underline{règlement long}, voire très long (au moins $\geq 1$ an), les bornes du traité sont actualisées dans le calcul du $S_r$ afin que les parts respectives du réassureur et de la cédante prévues initialement soient globalement respectées.
+Avec \textbf{clause de stabilisation}, lorsque le sinistre souffre d'un \underline{règlement long}, voire très long (au moins \(\geq 1\) an), les bornes du traité sont actualisées dans le calcul du \(S_r\) afin que les parts respectives du réassureur et de la cédante prévues initialement soient globalement respectées.
 \medskip
 	
 
@@ -435,16 +435,16 @@ Avec la \textbf{clause de partage des intérêts}, si lors d'une transaction ou 
 
 La \textbf{clause de reconstitution de garantie}
 concerne uniquement les \emph{traités en excédent de sinistre par risque ou par événement} qui pourraient être déclenchée à plusieurs reprises dans l'année.
-Le réassureur \underline{limite sa prestation à $N $ fois la portée} de l'$XS$, contre le versement d'une prime complémentaire. 
+Le réassureur \underline{limite sa prestation à \(N \) fois la portée} de l'\(XS\), contre le versement d'une prime complémentaire. 
 La reconstitution peut se faire au prorata temporis (temps qui reste à courir jusqu'à la date
 d'échéance du traité) ou au prorata des capitaux absorbés, ou les deux (double proata). 
 
 La \textbf{clause de superposition}
 (\emph{Interlocking Clause})
- est utilisée dans les traités en $XS$ par évènement,
+ est utilisée dans les traités en \(XS\) par évènement,
 qui fonctionnent par exercice de souscription et non \underline{par exercice de survenance}.
 La clause de
-superposition qui aura pour effet de recalculer les bornes du traité, parce qu'un même évènement peut déclencher le traité des souscriptions $n$ et $N-1$.
+superposition qui aura pour effet de recalculer les bornes du traité, parce qu'un même évènement peut déclencher le traité des souscriptions \(n\) et \(N-1\).
 \end{f}
 \hrule
 
@@ -465,7 +465,7 @@ Elle gère également pour le compte de l'État certains Fonds Publics, en parti
 
 \begin{f}[Titrisation / CatBonds]
 \label{CatBond}
-Pourquoi ? Les capacités financières de tous les assureurs et réassureurs réunies ne  couvrent pas les dégâts d'un tremblement de terre majeur aux État Unis ($\geq$ 200 Md\EUR{}). 
+Pourquoi ? Les capacités financières de tous les assureurs et réassureurs réunies ne  couvrent pas les dégâts d'un tremblement de terre majeur aux État Unis (\(\geq\) 200 Md\EUR{}). 
 Cette somme correspond  à moins de 1\% de la capitalisation sur les marchés financiers américains. 
 
 La \textbf{titrisation} transforme un risque assuranciel en titre négociable, souvent en titres obligataires appelés \textbf{Cat-Bonds}. 
@@ -483,15 +483,15 @@ Le déclencheur peut être liés directement aux résultats de la cédente (Inde
 \hline \rowcolor{BleuProfondIRA!40}
 \textbf{Critère} & \textbf{Indem\-nitaire} & \textbf{Indice} & \textbf{Paramé\-trique} & \textbf{Modèle} \\
 \hline
-Transparence & $\ominus$ & $\oplus$ & $\oplus$ & $\oplus$ \\
+Transparence & \(\ominus\) & \(\oplus\) & \(\oplus\) & \(\oplus\) \\
 \hline
-Risque de base & $\oplus$ & $\ominus$ & $\ominus$ & $\oplus$ \\
+Risque de base & \(\oplus\) & \(\ominus\) & \(\ominus\) & \(\oplus\) \\
 \hline
-Aléa moral & $\ominus$ & $\oplus$ & $\oplus$ & $\oplus$ \\
+Aléa moral & \(\ominus\) & \(\oplus\) & \(\oplus\) & \(\oplus\) \\
 \hline
-Universalité des périls & $\oplus$ & $\oplus$ & $\ominus$ & $\oplus$ \\
+Universalité des périls & \(\oplus\) & \(\oplus\) & \(\ominus\) & \(\oplus\) \\
 \hline
-Délai de déclenchement & $\ominus$ & $\ominus$ & $\oplus$ & $\oplus$ \\
+Délai de déclenchement & \(\ominus\) & \(\ominus\) & \(\oplus\) & \(\oplus\) \\
 \hline
 \end{tabular}
 \end{center}	\renewcommand{\arraystretch}{1}

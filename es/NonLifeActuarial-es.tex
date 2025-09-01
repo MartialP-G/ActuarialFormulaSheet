@@ -95,17 +95,17 @@ Une structure classique des données en assurance. Là encore, les possibles son
 %	\draw[ BleuProfondIRA] (D.south) -- ++(0,-1);
 %	\draw[ BleuProfondIRA] (E.south) -| ++(0,-1);
 %	\draw[ BleuProfondIRA] (F.south) -- ++(0,-0.1) -| ++(-1,-0.9);
-%	\draw[thick,<->,>=latex,OrangeProfondIRA] ($(A.south) +(0,-1)$) -- ($(B.south) +(0,-1)$) node [below, midway] {\footnotesize Not reported} ;
-%	\draw[thick,<->,>=latex,BleuProfondIRA] ($(B.south) +(0,-1)$) -- ($(D.south) +(0,-1)$) node [below, midway] {\footnotesize Open} ;
-%	\draw[thick,<->,>=latex,BleuProfondIRA] ($(B.south) +(0,-1)$) -- ($(D.south) +(0,-1)$) node [below, midway] {\footnotesize Open} ;
-%	\draw[thick,<->,>=latex,GrisLogoIRA] ($(C.south) +(0,-1.6)$) -- ($(D.south) +(0,-1.6)$) node [below, midway] {\footnotesize Partially paid} ;
-%	\draw[thick,<->,>=latex,GrisLogoIRA] ($(C.south) +(0,-1.6)$) -- ($(C.south) +(-1,-1.6)$) node [below, midway] {\footnotesize Not Paid} ;
-%	\draw[thick,<->,>=latex,GrisLogoIRA] ($(B.south) +(0,-1.6)$) -- ($(C.south) +(-1,-1.6)$) node [below, midway] {\footnotesize Not Valued} ;
-%	\draw[very thick,<->,>=latex,FushiaIRA] ($(D.south) +(0,-2.2)$) -- ($(C.south) +(-1,-2.2)$) node [below, midway] {\footnotesize Reserved};
-%	\draw[thick,<->,>=latex,VertIRA] ($(D.south) +(0,-1)$) -- ($(E.south) +(0,-1)$) node [below, midway] {\footnotesize  Closed} ;
-%	\draw[thick,<->,>=latex,OrangeProfondIRA,densely dotted] ($(E.south) +(0,-1)$) -- ($(F.south) +(-1,-1)$) node [below, midway,align=right] 
+%	\draw[thick,<->,>=latex,OrangeProfondIRA] (\((A.south) +(0,-1)\)) -- (\((B.south) +(0,-1)\)) node [below, midway] {\footnotesize Not reported} ;
+%	\draw[thick,<->,>=latex,BleuProfondIRA] (\((B.south) +(0,-1)\)) -- (\((D.south) +(0,-1)\)) node [below, midway] {\footnotesize Open} ;
+%	\draw[thick,<->,>=latex,BleuProfondIRA] (\((B.south) +(0,-1)\)) -- (\((D.south) +(0,-1)\)) node [below, midway] {\footnotesize Open} ;
+%	\draw[thick,<->,>=latex,GrisLogoIRA] (\((C.south) +(0,-1.6)\)) -- (\((D.south) +(0,-1.6)\)) node [below, midway] {\footnotesize Partially paid} ;
+%	\draw[thick,<->,>=latex,GrisLogoIRA] (\((C.south) +(0,-1.6)\)) -- (\((C.south) +(-1,-1.6)\)) node [below, midway] {\footnotesize Not Paid} ;
+%	\draw[thick,<->,>=latex,GrisLogoIRA] (\((B.south) +(0,-1.6)\)) -- (\((C.south) +(-1,-1.6)\)) node [below, midway] {\footnotesize Not Valued} ;
+%	\draw[very thick,<->,>=latex,FushiaIRA] (\((D.south) +(0,-2.2)\)) -- (\((C.south) +(-1,-2.2)\)) node [below, midway] {\footnotesize Reserved};
+%	\draw[thick,<->,>=latex,VertIRA] (\((D.south) +(0,-1)\)) -- (\((E.south) +(0,-1)\)) node [below, midway] {\footnotesize  Closed} ;
+%	\draw[thick,<->,>=latex,OrangeProfondIRA,densely dotted] (\((E.south) +(0,-1)\)) -- (\((F.south) +(-1,-1)\)) node [below, midway,align=right] 
 %	{\footnotesize Reopen } ;
-%	\draw[thick,<->,>=latex,VertIRA] ($(F.south) +(-1,-1)$) -- ($(F.south) +(1,-1)$) node [below, midway] {\footnotesize  Closed} ;
+%	\draw[thick,<->,>=latex,VertIRA] (\((F.south) +(-1,-1)\)) -- (\((F.south) +(1,-1)\)) node [below, midway] {\footnotesize  Closed} ;
 %	%	
 %\end{tikzpicture}
 
@@ -130,8 +130,8 @@ provisions suivantes:
 
 \begin{f}[Chain Ladder déterministe]
 	%
-	Soit $C_{i k}$ le montant, cumulé jusqu'en l'année de développement $k$, des sinistres survenus en l'année d'accident $i$, pour $1 \leq i, k \leq n$. $C_{i k}$ peut représenter soit le montant payé, soit le cout total estimé (paiement déjà effectué plus réserve) du sinistre. Les montants $C_{i k}$ sont connus pour $i+k \leq n+1$ et on cherche à estimer les valeurs des $C_{i k}$ pour $i+k>n+1,$ et en particulier les valeurs ultimes $C_{i n}$ pour $2 \leq i \leq n$. Ces notations sont illustrées dans le triangle suivant:
-	%	$$
+	Soit \(C_{i k}\) le montant, cumulé jusqu'en l'année de développement \(k\), des sinistres survenus en l'année d'accident \(i\), pour \(1 \leq i, k \leq n\). \(C_{i k}\) peut représenter soit le montant payé, soit le cout total estimé (paiement déjà effectué plus réserve) du sinistre. Les montants \(C_{i k}\) sont connus pour \(i+k \leq n+1\) et on cherche à estimer les valeurs des \(C_{i k}\) pour \(i+k>n+1,\) et en particulier les valeurs ultimes \(C_{i n}\) pour \(2 \leq i \leq n\). Ces notations sont illustrées dans le triangle suivant:
+	%	\[
 	%	C=\left(\begin{array}{ccccc}
 		%	\rowcolor{white}	C_{1,1} & C_{1,2} & \cdots & C_{1, n-1} & C_{1, n} \\
 		%	\rowcolor{white}	C_{2,1} & C_{2,2} & \cdots & C_{2, n-1} & \\
@@ -139,16 +139,16 @@ provisions suivantes:
 		%	\rowcolor{white}	C_{n-1,1} & C_{n-1,2} & & &  \\
 		%	\rowcolor{white}	C_{n, 1} & & & 
 		%	\end{array}\right)
-	%	$$
+	%	\]
 	
-	La méthode de Chain Ladder estime les montants inconnus, $C_{i k}$ pour $i+k>n+1,$ par
+	La méthode de Chain Ladder estime les montants inconnus, \(C_{i k}\) pour \(i+k>n+1,\) par
 	\begin{equation}\label{CL1}
 		\hat{C}_{i k}=C_{i, n+1-i} \cdot \hat{f}_{n+1-i} \cdots \hat{f}_{k-1} \quad i+k>n+1
 	\end{equation}	où
 	\begin{equation}\label{CL2}
 		\hat{f}_{k}=\frac{\color{OrangeProfondIRA}\sum_{i=1}^{n-k} C_{i, k+1}}{\color{BleuProfondIRA}\sum_{i=1}^{n-k} C_{i k}} \quad 1 \leq k \leq n-1 .
 	\end{equation}
-	La réserve de sinistre pour l'année d'accident ($R_{i}$, $2 \leq i \leq n$), est alors estimée par
+	La réserve de sinistre pour l'année d'accident (\(R_{i}\), \(2 \leq i \leq n\)), est alors estimée par
 	\begin{align*}
 		\hat{R}_{i}=&C_{in }-C_{i, n+1-i}\\
 		&=C_{i, n+1-i} \cdot \hat{f}_{n+1-i} \cdots \hat{f}_{n-1}-C_{i, n+1-i} 
@@ -170,10 +170,10 @@ provisions suivantes:
 			\node (A-7-1) {\color{BleuProfondIRA}C_{n, 1}}; & & & & & &\\
 		};
 		\node [draw,above=10pt] at (A.north) 	{ Délais de réglement};
-		\node [draw,left=20pt,rotate=90, align=right, xshift=-1cm] at (A.north west) 	{ Années d'origine $i$};
+		\node [draw,left=20pt,rotate=90, align=right, xshift=-1cm] at (A.north west) 	{ Années d'origine \(i\)};
 		\draw[BarreStyle=BleuProfondIRA] (A-7-1.south west) to  (A-1-7.north east) ;
-		\draw  (A.south east) node [ left,color=BleuProfondIRA, align=right] {Réglements de l'année $n$\\ (où $i+j=n+1$)};
-		\draw[color=BleuProfondIRA,thick] (A-7-1) to[bend right] (A-6-2) to[bend right=40] node[below right, pos=1] {$\sum$}  (A-4-4) to[bend right=40]   (A-2-6) to[bend right]   (A-1-7);
+		\draw  (A.south east) node [ left,color=BleuProfondIRA, align=right] {Réglements de l'année \(n\)\\ (où \(i+j=n+1\))};
+		\draw[color=BleuProfondIRA,thick] (A-7-1) to[bend right] (A-6-2) to[bend right=40] node[below right, pos=1] {\(\sum\)}  (A-4-4) to[bend right=40]   (A-2-6) to[bend right]   (A-1-7);
 	\end{tikzpicture}
 	
 \end{f}
@@ -193,7 +193,7 @@ E\left(C_{i, k+1} \mid C_{i 1}, \ldots, C_{i k}\right)=C_{i k} f_{k} \quad 1 \le
 
 Mack démontre que si on estime les paramètres du modèle (\ref{CL3}) par (\ref{CL2}) alors ce modèle stochastique (\ref{CL3}), combiné avec l'hypothèse (\ref{CL4}) fournit exactement les mêmes réserves que la méthode originale de Chain Ladder (\ref{CL1}).
 
-Avec la notation $f_{i, k}= \frac{C_{i, k+1}}{C_{i, k}}$,  $\hat{f}_{k}$ est la moyenne des ${\color{OrangeProfondIRA}f_{i, k}}$ pondérée par les ${\color{BleuProfondIRA} C_{i, k}}$:
+Avec la notation \(f_{i, k}= \frac{C_{i, k+1}}{C_{i, k}}\),  \(\hat{f}_{k}\) est la moyenne des \({\color{OrangeProfondIRA}f_{i, k}}\) pondérée par les \({\color{BleuProfondIRA} C_{i, k}}\):
 \begin{align*}
 	\hat{f}_{k}&=\frac{\sum_{i=1}^{n-k}{\color{BleuProfondIRA} C_{i, k}}\times \color{OrangeProfondIRA}f_{i, k}}{\color{BleuProfondIRA}\sum_{i=1}^{n-k} C_{i k}}
 \end{align*}	
@@ -209,104 +209,104 @@ La variance s'écrit :
 %		%\draw[{Bracket[reversed]-Bracket[reversed]}] (0,1) -- (2,1);
 %		%\draw[{Parenthesis-Parenthesis[reversed]}] (0,2) -- (2,2);
 %		\draw [color=BleuProfondIRA,decorate,decoration={brace,amplitude=10pt,raise=1pt},yshift=0pt] (0,0)	-- (0,1);
-%		\draw[gray!40] (0,0) -- (0,1) -- (1,1) -- cycle node[below] {$C_{i, k+1}$};
+%		\draw[gray!40] (0,0) -- (0,1) -- (1,1) -- cycle node[below] {\(C_{i, k+1}\)};
 %		\draw[color=BleuProfondIRA] (0.2,0.2) -- (0.2,1) -- (1,1) -- cycle node {};
-%		\node at (1.2,0.3) {$-$};
-%		\draw[gray!40]  (2.3,0.2) --  (2.3,1) -- (1.5,0.2) -- cycle node[left=6pt, above] {$0$};
-%		\draw[gray!40] (1.5,0) -- (1.5,1) -- (2.5,1) -- cycle node[below] {$C_{i, k}$};
+%		\node at (1.2,0.3) {\(-\)};
+%		\draw[gray!40]  (2.3,0.2) --  (2.3,1) -- (1.5,0.2) -- cycle node[left=6pt, above] {\(0\)};
+%		\draw[gray!40] (1.5,0) -- (1.5,1) -- (2.5,1) -- cycle node[below] {\(C_{i, k}\)};
 %		\draw[color=BleuProfondIRA] (1.5,0.2) -- (1.5,1) -- (2.3,1) -- cycle node {};
-%		\node at (2.5,0.3) {$\times$};
-%		\draw[color=BleuProfondIRA] (3,1) -- (3.2,1) -- (3.8,0.2) -- (3.6,0.2) -- cycle node[below] {$f_{ k}$};	
+%		\node at (2.5,0.3) {\(\times\)};
+%		\draw[color=BleuProfondIRA] (3,1) -- (3.2,1) -- (3.8,0.2) -- (3.6,0.2) -- cycle node[below] {\(f_{ k}\)};	
 %		\draw [color=BleuProfondIRA,decorate,decoration={brace,amplitude=10pt,mirror,raise=0pt},yshift=0pt] (3.8,0)	-- (3.8,1);
-%		\node at (4.3,0.3) {$\oslash$};
-%		\draw[gray!40] (4.5,0) -- (4.5,1) -- (5.5,1) -- cycle node[below] {$\sqrt{C_{i, k}}$};
+%		\node at (4.3,0.3) {\(\oslash\)};
+%		\draw[gray!40] (4.5,0) -- (4.5,1) -- (5.5,1) -- cycle node[below] {\(\sqrt{C_{i, k}}\)};
 %		\draw[color=BleuProfondIRA] (4.5,0.2) -- (4.5,1) -- (5.3,1) -- cycle node {};
 %		\draw [color=BleuProfondIRA!30,decorate,decoration={brace,amplitude=10pt,raise=1pt,mirror},yshift=-15] (0,0)	-- (5.5,0);
-%		\draw[color=BleuProfondIRA,->] (2.75,-1) -- (2.75,-2) node[pos=0.5,right,align=left] {\tiny$\sum$ of square\\\tiny by col};	
+%		\draw[color=BleuProfondIRA,->] (2.75,-1) -- (2.75,-2) node[pos=0.5,right,align=left] {\tiny\(\sum\) of square\\\tiny by col};	
 %		\draw[BleuProfondIRA]  (2.25,-2) rectangle (3.25,-2.3)
-%		node[below] {$\hat{\sigma}_{k}^{2}$}; 
+%		node[below] {\(\hat{\sigma}_{k}^{2}\)}; 
 %	\end{tikzpicture}
 %\end{center}
-%où $\oslash$ désigne la division de Hamadard désigné par $/$ en iml (ou division élément par élément de deux matrices).
+%où \(\oslash\) désigne la division de Hamadard désigné par \(/\) en iml (ou division élément par élément de deux matrices).
 %
 %Il n'y a pas besoin d'enlever les valeurs de la diagonale de la première matrice car on ajoute des valeurs manquantes avec la deuxième matrice.
 
 		
 
-Le troisième hypothèse concerne la distribution de $R_{i}$ pour pouvoir construire facilement des intervalles de confiance sur les réserves estimées. Si  la distribution est normale, de moyenne la valeur estimée $\hat{R}_{i}$ et d'écart-type donné par l'erreur standard $\operatorname{se}\left(\hat{R}_{i}\right)$. Un intervalle de confiance à $95 \%$ est alors donné par $\left[\hat{R}_{i}-2 \operatorname{se}\left(\hat{R}_{i}\right), \hat{R}_{i}+2 \operatorname{se}\left(\hat{R}_{i}\right)\right]$.
+Le troisième hypothèse concerne la distribution de \(R_{i}\) pour pouvoir construire facilement des intervalles de confiance sur les réserves estimées. Si  la distribution est normale, de moyenne la valeur estimée \(\hat{R}_{i}\) et d'écart-type donné par l'erreur standard \(\operatorname{se}\left(\hat{R}_{i}\right)\). Un intervalle de confiance à \(95 \%\) est alors donné par \(\left[\hat{R}_{i}-2 \operatorname{se}\left(\hat{R}_{i}\right), \hat{R}_{i}+2 \operatorname{se}\left(\hat{R}_{i}\right)\right]\).
 
-Si la distribution est supposée lognormale, les bornes d'un intervalle de confiance à $95 \%$ seront alors données par
-$$
+Si la distribution est supposée lognormale, les bornes d'un intervalle de confiance à \(95 \%\) seront alors données par
+\[
 \left[\hat{R}_{i} \exp \left(\frac{-\sigma_{i}^{2}}{2}-2 \sigma_{i}\right), \hat{R}_{i} \exp \left(\frac{-\sigma_{i}^{2}}{2}+2 \sigma_{i}\right)\right]
-$$
+\]
 		
 \end{f}
 \hrule
 
 \begin{f}[Le modèle risque collectif]
 Le modèle collectif est le modèle de base en actuariat non-vie?
-	 $X_{i}$ désigne le montant du $i^e$ sinistre, $N$ désigne le nombre de sinistres et $S$ le montant total au cours d'une année
-	$$
+	 \(X_{i}\) désigne le montant du \(i^e\) sinistre, \(N\) désigne le nombre de sinistres et \(S\) le montant total au cours d'une année
+	\[
 	S=\sum_{i=1}^{N} X_{i}
-	$$
-	en sachant que $S=0$ lorsque $N=0 $ et que $\left\{X_{i}\right\}_{i=1}^{\infty}$ est une séquence $iid$ et  $N \perp \left\{X_{i}\right\}_{i=1}^{\infty}$. 
-La difficulté est d'obtenir la distribution de $S$, alors même que $\E [N]$ n'est pas grand au sens du TCL.
+	\]
+	en sachant que \(S=0\) lorsque \(N=0 \) et que \(\left\{X_{i}\right\}_{i=1}^{\infty}\) est une séquence \(iid\) et  \(N \perp \left\{X_{i}\right\}_{i=1}^{\infty}\). 
+La difficulté est d'obtenir la distribution de \(S\), alors même que \(\E [N]\) n'est pas grand au sens du TCL.
 \end{f}
 
 
-\begin{f}[La distribution de $S$]
+\begin{f}[La distribution de \(S\)]
 	
-Soit $G(x)=\mathbb{P}(S \leq x)$, $F(x)=\mathbb{P}\left(X_{1} \leq x\right)$ , et $p_{n}=\mathbb{P}(N=n)$ de sorte que $\left\{p_{n}\right\}_{n=0}^{\infty}$ soit la fonction de probabilité pour le nombre de sinistres.
+Soit \(G(x)=\mathbb{P}(S \leq x)\), \(F(x)=\mathbb{P}\left(X_{1} \leq x\right)\) , et \(p_{n}=\mathbb{P}(N=n)\) de sorte que \(\left\{p_{n}\right\}_{n=0}^{\infty}\) soit la fonction de probabilité pour le nombre de sinistres.
 	
-	$$
+	\[
 	\{S \leq x\}=\bigcup_{n=0}^{\infty}\{S \leq x \text { et } N=n\}
-	$$
-	$$
+	\]
+	\[
 	\mathbb{P}(S \leq x \mid N=n)=\mathbb{P}\left(\sum_{i=1}^{n} X_{i} \leq x\right)=F^{n *}(x)
-	$$
-	Ainsi, pour $x \geq 0$
+	\]
+	Ainsi, pour \(x \geq 0\)
 	
 	\begin{equation*}\label{GxCollectif}
 		G(x)=\sum_{n=0}^{\infty} p_{n} F^{n *}(x)
 	\end{equation*}
-	où $F^{n *}$ désigne la convolution $n^e$, malheureusement elle n'existe pas sous forme fermée pour de nombreuses distributions.	
+	où \(F^{n *}\) désigne la convolution \(n^e\), malheureusement elle n'existe pas sous forme fermée pour de nombreuses distributions.	
 	
-Si $E[X]=m$
-	$$
+Si \(E[X]=m\)
+	\[
 	E[S]=E\left[N m\right]=E[N] m
-	$$
-	Ce résultat est très intéressant, car il indique que le montant total attendu des sinistres est le produit du nombre attendu de sinistres et du montant attendu de chaque sinistre. De même, en utilisant le fait que $\left\{X_{i}\right\}_{i=1}^{\infty}$ sont des variables aléatoires indépendantes,
-	$$
+	\]
+	Ce résultat est très intéressant, car il indique que le montant total attendu des sinistres est le produit du nombre attendu de sinistres et du montant attendu de chaque sinistre. De même, en utilisant le fait que \(\left\{X_{i}\right\}_{i=1}^{\infty}\) sont des variables aléatoires indépendantes,
+	\[
 	V[S \mid N=n]=V\left[\sum_{i=1}^{n} X_{i}\right]=\sum_{i=1}^{n} V\left[X_{i}\right]
-	$$
-	$$
+	\]
+	\[
 	\begin{aligned}
 		V[S] &=E[V(S \mid N)]+V[E(S \mid N)] \\
 		&=E[N] V\left[X_{i}\right]+V[N] m^{2}
 	\end{aligned}
-	$$    
+	\]    
 \end{f}
 
 \hrule
 
 
-\begin{f}[La classe de distributions $(a, b, 0)$]
+\begin{f}[La classe de distributions \((a, b, 0)\)]
 	
-	Une distribution de comptage est dite  $(a, b, 0)$ si sa fonction de probabilité $\left\{p_{n}\right\}_{n=0}^{\infty}$ peut être calculée de manière récursive à partir de la formule
-	$$
+	Une distribution de comptage est dite  \((a, b, 0)\) si sa fonction de probabilité \(\left\{p_{n}\right\}_{n=0}^{\infty}\) peut être calculée de manière récursive à partir de la formule
+	\[
 	p_{n}=\left(a+\frac{b}{n}\right) p_{n-1}
-	$$
-	pour $n=1,2,3, \ldots,$ où $a$ et $b$ sont des constantes.
+	\]
+	pour \(n=1,2,3, \ldots,\) où \(a\) et \(b\) sont des constantes.
 	
-	Il existe exactement trois distributions non triviales dans la classe $(a, b, 0)$, à savoir Poisson, binomiale et binomiale négative. Voici les valeurs de $a$ et $b$ pour les principales distributions $(a, b, 0)$:
+	Il existe exactement trois distributions non triviales dans la classe \((a, b, 0)\), à savoir Poisson, binomiale et binomiale négative. Voici les valeurs de \(a\) et \(b\) pour les principales distributions \((a, b, 0)\):
 	\begin{center}
 		\begin{tabular}{ccc} 
-			& $a$ & $b$ \\
-			\hline$\mathcal{P}_{ois}(\lambda)$ & 0 & $\lambda$ \\
-			$\mathcal{B}_{in}(n, q)$ & $-q /(1-q)$ & $(n+1) q /(1-q)$ \\
-			$\mathcal{N}\mathcal{B}_{in}(k, q)$ & $1-q$ & $(1-q)(k-1)$ \\
-			$\mathcal{G}_{eo}( q)$ & $1-q$ & 0 \\
-			\textit{    Distribution de Panjer} & $\frac{\lambda}{\alpha+\lambda}$ &    $\frac {(\alpha -1)\lambda }{\alpha +\lambda }$ \\
+			& \(a\) & \(b\) \\
+			\hline\(\mathcal{P}_{ois}(\lambda)\) & 0 & \(\lambda\) \\
+			\(\mathcal{B}_{in}(n, q)\) & \(-q /(1-q)\) & \((n+1) q /(1-q)\) \\
+			\(\mathcal{N}\mathcal{B}_{in}(k, q)\) & \(1-q\) & \((1-q)(k-1)\) \\
+			\(\mathcal{G}_{eo}( q)\) & \(1-q\) & 0 \\
+			\textit{    Distribution de Panjer} & \(\frac{\lambda}{\alpha+\lambda}\) &    \(\frac {(\alpha -1)\lambda }{\alpha +\lambda }\) \\
 			\hline 
 		\end{tabular}
 		
@@ -319,16 +319,16 @@ Si $E[X]=m$
 	
 	L'\textbf{algorithme de Panjer} vise l'estimation de distribution d'une loi composée coût-fréquence dans des conditions particulières.
 	\begin{itemize}
-		\item $(X_i)_{i=1}^{N}$ $iid$ discrètes définies sur $\{0,h,2h,3h...\}$
-		\item la loi du nombre dans la classe dite $(a,b,0)$
+		\item \((X_i)_{i=1}^{N}\) \(iid\) discrètes définies sur \(\{0,h,2h,3h...\}\)
+		\item la loi du nombre dans la classe dite \((a,b,0)\)
 	\end{itemize}
 	
 
-Puisque nous supposons désormais que les montants individuels des demandes sont répartis sur les entiers non négatifs, il s'ensuit que $S$ est également réparti sur les entiers non négatifs. 
-Comme $S=\sum_{i=1}^{N} X_{i}$, il s'ensuit que $S=0$ si $N=0$ ou si $N=n$ et $\sum_{i=1}^{n} X_{i}=0 . $ Comme $\sum_{i=1}^{n} X_{i}=0$ uniquement si chaque $X_{i}=0,$ il s'ensuit par indépendance que
-	$$
+Puisque nous supposons désormais que les montants individuels des demandes sont répartis sur les entiers non négatifs, il s'ensuit que \(S\) est également réparti sur les entiers non négatifs. 
+Comme \(S=\sum_{i=1}^{N} X_{i}\), il s'ensuit que \(S=0\) si \(N=0\) ou si \(N=n\) et \(\sum_{i=1}^{n} X_{i}=0 . \) Comme \(\sum_{i=1}^{n} X_{i}=0\) uniquement si chaque \(X_{i}=0,\) il s'ensuit par indépendance que
+	\[
 	\mathbb{P}\left(\sum_{i=1}^{n} X_{i}=0\right)=f_{0}^{n}
-	$$
+	\]
 	
 \begin{equation*}
 		\begin{cases}\label{Panjer0}\displaystyle
@@ -337,8 +337,8 @@ Comme $S=\sum_{i=1}^{N} X_{i}$, il s'ensuit que $S=0$ si $N=0$ ou si $N=n$ et $\
 		g_{k}=\frac{1}{1-a f_{0}} \sum_{j=1}^{k}\left(a+\frac{b j}{k}\right) f_{j} g_{k-j}
 		\end{cases}	
 	\end{equation*}
-$g_{x}$ est exprimé en fonction de $g_{0}, g_{1}, \ldots, g_{x-1},$ de sorte que le calcul de la fonction de probabilité est récursif. Dans toutes les applications pratiques de cette formule, un ordinateur est nécessaire pour effectuer les calculs. Cependant, l'avantage de la formule de récursivité de Panjer par rapport à la formule pour $g_{x}$ est qu'il n'est pas nécessaire de calculer les convolutions, ce qui est beaucoup plus efficace d'un point de vue computationnel.
-L'algorithme de Panjer nécessite la discrétisation de la variable $X_i$.
+\(g_{x}\) est exprimé en fonction de \(g_{0}, g_{1}, \ldots, g_{x-1},\) de sorte que le calcul de la fonction de probabilité est récursif. Dans toutes les applications pratiques de cette formule, un ordinateur est nécessaire pour effectuer les calculs. Cependant, l'avantage de la formule de récursivité de Panjer par rapport à la formule pour \(g_{x}\) est qu'il n'est pas nécessaire de calculer les convolutions, ce qui est beaucoup plus efficace d'un point de vue computationnel.
+L'algorithme de Panjer nécessite la discrétisation de la variable \(X_i\).
 {f}
 
 
@@ -348,38 +348,38 @@ L'algorithme de Panjer nécessite la discrétisation de la variable $X_i$.
 %	\includegraphics[width=0.90\textwidth]{../../Reinsurance_M2/Graph/Expba07.pdf}
 %\end{figure}
 %The following example shows the approximated density of 
-%$\scriptstyle S = \sum_{i=1}^N X_i$ where $\scriptstyle N \sim \text{NegBin}(3.5,0.3)$ and $\scriptstyle X \sim \text{Frechet}(1.7,1)$ with lattice width $h = 0.04$.
+%\(\scriptstyle S = \sum_{i=1}^N X_i\) where \(\scriptstyle N \sim \text{NegBin}(3.5,0.3)\) and \(\scriptstyle X \sim \text{Frechet}(1.7,1)\) with lattice width \(h = 0.04\).
 %\end{f}
 
 \begin{f}[Panjer et la loi de Poisson]
-	Lorsque la fréquence suit une loi de Poisson, cela implique que {\color{OrangeProfondIRA} $a=0$ et $b=\lambda$.}
+	Lorsque la fréquence suit une loi de Poisson, cela implique que {\color{OrangeProfondIRA} \(a=0\) et \(b=\lambda\).}
 	Le résultat se simplifie :
-	$$
+	\[
 \begin{cases}
 		g_0= e^{-\lambda (1-f_0)}
 	\\
 	g_k=\frac{\lambda}{k}\sum_{j=1}^k j . f_j  . g_{k-j}
 \end{cases}	
-$$
+\]
 	
 \end{f}
 
 \begin{f}[Panjer et Pollaczeck-Khinchine-Beekman]
 	
-	Soit $\tau_1$ le premier instant où $R_t<\kappa(=\kappa_0)$. On pose alors  $L_1=\kappa -R_{\tau_1}$.
-	On redémarre le processus avec $\kappa_1=\kappa_0-R_{\tau_1}$ pour trouver  $\tau_2$ et $L_2=\kappa_1 -R_{\tau_2}$.
+	Soit \(\tau_1\) le premier instant où \(R_t<\kappa(=\kappa_0)\). On pose alors  \(L_1=\kappa -R_{\tau_1}\).
+	On redémarre le processus avec \(\kappa_1=\kappa_0-R_{\tau_1}\) pour trouver  \(\tau_2\) et \(L_2=\kappa_1 -R_{\tau_2}\).
 	En continuant de la sorte, on constate que :
-	$$
+	\[
 	M=\sup_{t\geq 0}\{ S_t -ct \} =\sum_{k=1}^{K}L_k
-	$$
-	où $K\sim \mathcal{G}eo(q)$ avec $q=1-\psi(0)$.  
-	En remarquant que les variables $\left(  L_k\right)_{1\leq k\leq K}$ sont $iid$ ($F$), on a alors $\psi(k)=\mathbb{P}[M>\kappa]$ donnée par la formule de Pollaczeck-Khinchine-Beekman.
+	\]
+	où \(K\sim \mathcal{G}eo(q)\) avec \(q=1-\psi(0)\).  
+	En remarquant que les variables \(\left(  L_k\right)_{1\leq k\leq K}\) sont \(iid\) (\(F\)), on a alors \(\psi(k)=\mathbb{P}[M>\kappa]\) donnée par la formule de Pollaczeck-Khinchine-Beekman.
 	
 	
 	La représentation 
-	$$
+	\[
 	\psi(\kappa)=\mathbb{P}\left[\sum_{j = 1}^{K}L_j>\kappa \right] 
-	$$
+	\]
 	permet d'évaluer la probabilité de ruine sur horizon infini à l'aide de l'algorithme de Panjer.
 	
 \end{f}

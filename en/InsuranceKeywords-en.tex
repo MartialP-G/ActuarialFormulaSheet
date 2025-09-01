@@ -50,9 +50,9 @@ Insurance is assumed to:
 	
 \end{f}
 \begin{f}[The Premium and Claims]
-Classically, the role of the insurer is to substitute a constant $C$, the \textbf{contribution} or the \textbf{premium}, for a random claim $S$.
+Classically, the role of the insurer is to substitute a constant \(C\), the \textbf{contribution} or the \textbf{premium}, for a random claim \(S\).
 La \textbf{pure premium} or \textbf{technical premium} aims 
-to compensate claims without surplus or profit, overall $C_t = \mathbb{E}[S]$
+to compensate claims without surplus or profit, overall \(C_t = \mathbb{E}[S]\)
 	
 	The \textbf{net premium} is higher than the pure premium. It aims to cover the cost of claims and provide a safety margin.
 	
@@ -71,10 +71,10 @@ one policy year.
 {\begin{tikzpicture} %[node distance=5cm]
 	%	
 	\draw[thick,<->,>=latex,BleuProfondIRA] (-3,0) -- (5,0) ;
-	\node (JanNN) at (-2,0.8) [NoeudR] {\footnotesize  1\ier{} January\\ \footnotesize \NN};
-	\node (JuilNN) at (0,0.8) [NoeudR] {\footnotesize  1\ier{} July\\ \footnotesize \NN};
+	\node (JanNN) at (-2,0.8) [NoeudR] {\footnotesize  \nth{1} January\\ \footnotesize \NN};
+	\node (JuilNN) at (0,0.8) [NoeudR] {\footnotesize  \nth{1} July\\ \footnotesize \NN};
 	\node (JanN) at (2,0.8) [NoeudR] {\footnotesize  31 December\\ \footnotesize  \NN};
-	\node (JuilN) at (4,0.8) [NoeudR] {\footnotesize  1\ier{} July\\ \footnotesize \N};
+	\node (JuilN) at (4,0.8) [NoeudR] {\footnotesize  \nth{1} July\\ \footnotesize \N};
 	\draw[ BleuProfondIRA] (JanNN.south) -- ++(0,-0.8);
 	\draw[ BleuProfondIRA] (JuilNN.south) -- ++(0,-0.8);
 	\draw[ BleuProfondIRA] (JanN.south) -- ++(0,-0.8);
@@ -86,7 +86,7 @@ one policy year.
 	%	
 \end{tikzpicture}
 }
-The $S/P$ is the key indicator. For the insurer to make a profit the $S/P\ll 1$.
+The \(S/P\) is the key indicator. For the insurer to make a profit the \(S/P\ll 1\).
 \end{f}
 %\end{multicols}
 
@@ -97,7 +97,7 @@ The $S/P$ is the key indicator. For the insurer to make a profit the $S/P\ll 1$.
 	Each payment and each claim reserving is assigned to the accident year. 
 	The monitoring of payments or expenses is expressed through a triangle (triangular matrix):
 	
-	$$
+	\[
 	\left(\begin{array}{ccccc}
 		\rowcolor{white}	C_{1,1} & C_{1,2} & \ldots & & C_{1, n} \\
 		\rowcolor{white}	C_{1,1} & C_{1,2} & \ldots & C_{2, n-1} \\
@@ -105,8 +105,8 @@ The $S/P$ is the key indicator. For the insurer to make a profit the $S/P\ll 1$.
 		\rowcolor{white}	C_{n-1,1} & C_{n-1,2} & & \\
 		\rowcolor{white}	C_{n, 1} & & &
 	\end{array}\right)
-	$$
-	where $C_{i, j}=\sum_{k=1}^{j} X_{i, k}$ represents the cumulative amount of claims paid for origin year $i$ and development year $j$.
+	\]
+	where \(C_{i, j}=\sum_{k=1}^{j} X_{i, k}\) represents the cumulative amount of claims paid for origin year \(i\) and development year \(j\).
 	
 \end{f}
 %\begin{multicols}{2}

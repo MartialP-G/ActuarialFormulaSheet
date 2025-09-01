@@ -99,7 +99,7 @@ Conversely, the \textbf{compensatory bonus} \(\tilde{\pi}\) is the amount that m
 	\end{itemize}
 	
 	A risk-averse agent prefers a combination \(Z = \alpha A + (1 - \alpha) B\), with \(0 < \alpha < 1\), to the risky asset alone.
-	If $u$ is concave, then
+	If \(u\) is concave, then
 	\[
 	\mathbb{E}[u(Z)] > \mathbb{E}[u(A)]
 	\]
@@ -209,51 +209,51 @@ Conversely, the \textbf{compensatory bonus} \(\tilde{\pi}\) is the amount that m
 
 \begin{f}[Insurance Application (Mosin)]
 	
-An agent has an initial wealth \(w\) and faces a random loss \(L\). There exists an \textbf{insurance demand} for the insurance that pays the indemnity $0<I(L)<L$ iff $u(w-\pi_I) \geq \mathbb{E}(u(w-L))$ and the \textbf{optimal insurance} maximizes $u(w-\pi_I)$.
+An agent has an initial wealth \(w\) and faces a random loss \(L\). There exists an \textbf{insurance demand} for the insurance that pays the indemnity \(0<I(L)<L\) iff \(u(w-\pi_I) \geq \mathbb{E}(u(w-L))\) and the \textbf{optimal insurance} maximizes \(u(w-\pi_I)\).
 
-In Mosin (1968) or Borch (1961) or Smith (1968), the loss model $L$ is simply defined by $s$ between 0 and \(w\) :
-	$$
+In Mosin (1968) or Borch (1961) or Smith (1968), the loss model \(L\) is simply defined by \(s\) between 0 and \(w\) :
+	\[
 	L=\left\{\begin{array}{l}
 		0 \text { with prob. } 1-p \\
 		s \text { with prob. } p
 	\end{array}\right.
-	$$
-The premium becomes $\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) p I(s)$ with $\lambda$ a loading. We denote by $\pi$ the case where $I(L)=L$ with $\pi= p s$. If $\lambda=0$, then we speak of a pure or actuarially fair premium.
+	\]
+The premium becomes \(\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) p I(s)\) with \(\lambda\) a loading. We denote by \(\pi\) the case where \(I(L)=L\) with \(\pi= p s\). If \(\lambda=0\), then we speak of a pure or actuarially fair premium.
 \medskip
 
 \textbf{Co-insurance} (risk sharing) :
-$I(l)=\alpha l$ knowing $L=l$ for $\alpha \in[0,1]$, $\pi_I(\alpha)=\alpha \pi$ and :
-$$
+\(I(l)=\alpha l\) knowing \(L=l\) for \(\alpha \in[0,1]\), \(\pi_I(\alpha)=\alpha \pi\) and :
+\[
 w_{f}=w-L+I(L)-\pi(\alpha)=w-L+\alpha L-\alpha \pi=w-(1-\alpha) L-\alpha \pi
-$$
-$$
+\]
+\[
 U(\alpha)%=\mathbb{E}(u(w-(1-\alpha) L-\alpha \pi))
 =(1-p) u(w-\alpha \pi)+p u(w-(1-\alpha) s-\alpha \pi)
-$$
+\]
 
-Partial insurance ($\alpha^{\star}<1$) is optimal iff $\lambda>0$. Total insurance ($\alpha^{\star}=1$) is optimal if the loading is zero.
+Partial insurance (\(\alpha^{\star}<1\)) is optimal iff \(\lambda>0\). Total insurance (\(\alpha^{\star}=1\)) is optimal if the loading is zero.
 \medskip
 
 \textbf{Insurance with deductible} (self-insurance portion):
-With deductible $d$ the insurer pays an indemnity $I(l)=(l-d)_{+}$ knowing $L=l$.
-$$
+With deductible \(d\) the insurer pays an indemnity \(I(l)=(l-d)_{+}\) knowing \(L=l\).
+\[
 \pi(d)=(1+\lambda) E\left((L-d)_{+}\right)=(1+\lambda)(s-d) p
-$$
-$$
+\]
+\[
 w_{f}=w-X+(L-d)_{+}-\pi(d)=w-\min (X, d)-(1+\lambda)(s-d) p
-$$
-$$
+\]
+\[
 U(d)=(1-p) u(\underbrace{w+(1+\lambda)(d-s) p}_{w_{f}^{+}})+p u(\underbrace{w-d+(1+\lambda)(d-s) p}_{w_{f}^{-}}) .
-$$
-In the deductible model, partial insurance ($d^{\star}>0$) is optimal iff the premium is not actuarially fair. Similarly, full insurance ($d^{\star}=0$) is optimal if the loading is zero.
+\]
+In the deductible model, partial insurance (\(d^{\star}>0\)) is optimal iff the premium is not actuarially fair. Similarly, full insurance (\(d^{\star}=0\)) is optimal if the loading is zero.
 \medskip
 
 \textbf{Generalized model:}
-The random loss risk $L>0$ is defined on $\Re$, with distribution function $F_L$ ),
+The random loss risk \(L>0\) is defined on \(\Re\), with distribution function \(F_L\) ),
 
-$$
+\[
 \pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) \int_{0}^{\infty} I(l) d F_{L}(l)
-$$
+\]
 
 
 
@@ -273,26 +273,26 @@ $$
 
 \begin{f}[Information and insurance]
 	
-	\textbf{Mosin with heterogeneity:} Two types of individuals: $H$ for high risk and $Lo$ for low risk. $\theta \in[0,1]$ the proportion of individuals $H$. Individuals of type $i \in\{Lo, H\}$ face a risk of the same amount $s$ occurring with a different probability $p_{i}$ such that $1>p_{H}>p_{Lo}>0$.
+	\textbf{Mosin with heterogeneity:} Two types of individuals: \(H\) for high risk and \(Lo\) for low risk. \(\theta \in[0,1]\) the proportion of individuals \(H\). Individuals of type \(i \in\{Lo, H\}\) face a risk of the same amount \(s\) occurring with a different probability \(p_{i}\) such that \(1>p_{H}>p_{Lo}>0\).
 	
-	$$
+	\[
 	L_{i}=\left\{\begin{array}{l}
 		0 \text { with probability } 1-p_{i}, \\
 		s \text { with probability } p_{i} .
 	\end{array}\right.
-	$$
+	\]
 Market probability :
-	$$
+	\[
 	p_{m}=\theta p_{H}+(1-\theta) p_{Lo} .
-	$$
+	\]
 \medskip
 
-\textbf{Absence of adverse selection:} In this model, in the presence of total information, the insurer prefers individual insurance $I_{i}=s$ and $\pi_{i}=s p_{i}$, $\forall i$.
+\textbf{Absence of adverse selection:} In this model, in the presence of total information, the insurer prefers individual insurance \(I_{i}=s\) and \(\pi_{i}=s p_{i}\), \(\forall i\).
 
 \textbf{The adverse selection problem : }
-The insurer offers a non-individualized contract from the market $M=\left(\pi_{m}=p_{m} I, I_{m}(s)=I(s)\right)$, which does not depend on $i$. The final fortune of an individual of type $i$ is $W_{i}^{m}=w-\pi_{m}-X_{i}+I_{m}$.
+The insurer offers a non-individualized contract from the market \(M=\left(\pi_{m}=p_{m} I, I_{m}(s)=I(s)\right)\), which does not depend on \(i\). The final fortune of an individual of type \(i\) is \(W_{i}^{m}=w-\pi_{m}-X_{i}+I_{m}\).
 
-In the presence of a single contract, individuals of type $H$ prefer an insurance contract such that $I_{H}(s)=s$ and $\pi_{H}=s p_{m}$, while individuals of type $Lo$ prefer partial coverage with $I_{L}^{\star}<s$ and $\pi_{Lo}=I_{L}^{\star} p_{m}$.
+In the presence of a single contract, individuals of type \(H\) prefer an insurance contract such that \(I_{H}(s)=s\) and \(\pi_{H}=s p_{m}\), while individuals of type \(Lo\) prefer partial coverage with \(I_{L}^{\star}<s\) and \(\pi_{Lo}=I_{L}^{\star} p_{m}\).
 \medskip
 
 \textbf{Moral hazard :}
@@ -302,29 +302,29 @@ Insuring him reduces or interrupts his efforts now that he is insured. The effor
 	\item protection reduces the amount of loss.
 \end{itemize}
 
- In the absence of any effort $e$ to prevent or reduce risk, the final fortune $w_{f}$ is simply defined by
+ In the absence of any effort \(e\) to prevent or reduce risk, the final fortune \(w_{f}\) is simply defined by
 
-$$
+\[
 \begin{cases}w_{f}^{-}=w-s-\pi(I)+I & \text { with probability } p \\ w_{f}^{+}=w-\pi(I) & \text { with probability } 1-p\end{cases}
-$$
+\]
 
-If there is an effort $e$ to prevent risks, we consider
+If there is an effort \(e\) to prevent risks, we consider
 
-$$
+\[
 \begin{cases}w_{f}^{-}=w-s-\pi(I)+I-e & \text { with probability } p(e) \\ w_{f}^{+}=w-\pi(I)-e & \text { with probability } 1-p(e)\end{cases}
-$$
+\]
 
-If there is an effort $e$ to protect against risks, we consider
+If there is an effort \(e\) to protect against risks, we consider
 
-$$
+\[
 \begin{cases}w_{f}^{-}=w-s(e)-\pi(I)+I-e & \text { with probability } p \\ w_{f}^{+}=w-\pi(I)-e & \text { with probability } 1-p\end{cases}
-$$
+\]
 
 with
 \begin{itemize}
-	\item $e \mapsto p(e)$ is strictly decreasing and strictly convex.
-	\item $e \mapsto s(e)$ is strictly decreasing and strictly convex.\\
-	\item $I \leq s$ implies $w_{f}^{-} \leq w_{f}^{+}$
+	\item \(e \mapsto p(e)\) is strictly decreasing and strictly convex.
+	\item \(e \mapsto s(e)\) is strictly decreasing and strictly convex.\\
+	\item \(I \leq s\) implies \(w_{f}^{-} \leq w_{f}^{+}\)
 \end{itemize}
 
 \end{f}

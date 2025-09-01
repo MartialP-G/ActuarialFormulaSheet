@@ -1,25 +1,25 @@
 \ \newline
 
 
-	Annuité certaine $a_{\lcroof{n}}$ (ou $a_{\lcroof{n}\;i}$ si le taux d'intérêt $i$ est utile à préciser) : c'est le cas par défaut en mathématiques financières. Ses paiements sont par exemple garantis par un contrat.
+	Annuité certaine \(a_{\lcroof{n}}\) (ou \(a_{\lcroof{n}\;i}\) si le taux d'intérêt \(i\) est utile à préciser) : c'est le cas par défaut en mathématiques financières. Ses paiements sont par exemple garantis par un contrat.
 	
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
 	% Draw the x-axis and y-axis.
 	\def\w{11}
 	\def\n{9}
-	\node[left] at (-.5,0) {$a_{\lcroof{n}}$};
+	\node[left] at (-.5,0) {\(a_{\lcroof{n}}\)};
 	\foreach \y in  {0,...,3} {
 	\draw (\y,0) -- (\y,-0.1);
-	\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+	\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};
 		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,1);}{
 		\node[below] at (\y,-0.1) {\tiny 0};}
 }
 \foreach \y in  {-3,...,1} {
 	\draw (\y+\n,0) -- (\y+\n,-0.1);
-	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};}{}
-	\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};}{}
-	\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \y\)};}{}
+	\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \)};}{}
+	\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n+\y\)};}{}
 	\ifthenelse{\y<1 }{	\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);}
 }
 \draw[ line width=1] (-.25,0) -- (4,0);
@@ -27,33 +27,33 @@
 \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (5,0) -- (\w,0);
 \end{tikzpicture}
 \end{center}
-$$
+\[
 \ddot{a}_{\lcroof{n}}=1+v+\cdots+v^{n-1}=\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{d}
-$$
+\]
 
 
-Annuité contingente $\ddot{a}_{x}$: ses paiements sont conditionnés à un événement  aléatoire, comme lors d'une rente viagère d'un individu d'âge $x$. Dans cet exemple, ils courent jusqu'à ce que mort s'ensuive :
+Annuité contingente \(\ddot{a}_{x}\): ses paiements sont conditionnés à un événement  aléatoire, comme lors d'une rente viagère d'un individu d'âge \(x\). Dans cet exemple, ils courent jusqu'à ce que mort s'ensuive :
 
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
 	% Draw the x-axis and y-axis.
 	\def\w{11}
 	\def\n{6}
-	\node[left] at (-.5,0) {$a_{x}$};
+	\node[left] at (-.5,0) {\(a_{x}\)};
 	
 	\begin{scope}[shift={(\n+.5+3,.25)}]
 		\draw[color=OrangeProfondIRA,scale=0.2,fill=OrangeProfondIRA] \Cerceuil;
 	\end{scope}
 	\foreach \y in  {0,...,3} {
 		\draw (\y,0) -- (\y,-0.1);
-		\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x+\y$};
+		\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x+\y\)};
 			\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,1);}{
-			\node[below] at (\y,-0.1) {\tiny $ \scriptstyle x$};}
+			\node[below] at (\y,-0.1) {\tiny \( \scriptstyle x\)};}
 	}
 	\foreach \y in  {0,...,4} {
 		\draw (\y+\n,0) -- (\y+\n,-0.1);
-		\ifthenelse{\y>0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n+\y$};}{
-			\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle x+n$};}
+		\ifthenelse{\y>0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n+\y\)};}{
+			\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle x+n\)};}
 		\ifthenelse{\y<4 }{	\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);}
 	}
 \draw[ line width=1] (-.25,0) -- (4,0);
@@ -64,33 +64,33 @@ Annuité contingente $\ddot{a}_{x}$: ses paiements sont conditionnés à un év�
 \end{center}
 La date du décès est représenté ici par un petit cercueil. Cette forme d'annuité sera largement étudiée dans la partie actuariat vie.
 
-Annuité à terme échu (\engl{immédiate}) $a_{\lcroof{n}}$ : ses paiements périodiques sont effectués à la fin de chaque période de paiement, comme pour le salaire payé en fin de mois. C'est le cas par défaut, illustré précédemment pour l'annuité certaine.
-$$
+Annuité à terme échu (\engl{immédiate}) \(a_{\lcroof{n}}\) : ses paiements périodiques sont effectués à la fin de chaque période de paiement, comme pour le salaire payé en fin de mois. C'est le cas par défaut, illustré précédemment pour l'annuité certaine.
+\[
 \ddot{a}_{\lcroof{n}}=1+v+\cdots+v^{n-1}=\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{d}
-$$
+\]
 %
-$$
+\[
 	\mathrm{PV}_{\lcroof{n}}^{\text {due }}=K \ddot{a}_{\lcroof{n}}=K \frac{1-v^{n}}{d} 
-$$
+\]
 
-Annuité à terme à échoir (\engl{due}) $\ddot{a}_{\lcroof{n}}$:  ses paiements périodiques sont effectués au début de chaque période de paiement, comme pour un loyer par exemple.
+Annuité à terme à échoir (\engl{due}) \(\ddot{a}_{\lcroof{n}}\):  ses paiements périodiques sont effectués au début de chaque période de paiement, comme pour un loyer par exemple.
 
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
 		% Draw the x-axis and y-axis.
 		\def\w{11}
 		\def\n{9}
-		\node[left] at (-.5,0) {$\ddot{a}_{\lcroof{n}}$};
+		\node[left] at (-.5,0) {\(\ddot{a}_{\lcroof{n}}\)};
 		\foreach \y in  {0,...,3} {
 			\draw (\y,0) -- (\y,-0.1);
-				\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+				\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};
 				\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,1);
 		}
 		\foreach \y in  {-3,...,1} {
 			\draw (\y+\n,0) -- (\y+\n,-0.1);
-			\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};}{}
-			\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};}{}
-			\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+			\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \y\)};}{}
+			\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \)};}{}
+			\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n+\y\)};}{}
 			\ifthenelse{\y<0 }{	\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);}{}
 		}
 		\draw[ line width=1] (-.25,0) -- (4,0);
@@ -98,39 +98,39 @@ Annuité à terme à échoir (\engl{due}) $\ddot{a}_{\lcroof{n}}$:  ses paiement
 		\draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (5,0) -- (\w,0);
 	\end{tikzpicture}
 \end{center}
-aussi notée $\mathrm{PV}^{\mathrm{im}}$ :
-$$
+aussi notée \(\mathrm{PV}^{\mathrm{im}}\) :
+\[
 a_{\lcroof{n}}=v+v^{2}+\cdots+v^{n}=\frac{1-v^{n}}{i}=v \frac{1-v^{n}}{1-v}
-$$
+\]
 %
-$$
+\[
 	\mathrm{PV}_{\lcroof{n}}^{\mathrm{im}}=K a_{\lcroof{n}}=K \frac{1-v^{n}}{i} 
-$$
-Annuité  perpétuelle $a$ ou  $a_{\lcroof{\infty}}$: 
-$$
+\]
+Annuité  perpétuelle \(a\) ou  \(a_{\lcroof{\infty}}\): 
+\[
 a=1/i
-$$
-Annuité différée $_{m|}a_{\lcroof{n}}$: ses paiements ne commencent pas dans la première période mais après $m$ périodes, $m$ étant fixé à l'avance. 
+\]
+Annuité différée \(_{m|}a_{\lcroof{n}}\): ses paiements ne commencent pas dans la première période mais après \(m\) périodes, \(m\) étant fixé à l'avance. 
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
 		% Draw the x-axis and y-axis.
 \def\w{10}
 \def\n{9}
 \def\m{2}
-\node[left] at (-.5,0) {$_{m|}a_{\lcroof{n}}$};
+\node[left] at (-.5,0) {\(_{m|}a_{\lcroof{n}}\)};
 \foreach \y in  {0,...,2} {
 	\draw (\y+\m,0) -- (\y+\m,-0.1);
-	\ifthenelse{\y<0 }{\node[below] at (\y+\m,-0.1) {\tiny $\scriptstyle m \y$};}{}
-\ifthenelse{\y=0 }{\node[below] at (\y+\m,-0.1) {\tiny $\scriptstyle m $};}{}
-\ifthenelse{\y>0}{	\node[below] at (\y+\m,-0.1) {\tiny $\scriptstyle m+\y$};
+	\ifthenelse{\y<0 }{\node[below] at (\y+\m,-0.1) {\tiny \(\scriptstyle m \y\)};}{}
+\ifthenelse{\y=0 }{\node[below] at (\y+\m,-0.1) {\tiny \(\scriptstyle m \)};}{}
+\ifthenelse{\y>0}{	\node[below] at (\y+\m,-0.1) {\tiny \(\scriptstyle m+\y\)};
 		\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\m,0) -- (\y+\m,1);
 		}
 }
 \foreach \y in  {-3,...,0} {
 	\draw (\y+\n,0) -- (\y+\n,-0.1);
-	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle m+n \y$};}{}
-	\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle m+n $};}{}
-	\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle m+n+\y$};}{}
+	\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle m+n \y\)};}{}
+	\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle m+n \)};}{}
+	\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle m+n+\y\)};}{}
 	\ifthenelse{\y<1 }{	\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1);}
 }
 \draw[ line width=1] (-.25,0) -- (0.5,0);
@@ -143,7 +143,7 @@ Annuité différée $_{m|}a_{\lcroof{n}}$: ses paiements ne commencent pas dans 
 \end{center}
 
 
-Annuité ou série périodique / mensuelle $a^{(m)}$ : la périodicité par défaut est un an, mais le paiement  unitaire peut être aussi réparti sur $m$ périodes dans l'année.
+Annuité ou série périodique / mensuelle \(a^{(m)}\) : la périodicité par défaut est un an, mais le paiement  unitaire peut être aussi réparti sur \(m\) périodes dans l'année.
 
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
@@ -151,10 +151,10 @@ Annuité ou série périodique / mensuelle $a^{(m)}$ : la périodicité par déf
 		\def\w{10}
 		\def\n{9}
 		\def\m{6}
-		\node[left] at (-.5,0) {$a_{\lcroof{n}}^{(m)}$};
+		\node[left] at (-.5,0) {\(a_{\lcroof{n}}^{(m)}\)};
 		\foreach \y in  {0,...,3} {
 			\draw (\y,0) -- (\y,-0.1);
-			\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};}{
+			\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};}{
 				\node[below] at (\y,-0.1) {\tiny 0};}
 		}
 		\pgfmathparse{3.5*\m} 
@@ -164,9 +164,9 @@ Annuité ou série périodique / mensuelle $a^{(m)}$ : la périodicité par déf
 		}
 		\foreach \y in  {-3,...,0} {
 			\draw (\y+\n,0) -- (\y+\n,-0.1);
-			\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};}{}
-			\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};}{}
-			\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+			\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \y\)};}{}
+			\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \)};}{}
+			\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n+\y\)};}{}
 		}
 		\pgfmathparse{3.5*\m} 
 		\foreach \y  in  {1,...,\pgfmathresult} {
@@ -178,39 +178,39 @@ Annuité ou série périodique / mensuelle $a^{(m)}$ : la périodicité par déf
 	\end{tikzpicture}
 \end{center}
 
- Si    $i^{(m)}$ représente le taux d'intérêt (annuel) nominal équivalent avec $m$ période annuelle $i^{(m)}= m\left((1+i)^{1 / m}-1\right)$ .
+ Si    \(i^{(m)}\) représente le taux d'intérêt (annuel) nominal équivalent avec \(m\) période annuelle \(i^{(m)}= m\left((1+i)^{1 / m}-1\right)\) .
 
-De même $d^{(m)} $ taux d'escompte nominal conforme à $d$ et $m$ : $d^{(m)}= m\left(1-(1-d)^{1 / m}\right)$.
+De même \(d^{(m)} \) taux d'escompte nominal conforme à \(d\) et \(m\) : \(d^{(m)}= m\left(1-(1-d)^{1 / m}\right)\).
 
-$$
+\[
 \ddot{a}_{\lcroof{n}}^{(m)}=\frac{1}{m} \sum_{k=0}^{m n-1} v^{\frac{k}{m}}=\frac{d}{d^{(m)}} \ddot{a}_{\lcroof{n}}=\frac{1-v^{n}}{d^{(m)}} \approx \ddot{a}_{\lcroof{n}}+\frac{m-1}{2 m}\left(1-v^{n}\right)
-$$
-$$
+\]
+\[
 a_{\lcroof{n}}^{(m)}=\frac{1}{m} \sum_{k=1}^{m n} v^{\frac{k}{m}}=\frac{i}{i^{(m)}} a_{\lcroof{n}}=\frac{1-v^{n}}{i^{(m)}} \approx a_{\lcroof{n}}-\frac{m-1}{2 m}\left(1-v^{n}\right)
-$$
-Annuité unitaire $a$ : elle est utilisée lors de la construction de formules d'annuité.
-Pour une annuité constante, le montant total versé chaque année est de~1, quelque soit $m$.  
+\]
+Annuité unitaire \(a\) : elle est utilisée lors de la construction de formules d'annuité.
+Pour une annuité constante, le montant total versé chaque année est de~1, quelque soit \(m\).  
 
-Annuité dynamique, croissante/décroissante $Ia$/$Da$ : dans sa forme la plus simple, elle verse un montant qui démarre à 1 ($n$) et qui croit (décroit) à chaque période de façon arithmétique ou géométrique. Dans l'exemple suivant, la progression est arithmétique.
-On utilise le préfixe $I$ (\engl{increasing}) pour indiquer les annuités croissantes et $D$ (\engl{decreasing}) pour les annuités dégressives.
+Annuité dynamique, croissante/décroissante \(Ia\)/\(Da\) : dans sa forme la plus simple, elle verse un montant qui démarre à 1 (\(n\)) et qui croit (décroit) à chaque période de façon arithmétique ou géométrique. Dans l'exemple suivant, la progression est arithmétique.
+On utilise le préfixe \(I\) (\engl{increasing}) pour indiquer les annuités croissantes et \(D\) (\engl{decreasing}) pour les annuités dégressives.
 	
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
 		% Draw the x-axis and y-axis.
 		\def\w{11}
 		\def\n{9}
-		\node[left] at (-.5,0) {$Ia_{\lcroof{n}}$};
+		\node[left] at (-.5,0) {\(Ia_{\lcroof{n}}\)};
 		\foreach \y in  {0,...,3} {
 			\draw (\y,0) -- (\y,-0.1);
-			\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+			\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};
 				\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,\y/3);}{
 				\node[below] at (\y,-0.1) {\tiny 0};}
 		}
 		\foreach \y in  {-3,...,1} {
 			\draw (\y+\n,0) -- (\y+\n,-0.1);
-			\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};}{}
-			\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};}{}
-			\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+			\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \y\)};}{}
+			\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \)};}{}
+			\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n+\y\)};}{}
 			\ifthenelse{\y<1 }{	\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,\y/3+\n/3);}
 		}
 		\draw[ line width=1] (-.25,0) -- (4,0);
@@ -221,18 +221,18 @@ On utilise le préfixe $I$ (\engl{increasing}) pour indiquer les annuités crois
 	% Draw the x-axis and y-axis.
 	\def\w{11}
 	\def\n{9}
-	\node[left] at (-.5,0) {$Da_{\lcroof{n}}$};
+	\node[left] at (-.5,0) {\(Da_{\lcroof{n}}\)};
 	\foreach \y in  {0,...,3} {
 		\draw (\y,0) -- (\y,-0.1);
-		\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny $ \scriptstyle \y$};
+		\ifthenelse{\y>0 }{	\node[below] at (\y,-0.1) {\tiny \( \scriptstyle \y\)};
 			\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y,0) -- (\y,\n/3-\y/3);}{
 			\node[below] at (\y,-0.1) {\tiny 0};}
 	}
 	\foreach \y in  {-3,...,1} {
 		\draw (\y+\n,0) -- (\y+\n,-0.1);
-		\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n \y$};}{}
-		\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n $};}{}
-		\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny $\scriptstyle n+\y$};}{}
+		\ifthenelse{\y<0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \y\)};}{}
+		\ifthenelse{\y=0 }{\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n \)};}{}
+		\ifthenelse{\y>0}{	\node[below] at (\y+\n,-0.1) {\tiny \(\scriptstyle n+\y\)};}{}
 		\ifthenelse{\y<1 }{	\draw[ line width=1, color=OrangeProfondIRA, arrows={-Stealth[length=4, inset=0]}] (\y+\n,0) -- (\y+\n,1/3-\y/3);}
 	}
 	\draw[ line width=1] (-.25,0) -- (4,0);
@@ -245,17 +245,17 @@ On utilise le préfixe $I$ (\engl{increasing}) pour indiquer les annuités crois
 (I \ddot{a})_{\lcroof{n}}=1+2 v+\cdots+n v^{n-1}=\frac{1}{d}\left(\ddot{a}_{\lcroof{n}}-n v^{n}\right)
 \label{Ian}
 \end{equation}
-avec, on le rappelle,  $d=i/(1+i)$ et à terme échu (\engl{immediate})
-$$
+avec, on le rappelle,  \(d=i/(1+i)\) et à terme échu (\engl{immediate})
+\[
 (I a)_{\lcroof{n}}=v+2 v^{2}+\cdots+n v^{n}=\frac{1}{i}\left(\ddot{a}_{\lcroof{n}}-n v^{n}\right)
-$$
-$$
+\]
+\[
 (D \ddot{a})_{\lcroof{n}}=n+(n-1) v+\cdots+v^{n-1}=\frac{1}{d}\left(n-a_{\lcroof{n}}\right)
-$$
+\]
 et à terme échu :
-$$
+\[
 (D a)_{\lcroof{n}}=n v+(n-1) v^{2}+\cdots+v^{n}=\frac{1}{i}\left(n-a_{\lcroof{n}}\right)
-$$
+\]
 
 
 
