@@ -1,5 +1,5 @@
 % !TeX root = ActuarialFormSheet_MBFA-es.tex
-% !TeX spellcheck = fr_FR
+% !TeX spellcheck = es_ES
 
 
 \begin{f}[La tarification en assurance non-vie]
@@ -144,7 +144,7 @@ provisions suivantes:
 	La méthode de Chain Ladder estime les montants inconnus, \(C_{i k}\) pour \(i+k>n+1,\) par
 	\begin{equation}\label{CL1}
 		\hat{C}_{i k}=C_{i, n+1-i} \cdot \hat{f}_{n+1-i} \cdots \hat{f}_{k-1} \quad i+k>n+1
-	\end{equation}	où
+	\end{equation}	ó
 	\begin{equation}\label{CL2}
 		\hat{f}_{k}=\frac{\color{OrangeProfondIRA}\sum_{i=1}^{n-k} C_{i, k+1}}{\color{BleuProfondIRA}\sum_{i=1}^{n-k} C_{i k}} \quad 1 \leq k \leq n-1 .
 	\end{equation}
@@ -339,7 +339,7 @@ Comme \(S=\sum_{i=1}^{N} X_{i}\), il s'ensuit que \(S=0\) si \(N=0\) ou si \(N=n
 	\end{equation*}
 \(g_{x}\) est exprimé en fonction de \(g_{0}, g_{1}, \ldots, g_{x-1},\) de sorte que le calcul de la fonction de probabilité est récursif. Dans toutes les applications pratiques de cette formule, un ordinateur est nécessaire pour effectuer les calculs. Cependant, l'avantage de la formule de récursivité de Panjer par rapport à la formule pour \(g_{x}\) est qu'il n'est pas nécessaire de calculer les convolutions, ce qui est beaucoup plus efficace d'un point de vue computationnel.
 L'algorithme de Panjer nécessite la discrétisation de la variable \(X_i\).
-{f}
+\end{f}
 
 
 

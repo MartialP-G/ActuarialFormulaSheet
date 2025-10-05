@@ -1,3 +1,5 @@
+% !TeX root = ActuarialFormSheet_MBFA-es.tex
+% !TeX spellcheck = es_ES
 \begin{animateinline}[autoplay,loop,poster=1]{1}%,timeline=Graph/ShemasTimesLines.txt
 	\whiledo{\thehigher<12}{
 		%		    \setcounter{rep}{0}
@@ -11,51 +13,51 @@
 				]
 				% Définir styles conditionnels
 				% Centre
-				\node[fill=BleuProfondIRA, text=white, scale=2] (actu) {Sciences\\actuarielles};
+				\node[fill=BleuProfondIRA, text=white, scale=2] (actu) {Ciencias\\Actuariales};
 				% En bas
 				% Non-Vie
-				\highlightnodeDualList{}{2,5,8}{below=of actu, yshift=-7.5mm}{nonvie}{Non-Vie}
+				\highlightnodeDualList{}{2,5,8}{below=of actu, yshift=-7.5mm}{nonvie}{No vida}
 				% Vie et Santé
-				\highlightnodeDualList{}{1,4,7}{left=of nonvie}{vie}{Vie}
-				\highlightnodeDualList{}{3,6,9}{right=of nonvie}{sante}{Santé}
+				\highlightnodeDualList{}{1,4,7}{left=of nonvie}{vie}{Vida}
+				\highlightnodeDualList{}{3,6,9}{right=of nonvie}{sante}{Salud}
 				\node[right=of sante, draw=none] (rep1) {};
 				
 				% Primes, Provisions, Droit/Gestion
-				\highlightnodeDualList{1,2,3,11}{4,5,6}{above=of rep1}{primes1}{Primes}
-				\highlightnodeDualList{1,2,3,11}{7,8,9}{above=of primes1}{provisions1}{Provisions}
+				\highlightnodeDualList{1,2,3,11}{4,5,6}{above=of rep1}{primes1}{Primas}
+				\highlightnodeDualList{1,2,3,11}{7,8,9}{above=of primes1}{provisions1}{Reservas}
 				% Réassurance et Solvabilité
 				\node[left=of vie, draw=none] (rep4) {};
-				\highlightnodeDualList{1,2,3,4,5,6,12}{10}{above=of rep4}{solv}{Solvabilité}
-				\highlightnodeDualList{1,2,3,10}{11}{above=of solv}{reass1}{Réassurance}
+				\highlightnodeDualList{1,2,3,4,5,6,12}{10}{above=of rep4}{solv}{Solvencia}
+				\highlightnodeDualList{1,2,3,10}{11}{above=of solv}{reass1}{Reaseguro}
 				\highlightnodeDualList{10,11}{}{above=of solv, yshift=-11.5mm, xshift=10mm}{ERM}{ERM}
 				
-				\highlightnodeDualList{9,11}{}{above=of provisions1}{Info}{Info\\Programmation}
-				\highlightnodeDualList{9,11}{}{above=of Info, yshift=-10mm}{gestion}{Gestion}
-				\highlightnodeDualList{9,11}{}{above=of gestion, yshift=-10mm}{droit}{Droit}
+				\highlightnodeDualList{9,11}{}{above=of provisions1}{Info}{Info\\Programación}
+				\highlightnodeDualList{9,11}{}{above=of Info, yshift=-10mm}{gestion}{Gestión}
+				\highlightnodeDualList{9,11}{}{above=of gestion, yshift=-10mm}{droit}{Derecho}
 				% Math Fi et ses sous-nœuds
-				\highlightnodeDualList{1,4,7,10,11}{}{left=of Info}{mathfi}{Math Fi}
-				\highlightnodeDualList{1,4,7,10,11}{}{above=of mathfi, yshift=-10mm}{taux}{Courbe de taux}
-				\highlightnodeDualList{10}{}{above=of taux, yshift=-10mm}{GP}{Gestion Portefeuille}
-				\highlightnodeDualList{7,10}{}{above=of GP, yshift=-10mm}{ALM}{Actif Passif}
-				\highlightnodeDualList{10,11}{}{above=of ALM, yshift=-10mm}{derive}{Produits dérivés}
-				\highlightnodeDualList{10,11}{}{above=of derive, yshift=-10mm}{titrisation}{Titrisation}
+				\highlightnodeDualList{1,4,7,10,11}{}{left=of Info}{mathfi}{Mates Finacieras}
+				\highlightnodeDualList{1,4,7,10,11}{}{above=of mathfi, yshift=-10mm}{taux}{Curva de Tipos}
+				\highlightnodeDualList{10}{}{above=of taux, yshift=-10mm}{GP}{Gestión de\\Cartera}
+				\highlightnodeDualList{7,10}{}{above=of GP, yshift=-10mm}{ALM}{Activos Pasivos}
+				\highlightnodeDualList{10,11}{}{above=of ALM, yshift=-10mm}{derive}{Derivados}
+				\highlightnodeDualList{10,11}{}{above=of derive, yshift=-10mm}{titrisation}{Securitización}
 				
 				% Proba & Stat et ses sous-nœuds
 				\highlightnodeDualList{1,2,3,4,5,6,7,8,9,10,11}{}{left=of mathfi}{proba}{Proba \& Stat}
 				\highlightnodeDualList{2,3,5,6,11}{}{above=of proba, yshift=-10mm}{glm}{GLM}
-				\highlightnodeDualList{2,5,10,11}{}{above=of glm, yshift=-10mm}{extremes}{Théorie\\Extrêmes}
-				\highlightnodeDualList{2,5,10,11}{}{above=of extremes, yshift=-10mm}{copules}{Copules}
+				\highlightnodeDualList{2,5,10,11}{}{above=of glm, yshift=-10mm}{extremes}{Teoría de\\Extremos}
+				\highlightnodeDualList{2,5,10,11}{}{above=of extremes, yshift=-10mm}{copules}{Cópulas}
 				\highlightnodeDualList{2,3,5,6}{}{above=of copules, yshift=-10mm}{ml}{Machine Learning}
-				\highlightnodeDualList{7,10}{}{above=of ml, yshift=-10mm}{stoch}{Stochastique}
+				\highlightnodeDualList{7,10}{}{above=of ml, yshift=-10mm}{stoch}{Estocásticos}
 				
 				% Économie, économétrie et variantes
 				\node[left=of proba, draw=none] (rep3) {};
-				\highlightnodeDualList{2,3,5,6,11}{}{above=of rep3, yshift=-10mm}{econo}{Économétrie}
-				\highlightnodeDualList{}{}{above=of econo, yshift=-10mm}{Temp}{Séries Temporelles}
-				\highlightnodeDualList{4,5}{}{above=of Temp, yshift=-10mm}{Spatial}{Spatiale}
-				\highlightnodeDualList{10}{}{left=of rep3}{eco}{Économie}
-				\highlightnodeDualList{10}{}{above=of eco, yshift=-10mm}{risk}{Éco du risque}
-				\highlightnodeDualList{1,4,10,11}{}{above=of risk, yshift=-10mm}{demographie}{Démographie}
+				\highlightnodeDualList{2,3,5,6,11}{}{above=of rep3, yshift=-10mm}{econo}{Econometría}
+				\highlightnodeDualList{}{}{above=of econo, yshift=-10mm}{Temp}{Séries Temporalees}
+				\highlightnodeDualList{4,5}{}{above=of Temp, yshift=-10mm}{Spatial}{Espacio}
+				\highlightnodeDualList{10}{}{left=of rep3}{eco}{Economía}
+				\highlightnodeDualList{10}{}{above=of eco, yshift=-10mm}{risk}{Economía de Riesgos}
+				\highlightnodeDualList{1,4,10,11}{}{above=of risk, yshift=-10mm}{demographie}{Demografía}
 				
 				
 				% Connexions principales

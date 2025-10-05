@@ -421,13 +421,13 @@ Unlike Riemann, Lebesgue groups points according to their values rather than the
 
 \begin{f} [Integration by parts] 
 
-Either \( u(x) \) et \( v(x) \) two continuously differentiable functions on the interval \([a, b]\), then
+Either \( u(x) \) and \( v(x) \) two continuously differentiable functions on the interval \([a, b]\), then
 
 \[
 \int_a^b u(x) v'(x) \, dx = \left[ u(x) v(x) \right]_a^b - \int_a^b u'(x) v(x) \, dx
 \]
 
-or :
+where :
 \begin{itemize}
     \item \( u(x) \) is a function whose derivative is known \( u'(x) \),
     \item \( v'(x) \) is a function whose primitive is known \( v(x) \).
@@ -443,7 +443,7 @@ Either \( f(x) \) a continuous function and \( x = \phi(t) \) a change of variab
 \int_{a}^{b} f(x) \, dx = \int_{\phi^{-1}(a)}^{\phi^{-1}(b)} f(\phi(t)) \phi'(t) \, dt
 \]
 
-or :
+where :
 \begin{itemize}
     \item \( x = \phi(t) \) represents the change of variable,
     \item \( \phi'(t) \) is the derivative of \( \phi(t) \),
@@ -463,7 +463,7 @@ Either \( f(x) \) a function \( n \) - times differentiable at a point \( a \). 
 \end{align*}
 
 
-où :
+where :
 \begin{itemize}
     \item \( f^{(n)}(a) \) is the \( n^{th} \) derived from \( f \) evaluated in \( a \),
     \item \( \mathcal{O}_n(x) \) is the remainder of the Taylor development, representing the approximation error when truncating the series after the order term \( n \), then 

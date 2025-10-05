@@ -12,7 +12,7 @@ Contributed by [Marcelo Moreno Porras](https://servicios.urjc.es/pdi/ver/marcelo
 | :---: | :---: | :---: |
 | French :fr: | [`PDF`](https://raw.githubusercontent.com/MartialP-G/ActuarialFormulaSheet/main/fr/ActuarialFormSheet_MBFA-fr.pdf) | [`TeX`](fr/ActuarialFormSheet_MBFA-fr.tex) |
 | English :uk: | [`PDF`](https://raw.githubusercontent.com/MartialP-G/ActuarialFormulaSheet/main/en/ActuarialFormSheet_MBFA-en.pdf) | [`TeX`](en/ActuarialFormSheet_MBFA-en.tex) |
-| Spanish :es: | [`PDF`](https://raw.githubusercontent.com/MartialP-G/ActuarialFormulaSheet/main/es/ActuarialFormSheet_MBFA-es.pdf) | [`TeX`](fr/ActuarialFormSheet_MBFA-es.tex) |
+| Spanish :es: | [`PDF`](https://raw.githubusercontent.com/MartialP-G/ActuarialFormulaSheet/main/es/ActuarialFormSheet_MBFA-es.pdf) | [`TeX`](es/ActuarialFormSheet_MBFA-es.tex) |
 
 Complete set (PDF and TeX, all languages): [`ZIP`](https://github.com/MartialP-G/ActuarialFormulaSheet/archive/refs/heads/main.zip)
 
