@@ -21,7 +21,7 @@ f_{k,x_\mathrm{m}}(x) = k\,\frac{x_\mathrm{m}^k}{x^{k+1}}\ \mbox{for}\ x \ge x_\
 \[
 F_{\xi,\mu,\sigma}(x) = \begin{cases} 1 - \left(1+ \frac{\xi(x-\mu)}{\sigma}\right)^{-1/\xi} & \text{for }\xi \neq 0, \\ 1 - \exp \left(-\frac{x-\mu}{\sigma}\right) & \text{for }\xi = 0. \end{cases} 
 \]
-for  \(x \geq \mu\)  when \(\xi \geq 0\)  and \( \mu \leq x \leq \mu - \sigma /\xi\)  when \( \xi < 0\) et où \(\mu\in\mathbb{R}\) is the location, \(\sigma>0\) the scale and  \(\xi\in\mathbb{R}\) the form. 
+for  \(x \geq \mu\)  when \(\xi \geq 0\)  and \( \mu \leq x \leq \mu - \sigma /\xi\)  when \( \xi < 0\) and where \(\mu\in\mathbb{R}\) is the location, \(\sigma>0\) the scale and  \(\xi\in\mathbb{R}\) the form. 
 Note that some references give the \enquote{shape parameter}, as \(\kappa = - \xi\).
 
 \[
@@ -34,7 +34,7 @@ f_{\xi,\mu,\sigma}(x) = \frac{1}{\sigma}\left(1 + \frac{\xi (x-\mu)}{\sigma}\rig
 \medskip
 
 \begin{center}
-		{\shorthandoff{!;}	
+		
 \tikzset{
 	declare function={
 		dParetoGen(\x,\mu,\sigma,\xi) = 
@@ -54,7 +54,7 @@ f_{\xi,\mu,\sigma}(x) = \frac{1}{\sigma}\left(1 + \frac{\xi (x-\mu)}{\sigma}\rig
 		\legend{\(\mu\) =  1 \(\sigma=1\) \(\xi = 1\),\(\mu\) =  1  \(\sigma=2\) \(\xi =5\),\(\mu\) =  1  \(\sigma=3\) \(\xi =20\),\(\mu\) = 3  \(\sigma=2\) \(\xi = 5\)};
 	\end{axis} 
 \end{tikzpicture}
-}
+
 \end{center}
 
 
@@ -190,7 +190,7 @@ If the failure rate decreases over time then, \(\alpha<1\). If the failure rate 
 
 
 \begin{center}
-	{\shorthandoff{!;}	\tikzset{
+	\tikzset{
 	declare function={
 		dWeibull(\x,\sigma,\alpha) = (\alpha/\sigma)*(\x/\sigma)^(\alpha-1)*exp(-(\x/\sigma)^\alpha);}
 }  
@@ -212,7 +212,7 @@ If the failure rate decreases over time then, \(\alpha<1\). If the failure rate 
 		\legend{\(\mu\) =  0.5 \(\gamma = 1\) (\(\alpha=-1/\xi>0\)),\(\mu\) =  1 \(\gamma =2\),\(\mu\) =  1.5 \(\gamma =3\),\(\mu\) =  3 \(\gamma = 4\)};
 	\end{axis}	 
 \end{tikzpicture}
-}
+
 %	{\shorthandoff{!;}	
 %		\tikzset{
 %	declare function={
@@ -255,7 +255,7 @@ f_{\alpha,\mu,\sigma}(x)=\frac{\alpha}{\sigma} \left(\frac{x-\mu}{\sigma}\right)
 
 \begin{center}
 %	\includegraphics[width=0.90\textwidth]{../Graph/LoiFrechet.pdf}
-	{\shorthandoff{!;}	
+	
 		\tikzset{
 declare function={
 	dFrechet(\x,\m,\sigma,\alpha) = (\alpha/\sigma) * (((\x-\m)/\sigma)^(-1-\alpha)) * exp(- ((\x-\m)/\sigma)^(-\alpha) );}
@@ -278,7 +278,7 @@ declare function={
 	\legend{\(\mu\) =  0 \(\alpha=1\) \(\sigma = 1\),\(\mu\) =  0  \(\alpha=2\) \(\sigma =1\),\(\mu\) =  0  \(\alpha=3\) \(\sigma =1\),\(\mu\) = 0  \(\alpha=2\) \(\sigma = 2\)};
 \end{axis}	 
 \end{tikzpicture}
-}\end{center}
+\end{center}
 
 
 %\begin{center}
@@ -402,7 +402,7 @@ After these corrections, the data are said to be \enquote{as if} (in economics, 
 
 \begin{f}[Burning Cost]
 	
-	\(X_{i}^{j}\) designates the \(i^{e}\) disaster of the year \(j\) \og{}as if\fg{} updated, revalued and corrected,
+	\(X_{i}^{j}\) designates the \(i^{e}\) disaster of the year \(j\) as if updated, revalued and corrected,
 \(n^j\) the number of claims per year \(j\), \(c^{j}\) the insurer's responsibility \(c\).
 The pure rate by the \textbf{Burning Cost} method is given by the formula :
 \[

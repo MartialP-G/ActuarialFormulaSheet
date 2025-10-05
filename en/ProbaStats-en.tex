@@ -5,7 +5,7 @@
 	
 	A \textbf{universe} \(\Omega\), is the set of all possible outcomes that can be obtained during a random experiment.
 	
-	The \textbf{random event} is an event \(\omega\_i\) of the universe whose outcome (the result) is not certain.
+	The \textbf{random event} is an event \(\omega_i\) of the universe whose outcome (the result) is not certain.
 	
 	
 	The \textbf{elementary event :}
@@ -72,14 +72,14 @@
 	F_X(x)=\mathbb {P}(X\leq x), x\in \Re
 	\]
 	where the right-hand side represents the probability that the real random variable \(X\) takes a value less than or equal to \(x\).
-	The probability that \(X\) is in the interval \(]a, b]\) is therefore, if \(a< b\),
+	The probability that \(X\) is in the interval \([a, b]\) is therefore, if \(a< b\),
 	\(
 	\mathbb{P}(a< X\leq b)\ =\ F_X(b)-F_X(a)
 	\)
 	
 	A probability law has a \textbf{probability density} \(f\), if \(f\) is a function defined on \(\mathbb{R}^{+}\), Lebesgue integral, such that the probability of the interval \([a, b]\) is given by
 	\[
-	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx} \mbox{ pour tous nombres tq }a<x<b.
+	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx} \mbox{ for all numbers such that }a<x<b.
 	\]
 \end{f}
 \hrule
@@ -156,7 +156,7 @@
 	
 	Consider a sequence \((X_n)_{n\in \mathbb{N}}\) of independent random variables that follow the same probability law, integrable, i.e. \(E(|X_0|)<+\infty\).
 	
-	Using the notations, the \textbf{strong law of large numbers} specifies that \((Y_n)_{n\in\mathbb{N}}\) converges to \(E(X)\) \enquote{salmost surely}.
+	Using the notations, the \textbf{strong law of large numbers} specifies that \((Y_n)_{n\in\mathbb{N}}\) converges to \(E(X)\) \enquote{almost surely}.
 	%
 	\[
 	\mathbb{P}\left(\lim_{n \to +\infty} Y_n = E(X)\right)=1
@@ -356,7 +356,7 @@ For a sample \(n\), the \(n\) values \(X_i\), \(Y_i\) are converted by their ran
 \[
 \rho_S = \frac{1/n\,\sum_i(x_i-\mathbb{E}[x])(y_i-\mathbb{E}[y])}{\sqrt{1/n\,\sum_i (x_i-\mathbb{E}[x])^2 \times 1/n\sum_i(y_i-\mathbb{E}[y])^2}}.
 \]
-Si on note \(x_i= R(X_i)\) de 1 à \(N\) et  \(d_i = x_i - y_i\)~:
+If we give \(x_i= R(X_i)\) from 1 to \(N\) and \(d_i = x_i - y_i\)~:
 \[    \rho_S = 1- {\frac {6 \sum_i d_i^2}{n(n^2 - 1)}}\]
 
 \end{f}
@@ -457,7 +457,7 @@ A process \((B_t)_{t \geq 0}\) is a \textbf{standard Brownian motion} (or Wiener
 	
 	A process \((M_t)\) is a \textbf{martingale} (with respect to \(\mathcal{F}_t\)) if :
 	\[
-	\mathbb{E}[|M_t|] < \infty \quad \text{et} \quad \mathbb{E}[M_t \mid \mathcal{F}_s] = M_s \quad \forall\, 0 \leq s < t
+	\mathbb{E}[|M_t|] < \infty \quad \text{and} \quad \mathbb{E}[M_t \mid \mathcal{F}_s] = M_s \quad \forall\, 0 \leq s < t
 	\]
 	Examples : Brownian motion, stochastic integrals of the form \(\int_0^t \theta_s dB_s\) (under conditions) are martingales.
 	\medskip
@@ -515,7 +515,7 @@ A process \((X_t)\) is an \textbf{Itô process} if it can be written :
 	\]
 	or :
 	\begin{itemize}
-		\item \(b(t,x)\) is the \textbf{drift} (\emph{drift}) : function \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\) ;
+		\item \(b(t,x)\) is the \textbf{drift} : function \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\) ;
 		\item \(a(t,x)\) is the \textbf{diffusion} : function \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\) ;
 		\item \(B_t\) is a Brownian motion ;
 		\item \(X_t\) is the solution, adapted stochastic process.
@@ -750,7 +750,8 @@ Then the random variable \({\displaystyle X=\lbrace Z|Y\leq f(Z)\rbrace } \) fol
 	\draw[BleuProfondIRA] (-4,0) -- (-4,6) ;
 	\draw[BleuProfondIRA] (10,0) -- (10,6) ;
 	\draw[name path=melange,color=OrangeProfondIRA,smooth] plot ({\x},{20*normal(\x,2,2)+10*normal(\x,6,1)}) node[below=.5,left] {\(f(x)\) , normal law mixture};
-	\draw[name path=g,color=BleuProfondIRA,smooth] plot  ({\x},{60*normal(\x,3,3)})   node[above=3.5,left] {\(K\times g(x)\), normal distribution density };
+	\draw[name path=g,color=BleuProfondIRA,smooth] plot  ({\x},{60*normal(\x,3,3)})   node[above=3.5,left] {\(K\times g(x)\), normal distrib. density };
+
 	\tikzfillbetween[of=melange and g,on layer=main]{BleuProfondIRA, opacity=0.1};
 \end{tikzpicture}
 

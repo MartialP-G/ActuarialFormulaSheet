@@ -1,7 +1,7 @@
 \ \newline
 
 
-	Annuité certaine \(a_{\lcroof{n}}\) (ou \(a_{\lcroof{n}\;i}\) si le taux d'intérêt \(i\) est utile à préciser) : c'est le cas par défaut en mathématiques financières. Ses paiements sont par exemple garantis par un contrat.
+	Anualidad determinada \(a_{\lcroof{n}}\) (o \(a_{\lcroof{n}\;i}\) si es necesario especificar el tipo de interés \(i\) : este es el caso por defecto en matemáticas financieras. Sus pagos están, por ejemplo, garantizados por un contrato.
 	
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
@@ -32,7 +32,7 @@
 \]
 
 
-Annuité contingente \(\ddot{a}_{x}\): ses paiements sont conditionnés à un événement  aléatoire, comme lors d'une rente viagère d'un individu d'âge \(x\). Dans cet exemple, ils courent jusqu'à ce que mort s'ensuive :
+Renta vitalicia contingente \(\ddot{a}_{x}\): sus pagos están condicionados a un evento aleatorio, como una renta vitalicia de una persona de \(x\). En este ejemplo, los pagos continúan hasta el fallecimiento :
 
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
@@ -62,9 +62,9 @@ Annuité contingente \(\ddot{a}_{x}\): ses paiements sont conditionnés à un é
 \end{tikzpicture}	
 
 \end{center}
-La date du décès est représenté ici par un petit cercueil. Cette forme d'annuité sera largement étudiée dans la partie actuariat vie.
+La fecha del fallecimiento se representa aquí mediante un pequeño ataúd. Este tipo de anualidad se estudiará extensamente en la sección sobre seguros de vida.
 
-Annuité à terme échu (\engl{immédiate}) \(a_{\lcroof{n}}\) : ses paiements périodiques sont effectués à la fin de chaque période de paiement, comme pour le salaire payé en fin de mois. C'est le cas par défaut, illustré précédemment pour l'annuité certaine.
+Anualidad vencida (inmediata) \(a_{\lcroof{n}}\): sus pagos periódicos se realizan al final de cada período de pago, como un salario a fin de mes. Este es el caso predeterminado, ilustrado previamente para la anualidad en cuestión.
 \[
 \ddot{a}_{\lcroof{n}}=1+v+\cdots+v^{n-1}=\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{d}
 \]
@@ -73,7 +73,7 @@ Annuité à terme échu (\engl{immédiate}) \(a_{\lcroof{n}}\) : ses paiements p
 	\mathrm{PV}_{\lcroof{n}}^{\text {due }}=K \ddot{a}_{\lcroof{n}}=K \frac{1-v^{n}}{d} 
 \]
 
-Annuité à terme à échoir (\engl{due}) \(\ddot{a}_{\lcroof{n}}\):  ses paiements périodiques sont effectués au début de chaque période de paiement, comme pour un loyer par exemple.
+Anualidad anticipada (vencida) \(\ddot{a}_{\lcroof{n}}\): sus pagos periódicos se efectúan al inicio de cada período de pago, como ocurre, por ejemplo, con el pago del alquiler.
 
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
@@ -98,7 +98,7 @@ Annuité à terme à échoir (\engl{due}) \(\ddot{a}_{\lcroof{n}}\):  ses paieme
 		\draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (5,0) -- (\w,0);
 	\end{tikzpicture}
 \end{center}
-aussi notée \(\mathrm{PV}^{\mathrm{im}}\) :
+También denotada \(\mathrm{PV}^{\mathrm{im}}\) :
 \[
 a_{\lcroof{n}}=v+v^{2}+\cdots+v^{n}=\frac{1-v^{n}}{i}=v \frac{1-v^{n}}{1-v}
 \]
@@ -106,11 +106,11 @@ a_{\lcroof{n}}=v+v^{2}+\cdots+v^{n}=\frac{1-v^{n}}{i}=v \frac{1-v^{n}}{1-v}
 \[
 	\mathrm{PV}_{\lcroof{n}}^{\mathrm{im}}=K a_{\lcroof{n}}=K \frac{1-v^{n}}{i} 
 \]
-Annuité  perpétuelle \(a\) ou  \(a_{\lcroof{\infty}}\): 
+Anualidad perpetua \(a\) ó  \(a_{\lcroof{\infty}}\): 
 \[
 a=1/i
 \]
-Annuité différée \(_{m|}a_{\lcroof{n}}\): ses paiements ne commencent pas dans la première période mais après \(m\) périodes, \(m\) étant fixé à l'avance. 
+Anualidad diferida \(_{m|}a_{\lcroof{n}}\): sus pagos no comienzan en el primer periodo sino después de \(m\) periodos, con \(m\) fijos de antemano.
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
 		% Draw the x-axis and y-axis.
@@ -143,7 +143,7 @@ Annuité différée \(_{m|}a_{\lcroof{n}}\): ses paiements ne commencent pas dan
 \end{center}
 
 
-Annuité périodique / mensuelle \(a^{(m)}\) : la périodicité par défaut est un an, mais le paiement  unitaire peut être aussi réparti sur \(m\) périodes dans l'année.
+Anualidad periódica/mensual \(a^{(m)}\) : la periodicidad predeterminada es de un año, pero el pago unitario también puede distribuirse en \(m\) períodos dentro del año.
 
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
@@ -178,9 +178,9 @@ Annuité périodique / mensuelle \(a^{(m)}\) : la périodicité par défaut est 
 	\end{tikzpicture}
 \end{center}
 
- Si    \(i^{(m)}\) représente le taux d'intérêt (annuel) nominal équivalent avec \(m\) période annuelle \(i^{(m)}= m\left((1+i)^{1 / m}-1\right)\) .
+ Si \(i^{(m)}\) representa la tasa de interés nominal (anual) equivalente con \(m\) períodos por año, enontces \(i^{(m)}= m\left((1+i)^{1 / m}-1\right)\) .
 
-De même \(d^{(m)} \) taux d'escompte nominal conforme à \(d\) et \(m\) : \(d^{(m)}= m\left(1-(1-d)^{1 / m}\right)\).
+De manera similar, \(d^{(m)} \) es la tasa de descuento nominal consistente con \(d\) y \(m\) : \(d^{(m)}= m\left(1-(1-d)^{1 / m}\right)\).
 
 \[
 \ddot{a}_{\lcroof{n}}^{(m)}=\frac{1}{m} \sum_{k=0}^{m n-1} v^{\frac{k}{m}}=\frac{d}{d^{(m)}} \ddot{a}_{\lcroof{n}}=\frac{1-v^{n}}{d^{(m)}} \approx \ddot{a}_{\lcroof{n}}+\frac{m-1}{2 m}\left(1-v^{n}\right)
@@ -188,11 +188,11 @@ De même \(d^{(m)} \) taux d'escompte nominal conforme à \(d\) et \(m\) : \(d^{
 \[
 a_{\lcroof{n}}^{(m)}=\frac{1}{m} \sum_{k=1}^{m n} v^{\frac{k}{m}}=\frac{i}{i^{(m)}} a_{\lcroof{n}}=\frac{1-v^{n}}{i^{(m)}} \approx a_{\lcroof{n}}-\frac{m-1}{2 m}\left(1-v^{n}\right)
 \]
-Annuité unitaire \(a\) : elle est utilisée lors de la construction de formules d'annuité.
-Pour une annuité constante, le montant total versé chaque année est de~1, quelque soit \(m\).  
+Anualidad unitaria \(a\) : se utiliza al construir fórmulas de anualidades.
+Para una anualidad constante, el monto total pagado cada año es 1, independientemente de \(m\). 
 
-Annuité dynamique, croissante/décroissante \(Ia\)/\(Da\) : dans sa forme la plus simple, elle verse un montant qui démarre à 1 (\(n\)) et qui croit (décroit) à chaque période de façon arithmétique ou géométrique. Dans l'exemple suivant, la progression est arithmétique.
-On utilise le préfixe \(I\) (\engl{increasing}) pour indiquer les annuités croissantes et \(D\) (\engl{decreasing}) pour les annuités dégressives.
+Anualidad dinámica, creciente/decreciente \(Ia\)/\(Da\): en su forma más simple, paga una cantidad que comienza en 1 (\(n\)) y aumenta (decrece) cada período aritmética o geométricamente. En el siguiente ejemplo, la progresión es aritmética.
+El prefijo \(I\) (\engl{increasing}) se utiliza para indicar anualidades crecientes y \(D\) (\engl{decreasing}) para anualidades decrecientes.
 	
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
@@ -245,14 +245,14 @@ On utilise le préfixe \(I\) (\engl{increasing}) pour indiquer les annuités cro
 (I \ddot{a})_{\lcroof{n}}=1+2 v+\cdots+n v^{n-1}=\frac{1}{d}\left(\ddot{a}_{\lcroof{n}}-n v^{n}\right)
 \label{Ian}
 \end{equation}
-avec, on le rappelle,  \(d=i/(1+i)\) et à terme échu (\engl{immediate})
+con, recordamos,  \(d=i/(1+i)\) y vencida (inmediata)
 \[
 (I a)_{\lcroof{n}}=v+2 v^{2}+\cdots+n v^{n}=\frac{1}{i}\left(\ddot{a}_{\lcroof{n}}-n v^{n}\right)
 \]
 \[
 (D \ddot{a})_{\lcroof{n}}=n+(n-1) v+\cdots+v^{n-1}=\frac{1}{d}\left(n-a_{\lcroof{n}}\right)
 \]
-et à terme échu :
+y vencida :
 \[
 (D a)_{\lcroof{n}}=n v+(n-1) v^{2}+\cdots+v^{n}=\frac{1}{i}\left(n-a_{\lcroof{n}}\right)
 \]

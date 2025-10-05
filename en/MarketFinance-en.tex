@@ -5,10 +5,10 @@
 \begin{f}[Market Functioning]
 	
 The \textbf{Exchange} – a place of exchange – enables, in fact, the physical meeting between capital demanders and suppliers.
-The main listings concern \textbf{equities}, \textbf{bonds} (\engl{Fixed Income}), and \textbf{commodities}.
-Listed are \textbf{securities} such as stocks or bonds, \textbf{funds} (\engl{Exchange Traded Funds} that replicate equity indices, ETC or ETN that replicate more specific indices or commodities, SICAV or FCP, subscription warrants), \textbf{futures contracts}, \textbf{options}, \textbf{swaps}, and \textbf{structured products}.
+The main listings concern \textbf{equities}, \textbf{bonds} (Fixed Income), and \textbf{commodities}.
+Listed are \textbf{securities} such as stocks or bonds, \textbf{funds} (Exchange Traded Funds that replicate equity indices, ETC or ETN that replicate more specific indices or commodities, SICAV or FCP, subscription bonds, warrant), \textbf{futures contracts}, \textbf{options}, \textbf{swaps}, and \textbf{structured products}.
 
-The \textbf{Financial Markets Authority} (\href{https://www.amf-france.org/fr}{AMF}) oversees:
+The \textbf{Securities and Exchange Commission} (\href{https://www.sec.gov/}{SEC}) oversees :
 \begin{itemize}
 	\item the protection of invested savings; 
 	\item the information of investors; 
@@ -37,7 +37,7 @@ and \textbf{\href{https://www.cmegroup.com/}{CME Group}} (including
 
 The \textbf{over-the-counter market} (\textbf{OTC}) represents a major share of volumes traded outside organized markets.
 Since the Pittsburgh G20 (2009), certain standardized OTC derivatives must be cleared through a central entity.
-These \textbf{CCPs} (\textit{Central Counterparties}) thus play the role of \textbf{clearinghouses}: they replace the bilateral contract with two contracts between each party and the CCP.
+These \textbf{CCPs} (Central Counterparties) thus play the role of \textbf{clearinghouses}: they replace the bilateral contract with two contracts between each party and the CCP.
 
 \begin{tikzpicture}[scale=.47]
 	\node[businessman,minimum size=1.75cm,monogramtext=MPG,tie=OrangeProfondIRA, shirt=BleuProfondIRA,skin=white,hair=OrangeProfondIRA] at (-8,0) (MPG){Short position};
@@ -46,7 +46,7 @@ These \textbf{CCPs} (\textit{Central Counterparties}) thus play the role of \tex
 	\begin{scope}[yscale=-0.03, xscale=0.03, shift={(-150,-200)}]
 		%  		
 		%Usine
-		\draw [OrangeMoyenIRA!40,fill] (65,132) rectangle (195,225)  node [pos=0.5,text width=1.8cm, align=center] {\color{black}\bfseries Clearinghouse} ;
+		\draw [OrangeMoyenIRA!40,fill] (65,132) rectangle (195,225)  node [pos=0.5,text width=1.8cm, align=center] {\color{black}\bfseries Clearing\-house} ;
 		%Straight Lines [id:da13081779728777443] 
 		%	\draw (65,272) -- (474,272) -- (474,320);
 		%Shape: Polygon [id:ds025531371089408395] 
@@ -62,7 +62,7 @@ These \textbf{CCPs} (\textit{Central Counterparties}) thus play the role of \tex
 	\end{scope}
 	% 	
 	\draw[->,>=latex, thick] (MPG) to [bend left]  node[pos=0.4, above]{Short} (a);
-	\draw[<-,>=latex, thick,OrangeProfondIRA] (MPG) to [bend right]  node[pos=0.4, below=.2]{payment} (a);
+	\draw[<-,>=latex, thick,OrangeProfondIRA] (MPG) to [bend right]  node[pos=0.4, below=.2]{Payment} (a);
 	\draw[->,>=latex, thick,FushiaIRA] (SPG) to [bend left] node[pos=0.4, below=.2]{No payment}  (b);
 	\draw[->,>=latex, thick] (SPG) to [bend right] node[pos=0.4, above]{Long} (b);
 	%  	
@@ -77,22 +77,22 @@ Short-term interest-bearing securities, traded on money markets, are generally a
 Nominal rates are then annual and calculations use \textbf{proportional rates} to adjust for durations less than one year.
 These securities are quoted or valued according to the discount principle and with a Euro-30/360 calendar convention.
 
-In the American market, public debt securities are called:
-Treasury Bills (T-bills): ZC < 1 year, Treasury Notes (T-notes): ZC < 10 years,
-Treasury Bonds (T-bonds): coupon bonds with maturity > 10 years.
+In the American market, public debt securities are called :
+Treasury Bills (T-bills) : ZC < 1 year, Treasury Notes (T-notes): ZC < 10 years,
+Treasury Bonds (T-bonds) : coupon bonds with maturity > 10 years.
 
 
-They are mainly:
+They are mainly :
 \begin{itemize}
-	\item \textbf{BTF (fixed-rate Treasury bills, France):} issued at 13, 26, 52 weeks, discounted rate, weekly auction, nominal 1~€, settlement at T+2.
+	\item \textbf{BTF (fixed-rate Treasury bills, France) :} issued at 13, 26, 52 weeks, discounted rate, weekly auction, nominal 1~€, settlement at T+2.
 	
-	\item \textbf{Treasury bills > 1 year:} same rules as bonds (see next section).
+	\item \textbf{Treasury bills > 1 year :} same rules as bonds (see next section).
 	
-	\item \textbf{Certificates of deposit (CDN):} securities issued by banks at fixed/discounted rate (short term) or variable/post-discounted rate (long term), also called BMTN.
+	\item \textbf{Certificates of deposit (CDN) :} securities issued by banks at fixed/discounted rate (short term) or variable/post-discounted rate (long term), also called BMTN.
 	
-	\item \textbf{Eurodollars:} USD deposits outside the USA, formerly indexed on LIBOR, now declining.
+	\item \textbf{Eurodollars :} USD deposits outside the USA, formerly indexed on LIBOR, now declining.
 	
-	\item \textbf{Commercial paper:} unsecured short-term securities issued by large companies to finance their cash flow.
+	\item \textbf{Commercial paper :} unsecured short-term securities issued by large companies to finance their cash flow.
 \end{itemize}
 
 \textbf{Price calculations of a fixed-rate Treasury bill with discounted interest}
@@ -113,7 +113,7 @@ d=\frac{F-P}{F} \cdot \frac{360}{k}
 \]
 
 
-The main Futures Contracts: Federal Funds Futures (US),
+The main Futures Contracts : Federal Funds Futures (US),
 Three-Month SOFR Futures (US),
 ESTR Futures (EU),
 SONIA Futures (UK),
@@ -131,7 +131,7 @@ As mentioned in the previous section, \textbf{Treasury bills with a maturity gre
 
 %Les \textbf{coupons} : sont payés régulièrement à la fin des périodes de coupon (annuelles ou semestrielles) jusqu'à la date d'échéance.
 
-\textbf{Zero-coupon bonds}: pay only the nominal value at maturity. With \(E\) the issue price and \(R\) its redemption value:
+\textbf{Zero-coupon bonds} : pay only the nominal value at maturity. With \(E\) the issue price and \(R\) its redemption value :
 	
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -158,8 +158,8 @@ As mentioned in the previous section, \textbf{Treasury bills with a maturity gre
 \end{tikzpicture}
 \end{center}
 
-\textbf{Coupon bonds}:
-\textbf{Fixed-rate bonds} have a coupon rate that remains constant until maturity. Assuming a \emph{bullet} repayment, with \(E\) the issue price, \(c\) the coupons, and \(R\) the redemption value, it can be illustrated as follows:
+\textbf{Coupon bonds} :
+\textbf{Fixed-rate bonds} have a coupon rate that remains constant until maturity. Assuming a \emph{bullet} repayment, with \(E\) the issue price, \(c\) the coupons, and \(R\) the redemption value, it can be illustrated as follows :
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
     % Draw the x-axis and y-axis.
@@ -191,7 +191,7 @@ As mentioned in the previous section, \textbf{Treasury bills with a maturity gre
  \textbf{Indexed bonds} (inflation-linked bonds) have coupons and sometimes also the nominal value indexed to inflation or another economic indicator, such as Treasury Assimilable Bonds
 		indexed to inflation (OATi). The values of \(c\) vary.
         
-Bonds with \textbf{floating rate}, \textbf{variable rate}, or \textbf{resettable rate}: have a coupon rate linked to a reference interest rate (for example, the euro short-
+Bonds with \textbf{floating rate}, \textbf{variable rate}, or \textbf{resettable rate} : have a coupon rate linked to a reference interest rate (for example, the euro short-
 		term rate (\href{https://www.cmegroup.com/markets/interest-rates/stirs/euro-short-term-rate.quotes.html}{€STR})).
 
 \textbf{Perpetual bonds} have no maturity date; the principal is never repaid.
@@ -208,42 +208,42 @@ When \(E=F\), the issue is said to be at par, and when \(R=F\), the redemption i
 
 The price of a bond is determined by the present value of the expected future cash flows (coupons and principal repayment) discounted at the market yield rate \(r\).
  
-The price calculation of bonds simply relies on the present value formula:
+The price calculation of bonds simply relies on the present value formula :
 \[
 VP = \sum_{k=1}^{n} \frac{c}{(1 + r)^k} + \frac{F}{(1 + r)^n}
  \]
-where:
+where :
 \begin{itemize}
-    \item \(PV\): price or present value\index{Present Value} of the bond,
-	\item \(r\): market interest rate for the relevant maturity.
+	\item \(PV\) : price or present value\index{Present Value} of the bond,
+	\item \(r\) : market interest rate for the relevant maturity.
 \end{itemize}
 
 
-For bonds with periodic coupons, the coupon is divided by the number of periods (\(m\)) per year and the formula becomes:
+For bonds with periodic coupons, the coupon is divided by the number of periods (\(m\)) per year and the formula becomes :
 \[ 
-PV = \sum_{k=1}^{mn} \frac{c/m}{(1 + r^{(m)})^k} + \frac{R}{(1 + + r^{(m)})^{mn}}
+PV = \sum_{k=1}^{mn} \frac{c/m}{(1 + r^{(m)})^k} + \frac{R}{(1 + r^{(m)})^{mn}}
  \]
 where \(c/m\) represents the periodic coupon payment and \(r^{(m)}\) the periodic interest rate.
 
-The bond yield is the value \(r^{(m)}\), the equivalent rate of \(r\) over \(m\) periods in the year, which equates the present value \(VP_r\) with the current or market price of this bond.
+The bond yield is the value \(r^{(m)}\), the equivalent rate of \(r\) over \(m\) periods in the year, which equates the present value \(PV_r\) with the current or market price of this bond.
 
-\textbf{The quotation of a bond} is given as a percentage. Thus, a quotation of 97.9 on Euronext indicates a quoted value of \(97.9 / 100 \times F\).  
+\textbf{The quotation of a bond} is given as a percentage. Thus, a quotation of 97.9 on Euronext indicates a quoted value of \(97.9 / 100 \times F\). 
 It is quoted excluding \textbf{accrued coupons}, the portion of the next coupon to which the seller is entitled if the bond is sold before the payment of that coupon.
 \end{f}
 \hrule
 
 \begin{f}[Duration \& Convexity]
 
-The Macaulay duration:
+The Macaulay duration :
 \[ 		
 D = \sum_{t=1}^{n} t \cdot w_t, \quad \text{où} \quad w_t = \frac{PV(C_t)}{P}.
  \]	
 If the payment frequency is \(k\) per year, the duration expressed in years is obtained by dividing by \(k\).
-The modified duration \(D^*\):
+The modified duration \(D^*\) :
 \[ 	
 D^* = \frac{D}{1 + i}.
  \]
- Which allows approximating the portfolio change \(\Delta P\) in case of interest rate changes \(\Delta_i\)
+Which allows approximating the portfolio change \(\Delta P\) in case of interest rate changes \(\Delta_i\)
 \[ 
 \Delta P \approx -P\ D^* \Delta_i 
  \]
@@ -342,14 +342,14 @@ At maturity, the payoff is \(\min (0, S_T-K)=-(K- S_T)^+\).
 \hrule
 
 \begin{f}[Spread Strategies]
-\textbf{Spread strategy}: uses two or more options of the same type (two call options or two put options).  
+\textbf{Spread strategy} : uses two or more options of the same type (two call options or two put options).  
 If the strike prices vary, it is a \textbf{vertical spread}.  
 If the maturities change, it is a \textbf{horizontal spread}.
 
 A vertical spread strategy involves a long position and a short position on call options on the same underlying asset, with the same maturity but different strike prices.  
-We distinguish: \textbf{bull vertical spread}  and \textbf{bear vertical spread}.
+We distinguish : \textbf{bull vertical spread} and \textbf{bear vertical spread}.
 
-\textbf{Bull vertical spread}: anticipating a moderate rise in the underlying asset, the investor takes a long position on \(C_1\) and a short position on \(C_2\) under the condition \(E_1 < E_2\).  
+\textbf{Bull vertical spread} : anticipating a moderate rise in the underlying asset, the investor takes a long position on \(C_1\) and a short position on \(C_2\) under the condition \(E_1 < E_2\).  
 Net result at maturity :
 
 	\begin{tikzpicture}[scale=.52]
@@ -406,7 +406,7 @@ Net result at maturity :
 
 
 
-\textbf{Bear vertical spread}: anticipating a moderate decline in the underlying asset, the investor sells the more expensive option and buys the cheaper one.
+\textbf{Bear vertical spread} : anticipating a moderate decline in the underlying asset, the investor sells the more expensive option and buys the cheaper one.
 
 
 	\begin{tikzpicture}[scale=.52]
@@ -463,7 +463,7 @@ Net result at maturity :
 
 % Code TikZ conservé ici (éventuellement inséré)
 
-\textbf{Butterfly spread}: anticipates a small movement in the underlying asset.  
+\textbf{Butterfly spread} : anticipates a small movement in the underlying asset.  
 It is a combination of a bull vertical spread and a bear vertical spread.  
 This strategy is suitable when large movements are considered unlikely.  
 Requires a low initial investment.
@@ -626,7 +626,7 @@ It is impossible to realize a risk-free gain from a zero initial investment. Thu
 
 \begin{f}[Parity relation]
 	
-AAO implies the following relationship between the Call and the Put (stock):
+AAO implies the following relationship between the Call and the Put (stock) :
 
 \[S_t- C_t + P_t = K e^{-i_{f}.\tau}\]	
 \end{f}
@@ -634,7 +634,7 @@ AAO implies the following relationship between the Call and the Put (stock):
 
 \begin{f}[The Cox-Ross-Rubinstein model]
 	
-It is based on a discrete-time process with two possible price movements at each period: an increase (factor \(u\)) or a decrease (factor \(d\)), with \(u > 1 + i_{f}\) and \(d < 1 + i_{f}\). The price at \(t = 1\) is then \( S_{1}^{u} = S_{0} u \) or \( S_{1}^{d} = S_{0} d \), according to a probability \(q\) or \(1-q\).
+It is based on a discrete-time process with two possible price movements at each period : an increase (factor \(u\)) or a decrease (factor \(d\)), with \(u > 1 + i_{f}\) and \(d < 1 + i_{f}\). The price at \(t = 1\) is then \( S_{1}^{u} = S_{0} u \) or \( S_{1}^{d} = S_{0} d \), according to a probability \(q\) or \(1-q\).
 
 \begin{tikzpicture}
 	[sibling distance=5em,
@@ -698,13 +698,13 @@ We can also construct a replication portfolio composed of \(\Delta\) shares and 
 P_{0} = \frac{1}{1+i_f} \left[ q P_{1}^{u} + (1 - q) P_{1}^{d} \right]
 \]
 
-\textbf{Determination of \(q\), \(u\), \(d\)}:  
+\textbf{Determination of \(q\), \(u\), \(d\)} :  
 By calibrating the model to match the first moments of the return under the risk-neutral probability (expected value \(i_f\), variance \(\sigma^2 \delta t\)), we obtain :
 \[
 e^{i_{f} \delta t} = q u + (1-q) d, \qquad q u^2 + (1-q) d^2 - [q u + (1-q) d]^2 = \sigma^2 \delta t
 \]
 
-With the constraint \(u = \frac{1}{d}\), we obtain:
+With the constraint \(u = \frac{1}{d}\), we obtain :
 \[
 \begin{array}{l}
 	q = \frac{e^{-i_f \delta_t} - d}{u - d} \\
@@ -733,7 +733,7 @@ Assumptions of the model
 	\item Short selling is allowed. 
 \end{itemize}
 
-The Black-Scholes-Merton equation for valuing a derivative contract \(f\) is:
+The Black-Scholes-Merton equation for valuing a derivative contract \(f\) is :
 \[
 \frac{\partial f}{\partial t} + i_f S \frac{\partial f}{\partial S} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 f}{\partial S^2} = i_f f
 \]
@@ -865,7 +865,7 @@ y( m ) =& \beta _0 + \beta _1\frac{{\left[ {1 - \exp \left( { - m/\tau} \right)}
 \label{MTNSeq}
 \end{align*}}
 %
-where \(y\left( m \right)\) and \(m\) are as above, and \(\beta_0\), \(\beta_1\), \(\beta_2\), and \(\tau\) are parameters:
+where \(y\left( m \right)\) and \(m\) are as above, and \(\beta_0\), \(\beta_1\), \(\beta_2\), and \(\tau\) are parameters :
 
 
 \begin{itemize}
@@ -970,11 +970,11 @@ Once adjusted, the user can then evaluate assets or define various sensitivity m
 
 \begin{f}[Vasicek model]
 	
-	Under a risk-neutral probability \(\mathbb{Q}\), the short rate \((r_t)\) follows an Ornstein–Uhlenbeck process with constant coefficients:
+	Under a risk-neutral probability \(\mathbb{Q}\), the short rate \((r_t)\) follows an Ornstein–Uhlenbeck process with constant coefficients :
 	\[
 	dr_t = \kappa(\theta - r_t)\, dt + \sigma\, dW_t, \quad r_0 \in \mathbb{R}
 	\]
-	où :
+	or :
 	\begin{itemize}[nosep]
 		\item \(\kappa > 0\) is the speed of mean reversion,
 		\item \(\theta\) is the long-term mean level,
@@ -982,7 +982,7 @@ Once adjusted, the user can then evaluate assets or define various sensitivity m
 		\item \(W_t\) is a standard Brownian motion under \(\mathbb{Q}\).
 	\end{itemize}
 	
-The EDS solution (application of Itô’s lemma to \(Y_{t}=r(t) e^{\kappa t}\)):
+The EDS solution (application of Itô’s lemma to \(Y_{t}=r(t) e^{\kappa t}\)) :
 	\[
 	r_t = r_s e^{-\kappa(t-s)} + \theta(1 - e^{-\kappa(t-s)}) + \sigma \int_s^t e^{-\kappa(t-u)} dW_u
 	\]
@@ -1044,7 +1044,7 @@ with :
 
 Thus, the process \((r_t)\) is a diffusion with explicit conditional distributions (under \(\mathbb{Q}\)) :
 
-For \(s < t\), the variable \(r_t\) follows a non-central \(\chi^2\) distribution:
+For \(s < t\), the variable \(r_t\) follows a non-central \(\chi^2\) distribution :
 \[
 r_t \mid \mathcal{F}_s \sim c \cdot \chi^2_{d}(\lambda)
 \]

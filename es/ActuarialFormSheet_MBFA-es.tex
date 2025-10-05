@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PassOptionsToPackage{svgnames,table}{xcolor}
-\documentclass[french,a4paper]{article} 
+\documentclass[a4paper]{article} 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \RequirePackage{eurosym}
@@ -12,7 +12,9 @@
 %\usepackage[a4paper]{geometry}
 \setlength{\parindent}{0pt}%Cela supprime l'indentation pour tous les paragraphes.
 
-\usepackage{babel}
+\usepackage[english]{babel}
+\usepackage{nth}
+\usepackage[autostyle=true]{csquotes}
 \usepackage{epsdice}
 \usepackage{enumitem}
 %
@@ -43,6 +45,17 @@
 \definecolor{GrisLogoIRA}{HTML}{5A5A5C}
 \usepackage[colorlinks=true,linkcolor=mbfaulmorange,urlcolor=mbfaulmorange,
 citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref} 
+\hypersetup{
+	pdftitle    = {Actuarial Formula Cheat Sheet},
+	pdfauthor   = {Martial Phelippe-Guinvarc'h and Marcelo Moreno Porras},
+	pdfsubject  = {Actuarial Science -- Formula Sheet},
+	pdfkeywords = {actuarial science, formula sheet, probability, statistics, finance},
+	pdfproducer = {LaTeX},
+	pdfcreator  = {pdflatex},
+	pdfstartview= FitH,
+	pdfpagemode = UseOutlines,
+	pdfduplex   = DuplexFlipLongEdge % <-- configuration d'impression recto-verso livret
+}
 \tcbset{
   beamerblock/.style={
     enhanced,
@@ -82,6 +95,7 @@ citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref}
 \usetikzlibrary{arrows}
 
 \usetikzlibrary{intersections, pgfplots.fillbetween,pgfplots.dateplot}
+\usetikzlibrary{fillbetween}
 \usetikzlibrary{datavisualization}
 \usetikzlibrary{calc}
 \usetikzlibrary{math}
@@ -133,18 +147,18 @@ citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref}
 \fancyhead{} % clear all header fields
 %\fancyfoot{} % clear all footer fields
 \fancyfoot[L]{\href{https://sites.google.com/site/martialphelippeguinvarch}{\color{OrangeProfondIRA}Martial Ph\'elipp\'e-Guinvarc'h\ } 
-	\href{mailto:Martial.Phelippe-GuinvarcH@univ-lemans.fr?subject=ActuarialFormSheet}{\faAt\ } 
+	\href{mailto:Martial.Phelippe-GuinvarcH@univ-lemans.fr?subject=ActuarialFormSheet}{\color{OrangeProfondIRA}\faAt\ \faEnvelope} 
 	\href{https://www.linkedin.com/in/martial-phelippe-guinvarc-h}{\color{OrangeProfondIRA}\faLinkedinSquare}
-	\href{https://orcid.org/0000-0002-9894-803X}{\tikz[scale=0.75]{\fill[OrangeProfondIRA] (0, 0) circle (0.35); 
-			\node[white,font=\sffamily\bfseries\small] at (0, 0) {ID};}
-		\href{https://github.com/MartialP-G}{\color{OrangeProfondIRA} \faGithub} 
+	\href{https://orcid.org/0000-0002-9894-803X}{\tikz[scale=0.75, baseline=-1ex]{\fill[OrangeProfondIRA] (0, 0) circle (0.25); 
+		\node[white,font=\sffamily\bfseries\scriptsize] at (0, 0) {ID};}}
+	\href{https://github.com/MartialP-G}{\color{OrangeProfondIRA} \large \faGithub} 
 	}
-	\fancyfoot[R]{\href{https://scholar.google.com/citations?user=oZITlTQAAAAJ}{\color{OrangeProfondIRA}Marcelo Moreno Porras} 
-		\href{mailto:marcelo.moreno@urjc.es}{\faAt\ \faEnvelope} 
-		\href{https://www.linkedin.com/in/marcelomorenop/}{\color{OrangeProfondIRA}\faLinkedinSquare}
-		\href{https://orcid.org/0009-0007-1714-6507}{\tikz[scale=0.75]{\fill[OrangeProfondIRA] (0, 0) circle (0.35); 
-				\node[white,font=\sffamily\bfseries\small] at (0, 0) {ID};}
-			\href{https://github.com/marcelomijas}{\color{OrangeProfondIRA} \faGithub} }
+	\fancyfoot[R]{\href{https://servicios.urjc.es/pdi/ver/marcelo.moreno}{\color{OrangeProfondIRA}Marcelo Moreno Porras} 
+	\href{mailto:marcelo.moreno@urjc.es?subject=ActuarialFormSheet}{\color{OrangeProfondIRA}\faAt\ \faEnvelope} 
+	\href{https://www.linkedin.com/in/marcelomorenop/}{\color{OrangeProfondIRA}\faLinkedinSquare}
+	\href{https://orcid.org/0009-0007-1714-6507}{\tikz[scale=0.75, baseline=-1ex]{\fill[OrangeProfondIRA] (0, 0) circle (0.25); 
+			\node[white,font=\sffamily\bfseries\scriptsize] at (0, 0) {ID};}}
+	\href{https://github.com/marcelomijas}{\color{OrangeProfondIRA} \large \faGithub} }
 %\fancyfoot[LO,CE]{\textbf{TCS \& TCT}}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -277,22 +291,22 @@ citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref}
 \title{
 \author{}
 \emph{Actuarial Formula Cheat Sheet}\\
-Ma fiche de Révision Actuarielle\\\medskip\small
-Master Économie/Économétrie de l'Assurance\\
-Master Actuariat}
+Mi Hoja de Referencia Actuarial\\\medskip\small
+Máster en Economía de Seguros/Econometría\\
+Master en Ciencias Actuariales}
 \begin{document}
 \maketitle
 %
 \newcounter{higher}\newcounter{rep} \setcounter{higher}{1}
 \begin{center}
-\input{ActuarialSciencesDiagram}
+\input{ActuarialSciencesDiagram-es}
 \end{center}
 \newpage
 
 \begin{center}
 	\bigskip
-	
-\section*{Mots clés de l'assurance}
+
+\section*{Palabras Clave Seguros}
     \medskip
 \end{center}
 
@@ -302,9 +316,9 @@ Master Actuariat}
 \input{InsuranceKeywords-es}
 \end{multicols}
 
-%\newpage
+\newpage
 \begin{center}
-	\section*{Mathématiques Financières}
+	\section*{Matemáticas Financieras}
 	\medskip
 \end{center}
 
@@ -314,8 +328,9 @@ Master Actuariat}
 	\input{MathFi-es}
 \end{multicols}
 
+\newpage
 \begin{center}
-\section*{Finances de Marchés}
+\section*{Finanzas de Mercado}
     \medskip
 \end{center}
 
@@ -326,7 +341,7 @@ Master Actuariat}
 
 \newpage
 \begin{center}
-\section*{Actuariat Vie}
+\section*{Ciencia Actuarial Vida}
     \medskip
 \end{center}
 
@@ -338,7 +353,7 @@ Master Actuariat}
 
 \newpage
 \begin{center}
-    \section*{Probabilités  \& Statistiques}
+    \section*{Probabilidad \& Estadística}
     \medskip
 \end{center}
 
@@ -353,7 +368,7 @@ Master Actuariat}
 \newpage
 
 \begin{center}
-    \section*{(Micro)-Économie de l'Assurance}
+    \section*{(Micro)-Economía de los Seguros}
     \medskip
 \end{center}
 
@@ -364,7 +379,7 @@ Master Actuariat}
 
 \newpage
 \begin{center}
-	\section*{Économétrie \& Séries Temporelles}
+	\section*{Econometría \& Series Temporales}
 	\medskip
 \end{center}
 
@@ -377,7 +392,7 @@ Master Actuariat}
 
 
 \begin{center}
-	\section*{Actuariat Non-Vie}
+	\section*{Seguros de No Vida}
 	\medskip
 \end{center}
 
@@ -388,7 +403,7 @@ Master Actuariat}
 \newpage
 
 \begin{center}
-	\section*{Réassurance}
+	\section*{Reaseguro}
 	\medskip
 \end{center}
 
@@ -396,9 +411,9 @@ Master Actuariat}
 	\input{Reinsurance-es}
 \end{multicols}
 
-%\newpage
+\newpage
 \begin{center}
-	\section*{Statistiques des extrêmes et tarification en réassurance}
+	\section*{Estadísticas de extremos y precios de reaseguro}
 	\medskip
 \end{center}
 
@@ -409,7 +424,7 @@ Master Actuariat}
 \newpage
 
 \begin{center}
-\section*{Rappels Mathématiques Lycée/Prépa}
+\section*{Recordatorio de matemáticas de secundaria/preparatoria}
 \medskip
 \end{center}
 
@@ -417,36 +432,52 @@ Master Actuariat}
 \input{ElementaryFormulas-es}
 \end{multicols}
 
+\begin{center}
+\medskip
+
+	\section*{Mis notas personales}
+	\medskip
+\end{center}
+
+\begin{multicols}{2}	
+
+\foreach \i in {1,...,67}{%
+	\noindent\textcolor{gray!40}{\rule{\linewidth}{0.4pt}}\\[1.25em]
+}	
+
+\end{multicols}
+
 
 \begin{tikzpicture}[remember picture, overlay]
-	\node[anchor=south east, xshift=-0.5cm, yshift=2cm,
-	draw=OrangeProfondIRA, rounded corners=4pt, line width=1pt,
-	inner sep=0pt, text width=15.5cm, font=\small]
-	at (current page.south east)
-	{
-		% Titre avec fond coloré inversé
-		\begin{minipage}{\linewidth}
-			\begin{tcolorbox}[beamerblock, title=À propos des auteurs]
-				\href{https://sites.google.com/site/martialphelippeguinvarch}{\color{OrangeProfondIRA}Martial Ph\'elipp\'e-Guinvarc'h\ } 
-				\href{mailto:Martial.Phelippe-GuinvarcH@univ-lemans.fr?subject=ActuarialFormSheet}{\color{OrangeProfondIRA}\faAt\ \faEnvelope} 
-				\href{https://www.linkedin.com/in/martial-phelippe-guinvarc-h}{\color{OrangeProfondIRA}\faLinkedinSquare}
-				\href{https://orcid.org/0000-0002-9894-803X}{\tikz[scale=0.75, baseline=-1ex]{\fill[OrangeProfondIRA] (0, 0) circle (0.25); 
-						\node[white,font=\sffamily\bfseries\scriptsize] at (0.175, -0.1)  {ID};}}
-				\href{https://github.com/MartialP-G}{\color{OrangeProfondIRA} \large \faGithub}  
-				est Actuaire et Maître de conférences à Le Mans Université depuis 2012 et enseigne également à l'EURIA depuis 2003. Il est actuaire (EURIA, 2006), membre de l'institut des actuaires (IA) et membre de l'association des économistes agricoles européens (EAAE).
-				
-				Martial Phélippé-Guinvarc'h enseigne les statistiques, l'analyse de données, la modélisation actuarielle,  la programmation, en particulier en SAS et SAS IML, les mathématiques financières, les marchés des matières premières, la finance de marché et des dérivés, l'actuariat non vie, l'actuariat vie, le provisionnement, la solvabilité,  la réassurance, l'économie de l'assurance, la gestion des risques, la gestion actifs passif. Il est SAS Protor, et a obtenu pour le Master MBFA de Le Mans Université le SAS Join certificate \href{https://www.sas.com/fr_fr/learn/academic-programs/specializations/programs.html}{Insurance and  Economic Analytics}.
-				
-				
-				\href{https://servicios.urjc.es/pdi/ver/marcelo.moreno}{\color{OrangeProfondIRA}Marcelo Moreno Porras} 
-				\href{mailto:marcelo.moreno@urjc.es?subject=ActuarialFormSheet}{\color{OrangeProfondIRA}\faAt\ \faEnvelope} 
-				\href{https://www.linkedin.com/in/marcelomorenop/}{\color{OrangeProfondIRA}\faLinkedinSquare}
-				\href{https://orcid.org/0009-0007-1714-6507}{\tikz[scale=0.75, baseline=-1ex]{\fill[OrangeProfondIRA] (0, 0) circle (0.25); 
-						\node[white,font=\sffamily\bfseries\scriptsize] at (0.175, -0.1) {ID};}}
-				\href{https://github.com/marcelomijas}{\color{OrangeProfondIRA} \large \faGithub} 
-				est professeur associé au département d'économie appliquée I et d'histoire et d'institutions économiques de l'Universidad Rey Juan Carlos (Madrid, Espagne) depuis 2023, spécialisé dans l'économétrie, la macroéconomie et la programmation. Il est également développeur de logiciels et spécialiste des technologies de l'information dans une entreprise privée à Mijas (Espagne).   Il est l'auteur de plusieurs contributions à l'innovation pédagogique, coauteur de publications sur l'intégration des objectifs de développement durable dans l'enseignement de l'économie, et possède une expertise technique sur plusieurs langages de programmation et outils statistiques. Son parcours universitaire comprend une licence en économie (URJC, classement national de 1 \%), un master en analyse économique moderne (URJC) et un master en statistiques appliquées (université de Nebrija).%
-			\end{tcolorbox}
-		\end{minipage}
-	};
+  \node[anchor=south east, xshift=-0.5cm, yshift=2cm,
+        draw=OrangeProfondIRA, rounded corners=4pt, line width=1pt,
+        inner sep=0pt, text width=15.5cm, font=\small]
+    at (current page.south east)
+    {
+    % Titre avec fond coloré inversé
+    \begin{minipage}{\linewidth}
+     \begin{tcolorbox}[beamerblock, title=Sobre los autores]
+\href{https://sites.google.com/site/martialphelippeguinvarch}{\color{OrangeProfondIRA}Martial Ph\'elipp\'e-Guinvarc'h\ } 
+\href{mailto:Martial.Phelippe-GuinvarcH@univ-lemans.fr?subject=ActuarialFormSheet}{\color{OrangeProfondIRA}\faAt\ \faEnvelope} 
+\href{https://www.linkedin.com/in/martial-phelippe-guinvarc-h}{\color{OrangeProfondIRA}\faLinkedinSquare}
+\href{https://orcid.org/0000-0002-9894-803X}{\tikz[scale=0.75, baseline=-1ex]{\fill[OrangeProfondIRA] (0, 0) circle (0.25); 
+		\node[white,font=\sffamily\bfseries\scriptsize] at (0.175, -0.1)  {ID};}}
+\href{https://github.com/MartialP-G}{\color{OrangeProfondIRA} \large \faGithub}  
+	es actuario y profesor en la Universidad de Le Mans desde 2012 y también enseña en EURIA desde 2003. Es actuario (EURIA, 2006), miembro del Instituto de Actuarios (IA) y miembro de la Asociación Europea de Economistas Agrícolas (EAAE).
+
+Martial Phélippé-Guinvarc'h imparte clases de estadística, análisis de datos, modelado actuarial, programación (en particular, en SAS y SAS IML), matemáticas financieras, mercados de materias primas, finanzas de mercado y derivados, ciencia actuarial de no vida, ciencia actuarial de vida, provisiones, solvencia, reaseguro, economía de seguros, gestión de riesgos y gestión de activos y pasivos. Es Protor de SAS y obtuvo el certificado SAS Join \href{https://www.sas.com/fr_fr/learn/academic-programs/specializations/programs.html}{Seguros y Análisis Económico} para el máster MBFA de la Universidad de Le Mans.
+
+
+\href{https://servicios.urjc.es/pdi/ver/marcelo.moreno}{\color{OrangeProfondIRA}Marcelo Moreno Porras} 
+\href{mailto:marcelo.moreno@urjc.es?subject=ActuarialFormSheet}{\color{OrangeProfondIRA}\faAt\ \faEnvelope} 
+\href{https://www.linkedin.com/in/marcelomorenop/}{\color{OrangeProfondIRA}\faLinkedinSquare}
+\href{https://orcid.org/0009-0007-1714-6507}{\tikz[scale=0.75, baseline=-1ex]{\fill[OrangeProfondIRA] (0, 0) circle (0.25); 
+		\node[white,font=\sffamily\bfseries\scriptsize] at (0.175, -0.1) {ID};}}
+\href{https://github.com/marcelomijas}{\color{OrangeProfondIRA} \large \faGithub} 
+ es Profesor Asociado del Departamento de Economía Aplicada I e Historia e Instituciones Económicas de la Universidad Rey Juan Carlos (Madrid, España) desde 2023, especializado en econometría, macroeconomía y programación. También es Desarrollador de Software y Especialista en TI en una empresa privada de Mijas (España). Es autor de varias contribuciones a la innovación docente, coautor de publicaciones sobre la incorporación de los Objetivos de Desarrollo Sostenible en la formación económica y cuenta con experiencia técnica en diversos lenguajes de programación y herramientas estadísticas. Su formación académica incluye un Grado en Economía (URJC, entre el 1 \% ranking nacional), un Máster en Análisis Económico Moderno (URJC) y un Máster en Estadística Aplicada (Universidad Nebrija).%
+\end{tcolorbox}
+\end{minipage}
+    };
 \end{tikzpicture}
+
 \end{document}

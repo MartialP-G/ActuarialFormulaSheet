@@ -1,5 +1,5 @@
 % !TeX root = ActuarialFormSheet_MBFA-es.tex
-% !TeX spellcheck = fr_FR
+% !TeX spellcheck = es_ES
 
 %\subsection*{Lois utilisées dans la théorie des extrêmes}
 
@@ -22,7 +22,7 @@ f_{k,x_\mathrm{m}}(x) = k\,\frac{x_\mathrm{m}^k}{x^{k+1}}\ \mbox{pour}\ x \ge x_
 F_{\xi,\mu,\sigma}(x) = \begin{cases} 1 - \left(1+ \frac{\xi(x-\mu)}{\sigma}\right)^{-1/\xi} & \text{for }\xi \neq 0, \\ 1 - \exp \left(-\frac{x-\mu}{\sigma}\right) & \text{for }\xi = 0. \end{cases} 
 \]
 pour  \(x \geq \mu\)  quand \(\xi \geq 0\)  et \( \mu \leq x \leq \mu - \sigma /\xi\)  quand \( \xi < 0\) et où \(\mu\in\mathbb{R}\) est la localisation, \(\sigma>0\) l'échelle et  \(\xi\in\mathbb{R}\) la forme. 
-Notez que certaines références donnent le \og{}paramètre de forme\fg{}, comme \(\kappa = - \xi\).
+Notez que certaines références donnent le paramètre de forme, comme \(\kappa = - \xi\).
 
 \[
 f_{\xi,\mu,\sigma}(x) = \frac{1}{\sigma}\left(1 + \frac{\xi (x-\mu)}{\sigma}\right)^{\left(-\frac{1}{\xi} - 1\right)}
@@ -34,7 +34,7 @@ f_{\xi,\mu,\sigma}(x) = \frac{1}{\sigma}\left(1 + \frac{\xi (x-\mu)}{\sigma}\rig
 \medskip
 
 \begin{center}
-		{\shorthandoff{:!;}	
+		
 \tikzset{
 	declare function={
 		dParetoGen(\x,\mu,\sigma,\xi) = 
@@ -54,12 +54,12 @@ f_{\xi,\mu,\sigma}(x) = \frac{1}{\sigma}\left(1 + \frac{\xi (x-\mu)}{\sigma}\rig
 		\legend{\(\mu\) =  1 \(\sigma=1\) \(\xi = 1\),\(\mu\) =  1  \(\sigma=2\) \(\xi =5\),\(\mu\) =  1  \(\sigma=3\) \(\xi =20\),\(\mu\) = 3  \(\sigma=2\) \(\xi = 5\)};
 	\end{axis} 
 \end{tikzpicture}
-}
+
 \end{center}
 
 
 %\begin{center}
-%	{\shorthandoff{:!;}	
+%	{\shorthandoff{!;}	
 %	\tikzset{
 %	declare function={
 %		pParetoGen(\x,\mu,\sigma,\xi) =  (\x > \mu)*( 1-(1+ (\xi*(\x-\mu))/\sigma)^(-1/\xi));}
@@ -190,7 +190,7 @@ Si le taux de pannes diminue au cours du temps alors, \(\alpha<1\). Si le taux d
 
 
 \begin{center}
-	{\shorthandoff{:!;}	\tikzset{
+	\tikzset{
 	declare function={
 		dWeibull(\x,\sigma,\alpha) = (\alpha/\sigma)*(\x/\sigma)^(\alpha-1)*exp(-(\x/\sigma)^\alpha);}
 }  
@@ -212,8 +212,8 @@ Si le taux de pannes diminue au cours du temps alors, \(\alpha<1\). Si le taux d
 		\legend{\(\mu\) =  0.5 \(\gamma = 1\) (\(\alpha=-1/\xi>0\)),\(\mu\) =  1 \(\gamma =2\),\(\mu\) =  1.5 \(\gamma =3\),\(\mu\) =  3 \(\gamma = 4\)};
 	\end{axis}	 
 \end{tikzpicture}
-}
-%	{\shorthandoff{:!;}	
+
+%	{\shorthandoff{!;}	
 %		\tikzset{
 %	declare function={
 %		pWeibull(\x,\sigma,\alpha) = 1- exp(-(\x/\sigma)^\alpha);}
@@ -255,7 +255,7 @@ f_{\alpha,\mu,\sigma}(x)=\frac{\alpha}{\sigma} \left(\frac{x-\mu}{\sigma}\right)
 
 \begin{center}
 %	\includegraphics[width=0.90\textwidth]{../Graph/LoiFrechet.pdf}
-	{\shorthandoff{:!;}	
+	
 		\tikzset{
 declare function={
 	dFrechet(\x,\m,\sigma,\alpha) = (\alpha/\sigma) * (((\x-\m)/\sigma)^(-1-\alpha)) * exp(- ((\x-\m)/\sigma)^(-\alpha) );}
@@ -278,12 +278,12 @@ declare function={
 	\legend{\(\mu\) =  0 \(\alpha=1\) \(\sigma = 1\),\(\mu\) =  0  \(\alpha=2\) \(\sigma =1\),\(\mu\) =  0  \(\alpha=3\) \(\sigma =1\),\(\mu\) = 0  \(\alpha=2\) \(\sigma = 2\)};
 \end{axis}	 
 \end{tikzpicture}
-}\end{center}
+\end{center}
 
 
 %\begin{center}
 %%	\includegraphics[width=0.90\textwidth]{../Graph/FLoiFrechet.pdf}
-%	{\shorthandoff{:!;}	
+%	{\shorthandoff{!;}	
 %\tikzset{
 %	declare function={
 %		pFrechet(\x,\m,\sigma,\alpha) = exp( -((\x-\m)/\sigma)^(-\alpha));}
@@ -395,14 +395,14 @@ Comme la réassurance indemnise des agrégations de sinistre ou des sinistres ex
 		\item natures des garanties (évolution des franchises, des exclusions\ldots)
 	\end{itemize}
 \end{itemize}
-Après ces corrections, les données sont dites \og as if \fg (en économie, on utilise l'expression contre-factuel).
+Après ces corrections, les données sont dites as if (en économie, on utilise l'expression contre-factuel).
 
 \end{f}
 
 
 \begin{f}[La prime \emph{Burning Cost}]
 	
-	\(X_{i}^{j}\) désigne le \(i^{e}\) sinistre  de l'année \(j\) \og{}as if\fg{} actualisé, revalorisé et  redressé,
+	\(X_{i}^{j}\) désigne le \(i^{e}\) sinistre  de l'année \(j\) as if actualisé, revalorisé et  redressé,
 \(n^j\) le nombre de sinistres l'année \(j\), \(c^{j}\) la charge de l'assureur \(c\).
 Le taux pur  par la méthode de \textbf{Burning Cost} est donné par la formule~:
 \[
