@@ -1,91 +1,91 @@
 % !TeX root = ActuarialFormSheet_MBFA-es.tex
 % !TeX spellcheck = es_ES
 
-\begin{f}[Axiomatique]{\ }
+\begin{f}[Axiomas]{\ }
 	
-	Un \textbf{univers} \(\Omega\), est l'ensemble de tous les résultats possibles qui peuvent être obtenus au cours d'une expérience aléatoire.
+	Un \textbf{universo} \(\Omega\), es el conjunto de todos los resultados posibles que se pueden obtener durante un experimento aleatorio.
 	
-	L'\textbf{événement aléatoire} est un événement \(\omega_i\) de l'univers dont l'issue (le résultat) n'est pas certaine.
+	El \textbf{evento aleatorio} es un evento \(\omega_i\) del universo cuyo resultado no es seguro.
 	
 	
-	L'\textbf{événement élémentaire :}
+	El \textbf{evento elemental :}
 	\begin{itemize}
-		\item deux événements élémentaires distincts \(\omega_i\) et \(\omega_j\) sont incompatibles,
-		\item la réunion de tous les événements élémentaires de l'univers \(\Omega \) correspond à la certitude.
+		\item dos eventos elementales distintos \(\omega_i\) y \(\omega_j\) son incompatibles,
+		\item La unión de todos los acontecimientos elementales del universo \(\Omega \) corresponde a la certeza.
 	\end{itemize}
 	
-	Les \textbf{ensembles} :
+	Los \textbf {conjuntos} :
 	\begin{itemize}
-		\item  \(E=\lbrace \omega_{i1},\ldots , \omega_{ik}\rbrace\) un sous-ensemble de \(\Omega\) (\(k\) éléments).
-		\item \(\overline{E}\) le complémentaire de \(E\),
-		\item \(E\cap F\) l'intersection de \(E\) et \(F\),
-		\item \(E\cup F\) l'union de \(E\) et \(F\),
-		\item \(E\setminus F= E\cap\overline{F}\)  \(E\) moins \(F\),
-		\item \(\varnothing\) l'événement impossible ou vide.
+		\item \(E=\lbrace \omega_{i1},\ldots , \omega_{ik}\rbrace\) un subconjunto de \(\Omega\) (\(k\) elementos).
+		\item \(\overline{E}\) el complementario de \(E\),
+		\item \(E\cap F\) la intersección de \(E\) y \(F\),
+		\item \(E\cup F\) la unión de \(E\) y \(F\),
+		\item \(E\setminus F= E\cap\overline{F}\) \(E\) menos \(F\),
+		\item \(\varnothing\) el acontecimiento imposible o vacío.
 	\end{itemize}
 	
-	Soit \(E\) un ensemble. On appelle \textbf{tribu} ou \textbf{\(\sigma-\)algèbre} sur \(E\), un ensemble \(\mathcal{A}\) de parties de \(E\) qui vérifie :
+	Sea \(E\) un conjunto. Llamamos \textbf{trib} o \textbf{\(\sigma-\)algebra} sobre \(E\), a un conjunto \(\mathcal{A}\) de partes de \(E\) que satisface :
 	\begin{itemize}
 		\item     \(\mathcal{A} \not=\varnothing\),
 		\item     \(\forall A \in \mathcal{A} , \overline{A} \in\mathcal{A}\),
-		\item     si \(\forall n \in \mathbb{N}\), \(A_n \in\mathcal{A}\) alors \(\cup_{n\in\mathbb{N} } A_n \in\mathcal{A}\).
+		\item     si \(\forall n \in \mathbb{N}\), \(A_n \in\mathcal{A}\) entonces \(\cup_{n\in\mathbb{N} } A_n \in\mathcal{A}\).
 	\end{itemize}
 	
-	On appelle \textbf{probabilité} \(\mathbb{P}\) toute application de l'ensemble des évènements \(\mathcal{A}\) dans l'intervalle \([0,1]\), telle que :      \[\mathbb{P} :      \mathcal{A}  \mapsto   [0,1]\]
-	satisfaisant les propriétés (ou axiomes) suivantes~:
+	Llamamos \textbf{probabilidad} \(\mathbb{P}\) a cualquier aplicación del conjunto de eventos \(\mathcal{A}\) en el intervalo \([0,1]\), tal que :      \[\mathbb{P} :      \mathcal{A}  \mapsto   [0,1]\]
+	satisfaciendo las siguientes propiedades (o axiomas)~:
 	\begin{description}
-		\item[(P1)] \(A \subseteq \mathcal{A} \)    alors  \( \mathbb{P}(A) \geq 0\),
+		\item[(P1)] \(A \subseteq \mathcal{A} \)    entonces  \( \mathbb{P}(A) \geq 0\),
 		\item[(P2)] \( \mathbb{P}(\Omega) = 1\),
-		\item[(P3)] \(A, B \subseteq \mathcal{A}\),  si  \(A\cap B =\varnothing\)    alors   \(\mathbb{P}(A\cup B)=\mathbb{P}(A) + \mathbb{P}(B)\).
+		\item[(P3)] \(A, B \subseteq \mathcal{A}\),  si  \(A\cap B =\varnothing\)    entonces   \(\mathbb{P}(A\cup B)=\mathbb{P}(A) + \mathbb{P}(B)\).
 	\end{description}
 	
-	L'\textbf{espace de probabilité}\index{D\'efinition! espace de probabilité} se définit par 
+	El \textbf{espacio de probabilidad}\index{D\'efinition! espace de probabilité} se define por
 	\[ \lbrace \Omega, \mathcal{A}, \mathbb{P}(.) \rbrace \]
 	
-	L'\textbf{égalité de poincarré} s'écrit~:
+	La \textbf{igualdad de Poincaré} se escribe~:
 	\[\forall A \in F, \forall B \in F, \mathbb{P} (A \cup B) = \mathbb{P} (A) + \mathbb{P} (B) - \mathbb{P} (A \cap B)\]
 	
 \end{f}
 \hrule
 
 \begin{f}[Bayes]
-	En théorie des probabilités, la \textbf{probabilité conditionnelle} d'un événement \(A\), sachant qu'un autre événement \(B\) de probabilité non nulle s'est réalisé.
+	En teoría de probabilidad, la \textbf{probabilidad condicional} de un evento \(A\), dado que ha ocurrido otro evento \(B\) de probabilidad distinta de cero.
 	\[
 	\mathbb{P}(A|B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}
 	\]
-	Le réel \(\mathbb{P}(A|B)\) se lit 'probabilité de \(A\), sachant \(B\).
-	Le théorème de Bayes permet d'écrire~:
+	El verdadero \(\mathbb{P}(A|B)\) se lee como probabilidad de \(A\), dado \(B\).
+	El teorema de Bayes nos permite escribir~:
 	
 	\[   \mathbb{P}(A|B) = \frac{\mathbb{P}(B|A)\mathbb{P}(A)}{\mathbb{P}(B)}. \]
 \end{f}
 \hrule
 
-\begin{f}[Variables aléatoires]
+\begin{f}[Variables aleatorias]
 	
-	Soient \( (\Omega, \mathcal{A}, \mathbb{P})\) un espace probabilisé. On appelle \textbf{variable aléatoire} \(X\) de \(\Omega\) vers \( \Re\), toute fonction mesurable \(X:\Omega\mapsto \Re\).
+	Sea \((\Omega, \mathcal{A}, \mathbb{P})\) un espacio de probabilidad. Llamamos \textbf{variable aleatoria} \(X\) desde \(\Omega\) hasta \( \Re\) cualquier función medible \(X:\Omega\mapsto \Re\).
 	
 	\[\lbrace X\leq x \rbrace\equiv \lbrace e\in \Omega \mid X(e)\leq x \rbrace \in   \mathcal{A}\]
-	L'ensemble des événements de \(\Omega\) n'est souvent pas explicite.
+	El conjunto de eventos de \(\Omega\) a menudo no es explícito.
 	
-	La \textbf{fonction de répartition} \((F_X)\) d'une variable aléatoire réelle caractérise sa loi de probabilité. 
+	La \textbf{función de distribución} \((F_X)\) de una variable aleatoria real caracteriza su distribución de probabilidad.
 	\[
 	F_X(x)=\mathbb {P}(X\leq x), x\in \Re
 	\]
-	où le membre de droite représente la probabilité que la variable aléatoire réelle \(X\) prenne une valeur inférieure ou égale à \(x\).
-	La probabilité que \(X\) se trouve dans l'intervalle \(]a, b]\) est donc, si \(a< b\),
+	donde el lado derecho representa la probabilidad de que la variable aleatoria real \(X\) tome un valor menor o igual a \(x\).
+	La probabilidad de que \(X\) esté en el intervalo \([a, b]\) es por tanto, si \(a< b\),
 	\(
 	\mathbb{P}(a< X\leq b)\ =\ F_X(b)-F_X(a)
 	\)
 	
-	Une loi de probabilité possède une \textbf{densité de probabilité} \(f\), si \(f\) est une fonction définie sur \(\mathbb{R}^{+}\),  Lebesgue-intégrable, telle que la probabilité de l'intervalle \([a, b]\) est donnée par
+	Una ley de probabilidad tiene una \textbf{densidad de probabilidad} \(f\), si \(f\) es una función definida en \(\mathbb{R}^{+}\), integral de Lebesgue, tal que la probabilidad del intervalo \([a, b]\) está dada por
 	\[
-	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx} \mbox{ pour tous nombres tq }a<x<b.
+	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx} \mbox{ para todos los números tq }a<x<b.
 	\]
 \end{f}
 \hrule
-\begin{f}[Espérance]{\ }
+\begin{f}[Esperanza]{\ }
 	
-	L'espérance mathématique dans le cas discret (variables qualitatives ou quantitatives discrètes)~:
+	La esperanza matemática en el caso discreto (variables cualitativas o cuantitativas discretas)~:
 	\[
 	\mathbb{E}[X]=\sum_{j\in \mathbb{N}}x_j\mathbb{P}(x_j)
 	\]
