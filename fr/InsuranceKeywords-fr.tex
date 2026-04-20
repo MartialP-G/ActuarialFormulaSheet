@@ -4,7 +4,7 @@
 	
 La séparation entre vie et non vie est fondamentale, un assureur ne peut proposer les deux types d'assurance sans détenir deux entreprises distinctes: 	
 \begin{itemize}
-	\item Les \textbf{assurances vie}, c'est-à-dire les assurances de personnes à l'exception des assurances des dommages corporels,
+	\item Les \textbf{assurances vie}, c'est-à-dire les assurances de personnes à l'exception des assurances de dommages corporels,
 	\item Les \textbf{assurances non vie} qui incluent les assurances de biens et de responsabilité ainsi que les assurances sur les dommages corporels. 
 \end{itemize}
 \end{f}
@@ -25,7 +25,7 @@ L'assurance est supposée :
 		\end{itemize}
 		\item ne pas réduire les efforts de prévention et protection de l'assuré en la qualité de personne raisonnable et même s'il bénéficie de cette protection financière.
 	\end{itemize}
-	\item établir la cause pour un sinistre en Responsabilité Civile, "je ne suis pas responsable si je ne contribue pas à la cause du sinistre."
+	\item établir le lien de causalité en Responsabilité Civile, "je ne suis pas responsable si je ne contribue pas à la cause du sinistre."
 \end{f}
 
 
@@ -44,7 +44,7 @@ L'assurance est supposée :
 			\item le montant et les conditions de paiement de la prime (franchise, limite),
 			\item les possibilités de résiliation de la police (tacite reconduction),
 		\end{itemize}
-		\item  les obligations de la compagnie d'assurances : les délais de paiements pour l'indemnisation.
+		\item  les obligations de la compagnie d'assurances : les délais de paiement pour l'indemnisation.
 		
 	\end{enumerate}
 	
@@ -52,11 +52,11 @@ L'assurance est supposée :
 \begin{f}[La prime et les sinistres]
 Classiquement, le rôle de l'assureur est de substituer une constante \(C\), la \textbf{cotisation} ou la \textbf{prime}, à un sinistre aléatoire \(S\).
 La \textbf{prime pure} ou \textbf{prime technique} vise 
-le dédommagement des sinistres sans excédents, ni bénéfices, globalement \(C_t = \mathbb{E}[S]\)
+le dédommagement des sinistres sans excédents, ni bénéfices, globalement \(C= \mathbb{E}[S]\)
 	
 	La \textbf{prime nette} est supérieure à la prime pure. Elle vise à couvrir le coût des sinistres et à donner une marge de sécurité.
 	
-	La \textbf{prime commerciale} est la prime nette + frais généraux + commissions + bénéfice escomptés + impôts.
+	La \textbf{prime commerciale} est la prime nette + frais généraux + commissions + bénéfices escomptés + impôts.
 	
 	Pour des raisons commerciales, la prime effectivement demandée peut être très différente de la prime technique.
 
@@ -86,7 +86,7 @@ d'un exercice (année civile).
 	%	
 \end{tikzpicture}
 }
-Le \(S/P\) est l'indicateur majeur. Pour que l'assureur ait un profit le \(S/P\ll 1\). 
+Le \(S/P\) est l'indicateur majeur. Pour que l'assureur ait un profit, il faut \(S/P\ll 1\). 
 \end{f}
 %\end{multicols}
 
@@ -100,7 +100,7 @@ Le \(S/P\) est l'indicateur majeur. Pour que l'assureur ait un profit le \(S/P\l
 	\[
 	\left(\begin{array}{ccccc}
 		\rowcolor{white}	C_{1,1} & C_{1,2} & \ldots & & C_{1, n} \\
-		\rowcolor{white}	C_{1,1} & C_{1,2} & \ldots & C_{2, n-1} \\
+		\rowcolor{white}	C_{2,1} & C_{1,2} & \ldots & C_{2, n-1} \\
 		\rowcolor{white}	\vdots & \vdots & & \\
 		\rowcolor{white}	C_{n-1,1} & C_{n-1,2} & & \\
 		\rowcolor{white}	C_{n, 1} & & &
@@ -118,7 +118,7 @@ Le \(S/P\) est l'indicateur majeur. Pour que l'assureur ait un profit le \(S/P\l
 	\textbf{Solvabilité II} est le cadre réglementaire européen applicable aux assureurs et réassureurs depuis 2016. Il repose sur trois piliers interdépendants :
 	
 	\begin{itemize}
-		\item \textbf{Pilier 1 : Exigences quantitatives}  qui détermine le capital minimum :\\
+		\item \textbf{Pilier 1 : Exigences quantitatives}  qui déterminent le capital minimum :\\
 		
 		\begin{itemize}
 			\item \textbf{SCR} (Solvency Capital Requirement) : capital pour absorber un choc extrême (99.5\% sur 1 an),
@@ -159,14 +159,14 @@ Le \(S/P\) est l'indicateur majeur. Pour que l'assureur ait un profit le \(S/P\l
 	\end{itemize}
 	
 	
-	L’assurance non-vie couvre des risques survenant à court ou moyen terme :
+	L’assurance non-vie couvre essentiellement des risques survenant à court ou moyen terme :
 	\begin{itemize}[nosep]
 		\item \textbf{Automobile} : responsabilité civile, dommages au véhicule.
 		\item \textbf{Habitation} : incendie, vol, dégâts des eaux, responsabilité.
 		\item \textbf{Responsabilité civile générale} : RC vie privée, RC entreprise.
 		\item \textbf{Santé et prévoyance} : remboursements médicaux, invalidité, incapacité.
 		\item \textbf{Accidents corporels} : capital en cas d’accident, invalidité ou décès.
-		\item \textbf{Pertes d’exploitation} : pertes financières d'une entreprise consécutive à un sinistre qui l'empêche d'exercer son activité.
+		\item \textbf{Pertes d’exploitation} : pertes financières d'une entreprise consécutives à un sinistre qui l'empêche d'exercer son activité.
 		\item \textbf{Risques techniques} : construction, bris de machine.
 		\item \textbf{Assurance transport, aviation, maritime} : biens en transit, responsabilités spécifiques.
 	\end{itemize}

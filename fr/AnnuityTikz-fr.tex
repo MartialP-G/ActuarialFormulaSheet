@@ -66,11 +66,11 @@ La date du décès est représentée ici par un petit cercueil. Cette forme d'an
 
 Annuité à terme échu (\engl{immédiate}) \(a_{\lcroof{n}}\) : ses paiements périodiques sont effectués à la fin de chaque période de paiement, comme pour le salaire payé en fin de mois. C'est le cas par défaut, illustré précédemment pour l'annuité certaine.
 \[
-\ddot{a}_{\lcroof{n}}=1+v+\cdots+v^{n-1}=\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{d}
+a_{\lcroof{n}}=v+v^{2}+\cdots+v^{n}=\frac{1-v^{n}}{i}=v \frac{1-v^{n}}{1-v}
 \]
 %
 \[
-	\mathrm{PV}_{\lcroof{n}}^{\text {due }}=K \ddot{a}_{\lcroof{n}}=K \frac{1-v^{n}}{d} 
+\mathrm{PV}_{\lcroof{n}}^{\mathrm{im}}=K a_{\lcroof{n}}=K \frac{1-v^{n}}{i} 
 \]
 
 Annuité à terme à échoir (\engl{due}) \(\ddot{a}_{\lcroof{n}}\):  ses paiements périodiques sont effectués au début de chaque période de paiement, comme pour un loyer par exemple.
@@ -100,12 +100,13 @@ Annuité à terme à échoir (\engl{due}) \(\ddot{a}_{\lcroof{n}}\):  ses paieme
 \end{center}
 aussi notée \(\mathrm{PV}^{\mathrm{im}}\) :
 \[
-a_{\lcroof{n}}=v+v^{2}+\cdots+v^{n}=\frac{1-v^{n}}{i}=v \frac{1-v^{n}}{1-v}
+\ddot{a}_{\lcroof{n}}=1+v+\cdots+v^{n-1}=\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{d}
 \]
 %
 \[
-	\mathrm{PV}_{\lcroof{n}}^{\mathrm{im}}=K a_{\lcroof{n}}=K \frac{1-v^{n}}{i} 
+\mathrm{PV}_{\lcroof{n}}^{\text {due }}=K \ddot{a}_{\lcroof{n}}=K \frac{1-v^{n}}{d} 
 \]
+
 Annuité  perpétuelle \(a\) ou  \(a_{\lcroof{\infty}}\): 
 \[
 a=1/i
@@ -191,7 +192,7 @@ a_{\lcroof{n}}^{(m)}=\frac{1}{m} \sum_{k=1}^{m n} v^{\frac{k}{m}}=\frac{i}{i^{(m
 Annuité unitaire \(a\) : elle est utilisée lors de la construction de formules d'annuité.
 Pour une annuité constante, le montant total versé chaque année est de~1, quelque soit \(m\).  
 
-Annuité dynamique, croissante/décroissante \(Ia\)/\(Da\) : dans sa forme la plus simple, elle verse un montant qui démarre à 1 (\(n\)) et qui croit (décroit) à chaque période de façon arithmétique ou géométrique. Dans l'exemple suivant, la progression est arithmétique.
+Annuité dynamique, croissante (respectivement décroissante) \(Ia\) (\(Da\)) : dans sa forme la plus simple, elle verse un montant qui démarre à 1 (\(n\)) et qui croît (décroît) à chaque période de façon arithmétique ou géométrique jusqu'à \(n\) (1). Dans l'exemple suivant, la progression est arithmétique.
 On utilise le préfixe \(I\) (\engl{increasing}) pour indiquer les annuités croissantes et \(D\) (\engl{decreasing}) pour les annuités dégressives.
 	
 \begin{center}

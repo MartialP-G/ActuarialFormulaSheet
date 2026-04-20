@@ -6,7 +6,7 @@
 	
 La \textbf{Bourse} (\engl{Exchange}) - lieu d'échange - permet, de fait, la rencontre physique entre les demandeurs et offreurs de capitaux.
 Les principales cotations concernent les \textbf{actions} (\engl{equities}), les \textbf{obligations} (\engl{Fixed Income}) et les \textbf{matières premières} (\engl{commodities}).
-Sont cotés des \textbf{titres} comme des actions ou des obligations, des \textbf{fonds} (\engl{Exchange Trade Funds} qui répliquent des indices actions, ETC ou ETN qui répliquent des indices plus spécifiques ou des matières premières, SICAV ou FCP, bons de souscription, \engl{warrant}), des \textbf{contrats à terme},  des \textbf{options}, des \textbf{swaps} ou encore des \textbf{produits structurés}.
+Sont cotés des \textbf{titres} comme des actions ou des obligations, des \textbf{fonds} (\engl{Exchange-Traded Funds} qui répliquent des indices actions, ETC ou ETN qui répliquent des indices plus spécifiques ou des matières premières, SICAV ou FCP, bons de souscription, \engl{warrant}), des \textbf{contrats à terme},  des \textbf{options}, des \textbf{swaps} ou encore des \textbf{produits structurés}.
 
 L'\textbf{Autorité des marchés financiers} (\href{https://www.amf-france.org/fr}{AMF})  veille :
 \begin{itemize}
@@ -227,16 +227,16 @@ VP = \sum_{k=1}^{mn} \frac{c/m}{(1 + r^{(m)})^k} + \frac{R}{(1  + r^{(m)})^{mn}}
 
 Le rendement de l'obligation est la valeur \( r^{(m)}\), le taux équivalent de \(r\) sur \(m\) périodes dans l'année,  qui égalise la valeur présente \(VP_r\) avec le prix actuel ou de marché de cette obligation. 
 
-\textbf{La cotation d'une obligation} d'une obligation se fait en pourcentage. Ainsi une cotation à 97,9  sur Euronext indique une valeur de cotation à \(97,9 /100\times F\). 
+\textbf{La cotation d'une obligation} se fait en pourcentage. Ainsi une cotation à 97,9  sur Euronext indique une valeur de cotation à \(97,9 /100\times F\). 
 Elle  se fait hors \textbf{coupons courus} , la part du prochain coupon auquel le vendeur a le droit si l'obligation est vendue avant le paiement de ce coupon.
 \end{f}
 \hrule
 
 \begin{f}[Duration \& Convexité]
 
-La duration de Macaulay :
+Pour un taux \(i\), la duration de Macaulay s'écrit :
 \[ 		
-D = \sum_{t=1}^{n} t \cdot w_t, \quad \text{où} \quad w_t = \frac{PV(C_t)}{P}.
+D = \sum_{t=1}^{n} t \cdot w^i_t, \quad \text{où} \quad w^i_t = \frac{PV^i(C_t)}{P(i)}.
  \]	
 Si la fréquence de paiement est \(k\) par an, la duration exprimée en années est obtenue en divisant par \(k\).
 La duration modifiée \(D^*\)  :
@@ -303,7 +303,7 @@ Les options cotées sur actions sont appelées \textit{stock options}.
 %\textbf{La position longue sur l'option d'achat}
 
 Avec \(T\) l'échéance, \(K\) le prix d'exercice, \(S\) ou \(S_T\) le sous-jacent à l'échéance, le retour (\engl{payoff}) est de \(\max (0, S_T-K)=( S_T-K)^{+}\).
-En notant \(C\) la prime , le profit réalisé est de \(\max (0, S_T-K)-C\), avec un profit si  (\(S_T<V_{PM}=K + C\))  (\(PM\) pour \textbf{point mort}).
+En notant \(C\) la prime, le profit réalisé est de \(\max (0, S_T-K)-C\), avec un profit si  (\(S_T>V_{PM}=K + C\))  (\(PM\) pour \textbf{point mort}).
 
 		\input{Graph/Acalldef-fr.tex}
 
@@ -630,7 +630,7 @@ Ainsi, aucun profit sans risque n’est possible par exploitation des écarts de
 
 L'AOA implique la relation suivante entre le Call et le Put, sur le marché action :
 
-\[S_t- C_t + P_t = K e^{-i_{f}.\tau}\]	
+\[S_t- C_t + P_t = K e^{-r.\tau}\]	
 \end{f}
 \hrule
 
@@ -672,16 +672,16 @@ Il repose sur un processus en temps discret avec deux évolutions possibles du p
 	};
 \end{tikzpicture}
 
-Ce modèle s’étend à \(n\) périodes avec \(n+1\) prix possibles pour \(S_T\). À l’échéance, la valeur d’une option d’achat est donnée par \( C_{1}^{u} = (S_{1}^{u} - K)^+ \) et \( C_{1}^{d} = (S_{1}^{d} - K)^+ \).
+Ce modèle s’étend à \(n\) périodes avec \(n+1\) prix possibles pour \(S_T\). Avec \(N=1\), à l’échéance, la valeur d’une option d’achat est donnée par \( C_{1}^{u} = (S_{1}^{u} - K)^+ \) et \( C_{1}^{d} = (S_{1}^{d} - K)^+ \).
 
 \textbf{Absence d'opportunité d'arbitrage} implique que :
 \[
 d < 1 + i_{f} < u
 \]
 et une probabilité risque neutre 
-\[q = \frac{(1 + i_{f}) - d}{u - d}\]
+\[q = \frac{(1 + i_{f}) - d}{u - d}>0\]
 
-\textbf{Prix du call} (avec \( S_{1}^{d} < K < S_{1}^{u} \)) :
+\textbf{Prix du call} (avec \( S_{1}^{d} < K < S_{1}^{u} \), donc \(C_d=0\)) :
 \[
 C_{0} = \frac{1}{1+i_f} \left[ q C_{1}^{u} + (1 - q) C_{1}^{d} \right]
 \]
@@ -709,7 +709,7 @@ e^{i_{f} \delta t} = q u + (1-q) d, \qquad q u^2 + (1-q) d^2 - [q u + (1-q) d]^2
 Si on ajoute la contrainte \(u = \frac{1}{d}\), on arrive à :
 \[
 \begin{array}{l}
-	q = \frac{e^{-i_f \delta_t} - d}{u - d} \\
+	q = \frac{e^{i_f \delta_t} - d}{u - d} \\
 	u = e^{\sigma \sqrt{\delta t}} \\
 	d = e^{-\sigma \sqrt{\delta t}}
 \end{array}
@@ -1101,15 +1101,16 @@ Une \textbf{swaption} est une option sur un swap de taux. Elle donne le droit (e
 	\item \(T\) : date d’exercice de la swaption
 	\item \(K\) : taux fixe (strike)
 	\item \(S(T)\) : taux swap à la date \(T\)
-	\item \(A(T)\) : valeur actuelle des flux fixes futurs.
+	\item \(A(T)\) : valeur actuelle des flux fixes futurs
 	\item \(\sigma\) : volatilité du taux swap
+	\item \(S_0\) : taux observé en 0 pour un swap débutant en \(T\)
 \end{itemize}
 
 Le modèle de Black (1976) est une adaptation du modèle Black–Scholes pour les produits à taux d'intérêt. Ici, le taux swap \(S(T)\) joue le rôle de l’actif sous-jacent, avec un payoff de type option européenne.
 
 \textbf{Formule de Black pour une payer swaption} :
 \[
-\text{SW}_{\text{payer}} = A(T) \left[ S_0 N(d_1) - K N(d_2) \right]
+\text{SW}_{\text{payer}} = A(T) \left[ S_0 \Phi(d_1) - K \Phi(d_2) \right]
 \]
 où :
 \[
@@ -1118,11 +1119,11 @@ où :
 	d_2 &= d_1 - \sigma \sqrt{T}
 \end{aligned}
 \]
-et \(N(\cdot)\) est la fonction de répartition de la loi normale standard.
+et \(\Phi(\cdot)\) est la fonction de répartition de la loi normale standard.
 
 \textbf{Formule pour une receiver swaption} :
 \[
-\text{SW}_{\text{receiver}} = A(T) \left[ K N(-d_2) - S_0 N(-d_1) \right]
+\text{SW}_{\text{receiver}} = A(T) \left[ K \Phi(-d_2) - S_0 \Phi(-d_1) \right]
 \]
 
 \end{f}

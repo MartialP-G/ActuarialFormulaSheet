@@ -1,5 +1,6 @@
-% !TeX root = ActuarialFormSheet_MBFA_MPG.tex
+% !TeX root = ActuarialFormSheet_MBFA-fr.tex
 % !TeX spellcheck = fr_FR
+
 
 \begin{f}[Pythagore]
 Dans un triangle rectangle, le carré de l’hypoténuse est égal à la somme des carrés des deux autres côtés. Si \(ABC\)  est rectangle en \(C\), alors 
@@ -95,7 +96,7 @@ Soient deux droites \textbf{sécantes en un point} \( A \), et soient deux droit
         \]
         \item Si \(\Delta < 0\), l'équation a une solution dans les imaginaires
         \[
-        x_1 = \frac{-b + i\sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b - i\sqrt{\Delta}}{2a}
+        x_1 = \frac{-b + i\sqrt{\lvert\Delta\rvert}}{2a}, \quad x_2 = \frac{-b - i\sqrt{\lvert\Delta\rvert}}{2a}
         \]
     \end{itemize}
 \end{f}
@@ -394,7 +395,7 @@ L'\textbf{intégrale de Lebesgue} d'une fonction \( f(x) \) sur un ensemble \( E
 \hline 1 / x & -1 / x^2 & \ln (x)+C \\
 \hline \sqrt{x}=x^{1 / 2} & \frac{1}{2 \sqrt{x}} & \frac{2}{3} x^{3 / 2}+C \\
 \hline x^n, n \neq-1 & n x^{n-1} & \frac{x^{n+1}}{n+1}+C \\
-\hline \ln (x) & 1 / x & x \ln (x)-x+C \\
+\hline \forall x>0, \quad \ln (x) & 1 / x & x \ln (x)-x+C \\
 \hline e^x & e^x & e^x+C \\
 \hline a^x=e^{x \ln (a)} & \ln (a) \times a^x & a^x / \ln (a)+C \\
 \hline \sin (x) & \cos (x) & -\cos (x)+C \\
@@ -455,7 +456,7 @@ où :
 \begin{f}
  [Formule de Taylor] 
  
-Soit \( f(x) \) une fonction \( n \) - fois dérivable en un point \( a \). Le développement de Taylor de \( f(x) \) autour de \( a \) est donné par :
+Soit \( f(x) \) une fonction \( n \) - fois dérivable en un point \( a \). Le développement de Taylor de \( f(x) \) autour de \( a \) à l'ordre \(n\) est donné par :
 
 \begin{align*}
  f(x) =& f(a) + f'(a)(x - a) + \frac{f''(a)}{2!}(x - a)^2 \\
@@ -465,10 +466,10 @@ Soit \( f(x) \) une fonction \( n \) - fois dérivable en un point \( a \). Le d
 
 où :
 \begin{itemize}
-    \item \( f^{(n)}(a) \) est la \( n \)\ieme{} dérivée de \( f \) évaluée en \( a \),
+    \item \( f^{(n)}(a) \) est la \( n^e \) dérivée de \( f \) évaluée en \( a \),
     \item \( \mathcal{O}_n(x) \) est le reste du développement de Taylor, représentant l'erreur d'approximation lorsque l'on tronque la série après le terme d'ordre \( n \), avec 
     \[
-    \lim_{x\rightarrow 0}\frac{\mathcal{O}_n(x) }{x^n}\Rightarrow 0
+    \lim_{x\rightarrow 0}\frac{\mathcal{O}_n(x) }{x^n}\to 0
     \]
 \end{itemize}
 \end{f}
@@ -507,7 +508,7 @@ Le déterminant d'une matrice carrée \( A \in \mathbb{R}^{n \times n} \) est un
     \]
     \item
     \[
-    \det(AB) = \det(A) \cdot \det(B),\quad \det(\lambda B) = \lambda\det(B), 
+    \det(AB) = \det(A) \cdot \det(B),\quad \det(\lambda B) = \lambda^n\det(B), 
     \]
     \item 
     \[

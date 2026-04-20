@@ -32,11 +32,11 @@
 	\end{itemize}
 	
 	On appelle \textbf{probabilité} \(\mathbb{P}\) toute application de l'ensemble des évènements \(\mathcal{A}\) dans l'intervalle \([0,1]\), telle que :      \[\mathbb{P} :      \mathcal{A}  \mapsto   [0,1]\]
-	satisfaisant les propriétés (ou axiomes) suivantes~:
+	satisfaisant aux propriétés (ou axiomes) suivantes~:
 	\begin{description}
-		\item[(P1)] \(A \subseteq \mathcal{A} \)    alors  \( \mathbb{P}(A) \geq 0\),
+		\item[(P1)] \(A \in \mathcal{A} \)    alors  \( \mathbb{P}(A) \geq 0\),
 		\item[(P2)] \( \mathbb{P}(\Omega) = 1\),
-		\item[(P3)] \(A, B \subseteq \mathcal{A}\),  si  \(A\cap B =\varnothing\)    alors   \(\mathbb{P}(A\cup B)=\mathbb{P}(A) + \mathbb{P}(B)\).
+		\item[(P3)] \(A, B \in \mathcal{A}\),  si  \(A\cap B =\varnothing\)    alors   \(\mathbb{P}(A\cup B)=\mathbb{P}(A) + \mathbb{P}(B)\).
 	\end{description}
 	
 	L'\textbf{espace de probabilité}\index{D\'efinition! espace de probabilité} se définit par 
@@ -53,7 +53,7 @@
 	\[
 	\mathbb{P}(A|B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}
 	\]
-	Le réel \(\mathbb{P}(A|B)\) se lit 'probabilité de \(A\), sachant \(B\).
+	Le réel \(\mathbb{P}(A|B)\) se lit `probabilité de \(A\), sachant \(B\)'.
 	Le théorème de Bayes permet d'écrire~:
 	
 	\[   \mathbb{P}(A|B) = \frac{\mathbb{P}(B|A)\mathbb{P}(A)}{\mathbb{P}(B)}. \]
@@ -62,48 +62,79 @@
 
 \begin{f}[Variables aléatoires]
 	
-	Soient \( (\Omega, \mathcal{A}, \mathbb{P})\) un espace probabilisé. On appelle \textbf{variable aléatoire} \(X\) de \(\Omega\) vers \( \Re\), toute fonction mesurable \(X:\Omega\mapsto \Re\).
-	
-	\[\lbrace X\leq x \rbrace\equiv \lbrace e\in \Omega \mid X(e)\leq x \rbrace \in   \mathcal{A}\]
+	Soient \( (\Omega, \mathcal{A}, \mathbb{P})\) un espace probabilisé. 
+On appelle \textbf{variable aléatoire réelle} toute application mesurable 
+\(X : (\Omega, \mathcal{A}) \to (\mathbb{R}, \mathcal{B}(\mathbb{R}))\), 
+c'est-à-dire telle que :
+\[
+\forall x \in \mathbb{R}, \quad \lbrace X\leq x \rbrace \equiv 
+\lbrace e\in \Omega \mid X(e)\leq x \rbrace \in \mathcal{A}
+\]
+Plus généralement, on appelle \textbf{variable aléatoire} à valeurs dans 
+un espace mesurable \((E, \mathcal{E})\) toute application mesurable 
+\(X : (\Omega, \mathcal{A}) \to (E, \mathcal{E})\), c'est-à-dire telle que :
+\[
+\forall B \in \mathcal{E}, \quad X^{-1}(B) = 
+\lbrace e \in \Omega \mid X(e) \in B \rbrace \in \mathcal{A}
+\]
+	%
 	L'ensemble des événements de \(\Omega\) n'est souvent pas explicite.
 	
 	La \textbf{fonction de répartition} \((F_X)\) d'une variable aléatoire réelle caractérise sa loi de probabilité. 
 	\[
-	F_X(x)=\mathbb {P}(X\leq x), x\in \Re
+	F_X(x)=\mathbb {P}(X\leq x),\quad  x\in \mathbb{R}
 	\]
 	où le membre de droite représente la probabilité que la variable aléatoire réelle \(X\) prenne une valeur inférieure ou égale à \(x\).
+	Elle caractérise entièrement la loi de \(X\). Elle est croissante, continue à droite, et vérifie
+	\[
+	\lim_{x\to -\infty} F_X(x)=0, \quad \lim_{x\to +\infty} F_X(x)=1.
+	\]
 	La probabilité que \(X\) se trouve dans l'intervalle \(]a, b]\) est donc, si \(a< b\),
 	\(
 	\mathbb{P}(a< X\leq b)\ =\ F_X(b)-F_X(a)
 	\)
 	
-	Une loi de probabilité possède une \textbf{densité de probabilité} \(f\), si \(f\) est une fonction définie sur \(\mathbb{R}^{+}\),  Lebesgue-intégrable, telle que la probabilité de l'intervalle \([a, b]\) est donnée par
+La variable \(X\) admet une  \textbf{densité de probabilité} \(f\) s’il existe une fonction \(f : \mathbb{R} \to \mathbb{R}_+\), Lebesgue-intégrable, telle que
+\[
+F_X(x)=\int_{-\infty}^x f(t)\,dt,
+\]
+et donc, pour tout \(a<b\),	
 	\[
-	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx} \mbox{ pour tous nombres tq }a<x<b.
+	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx} \mbox{ \  }\forall\ a<b.
+	\]
+	avec la condition de normalisation
+	\[
+	\int_{-\infty}^{+\infty} f(x)\,dx = 1.
 	\]
 \end{f}
 \hrule
 \begin{f}[Espérance]{\ }
 	
-	L'espérance mathématique dans le cas discret (variables qualitatives ou quantitatives discrètes)~:
-	\[
-	\mathbb{E}[X]=\sum_{j\in \mathbb{N}}x_j\mathbb{P}(x_j)
-	\]
-	où \(\mathbb{P}(x_j)\) est la probabilité associée à chaque événement \(x_i\).
-	
-	L'espérance mathématique dans le cas continu~:
-	\[
-	\mathbb{E}[X]=\int_{-\infty}^{\infty} x. f(x)dx
-	\]
-	
-	où \(f\) désigne la fonction de densité de la variable aléatoire \(x\), définie dans notre cas sur \(\mathbb{R}\).
-	S'agissant de somme ou d'intégrale, l'espérance est linéaire, c'est-à-dire~:
-	
-	\[\mathbb{E}[c_0+c_1X_1+c_2X_2]=c_0+c_1\mathbb{E}[X_1]+c_2\mathbb{E}[X_2]\]
-	
-	\[
-	\mathbb{E}[X]=\int x.f(x)dx =\int_0^1 F^{-1}(p)dp= \int \overline{F}(x)dx\\
-	\] 
+On suppose dans toute la suite que l'espérance de la variable aléatoire \(X\) existe.
+
+L'espérance mathématique dans le cas discret (variables qualitatives ou quantitatives discrètes)~:
+\[
+\mathbb{E}[X]=\sum_{j\in \mathbb{N}} x_j\,\mathbb{P}(X=x_j)
+\]
+où \(\mathbb{P}(X=x_j)\) est la probabilité associée à la valeur \(x_j\).
+
+L'espérance mathématique dans le cas continu~:
+\[
+\mathbb{E}[X]=\int_{-\infty}^{\infty} x\, f(x)\,dx
+\]
+où \(f\) existe et désigne la fonction de densité de la variable aléatoire \(X\), définie ici sur \(\mathbb{R}\).
+
+S'agissant d'une somme ou d'une intégrale, l'espérance est linéaire, c'est-à-dire~:
+\[
+\mathbb{E}\left[c_0+c_1X_1+c_2X_2\right]=c_0+c_1\mathbb{E}[X_1]+c_2\mathbb{E}[X_2]
+\]
+
+Enfin, lorsque les objets existent,
+\[
+\mathbb{E}[X]=\int x f(x)\,dx
+= \int_0^1 F^{-1}(p)\,dp
+= \int_{0}^{+\infty} \overline{F}(x)\,dx -\int_{-\infty}^{0}  F(x)\,dx
+\]
 \end{f}
 \hrule
 \begin{f}[Convolution ou loi de la somme]{\ }
@@ -125,7 +156,7 @@ f_Z(x) = (f_X * f_Y)(x) = \int_{-\infty}^{+\infty} f_X(t)\, f_Y(x - t)\, dt.
 \begin{f}
 	[Loi composée ou modèle fréquence/gravité]{\ }
 	
-	Soit \(N\) une variable aléatoire discrète dans \(\mathbb{N}^+\), \(\left(X_i\right)\) une suite de variable aléatoire \(iid\) d'espérance et variance finies, alors pour  \(\displaystyle S=\sum_{i=1}^{N}X_i\) :
+	Soit \(N\) une variable aléatoire discrète dans \(\mathbb{N}^+\), \(\left(X_i\right)\) une suite de variables aléatoires \(iid\) d'espérance et variance finies, alors pour  \(\displaystyle S=\sum_{i=1}^{N}X_i\) :
 	\[
 	\mathbb{E}(S) = \mathbb{E} (\mathbb{E} [S \mid N]) = \mathbb{E} (N.\mathbb{E}(X_1)) = \mathbb{E}(N).\mathbb{E}(X_1)
 	\]
@@ -731,7 +762,7 @@ Simuler \(X\) d'une loi quelconque \(F_X\) revient souvent à simuler \(\left(p_
 	
 Si c'est une variable discrète (\(F^{-1}\) n'existe pas) \(X_\ell=\min_{\ell} F(X_\ell)> p_i\), où \( \left(X_{\ell}\right)_{\ell}\) l'ensemble dénombrable des valeurs possibles, ordonnées de manière croissante.
 
-Dans la méthode du \textbf{changement de variable}, on suppose qu'on sait simuler une loi \(X\), et qu'il existe \(\phi\) tel que \(Y=\varphi(X)\) suit une loi \(F_Y\). L'exemple naturelle est celui de \(X\sim \mathcal{N}(0,1)\) et de faire le changement \(Y=\exp(X)\) pour obtenir Y qui suit une loi lognormale.
+Dans la méthode du \textbf{changement de variable}, on suppose qu'on sait simuler une loi \(X\), et qu'il existe \(\phi\) tel que \(Y=\varphi(X)\) suit une loi \(F_Y\). L'exemple naturel est celui de \(X\sim \mathcal{N}(0,1)\) et de faire le changement \(Y=\exp(X)\) pour obtenir Y qui suit une loi lognormale.
 
 \textbf{La méthode du rejet} est utilisée dans des cas plus complexe, par exemple lorsque \(F^{-1}\) n'est pas explicite ou exige beaucoup de temps de calcul. 
 Soit \(f\) une fonction de densité de probabilités. On suppose qu'il existe une densité de probabilités \(g\) telle que :
@@ -846,7 +877,7 @@ Les \textbf{méthodes de Monte Carlo} reposent sur la simulation répétée de v
 		\item Pour chaque \(k = 1,\ldots,K\) :
 		\begin{itemize}
 			\item Entraîner le modèle sur les \(K-1\) autres blocs.
-			\item Évaluer la performance (erreur, log-vraisemblance...) sur le \(k\)-ième bloc.
+			\item Évaluer la performance (erreur, log-vraisemblance...) sur le \(k^e\) bloc.
 		\end{itemize}
 		\item Agréger les erreurs pour obtenir une estimation globale de la performance hors-échantillon.
 	\end{itemize}
