@@ -11,7 +11,7 @@ L'âge \(x\), \(y\), \(z\) des individus assurés...
 
 \(d_x=l_x-l_{x+1}\) est le nombre de personnes qui meurent entre l'âge \(x\) et l'âge \(x+1\).
 
-\(q_x\) est la probabilité de décès entre les âges de \(x\) et l \(x+1\).
+\(q_x\) est la probabilité de décès entre les âges  \(x\) et \({x+1}\).
 \[
 \,q_x = d_x / l_x 
 \]
@@ -49,7 +49,7 @@ C'est le nombre espéré d'anniversaires à vivre.
 \begin{f}[Coefficient ou commutations]
 
 
-Ces coefficients ou commutations sont établies par des fonctions actuarielles qui dépendent d'une table de mortalité et d'un taux \(i\) (\(v=1/(1+i)\)) pour établir la table actuarielle :
+Ces coefficients ou commutations sont établis par des fonctions actuarielles qui dépendent d'une table de mortalité et d'un taux \(i\) (\(v=1/(1+i)\)) pour établir la table actuarielle :
 \[
 D_x=l_x .v^x
 \]
@@ -283,9 +283,9 @@ a_{x:\lcroof{n}} =
 \begin{f}[Capitaux décès ou survie]
 
 % !TeX spellcheck = fr_FR
-\textbf{Les capitaux décès}(\engl{Whole life insurance } \engl{noted} \({SP}_{x}\) or \({A}_{x}\))
+\textbf{Les capitaux décès} (\engl{Whole life insurance } \engl{noted} \({SP}_{x}\) or \({A}_{x}\))
 
-\(A_x\) indique une prestation au décès à la fin de l'année de la mort (montant de 1), quelque que soit la date de survenance, pour un individu assuré à l'âge \(x\) lors de la souscription.
+\(A_x\) indique une prestation au décès à la fin de l'année de la mort (montant de 1), quelle que que soit la date de survenance, pour un individu assuré à l'âge \(x\) lors de la souscription.
 
 \(A_{x:\lcroof{n}}\) désigne un capital versé au décès s'il survient et  au plus tard dans \(n\) années (\engl{Endowment}).
 
@@ -456,7 +456,7 @@ ou \({}_n E_x\).
 \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
 \end{tikzpicture}
 	\[
-	={}_n E_x={}_n p_x .v^n=\frac{l_{x+n}}{l_x} . v^n =\frac{D_{x+n}}{D_{x}}
+	{}_n E_x={}_n p_x .v^n=\frac{l_{x+n}}{l_x} . v^n =\frac{D_{x+n}}{D_{x}}
 	\]
 Capital décès avec versement du capital en cas de survie (\engl{Endowment})
 \[A_{x:\lcroof{n}}=\termins{x}{n}+\lcend{A}{x}{n}\]
@@ -565,7 +565,7 @@ La barre verticale indique la conditionnalité :
 \end{tikzpicture}
 \end{f}
 
-\begin{f}[Schémas simplifié de tarification des primes périodiques et provisions]
+\begin{f}[Schéma simplifié de tarification des primes périodiques et provisions]
 	
 \tikzstyle{startstop} = [rectangle, rounded corners, text width=4cm, minimum height=1cm,text centered, draw=black, fill=BleuProfondIRA!40]
 \tikzstyle{process} = [rectangle, minimum width=4cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=OrangeProfondIRA!40]

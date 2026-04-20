@@ -18,8 +18,8 @@ Une approche générale, mais non exhaustive, car les possibles sont nombreux : 
 		\node[ fill=OrangePastelIRA!30, right=of prep] (method) {Choix des méthodes};
 		%
 		\node[below =of method] (glm) {Modèles GLM / Logistic\\ (Poisson, Gamma,...)};
-		\node[below =of glm] (Seg) {Segmenation \\ (CART, Lasso, ...)};
-		\node[below =of Seg] (ml) {GAM, Machine learning\\ (Random Forest, Gradian Boosting,...) };
+		\node[below =of glm] (Seg) {Segmentation \\ (CART, Lasso, ...)};
+		\node[below =of Seg] (ml) {GAM, Machine learning\\ (Random Forest, Gradient Boosting,...) };
 		%
 		\node[left=of Seg] (fit) {Ajustement des modèles};
 		\node[left=of fit] (eval) {Validation :\\ résidus, Gini, AIC, etc.};
@@ -116,7 +116,7 @@ Une structure classique des données en assurance. Là encore, les possibles son
 L'actuaire non-vie évalue principalement les 
 provisions suivantes:
 \begin{itemize}
-	\item Des provisions pour sinistres à payer (PSAP, \emph{Reserves for claims reported but not settel (RBNS)}) 
+	\item Des provisions pour sinistres à payer (PSAP, \emph{Reserves for claims reported but not settled (RBNS)}) 
 	\item Des provisions pour sinistres non encore manifestés (PSNEM, \emph{Reserve for claims incurred but not reported (IBNR)})
 	\item Des provisions pour primes non acquises (PPNA, \emph{Reserves for unearned premiums})
 	\item Des provisions pour risques en cours (PREC,  \emph{Reserves for outstanding risks (non-life)}
@@ -130,7 +130,7 @@ provisions suivantes:
 
 \begin{f}[Chain Ladder déterministe]
 	%
-	Soit \(C_{i k}\) le montant, cumulé jusqu'en l'année de développement \(k\), des sinistres survenus en l'année d'accident \(i\), pour \(1 \leq i, k \leq n\). \(C_{i k}\) peut représenter soit le montant payé, soit le cout total estimé (paiement déjà effectué plus réserve) du sinistre. Les montants \(C_{i k}\) sont connus pour \(i+k \leq n+1\) et on cherche à estimer les valeurs des \(C_{i k}\) pour \(i+k>n+1,\) et en particulier les valeurs ultimes \(C_{i n}\) pour \(2 \leq i \leq n\). Ces notations sont illustrées dans le triangle suivant:
+	Soit \(C_{i k}\) le montant, cumulé jusqu'en l'année de développement \(k\), des sinistres survenus en l'année d'accident \(i\), pour \(1 \leq i, k \leq n\). \(C_{i k}\) peut représenter soit le montant payé, soit le coût total estimé (paiement déjà effectué plus réserve) du sinistre. Les montants \(C_{i k}\) sont connus pour \(i+k \leq n+1\) et on cherche à estimer les valeurs des \(C_{i k}\) pour \(i+k>n+1,\) et en particulier les valeurs ultimes \(C_{i n}\) pour \(2 \leq i \leq n\). Ces notations sont illustrées dans le triangle suivant:
 	%	\[
 	%	C=\left(\begin{array}{ccccc}
 		%	\rowcolor{white}	C_{1,1} & C_{1,2} & \cdots & C_{1, n-1} & C_{1, n} \\
@@ -233,7 +233,7 @@ La variance s'écrit :
 
 		
 
-Le troisième hypothèse concerne la distribution de \(R_{i}\) pour pouvoir construire facilement des intervalles de confiance sur les réserves estimées. Si  la distribution est normale, de moyenne la valeur estimée \(\hat{R}_{i}\) et d'écart-type donné par l'erreur standard \(\operatorname{se}\left(\hat{R}_{i}\right)\). Un intervalle de confiance à \(95 \%\) est alors donné par \(\left[\hat{R}_{i}-2 \operatorname{se}\left(\hat{R}_{i}\right), \hat{R}_{i}+2 \operatorname{se}\left(\hat{R}_{i}\right)\right]\).
+La troisième hypothèse concerne la distribution de \(R_{i}\) pour pouvoir construire facilement des intervalles de confiance sur les réserves estimées. Si  la distribution est normale, de moyenne la valeur estimée \(\hat{R}_{i}\) et d'écart-type donné par l'erreur standard \(\operatorname{se}\left(\hat{R}_{i}\right)\). Un intervalle de confiance à \(95 \%\) est alors donné par \(\left[\hat{R}_{i}-2 \operatorname{se}\left(\hat{R}_{i}\right), \hat{R}_{i}+2 \operatorname{se}\left(\hat{R}_{i}\right)\right]\).
 
 Si la distribution est supposée lognormale, les bornes d'un intervalle de confiance à \(95 \%\) seront alors données par
 \[

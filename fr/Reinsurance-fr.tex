@@ -265,7 +265,7 @@ où \(\alpha\ \in [0,1]\) (25\% dans la figure) est la part cédé en  Quote-par
 	%\rowcolors{1}{sectionColor}{white}
 	%\setlength{\tabcolsep}{1cm}
 	
-L'assureur fixe la priorité \(a\) et la porté \(b\) (respectivement 2M\EUR{} et  4M\EUR{} dans la figure).
+L'assureur fixe la priorité \(a\) et la portée \(b\) (respectivement 2M\EUR{} et  4M\EUR{} dans la figure).
 \[
 S_r= \sum_{i=1\ldots n} \min\left( \left( S_i-a\right)^+,b\right)  
 \]
@@ -295,7 +295,7 @@ La prime est fixée par le réassurance, en fonction de son estimation de \(\mat
 			\addplot [ybar ,mark=none,draw=BleuProfondIRA!40,fill=BleuProfondIRA!40] table [x index=0, y index=8] {..\\_Common\\ReinsuranceClaim.dat} ;
 			\addplot [draw=GrisLogoIRA] table [x index=0, y index=4] {..\\_Common\\ReinsuranceClaim.dat} ;
 			\addplot [draw=GrisLogoIRA] table [x index=0, y index=5] {..\\_Common\\ReinsuranceClaim.dat} ;
-			\legend{Sin Conservés,Sin cédés,, Priorité 2M€, Porté 4M€ }
+			\legend{Sin Conservés,Sin cédés,, Priorité 2M€, Portée 4M€ }
 		\end{axis}	
 	\end{tikzpicture}
 	%	
@@ -364,7 +364,7 @@ La prime est fixée par le réassurance, en fonction de son estimation de \(\mat
 			\addplot [ybar ,mark=none,draw=BleuProfondIRA!40,fill=BleuProfondIRA!40] table [x index=0, y index=17] {..\\_Common\\ReinsuranceClaim.dat} ;
 			\addplot [draw=GrisLogoIRA] table [x index=0, y index=14] {..\\_Common\\ReinsuranceClaim.dat} ;
 			\addplot [draw=GrisLogoIRA] table [x index=0, y index=15] {..\\_Common\\ReinsuranceClaim.dat} ;
-			\legend{Sin Conservés,Sin cédés,, Priorité 2M€, Porté 4M€ };
+			\legend{Sin Conservés,Sin cédés,, Priorité 2M€, Portée 4M€ };
 		\end{axis}	
 	\end{tikzpicture}
 	\emph{ Cat-XL = Catastrophe XL }
@@ -402,7 +402,7 @@ La prime est fixée par le réassurance, en fonction de son estimation de \(\mat
 	
 	
 Cette  réassurance (\emph{Stop Loss}) intervient lorsque le cumul des pertes annuelles est dégradé. 
-Il s'exprime sur la base du ratio \(S/P\) avec une priorité et une porté du \(XL\) exprimées en \%.
+Il s'exprime sur la base du ratio \(S/P\) avec une priorité et une portée du \(XL\) exprimées en \%.
 	
 \[
 S_r= \min\left( \left( \sum_{i=1\ldots N} S_i - a  P\right)^+,bP\right)  
@@ -473,7 +473,7 @@ Elle consiste en un échange de principal contre paiement périodique de coupons
 Les taux de ces obligations sont majorés en fonction du risque, non pas de défaillance ou de contre partie, mais de la survenance de l'événement (inférieur à 1\%). La structure dédiée à cette transformation s'appelle \emph{Special Purpose Vehicle} (SPV).
 
 
-Le déclencheur peut être liés directement aux résultats de la cédente (Indemnitaire), dépendre d'un indice de sinistralité, d'un paramètre mesurable (somme des excédents de pluie, échelle de Richter, taux de mortalité), ou d'un modèle (RMS \& Equecat Storm modelling). 
+Le déclencheur peut être lié directement aux résultats de la cédente (Indemnitaire), dépendre d'un indice de sinistralité, d'un paramètre mesurable (somme des excédents de pluie, échelle de Richter, taux de mortalité), ou d'un modèle (RMS \& Equecat Storm modelling). 
 
 
 
