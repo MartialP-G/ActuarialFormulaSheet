@@ -34,9 +34,9 @@
 	On appelle \textbf{probabilité} \(\mathbb{P}\) toute application de l'ensemble des évènements \(\mathcal{A}\) dans l'intervalle \([0,1]\), telle que :      \[\mathbb{P} :      \mathcal{A}  \mapsto   [0,1]\]
 	satisfaisant aux propriétés (ou axiomes) suivantes~:
 	\begin{description}
-		\item[(P1)] \(A \subseteq \mathcal{A} \)    alors  \( \mathbb{P}(A) \geq 0\),
+		\item[(P1)] \(A \in \mathcal{A} \)    alors  \( \mathbb{P}(A) \geq 0\),
 		\item[(P2)] \( \mathbb{P}(\Omega) = 1\),
-		\item[(P3)] \(A, B \subseteq \mathcal{A}\),  si  \(A\cap B =\varnothing\)    alors   \(\mathbb{P}(A\cup B)=\mathbb{P}(A) + \mathbb{P}(B)\).
+		\item[(P3)] \(A, B \in \mathcal{A}\),  si  \(A\cap B =\varnothing\)    alors   \(\mathbb{P}(A\cup B)=\mathbb{P}(A) + \mathbb{P}(B)\).
 	\end{description}
 	
 	L'\textbf{espace de probabilité}\index{D\'efinition! espace de probabilité} se définit par 
@@ -110,26 +110,31 @@ et donc, pour tout \(a<b\),
 \hrule
 \begin{f}[Espérance]{\ }
 	
-	L'espérance mathématique dans le cas discret (variables qualitatives ou quantitatives discrètes)~:
-	\[
-	\mathbb{E}[X]=\sum_{j\in \mathbb{N}}x_j\mathbb{P}(x_j)
-	\]
-	où \(\mathbb{P}(x_j)\) est la probabilité associée à chaque événement \(x_i\).
-	
-	L'espérance mathématique dans le cas continu~:
-	\[
-	\mathbb{E}[X]=\int_{-\infty}^{\infty} x. f(x)dx
-	\]
-	
-	où \(f\) désigne la fonction de densité de la variable aléatoire \(x\), définie dans notre cas sur \(\mathbb{R}\).
-	S'agissant de somme ou d'intégrale, l'espérance est linéaire, c'est-à-dire~:
-	
-	\[\mathbb{E}[c_0+c_1X_1+c_2X_2]=c_0+c_1\mathbb{E}[X_1]+c_2\mathbb{E}[X_2]\]
-	
-	\[
-	\mathbb{E}[X]=\int x.f(x)dx =\int_0^1 F^{-1}(p)dp= \int_{0}^{+\infty} \overline{F}(x)dx -\int_{-\infty}^{0}  \overline{F}(x)dx\\
-	\] 
-	sous réserve d'existence de \(f\), \(F\) et de \(F^{-1}\).
+On suppose dans toute la suite que l'espérance de la variable aléatoire \(X\) existe.
+
+L'espérance mathématique dans le cas discret (variables qualitatives ou quantitatives discrètes)~:
+\[
+\mathbb{E}[X]=\sum_{j\in \mathbb{N}} x_j\,\mathbb{P}(X=x_j)
+\]
+où \(\mathbb{P}(X=x_j)\) est la probabilité associée à la valeur \(x_j\).
+
+L'espérance mathématique dans le cas continu~:
+\[
+\mathbb{E}[X]=\int_{-\infty}^{\infty} x\, f(x)\,dx
+\]
+où \(f\) existe et désigne la fonction de densité de la variable aléatoire \(X\), définie ici sur \(\mathbb{R}\).
+
+S'agissant d'une somme ou d'une intégrale, l'espérance est linéaire, c'est-à-dire~:
+\[
+\mathbb{E}\left[c_0+c_1X_1+c_2X_2\right]=c_0+c_1\mathbb{E}[X_1]+c_2\mathbb{E}[X_2]
+\]
+
+Enfin, lorsque les objets existent,
+\[
+\mathbb{E}[X]=\int x f(x)\,dx
+= \int_0^1 F^{-1}(p)\,dp
+= \int_{0}^{+\infty} \overline{F}(x)\,dx -\int_{-\infty}^{0}  F(x)\,dx
+\]
 \end{f}
 \hrule
 \begin{f}[Convolution ou loi de la somme]{\ }
@@ -757,7 +762,7 @@ Simuler \(X\) d'une loi quelconque \(F_X\) revient souvent à simuler \(\left(p_
 	
 Si c'est une variable discrète (\(F^{-1}\) n'existe pas) \(X_\ell=\min_{\ell} F(X_\ell)> p_i\), où \( \left(X_{\ell}\right)_{\ell}\) l'ensemble dénombrable des valeurs possibles, ordonnées de manière croissante.
 
-Dans la méthode du \textbf{changement de variable}, on suppose qu'on sait simuler une loi \(X\), et qu'il existe \(\phi\) tel que \(Y=\varphi(X)\) suit une loi \(F_Y\). L'exemple naturelle est celui de \(X\sim \mathcal{N}(0,1)\) et de faire le changement \(Y=\exp(X)\) pour obtenir Y qui suit une loi lognormale.
+Dans la méthode du \textbf{changement de variable}, on suppose qu'on sait simuler une loi \(X\), et qu'il existe \(\phi\) tel que \(Y=\varphi(X)\) suit une loi \(F_Y\). L'exemple naturel est celui de \(X\sim \mathcal{N}(0,1)\) et de faire le changement \(Y=\exp(X)\) pour obtenir Y qui suit une loi lognormale.
 
 \textbf{La méthode du rejet} est utilisée dans des cas plus complexe, par exemple lorsque \(F^{-1}\) n'est pas explicite ou exige beaucoup de temps de calcul. 
 Soit \(f\) une fonction de densité de probabilités. On suppose qu'il existe une densité de probabilités \(g\) telle que :

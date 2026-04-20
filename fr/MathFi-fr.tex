@@ -85,6 +85,7 @@ i^{(m)}=m\left( (1+i)^{1 / m}-1\right)
 Le taux \textbf{nominal} ou taux \textbf{facial} permet de calculer les intérêts dus sur un an.
 Le taux \textbf{périodique} correspond au taux nominal divisé par le nombre de périodes sur un an \(i/m\).
 Si le taux périodique est hebdomadaire, il sera égal au taux nominal divisé par 52.
+\(i\) peut être négatif, mais on supposera toujours \(i>-1\), de sorte que le facteur d'accumulation \(1+i\) reste strictement positif.
 \end{f}
 \hrule
 
@@ -177,7 +178,7 @@ Par un remboursement constant ou par annuité constante: la somme de l'amortisse
 \end{center}
 L'annuité \(K_k=K,\) \(\forall k\) pour un capital \(S_0\), sur la base d'un taux \(i\), est alors égale à :
 \[
-K=S_0 \frac{i}{1-(1+i)^{-n}}
+K=S_0 \frac{i}{1-(1+i)^{-n}}\quad \forall i\neq 0, \quad K=\frac{S_0}{n},\quad \text{si}\quad i=0.
 \]
     
     Par un amortissement constant.

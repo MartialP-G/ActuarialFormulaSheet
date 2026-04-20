@@ -234,9 +234,9 @@ Elle  se fait hors \textbf{coupons courus} , la part du prochain coupon auquel l
 
 \begin{f}[Duration \& Convexité]
 
-La duration de Macaulay :
+Pour un taux \(i\), la duration de Macaulay s'écrit :
 \[ 		
-D = \sum_{t=1}^{n} t \cdot w_t, \quad \text{où} \quad w_t = \frac{PV(C_t)}{P}.
+D = \sum_{t=1}^{n} t \cdot w^i_t, \quad \text{où} \quad w^i_t = \frac{PV^i(C_t)}{P(i)}.
  \]	
 Si la fréquence de paiement est \(k\) par an, la duration exprimée en années est obtenue en divisant par \(k\).
 La duration modifiée \(D^*\)  :
@@ -630,7 +630,7 @@ Ainsi, aucun profit sans risque n’est possible par exploitation des écarts de
 
 L'AOA implique la relation suivante entre le Call et le Put, sur le marché action :
 
-\[S_t- C_t + P_t = K e^{-i_{f}.\tau}\]	
+\[S_t- C_t + P_t = K e^{-r.\tau}\]	
 \end{f}
 \hrule
 
@@ -709,7 +709,7 @@ e^{i_{f} \delta t} = q u + (1-q) d, \qquad q u^2 + (1-q) d^2 - [q u + (1-q) d]^2
 Si on ajoute la contrainte \(u = \frac{1}{d}\), on arrive à :
 \[
 \begin{array}{l}
-	q = \frac{e^{-i_f \delta_t} - d}{u - d} \\
+	q = \frac{e^{i_f \delta_t} - d}{u - d} \\
 	u = e^{\sigma \sqrt{\delta t}} \\
 	d = e^{-\sigma \sqrt{\delta t}}
 \end{array}
