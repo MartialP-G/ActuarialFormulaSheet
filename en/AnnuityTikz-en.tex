@@ -32,7 +32,7 @@ a_{\lcroof{n}}=v+v^2+\cdots+v^{n}=v\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{i}
 \]
 
 
-Contingent annuity \(\ddot{a}_{x}\): its payments are conditional on a random event, such as a life annuity of an individual aged \(x\). In this example, payments continue until death occurs :
+Contingent annuity \(\ddot{a}_{x}\): its payments are conditional on a random event, such as a life annuity of an individual aged \(x\). In this example, payments continue until death occurs:
 
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
@@ -66,11 +66,11 @@ The date of death is represented here by a small coffin. This type of annuity wi
 
 Annuity in arrears (immediate) \(a_{\lcroof{n}}\): its periodic payments are made at the end of each payment period, as with a salary paid at the end of the month. This is the default case, previously illustrated for the certain annuity.
 \[
-\ddot{a}_{\lcroof{n}}=1+v+\cdots+v^{n-1}=\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{d}
+a_{\lcroof{n}}=v+v^{2}+\cdots+v^{n}=\frac{1-v^{n}}{i}=v \frac{1-v^{n}}{1-v}
 \]
 %
 \[
-	\mathrm{PV}_{\lcroof{n}}^{\text {due }}=K \ddot{a}_{\lcroof{n}}=K \frac{1-v^{n}}{d} 
+\mathrm{PV}_{\lcroof{n}}^{\mathrm{im}}=K a_{\lcroof{n}}=K \frac{1-v^{n}}{i}
 \]
 
 Annuity in advance (due) \(\ddot{a}_{\lcroof{n}}\): its periodic payments are made at the beginning of each payment period, as with rent payments, for example.
@@ -98,13 +98,13 @@ Annuity in advance (due) \(\ddot{a}_{\lcroof{n}}\): its periodic payments are ma
 		\draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (5,0) -- (\w,0);
 	\end{tikzpicture}
 \end{center}
-Also denoted \(\mathrm{PV}^{\mathrm{im}}\) :
+Also denoted \(\mathrm{PV}^{\mathrm{im}}\):
 \[
-a_{\lcroof{n}}=v+v^{2}+\cdots+v^{n}=\frac{1-v^{n}}{i}=v \frac{1-v^{n}}{1-v}
+\ddot{a}_{\lcroof{n}}=1+v+\cdots+v^{n-1}=\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{d}
 \]
 %
 \[
-	\mathrm{PV}_{\lcroof{n}}^{\mathrm{im}}=K a_{\lcroof{n}}=K \frac{1-v^{n}}{i} 
+\mathrm{PV}_{\lcroof{n}}^{\text {due }}=K \ddot{a}_{\lcroof{n}}=K \frac{1-v^{n}}{d}
 \]
 Perpetuity \(a\) or \(a_{\lcroof{\infty}}\):
 \[
@@ -143,7 +143,7 @@ Deferred annuity \(_{m|}a_{\lcroof{n}}\): its payments do not start in the first
 \end{center}
 
 
-Periodic / monthly annuity \(a^{(m)}\) : the default periodicity is one year, but the unit payment can also be spread over \(m\) periods within the year.
+Periodic / monthly annuity \(a^{(m)}\): the default periodicity is one year, but the unit payment can also be spread over \(m\) periods within the year.
 
 \begin{center}
 	\begin{tikzpicture}[scale=0.75]
@@ -180,7 +180,7 @@ Periodic / monthly annuity \(a^{(m)}\) : the default periodicity is one year, bu
 
 If \(i^{(m)}\) represents the equivalent nominal (annual) interest rate with \(m\) periods per year, then \(i^{(m)}= m\left((1+i)^{1 / m}-1\right)\) .
 
-Similarly, \(d^{(m)} \) is the nominal discount rate consistent with \(d\) and \(m\) : \(d^{(m)}= m\left(1-(1-d)^{1 / m}\right)\).
+Similarly, \(d^{(m)} \) is the nominal discount rate consistent with \(d\) and \(m\): \(d^{(m)}= m\left(1-(1-d)^{1 / m}\right)\).
 
 \[
 \ddot{a}_{\lcroof{n}}^{(m)}=\frac{1}{m} \sum_{k=0}^{m n-1} v^{\frac{k}{m}}=\frac{d}{d^{(m)}} \ddot{a}_{\lcroof{n}}=\frac{1-v^{n}}{d^{(m)}} \approx \ddot{a}_{\lcroof{n}}+\frac{m-1}{2 m}\left(1-v^{n}\right)
@@ -191,7 +191,8 @@ a_{\lcroof{n}}^{(m)}=\frac{1}{m} \sum_{k=1}^{m n} v^{\frac{k}{m}}=\frac{i}{i^{(m
 Unit annuity \(a\): it is used when constructing annuity formulas.
 For a constant annuity, the total amount paid each year is 1, regardless of \(m\). 
 
-Dynamic annuity, increasing/decreasing \(Ia\)/\(Da\): in its simplest form, it pays an amount that starts at 1 (\(n\)) and increases (decreases) each period arithmetically or geometrically. In the following example, the progression is arithmetic.
+
+Dynamic, increasing (or decreasing) annuity \(Ia\) (\(Da\)): In its simplest form, it pays out an amount that starts at 1 (\(n\)) and increases (decreases) in each period arithmetically or geometrically until it reaches \(n\) (1). In the following example, the progression is arithmetic.
 The prefix \(I\) (increasing) is used to indicate increasing annuities and \(D\) (decreasing) for decreasing annuities.
 	
 \begin{center}
@@ -252,7 +253,7 @@ with, we recall,  \(d=i/(1+i)\) and in arrears (immediate)
 \[
 (D \ddot{a})_{\lcroof{n}}=n+(n-1) v+\cdots+v^{n-1}=\frac{1}{d}\left(n-a_{\lcroof{n}}\right)
 \]
-and in arrears :
+and in arrears:
 \[
 (D a)_{\lcroof{n}}=n v+(n-1) v^{2}+\cdots+v^{n}=\frac{1}{i}\left(n-a_{\lcroof{n}}\right)
 \]

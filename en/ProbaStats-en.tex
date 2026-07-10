@@ -8,13 +8,13 @@
 	The \textbf{random event} is an event \(\omega_i\) of the universe whose outcome (the result) is not certain.
 	
 	
-	The \textbf{elementary event :}
+	The \textbf{elementary event:}
 	\begin{itemize}
 		\item two distinct elementary events \(\omega_i\) and \(\omega_j\) are incompatible,
 		\item the union of all the elementary events of the universe \(\Omega \) corresponds to certainty.
 	\end{itemize}
 	
-	The \textbf{sets} :
+	The \textbf{sets}:
 	\begin{itemize}
 		\item \(E=\lbrace \omega_{i1},\ldots , \omega_{ik}\rbrace\) a subset of \(\Omega\) (\(k\) elements).
 		\item \(\overline{E}\) the complement of \(E\),
@@ -24,19 +24,19 @@
 		\item \(\varnothing\) the impossible or empty event.
 	\end{itemize}
 	
-	Let \(E\) be a set. We call \textbf{trib} or \textbf{\(\sigma-\)algebra} on \(E\), a set \(\mathcal{A}\) of parts of \(E\) which satisfies :
+	Let \(E\) be a set. We call \textbf{trib} or \textbf{\(\sigma-\)algebra} on \(E\), a set \(\mathcal{A}\) of parts of \(E\) which satisfies:
 	\begin{itemize}
 		\item     \(\mathcal{A} \not=\varnothing\),
 		\item     \(\forall A \in \mathcal{A} , \overline{A} \in\mathcal{A}\),
 		\item     if \(\forall n \in \mathbb{N}\), \(A_n \in\mathcal{A}\) then \(\cup_{n\in\mathbb{N} } A_n \in\mathcal{A}\).
 	\end{itemize}
 	
-	We call \textbf{probability} \(\mathbb{P}\) any application of the set of events \(\mathcal{A}\) in the interval \([0,1]\), such that :      \[\mathbb{P} :      \mathcal{A}  \mapsto   [0,1]\]
+	We call \textbf{probability} \(\mathbb{P}\) any application of the set of events \(\mathcal{A}\) in the interval \([0,1]\), such that:      \[\mathbb{P}:      \mathcal{A}  \mapsto   [0,1]\]
 	satisfying the following properties (or axioms)~:
 	\begin{description}
-		\item[(P1)] \(A \subseteq \mathcal{A} \)    then  \( \mathbb{P}(A) \geq 0\),
+		\item[(P1)] \(A \in  \mathcal{A} \)    then  \( \mathbb{P}(A) \geq 0\),
 		\item[(P2)] \( \mathbb{P}(\Omega) = 1\),
-		\item[(P3)] \(A, B \subseteq \mathcal{A}\),  if  \(A\cap B =\varnothing\)    then   \(\mathbb{P}(A\cup B)=\mathbb{P}(A) + \mathbb{P}(B)\).
+		\item[(P3)] \(A, B \in  \mathcal{A}\),  if  \(A\cap B =\varnothing\)    then   \(\mathbb{P}(A\cup B)=\mathbb{P}(A) + \mathbb{P}(B)\).
 	\end{description}
 	
 	The \textbf{probability space}\index{D\'efinition! espace de probabilité} is defined by
@@ -62,60 +62,91 @@
 
 \begin{f}[Random variables]
 	
-	Let \((\Omega, \mathcal{A}, \mathbb{P})\) be a probability space. We call \textbf{random variable} \(X\) from \(\Omega\) to \( \Re\) any measurable function \(X:\Omega\mapsto \Re\).
-	
-	\[\lbrace X\leq x \rbrace\equiv \lbrace e\in \Omega \mid X(e)\leq x \rbrace \in   \mathcal{A}\]
+	Let \( (\Omega, \mathcal{A}, \mathbb{P})\) be a probability space. 
+	A \textbf{real random variable} is any measurable function 
+	\(X: (\Omega, \mathcal{A}) \to (\mathbb{R}, \mathcal{B}(\mathbb{R}))\), 
+	that is, one such that:
+	\[
+	\forall x \in \mathbb{R}, \quad \lbrace X \leq x \rbrace \equiv 
+	\lbrace e \in \Omega \mid X(e) \leq x \rbrace \in \mathcal{A}
+	\]
+	More generally, a \textbf{random variable} taking values in 
+	a measurable space \((E, \mathcal{E})\) is any measurable mapping 
+	\(X: (\Omega, \mathcal{A}) \to (E, \mathcal{E})\), that is, such that:
+	\[
+	\forall B \in \mathcal{E}, \quad X^{-1}(B) = 
+	\lbrace e \in \Omega \mid X(e) \in B \rbrace \in \mathcal{A}
+	\]
+	%	
 	The set of events of \(\Omega\) is often not explicit.
 	
 	The \textbf{distribution function} \((F_X)\) of a real random variable characterizes its probability distribution.
 	\[
-	F_X(x)=\mathbb {P}(X\leq x), x\in \Re
+	F_X(x)=\mathbb {P}(X\leq x), \quad  x\in \mathbb{R}
 	\]
 	where the right-hand side represents the probability that the real random variable \(X\) takes a value less than or equal to \(x\).
+	It fully characterizes the distribution of \(X\). It is increasing, continuous from the right, and satisfies
+	\[
+	\lim_{x\to -\infty} F_X(x)=0, \quad \lim_{x\to +\infty} F_X(x)=1.
+	\]
 	The probability that \(X\) is in the interval \([a, b]\) is therefore, if \(a< b\),
 	\(
 	\mathbb{P}(a< X\leq b)\ =\ F_X(b)-F_X(a)
 	\)
 	
-	A probability law has a \textbf{probability density} \(f\), if \(f\) is a function defined on \(\mathbb{R}^{+}\), Lebesgue integral, such that the probability of the interval \([a, b]\) is given by
+	The variable \(X\) has a  \textbf{probability density} \(f\) if there exists a Lebesgue-integrable function \(f: \mathbb{R} \to \mathbb{R}_+\) such that
 	\[
-	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx} \mbox{ for all numbers such that }a<x<b.
+	F_X(x)=\int_{-\infty}^x f(t)\,dt,
+	\]
+	and therefore, for all \(a<b\),    
+	\[
+	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx} \mbox{ \  }\forall\ a<b.
+	\]
+	subject to the normalization condition
+	\[
+	\int_{-\infty}^{+\infty} f(x)\,dx = 1.
 	\]
 \end{f}
 \hrule
 \begin{f}[Expectations]{\ }
 	
+	We assume throughout the rest of this section that the expectation of the random variable \(X\) exists.
+	
 	The mathematical expectation in the discrete case (discrete qualitative or quantitative variables)~:
 	\[
-	\mathbb{E}[X]=\sum_{j\in \mathbb{N}}x_j\mathbb{P}(x_j)
+	\mathbb{E}[X]=\sum_{j\in \mathbb{N}} x_j\,\mathbb{P}(X=x_j)
 	\]
-	where \(\mathbb{P}(x_j)\) is the probability associated with each event \(x_i\).
+	where \(\mathbb{P}(X=x_j)\) is the probability associated with the value \(x_j\).
 	
 	The mathematical expectation in the continuous case~:
 	\[
-	\mathbb{E}[X]=\int_{-\infty}^{\infty} x. f(x)dx
+	\mathbb{E}[X]=\int_{-\infty}^{\infty} x\, f(x)\,dx
+	\]
+	where \(f\) exists and denotes the probability density function of the random variable \(X\), defined here on \(\mathbb{R}\).
+	
+	Since it involves a sum or an integral, the expectation is linear, that is:
+	\[
+	\mathbb{E}\left[c_0+c_1X_1+c_2X_2\right]=c_0+c_1\mathbb{E}[X_1]+c_2\mathbb{E}[X_2]
 	\]
 	
-	where \(f\) denotes the density function of the random variable \(x\), defined in our case on \(\mathbb{R}\).
-	When it comes to sum or integral, the expectation is linear, that is to say~:
-	
-	\[\mathbb{E}[c_0+c_1X_1+c_2X_2]=c_0+c_1\mathbb{E}[X_1]+c_2\mathbb{E}[X_2]\]
-	
+	Finally, when the objects exist,
 	\[
-	\mathbb{E}[X]=\int x.f(x)dx =\int_0^1 F^{-1}(p)dp= \int \overline{F}(x)dx\\
-	\] 
+	\mathbb{E}[X]=\int x f(x)\,dx
+	= \int_0^1 F^{-1}(p)\,dp
+	= \int_{0}^{+\infty} \overline{F}(x)\,dx -\int_{-\infty}^{0}  F(x)\,dx
+	\]
 \end{f}
 \hrule
 \begin{f}[Convolution or law of sum]{\ }
 	
-	The convolution of two functions \( f \) and \( g \), denoted \( (f * g)(x) \), is defined by :
+	The convolution of two functions \( f \) and \( g \), denoted \( (f * g)(x) \), is defined by:
 	
 	\[
 	(f * g)(x) = \int f(t) g(x - t) \, dt
 	\]
 	
 	Convolution measures how \( f(t) \) and \( g(t) \) interact at different points while taking into account the shift (or translation) between
-	If \(X\) and \(Y\) are two independent random variables with respective densities \(f_X\) and \(f_Y\), then the density of the sum \(Z = X + Y\) is given by :
+	If \(X\) and \(Y\) are two independent random variables with respective densities \(f_X\) and \(f_Y\), then the density of the sum \(Z = X + Y\) is given by:
 	\[
 	f_Z(x) = (f_X * f_Y)(x) = \int_{-\infty}^{+\infty} f_X(t)\, f_Y(x - t)\, dt.
 	\]
@@ -125,7 +156,7 @@
 \begin{f}
 	[Compound law or frequency/gravity model]{\ }
 	
-	Let \(N\) be a discrete random variable in \(\mathbb{N}^+\), \(\left(X_i\right)\) a sequence of \(iid\) random variables with finite expectation and variance, then for \(\displaystyle S=\sum_{i=1}^{N}X_i\) :
+	Let \(N\) be a discrete random variable in \(\mathbb{N}^+\), \(\left(X_i\right)\) a sequence of \(iid\) random variables with finite expectation and variance, then for \(\displaystyle S=\sum_{i=1}^{N}X_i\):
 	\[
 	\mathbb{E}(S) = \mathbb{E} (\mathbb{E} [S \mid N]) = \mathbb{E} (N.\mathbb{E}(X_1)) = \mathbb{E}(N).\mathbb{E}(X_1)
 	\]
@@ -168,11 +199,11 @@
 	
 	the expectation and the standard deviation of \(Z_n\) are respectively 0 and 1: the variable is thus said to be centered and reduced.
 	
-	The \textbf{central limit theorem} then states that the distribution of \(Z_n\) converges in law to the reduced centered normal distribution \(\mathcal{N} (0 , 1)\) as \(n\) tends to infinity. This means that if \(\Phi\) is the distribution function of \(\mathcal{N} (0 , 1)\), then for any real number \(z\) :
+	The \textbf{central limit theorem} then states that the distribution of \(Z_n\) converges in law to the reduced centered normal distribution \(\mathcal{N} (0 , 1)\) as \(n\) tends to infinity. This means that if \(\Phi\) is the distribution function of \(\mathcal{N} (0 , 1)\), then for any real number \(z\):
 	\[
 	\lim_{n \to \infty} \mbox{P}(Z_n \le z) = \Phi(z),
 	\]
-	or, equivalently :
+	or, equivalently:
 	\[
 	\lim_{n\to\infty}\mbox{P}\left(\frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}\leq z\right)=\Phi(z)
 	\]
@@ -200,7 +231,7 @@ The Cramer-Wold theorem ensures that the (\(n-\)dimensional) law of this random 
 \hrule
 
 \begin{f}[Marginal law]
-The probability distribution of the \(i^{th}\) coordinate of a random vector is called the \(i^{th}\) marginal distribution. The \textbf{marginal distribution} \(\mathbb{P}_i\) of \(\mathbb{P}\) is obtained by the formula :
+The probability distribution of the \(i^{th}\) coordinate of a random vector is called the \(i^{th}\) marginal distribution. The \textbf{marginal distribution} \(\mathbb{P}_i\) of \(\mathbb{P}\) is obtained by the formula:
 \[
 \mathbb{P}_i(B) = \mathbb{P}_{X_i}(B) = \iint { \mathds{1}}_{\omega_i\in B} \mathbb{P}(\mathrm{d}(\omega_1,\dots,\omega_n)), \forall  B \in \mathcal B(\mathbb{R}).
 \]
@@ -219,7 +250,7 @@ f_{X_2}(x_2 \mid X_1=x_1)f_{X_1}(x_1) = f_{X_1,X_2}(x_1, x_2) = f_{X_1}(x_1 \mid
 \hrule
 
 	\begin{f}[Independence]
-\((X_1, X_2, \dots,X_n)\) is a family of \textbf{independent random variables} if one of the following two conditions is met :
+\((X_1, X_2, \dots,X_n)\) is a family of \textbf{independent random variables} if one of the following two conditions is met:
 \[
 \forall (A_1,\dots,A_n)\in\mathcal{E}_1\times\dots\times\mathcal{E}_n
 \]
@@ -249,7 +280,7 @@ For every \(F \in \mathcal{F} (F_1,F_2)\), and for all \(x\) in \(\mathbb{R}^d\)
 \[
 F^-(\boldsymbol{x})\leq F (\boldsymbol{x})\leq F^+(\boldsymbol{x})
 \]
-où \(F^+(\boldsymbol{x}) = \min \{F_1(x_1),F_2(x_2)\}\), et 
+where \(F^+(\boldsymbol{x}) = \min \{F_1(x_1),F_2(x_2)\}\), et 
 \(F^-(\boldsymbol{x}) = \max\{0,F_1(x_1) +F_2(x_2)-1\}\).
 
 
@@ -315,7 +346,7 @@ In particular, each component \(X_1,\cdots, X_n\) is of normal distribution.
 \end{itemize} 
 
 If \(\boldsymbol{\Sigma}\) is well defined positive, therefore invertible, then
-% \(f_{\left(\boldsymbol{\mu},\boldsymbol{\Sigma}\right)} :\mathbb{R}^N \to \mathbb{R}\) :
+% \(f_{\left(\boldsymbol{\mu},\boldsymbol{\Sigma}\right)}:\mathbb{R}^N \to \mathbb{R}\):
 \[
 f_{\left(\boldsymbol{\mu},\boldsymbol{\Sigma}\right)}\left(\boldsymbol{x}\right)= \frac{1} {(2\pi)^{N/2} \left| \boldsymbol{\Sigma}\right|^{1/2}}e^{ -\frac{1}{2}\left(\boldsymbol{x}-\boldsymbol{\mu}\right)^\top\boldsymbol{\Sigma}^{-1}\left(\boldsymbol{x}-\boldsymbol{\mu}\right) }.
 \]
@@ -342,9 +373,9 @@ where \(\sigma_{xy}\) denotes the covariance between the variables \(x\) and \(y
 \[
 \tau_K=\mathbb{P}((X-X')(Y-Y')>0)-P((X-X')(Y-Y')<0)
 \]
-where \((X,Y)\)  \((X',Y')\) are two independent pairs with the same joint density. This corresponds to the probability of the concordants reduced by that of the discordants :
+where \((X,Y)\)  \((X',Y')\) are two independent pairs with the same joint density. This corresponds to the probability of the concordants reduced by that of the discordants:
 \begin{align*}
-\tau_K	=&\mathbb{P}\left(\operatorname{sgn}(X-X')=\mathbb{P}(\operatorname{sgn}(Y-Y')\right)-\\
+\tau_K	=&\mathbb{P}\left(\operatorname{sgn}(X-X')=\operatorname{sgn}(Y-Y')\right)-\\
 		&\mathbb{P}\left(\operatorname{sgn}(X-X')\neq \operatorname{sgn}(Y-Y')\right)\\
 =&\mathbb{E}\left[ \operatorname{sgn}(X-X')\operatorname{sgn}(Y-Y')\right]\\
 =&\operatorname{Cov}(\operatorname{sgn}(X-X'),\operatorname{sgn}(Y-Y'))\\
@@ -447,27 +478,27 @@ The following generators are all monotone, i.e. \(d\)-monotone for all \(d\in\ma
 	
 A \textbf{filtration} \((\mathcal{F}_t)_{t \geq 0}\) is an increasing family of \(\sigma\)-algebras or tribe representing the information available up to time \(t\). A process \((X_t)\) is said to be \textbf{\(\mathcal{F}_t\)-adapted} if \(X_t\) is measurable with respect to \(\mathcal{F}_t\) for all \(t\).
 	
-A process \((B_t)_{t \geq 0}\) is a \textbf{standard Brownian motion} (or Wiener process) if it verifies :
+A process \((B_t)_{t \geq 0}\) is a \textbf{standard Brownian motion} (or Wiener process) if it verifies:
 	\begin{itemize} 
 		\item \(B_0 = 0\) ;
-		\item independent increments : \(B_t - B_s\)  independent of \(\mathcal{F}_s\) ;
-		\item stationary increments : \(B_t - B_s \sim \mathcal{N}(0, t - s)\) ;
+		\item independent increments: \(B_t - B_s\)  independent of \(\mathcal{F}_s\) ;
+		\item stationary increments: \(B_t - B_s \sim \mathcal{N}(0, t - s)\) ;
 		\item trajectories continue almost surely.
 	\end{itemize}
 	
-	A process \((M_t)\) is a \textbf{martingale} (with respect to \(\mathcal{F}_t\)) if :
+	A process \((M_t)\) is a \textbf{martingale} (with respect to \(\mathcal{F}_t\)) if:
 	\[
 	\mathbb{E}[|M_t|] < \infty \quad \text{and} \quad \mathbb{E}[M_t \mid \mathcal{F}_s] = M_s \quad \forall\, 0 \leq s < t
 	\]
-	Examples : Brownian motion, stochastic integrals of the form \(\int_0^t \theta_s dB_s\) (under conditions) are martingales.
+	Examples: Brownian motion, stochastic integrals of the form \(\int_0^t \theta_s dB_s\) (under conditions) are martingales.
 	\medskip
 	
 	\textbf{Quadratic variation} is denoted \(
 	\langle B \rangle_t = t, \quad \langle cB \rangle_t = c^2 t\)
 	
-\textbf{Covariation} : for two Itô processes \(X, Y\),
+\textbf{Covariation}: for two Itô processes \(X, Y\),
 \[
-\langle X, Y \rangle_t := \lim_{\|\Pi\| \to 0} \sum_{i} (X_{t_{i+1}} - X_{t_i})(Y_{t_{i+1}} - Y_{t_i})
+\langle X, Y \rangle_t:= \lim_{\|\Pi\| \to 0} \sum_{i} (X_{t_{i+1}} - X_{t_i})(Y_{t_{i+1}} - Y_{t_i})
 \]
 convergence in probability, where \(\Pi = \{t_0 = 0 < t_1 < \dots < t_n = t\}\) is a partition of \([0,t]\).
 \end{f}
@@ -475,7 +506,7 @@ convergence in probability, where \(\Pi = \{t_0 = 0 < t_1 < \dots < t_n = t\}\) 
 
 \begin{f}[Itô's process and stochastic differential calculus]
 	
-A process \((X_t)\) is an \textbf{Itô process} if it can be written :
+A process \((X_t)\) is an \textbf{Itô process} if it can be written:
 	\[
 	X_t = X_0 + \int_0^t \phi_s\, ds + \int_0^t \theta_s\, dB_s
 	\]
@@ -483,24 +514,24 @@ A process \((X_t)\) is an \textbf{Itô process} if it can be written :
 	\[dX_t = \phi_t dt + \theta_t dB_t\]
 	with \(\phi_t\), \(\theta_t\) \(\mathcal{F}_t\)-adapted and \(L^2\)-integrable.
 	
-	\textbf{Itô's formula (1D)} : for \(f \in C^2(\mathbb{R})\), we have :
+	\textbf{Itô's formula (1D)}: for \(f \in C^2(\mathbb{R})\), we have:
 	\[
 	df(X_t) = f'(X_t) dX_t + \frac{1}{2} f''(X_t) d\langle X \rangle_t
 	\]
 	
-	Example : if \(dXt = \mu and + \sigma dBt\) then :
+	Example: if \(dXt = \mu and + \sigma dBt\) then:
 	\[
 	dX_t^2 = 2X_t dX_t + d\langle X \rangle_t
 	\]
 	
-	\textbf{Itô's formula (multi-dimensional)} :\\
-	If \(X = (X^1, \dots, X^d)\) is an Itô process, \(f \in C^2(\mathbb{R}^d)\) :
+	\textbf{Itô's formula (multi-dimensional)}:\\
+	If \(X = (X^1, \dots, X^d)\) is an Itô process, \(f \in C^2(\mathbb{R}^d)\):
 	\[
 	df(X_t) = \sum_i \frac{\partial f}{\partial x_i}(X_t) dX^i_t
 	+ \frac{1}{2} \sum_{i,j} \frac{\partial^2 f}{\partial x_i \partial x_j}(X_t) d\langle X^i, X^j \rangle_t
 	\]
 	
-	\textbf{Integration by parts (Itô)} :
+	\textbf{Integration by parts (Itô)}:
 	\[
 	d(X_t Y_t) = X_t dY_t + Y_t dX_t + d\langle X, Y \rangle_t
 	\]
@@ -509,42 +540,42 @@ A process \((X_t)\) is an \textbf{Itô process} if it can be written :
 
 \begin{f}[Stochastic Differential Equations (SDE)]
 	
-	An SDE is a stochastic equation of the form :
+	An SDE is a stochastic equation of the form:
 	\[
 	dX_t = b(t, X_t) dt + a(t, X_t) dB_t, \quad X_0 = x
 	\]
-	or :
+	or:
 	\begin{itemize}
-		\item \(b(t,x)\) is the \textbf{drift} : function \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\) ;
-		\item \(a(t,x)\) is the \textbf{diffusion} : function \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\) ;
+		\item \(b(t,x)\) is the \textbf{drift}: function \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\) ;
+		\item \(a(t,x)\) is the \textbf{diffusion}: function \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\) ;
 		\item \(B_t\) is a Brownian motion ;
 		\item \(X_t\) is the solution, adapted stochastic process.
 	\end{itemize}
 	
-	\textbf{Integral form} :
+	\textbf{Integral form}:
 	\[
 	X_t = x + \int_0^t b(s, X_s) ds + \int_0^t a(s, X_s) dB_s
 	\]
 	
-	\textbf{Conditions of existence and uniqueness} :
+	\textbf{Conditions of existence and uniqueness}:
 	\begin{itemize}
-		\item \textbf{Lipschitz} : there exists \(L > 0\) such that :
+		\item \textbf{Lipschitz}: there exists \(L > 0\) such that:
 		\[
 		|b(t,x) - b(t,y)| + |a(t,x) - a(t,y)| \leq L |x - y|
 		\]
-		\item \textbf{Linear growth} :
+		\item \textbf{Linear growth}:
 		\[
 		|b(t,x)|^2 + |a(t,x)|^2 \leq C(1 + |x|^2)
 		\]
 	\end{itemize}
 	
-Classic examples :
+Classic examples:
 	\begin{itemize}
-		\item \textbf{Geometric Brownian} : \(dS_t = \mu S_t dt + \sigma S_t dB_t\)
-		\item \textbf{Ornstein–Uhlenbeck} : \(dX_t = \theta(\mu - X_t) dt + \sigma dB_t\)
+		\item \textbf{Geometric Brownian}: \(dS_t = \mu S_t dt + \sigma S_t dB_t\)
+		\item \textbf{Ornstein–Uhlenbeck}: \(dX_t = \theta(\mu - X_t) dt + \sigma dB_t\)
 	\end{itemize}
 	
-	\textbf{Numerical methods} : Euler–Maruyama, Milstein.
+	\textbf{Numerical methods}: Euler–Maruyama, Milstein.
 	
 \end{f}
 
@@ -557,13 +588,13 @@ Classic examples :
 	The absence of arbitrage \(\iff \exists\, \mathbb{Q} \sim \mathbb{P}\) such that the updated prices are martingales.
 	This is the \textbf{fundamental theorem of asset pricing}.
 	
-	\textbf{Application} :\\
-	Under \(\mathbb{Q}\), the value at time \(t\) of an asset giving a return \(H\) at date \(T\) is :
+	\textbf{Application}:\\
+	Under \(\mathbb{Q}\), the value at time \(t\) of an asset giving a return \(H\) at date \(T\) is:
 	\[
 	S_t = B_t\, \mathbb{E}^\mathbb{Q} \left[ \left. \frac{H}{B_T} \right\|  \mathcal{F}_t \right]
 	\]
 	
-	\textbf{Note} :\\
+	\textbf{Note}:\\
 	The measure \(\mathbb{Q}\) is equivalent to \(\mathbb{P}\), but reflects a "risk-free" world, useful in valuation.
 	
 \end{f}
@@ -572,7 +603,7 @@ Classic examples :
 %
 %\begin{f}[Processus stochastiques en actuariat]
 %	
-%	\textbf{Brownien standard} \(W_t\) :
+%	\textbf{Brownien standard} \(W_t\):
 %	\begin{itemize}
 %		\item \(W_0 = 0\) a.s.
 %		\item \(W_t\) est à accroissements indépendants et stationnaires
@@ -580,44 +611,44 @@ Classic examples :
 %		\item Trajectoires continues presque sûrement
 %	\end{itemize}
 %	
-%	\textbf{Martingale} :
-%	Un processus \((M_t)_{t \geq 0}\) adapté à une filtration \((\mathcal{F}_t)\) est une \textit{martingale} si :
+%	\textbf{Martingale}:
+%	Un processus \((M_t)_{t \geq 0}\) adapté à une filtration \((\mathcal{F}_t)\) est une \textit{martingale} si:
 %	\[
 %	\mathbb{E}[|M_t|] < \infty \quad \text{et} \quad \mathbb{E}[M_t \mid \mathcal{F}_s] = M_s \quad \forall s < t
 %	\]
 %	
-%	\textbf{Lemme d’Itô (dimension 1)} :\\
-%	Soit \(X_t\) une EDS : \(\mathrm{d}X_t = \mu_t \,\mathrm{d}t + \sigma_t \,\mathrm{d}W_t\),\\
-%	et \(f : \mathbb{R} \to \mathbb{R}\) de classe \(C^2\), alors :
+%	\textbf{Lemme d’Itô (dimension 1)}:\\
+%	Soit \(X_t\) une EDS: \(\mathrm{d}X_t = \mu_t \,\mathrm{d}t + \sigma_t \,\mathrm{d}W_t\),\\
+%	et \(f: \mathbb{R} \to \mathbb{R}\) de classe \(C^2\), alors:
 %	\[
 %	\mathrm{d}f(X_t) = f'(X_t) \,\mathrm{d}X_t + \frac{1}{2} f''(X_t) \,\sigma_t^2 \,\mathrm{d}t
 %	\]
 %	
-%	\textbf{Équation différentielle stochastique (EDS)} :
+%	\textbf{Équation différentielle stochastique (EDS)}:
 %	\[
 %	\mathrm{d}X_t = \mu(X_t, t)\,\mathrm{d}t + \sigma(X_t, t)\,\mathrm{d}W_t
 %	\]
 %	
-%	\textbf{Exemple classique : processus de Black-Scholes} :
+%	\textbf{Exemple classique: processus de Black-Scholes}:
 %	\[
 %	\mathrm{d}S_t = \mu S_t\,\mathrm{d}t + \sigma S_t\,\mathrm{d}W_t
 %	\quad \Rightarrow \quad
 %	S_t = S_0 \exp\left((\mu - \frac{\sigma^2}{2})t + \sigma W_t\right)
 %	\]
 %	
-%	\textbf{Mouvement brownien géométrique} :
+%	\textbf{Mouvement brownien géométrique}:
 %	\[
-%	S_t = S_0 \exp(X_t), \quad \text{où } X_t = (\mu - \frac{\sigma^2}{2})t + \sigma W_t
+%	S_t = S_0 \exp(X_t), \quad \text{where } X_t = (\mu - \frac{\sigma^2}{2})t + \sigma W_t
 %	\]
 %	
-%	\textbf{Lien avec Bachelier (1900)} :
-%	Premier modèle de prix avec mouvement brownien additif :
+%	\textbf{Lien avec Bachelier (1900)}:
+%	Premier modèle de prix avec mouvement brownien additif:
 %	\[
 %	S_t = S_0 + \mu t + \sigma W_t
 %	\quad \text{(modèle abandonné à cause de } S_t < 0 \text{ possible)}
 %	\]
 %	
-%	\textbf{Lien avec Norbert Wiener} :\\
+%	\textbf{Lien avec Norbert Wiener}:\\
 %	Formalisation rigoureuse du mouvement brownien comme processus stochastique à temps continu.
 %	
 %\end{f}
@@ -659,7 +690,7 @@ The simplest algorithm is called the method of linear congruences.
 x_{n+1}=\Phi(x_n)= (a\times x_n+c) \mod m
 \] \small
 each \(x_n\) is an integer between 0 and \(m-1\).
-\(a\) the multiplier, \(c\) the increment, and \(m\) the modulus of the form \(2^p-1\), that is to say a Mersenne prime number ( \( p \) necessarily prime) :
+\(a\) the multiplier, \(c\) the increment, and \(m\) the modulus of the form \(2^p-1\), that is to say a Mersenne prime number ( \( p \) necessarily prime):
 
 Marsaglia generator: \(a=69069, b=0, m=2^{32}\)
 
@@ -734,7 +765,7 @@ If it is a discrete variable (\(F^{-1}\) does not exist) \(X_\ell=\min_{\ell} F(
 In the \textbf{change of variable} method, we assume that we know how to simulate a law \(X\), and that there exists \(\phi\) such that \(Y=\varphi(X)\) follows a law \(F_Y\). The natural example is that of \(X\sim \mathcal{N}(0,1)\) and making the change \(Y=\exp(X)\) to obtain Y which follows a lognormal law.
 
 \textbf{The rejection method} is used in more complex cases, for example when \(F^{-1}\) is not explicit or requires a lot of computation time.
-Let \(f\) be a probability density function. Assume that there exists a probability density \(g\) such that :
+Let \(f\) be a probability density function. Assume that there exists a probability density \(g\) such that:
 \[
 {\displaystyle \exists K>0\ ,\ \forall x\in \mathbb {R} \ ,\ f(x)\leq Kg(x)}
 \]
@@ -765,26 +796,26 @@ The performance of the algorithm depends on the number of rejections, represente
 
 Monte Carlo methods rely on the repeated simulation of random variables to approximate numerical quantities.
 
-\textbf{Convergence} :
+\textbf{Convergence}:
 \begin{itemize}[nosep]
 	\item By the \textbf{law of large numbers}, the estimator converges almost surely to the expected value.
-	\item By the \textbf{central limit theorem}, the standard error is in \(\mathcal{O}(N^{-1/2})\) :
+	\item By the \textbf{central limit theorem}, the standard error is in \(\mathcal{O}(N^{-1/2})\):
 	\[
 	\sqrt{N}(\hat{\mu}_N - \mu) \xrightarrow{d} \mathcal{N}(0, \sigma^2)
 	\]
 	\item This slow convergence justifies the use of \textbf{convergence improvement} techniques.
 \end{itemize}
 
-\textbf{Variance reduction techniques} :
+\textbf{Variance reduction techniques}:
 \begin{itemize}
-	\item \textbf{Antithetical variables} : we simulate \(X\) and \(-X\) (or \(1-U\) if \(U \sim \mathcal{U}[0,1]\)), then we average the results. Reduction is efficient if \(f\) is monotone.
-	\item \textbf{Control method} : if \(\mathbb{E}[Y]\) is known, we simulate \((f(X), Y)\) and correct :
+	\item \textbf{Antithetical variables}: we simulate \(X\) and \(-X\) (or \(1-U\) if \(U \sim \mathcal{U}[0,1]\)), then we average the results. Reduction is efficient if \(f\) is monotone.
+	\item \textbf{Control method}: if \(\mathbb{E}[Y]\) is known, we simulate \((f(X), Y)\) and correct:
 	\[
 	\hat{\mu}_\text{corr} = \hat{\mu} - \beta(\bar{Y} - \mathbb{E}[Y])
 	\]
 	where \(\beta\) optimal minimizes the variance.
-	\item \textbf{Stratification} : we divide the simulation space into strata (subsets), and we simulate proportionally in each stratum.
-	\item \textbf{Importance sampling} : we modify the simulation law to accentuate rare events, then we reweight :
+	\item \textbf{Stratification}: we divide the simulation space into strata (subsets), and we simulate proportionally in each stratum.
+	\item \textbf{Importance sampling}: we modify the simulation law to accentuate rare events, then we reweight:
 	\[
 	\mathbb{E}[f(X)] = \mathbb{E}^{Q}\left[f(X) \frac{\mathrm{d}P}{\mathrm{d}Q}(X)\right]
 	\]
@@ -799,7 +830,7 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 	Let \(\xi = (X_1, X_2, \ldots, X_n)\) be a sample of iid variables following an unknown distribution \(F\). We seek to estimate a statistic \(\theta = T(F)\) (e.g. mean, median, variance), via its empirical estimator \(\hat{\theta} = T(\hat{F}_n)\).
 	
 	\begin{enumerate}
-		\item We approximate \(F\) by the empirical distribution function :
+		\item We approximate \(F\) by the empirical distribution function:
 		\[
 		\hat{F}_n(x) = \frac{1}{n} \sum_{k=1}^n \mathbf{1}_{\{X_k \le x\}}
 		\]
@@ -813,9 +844,9 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 	
 	We can deduce from this:
 	\begin{itemize}[nosep]
-		\item an estimated bias : \(\widehat{\text{bias}} = \overline{T^\ast} - \hat{\theta}\) ;
-		\item a \textbf{confidence interval} at \((1-\alpha)\) : \([q_{\alpha/2},\ q_{1 - \alpha/2}]\) of the empirical quantiles of \(T^{\ast(b)}\) ;
-		\item an estimate of the \textbf{variance} : \(\widehat{\mathrm{Var}}(T^\ast)\).
+		\item an estimated bias: \(\widehat{\text{bias}} = \overline{T^\ast} - \hat{\theta}\) ;
+		\item a \textbf{confidence interval} at \((1-\alpha)\): \([q_{\alpha/2},\ q_{1 - \alpha/2}]\) of the empirical quantiles of \(T^{\ast(b)}\) ;
+		\item an estimate of the \textbf{variance}: \(\widehat{\mathrm{Var}}(T^\ast)\).
 	\end{itemize}
 	
 	\textbf{Note}: Bootstrapping is particularly useful when the distribution of \(T\) is unknown or difficult to estimate analytically.
@@ -840,13 +871,13 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 	
 	\textbf{Cross-validation} is a method for evaluating the predictive performance of a statistical model, used in particular in machine learning or pricing.
 	
-	\textbf{Principle} :
+	\textbf{Principle}:
 	\begin{itemize}
 		\item Divide the data into \(K\) blocks (or folds).
-		\item For each \(k = 1,\ldots,K\) :
+		\item For each \(k = 1,\ldots,K\):
 		\begin{itemize}
 			\item Train the model on the other \(K-1\) blocks.
-			\item Evaluate the performance (error, log-likelihood...) on the \(k\)-th block.
+			\item Evaluate the performance (error, log-likelihood...) on the \(k^{\text{th}}\) block.
 		\end{itemize}
 		\item Aggregate the errors to obtain an overall estimate of out-of-sample performance.
 	\end{itemize}
@@ -856,17 +887,17 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 %
 \begin{f}[Quasi-Monte Carlo methods]
 	
-	Quasi-Monte Carlo methods aim to accelerate the convergence of the expectation estimator without resorting to randomness. The typical error is of the order :
+	Quasi-Monte Carlo methods aim to accelerate the convergence of the expectation estimator without resorting to randomness. The typical error is of the order:
 	\[
 	\mathcal{O}\left( \frac{(\ln N)^s}{N} \right)
 	\]
 	where \(N\) is the sample size and \(s\) the dimension of the problem.
 	
-	These methods rely on the use of \textbf{low-discrepancy} sequences in \([0,1]^s\). The star discrepancy, denoted \(D^*_N(P)\) for a set of points \(P = \{x_1, \ldots, x_N\}\), measures the maximum difference between the proportion of points contained in rectangles \emph{anchored to the origin} and their volume. It is defined by :
+	These methods rely on the use of \textbf{low-discrepancy} sequences in \([0,1]^s\). The star discrepancy, denoted \(D^*_N(P)\) for a set of points \(P = \{x_1, \ldots, x_N\}\), measures the maximum difference between the proportion of points contained in rectangles \emph{anchored to the origin} and their volume. It is defined by:
 	\[
 	D^*_N(P) = \sup_{u \in [0,1]^s} \left| \frac{1}{N} \sum_{i=1}^N \mathbf{1}_{[0,u)}(x_i) - \lambda_s([0,u)) \right|
 	\]
-	with :
+	with:
 	\begin{itemize}
 		\item \([0,u) = \prod_{j=1}^s [0, u_j)\) a rectangle anchored at the origin in \([0,1]^s\),
 		\item \(\mathbf{1}_{[0,u)}(x_i)\) the indicator of the membership of \(x_i\) to this rectangle,
@@ -875,23 +906,23 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 	A low discrepancy means that the points are well distributed in space, which improves the convergence of the estimate.
 	
 	\medskip
-	\textbf{Van der Corput sequence (dimension 1)} :
-	Let \(n\) be an integer. We write it in base \(b\) :
+	\textbf{Van der Corput sequence (dimension 1)}:
+	Let \(n\) be an integer. We write it in base \(b\):
 	\[
 	n = \sum_{k=0}^{L-1} d_k(n)\, b^k
 	\]
-	then we reverse the numbers around the decimal point to obtain :
+	then we reverse the numbers around the decimal point to obtain:
 	\[
 	g_b(n) = \sum_{k=0}^{L-1} d_k(n)\, b^{-k-1}
 	\]
-	For example, for \(b = 5\) and \(n = 146\), we have \(146 = (1\,0\,4\,1)_5\), so :
+	For example, for \(b = 5\) and \(n = 146\), we have \(146 = (1\,0\,4\,1)_5\), so:
 	\[
 	g_5(146) = \frac{1}{5^4} + \frac{0}{5^3} + \frac{4}{5^2} + \frac{1}{5} = 0{,}3616
 	\]
 	
 	\medskip
-	\textbf{Halton sequence (dimension \(s\))} :
-	We generalize the van der Corput sequence using \(s\) distinct prime integer bases \(b_1, \dots, b_s\) :
+	\textbf{Halton sequence (dimension \(s\))}:
+	We generalize the van der Corput sequence using \(s\) distinct prime integer bases \(b_1, \dots, b_s\):
 	\[
 	x(n) = \big( g_{b_1}(n), \dots, g_{b_s}(n) \big)
 	\]
@@ -899,7 +930,7 @@ Monte Carlo methods rely on the repeated simulation of random variables to appro
 	
 	\medskip
 	\textbf{Koksma–Hlawka inequality}\\
-	For a function \(f\) of finite variation \(V(f)\) (in the Hardy–Krause sense) on \([0,1]^s\) :
+	For a function \(f\) of finite variation \(V(f)\) (in the Hardy–Krause sense) on \([0,1]^s\):
 	\[
 	\left| \int_{[0,1]^s} f(u)\, du - \frac{1}{N} \sum_{i=1}^N f(x_i) \right| \leq V(f)\, D_N
 	\]

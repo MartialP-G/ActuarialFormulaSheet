@@ -40,7 +40,7 @@
 	\end{description}
 	
 	El \textbf{espacio de probabilidad}\index{D\'efinition! espace de probabilité} se define por
-	\[ \lbrace \Omega, \mathcal{A}, \mathbb{P}(.) \rbrace \]
+	\( \lbrace \Omega, \mathcal{A}, \mathbb{P}(.) \rbrace \)
 	
 	La \textbf{igualdad de Poincaré} se escribe~:
 	\[\forall A \in F, \forall B \in F, \mathbb{P} (A \cup B) = \mathbb{P} (A) + \mathbb{P} (B) - \mathbb{P} (A \cap B)\]
@@ -62,60 +62,96 @@
 
 \begin{f}[Variables aleatorias]
 	
-	Sea \((\Omega, \mathcal{A}, \mathbb{P})\) un espacio de probabilidad. Llamamos \textbf{variable aleatoria} \(X\) desde \(\Omega\) hasta \( \Re\) cualquier función medible \(X:\Omega\mapsto \Re\).
-	
-	\[\lbrace X\leq x \rbrace\equiv \lbrace e\in \Omega \mid X(e)\leq x \rbrace \in   \mathcal{A}\]
+	Sea \( (\Omega, \mathcal{A}, \mathbb{P})\) un espacio probabilístico. 
+	Se denomina \textbf{variable aleatoria real} a toda aplicación medible 
+	\(X : (\Omega, \mathcal{A}) \to (\mathbb{R}, \mathcal{B}(\mathbb{R}))\), 
+	es decir, tal que:
+	\[
+	\forall x \in \mathbb{R}, \quad \lbrace X\leq x \rbrace \equiv 
+	\lbrace e\in \Omega \mid X(e)\leq x \rbrace \in \mathcal{A}
+	\]
+	De manera más general, se denomina \textbf{variable aleatoria} con valores en 
+	un espacio medible \((E, \mathcal{E})\) a toda aplicación medible 
+	\(X : (\Omega, \mathcal{A}) \to (E, \mathcal{E})\), es decir, tal que:
+	\[
+	\forall B \in \mathcal{E}, \quad X^{-1}(B) = 
+	\lbrace e \in \Omega \mid X(e) \in B \rbrace \in \mathcal{A}
+	\]
+	%
 	El conjunto de eventos de \(\Omega\) a menudo no es explícito.
 	
 	La \textbf{función de distribución} \((F_X)\) de una variable aleatoria real caracteriza su distribución de probabilidad.
 	\[
-	F_X(x)=\mathbb {P}(X\leq x), x\in \Re
+	F_X(x)=\mathbb {P}(X\leq x), \quad  x\in \mathbb{R}
 	\]
-	donde el lado derecho representa la probabilidad de que la variable aleatoria real \(X\) tome un valor menor o igual a \(x\).
+	donde el lado derecho es la probabilidad de que la variable aleatoria \(X\) sea menor o igual a \(x\). Esta función caracteriza por completo la ley de \(X\): es creciente, continua por la derecha y cumple que
+	\[
+	\lim_{x\to -\infty} F_X(x)=0, \quad \lim_{x\to +\infty} F_X(x)=1.
+	\]
 	La probabilidad de que \(X\) esté en el intervalo \([a, b]\) es por tanto, si \(a< b\),
 	\(
 	\mathbb{P}(a< X\leq b)\ =\ F_X(b)-F_X(a)
 	\)
 	
-	Una ley de probabilidad tiene una \textbf{densidad de probabilidad} \(f\), si \(f\) es una función definida en \(\mathbb{R}^{+}\), integral de Lebesgue, tal que la probabilidad del intervalo \([a, b]\) está dada por
+	La variable \(X\) tiene una  \textbf{densidad de probabilidad} \(f\) si existe una función \(f : \mathbb{R} \to \mathbb{R}_+\), integrable según Lebesgue, tal que
 	\[
-	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx} \mbox{ para todos los números tq }a<x<b.
+	F_X(x)=\int_{-\infty}^x f(t)\,dt,
 	\]
+\begin{minipage}[][][]{0.49\linewidth}
+		y, por lo tanto, para todo \(a<b\),    
+	\[
+	\mathbb{P}(a< X\leq b)=\int_a^b f(x) \mathrm{dx}
+	\]
+\end{minipage}\hfill
+\vrule
+\hfill	
+\begin{minipage}[][][]{0.49\linewidth}
+con la condición 
+	\[
+	\int_{-\infty}^{+\infty} f(x)\,dx = 1.
+	\]
+\end{minipage}
 \end{f}
 \hrule
 \begin{f}[Esperanza]{\ }
 	
+	A partir de ahora se supone que existe la esperanza de la variable aleatoria \(X\).
+	
 	La esperanza matemática en el caso discreto (variables cualitativas o cuantitativas discretas)~:
 	\[
-	\mathbb{E}[X]=\sum_{j\in \mathbb{N}}x_j\mathbb{P}(x_j)
+	\mathbb{E}[X]=\sum_{j\in \mathbb{N}} x_j\,\mathbb{P}(X=x_j)
 	\]
-	où \(\mathbb{P}(x_j)\) est la probabilité associée à chaque événement \(x_i\).
+	donde \(\mathbb{P}(X=x_j)\) es la probabilidad asociada al valor \(x_j\).
 	
-	L'espérance mathématique dans le cas continu~:
+	La esperanza matemática en el caso continuo~:
 	\[
-	\mathbb{E}[X]=\int_{-\infty}^{\infty} x. f(x)dx
+	\mathbb{E}[X]=\int_{-\infty}^{\infty} x\, f(x)\,dx
+	\]
+	donde \(f\) existe y denota la función de densidad de la variable aleatoria \(X\), definida aquí en \(\mathbb{R}\).
+	
+	Al tratarse de una suma o de una integral, la esperanza es lineal, es decir~:
+	\[
+	\mathbb{E}\left[c_0+c_1X_1+c_2X_2\right]=c_0+c_1\mathbb{E}[X_1]+c_2\mathbb{E}[X_2]
 	\]
 	
-	où \(f\) désigne la fonction de densité de la variable aléatoire \(x\), définie dans notre cas sur \(\mathbb{R}\).
-	S'agissant de somme ou d'intégrale, l'espérance est linéaire, c'est-à-dire~:
-	
-	\[\mathbb{E}[c_0+c_1X_1+c_2X_2]=c_0+c_1\mathbb{E}[X_1]+c_2\mathbb{E}[X_2]\]
-	
-	\[
-	\mathbb{E}[X]=\int x.f(x)dx =\int_0^1 F^{-1}(p)dp= \int \overline{F}(x)dx\\
-	\] 
+	Por último, cuando los objetos existen,
+	\[\small
+	\mathbb{E}[X]=\int x f(x)\,dx
+	= \int_0^1 F^{-1}(p)\,dp
+	= \int_{0}^{+\infty} \overline{F}(x)\,dx -\int_{-\infty}^{0}  F(x)\,dx
+	\]
 \end{f}
 \hrule
-\begin{f}[Convolution ou loi de la somme]{\ }
+\begin{f}[Convolución o ley de la suma]{\ }
 	
-	La convolution de deux fonctions \( f \) et \( g \), notée \( (f * g)(x) \), est définie par :
+	La convolución de dos funciones \( f \) y \( g \), denotada por \( (f * g)(x) \), se define como:
 	
 	\[
 	(f * g)(x) = \int f(t) g(x - t) \, dt
 	\]
 	
-	La convolution mesure comment \( f(t) \) et \( g(t) \) interagissent à différents points tout en tenant compte du décalage (ou translation) entre 
-	Si \(X\) et \(Y\) sont deux variables aléatoires indépendantes de densités respectives \(f_X\) et \(f_Y\), alors la densité de la somme \(Z = X + Y\) est donnée par :
+	La convolución mide cómo interactúan \( f(t) \) y \( g(t) \) en diferentes puntos, teniendo en cuenta el desplazamiento (o traslación) entre 
+Si \(X\) e \(Y\) son dos variables aleatorias independientes con densidades respectivas \(f_X\) y \(f_Y\), entonces la densidad de la suma \(Z = X + Y\) viene dada por:
 	\[
 	f_Z(x) = (f_X * f_Y)(x) = \int_{-\infty}^{+\infty} f_X(t)\, f_Y(x - t)\, dt.
 	\]
@@ -123,9 +159,9 @@
 \end{f}
 \hrule
 \begin{f}
-	[Loi composée ou modèle fréquence/gravité]{\ }
-	
-	Soit \(N\) une variable aléatoire discrète dans \(\mathbb{N}^+\), \(\left(X_i\right)\) une suite de variable aléatoire \(iid\) d'espérance et variance finies, alors pour  \(\displaystyle S=\sum_{i=1}^{N}X_i\) :
+	[Ley compuesta o modelo de frecuencia/gravedad]{\ }
+
+	Sea \(N\) una variable aleatoria discreta en \(\mathbb{N}^+\), y \(\left(X_i\right)\) una sucesión de variables aleatorias \(iid\) de esperanza y varianza finitas; entonces, para  \(\displaystyle S=\sum_{i=1}^{N}X_i\):
 	\[
 	\mathbb{E}(S) = \mathbb{E} (\mathbb{E} [S \mid N]) = \mathbb{E} (N.\mathbb{E}(X_1)) = \mathbb{E}(N).\mathbb{E}(X_1)
 	\]
@@ -135,79 +171,79 @@
 \end{f}
 
 \hrule
-\begin{f}[Théorèmes fondamentaux] {\ }
+\begin{f}[Teoremas fundamentales] {\ }
 	
-	Soit \(X\) une variable aléatoire réelle définie sur un espace probabilisé \(\left(\Omega,\mathcal A,\mathbb P\right)\), et supposée presque sûrement positive ou nulle. L'\textbf{Inégalité de Markov} donne~:
+	Sea \(X\) una variable aleatoria real definida en un espacio probabilístico \(\left(\Omega,\mathcal A,\mathbb P\right)\), y supongamos que es casi seguramente positiva o nula. La \textbf{desigualdad de Markov} establece que~:
 	\[
 	\forall \alpha >0, \mathbb P(X\geq \alpha)\leqslant\frac{\mathbb{E}[X]}{\alpha}.
 	\]
 	
-	L'\textbf{inégalité de Bienaymé-Tchebychev} : 
-	Pour tout réel strictement positif \(\alpha\), avec \(\mathbb{E}[X]=\mu\) et \(\operatorname{Var}[X]=\sigma^2\)
+	La \textbf{desigualdad de Bienaymé-Tchebychev}: 
+Para todo número real estrictamente positivo \(\alpha\), con \(\mathbb{E}[X]=\mu\) y \(\operatorname{Var}[X]=\sigma^2\)
 	\[
 	\mathbb{P}\left(\left|X-\mu\right| \geq \alpha \right) \leq \frac{\sigma^2}{\alpha^2}.
 	\]
 	
-	La \textbf{loi faible des grands nombres} considère une suite \((X_i)_{i\geq n\in\mathbb{N}^*}\) de variables aléatoires indépendantes définies sur un même espace probabilisé, ayant mêmes espérance et  variance finies notées respectivement \(\mathbb{E}[X]\) et \(\operatorname{Var}(X)\).
+	La \textbf{ley débil de los grandes números} considera una sucesión \((X_i)_{i\geq n\in\mathbb{N}^*}\) de variables aleatorias independientes definidas en un mismo espacio probabilístico, que tienen la misma esperanza y la misma varianza finitas, denotadas respectivamente por \(\mathbb{E}[X]\) y \(\operatorname{Var}(X)\).
 	
 	\[
 	\forall\varepsilon>0,\quad \lim_{n \to +\infty} \mathbb{P}\left(\left|\frac{X_1+X_2+\cdots+X_n}{n} - \mathbb{E}[X]\right| \geq \varepsilon\right) = 0
 	\]
 	
-	Considérons une suite \((X_n)_{n\in \mathbb{N}}\) de variables aléatoires indépendantes qui suivent la même loi de probabilité, intégrables, i. e. \(E(|X_0|)<+\infty\). 
+	Consideremos una sucesión \((X_n)_{n\in \mathbb{N}}\) de variables aleatorias independientes que siguen la misma ley de probabilidad y que son integrables, es decir, \(E(|X_0|)<+\infty\). 
 	
-	En reprenant les notations, la \textbf{loi forte des grands nombres} précise que \((Y_n)_{n\in\mathbb{N}}\) converge vers \(E(X)\) presque sûrement.
+	Retomando las notaciones, la \textbf{ley fuerte de los grandes números} establece que \((Y_n)_{n\in\mathbb{N}}\) converge hacia \(E(X)\) casi con seguridad.
 	%
 	\[
 	\mathbb{P}\left(\lim_{n \to +\infty} Y_n = E(X)\right)=1
 	\]
-	Considérons la somme \(S_n = X_1 + X_2 + \cdots + X_n\).
+	Consideremos la suma \(S_n = X_1 + X_2 + \cdots + X_n\).
 	\[   
 	Z_n\ =\ \frac{S_n - n \mu}{\sigma \sqrt{n}}\ =\ \frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}},
 	\]
 	
-	l'espérance et l'écart-type de \(Z_n\) valent respectivement 0 et 1 : la variable est ainsi dite centrée et réduite.
+	La esperanza y la desviación típica de \(Z_n\) son, respectivamente, 0 y 1: por lo tanto, se dice que la variable está centrada y reducida.
 	
-	Le \textbf{théorème central limite} stipule alors que la loi de \(Z_n\) converge en loi vers la loi normale centrée réduite \(\mathcal{N} (0 , 1)\) lorsque \(n\) tend vers l'infini. Cela signifie que si \(\Phi\) est la fonction de répartition de \(\mathcal{N} (0 , 1)\), alors pour tout réel \(z\) :
+	El \textbf{teorema del límite central} establece entonces que la distribución de \(Z_n\) converge en distribución hacia la distribución normal centrada y reducida \(\mathcal{N} (0 , 1)\) cuando \(n\) tiende a infinito. Esto significa que si \(\Phi\) es la función de distribución de \(\mathcal{N} (0 , 1)\), entonces, para todo número real \(z\):
 	\[
 	\lim_{n \to \infty} \mbox{P}(Z_n \le z) = \Phi(z),
 	\]
-	ou, de façon équivalente :
+	o, de forma equivalente:
 	\[
 	\lim_{n\to\infty}\mbox{P}\left(\frac{\overline{X}_n-\mu}{\sigma/\sqrt{n}}\leq z\right)=\Phi(z)
 	\]
 \end{f}
 \hrule
 
-\begin{f}[Variables multidimensionnelles]
-			
-			
-Une loi de probabilité est dite \textbf{multidimensionnelle}, ou \(n-\)dimensionnelle, lorsque la loi décrit plusieurs valeurs (aléatoires) d'un phénomène aléatoire.  
-Le caractère multidimensionnel apparaît ainsi lors du transfert, par une variable aléatoire, de l'espace probabilisé \((\Omega,\mathcal{A})\) vers un espace numérique \(E^n\) de dimension \(n\). 
+\begin{f}[Variables multidimensionales]
+	
+	
+Se dice que una distribución de probabilidad es \textbf{multidimensional}, o de \(n\) dimensiones, cuando describe varios valores (aleatorios) de un fenómeno aleatorio.  
+El carácter multidimensional se manifiesta, por tanto, al pasar, mediante una variable aleatoria, del espacio probabilístico \((\Omega,\mathcal{A})\) a un espacio numérico \(E^n\) de dimensión \(n\). 
 
-Soit une variable aléatoire \(X\) sur l'espace probabilisé \((\Omega, \mathcal A, \mathbb{P})\), à valeurs dans \({\mathbb{R}}^n\) muni de la tribu borélienne réelle produit \({\mathcal {B}(\mathbb{R})}^{\otimes n}\). 
-La loi de la variable aléatoire \(X\) est la mesure de probabilité \(\mathbb{P}_X\) définie par~:
+Sea una variable aleatoria \(X\) en el espacio probabilístico \((\Omega, \mathcal A, \mathbb{P})\), con valores en \({\mathbb{R}}^n\) provisto de la tribu boreliana real producto \({\mathcal {B}(\mathbb{R})}^{\otimes n}\). 
+La ley de la variable aleatoria \(X\) es la medida de probabilidad \(\mathbb{P}_X\) definida por:
 \[
 \mathbb{P}_X(B) = \mathbb{P}\big(X^{-1}(B)\big) = \mathbb{P}(X \in B).
 \]
-pour tout \(B \in {\mathcal B(\mathbb R)}^{\otimes n}\).
+para todo \(B \in {\mathcal B(\mathbb R)}^{\otimes n}\).
 
-Le théorème de \textbf{Cramer-Wold} assure que la loi (\(n-\)dimensionnelle) de ce vecteur aléatoire est entièrement déterminée par les lois (unidimensionnelles) de toutes les combinaisons linéaires de ces composantes : 
+El teorema de \textbf{Cramer-Wold} establece que la distribución (\(n\)-dimensional) de este vector aleatorio viene determinada por completo por las distribuciones (unidimensionales) de todas las combinaciones lineales de sus componentes: 
 \[\sum_{i = 1}^n a_i X_i\mbox{ pour tous }a_1, a_2, \dots, a_n\]
-
 
 \end{f}
 \hrule
 
-\begin{f}[Loi marginale]
-La loi de probabilité de la \(i^e\) coordonnée d'un vecteur aléatoire est appelée la \(i^e\) loi marginale. La \textbf{loi marginale} \(\mathbb{P}_i\) de \(\mathbb{P}\) s'obtient par la formule :
+\begin{f}[Distribución marginal]
+La distribución de probabilidad de la \(i\)-ésima coordenada de un vector aleatorio se denomina \(i\)-ésima distribución marginal. La \textbf{distribución marginal} \(\mathbb{P}_i\) de \(\mathbb{P}\) se obtiene mediante la fórmula:
 \[
 \mathbb{P}_i(B) = \mathbb{P}_{X_i}(B) = \iint { \mathds{1}}_{\omega_i\in B} \mathbb{P}(\mathrm{d}(\omega_1,\dots,\omega_n)), \forall  B \in \mathcal B(\mathbb{R}).
 \]
-Les lois marginales d'une loi absolument continue s'expriment à l'aide de leurs densités marginales.
+Las leyes marginales de una ley absolutamente continua se expresan mediante sus densidades marginales.
 
 
-La fonction de densité conditionnelle \(X_2\) sachant la valeur \(x_1\) de \(X_1\), peut s'écrire~:
+
+La función de densidad condicional \(X_2\), dado el valor \(x_1\) de \(X_1\), puede escribirse así:
 \[
 f_{X_2}(x_2 \mid X_1=x_1) = \frac{f_{X_1, X_2}(x_1,x_2)}{f_{X_1}(x_1)}, 
 \]
@@ -218,19 +254,19 @@ f_{X_2}(x_2 \mid X_1=x_1)f_{X_1}(x_1) = f_{X_1,X_2}(x_1, x_2) = f_{X_1}(x_1 \mid
 \end{f}
 \hrule
 
-	\begin{f}[Indépendance]
-\((X_1, X_2, \dots,X_n)\) est une famille de \textbf{variables aléatoires indépendantes} si l'une des deux conditions suivantes est remplie :
+	\begin{f}[Independencia]
+\((X_1, X_2, \dots, X_n)\) es una familia de \textbf{variables aleatorias independientes} si se cumple una de las dos condiciones siguientes:
 \[
 \forall (A_1,\dots,A_n)\in\mathcal{E}_1\times\dots\times\mathcal{E}_n
 \]
 \[
 \mathbb{P}(X_1\in A_1\text{ et }X_2\in A_2\dots\text{ et }X_n\in A_n)\ =\ \prod_{i=1}^n\mathbb{P}(X_i\in A_i),
 \]
-on a l'égalité
+tenemos igualdad
 \[
 \mathbb{E}\left[\prod_{i=1}^n\ \varphi_i(X_i)\right]\ =\ \prod_{i=1}^n\mathbb{E}\left[\varphi_i(X_i)\right],
 \]
-pour n'importe quelle suite de fonctions \(\varphi_i\) définies sur \((E_i,\mathcal{E}_i)\), à valeurs dans \(\mathbb{R}\), dès que les espérances ci-dessus ont un sens.
+para cualquier sucesión de funciones \(\varphi_i\) definidas en \((E_i,\mathcal{E}_i)\), con valores en \(\mathbb{R}\), siempre que las esperanzas anteriores tengan sentido.
 \[
 f_X(x)= \prod_{i=1}^{n}f_{X_i}(x_i)
 \]
@@ -239,36 +275,36 @@ f_X(x)= \prod_{i=1}^{n}f_{X_i}(x_i)
 
 
 
-\begin{f}[Dépendance parfaite en dimension 2]
-Soient \(F_1,F_2\) fonctions de répartition \(\mathbb{R}\rightarrow [0,1]\).
-
-Les \textbf{classes de Fréchet} \(\mathcal{F}_{(F_1,F_2)}\) regroupent l'ensemble des fonctions de répartition \(\mathbb{R}^2\rightarrow [0,1]\)
-dont les lois marginales sont précisément  \(F_1,F_2\).
+\begin{f}[Dependencia perfecta en dos dimensiones]
+	Sean \(F_1, F_2\) funciones de distribución \(\mathbb{R}\rightarrow [0,1]\).
 	
-Pour tout \(F \in \mathcal{F} (F_1,F_2)\), et pour tout \(x\) in \(\mathbb{R}^d\)
+	Las \textbf{clases de Fréchet} \(\mathcal{F}_{(F_1,F_2)}\) agrupan el conjunto de las funciones de distribución \(\mathbb{R}^2\rightarrow [0,1]\)
+	cuyas leyes marginales son precisamente \(F_1,F_2\).
+	
+	Para todo \(F \in \mathcal{F} (F_1,F_2)\), y para todo \(x\) en \(\mathbb{R}^d\)
 \[
 F^-(\boldsymbol{x})\leq F (\boldsymbol{x})\leq F^+(\boldsymbol{x})
 \]
-où \(F^+(\boldsymbol{x}) = \min \{F_1(x_1),F_2(x_2)\}\), et 
+donde \(F^+(\boldsymbol{x}) = \min \{F_1(x_1),F_2(x_2)\}\), y 
 \(F^-(\boldsymbol{x}) = \max\{0,F_1(x_1) +F_2(x_2)-1\}\).
 
 
 
 \begin{enumerate}
-	\item Le couple \(\boldsymbol{X}=(X_1,X_2)\) est dit comonotone si et seulement s'il  admet \(F^+\) comme fonction de répartition.
-	\item Le couple \(\boldsymbol{X}=(X_1,X_2)\) est dit antimonotone si et seulement s'il  admet \(F^-\) comme fonction de répartition.
+	\item Se dice que el par \(\boldsymbol{X}=(X_1,X_2)\) es comonótono si y solo si admite \(F^+\) como función de distribución.
+	\item Se dice que el par \(\boldsymbol{X}=(X_1,X_2)\) es antimonótono si y solo si admite \(F^-\) como función de distribución.
 \end{enumerate}
 
-Le couple \(\boldsymbol{X}=(X_1,X_2)\) est dit \textbf{comonotone} (\textbf{antimonotone}) s'il existe des fonctions non-décroissantes (non-croissante) \(g_1\) et \(g_2\) d'une  variable aléatoire \(Z\) telles que 
+Se dice que el par \(\boldsymbol{X}=(X_1,X_2)\) es \textbf{comonótono} (\textbf{antimonótono}) si existen funciones no decrecientes (no crecientes) \(g_1\) y \(g_2\) de una variable aleatoria \(Z\) tales que 
 \[
 \boldsymbol{X}=(g_1(Z),g_2(Z))
 \]
 \end{f}
 \hrule
 
-\begin{f}[Le vecteur gaussien]
-Un vecteur \(X=(X_1,\cdots, X_n)\) est dit \textbf{vecteur gaussien}, de loi \(\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})\), lorsque toute combinaison linéaire \(\sum_{j=1}^{n}\alpha_jX_j\) de ses composantes est la loi normale univariée. % (avec la convention de \(\mathcal{N}(\mu, \sigma))\)
-En particulier, chaque composante \(X_1,\cdots, X_n\) est de loi normale.
+\begin{f}[El vector gaussiano]
+Se dice que un vector \(X=(X_1,\cdots, X_n)\) es un \textbf{vector gaussiano}, de distribución \(\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})\), cuando cualquier combinación lineal \(\sum_{j=1}^{n}\alpha_jX_j\) de sus componentes sigue la distribución normal univariante. % (siguiendo la convención de \(\mathcal{N}(\mu, \sigma))\)
+En particular, cada componente \(X_1,\cdots, X_n\) sigue una distribución normal.
 \begin{tikzpicture}[scale=0.8]
 	\def\mua{2}
 	\def\mub{1.5}
@@ -310,111 +346,108 @@ En particulier, chaque composante \(X_1,\cdots, X_n\) est de loi normale.
 
 
 \begin{itemize}
-	\item \(\boldsymbol{\mu}\) de \(\mathbb{R}^N\) sa localisation,
-	\item  \(\boldsymbol{\Sigma}\) semi-définie positive de \(\mathcal{M}_N(\mathbb{R})\), sa variance-covariance.
+	\item \(\boldsymbol{\mu}\) de \(\mathbb{R}^N\), su ubicación,
+	\item  \(\boldsymbol{\Sigma}\), semidefinida positiva de \(\mathcal{M}_N(\mathbb{R})\), su varianza-covarianza.
 \end{itemize} 
 
-Si \(\boldsymbol{\Sigma}\) est bien définie positive, donc inversible, alors
+Si \(\boldsymbol{\Sigma}\) es bien definida y positiva, y por tanto invertible, entonces
 % \(f_{\left(\boldsymbol{\mu},\boldsymbol{\Sigma}\right)} :\mathbb{R}^N \to \mathbb{R}\) :
 \[
 f_{\left(\boldsymbol{\mu},\boldsymbol{\Sigma}\right)}\left(\boldsymbol{x}\right)= \frac{1} {(2\pi)^{N/2} \left| \boldsymbol{\Sigma}\right|^{1/2}}e^{ -\frac{1}{2}\left(\boldsymbol{x}-\boldsymbol{\mu}\right)^\top\boldsymbol{\Sigma}^{-1}\left(\boldsymbol{x}-\boldsymbol{\mu}\right) }.
 \]
-où \(\left| \boldsymbol{\Sigma}\right|\) est le déterminant de \(\boldsymbol{\Sigma}\).
+donde \(\left| \boldsymbol{\Sigma}\right|\) es el determinante de \(\boldsymbol{\Sigma}\).
 
 \end{f}
 \hrule
 
-\begin{f}[Trois mesures de lien (corrélations)]
-
-On nomme le coefficient de \textbf{corrélation linéaire de Pearson} la valeur
+\begin{f}[Tres medidas de relación (correlaciones)]
+	
+Se denomina coeficiente de \textbf{correlación lineal de Pearson} al valor
 \[
 \rho_P = \frac{\sigma_{xy}}{\sigma_x \sigma_y}
 \]
-où \(\sigma_{xy}\) désigne la covariance entre les variables \(x\) et \(y\), et \(\sigma_x\), \(\sigma_y\) leur écart type.
-\(\rho\) prend ses valeurs dans \([-1,1]\) (application du théorème de Cauchy-Schwartz).
+donde \(\sigma_{xy}\) denota la covarianza entre las variables \(x\) e \(y\), y \(\sigma_x\), \(\sigma_y\) sus desviaciones estándar.
+\(\rho\) toma sus valores en \([-1,1]\) (aplicación del teorema de Cauchy-Schwartz).
 
-\(X\bot Y \Rightarrow \rho_P=0\), Attention, \(\rho_P=0 \nRightarrow X\bot Y \). 
+\(X\bot Y \Rightarrow \rho_P=0\). Atención: \(\rho_P=0 \nRightarrow X\bot Y \).  
 
 
- 
 
-Le \textbf{tau de Kendall} se définit par
+El \textbf{tau de Kendall} se define como:
 \[
 \tau_K=\mathbb{P}((X-X')(Y-Y')>0)-P((X-X')(Y-Y')<0)
 \]
-où \((X,Y)\)  \((X',Y')\)  sont deux couples indépendant de même densité jointe. Cela correspond à  la probabilité des concordants diminuée de celle des discordants :
+donde \((X,Y)\)  \((X',Y')\)  son dos pares independientes con la misma densidad conjunta. Esto corresponde a  la probabilidad de los casos concordantes restada la de los discordantes:
 \begin{align*}
-\tau_K	=&\mathbb{P}\left(\operatorname{sgn}(X-X')=\mathbb{P}(\operatorname{sgn}(Y-Y')\right)-\\
+\tau_K	=&\mathbb{P}\left(\operatorname{sgn}(X-X')=\operatorname{sgn}(Y-Y')\right)-\\
 		&\mathbb{P}\left(\operatorname{sgn}(X-X')\neq \operatorname{sgn}(Y-Y')\right)\\
-=&\mathbb{E}\left[ \operatorname{sgn}(X-X')\operatorname{sgn}(Y-Y')\right]\\
-=&\operatorname{Cov}(\operatorname{sgn}(X-X'),\operatorname{sgn}(Y-Y'))\\
-=&4\mathbb{P}(X<X',Y<Y')-1 
+=&\mathbb{E}\left[ \operatorname{sgn}(X-X')\operatorname{sgn}(Y-Y')\right] \\
+=&\operatorname{Cov}(\operatorname{sgn}(X-X'),\operatorname{sgn}(Y-Y'))=4\mathbb{P}(X<X',Y<Y')-1 
 \end{align*}
 
-Le coefficient de corrélation \textbf{rho de Spearman} de \((X,Y)\) est défini comme le coefficient de corrélation de Pearson des rangs des variables aléatoires \(X\) et \(Y\).
-Pour un échantillon \(n\), les \(n\) valeurs \(X_i\), \(Y_i\) sont converties par leurs rangs \(x_i\), \(y_i\), et \(\rho\) est calculé~:
+El coeficiente de correlación \textbf{rho de Spearman} de \((X,Y)\) es el coeficiente de Pearson aplicado a los rangos de \(X\) e \(Y\). Para una muestra de \(n\) elementos, los valores \(X_i, Y_i\) se transforman en sus rangos \(x_i, y_i\), calculándose \(\rho\) como:
 \[
 \rho_S = \frac{1/n\,\sum_i(x_i-\mathbb{E}[x])(y_i-\mathbb{E}[y])}{\sqrt{1/n\,\sum_i (x_i-\mathbb{E}[x])^2 \times 1/n\sum_i(y_i-\mathbb{E}[y])^2}}.
 \]
-Si on note \(x_i= R(X_i)\) de 1 à \(N\) et  \(d_i = x_i - y_i\)~:
+Si denotamos \(x_i = R(X_i)\) desde 1 hasta \(N\) y  \(d_i = x_i - y_i\)~:
 \[    \rho_S = 1- {\frac {6 \sum_i d_i^2}{n(n^2 - 1)}}\]
 
 \end{f}
 \hrule
 
-\begin{f}[Copule]
-Une \textbf{copule} est une fonction de répartition, notée \(\mathcal{C}\), définie sur \([0,1]^d\) dont les marges sont uniformes sur \([0,1]\). 
-Une caractérisation est alors que \(\mathcal{C}(u_1,...,u_d)=0\) si une des composantes \(u_i\) est nulle, \(\mathcal{C}(1,...,1,u_i,1,...,1)=u_i\), et \(\mathcal{C}\) est \(d-\)croissante.
-\medskip
-		
-Soit \(F^{(d)}\) une fonction de répartition en dimension \(d\)  où les \(F_i\) sont les lois marginales de \(F\). 
-
-Le\textbf{ théorème de Sklar} indique que \(F^{(d)}\) admet une représentation copule~:
-\[
-F^{(d)} (x_1,...,x_d) = \mathcal{C} (F_1(x_1),...,F_d(x_d))
-\]
-Si ces lois marginales sont toutes continues, la copule \(\mathcal{C}\) est alors unique, et donnée par la relation 
-\[
-\mathcal{C}(u_1,...,u_d)=F^{(d)}(F_1^{-1} (u_1),...,F_d^{-1} (u_d))
-\]
-Dans ce cas, on pourra alors parler de la copule associée à un vecteur aléatoire \((X_1,...,X_d)\).	
-Ce théorème est très important puisque nous pouvons séparer la partie marge de distribution de la partie dépendance. 
-\medskip
+\begin{f}[Cópula]
+	Una \textbf{cópula} es una función de distribución  \(\mathcal{C}\), definida en \([0,1]^d\) cuyos márgenes son uniformes en \([0,1]\). 
+	Una caracterización es entonces que \(\mathcal{C}(u_1,...,u_d)=0\) si alguna de las componentes \(u_i\) es nula, \(\mathcal{C}(1,...,1,u_i,1,...,1)=u_i\), y \(\mathcal{C}\) es \(d\)-creciente.
+	\medskip
 	
-La \textbf{Copule Gaussienne} est une distribution sur le cube unitaire de dimension \(d\), \([0,1]^d\). 
-Elle est construite sur la base d'une loi normale de dimension \(d\) sur  \(\mathbb{R}^d\).
-
-Soit la matrice de corrélation  \(\Sigma\in\mathbb{R}^{d\times d}\), la copule Gaussienne de paramètre  \(\Sigma\) peut s'écrire~:
-\[
-\mathcal{C}_\Sigma^{Gauss}(u) = \Phi_\Sigma\left(\Phi^{-1}(u_1),\dots, \Phi^{-1}(u_d) \right), 
-\]
-où \(\Phi^{-1}\) est la fonction de répartition inverse de la loi normale standard et  \(\Phi_\Sigma\) est la distribution jointe d'une loi normale de dimension \(d\), de moyenne nulle et de matrice de covariance égale à la matrice de corrélation  \(\Sigma\).
-\medskip	
-
-	Une copule \(\mathcal{C}\) est qualifiée d'\textbf{archimédienne} si elle admet la représentation suivante~:
-\[
-\mathcal{C}(u_1,\dots,u_d) = \psi^{-1}\left(\psi(u_1)+\dots+\psi(u_d)\right)\,
-\]
-où \(\psi\) est alors appelé \textbf{générateur}.
-
-Souvent, les copules  admettent une formulation explicite de  \(\mathcal{C}\). 
-Un seul paramètre permet d'accentuer la dépendance de toute la copule, quelque soit sa dimension \(d\).
-
-
-Cette formule fournit une copule si et seulement si \(\psi\,\) est \(d\)-monotone sur \([0,\infty)\) \emph{i.e.} la dérivé \(k^e\)  de \(\psi\,\) satisfait
-\[
-(-1)^k\psi^{(k)}(x) \geq 0
-\]
-pour tout \(x\geq 0\) et \(k=0,1,\dots,d-2\) et \((-1)^{d-2}\psi^{d-2}(x)\) est non-croissante et convexe.
-\medskip
-
-Les générateurs suivants sont tous monotones, i.e. \(d\)-monotone pour tout \(d\in\mathbb{N}\).
-
-\footnotesize
-\renewcommand\arraystretch{1.3}
-\begin{tabular}{|m{10mm}|ccc|}	\rowcolor{BleuProfondIRA!40} 
-	\hline
- Nom 		& Générateur \(\psi^{-1}(t)\), 	& \(\psi(t)\) &	Paramètre\\
+	Sea \(F^{(d)}\) una función de distribución en dimensión \(d\) en la que las \(F_i\) son las leyes marginales de \(F\). 
+%	
+	El\textbf{ teorema de Sklar} indica que \(F^{(d)}\) admite una representación por cópula~:
+	\[
+	F^{(d)} (x_1,...,x_d) = \mathcal{C} (F_1(x_1),...,F_d(x_d))
+	\]
+	Si todas estas leyes marginales son continuas, la cópula \(\mathcal{C}\) es entonces única y viene dada por la relación 
+	\[
+	\mathcal{C}(u_1,...,u_d)=F^{(d)}(F_1^{-1} (u_1),...,F_d^{-1} (u_d))
+	\]
+	En este caso, podremos hablar de la cópula asociada a un vector aleatorio \((X_1,..., X_d)\).    
+	Este teorema es muy importante, ya que nos permite separar la parte marginal de la distribución de la parte de dependencia. 
+	\medskip
+	
+	La \textbf{cópula gaussiana} es una distribución sobre el cubo unitario de dimensión \(d\), \([0,1]^d\). 
+	Se construye a partir de una ley normal de dimensión \(d\) en  \(\mathbb{R}^d\).
+%	
+	Sea la matriz de correlación  \(\Sigma\in\mathbb{R}^{d\times d}\), la cópula gaussiana de parámetro  \(\Sigma\) se puede escribir así:
+	\[
+	\mathcal{C}_\Sigma^{Gauss}(u) = \Phi_\Sigma\left(\Phi^{-1}(u_1),\dots, \Phi^{-1}(u_d) \right), 
+	\]
+	donde \(\Phi^{-1}\) es la función de distribución inversa de la ley normal estándar y  \(\Phi_\Sigma\) es la distribución conjunta de una ley normal de dimensión \(d\), de media nula y de matriz de covarianza igual a la matriz de correlación  \(\Sigma\).
+	\medskip	
+	
+	Una cópula \(\mathcal{C}\) se denomina \textbf{arquimédica} si admite la siguiente representación~:
+	\[
+	\mathcal{C}(u_1,\dots,u_d) = \psi^{-1}\left(\psi(u_1)+\dots+\psi(u_d)\right)\,
+	\]
+	donde \(\psi\) se denomina entonces \textbf{generador}.
+	
+	A menudo, las cópulas admiten una formulación explícita de \(\mathcal{C}\). 
+	Un único parámetro permite acentuar la dependencia de toda la cópula, sea cual sea su dimensión \(d\).
+	
+	
+	Esta fórmula proporciona una cópula si y solo si \(\psi\,\) es \(d\)-monótona en \([0,\infty)\) \emph{es decir}, la derivada de orden \(k\) de \(\psi\,\) satisface:
+	\[
+	(-1)^k\psi^{(k)}(x) \geq 0
+	\]
+	para todo \(x\geq 0\) y \(k=0,1,\dots,d-2\), y \((-1)^{d-2}\psi^{d-2}(x)\) es no creciente y convexa.
+	\medskip
+	
+	Los siguientes generadores son todos monótonos, es decir, \(d\)-monótonos para todo \(d\in\mathbb{N}\).
+	
+	\footnotesize
+	\renewcommand\arraystretch{1.3}
+	\begin{tabular}{|m{10mm}|ccc|}    \rowcolor{BleuProfondIRA!40} 
+		\hline
+		Nombre         & Generador \(\psi^{-1}(t)\),     & \(\psi(t)\) &    Parámetro\\
 	\hline
 	Ali-Mikhail-Haq 	&\(\frac{1-\theta}{\exp(t)-\theta} \)	
 	&\(\log\left(\frac{1-\theta+\theta t}{t}\right)\) 	
@@ -443,131 +476,131 @@ Les générateurs suivants sont tous monotones, i.e. \(d\)-monotone pour tout \(
 \end{f}
 \hrule
 
-\begin{f}[Mouvement brownien, filtration et martingales]
+\begin{f}[Movimiento browniano, filtración y martingalas]
 	
-Une \textbf{filtration} \((\mathcal{F}_t)_{t \geq 0}\) est une famille croissante de \(\sigma\)-algèbres ou tribu représentant l’information disponible jusqu’au temps \(t\). Un processus \((X_t)\) est dit \textbf{\(\mathcal{F}_t\)-adapté} si \(X_t\) est mesurable par rapport à \(\mathcal{F}_t\) pour tout \(t\).
+	Una \textbf{filtración} \((\mathcal{F}_t)_{t \geq 0}\) es una familia creciente de \(\sigma\)-álgebras o tribu que representa la información disponible hasta el instante \(t\). Se dice que un proceso \((X_t)\) es \textbf{\(\mathcal{F}_t\)-adaptado} si \(X_t\) es medible con respecto a \(\mathcal{F}_t\) para todo \(t\).
 	
-Un processus \((B_t)_{t \geq 0}\) est un \textbf{mouvement brownien standard} (ou processus de Wiener) s’il vérifie :
+	Un proceso \((B_t)_{t \geq 0}\) es un \textbf{movimiento browniano estándar} (o proceso de Wiener) si cumple lo siguiente:
 	\begin{itemize} 
-		\item \(B_0 = 0\) ;
-		\item accroissements indépendants : \(B_t - B_s\)  indépendant de \(\mathcal{F}_s\) ;
-		\item accroissements stationnaires : \(B_t - B_s \sim \mathcal{N}(0, t - s)\) ;
-		\item trajectoires continues presque sûrement.
+		\item \(B_0 = 0\);
+		\item incrementos independientes: \(\left( B_t - B_s\right) \bot\mathcal{F}_s\);
+		\item incrementos estacionarios: \(B_t - B_s \sim \mathcal{N}(0, t - s)\);
+		\item trayectorias continuas casi con toda seguridad.
 	\end{itemize}
 	
-	Un processus \((M_t)\) est une \textbf{martingale} (par rapport à \(\mathcal{F}_t\)) si :
+	Un proceso \((M_t)\) es una \textbf{martingala} (con respecto a \(\mathcal{F}_t\)) si:
 	\[
-	\mathbb{E}[|M_t|] < \infty \quad \text{et} \quad \mathbb{E}[M_t \mid \mathcal{F}_s] = M_s \quad \forall\, 0 \leq s < t
+	\mathbb{E}[|M_t|] < \infty \quad \text{y} \quad \mathbb{E}[M_t \mid \mathcal{F}_s] = M_s \quad \forall\, 0 \leq s < t
 	\]
-	Exemples : le mouvement brownien, les intégrales stochastiques de la forme \(\int_0^t \theta_s dB_s\) (sous conditions) sont des martingales.
+	Ejemplos: el movimiento browniano; las integrales estocásticas de la forma \(\int_0^t \theta_s dB_s\) (bajo ciertas condiciones) son martingalas.
 	\medskip
 	
-	\textbf{Variation quadratique} est noté \(
+	\textbf{Variación cuadrática} se denota por \(
 	\langle B \rangle_t = t, \quad \langle cB \rangle_t = c^2 t\)
 	
-\textbf{Covariation} : pour deux processus d’Itô \(X, Y\),
-\[
-\langle X, Y \rangle_t := \lim_{\|\Pi\| \to 0} \sum_{i} (X_{t_{i+1}} - X_{t_i})(Y_{t_{i+1}} - Y_{t_i})
-\]
-convergence en probabilité, où \(\Pi = \{t_0 = 0 < t_1 < \dots < t_n = t\}\) est une partition de \([0,t]\).
+	\textbf{Covariación}: para dos procesos de Itô \(X, Y\),
+	\[
+	\langle X, Y \rangle_t := \lim_{\|\Pi\| \to 0} \sum_{i} (X_{t_{i+1}} - X_{t_i})(Y_{t_{i+1}} - Y_{t_i})
+	\]
+	convergencia en probabilidad, donde \(\Pi = \{t_0 = 0 < t_1 < \dots < t_n = t\}\) es una partición de \([0,t]\).
+	
 \end{f}
 
 
-\begin{f}[Processus d'Itô et calcul différentiel stochastique]
+\begin{f}[Proceso de Itô y cálculo diferencial estocástico]
 	
-Un processus \((X_t)\) est un \textbf{processus d’Itô} s’il peut s’écrire :
+	Un proceso \((X_t)\) es un \textbf{proceso de Itô} si puede expresarse como:
 	\[
 	X_t = X_0 + \int_0^t \phi_s\, ds + \int_0^t \theta_s\, dB_s
 	\]
-	ou en différentielle
+	o en forma diferencial:
 	\[dX_t = \phi_t dt + \theta_t dB_t\]
-	avec \(\phi_t\), \(\theta_t\) \(\mathcal{F}_t\)-adaptés et \(L^2\)-intégrables.
+	donde \(\phi_t\) y \(\theta_t\) son funciones adaptadas a \(\mathcal{F}_t\) e integrables en \(L^2\).
 	
-	\textbf{Formule d’Itô (1D)} : pour \(f \in C^2(\mathbb{R})\), on a :
+	\textbf{Fórmula de Itô (1D)}: para \(f \in C^2(\mathbb{R})\), se tiene:
 	\[
 	df(X_t) = f'(X_t) dX_t + \frac{1}{2} f''(X_t) d\langle X \rangle_t
 	\]
 	
-	Exemple : si \(dX_t = \mu dt + \sigma dB_t\) alors :
+	Ejemplo: si \(dX_t = \mu dt + \sigma dB_t\), entonces:
 	\[
 	dX_t^2 = 2X_t dX_t + d\langle X \rangle_t
 	\]
 	
-	\textbf{Formule d’Itô (multi-dimension)} :\\
-	Si \(X = (X^1, \dots, X^d)\) est un processus d’Itô, \(f \in C^2(\mathbb{R}^d)\) :
+	\textbf{Fórmula de Itô (multidimensional)}:\\
+	Si \(X = (X^1, \dots, X^d)\) es un proceso de Itô, \(f \in C^2(\mathbb{R}^d)\):
 	\[
 	df(X_t) = \sum_i \frac{\partial f}{\partial x_i}(X_t) dX^i_t
 	+ \frac{1}{2} \sum_{i,j} \frac{\partial^2 f}{\partial x_i \partial x_j}(X_t) d\langle X^i, X^j \rangle_t
 	\]
 	
-	\textbf{Intégration par parties (Itô)} :
+	\textbf{Integración por partes (Itô)}:
 	\[
 	d(X_t Y_t) = X_t dY_t + Y_t dX_t + d\langle X, Y \rangle_t
 	\]
 	
 \end{f}
 
-\begin{f}[Équations différentielles stochastiques (EDS)]
+\begin{f}[Ecuaciones diferenciales estocásticas (EDS)]
 	
-	Une EDS (\emph{SDE}) est une équation stochastique de la forme :
+	Una EDS (\emph{SDE}) es una ecuación estocástica de la forma:
 	\[
 	dX_t = b(t, X_t) dt + a(t, X_t) dB_t, \quad X_0 = x
 	\]
-	où :
+	donde:
 	\begin{itemize}
-		\item \(b(t,x)\) est la \textbf{dérive} (\emph{drift}) : fonction \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\) ;
-		\item \(a(t,x)\) est la \textbf{diffusion} : fonction \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\) ;
-		\item \(B_t\) est un mouvement brownien ;
-		\item \(X_t\) est la solution, processus stochastique adapté.
+		\item \(b(t,x)\) es la \textbf{deriva} (\emph{drift}): función \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\);
+		\item \(a(t,x)\) es la \textbf{difusión}: función \(\mathbb{R}_+ \times \mathbb{R} \to \mathbb{R}\);
+		\item \(B_t\) es un movimiento browniano;
+		\item \(X_t\) es la solución, un proceso estocástico adaptado.
 	\end{itemize}
 	
-	\textbf{Forme intégrale} :
+	\textbf{Forma integral}:
 	\[
 	X_t = x + \int_0^t b(s, X_s) ds + \int_0^t a(s, X_s) dB_s
 	\]
 	
-	\textbf{Conditions d’existence et d’unicité} :
+	\textbf{Condiciones de existencia y unicidad}:
 	\begin{itemize}
-		\item \textbf{Lipschitz} : il existe \(L > 0\) tel que :
+		\item \textbf{Lipschitz}: existe \(L > 0\) tal que:
 		\[
 		|b(t,x) - b(t,y)| + |a(t,x) - a(t,y)| \leq L |x - y|
 		\]
-		\item \textbf{Croissance linéaire} :
+		\item \textbf{Crecimiento lineal}:
 		\[
 		|b(t,x)|^2 + |a(t,x)|^2 \leq C(1 + |x|^2)
 		\]
 	\end{itemize}
 	
-Exemples classique :
+	Ejemplos clásicos:
 	\begin{itemize}
-		\item \textbf{Brownien géométrique} : \(dS_t = \mu S_t dt + \sigma S_t dB_t\)
-		\item \textbf{Ornstein–Uhlenbeck} : \(dX_t = \theta(\mu - X_t) dt + \sigma dB_t\)
+		\item \textbf{Proceso browniano geométrico}: \(dS_t = \mu S_t dt + \sigma S_t dB_t\)
+		\item \textbf{Ornstein–Uhlenbeck}: \(dX_t = \theta(\mu - X_t) dt + \sigma dB_t\)
 	\end{itemize}
 	
-	\textbf{Méthodes numériques} : Euler–Maruyama, Milstein.
+	\textbf{Métodos numéricos}: Euler–Maruyama, Milstein.
 	
 \end{f}
 
-\begin{f}[Probabilité risque neutre]
+\begin{f}[Probabilidad neutra al riesgo]
 	
-	Une probabilité \(\mathbb{Q}\) est dite \textbf{risque neutre} si, sous \(\mathbb{Q}\), 
-	tout actif  \(S_t\) a un prix actualisé \( \frac{S_t}{B_t}\) qui est une martingale
-	où \((B_t)\) est le numéraire (par exemple \(B_t = e^{rt}\)).
+	Se dice que una probabilidad \(\mathbb{Q}\) es \textbf{neutra al riesgo} si, en \(\mathbb{Q}\), 
+	todo activo \(S_t\) tiene un precio actualizado \( \frac{S_t}{B_t}\) que es una martingala
+	donde \((B_t)\) es la moneda de referencia (por ejemplo, \(B_t = e^{rt}\)).
 	
-	L'absence d'arbitrage \(\iff \exists\, \mathbb{Q} \sim \mathbb{P}\) telle que les prix actualisés soient des martingales.
-	C’est le \textbf{théorème fondamental de l’évaluation des actifs}.
+	La ausencia de arbitraje \(\iff \exists\, \mathbb{Q} \sim \mathbb{P}\) tal que los precios actualizados sean martingalas.
+	Este es el \textbf{teorema fundamental de la valoración de activos}.
 	
-	\textbf{Application} :\\
-	Sous \(\mathbb{Q}\), la valeur à l’instant \(t\) d’un actif donnant un retour \(H\) à la date \(T\) est :
+	\textbf{Aplicación}:\\
+	En \(\mathbb{Q}\), el valor en el instante \(t\) de un activo que proporciona un rendimiento \(H\) en la fecha \(T\) es:
 	\[
 	S_t = B_t\, \mathbb{E}^\mathbb{Q} \left[ \left. \frac{H}{B_T} \right\|  \mathcal{F}_t \right]
 	\]
 	
-	\textbf{Remarque} :\\
-	La mesure \(\mathbb{Q}\) est équivalente à \(\mathbb{P}\), mais reflète un monde "sans préférence pour le risque", utile en valorisation.
+	\textbf{Observación} :\\
+	La medida \(\mathbb{Q}\) es equivalente a \(\mathbb{P}\), pero refleja un mundo «sin preferencia por el riesgo», útil en la valoración.
 	
 \end{f}
-\newcolumn
 
 %
 %\begin{f}[Processus stochastiques en actuariat]
@@ -623,74 +656,67 @@ Exemples classique :
 %\end{f}
 %\hrule
 
-\begin{f}[Les simulations]
+\begin{f}[Las simulaciones]
 	\tikz{
 		\def\m{2};
 		\def\s{1};
 	}
 	%
 	
-	Les simulations permettent en particulier d'approximer l'espérance par la moyenne empirique des réalisations \(x_1,\ldots,x_n\):
+	Las simulaciones permiten, en particular, aproximar la esperanza mediante la media empírica de las realizaciones \(x_1,\ldots,x_n\):
 	\[
 	\frac{1}{n}(x_1+\ldots+x_n)\approx \int xdF(x)=\mathbb{E}[X]
 	\]
-	Ensuite, en vertu du TLC, nous estimons l'incertitude ou intervalle de confiance sur la base de la loi normale:
+	A continuación, en virtud del TLC, estimamos la incertidumbre o el intervalo de confianza basándonos en la distribución normal:
 	\[
 	\left[\overline{x}-1,96\frac{S_n}{\sqrt{n}},\overline{x}+1,96\frac{S_n}{\sqrt{n}}\right]
 	\]
-	où \(S_n\) estime sans biais la variance de \(X\)~:
+	donde \(S_n\) estima sin sesgo la varianza de \(X\)~:
 	\[
 	S_n^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\overline{x})^2
 	\]
 	
-	la convergence est dite en \(\mathcal{O}(\frac{\sigma}{\sqrt{n}})\). 	
-	Cet intervalle permet de décider le nombre de simulation à réaliser.
+se dice que la convergencia es de orden \(\mathcal{O}(\frac{\sigma}{\sqrt{n}})\). 
+Este intervalo permite determinar el número necesario de simulaciones.
+
 \end{f}
 
-\begin{f}[Générateur pseudo aléatoire sur \({[}0,1{]}^d\)]
-L'ordinateur ne sait pas lancer le dé (\(\Omega=\{ \epsdice{1}, \epsdice{2}, \epsdice{3}, \epsdice{4}, \epsdice{5}, \epsdice{6} \}\)).
-Il génère un pseudo aléa, c'est à dire un algorithme déterministe qui ressemble à un événement aléatoire.
-Les générateurs produisent généralement un aléa sur \([0,1]^d\).
-Si la valeur initiale (\emph{seed}) est définie ou identifiée, les tirages suivants sont connus et répliquables.
-
-
-L'algorithme le plus simple es  appelée méthode des congruences linéaires.
-\[
-x_{n+1}=\Phi(x_n)= (a\times x_n+c) \mod m
-\] \small
-chaque \(x_n\) est un entier compris entre 0 et \(m-1\).
-\(a\) le multiplicateur [\emph{multiplier}], \(c\) l'accroissement [\emph{increment}], et \(m\) le modulo [\emph{modulus}] de la forme \(2^p-1\), c'est-à-dire un nombre premier de Mersenne ( \( p \) nécessairement premier) :
-
-Générateur de Marsaglia: \(a=69069, b=0, m=2^{32}\)
-
-Générateur Knuth\&Lewis: \(a=1664525, b=1013904223, m=2^{32}\)
-
-Générateur de Haynes: \(a=6364136223846793005, b=0, m=2^{64}\)
-
-%Le générateur de Tausworthe est une extension du générateur congruentiel linéaire qui consiste à ne  plus utiliser seulement \(x_{╔n-1}\) pour fabriquer un nouvel élément mais plutôt un ensemble de valeurs précédentes
-Le générateur de Tausworthe, constitue une extension 'autorégressive' :
-\[
-x_{n}=(a_{1}\times x_{n-1}+a_{2}\times x_{n-2}+\cdots +a_{k}\times x_{n-k}) \mod m \text{ avec } n\geq k
-\]
-La période du générateur est \(m^k-1\), avec tous les \(a_i\) premiers entre eux. Si \(m\) est de la forme \(2^p\) , les temps de calculs machine sont réduits. 
-
-
-Le générateur aléatoire par défaut est généralement l'algorithme de Mersenne-Twister. Il est basé sur une récurrence linéaire sur une matrice \(F_{2}\) (matrice dont les valeurs sont en base 2, i.e. 0 ou 1). 
-Son nom provient du fait que la longueur de la période choisie pour être un nombre premier de Mersenne. 
-\begin{enumerate}
-	\item     sa période est de \(2^{19937}-1 \)
-	\item     il est uniformément distribué sur un grand nombre de dimensions (623 pour les nombres de 32 bits) ;
-	\item     il est plus rapide que la plupart des autres générateurs ,
-	\item     il est aléatoire quel que soit le poids du bit considéré, et passe les tests Diehard.
-\end{enumerate}
+\begin{f}[Generador pseudoaleatorio en \({[}0,1{]}^d\)]
+	Al no poder generar aleatoriedad real  (\(como \Omega=\{ \epsdice{1}, \epsdice{2}, \epsdice{3}, \epsdice{4}, \epsdice{5}, \epsdice{6} \}\)), el ordenador usa un algoritmo determinista para producir números pseudoaleatorios en \([0,1]^d\). Definir el valor inicial (\emph{seed}) hace que los resultados sean reproducibles.
+	
+	El método más sencillo es el congruente lineal:
+	\[
+	x_{n+1}=\Phi(x_n)= (a\times x_n+c) \mod m
+	\] \small
+	donde \(x_n \in [0, m-1]\). El multiplicador \(a\), el incremento \(c\) y el módulo \(m\) suelen ser de la forma \(2^p-1\) (primo de Mersenne):
+	
+	Generador de Marsaglia: \(a=69069, b=0, m=2^{32}\)
+	
+	Generador de Knuth y Lewis: \(a=1664525, b=1013904223, m=2^{32}\)
+	
+	Generador de Haynes: \(a=6364136223846793005, b=0, m=2^{64}\)
+	
+	El generador de Tausworthe es una extensión «autorregresiva»:
+	\[
+	x_{n}=(a_{1}\times x_{n-1}+\cdots +a_{k}\times x_{n-k}) \mod m \quad (n\geq k)
+	\]
+	Su período es \(m^k-1\) (con \(a_i\) primos entre sí). Si \(m=2^p\), se optimiza el tiempo de cálculo.
+	
+	El algoritmo por defecto suele ser Mersenne-Twister, basado en una recurrencia lineal sobre una matriz \(F_{2}\) (valores en base 2). Su nombre alude a que la longitud de su período es un primo de Mersenne. Propiedades:
+	\begin{enumerate}
+		\item Su período es \(2^{19937}-1 \).
+		\item Distribución uniforme en alta dimensión (623 para 32 bits).
+		\item Mayor velocidad que la mayoría de generadores.
+		\item Aleatorio independientemente del peso del bit; supera las pruebas Diehard.
+	\end{enumerate}
 \end{f}
 %
 
-\begin{f}[Simuler une variable aléatoire]
+\begin{f}[Simular una variable aleatoria]
 	
-Simuler \(X\) d'une loi quelconque \(F_X\) revient souvent à simuler \(\left(p_i\right)_{i\in [1,n]}\) de loi \(\mathcal{U}ni(0,1)\).
-
-\textbf{ Si \(F_X\) est inversible},  \(x_i=F^{-1}_X(p_i)\) (ou fonction quantile) livre \(\left(x_i\right)_{i\in [1,n]}\) un jeu de \(n\) simulations de loi \(F_X\).
+	Simular \(X\) con una distribución cualquiera \(F_X\) suele equivaler a simular \(\left(p_i\right)_{i\in [1,n]}\) con distribución \(\mathcal{U}ni(0,1)\).
+	
+	\textbf{Si \(F_X\) es invertible}, \(x_i=F^{-1}_X(p_i)\) (o función cuantílica) proporciona \(\left(x_i\right)_{i\in [1,n]}\), un conjunto de \(n\) simulaciones con distribución \(F_X\).
 			
 	\begin{center}
 		%\tikzmath{
@@ -729,17 +755,17 @@ Simuler \(X\) d'une loi quelconque \(F_X\) revient souvent à simuler \(\left(p_
 		\end{tikzpicture}
 	\end{center}	
 	
-Si c'est une variable discrète (\(F^{-1}\) n'existe pas) \(X_\ell=\min_{\ell} F(X_\ell)> p_i\), où \( \left(X_{\ell}\right)_{\ell}\) l'ensemble dénombrable des valeurs possibles, ordonnées de manière croissante.
+Si se trata de una variable discreta (\(F^{-1}\) no existe), \(X_\ell=\min_{\ell} F(X_\ell)> p_i\), donde \( \left(X_{\ell}\right)_{\ell}\) es el conjunto numerable de los valores posibles, ordenados de menor a mayor.
 
-Dans la méthode du \textbf{changement de variable}, on suppose qu'on sait simuler une loi \(X\), et qu'il existe \(\phi\) tel que \(Y=\varphi(X)\) suit une loi \(F_Y\). L'exemple naturelle est celui de \(X\sim \mathcal{N}(0,1)\) et de faire le changement \(Y=\exp(X)\) pour obtenir Y qui suit une loi lognormale.
+En el método del \textbf{cambio de variable}, se supone que sabemos simular una distribución \(X\), y que existe \(\phi\) tal que \(Y=\varphi(X)\) sigue una distribución \(F_Y\). El ejemplo más habitual es el de \(X\sim \mathcal{N}(0,1)\) y realizar el cambio \(Y=\exp(X)\) para obtener \(Y\) que sigue una distribución lognormal.
 
-\textbf{La méthode du rejet} est utilisée dans des cas plus complexe, par exemple lorsque \(F^{-1}\) n'est pas explicite ou exige beaucoup de temps de calcul. 
-Soit \(f\) une fonction de densité de probabilités. On suppose qu'il existe une densité de probabilités \(g\) telle que :
+\textbf{El método de rechazo} se utiliza en casos más complejos, por ejemplo, cuando \(F^{-1}\) no es explícita o requiere mucho tiempo de cálculo. 
+Sea \(f\) una función de densidad de probabilidad. Se supone que existe una función de densidad de probabilidad \(g\) tal que:
 \[
 {\displaystyle \exists K>0\ ,\ \forall x\in \mathbb {R} \ ,\ f(x)\leq Kg(x)}
 \]
-On simule alors \(Z\) suivant la loi de densité \(g\), et \({\displaystyle Y\sim {\mathcal {U}}([0;Kg(Z)])} \).
-Alors la variable aléatoire \({\displaystyle X=\lbrace Z|Y\leq f(Z)\rbrace } \) suit la loi de densité \(f\).
+Entonces se simula \(Z\) siguiendo la ley de densidad \(g\), y \({\displaystyle Y\sim {\mathcal {U}}([0;Kg(Z)])} \).
+Así, la variable aleatoria \({\displaystyle X=\lbrace Z|Y\leq f(Z)\rbrace } \) sigue la ley de densidad \(f\).
 
 
 
@@ -754,157 +780,156 @@ Alors la variable aléatoire \({\displaystyle X=\lbrace Z|Y\leq f(Z)\rbrace } \)
 	\tikzfillbetween[of=melange and g,on layer=main]{BleuProfondIRA, opacity=0.1};
 \end{tikzpicture}
 
-La performance de l'algorithme dépend du nombre de rejet, représenté par la surface bleu sur le graphique.
+El rendimiento del algoritmo depende del número de rechazos, representado por la superficie azul en el gráfico.
 \end{f}
 \hrule
 
 %
 
-\begin{f}[Méthodes de Monte Carlo]
-
-Les \textbf{méthodes de Monte Carlo} reposent sur la simulation répétée de variables aléatoires pour approximer des quantités numériques.
-
-\textbf{Convergence} :
-\begin{itemize}[nosep]
-	\item Par la \textbf{loi des grands nombres}, l’estimateur converge presque sûrement vers la valeur attendue.
-	\item Par le \textbf{théorème central limite}, l’erreur standard est en \(\mathcal{O}(N^{-1/2})\) :
-	\[
-	\sqrt{N}(\hat{\mu}_N - \mu) \xrightarrow{d} \mathcal{N}(0, \sigma^2)
-	\]
-	\item Cette convergence lente justifie l’usage de techniques d’\textbf{amélioration de la convergence}.
-\end{itemize}
-
-\textbf{Techniques de réduction de variance} :
-\begin{itemize}
-	\item \textbf{Variables antithétiques} : on simule \(X\) et \(-X\) (ou \(1-U\) si \(U \sim \mathcal{U}[0,1]\)), puis on moyenne les résultats. Réduction efficace si \(f\) est monotone.
-	\item \textbf{Méthode de contrôle} : si \(\mathbb{E}[Y]\) est connue, on simule \((f(X), Y)\) et on corrige :
-	\[
-	\hat{\mu}_\text{corr} = \hat{\mu} - \beta(\bar{Y} - \mathbb{E}[Y])
-	\]
-	où \(\beta\) optimal minimise la variance.
-	\item \textbf{Stratification} : on divise l’espace des simulations en strates (sous-ensembles), et on simule proportionnellement dans chaque strate.
-	\item \textbf{Importance sampling} : on modifie la loi de simulation pour accentuer les événements rares, puis on repondère :
-	\[
-	\mathbb{E}[f(X)] = \mathbb{E}^{Q}\left[f(X) \frac{\mathrm{d}P}{\mathrm{d}Q}(X)\right]
-	\]
-	utilisée notamment pour estimer les queues de distribution (VaR, TVaR).
+\begin{f}[Métodos de Monte Carlo]
+	
+	Los \textbf{métodos de Monte Carlo} se basan en la simulación repetida de variables aleatorias para aproximar magnitudes numéricas.
+	
+	\textbf{Convergencia}:
+	\begin{itemize}[nosep]
+		\item Según la \textbf{ley de los grandes números}, el estimador converge casi con seguridad hacia el valor esperado.
+		\item Según el \textbf{teorema del límite central}, el error estándar es de orden \(\mathcal{O}(N^{-1/2})\):
+		\[
+		\sqrt{N}(\hat{\mu}_N - \mu) \xrightarrow{d} \mathcal{N}(0, \sigma^2)
+		\]
+		\item Esta convergencia lenta justifica el uso de técnicas de \textbf{mejora de la convergencia}.
+	\end{itemize}
+	
+	\textbf{Técnicas de reducción de la varianza}:
+	\begin{itemize}
+		\item \textbf{Variables antitéticas}: se simulan \(X\) y \(-X\) (o \(1-U\) si \(U \sim \mathcal{U}[0,1]\)), y luego se promedian los resultados. Reducción eficaz si \(f\) es monótona.
+		\item \textbf{Método de control}: si se conoce \(\mathbb{E}[Y]\), se simula \((f(X), Y)\) y se corrige:
+		\[
+		\hat{\mu}_\text{corr} = \hat{\mu} - \beta(\bar{Y} - \mathbb{E}[Y])
+		\]
+		donde \(\beta\) óptimo minimiza la varianza.
+		\item \textbf{Estratificación}: se divide el espacio de simulaciones en estratos (subconjuntos) y se simula proporcionalmente en cada estrato.
+		\item \textbf{Muestreo por importancia}: se modifica la ley de simulación para dar mayor peso a los eventos raros y, a continuación, se repondera:
+		\[
+		\mathbb{E}[f(X)] = \mathbb{E}^{Q}\left[f(X) \frac{\mathrm{d}P}{\mathrm{d}Q}(X)\right]
+		\]
+		utilizado, en particular, para estimar las colas de la distribución (VaR, TVaR).
 \end{itemize}
 
 \end{f}
-\begin{f}[Le bootstrap]
+\begin{f}[El bootstrap]
 	
-	Le \textbf{bootstrap} est une méthode de \textit{rééchantillonnage} permettant d’estimer l’incertitude d’un estimateur sans supposer de forme paramétrique pour la loi sous-jacente.
+	El \textbf{bootstrap} es un método de \textit{remuestreo} que permite estimar la incertidumbre de un estimador sin suponer una forma paramétrica para la distribución subyacente.
 	
-	Soit un échantillon \(\xi = (X_1, X_2, \ldots, X_n)\) de variables iid suivant une loi inconnue \(F\). On cherche à estimer une statistique \(\theta = T(F)\) (ex. moyenne, médiane, variance), via son estimateur empirique \(\hat{\theta} = T(\hat{F}_n)\).
+	Sea una muestra \(\xi = (X_1, X_2, \ldots, X_n)\) de variables iid que siguen una distribución desconocida \(F\). Se busca estimar una estadística \(\theta = T(F)\) (por ejemplo, la media, la mediana o la varianza), mediante su estimador empírico \(\hat{\theta} = T(\hat{F}_n)\).
 	
 	\begin{enumerate}
-		\item On approxime \(F\) par la fonction de répartition empirique :
+		\item Se aproxima \(F\) mediante la función de distribución empírica:
 		\[
 		\hat{F}_n(x) = \frac{1}{n} \sum_{k=1}^n \mathbf{1}_{\{X_k \le x\}}
 		\]
 		
-		\item On génère \(B\) échantillons bootstrap \(\xi^{\ast(b)} = (X_1^{\ast(b)}, \ldots, X_n^{\ast(b)})\) en tirant \textbf{avec remise} dans l’échantillon initial.
+		\item Se generan \(B\) muestras de bootstrap \(\xi^{\ast(b)} = (X_1^{\ast(b)}, \ldots, X_n^{\ast(b)})\) extrayendo \textbf{con reposición} de la muestra inicial.
 		
-		\item Pour chaque échantillon simulé, on calcule l’estimation \(T^{\ast(b)} = T(\hat{F}_n^{\ast(b)})\).
+		\item Para cada muestra simulada, se calcula la estimación \(T^{\ast(b)} = T(\hat{F}_n^{\ast(b)})\).
 	\end{enumerate}
 	
-	Les réalisations \(T^{\ast(1)}, \ldots, T^{\ast(B)}\) forment une approximation de la distribution de l’estimateur \(\hat{\theta}\).
+	Las realizaciones \(T^{\ast(1)}, \ldots, T^{\ast(B)}\) forman una aproximación a la distribución del estimador \(\hat{\theta}\).
 	
-	On peut en déduire :
+	De ello se deduce:
 	\begin{itemize}[nosep]
-		\item un \textbf{biais estimé} : \(\widehat{\text{bias}} = \overline{T^\ast} - \hat{\theta}\) ;
-		\item un \textbf{intervalle de confiance} à \((1-\alpha)\) : \([q_{\alpha/2},\ q_{1 - \alpha/2}]\) des quantiles empiriques de \(T^{\ast(b)}\) ;
-		\item une estimation de la \textbf{variance} : \(\widehat{\mathrm{Var}}(T^\ast)\).
+		\item un \textbf{sesgo estimado}: \(\widehat{\text{sesgo}} = \overline{T^\ast} - \hat{\theta}\);
+		\item un \textbf{intervalo de confianza} con nivel \((1-\alpha)\): \([q_{\alpha/2},\ q_{1 - \alpha/2}]\) de los cuantiles empíricos de \(T^{\ast(b)}\);
+		\item una estimación de la \textbf{varianza}: \(\widehat{\mathrm{Var}}(T^\ast)\).
 	\end{itemize}
 	
-	\textbf{Remarque} : Le bootstrap est particulièrement utile lorsque la distribution de \(T\) est inconnue ou difficile à estimer analytiquement.
+	\textbf{Observación}: El bootstrap resulta especialmente útil cuando la distribución de \(T\) es desconocida o difícil de estimar analíticamente.
 	
 \end{f}
-\begin{f}[Bootstrap paramétrique]
+\begin{f}[Bootstrap paramétrico]
 	
-	Le \textbf{bootstrap paramétrique} repose sur l’hypothèse que les données suivent une famille de lois paramétrée \(\{F_\theta\}\).
+	El \textbf{bootstrap paramétrico} se basa en la hipótesis de que los datos siguen una familia de distribuciones parametrizadas \(\{F_\theta\}\).
 	
-	Soit \(\xi = (X_1, \ldots, X_n)\) un échantillon \(iid\) selon une loi \(F_\theta\) inconnue. On procède comme suit :
+	Sea \(\xi = (X_1, \ldots, X_n)\) una muestra \(iid\) según una distribución \(F_\theta\) desconocida. Se procede de la siguiente manera:
 	\begin{enumerate}
-		\item Estimer le paramètre \(\hat{\theta}\) à partir de \(\xi\) (ex. par maximum de vraisemblance).
-		\item Générer \(B\) échantillons \(\xi^{\ast(b)}\) de taille \(n\), simulés selon la loi \(F_{\hat{\theta}}\).
-		\item Calculer \(T^{\ast(b)} = T(\xi^{\ast(b)})\) pour chaque échantillon.
+		\item Estimar el parámetro \(\hat{\theta}\) a partir de \(\xi\) (por ejemplo, mediante el método de máxima verosimilitud).
+		\item Generar \(B\) muestras \(\xi^{\ast(b)}\) de tamaño \(n\), simuladas según la ley \(F_{\hat{\theta}}\).
+		\item Calcular \(T^{\ast(b)} = T(\xi^{\ast(b)})\) para cada muestra.
 	\end{enumerate}
 	
-	Ce procédé approxime la distribution de l’estimateur \(T(\xi)\) en supposant connue la forme de \(F\). Il est plus efficace que le bootstrap non paramétrique si l’hypothèse de modèle est bien spécifiée. Le bootstrap paramétrique est plus rapide, mais hérite des biais du modèle.
-	
+Este procedimiento aproxima la distribución de \(T(\xi)\) suponiendo conocida la forma de \(F\). Es más eficaz que el bootstrap no paramétrico si el modelo está bien especificado; además es más rápido, aunque hereda sus sesgos.		
 \end{f}
 
-\begin{f}[Validation croisée]
+\begin{f}[Validación cruzada]
 	
-	La \textbf{validation croisée} est une méthode d’évaluation de la performance prédictive d’un modèle statistique, utilisée notamment en machine learning ou en tarification.
+	La \textbf{validación cruzada} es un método para evaluar el rendimiento predictivo de un modelo estadístico, utilizado especialmente en el aprendizaje automático o en la fijación de precios.
 	
-	\textbf{Principe} :
+	\textbf{Principio}:
 	\begin{itemize}
-		\item Diviser les données en \(K\) blocs (ou folds).
-		\item Pour chaque \(k = 1,\ldots,K\) :
+		\item Dividir los datos en \(K\) bloques (o «folds»).
+		\item Para cada \(k = 1,\ldots,K\):
 		\begin{itemize}
-			\item Entraîner le modèle sur les \(K-1\) autres blocs.
-			\item Évaluer la performance (erreur, log-vraisemblance...) sur le \(k\)-ième bloc.
+			\item Entrenar el modelo con los otros \(K-1\) bloques.
+			\item Evaluar el rendimiento (error, log-verosimilitud...) en el bloque \(k^{o}\).
 		\end{itemize}
-		\item Agréger les erreurs pour obtenir une estimation globale de la performance hors-échantillon.
+		\item Agregar los errores para obtener una estimación global del rendimiento fuera de la muestra.
 	\end{itemize}
 	
 \end{f}
 
 %
-\begin{f}[Méthodes quasi-Monte Carlo]
+\begin{f}[Métodos cuasi-Monte Carlo]
 	
-	Les méthodes \textbf{quasi-Monte Carlo} visent à \textbf{accélérer la convergence} de l’estimateur d’espérance sans recourir à l’aléatoire. L’erreur typique est de l’ordre :
-	\[
+	Los métodos \textbf{cuasi-Monte Carlo} tienen como objetivo \textbf{acelerar la convergencia} del estimador de la esperanza sin recurrir al azar. El error típico es del orden de
+	\(\displaystyle
 	\mathcal{O}\left( \frac{(\ln N)^s}{N} \right)
-	\]
-	où \(N\) est la taille de l’échantillon et \(s\) la dimension du problème.
+	\)
+	donde \(N\) es el tamaño de la muestra y \(s\) la dimensión del problema.
 	
-	Ces méthodes reposent sur l’utilisation de suites \textbf{à discrépance faible} dans \([0,1]^s\). La discrépance à l'origine (\emph{star discrepancy}), notée  \(D^*_N(P)\) pour un ensemble de points \(P = \{x_1, \ldots, x_N\}\), mesure l’écart maximal entre la proportion de points contenus dans des rectangles \emph{ancrés à l’origine} et leur volume. Elle est définie par :
+	Estos métodos se basan en el uso de sucesiones \textbf{de discreancia baja} en \([0,1]^s\). La discrepancia en el origen (\emph{star discrepancy}), denotada por \(D^*_N(P)\) para un conjunto de puntos \(P = \{x_1, \ldots, x_N\}\), mide la desviación máxima entre la proporción de puntos contenidos en rectángulos \emph{anclados en el origen} y su volumen. Se define mediante:
 	\[
 	D^*_N(P) = \sup_{u \in [0,1]^s} \left| \frac{1}{N} \sum_{i=1}^N \mathbf{1}_{[0,u)}(x_i) - \lambda_s([0,u)) \right|
 	\]
-	avec :
+	donde:
 	\begin{itemize}
-		\item \([0,u) = \prod_{j=1}^s [0, u_j)\) un rectangle ancré à l’origine dans \([0,1]^s\),
-		\item \(\mathbf{1}_{[0,u)}(x_i)\) l’indicatrice de l’appartenance de \(x_i\) à ce rectangle,
-		\item \(\lambda_s([0,u)) = \prod_{j=1}^s u_j\) le volume de ce rectangle.
+		\item \([0,u) = \prod_{j=1}^s [0, u_j)\) un rectángulo con vértice de origen en \([0,1]^s\),
+		\item \(\mathbf{1}_{[0,u)}(x_i)\) la función indicadora de la pertenencia de \(x_i\) a dicho rectángulo,
+		\item \(\lambda_s([0,u)) = \prod_{j=1}^s u_j\) el volumen de dicho rectángulo.
 	\end{itemize}
-	Une discrépance faible signifie que les points sont bien répartis dans l’espace, ce qui améliore la convergence de l’estimation.
+	Una discrepancia pequeña significa que los puntos están bien distribuidos en el espacio, lo que mejora la convergencia de la estimación.
 	
 	\medskip
-	\textbf{Suite de van der Corput (dimension 1)} :
-	Soit \(n\) un entier. On l’écrit en base \(b\) :
+	\textbf{Secuencia de van der Corput (dimensión 1)}:
+	Sea \(n\) un número entero. Lo escribimos en base \(b\):
 	\[
 	n = \sum_{k=0}^{L-1} d_k(n)\, b^k
 	\]
-	puis on inverse les chiffres autour de la virgule pour obtenir :
+	luego invertimos los dígitos a ambos lados de la coma:
 	\[
 	g_b(n) = \sum_{k=0}^{L-1} d_k(n)\, b^{-k-1}
 	\]
-	Par exemple, pour \(b = 5\) et \(n = 146\), on a \(146 = (1\,0\,4\,1)_5\), donc :
+	Por ejemplo, para \(b = 5\) y \(n = 146\), tenemos \(146 = (1\,0\,4\,1)_5\):
 	\[
 	g_5(146) = \frac{1}{5^4} + \frac{0}{5^3} + \frac{4}{5^2} + \frac{1}{5} = 0{,}3616
 	\]
 	
 	\medskip
-	\textbf{Séquence de Halton (dimension \(s\))} :
-	On généralise la suite de van der Corput en utilisant \(s\) bases entières premières distinctes \(b_1, \dots, b_s\) :
+	\textbf{Secuencia de Halton (dimensión \(s\))}:
+	Se generaliza la sucesión de van der Corput utilizando \(s\) bases enteras primas distintas \(b_1, \dots, b_s\):
 	\[
 	x(n) = \big( g_{b_1}(n), \dots, g_{b_s}(n) \big)
 	\]
-	Cette construction fournit une suite de points bien répartis dans \([0,1]^s\).
+	Esta construcción proporciona una sucesión de puntos bien distribuidos en \([0,1]^s\).
 	
 	\medskip
-	\textbf{Inégalité de Koksma–Hlawka}\\
-	Pour une fonction \(f\) de variation finie \(V(f)\) (au sens de Hardy–Krause) sur \([0,1]^s\) :
+	\textbf{Desigualdad de Koksma–Hlawka}\\
+	Para una función \(f\) de variación finita \(V(f)\) (en el sentido de Hardy–Krause) en \([0,1]^s\):
 	\[
 	\left| \int_{[0,1]^s} f(u)\, du - \frac{1}{N} \sum_{i=1}^N f(x_i) \right| \leq V(f)\, D_N
 	\]
-	où \(D_N\) est la discrépance de la suite utilisée.
+	donde \(D_N\) es la discrepancia de la sucesión utilizada.
 	
-Cette borne explique pourquoi les méthodes quasi-Monte Carlo sont souvent plus efficaces que les méthodes de Monte Carlo.
+	Este límite explica por qué los métodos cuasi-Monte Carlo suelen ser más eficaces que los métodos de Monte Carlo.
 	
 	
 \end{f}

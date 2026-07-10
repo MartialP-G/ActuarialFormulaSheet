@@ -66,11 +66,11 @@ La fecha del fallecimiento se representa aquí mediante un pequeño ataúd. Este
 
 Anualidad vencida (inmediata) \(a_{\lcroof{n}}\): sus pagos periódicos se realizan al final de cada período de pago, como un salario a fin de mes. Este es el caso predeterminado, ilustrado previamente para la anualidad en cuestión.
 \[
-\ddot{a}_{\lcroof{n}}=1+v+\cdots+v^{n-1}=\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{d}
+a_{\lcroof{n}}=v+v^{2}+\cdots+v^{n}=\frac{1-v^{n}}{i}=v \frac{1-v^{n}}{1-v}
 \]
 %
 \[
-	\mathrm{PV}_{\lcroof{n}}^{\text {due }}=K \ddot{a}_{\lcroof{n}}=K \frac{1-v^{n}}{d} 
+\mathrm{PV}_{\lcroof{n}}^{\mathrm{im}}=K a_{\lcroof{n}}=K \frac{1-v^{n}}{i}
 \]
 
 Anualidad anticipada (vencida) \(\ddot{a}_{\lcroof{n}}\): sus pagos periódicos se efectúan al inicio de cada período de pago, como ocurre, por ejemplo, con el pago del alquiler.
@@ -100,11 +100,11 @@ Anualidad anticipada (vencida) \(\ddot{a}_{\lcroof{n}}\): sus pagos periódicos 
 \end{center}
 También denotada \(\mathrm{PV}^{\mathrm{im}}\) :
 \[
-a_{\lcroof{n}}=v+v^{2}+\cdots+v^{n}=\frac{1-v^{n}}{i}=v \frac{1-v^{n}}{1-v}
+\ddot{a}_{\lcroof{n}}=1+v+\cdots+v^{n-1}=\frac{1-v^{n}}{1-v}=\frac{1-v^{n}}{d}
 \]
 %
 \[
-	\mathrm{PV}_{\lcroof{n}}^{\mathrm{im}}=K a_{\lcroof{n}}=K \frac{1-v^{n}}{i} 
+\mathrm{PV}_{\lcroof{n}}^{\text {due }}=K \ddot{a}_{\lcroof{n}}=K \frac{1-v^{n}}{d}
 \]
 Anualidad perpetua \(a\) ó  \(a_{\lcroof{\infty}}\): 
 \[
@@ -191,7 +191,8 @@ a_{\lcroof{n}}^{(m)}=\frac{1}{m} \sum_{k=1}^{m n} v^{\frac{k}{m}}=\frac{i}{i^{(m
 Anualidad unitaria \(a\) : se utiliza al construir fórmulas de anualidades.
 Para una anualidad constante, el monto total pagado cada año es 1, independientemente de \(m\). 
 
-Anualidad dinámica, creciente/decreciente \(Ia\)/\(Da\): en su forma más simple, paga una cantidad que comienza en 1 (\(n\)) y aumenta (decrece) cada período aritmética o geométricamente. En el siguiente ejemplo, la progresión es aritmética.
+A
+Anualidad dinámica, creciente (o decreciente) \(Ia\) (\(Da\)): en su forma más simple, se abona un importe que comienza en 1 (\(n\)) y que crece (o disminuye) en cada período de forma aritmética o geométrica hasta \(n\) (1). En el siguiente ejemplo, la progresión es aritmética.
 El prefijo \(I\) (\engl{increasing}) se utiliza para indicar anualidades crecientes y \(D\) (\engl{decreasing}) para anualidades decrecientes.
 	
 \begin{center}

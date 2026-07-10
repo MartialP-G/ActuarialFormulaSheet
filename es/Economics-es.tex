@@ -1,194 +1,194 @@
 % !TeX root = ActuarialFormSheet_MBFA-es.tex
 % !TeX spellcheck = es_ES
-\begin{f}[Concept d'utilité]
-	L'utilité modélise les préférences d'un individu entre deux paniers de biens \(x\) et \(y\) dans un ensemble \(S\), via la relation \(x \succcurlyeq y\) (préféré ou indifférent).
+\begin{f}[Concepto de utilidad]
+	La utilidad modeliza las preferencias de un individuo entre dos cestas de bienes \(x\) e \(y\) pertenecientes a un conjunto \(S\), mediante la relación \(x \succcurlyeq y\) (preferido o indiferente).
 	
-	Une fonction \(U: S \rightarrow \mathbb{R}\) représente les préférences si :
+	Una función \(U: S \rightarrow \mathbb{R}\) representa las preferencias si:
 	\[
 	x \succcurlyeq y \iff U(x) \geq U(y)
 	\]
 	
-	\textbf{Axiomes nécessaires à l'existence d'une fonction d'utilité :}
+	\textbf{Axiomas necesarios para la existencia de una función de utilidad:}
 	\begin{enumerate}
-		\item \textbf{Complétude :} Pour tout \(x, y \in S\), soit \(x \succcurlyeq y\), soit \(y \succcurlyeq x\)
-		\item \textbf{Transitivité :} Si \(x \succcurlyeq y\) et \(y \succcurlyeq z\), alors \(x \succcurlyeq z\)
-		\item \textbf{Continuité :} Si \(x_n \to x\) et \(y_n \to y\), et \(x_n \succcurlyeq y_n\) pour tout \(n\), alors \(x \succcurlyeq y\)
+		\item \textbf{Completitud:} \(\forall \ \ x, y \in S\), se cumple \(x \succcurlyeq y\) o \(y \succcurlyeq x\).
+		\item \textbf{Transitividad:} Si \(x \succcurlyeq y\) e \(y \succcurlyeq z\), entonces \(x \succcurlyeq z\).
+		\item \textbf{Continuidad:} Si \(x_n \to x\) e \(y_n \to y\), y \(x_n \succcurlyeq y_n\) para todo \(n\), entonces \(x \succcurlyeq y\).
 	\end{enumerate}
 	
 \end{f}
 
 
-\begin{f}[Fonction d'utilité]
-	Une fonction \(u : \mathbb{R}_+ \rightarrow \mathbb{R}\) représente les préférences d'un agent face à l'incertitude.
+\begin{f}[Función de utilidad]
+	Una función \(u : \mathbb{R}_+ \rightarrow \mathbb{R}\) representa las preferencias de un agente frente a la incertidumbre.
 	
-	\textbf{Critère d'utilité espérée :} L’agent préfère \(X\) à \(Y\) si :
+	\textbf{Criterio de utilidad esperada:} El agente prefiere \(X\) a \(Y\) si:
 	\[
 	\mathbb{E}[u(X)] > \mathbb{E}[u(Y)]
 	\]
-	Il choisit \(X\) tel que \(\mathbb{E}[u(X)]\) soit maximale.
+	Elige \(X\) tal que \(\mathbb{E}[u(X)]\) sea máxima.
 	
-	\textbf{Propriétés de \(u\) :}
+	\textbf{Propiedades de \(u\):}
 	\begin{itemize}
-		\item \(u'\! > 0\) : l’agent préfère plus de richesse (monotonie)
-		\item \(u'' < 0\) : l’agent est averse au risque (concavité)
+		\item \(u'\! > 0\) : el agente prefiere una mayor riqueza (monotonía)
+		\item \(u'' < 0\) : el agente es adverso al riesgo (concavidad)
 	\end{itemize}
 	
-	\textbf{Exemples classiques :}
+	\textbf{Ejemplos clásicos:}
 	\begin{itemize}
-		\item \textit{Linéaire} (neutre au risque) : \(u(x) = x\)
-		\item \textit{Logarithmique} : \(u(x) = \ln(x)\)
-		\item \textit{CRRA}  (aversion relative constante): \(u(x) = \frac{x^{1 - \gamma}}{1 - \gamma}\), \(\gamma \ne 1\)
-		\item \textit{CARA}  (aversion absolue constante): \(u(x) = -e^{-a x}\)
+		\item \textit{Lineal} (neutral al riesgo): \(u(x) = x\)
+		\item \textit{Logarítmica}: \(u(x) = \ln(x)\)
+		\item \textit{CRRA} (aversión relativa constante): \(u(x) = \frac{x^{1 - \gamma}}{1 - \gamma}\), \(\gamma \ne 1\)
+		\item \textit{CARA} (aversión absoluta constante): \(u(x) = -e^{-a x}\)
 	\end{itemize}
 	
 \end{f}
 
 \hrule
 
-\begin{f}[Aversion au risque]
-	Un agent est dit \textbf{averse au risque} (ou risquophobe) si :
-	\[
+\begin{f}[Aversión al riesgo]
+	Se dice que un agente es (estrictamente) \textbf{avesso al riesgo} (o «risquófobo») si:
+	\(\displaystyle
 	u(\mathbb{E}[X]) > \mathbb{E}[u(X)]
-	\]
-	Ce qui est équivalent à \(u\) concave, c.-à-d. \(u''(x) < 0\)
+	\)
+	Lo cual equivale a que \(u\) sea cóncava, es decir, \(u''(x) < 0\)
 \end{f}
 
-\begin{f}[Mesure de l'aversion au risque]
-	\textbf{Indice d'aversion absolue} :
-	\[
+\begin{f}[Medidas de la aversión al riesgo]
+	\textbf{Índice de aversión absoluta} :
+	\(\displaystyle
 	A_a(x) = -\frac{u''(x)}{u'(x)}
-	\]
+	\)
 	
-	\textbf{Indice d'aversion relative} :
-	\[
+	\textbf{Índice de aversión relativa} :
+	\(\displaystyle
 	A_r(x) = -x \cdot \frac{u''(x)}{u'(x)}
-	\]
+	\)
 	
-	\textbf{Inégalité de Jensen (cas concave)} :
-	\[
+	\textbf{Desigualdad de Jensen (caso cóncavo)} :
+	\(\displaystyle
 	u(\mathbb{E}[X]) \geq \mathbb{E}[u(X)]
+	\)
+	Con igualdad si y solo si \(X\) es constante.
+\end{f}
+\hrule
+
+
+\begin{f}[Primas de riesgo]
+	
+	La \textbf{prima de riesgo} \(\pi\) es la cantidad máxima que un individuo está dispuesto a pagar para sustituir una lotería con ganancia aleatoria \(H\) por su esperanza cierta \(\mathbb{E}[H]\). Satisface:
+	\[
+	\mathbb{E}[u(w + H)] = u(w + \mathbb{E}[H] - \pi)
 	\]
-Avec l'égalité si et seulement si \(X\) est constante.
+	
+	\(\pi\) también se denomina \emph{medida de Markowitz}: mide la diferencia entre la utilidad esperada y la utilidad cierta.
+	
+	Recíprocamente, la \textbf{prima compensatoria} \(\tilde{\pi}\) es la cantidad que debe ofrecerse a un individuo para que acepte la lotería \(H\) en lugar de una ganancia cierta. Satisface:
+	\[
+	\mathbb{E}[u(w + H + \tilde{\pi})] = u(w + \mathbb{E}[H])
+	\]
+	
 \end{f}
 \hrule
-
-
-\begin{f}[Primes de risque]
+\begin{f}[Diversificación y utilidad]
 	
-La \textbf{prime de risque} \(\pi\) est le montant maximal qu'un individu est prêt à payer pour remplacer une loterie de gain aléatoire \(H\) par son espérance certaine \(\mathbb{E}[H]\). Elle vérifie :
-\[
-\mathbb{E}[u(w + H)] = u(w + \mathbb{E}[H] - \pi)
-\]
-
-
-\(\pi\) est aussi appelée \emph{mesure de Markowitz} : elle capture l'écart entre utilité espérée et utilité certaine.
-
-Inversement, la \textbf{prime compensatoire} \(\tilde{\pi}\) est le montant que l'on doit offrir à un individu pour qu’il accepte la loterie \(H\) au lieu d’un gain certain. Elle vérifie :
-\[
-\mathbb{E}[u(w + H + \tilde{\pi})] = u(w + \mathbb{E}[H])
-\]
-
-\end{f}
-\hrule
-\begin{f}[Diversification et utilité]
-	
-	Soient deux actifs :
+	Sean dos activos:
 	\begin{itemize}
-		\item \(A\) : risqué
-		\item \(B\) : certain, avec \(\mathbb{E}[A] = B\)
+		\item \(A\): riesgoso
+		\item \(B\): seguro, con \(\mathbb{E}[A] = B\)
 	\end{itemize}
 	
-	Un agent averse au risque préfère une combinaison \(Z = \alpha A + (1 - \alpha) B\), avec \(0 < \alpha < 1\), à l’actif risqué seul.
-	Si  \(u\) est concave, alors
+	Un agente adverso al riesgo prefiere una combinación \(Z = \alpha A + (1 - \alpha) B\), con \(0 < \alpha < 1\), al activo riesgoso por sí solo.
+	Si \(u\) es cóncava, entonces
 	\[
 	\mathbb{E}[u(Z)] > \mathbb{E}[u(A)]
 	\]
 	
-	\textbf{Portefeuille optimal} : choix des pondérations \((w_i)\) maximisant l'utilité espérée :
+	\textbf{Cartera óptima}: elección de las ponderaciones \((w_i)\) que maximizan la utilidad esperada:
 	\[
-	\max \mathbb{E}[u(X)], \quad \text{où } X = \sum_{i} w_i X_i, \quad \text{s.c. } \sum w_i = 1
+	\max \mathbb{E}[u(X)], \quad \text{donde } X = \sum_{i} w_i X_i, \quad \text{s.a. } \sum w_i = 1
 	\]
 	
-	\textbf{Principe} : la diversification réduit le risque (variance) sans affecter l’espérance.
+	\textbf{Principio}: la diversificación reduce el riesgo (varianza) sin afectar la esperanza.
 	
 	
 \end{f}
 \hrule
 
-\begin{f}[Méthode de Lagrange pour l'optimisation sous contrainte]
+\begin{f}[Método de Lagrange para la optimización con restricciones]
 	
-	La méthode des multiplicateurs de Lagrange permet de résoudre un problème d'optimisation sous contrainte.
+	El método de los multiplicadores de Lagrange permite resolver un problema de optimización con restricciones.
 	
-	\textbf{Objectif} : maximiser/minimiser \(f(\boldsymbol{x})\) sous la contrainte \(g(\boldsymbol{x}) = c\), où \(\boldsymbol{x} \in \mathbb{R}^d\) est un vecteur de variables.
+	\textbf{Objetivo}: maximizar/minimizar \(f(\boldsymbol{x})\) sujeto a la restricción \(g(\boldsymbol{x}) = c\), donde \(\boldsymbol{x} \in \mathbb{R}^d\) es un vector de variables.
 	
-	\textbf{Étapes de la méthode :}
+	\textbf{Etapas del método:}
 	\begin{enumerate}
-		\item \textbf{Identification} : déterminer la fonction objectif \(f(\boldsymbol{x})\) et la contrainte \(g(\boldsymbol{x}) = c\)
-		\item \textbf{Lagrangien} :
+		\item \textbf{Identificación}: determinar la función objetivo \(f(\boldsymbol{x})\) y la restricción \(g(\boldsymbol{x}) = c\)
+		\item \textbf{Lagrangiano}:
 		\[
 		\mathcal{L}(\boldsymbol{x}, \lambda) = f(\boldsymbol{x}) + \lambda (g(\boldsymbol{x}) - c)
 		\]
-		\item \textbf{Système d'équations} : résoudre
+		\item \textbf{Sistema de ecuaciones}: resolver
 		\[
 		\nabla_{\boldsymbol{x}} \mathcal{L} = \nabla f(\boldsymbol{x}) + \lambda \nabla g(\boldsymbol{x}) = \boldsymbol{0}, \quad
 		\frac{\partial \mathcal{L}}{\partial \lambda} = g(\boldsymbol{x}) - c = 0
 		\]
-		\item \textbf{Résolution} du système pour obtenir \(\boldsymbol{x}^*, \lambda^*\)
-		\item \textbf{Vérification} : s'assurer que les solutions satisfont bien la contrainte et le type d'optimum (max/min)
+		\item \textbf{Resolución} del sistema para obtener \(\boldsymbol{x}^*, \lambda^*\)
+		\item \textbf{Verificación}: comprobar que las soluciones satisfacen la restricción y corresponden al tipo de óptimo (máximo/mínimo)
 	\end{enumerate}
 	
-	\textbf{Exemple (dimension 2)} : maximiser \(f(x, y) = xy\) sous la contrainte \(x + y = 10\)
+	\textbf{Ejemplo (dimensión 2)}: maximizar \(f(x, y) = xy\) sujeto a la restricción \(x + y = 10\)
 	
 	\[
 	\mathcal{L}(x, y, \lambda) = xy + \lambda (x + y - 10)
 	\]
 	
-	On dérive :
+	Derivando:
 	\[
 	\frac{\partial \mathcal{L}}{\partial x} = y + \lambda = 0, \quad
 	\frac{\partial \mathcal{L}}{\partial y} = x + \lambda = 0, \quad
 	\frac{\partial \mathcal{L}}{\partial \lambda} = x + y - 10 = 0
 	\]
 	
-	On résout le système :
-\[
-\begin{cases}
-	y + \lambda = 0 \\
-	x + \lambda = 0 \\
-	x + y = 10
-\end{cases}
-\Rightarrow 
-\begin{cases}
-	\lambda = -y \\
-	x = -\lambda = y \\
-	x + y = 10 \Rightarrow 2x = 10 
-\end{cases}
-\Rightarrow 
-	\begin{cases} 
-		x^* =  y^*= 5,\\
+	Se resuelve el sistema:
+	\[
+	\begin{cases}
+		y + \lambda = 0 \\
+		x + \lambda = 0 \\
+		x + y = 10
+	\end{cases}
+	\Rightarrow
+	\begin{cases}
+		\lambda = -y \\
+		x = -\lambda = y \\
+		x + y = 10 \Rightarrow 2x = 10
+	\end{cases}
+	\Rightarrow
+	\begin{cases}
+		x^* = y^* = 5,\\
 		f(5,5) = 25
 	\end{cases}
-\]
-
-		\textbf{Exemple (Choix optimal et contrainte budgétaire)}
+	\]
 	
-	Un agent rationnel est face à un choix de consommation \((c_1, c_2)\) entre deux biens, sous la contrainte :
+	\textbf{Ejemplo (Elección óptima y restricción presupuestaria)}
+	
+	Un agente racional debe elegir un consumo \((c_1, c_2)\) entre dos bienes, sujeto a la restricción:
 	\[
 	p_1 c_1 + p_2 c_2 = R
 	\]
-	où \(p_1, p_2\) sont les prix et \(R\) le revenu total.
+	donde \(p_1\) y \(p_2\) son los precios y \(R\) la renta total.
 	
-	\textbf{Problème} :
+	\textbf{Problema}:
 	\(
-	\max_{c_1, c_2} u(c_1, c_2) \quad \text{s.c. } p_1 c_1 + p_2 c_2 = R\)
-
+	\max_{c_1, c_2} u(c_1, c_2) \quad \text{s.a. } p_1 c_1 + p_2 c_2 = R\)
 	
-	\textbf{Méthode} : introduire le \textbf{lagrangien}
+	\textbf{Método}: introducir el \textbf{lagrangiano}
 	\[
 	\mathcal{L}(c_1, c_2, \lambda) = u(c_1, c_2) + \lambda (R - p_1 c_1 - p_2 c_2)
 	\]
 	
-	\textbf{Conditions du premier ordre (FOC)} :
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+	\textbf{Condiciones de primer orden (FOC)}:
 	\[
 	\begin{cases}
 		\frac{\partial u}{\partial c_1} = \lambda p_1 \\
@@ -196,138 +196,156 @@ Inversement, la \textbf{prime compensatoire} \(\tilde{\pi}\) est le montant que 
 		p_1 c_1 + p_2 c_2 = R
 	\end{cases}
 	\]
-	
-	En divisant les deux premières équations :
+\end{minipage}
+\hfill
+\vrule
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+	Dividiendo las dos primeras ecuaciones:
 	\[
-	\frac{\partial u / \partial c_1}{\partial u / \partial c_2} = \frac{p_1}{p_2}
+	\frac{\partial u / \partial c_1}{\partial u / \partial c_2}
+	=
+	\frac{p_1}{p_2}
 	\]
+\end{minipage}
 	
-	Ce rapport est appelé \textbf{taux marginal de substitution (TMS)} : il mesure la quantité de bien 2 à laquelle l’agent est prêt à renoncer pour obtenir une unité supplémentaire de bien 1, tout en maintenant son niveau d’utilité constant.
+	Este cociente se denomina \textbf{tasa marginal de sustitución (TMS)}: mide la cantidad del bien 2 a la que el agente está dispuesto a renunciar para obtener una unidad adicional del bien 1, manteniendo constante su nivel de utilidad.
 	
 \end{f}
 \hrule
 
-\begin{f}[Demande d’assurance (Mosin)]
+\begin{f}[Demanda de seguro (Mossin)]
 	
-Un agent possède un patrimoine initial \(w\) et fait face à une perte aléatoire \(L\). Il existe une \textbf{demande d'assurance} pour l'assurance qui verse l'indemnité \(0<I(L)<L\) ssi \(u(w-\pi_I) \geq \mathbb{E}(u(w-L))\) et l'\textbf{assurance optimale} maximise \(u(w-\pi_I)\).
-
-Dans Mosin (1968) ou  Borch (1961) ou Smith (1968), le modèle de perte \(L\) se définit simplement par  \(s\) compris entre 0 et  \(w\) :
+	Un agente dispone de una riqueza inicial \(w\) y se enfrenta a una pérdida aleatoria \(L\). Existe una \textbf{demanda de seguro} para un contrato que paga la indemnización \(0<I(L)<L\) si y solo si \(u(w-\pi_I) \geq \mathbb{E}(u(w-L))\), y el \textbf{seguro óptimo} maximiza \(u(w-\pi_I)\).
+	
+	En Mossin (1968), Borch (1961) o Smith (1968), el modelo de pérdida \(L\) se define simplemente mediante \(s\), comprendido entre 0 y \(w\):
 	\[
 	L=\left\{\begin{array}{l}
-		0 \text { avec proba. } 1-p \\
-		s \text { avec proba. } p
+		0 \text { con probabilidad } 1-p \\
+		s \text { con probabilidad } p
 	\end{array}\right.
 	\]
-La prime devient \(\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) p I(s)\) avec \(\lambda\) un chargement. On note \(\pi\) le cas où \(I(L)=L\) avec  \(\pi= p s\). Si \(\lambda=0\), alors on parle de prime pure ou actuariellement juste. 
-\medskip
-
-\textbf{Coassurance} (partage du risque) :
- \(I(l)=\alpha l\) sachant \(L=l\) pour \(\alpha \in[0,1]\), \(\pi_I(\alpha)=\alpha \pi\) et :
-\[
-w_{f}=w-L+I(L)-\pi(\alpha)=w-L+\alpha L-\alpha \pi=w-(1-\alpha) L-\alpha \pi
-\]
-\[
-U(\alpha)%=\mathbb{E}(u(w-(1-\alpha) L-\alpha \pi))
-=(1-p) u(w-\alpha \pi)+p u(w-(1-\alpha) s-\alpha \pi)
-\]
-
-L'assurance partielle (\(\alpha^{\star}<1\)) est optimale ssi \(\lambda>0\). L'assurance totale (\(\alpha^{\star}=1\) ) est optimale si le chargement est nul.
-\medskip
-
-\textbf{L'assurance avec franchise} (part d'autoassurance):
-Avec franchise \(d\) l'assureur verse une indemnité \(I(l)=(l-d)_{+}\) sachant \(L=l\). 
-\[
-\pi(d)=(1+\lambda) E\left((L-d)_{+}\right)=(1+\lambda)(s-d) p
-\]
-\[
-w_{f}=w-X+(L-d)_{+}-\pi(d)=w-\min (X, d)-(1+\lambda)(s-d) p
-\]
-\[
-U(d)=(1-p) u(\underbrace{w+(1+\lambda)(d-s) p}_{w_{f}^{+}})+p u(\underbrace{w-d+(1+\lambda)(d-s) p}_{w_{f}^{-}}) .
-\]
-Dans le modèle avec franchise, l'assurance partielle (\(d^{\star}>0\)) est optimale ssi la prime n'est pas actuariellement juste. De même,  l'assurance totale ( \(d^{\star}=0\) ) est optimale si le chargement est nul.
-\medskip
-
-\textbf{Modèle généralisé :}
-Le risque de perte \(L>0\) aléatoire est définit sur \(\Re\), avec fonction de répartition \(F_L\) ), 
-
-\[
-\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) \int_{0}^{\infty} I(l) d F_{L}(l)
-\]
-
-
-
-\begin{enumerate}
-	\item L'assurance totale \((d^\star = 0)\) ou  \((\alpha^\star = 1)\) est optimale si et seulement si la prime est actuariellement juste .
+	La prima pasa a ser \(\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) p I(s)\), donde \(\lambda\) representa un recargo. Se denota por \(\pi\) el caso en que \(I(L)=L\), con \(\pi= p s\). Si \(\lambda=0\), se habla de una prima pura o actuarialmente justa.
+	\medskip
 	
-	\item Si \(A_a(u, x)\) est décroissante, alors le niveau de franchise \(d^\star\)  ou  le taux de couverture \(\alpha^\star\) augmente avec la richesse initiale.  
-	Pour les préférences CARA, \(d^\star\) est indépendant de \(w\) ou \(\alpha^\star\) est constant .
+	\textbf{Coaseguro} (reparto del riesgo):
+	\(I(l)=\alpha l\) dado \(L=l\), con \(\alpha \in[0,1]\), \(\pi_I(\alpha)=\alpha \pi\) y:
+	\[
+	w_{f}=w-L+I(L)-\pi(\alpha)=w-L+\alpha L-\alpha \pi=w-(1-\alpha) L-\alpha \pi
+	\]
+	\[
+	U(\alpha)
+	=(1-p) u(w-\alpha \pi)+p u(w-(1-\alpha) s-\alpha \pi)
+	\]
 	
-	\item Le niveau de couverture  décroît avec le coefficient de chargement \(\lambda\) lorsque \(A_a(u, x)\) est croissante ou constante.
+	El seguro parcial (\(\alpha^{\star}<1\)) es óptimo si y solo si \(\lambda>0\). El seguro completo (\(\alpha^{\star}=1\)) es óptimo cuando el recargo es nulo.
+	\medskip
 	
-	\item Un agent plus averse au risque choisit  une couverture plus élevée.
-\end{enumerate}
+	\textbf{Seguro con franquicia} (parte de autoseguro):
+	
+	Con una franquicia \(d\), el asegurador paga una indemnización \(I(l)=(l-d)_{+}\) dado \(L=l\).
+	\[
+	\pi(d)=(1+\lambda) E\left((L-d)_{+}\right)=(1+\lambda)(s-d) p
+	\]
+	\[
+	w_{f}=w-X+(L-d)_{+}-\pi(d)=w-\min (X, d)-(1+\lambda)(s-d) p
+	\]
+	\[\small
+	U(d)=(1-p) u(\underbrace{w+(1+\lambda)(d-s) p}_{w_{f}^{+}})+p u(\underbrace{w-d+(1+\lambda)(d-s) p}_{w_{f}^{-}}) .
+	\]
+	
+	En el modelo con franquicia, el seguro parcial (\(d^{\star}>0\)) es óptimo si y solo si la prima no es actuarialmente justa. Del mismo modo, el seguro completo (\(d^{\star}=0\)) es óptimo cuando el recargo es nulo.
+	\medskip
+	
+	\textbf{Modelo generalizado:}
+	
+	El riesgo de pérdida aleatoria \(L>0\) está definido sobre \(\Re\), con función de distribución \(F_L\),
+	
+	\[
+	\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) \int_{0}^{\infty} I(l)\, d F_{L}(l)
+	\]
+	
+	\begin{enumerate}
+		\item El seguro completo \((d^\star = 0)\) o \((\alpha^\star = 1)\) es óptimo si y solo si la prima es actuarialmente justa.
+		
+		\item Si \(A_a(u, x)\) es decreciente, entonces el nivel óptimo de franquicia \(d^\star\) o la tasa de cobertura \(\alpha^\star\) aumenta con la riqueza inicial.
+		Para preferencias CARA, \(d^\star\) es independiente de \(w\) o \(\alpha^\star\) es constante.
+		
+		\item El nivel de cobertura disminuye con el coeficiente de recargo \(\lambda\) cuando \(A_a(u, x)\) es creciente o constante.
+		
+		\item Un agente más adverso al riesgo elige un nivel de cobertura más elevado.
+	\end{enumerate}
 \end{f}
-
 \hrule
 
-\begin{f}[Information et assurance]
+\begin{f}[Información y seguro]
 	
-	\textbf{Mosin avec hétérogénéïté :} Deux types d'individus : \(H\) pour haut risque et \(Lo\) pour faible risque. \(\theta \in[0,1]\) la proportion d'individu \(H\). Les individus de type \(i \in\{Lo, H\}\) font face à un risque de même montant \(s\)  survenant avec une probabilité différente \(p_{i}\) telle que \(1>p_{H}>p_{Lo}>0\).
+	\textbf{Mossin con heterogeneidad:} Existen dos tipos de individuos: \(H\) (alto riesgo) y \(Lo\) (bajo riesgo). Sea \(\theta \in[0,1]\) la proporción de individuos \(H\). Los individuos de tipo \(i \in\{Lo, H\}\) se enfrentan a un riesgo de la misma cuantía \(s\), pero con probabilidades distintas \(p_{i}\), tales que \(1>p_{H}>p_{Lo}>0\).
 	
 	\[
 	L_{i}=\left\{\begin{array}{l}
-		0 \text { avec probabilité } 1-p_{i}, \\
-		s \text { avec probabilité } p_{i} .
+		0 \text { con probabilidad } 1-p_{i}, \\
+		s \text { con probabilidad } p_{i}.
 	\end{array}\right.
 	\]
-La probabilité du marché :
+	La probabilidad del mercado es:
 	\[
-	p_{m}=\theta p_{H}+(1-\theta) p_{Lo} .
+	p_{m}=\theta p_{H}+(1-\theta) p_{Lo}.
 	\]
-\medskip
-
-\textbf{Absence d'antisélection :}  Dans ce modèle, en présence d'information totale, l'assureur préfère une assurance individuelle \(I_{i}=s\) et \(\pi_{i}=s p_{i}\), \(\forall i\).
-
-\textbf{Le problème d'anti-sélection : }
-L'assureur propose un  contrat non individualisé du marché \(M=\left(\pi_{m}=p_{m} I, I_{m}(s)=I(s)\right)\), qui ne dépend pas de \(i\). La fortune finale d'un individu de type \(i\) est \(W_{i}^{m}=w-\pi_{m}-X_{i}+I_{m}\).
-
-En présence d'un contrat unique, les individus de type \(H\) préfèrent un contrat d'assurance tel que \(I_{H}(s)=s\)  et \(\pi_{H}=s p_{m}\), tandis que les individus de type \(Lo\) préfèrent une couverture partielle avec \(I_{L}^{\star}<s\) et \(\pi_{Lo}=I_{L}^{\star} p_{m}\).
-\medskip
-
-\textbf{Aléa moral :}
-L'assurer réduit ou interrompt ses efforts maintenant qu'il est assuré. Les efforts de
-\begin{itemize}
-	\item prévention réduisent la probabilité de sinistre,
-	\item protection réduisent le montant de sinistre.
-\end{itemize}
-
- En l'absence d'effort \(e\) de prévention ou de réduction du risque, la fortune finale \(w_{f}\) est simplement définie par
-
-\[
-\begin{cases}w_{f}^{-}=w-s-\pi(I)+I & \text { avec probabilité } p \\ w_{f}^{+}=w-\pi(I) & \text { avec probabilité } 1-p\end{cases}
-\]
-
-S'il y a un effort \(e\) de prévention des risques, on considère
-
-\[
-\begin{cases}w_{f}^{-}=w-s-\pi(I)+I-e & \text { avec probabilité } p(e) \\ w_{f}^{+}=w-\pi(I)-e & \text { avec probabilité } 1-p(e)\end{cases}
-\]
-
-S'il y a un effort \(e\) de protection des risques, on considère
-
-\[
-\begin{cases}w_{f}^{-}=w-s(e)-\pi(I)+I-e & \text { avec probabilité } p \\ w_{f}^{+}=w-\pi(I)-e & \text { avec probabilité } 1-p\end{cases}
-\]
-
-avec
-\begin{itemize}
-	\item \(e \mapsto p(e)\) est strictement décroissante et strictement convexe.
-	\item \(e \mapsto s(e)\) est strictement décroissante et strictement convexe.\\
-	\item \(I \leq s\) implique \(w_{f}^{-} \leq w_{f}^{+}\)
-\end{itemize}
-
+	
+	\textbf{Ausencia de selección adversa:} En este modelo, con información perfecta, el asegurador prefiere ofrecer un seguro individual \(I_{i}=s\) y \(\pi_{i}=s p_{i}\), \(\forall i\).
+	
+	\textbf{El problema de la selección adversa:}
+	
+	El asegurador ofrece un contrato único para el mercado
+	\(M=\left(\pi_{m}=p_{m} I, I_{m}(s)=I(s)\right)\), que no depende de \(i\). La riqueza final de un individuo de tipo \(i\) es
+	\(W_{i}^{m}=w-\pi_{m}-X_{i}+I_{m}\).
+	
+	En presencia de un contrato único, los individuos de tipo \(H\) prefieren un contrato de seguro con \(I_{H}(s)=s\) y \(\pi_{H}=s p_{m}\), mientras que los individuos de tipo \(Lo\) prefieren una cobertura parcial con \(I_{Lo}^{\star}<s\) y \(\pi_{Lo}=I_{Lo}^{\star} p_{m}\).
+	\medskip
+	
+	\textbf{Riesgo moral:}
+	
+	El asegurado reduce o abandona sus esfuerzos de prevención al disponer de cobertura. Las medidas de
+	\begin{itemize}
+		\item prevención reducen la probabilidad de que ocurra un siniestro,
+		\item protección reducen la cuantía del siniestro.
+	\end{itemize}
+	
+	En ausencia de un esfuerzo \(e\) de prevención o de reducción del riesgo, la riqueza final \(w_{f}\) viene dada por
+	
+	\[
+	\begin{cases}
+		w_{f}^{-}=w-s-\pi(I)+I & \text { con probabilidad } p \\
+		w_{f}^{+}=w-\pi(I) & \text { con probabilidad } 1-p
+	\end{cases}
+	\]
+	
+	Si existe un esfuerzo \(e\) de prevención del riesgo, se considera
+	
+	\[
+	\begin{cases}
+		w_{f}^{-}=w-s-\pi(I)+I-e & \text { con probabilidad } p(e) \\
+		w_{f}^{+}=w-\pi(I)-e & \text { con probabilidad } 1-p(e)
+	\end{cases}
+	\]
+	
+	Si existe un esfuerzo \(e\) de protección frente al riesgo, se considera
+	
+	\[
+	\begin{cases}
+		w_{f}^{-}=w-s(e)-\pi(I)+I-e & \text { con probabilidad } p \\
+		w_{f}^{+}=w-\pi(I)-e & \text { con probabilidad } 1-p
+	\end{cases}
+	\]
+	
+	donde
+	\begin{itemize}
+		\item \(e \mapsto p(e)\) es estrictamente decreciente y estrictamente convexa.
+		\item \(e \mapsto s(e)\) es estrictamente decreciente y estrictamente convexa.
+		\item \(I \leq s\) implica \(w_{f}^{-} \leq w_{f}^{+}\).
+	\end{itemize}
+	
 \end{f}
 \hrule
-
 

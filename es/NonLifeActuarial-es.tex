@@ -2,10 +2,10 @@
 % !TeX spellcheck = es_ES
 
 
-\begin{f}[La tarification en assurance non-vie]
+\begin{f}[La tarificación en los seguros no de vida]
 	
-Une approche générale, mais non exhaustive, car les possibles sont nombreux : \vspace{4mm}
-
+	Un enfoque general, aunque no exhaustivo, ya que las posibilidades son numerosas: \vspace{4mm}
+	
 	
 \resizebox{\linewidth}{!}
 {	\begin{tikzpicture}[every node/.style={draw, align=center, rounded corners,fill=BleuProfondIRA!30, 
@@ -13,19 +13,19 @@ Une approche générale, mais non exhaustive, car les possibles sont nombreux : 
 		every path/.style={->, thick},
 		node distance=.5cm and .5cm]
 		% Noeuds
-		\node[] (data) {Collecte de données \\ (sinistres, production, ...)};
-		\node[ right=of data] (prep) {Nettoyage et traitement \\ des données};
-		\node[ fill=OrangePastelIRA!30, right=of prep] (method) {Choix des méthodes};
+		\node[] (data) {Recopilación de datos \\ (siniestros, producción, ...)};
+		\node[ right=of data] (prep) {Limpieza y tratamiento \\ de los datos};
+		\node[ fill=OrangePastelIRA!30, right=of prep] (method) {Elección de los métodos};
 		%
-		\node[below =of method] (glm) {Modèles GLM / Logistic\\ (Poisson, Gamma,...)};
-		\node[below =of glm] (Seg) {Segmenation \\ (CART, Lasso, ...)};
-		\node[below =of Seg] (ml) {GAM, Machine learning\\ (Random Forest, Gradian Boosting,...) };
+		\node[below =of method] (glm) {Modelos GLM / Logísticos\\ (Poisson, Gamma,...))};
+		\node[below =of glm] (Seg) {Segmentación \\ (CART, Lasso, ...)};
+		\node[below =of Seg] (ml) {GAM, Machine learning\\ (Random Forest, Gradient Boosting,...) };
 		%
-		\node[left=of Seg] (fit) {Ajustement des modèles};
-		\node[left=of fit] (eval) {Validation :\\ résidus, Gini, AIC, etc.};
-		\node[below=of eval] (pure) {Estimation de la prime pure};
-		\node[below=of pure] (loadings) {Chargements : frais, marge, taxes};
-		\node[right=of loadings] (final) {Prime commerciale};
+		\node[left=of Seg] (fit) {Ajuste de los modelos};
+		\node[left=of fit] (eval) {Validación: \\ residuos, Gini, AIC, etc.};
+		\node[below=of eval] (pure) {Estimación de la prima pura};
+		\node[below=of pure] (loadings) {Cargos: gastos, margen, impuestos};
+		\node[right=of loadings] (final) {Estreno comercial};
 		%
 		% Flèches
 		\draw (data) -- (prep);
@@ -47,27 +47,27 @@ Une approche générale, mais non exhaustive, car les possibles sont nombreux : 
 \end{f}
 
 
-\begin{f}[Structure générale des données en assurance]
-
+\begin{f}[Estructura general de los datos en el sector de los seguros]
 	
-Une structure classique des données en assurance. Là encore, les possibles sont nombreux :
+	
+	Una estructura clásica de los datos en el sector de los seguros. Una vez más, las posibilidades son numerosas:
 
 
 
 	\tikzstyle{NoeudR}=[cylinder, shape border rotate=90, draw,minimum height=1.5cm,shape aspect=.25,align=center]
 		\begin{tikzpicture} %[node distance=5cm]
 	
-	\node (db01) at (-2,2) [fill=BleuProfondIRA!30, minimum width=1cm,NoeudR] {\footnotesize  Assurés};
-	\node (db02) at (0,2) [minimum width=1cm,fill=BleuProfondIRA!30,NoeudR] {\footnotesize  Entité \\ \footnotesize  Assurée};
-	\node (db03) at (2,2) [fill=BleuProfondIRA!30,minimum width=1cm,NoeudR] {\footnotesize  Risques \\ \footnotesize  Assurés};
+	\node (db01) at (-2,2) [fill=BleuProfondIRA!30, minimum width=1cm,NoeudR] {\footnotesize  Asegurados};
+	\node (db02) at (0,2) [minimum width=1cm,fill=BleuProfondIRA!30,NoeudR] {\footnotesize  Entidad \\ \footnotesize  Asegurada};
+	\node (db03) at (2,2) [fill=BleuProfondIRA!30,minimum width=1cm,NoeudR] {\footnotesize  Riesgos \\ \footnotesize  Asegurados};
 	
-	\node (db1) at (0,0) [ fill=BleuProfondIRA!30,minimum width=2cm, NoeudR] { Contrat \\ Production};
-	\node (db2) at (3,0) [minimum height=1cm,fill=OrangeProfondIRA!30,	minimum width=2cm, NoeudR] { Sinistre};
-	\node (db3) at (6,0) [ fill=OrangePastelIRA!20,minimum width=2cm,NoeudR,densely dotted] {\small Données \\ \small externes};
-	\node (db4) at (3,-2) [fill=VertIRA!30,minimum width=3cm,NoeudR] {\small Base de données \\ \small  Tarification};
+	\node (db1) at (0,0) [ fill=BleuProfondIRA!30,minimum width=2cm, NoeudR] { Contrato \\ Producción};
+	\node (db2) at (3,0) [minimum height=1cm,fill=OrangeProfondIRA!30,	minimum width=2cm, NoeudR] { Siniestro};
+	\node (db3) at (6,0) [ fill=OrangePastelIRA!20,minimum width=2cm,NoeudR,densely dotted] {\small Datos \\ \small externos};
+	\node (db4) at (3,-2) [fill=VertIRA!30,minimum width=3cm,NoeudR] {\small Base de datos \\ \small  Tarifas};
 	
 	\node (TB) at (-1.2,-2) [rectangle,fill=FushiaIRA!30, minimum width=2cm,
-	shape border rotate=90, draw,minimum height=1.5cm,	shape aspect=.25,align=center] {\small Tableaux \\ \small  de bord};
+	shape border rotate=90, draw,minimum height=1.5cm,	shape aspect=.25,align=center] {\small Cuadros \\ \small  de mando};
 	\draw[->,>=latex] (db01.south) -- (db1);
 	\draw[->,>=latex] (db02) -- (db1);
 	\draw[->,>=latex] (db03.south) -- (db1);
@@ -111,26 +111,26 @@ Une structure classique des données en assurance. Là encore, les possibles son
 
 \hrule
 
-\begin{f}[Provision]
+\begin{f}[Provisión]
 	
-L'actuaire non-vie évalue principalement les 
-provisions suivantes:
-\begin{itemize}
-	\item Des provisions pour sinistres à payer (PSAP, \emph{Reserves for claims reported but not settel (RBNS)}) 
-	\item Des provisions pour sinistres non encore manifestés (PSNEM, \emph{Reserve for claims incurred but not reported (IBNR)})
-	\item Des provisions pour primes non acquises (PPNA, \emph{Reserves for unearned premiums})
-	\item Des provisions pour risques en cours (PREC,  \emph{Reserves for outstanding risks (non-life)}
-	)
-\end{itemize}
-
+	El actuario de seguros no de vida evalúa principalmente las 
+	siguientes provisiones:
+	\begin{itemize}
+		\item Provisiones para siniestros pendientes de pago (PSAP, \emph{Reservas para siniestros declarados pero no liquidados (RBNS)}) 
+		\item Provisiones para siniestros aún no manifestados (PSNEM, \emph{Reserva para siniestros incurridos pero no declarados (IBNR)})
+		\item Provisiones para primas no devengadas (PPNA, \emph{Reserves for unearned premiums})
+		\item Provisiones para riesgos en curso (PREC,  \emph{Reserves for outstanding risks (non-life)}
+		)
+	\end{itemize}
+	
 \end{f}
 
 
 
 
-\begin{f}[Chain Ladder déterministe]
+\begin{f}[Escalera en cadena determinista]
 	%
-	Soit \(C_{i k}\) le montant, cumulé jusqu'en l'année de développement \(k\), des sinistres survenus en l'année d'accident \(i\), pour \(1 \leq i, k \leq n\). \(C_{i k}\) peut représenter soit le montant payé, soit le cout total estimé (paiement déjà effectué plus réserve) du sinistre. Les montants \(C_{i k}\) sont connus pour \(i+k \leq n+1\) et on cherche à estimer les valeurs des \(C_{i k}\) pour \(i+k>n+1,\) et en particulier les valeurs ultimes \(C_{i n}\) pour \(2 \leq i \leq n\). Ces notations sont illustrées dans le triangle suivant:
+	Sea \(C_{i k}\) el importe, acumulado hasta el año de desarrollo \(k\), de los siniestros ocurridos en el año del accidente \(i\), para \(1 \leq i, k \leq n\). \(C_{i k}\) puede representar bien el importe pagado, bien el coste total estimado (pago ya efectuado más reserva) del siniestro. Los importes \(C_{i k}\) se conocen para \(i+k \leq n+1\) y se busca estimar los valores de \(C_{i k}\) para \(i+k>n+1\), y en particular los valores finales \(C_{i n}\) para \(2 \leq i \leq n\). Estas notaciones se ilustran en el siguiente triángulo:
 	%	\[
 	%	C=\left(\begin{array}{ccccc}
 		%	\rowcolor{white}	C_{1,1} & C_{1,2} & \cdots & C_{1, n-1} & C_{1, n} \\
@@ -141,14 +141,14 @@ provisions suivantes:
 		%	\end{array}\right)
 	%	\]
 	
-	La méthode de Chain Ladder estime les montants inconnus, \(C_{i k}\) pour \(i+k>n+1,\) par
+	El método de la escalera de cadenas estima los valores desconocidos, \(C_{i k}\) para \(i+k>n+1\), mediante
 	\begin{equation}\label{CL1}
 		\hat{C}_{i k}=C_{i, n+1-i} \cdot \hat{f}_{n+1-i} \cdots \hat{f}_{k-1} \quad i+k>n+1
 	\end{equation}	ó
 	\begin{equation}\label{CL2}
 		\hat{f}_{k}=\frac{\color{OrangeProfondIRA}\sum_{i=1}^{n-k} C_{i, k+1}}{\color{BleuProfondIRA}\sum_{i=1}^{n-k} C_{i k}} \quad 1 \leq k \leq n-1 .
 	\end{equation}
-	La réserve de sinistre pour l'année d'accident (\(R_{i}\), \(2 \leq i \leq n\)), est alors estimée par
+	La provisión para siniestros correspondiente al año del accidente (\(R_{i}\), \(2 \leq i \leq n\)) se calcula entonces mediante
 	\begin{align*}
 		\hat{R}_{i}=&C_{in }-C_{i, n+1-i}\\
 		&=C_{i, n+1-i} \cdot \hat{f}_{n+1-i} \cdots \hat{f}_{n-1}-C_{i, n+1-i} 
@@ -169,19 +169,19 @@ provisions suivantes:
 			C_{n-1,1} &\node (A-6-2) {\color{BleuProfondIRA}C_{n-1,2}}; & & & & & \\
 			\node (A-7-1) {\color{BleuProfondIRA}C_{n, 1}}; & & & & & &\\
 		};
-		\node [draw,above=10pt] at (A.north) 	{ Délais de réglement};
-		\node [draw,left=20pt,rotate=90, align=right, xshift=-1cm] at (A.north west) 	{ Années d'origine \(i\)};
+		\node [draw,above=10pt] at (A.north) 	{ Plazos de pago};
+		\node [draw,left=20pt,rotate=90, align=right, xshift=-1cm] at (A.north west) 	{ Años de origen \(i\)};
 		\draw[BarreStyle=BleuProfondIRA] (A-7-1.south west) to  (A-1-7.north east) ;
-		\draw  (A.south east) node [ left,color=BleuProfondIRA, align=right] {Réglements de l'année \(n\)\\ (où \(i+j=n+1\))};
+		\draw  (A.south east) node [ left,color=BleuProfondIRA, align=right] {Resultados del año \(n\)\\ (donde \(i+j=n+1\))};
 		\draw[color=BleuProfondIRA,thick] (A-7-1) to[bend right] (A-6-2) to[bend right=40] node[below right, pos=1] {\(\sum\)}  (A-4-4) to[bend right=40]   (A-2-6) to[bend right]   (A-1-7);
 	\end{tikzpicture}
 	
 \end{f}
 
 
-\begin{f}[Méthode de Mack]
-
-Les deux premières hypothèses sont les suivantes:
+\begin{f}[Método de Mack]
+	
+Las dos primeras hipótesis son las siguientes:
 %
 \begin{equation}\label{CL3}
 E\left(C_{i, k+1} \mid C_{i 1}, \ldots, C_{i k}\right)=C_{i k} f_{k} \quad 1 \leq i \leq n, 1 \leq k \leq n-1
@@ -191,13 +191,13 @@ E\left(C_{i, k+1} \mid C_{i 1}, \ldots, C_{i k}\right)=C_{i k} f_{k} \quad 1 \le
 \end{equation}
 
 
-Mack démontre que si on estime les paramètres du modèle (\ref{CL3}) par (\ref{CL2}) alors ce modèle stochastique (\ref{CL3}), combiné avec l'hypothèse (\ref{CL4}) fournit exactement les mêmes réserves que la méthode originale de Chain Ladder (\ref{CL1}).
+Mack demuestra que, si se estiman los parámetros del modelo (\ref{CL3}) mediante (\ref{CL2}), dicho modelo estocástico (\ref{CL3}), combinado con la hipótesis (\ref{CL4}), proporciona exactamente las mismas reservas que el método original de Chain Ladder (\ref{CL1}).
 
-Avec la notation \(f_{i, k}= \frac{C_{i, k+1}}{C_{i, k}}\),  \(\hat{f}_{k}\) est la moyenne des \({\color{OrangeProfondIRA}f_{i, k}}\) pondérée par les \({\color{BleuProfondIRA} C_{i, k}}\):
+Con la notación \(f_{i, k}= \frac{C_{i, k+1}}{C_{i, k}}\),  \(\hat{f}_{k}\) es la media de los \({\color{OrangeProfondIRA}f_{i, k}}\) ponderada por los \({\color{BleuProfondIRA} C_{i, k}}\):
 \begin{align*}
 	\hat{f}_{k}&=\frac{\sum_{i=1}^{n-k}{\color{BleuProfondIRA} C_{i, k}}\times \color{OrangeProfondIRA}f_{i, k}}{\color{BleuProfondIRA}\sum_{i=1}^{n-k} C_{i k}}
 \end{align*}	
-La variance s'écrit :
+La varianza se expresa como:
 \begin{align*}
 	\hat{\sigma}_{k}^{2}&=\frac{1}{n-k-1} \sum_{i=1}^{n-k} C_{i k}\left(\frac{C_{i, k+1}}{C_{i k}}-\hat{f}_{k}\right)^{2} \\
 	&=\frac{1}{n-k-1} \sum_{i=1}^{n-k}  \left(\frac{\color{BleuProfondIRA} C_{i, k+1}-{\color{BleuProfondIRA} C_{i, k}} \hat{f}_{k}}{\color{BleuProfondIRA} \sqrt{C_{i, k}}}\right)^{2} 
@@ -233,9 +233,9 @@ La variance s'écrit :
 
 		
 
-Le troisième hypothèse concerne la distribution de \(R_{i}\) pour pouvoir construire facilement des intervalles de confiance sur les réserves estimées. Si  la distribution est normale, de moyenne la valeur estimée \(\hat{R}_{i}\) et d'écart-type donné par l'erreur standard \(\operatorname{se}\left(\hat{R}_{i}\right)\). Un intervalle de confiance à \(95 \%\) est alors donné par \(\left[\hat{R}_{i}-2 \operatorname{se}\left(\hat{R}_{i}\right), \hat{R}_{i}+2 \operatorname{se}\left(\hat{R}_{i}\right)\right]\).
+La tercera hipótesis se refiere a la distribución de \(R_{i}\), para poder construir fácilmente intervalos de confianza sobre las reservas estimadas. Si la distribución es normal, con media el valor estimado \(\hat{R}_{i}\) y desviación típica dada por el error estándar \(\operatorname{se}\left(\hat{R}_{i}\right)\). Un intervalo de confianza del \(95 \%\) viene dado entonces por \(\left[\hat{R}_{i}-2 \operatorname{se}\left(\hat{R}_{i}\right), \hat{R}_{i}+2 \operatorname{se}\left(\hat{R}_{i}\right)\right]\).
 
-Si la distribution est supposée lognormale, les bornes d'un intervalle de confiance à \(95 \%\) seront alors données par
+Si se supone que la distribución es lognormal, los límites de un intervalo de confianza del \(95 \%\) vendrán dados por
 \[
 \left[\hat{R}_{i} \exp \left(\frac{-\sigma_{i}^{2}}{2}-2 \sigma_{i}\right), \hat{R}_{i} \exp \left(\frac{-\sigma_{i}^{2}}{2}+2 \sigma_{i}\right)\right]
 \]
@@ -243,20 +243,21 @@ Si la distribution est supposée lognormale, les bornes d'un intervalle de confi
 \end{f}
 \hrule
 
-\begin{f}[Le modèle risque collectif]
-Le modèle collectif est le modèle de base en actuariat non-vie?
-	 \(X_{i}\) désigne le montant du \(i^e\) sinistre, \(N\) désigne le nombre de sinistres et \(S\) le montant total au cours d'une année
+\begin{f}[El modelo de riesgo colectivo]
+	¿El modelo colectivo es el modelo básico en actuaría de no vida?
+	\(X_{i}\) representa el importe del \(i\)-ésimo siniestro, \(N\) representa el número de siniestros y \(S\) el importe total a lo largo de un año
 	\[
 	S=\sum_{i=1}^{N} X_{i}
 	\]
-	en sachant que \(S=0\) lorsque \(N=0 \) et que \(\left\{X_{i}\right\}_{i=1}^{\infty}\) est une séquence \(iid\) et  \(N \perp \left\{X_{i}\right\}_{i=1}^{\infty}\). 
-La difficulté est d'obtenir la distribution de \(S\), alors même que \(\E [N]\) n'est pas grand au sens du TCL.
+	sabiendo que \(S=0\) cuando \(N=0\) y que \(\left\{X_{i}\right\}_{i=1}^{\infty}\) es una secuencia \(iid\) y \(N \perp \left\{X_{i}\right\}_{i=1}^{\infty}\). 
+	La dificultad radica en obtener la distribución de \(S\), a pesar de que \(\E [N]\) no es grande en el sentido de la TCL.
 \end{f}
 
 
-\begin{f}[La distribution de \(S\)]
+
+\begin{f}[La distribución de \(S\)]
 	
-Soit \(G(x)=\mathbb{P}(S \leq x)\), \(F(x)=\mathbb{P}\left(X_{1} \leq x\right)\) , et \(p_{n}=\mathbb{P}(N=n)\) de sorte que \(\left\{p_{n}\right\}_{n=0}^{\infty}\) soit la fonction de probabilité pour le nombre de sinistres.
+	Sea \(G(x)=\mathbb{P}(S \leq x)\), \(F(x)=\mathbb{P}\left(X_{1} \leq x\right)\) y \(p_{n}=\mathbb{P}(N=n)\), de modo que \(\left\{p_{n}\right\}_{n=0}^{\infty}\) sea la función de probabilidad para el número de siniestros.
 	
 	\[
 	\{S \leq x\}=\bigcup_{n=0}^{\infty}\{S \leq x \text { et } N=n\}
@@ -264,18 +265,18 @@ Soit \(G(x)=\mathbb{P}(S \leq x)\), \(F(x)=\mathbb{P}\left(X_{1} \leq x\right)\)
 	\[
 	\mathbb{P}(S \leq x \mid N=n)=\mathbb{P}\left(\sum_{i=1}^{n} X_{i} \leq x\right)=F^{n *}(x)
 	\]
-	Ainsi, pour \(x \geq 0\)
+	Así pues, para \(x \geq 0\)
 	
 	\begin{equation*}\label{GxCollectif}
 		G(x)=\sum_{n=0}^{\infty} p_{n} F^{n *}(x)
 	\end{equation*}
-	où \(F^{n *}\) désigne la convolution \(n^e\), malheureusement elle n'existe pas sous forme fermée pour de nombreuses distributions.	
+	donde \(F^{n *}\) denota la convolución \(n\)-ésima; lamentablemente, esta no existe en forma cerrada para muchas distribuciones.    
 	
-Si \(E[X]=m\)
+	Si \(E[X]=m\)
 	\[
 	E[S]=E\left[N m\right]=E[N] m
 	\]
-	Ce résultat est très intéressant, car il indique que le montant total attendu des sinistres est le produit du nombre attendu de sinistres et du montant attendu de chaque sinistre. De même, en utilisant le fait que \(\left\{X_{i}\right\}_{i=1}^{\infty}\) sont des variables aléatoires indépendantes,
+	Este resultado es muy interesante: indica que el importe total esperado de los siniestros es el producto del número esperado de siniestros por el importe esperado de cada uno. Asimismo, dado que \(\left\{X_{i}\right\}_{i=1}^{\infty}\) son variables aleatorias independientes,
 	\[
 	V[S \mid N=n]=V\left[\sum_{i=1}^{n} X_{i}\right]=\sum_{i=1}^{n} V\left[X_{i}\right]
 	\]
@@ -290,15 +291,16 @@ Si \(E[X]=m\)
 \hrule
 
 
-\begin{f}[La classe de distributions \((a, b, 0)\)]
+\begin{f}[La clase de distribuciones \((a, b, 0)\)]
 	
-	Une distribution de comptage est dite  \((a, b, 0)\) si sa fonction de probabilité \(\left\{p_{n}\right\}_{n=0}^{\infty}\) peut être calculée de manière récursive à partir de la formule
+	Se dice que una distribución de recuento es \((a, b, 0)\) si su función de probabilidad \(\left\{p_{n}\right\}_{n=0}^{\infty}\) puede calcularse de forma recursiva a partir de la fórmula
 	\[
 	p_{n}=\left(a+\frac{b}{n}\right) p_{n-1}
 	\]
-	pour \(n=1,2,3, \ldots,\) où \(a\) et \(b\) sont des constantes.
+	para \(n=1,2,3, \ldots,\) donde \(a\) y \(b\) son constantes.
 	
-	Il existe exactement trois distributions non triviales dans la classe \((a, b, 0)\), à savoir Poisson, binomiale et binomiale négative. Voici les valeurs de \(a\) et \(b\) pour les principales distributions \((a, b, 0)\):
+	Existen exactamente tres distribuciones no triviales en la clase \((a, b, 0)\), a saber, la de Poisson, la binomial y la binomial negativa. Estos son los valores de \(a\) y \(b\) para las principales distribuciones \((a, b, 0)\):
+	
 	\begin{center}
 		\begin{tabular}{ccc} 
 			& \(a\) & \(b\) \\
@@ -306,26 +308,27 @@ Si \(E[X]=m\)
 			\(\mathcal{B}_{in}(n, q)\) & \(-q /(1-q)\) & \((n+1) q /(1-q)\) \\
 			\(\mathcal{N}\mathcal{B}_{in}(k, q)\) & \(1-q\) & \((1-q)(k-1)\) \\
 			\(\mathcal{G}_{eo}( q)\) & \(1-q\) & 0 \\
-			\textit{    Distribution de Panjer} & \(\frac{\lambda}{\alpha+\lambda}\) &    \(\frac {(\alpha -1)\lambda }{\alpha +\lambda }\) \\
+			\textit{    Distribución de Panjer} & \(\frac{\lambda}{\alpha+\lambda}\) &    \(\frac {(\alpha -1)\lambda }{\alpha +\lambda }\) \\
 			\hline 
 		\end{tabular}
 		
 	\end{center}
 	
-	{\small\color{OrangeProfondIRA} La loi géométrique est un cas particulier de la binomiale négative où k=1.}
+	{\small\color{OrangeProfondIRA} La ley geométrica es un caso particular de la ley binomial negativa en la que k = 1.}
 \end{f}
 
-\begin{f}[Algorithme d'agrégation de Panjer]
+\begin{f}[Algoritmo de agregación de Panjer]
 	
-	L'\textbf{algorithme de Panjer} vise l'estimation de distribution d'une loi composée coût-fréquence dans des conditions particulières.
+	El\textbf{algoritmo de Panjer} tiene como objetivo estimar la distribución de una ley compuesta de coste-frecuencia en condiciones particulares.
 	\begin{itemize}
-		\item \((X_i)_{i=1}^{N}\) \(iid\) discrètes définies sur \(\{0,h,2h,3h...\}\)
-		\item la loi du nombre dans la classe dite \((a,b,0)\)
+		\item \((X_i)_{i=1}^{N}\) variables discretas \(iid\) definidas en \(\{0,h,2h,3h...\}\)
+		\item la ley del número en la clase denominada \((a,b,0)\)
 	\end{itemize}
 	
+	
+	Dado que suponemos ahora que los importes individuales de las solicitudes se distribuyen entre los enteros no negativos, se deduce que \(S\) también se distribuye entre los enteros no negativos. 
+	Como \(S=\sum_{i=1}^{N} X_{i}\), se deduce que \(S=0\) si \(N=0\) o si \(N=n\) y \(\sum_{i=1}^{n} X_{i}=0\). Como \(\sum_{i=1}^{n} X_{i}=0\) únicamente si cada \(X_{i}=0\), se deduce, por independencia, que
 
-Puisque nous supposons désormais que les montants individuels des demandes sont répartis sur les entiers non négatifs, il s'ensuit que \(S\) est également réparti sur les entiers non négatifs. 
-Comme \(S=\sum_{i=1}^{N} X_{i}\), il s'ensuit que \(S=0\) si \(N=0\) ou si \(N=n\) et \(\sum_{i=1}^{n} X_{i}=0 . \) Comme \(\sum_{i=1}^{n} X_{i}=0\) uniquement si chaque \(X_{i}=0,\) il s'ensuit par indépendance que
 	\[
 	\mathbb{P}\left(\sum_{i=1}^{n} X_{i}=0\right)=f_{0}^{n}
 	\]
@@ -337,8 +340,7 @@ Comme \(S=\sum_{i=1}^{N} X_{i}\), il s'ensuit que \(S=0\) si \(N=0\) ou si \(N=n
 		g_{k}=\frac{1}{1-a f_{0}} \sum_{j=1}^{k}\left(a+\frac{b j}{k}\right) f_{j} g_{k-j}
 		\end{cases}	
 	\end{equation*}
-\(g_{x}\) est exprimé en fonction de \(g_{0}, g_{1}, \ldots, g_{x-1},\) de sorte que le calcul de la fonction de probabilité est récursif. Dans toutes les applications pratiques de cette formule, un ordinateur est nécessaire pour effectuer les calculs. Cependant, l'avantage de la formule de récursivité de Panjer par rapport à la formule pour \(g_{x}\) est qu'il n'est pas nécessaire de calculer les convolutions, ce qui est beaucoup plus efficace d'un point de vue computationnel.
-L'algorithme de Panjer nécessite la discrétisation de la variable \(X_i\).
+\(g_{x}\) se expresa en función de \(g_{0}, g_{1}, \ldots, g_{x-1}\), por lo que su cálculo es recursivo y requiere un ordenador en la práctica. Sin embargo, la fórmula de Panjer evita calcular las convoluciones directas de \(g_{x}\), siendo mucho más eficiente computacionalmente. El algoritmo exige, eso sí, discretizar la variable \(X_i\).
 \end{f}
 
 
@@ -351,9 +353,9 @@ L'algorithme de Panjer nécessite la discrétisation de la variable \(X_i\).
 %\(\scriptstyle S = \sum_{i=1}^N X_i\) where \(\scriptstyle N \sim \text{NegBin}(3.5,0.3)\) and \(\scriptstyle X \sim \text{Frechet}(1.7,1)\) with lattice width \(h = 0.04\).
 %\end{f}
 
-\begin{f}[Panjer et la loi de Poisson]
-	Lorsque la fréquence suit une loi de Poisson, cela implique que {\color{OrangeProfondIRA} \(a=0\) et \(b=\lambda\).}
-	Le résultat se simplifie :
+\begin{f}[Panjer y la ley de Poisson]
+	Cuando la frecuencia sigue una ley de Poisson, esto implica que {\color{OrangeProfondIRA} \(a=0\) y \(b=\lambda\).}
+	El resultado se simplifica:
 	\[
 \begin{cases}
 		g_0= e^{-\lambda (1-f_0)}
@@ -364,24 +366,24 @@ L'algorithme de Panjer nécessite la discrétisation de la variable \(X_i\).
 	
 \end{f}
 
-\begin{f}[Panjer et Pollaczeck-Khinchine-Beekman]
+\begin{f}[Panjer y Pollaczeck-Khinchine-Beekman]
 	
-	Soit \(\tau_1\) le premier instant où \(R_t<\kappa(=\kappa_0)\). On pose alors  \(L_1=\kappa -R_{\tau_1}\).
-	On redémarre le processus avec \(\kappa_1=\kappa_0-R_{\tau_1}\) pour trouver  \(\tau_2\) et \(L_2=\kappa_1 -R_{\tau_2}\).
-	En continuant de la sorte, on constate que :
+	Sea \(\tau_1\) el primer instante en el que \(R_t<\kappa(=\kappa_0)\). Entonces se establece que \(L_1=\kappa -R_{\tau_1}\).
+	Se reinicia el proceso con \(\kappa_1=\kappa_0-R_{\tau_1}\) para hallar \(\tau_2\) y \(L_2=\kappa_1 -R_{\tau_2}\).
+	Si continuamos de este modo, observamos que:
 	\[
 	M=\sup_{t\geq 0}\{ S_t -ct \} =\sum_{k=1}^{K}L_k
 	\]
-	où \(K\sim \mathcal{G}eo(q)\) avec \(q=1-\psi(0)\).  
-	En remarquant que les variables \(\left(  L_k\right)_{1\leq k\leq K}\) sont \(iid\) (\(F\)), on a alors \(\psi(k)=\mathbb{P}[M>\kappa]\) donnée par la formule de Pollaczeck-Khinchine-Beekman.
+	donde \(K\sim \mathcal{G}eo(q)\) con \(q=1-\psi(0)\).  
+	Al observar que las variables \(\left(  L_k\right)_{1\leq k\leq K}\) son \(iid\) (\(F\)), se tiene entonces que \(\psi(k)=\mathbb{P}[M>\kappa]\), dada por la fórmula de Pollaczeck-Khinchine-Beekman.
 	
 	
-	La représentation 
+	La representación 
 	\[
 	\psi(\kappa)=\mathbb{P}\left[\sum_{j = 1}^{K}L_j>\kappa \right] 
 	\]
-	permet d'évaluer la probabilité de ruine sur horizon infini à l'aide de l'algorithme de Panjer.
-	
+	permite calcular la probabilidad de quiebra en un horizonte infinito mediante el algoritmo de Panjer.
+		
 \end{f}
 
 

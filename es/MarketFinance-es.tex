@@ -6,7 +6,7 @@
 	
 La \textbf{Bolsa} (\engl{Exchange}) - un lugar de intercambio – permite, de hecho, el encuentro físico entre demandantes y oferentes de capital.
 Las principales cotizaciones se refieren a \textbf{acciones}, (\engl{equities}), los \textbf{bonos} (\engl{Fixed Income}) y las \textbf{materias primas} (\engl{commodities}).
-Se enumeran \textbf{valores} como acciones o bonos, \textbf{fondos} ((\engl{Exhange Trade Funds} que replican índices de acciones, ETC o ETN que replican índices o materias primas más específicos, SICAV o FCP, bonos de suscripción, \engl{warrant}), \textbf{contratos de futuros}, \textbf{opciones}, \textbf{swaps} y \textbf{productos estructurados}.
+Se enumeran \textbf{valores} como acciones o bonos, \textbf{fondos} ((\engl{Exhange-Traded Funds} que replican índices de acciones, ETC o ETN que replican índices o materias primas más específicos, SICAV o FCP, bonos de suscripción, \engl{warrant}), \textbf{contratos de futuros}, \textbf{opciones}, \textbf{swaps} y \textbf{productos estructurados}.
 
 L'\textbf{Comisión Nacional del Mercado de Valores} (\href{https://www.cnmv.es/Portal/home}{CNMV}) vela por :
 \begin{itemize}
@@ -234,9 +234,9 @@ Se cotiza excluyendo \textbf{cupones acumulados}, la parte del siguiente cupón 
 
 \begin{f}[Duración \& convexidad]
 
-La duración de Macaulay :
+Para un tipo de interés \(i\), la duración de Macaulay se expresa así:
 \[ 		
-D = \sum_{t=1}^{n} t \cdot w_t, \quad \text{où} \quad w_t = \frac{PV(C_t)}{P}.
+D = \sum_{t=1}^{n} t \cdot w^i_t, \quad \text{où} \quad w^i_t = \frac{PV^i(C_t)}{P(i)}.
  \]	
 Si la frecuencia de pago es \(k\) por año, la duración expresada en años se obtiene dividiendo entre \(k\).
 La duración modificada \(D^*\) :
@@ -302,7 +302,7 @@ Las opciones que cotizan en acciones se denominan \textit{stock options}.
 %\textbf{La position longue sur l'option d'achat}
 
 Con \(T\) el vencimiento, \(K\) el precio de ejercicio, \(S\) o \(S_T\) el subyacente al vencimiento, la recompensa (\engl{payoff}) es \(\max (0, S_T-K)=( S_T-K)^{+}\).
-Si \(C\) es la prima, la ganancia obtenida es \(\max (0, S_T-K)-C\), con una ganancia si (\(S_T<V_{PM}=K + C\)) (\(PM\) representa el \textbf{punto de equilibrio}).
+Si \(C\) es la prima, la ganancia obtenida es \(\max (0, S_T-K)-C\), con una ganancia si (\(S_T>V_{PM}=K + C\)) (\(PM\) representa el \textbf{punto de equilibrio}).
 
 		\input{Graph/Acalldef-es.tex}
 
@@ -627,8 +627,9 @@ Es imposible obtener una ganancia sin riesgo con una inversión inicial nula. Po
 \begin{f}[Relación de paridad]
 	
 AAO implica la siguiente relación entre el Call y el Put (acción) :
-
-\[S_t- C_t + P_t = K e^{-i_{f}.\tau}\]	
+\[
+S_t- C_t + P_t = K e^{-r.\tau}
+\]	
 \end{f}
 \hrule
 
@@ -670,16 +671,16 @@ Se basa en un proceso de tiempo discreto con dos posibles movimientos de precio 
 	};
 \end{tikzpicture}
 
-Este modelo se extiende a \(n\) periodos con \(n+1\) precios posibles para \(S_T\). Al vencimiento, el valor de una opción de compra viene dado por \( C_{1}^{u} = (S_{1}^{u} - K)^+ \) y \( C_{1}^{d} = (S_{1}^{d} - K)^+ \).
+Este modelo se extiende a \(n\) periodos con \(n+1\) precios posibles para \(S_T\).  Cuando \(N=1\), al vencimiento, el valor de una opción de compra viene dado por \( C_{1}^{u} = (S_{1}^{u} - K)^+ \) y \( C_{1}^{d} = (S_{1}^{d} - K)^+ \).
 
 \textbf{La ausencia de oportunidad de arbitraje} implica
 \[
 d < 1 + i_{f} < u
 \]
 y una probabilidad neutral al riesgo 
-\[q = \frac{(1 + i_{f}) - d}{u - d}\]
+\[q = \frac{(1 + i_{f}) - d}{u - d}>0\]
 
-\textbf{Precio de Call} (con \( S_{1}^{d} < K < S_{1}^{u} \)) :
+\textbf{Precio de Call} (con \( S_{1}^{d} < K < S_{1}^{u} \), por lo que \(C_d=0\)) :
 \[
 C_{0} = \frac{1}{1+i_f} \left[ q C_{1}^{u} + (1 - q) C_{1}^{d} \right]
 \]
@@ -707,7 +708,7 @@ e^{i_{f} \delta t} = q u + (1-q) d, \qquad q u^2 + (1-q) d^2 - [q u + (1-q) d]^2
 Con la restricción \(u = \frac{1}{d}\), obtenemos :
 \[
 \begin{array}{l}
-	q = \frac{e^{-i_f \delta_t} - d}{u - d} \\
+	q = \frac{e^{i_f \delta_t} - d}{u - d} \\
 	u = e^{\sigma \sqrt{\delta t}} \\
 	d = e^{-\sigma \sqrt{\delta t}}
 \end{array}
@@ -889,6 +890,7 @@ Svensson (1995) añade un segundo término en forma de campana; este es el model
 \end{equation*}
 y la interpretación es la misma que para \(\beta_2\) y \(\tau\) anteriores; permite dos puntos de inflexión en la curva de rendimiento.
 
+\shorthandoff{"}
 \newcommand{\traintunnel}{	        
 \draw[thick, OrangeProfondIRA] svg "M 55.448002 56.380001L 40 39L 28 39L 12.552 56.380001M 12 34C 11.729672 21.575853 21.576109 11.281852 34 11C 46.423893 11.281852 56.270329 21.575853 56.000004 34L 56 55C 56 56.104568 55.104568 57 54 57L 14 57C 12.895431 57 12 56.104568 12 55ZM 28 39L 28 34C 28 30.132 30.302 27 34 27C 37.697998 27 40 30.132 40 34L 40 39M 34 51L 34 57M 34 43L 34 45";
 }
@@ -906,16 +908,18 @@ y la interpretación es la misma que para \(\beta_2\) y \(\tau\) anteriores; per
 \newcommand{\TresorerieMngt}{	
 \draw[OrangeProfondIRA] svg "M 11.008 31C 11.008 32.104568 15.485153 33 21.007999 33C 26.530848 33 31.007999 32.104568 31.007999 31C 31.007999 29.89543 26.530848 29 21.007999 29C 15.485153 29 11.008 29.89543 11.008 31ZM 31 31L 31 37C 31 38.106003 26.524 39 21 39C 15.476 39 11 38.106003 11 37L 11 31M 31 37L 31 43C 31 44.105999 26.524 45 21 45C 15.476 45 11 44.105999 11 43L 11 37M 31 43L 31 49C 31 50.105999 26.524 51 21 51C 15.476 51 11 50.105999 11 49L 11 43M 31 49L 31 55C 31 56.105999 26.524 57 21 57C 15.476 57 11 56.105999 11 55L 11 49M 11 25L 11 13C 11 11.895431 11.895431 11 13 11L 55 11C 56.104568 11 57 11.895431 57 13L 57 37C 57 38.104568 56.104568 39 55 39L 36 39M 28 25C 28.000584 21.94886 30.290909 19.384022 33.32254 19.039516C 36.354168 18.695011 39.161583 20.680555 39.846756 23.65377C 40.531929 26.626984 38.876644 29.640953 36 30.658001M 20 19.5C 20.276142 19.5 20.5 19.723858 20.5 20C 20.5 20.276142 20.276142 20.5 20 20.5C 19.723858 20.5 19.5 20.276142 19.5 20C 19.5 19.723858 19.723858 19.5 20 19.5M 48 29.5C 48.276142 29.5 48.5 29.723858 48.5 30C 48.5 30.276142 48.276142 30.5 48 30.5C 47.723858 30.5 47.5 30.276142 47.5 30C 47.5 29.723858 47.723858 29.5 48 29.5M 15 25L 15 16C 15 15.447716 15.447716 15 16 15L 52 15C 52.552284 15 53 15.447716 53 16L 53 34C 53 34.552284 52.552284 35 52 35L 36 35";	
 }
+\shorthandon{"}
 
 Estas funciones de Nelson-Siegel y Svensson tienen la ventaja de comportarse bien a largo plazo y ser fáciles de parametrizar.
-Ellas se ilustran en la figura donde los pictogramas \begin{tikzpicture}[xscale=0.2, yscale=-0.2]
+Ellas se ilustran en la figura donde los pictogramas \shorthandoff{"}\begin{tikzpicture}[xscale=0.2, yscale=-0.2]
 \TresorerieMngt\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=-0.2] \familialTV\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=-0.2] \familialcar\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=0.2] \archibuilding\end{tikzpicture} \begin{tikzpicture}[xscale=0.2, yscale=-0.2] \traintunnel
-\end{tikzpicture} representan los diferentes vencimientos habituales para este tipo de propiedad o inversión.
+\end{tikzpicture}\shorthandon{"} representan los diferentes vencimientos habituales para este tipo de propiedad o inversión.
 Ellas permiten el modelado de una amplia curva de rendimiento. 
 Una vez ajustado, el usuario puede evaluar los activos o definir diversas medidas de sensibilidad.
 
 
 \begin{center}
+	\shorthandoff{"}
 \begin{tikzpicture}[scale=0.55]
 \def\MTbetaa{0.03}
 \def\MTbetab{-0.02}
@@ -962,7 +966,7 @@ Una vez ajustado, el usuario puede evaluar los activos o definir diversas medida
 \node[xscale=0.3, yscale=-0.3, above=30pt] at (P) {\archibuilding};
 \node[xscale=0.3, yscale=-0.3, above=30pt] at (Q) {\traintunnel};
 \end{axis}
-\end{tikzpicture}
+\end{tikzpicture}\shorthandon{"}
 \end{center}
 \end{f}
 \hrule
@@ -1099,7 +1103,7 @@ Una \textbf{swaption} es una opción sobre un swap de tasas de interés. Otorga 
 	\item \(T\) : fecha de ejercicio del swaption
 	\item \(K\) : tipo de interés fijo (strike)
 	\item \(S(T)\) : tipo de cambio swap en la fecha \(T\)
-	\item \(A(T)\) : valor actual de los flujos fijos futuros.
+	\item \(A(T)\) : valor actual de los flujos fijos futuros
 	\item \(\sigma\) : volatilidad de la tasa swap
 \end{itemize}
 
@@ -1107,7 +1111,7 @@ El modelo Black (1976) es una adaptación del modelo Black-Scholes para producto
 
 \textbf{Black's formula for a payer swaption} :
 \[
-\text{SW}_{\text{pagador}} = A(T) \left[ S_0 N(d_1) - K N(d_2) \right]
+\text{SW}_{\text{pagador}} = A(T) \left[ S_0\Phi(d_1) - K \Phi(d_2) \right]
 \]
 or :
 \[
@@ -1116,11 +1120,11 @@ or :
 	d_2 &= d_1 - \sigma \sqrt{T}
 \end{aligned}
 \]
-y \(N(\cdot)\) es la función de distribución acumulativa de la distribución normal estándar.
+y \(\Phi(\cdot)\) es la función de distribución acumulativa de la distribución normal estándar.
 
 \textbf{Fórmula para un swaption de receptor} :
 \[
-\text{SW}_{\text{receptor}} = A(T) \left[ K N(-d_2) - S_0 N(-d_1) \right]
+\text{SW}_{\text{receptor}} = A(T) \left[ K \Phi(-d_2) - S_0 \Phi(-d_1) \right]
 \]
 
 \end{f}

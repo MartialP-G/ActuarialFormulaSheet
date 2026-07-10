@@ -29,7 +29,7 @@ f_{\xi,\mu,\sigma}(x) = \frac{1}{\sigma}\left(1 + \frac{\xi (x-\mu)}{\sigma}\rig
 =
  \frac{\sigma^{\frac{1}{\xi}}}{\left(\sigma + \xi (x-\mu)\right)^{\frac{1}{\xi}+1}}
 \]
-%à nouveau, pour  \(x \geq \mu\), et \(x \leq \mu - \sigma /\xi\) où \(\xi < 0\). 
+%à nouveau, pour  \(x \geq \mu\), et \(x \leq \mu - \sigma /\xi\) where \(\xi < 0\). 
 
 \medskip
 
@@ -110,14 +110,14 @@ f(x;\mu ,\sigma ,0)={\frac {1}{\sigma }}\exp \left(-{\frac {x-\mu }{\sigma }}\ri
 
 \begin{f}[Gumbel's Law]
 
-The distribution function of Gumbel's law is :
+The distribution function of Gumbel's law is:
 \[
 F_{\mu,\sigma}(x) = e^{-e^{(\mu-x)/\sigma}}.\,
 \]
 For \(\mu = 0 \) et \(\sigma = 1\), we obtain the standard Gumbel law.
 Gumbel's law is a special case of GEV (with \(\xi=0\)).
 
-Its density :
+Its density:
 \[
 f_{\mu,\sigma}(x)=\frac{1}{\sigma}e^{\left(\frac{x-\mu}{\sigma}-e^{-(x-\mu)/\sigma}\right)}
 \]
@@ -173,12 +173,12 @@ f_{\mu,\sigma}(x)=\frac{1}{\sigma}e^{\left(\frac{x-\mu}{\sigma}-e^{-(x-\mu)/\sig
 \begin{f}[Weibull's Law]
 
 
-The \textbf{Weibull distribution} has the distribution function defined by :
+The \textbf{Weibull distribution} has the distribution function defined by:
 \[
 F_{\alpha,\mu, \sigma}(x) = 1- e^{-((x-\mu)/\sigma)^\alpha}\,
 \]
 or \(x >\mu\).
-Its probability density is :
+Its probability density is:
 \[
 f_{\alpha,\mu,\sigma}(x) = (\alpha/\sigma) ((x-\mu)/\sigma)^{(\alpha-1)} e^{-((x-\mu)/\sigma)^\alpha}\,
 \]
@@ -186,7 +186,7 @@ or  \(\mu\in\mathbb{R}\) is the location, \(\sigma>0\) of scale and  \(\alpha=-1
 
 The Weibull distribution is often used in the field of lifetime analysis. It is a special case of the GEV when \(\xi<0\).
 
-If the failure rate decreases over time then, \(\alpha<1\). If the failure rate is constant over time then, \(\alpha=1\). If the failure rate increases over time then, \(\alpha>1\). Understanding the failure rate can provide insight into the cause of failures.
+If the failure rate decreases over time, then \(\alpha<1\). If the failure rate is constant over time, then \(\alpha=1\). If the failure rate increases over time, then \(\alpha>1\). Understanding the failures rate can provide insight into the cause of failures.
 
 
 \begin{center}
@@ -242,7 +242,7 @@ If the failure rate decreases over time then, \(\alpha<1\). If the failure rate 
 
 
 \begin{f}[Fréchet's Law]
-Its distribution function of \textbf{Frechet's law}\index{D\'efinition! loi de Frechet} is given by
+The distribution function of \textbf{Frechet's law}\index{D\'efinition! loi de Frechet} is given by
 \[
 F_{\alpha,\mu,\sigma}(x)=\mathbb{P}(X \le x)=\begin{cases} e^{-\left(\frac{x-\mu}{\sigma}\right)^{-\alpha}} & \text{ if } x>\mu \\ 0 &\text{ otherwise.}\end{cases} 
 \]
@@ -313,7 +313,7 @@ declare function={
 \begin{f}[Link between GEV, Gumbel, Fréchet and Weibull]
 
 The shape parameter \(\xi\) governs the behavior of the distribution tail.
-The subfamilies defined by \(\xi= 0\), \(\xi>0\) and \(\xi<0\) correspond respectively to the Gumbel, Fréchet and Weibull families :
+The subfamilies defined by \(\xi= 0\), \(\xi>0\) and \(\xi<0\) correspond respectively to the Gumbel, Fréchet and Weibull families:
 \begin{itemize}
 \item 	 Gumbel or type I extreme value law
 \item     Fréchet or type II extreme value law, if \(\xi  = \alpha^{-1}\) with \(\alpha>0\),
@@ -326,7 +326,7 @@ The subfamilies defined by \(\xi= 0\), \(\xi>0\) and \(\xi<0\) correspond respec
 
 	Either \(X_1, \dots, X_n\)  \(iid\), \(X\) distribution function \(F_X\) and either \(M_n =\max(X_1,\dots,X_n)\).
 	
-	The theory gives the exact distribution of the maximum :
+	The theory gives the exact distribution of the maximum:
 \begin{align*}
 		\mathcal{P}(M_n \leq z) = &\Pr(X_1 \leq z, \dots, X_n \leq z) \\
 		 = &\mathcal{P}(X_1 \leq z) \cdots \mathcal{P}(X_n \leq z) = (F_X(z))^n. 
@@ -349,9 +349,9 @@ The subfamilies defined by \(\xi= 0\), \(\xi>0\) and \(\xi<0\) correspond respec
 		\]
 
 	This excess distribution decays less quickly than any exponential distribution.
-	It is possible to consider this statistic :
+	It is possible to consider this statistic:
 	\[
-	T_n(p)=\frac{X_{(1:n)}+X_{(2:n)}+\ldots + X_{(np:n)}}{\sum_{1\leq i\leq n}(X_i)} \mbox{ où } \frac{1}{n}\leq p\leq 1
+	T_n(p)=\frac{X_{(1:n)}+X_{(2:n)}+\ldots + X_{(np:n)}}{\sum_{1\leq i\leq n}(X_i)} \mbox{ where } \frac{1}{n}\leq p\leq 1
 	\]
 	\(X_{(i:n)}\) designates the \(i^{th}\) \(\max \) of the \(X_i\).
 
@@ -359,15 +359,15 @@ The subfamilies defined by \(\xi= 0\), \(\xi>0\) and \(\xi<0\) correspond respec
 \begin{f}[Pickands-Balkema-de Haan theorem (law of excesses)]
 	Let \(X\) be of distribution \(F_X\), and let \(u\) be a high threshold. Then, for a large class of \(F_X\) distributions, the conditional excess distribution
 	\[
-	X_u := X - u \mid X > u
+	X_u:= X - u \mid X > u
 	\]
-	is approximated, for \(u\) sufficiently large, by a generalized Pareto distribution (GPD) :
+	is approximated, for \(u\) sufficiently large, by a generalized Pareto distribution (GPD):
 	
 	\[
-	\mathbb{P}(X - u \le y \mid X > u) \approx G_{\xi, \sigma, \mu=0}(y) :=  1 - \left(1+ \frac{\xi(x-\mu)}{\sigma}\right)^{-1/\xi} 
+	\mathbb{P}(X - u \le y \mid X > u) \approx G_{\xi, \sigma, \mu=0}(y):=  1 - \left(1+ \frac{\xi(x-\mu)}{\sigma}\right)^{-1/\xi} 
 	\]
 	
-	\(\quad y \ge 0\). In other words, for \(u \to x_F := \sup\{x : F(x) < 1\}\),
+	\(\quad y \ge 0\). In other words, for \(u \to x_F:= \sup\{x: F(x) < 1\}\),
 	\[
 	\sup_{0 \le y < x_F - u} \left| \mathbb{P}(X - u \le y \mid X > u) - G_{\xi,\sigma,\mu=0}(y) \right| \to 0.
 	\]
@@ -380,16 +380,16 @@ The subfamilies defined by \(\xi= 0\), \(\xi>0\) and \(\xi<0\) correspond respec
 \begin{f}
 	[Reinsurance data ]
 
-As reinsurance compensates for aggregations of losses or extreme losses, it often uses historical data which should be used with caution :
+As reinsurance compensates for aggregations of losses or extreme losses, it often uses historical data which should be used with caution:
 \begin{itemize}
 	\item updating of data (impact of monetary inflation).
-	\item the revaluation takes into account the evolution of the risk :
+	\item the revaluation takes into account the evolution of the risk:
 	\begin{itemize}
 		\item changes in premium rates, guarantees and terms of contracts,
 		\item the evolution of claims costs (construction cost index, car repair cost index,\ldots)
 		\item the evolution of the legal environment.
 	\end{itemize}
-	\item the adjustment of the statistics to take into account the evolution of the portfolio base :
+	\item the adjustment of the statistics to take into account the evolution of the portfolio base:
 	\begin{itemize}
 		\item font profile (number, capitals, \ldots),
 		\item nature of guarantees (evolution of deductibles, exclusions\ldots)
@@ -404,12 +404,12 @@ After these corrections, the data are said to be \enquote{as if} (in economics, 
 	
 	\(X_{i}^{j}\) designates the \(i^{e}\) disaster of the year \(j\) as if updated, revalued and corrected,
 \(n^j\) the number of claims per year \(j\), \(c^{j}\) the insurer's responsibility \(c\).
-The pure rate by the \textbf{Burning Cost} method is given by the formula :
+The pure rate by the \textbf{Burning Cost} method is given by the formula:
 \[
 BC_{pur}=\frac{1}{s}\sum_{j=1}^{n}\frac{c^{j}}{a_{j}}
 \] 
-The Burning Cost is only an average of the crossed \(S/P\) ratios : the claims payable by the reinsurer on the premiums received by the ceding company.
-The Burning Cost premium is then : \(P_{pure}=BC_{pur}\times a_{s+1}\).
+The Burning Cost is only an average of the crossed \(S/P\) ratios: the claims payable by the reinsurer on the premiums received by the ceding company.
+The Burning Cost premium is then: \(P_{pure}=BC_{pur}\times a_{s+1}\).
 
 In the case of a \(p\) XS \(f\)), \[
 c^{j}=\sum_{i=1}^{n^j}\max\left(  \left( X_{i}^{j}-f\right),p\right) 1\!\!1_{x^{j}\geq f}
@@ -424,29 +424,29 @@ We note \(a_{j}\) denotes the premium base for year \(j\) and \(a_{s+1}^{*}\) de
 [Bonus of XS or XL]
 Let \(p\) and \(f\) be the scope and priority (franchise) of the XS, respectively, with the limit \(l=p+f\) (\(p\) XS \(f\)).
 
-The XS bonus corresponds to :
+The XS bonus corresponds to:
 \[
 \mathbb{E}\left[S_N\right]=\mathbb{E}\left[\sum_{i=1}^{N} Y_{i}\right]=\mathbb{E}[N]\times \mathbb{E}[Y]
 \]
-où
+where
 \[
-\mathbb{E}[Y]= l \mathbb{P}[X>l] - f \times \mathbb{P}[X\geq f] + \mathbb{E}[X\mid f\geq x\geq l]
+\mathbb{E}[Y]= l \mathbb{P}[X>l] - f \times \mathbb{P}[X\geq f] + \mathbb{E}[X\mid f\geq X\geq l]
 \]
 
 
-If \(l=\infty\) and \(\alpha \neq 1\) :
+If \(l=\infty\) and \(\alpha \neq 1\):
 \[
 \mathbb{E}[S_N] = \lambda \frac{x_\mathrm{m}^{\alpha}}{\alpha -1}f^{1-\alpha} 
 \]
 
 if  \(l=\infty\) and \(\alpha = 1\) there is no solution.
 
-If \(l<\infty\) and \(\alpha \neq 1\) :
+If \(l<\infty\) and \(\alpha \neq 1\):
 \[
 \mathbb{E}[S_N] = \lambda \frac{x_\mathrm{m}^{\alpha}}{\alpha -1}\left( f^{1-\alpha} -l^{1-\alpha} \right)
 \]
 
-If \(l<\infty\) and \(\alpha = 1\) :
+If \(l<\infty\) and \(\alpha = 1\):
 \[
 \mathbb{E}[S_N] = \lambda x_\mathrm{m} \ln \left(  \frac{1}{f}\right)
 \]
@@ -458,7 +458,7 @@ If \(l<\infty\) and \(\alpha = 1\) :
 [The Poisson-LogNormal Model]
 
 If \(X\) follows a \(\mathcal{L}\mathcal{N}orm(x_\mathrm{m}, \mu, \sigma)\) then \(X-x_\mathrm{m}\) follows a \(\mathcal{L}\mathcal{N}orm(\mu, \sigma)\)
-It comes :
+It comes:
 \[
 \mathbb{P}[X>f]=\mathbb{P}[X-x_\mathrm{m}>f-x_\mathrm{m}]=1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-\mu}{\sigma}\right)
 \]
@@ -468,7 +468,7 @@ It comes :
 	= & e ^{m+\sigma^2/2} \left[1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-(\mu+\sigma^2)}{\sigma}\right) \right]\\
 	& +x_\mathrm{m} \left( 1-\Phi\left(\frac{\ln(f-x_\mathrm{m})-\mu}{\sigma}\right) \right)
 \end{align*}
-With frankness and without limits :
+With frankness and without limits:
 \begin{align*}
 	\mathbb{E}[S_N] \\ 
 	= & \lambda \left(\mathbb{E}\left[ X-x_\mathrm{m}\mid X-x_\mathrm{m}>f-x_\mathrm{m} \right]+x_\mathrm{m} \mathbb{P}[X>f]-f\mathbb{P}[X>f]\right)\\

@@ -17,6 +17,9 @@
 \usepackage[autostyle=true]{csquotes}
 \usepackage{epsdice}
 \usepackage{enumitem}
+\setlist{before=\setstretch{.9}}
+\usepackage{setspace}
+\setstretch{0.95} % Réduit l'interligne de 5% globalement
 %
 \usepackage[most]{tcolorbox}
 \definecolor{mbfaulmbleu}{RGB}{15,91,164}
@@ -47,7 +50,7 @@
 citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref} 
 \hypersetup{
 	pdftitle    = {Actuarial Formula Cheat Sheet},
-	pdfauthor   = {Martial Phelippe-Guinvarc'h and Marcelo Moreno Porras},
+	pdfauthor   = {Martial Phe\'elipp\'e-Guinvarc'h and Marcelo Moreno Porras},
 	pdfsubject  = {Actuarial Science -- Formula Sheet},
 	pdfkeywords = {actuarial science, formula sheet, probability, statistics, finance},
 	pdfproducer = {LaTeX},
@@ -251,7 +254,7 @@ citecolor=mbfaulmbleumarine,filecolor=mbfaulmorange,linktoc=all]{hyperref}
 }
 \makeatother
 
-% highlightnodeDualList : applique couleur selon la liste
+% highlightnodeDualList: applique couleur selon la liste
 \newcommand{\highlightnodeDualList}[5]{%
 	\begingroup
 	\edef\currentval{\number\value{higher}}%

@@ -3,12 +3,12 @@
 \begin{f}[Concept of utility]
 	Utility models an individual's preferences between two baskets of goods \(x\) and \(y\) in a set \(S\), via the relation \(x \succcurlyeq y\) (preferred or indifferent).
 	
-	A function \(U: S \rightarrow \mathbb{R}\) represents preferences if :
+	A function \(U: S \rightarrow \mathbb{R}\) represents preferences if:
 	\[
 	x \succcurlyeq y \iff U(x) \geq U(y)
 	\]
 	
-	\textbf{Axioms necessary for the existence of a utility function :}
+	\textbf{Axioms necessary for the existence of a utility function:}
 	\begin{enumerate}
 		\item \textbf{Completeness:} For all \(x, y \in S\), either \(x \succcurlyeq y\), or \(y \succcurlyeq x\)
 		\item \textbf{Transitivity:} If \(x \succcurlyeq y\) and \(y \succcurlyeq z\), then \(x \succcurlyeq z\)
@@ -19,9 +19,9 @@
 
 
 \begin{f}[Utility function]
-	A function \(u : \mathbb{R}_+ \rightarrow \mathbb{R}\) represents an agent's preferences in the face of uncertainty.
+	A function \(u: \mathbb{R}_+ \rightarrow \mathbb{R}\) represents an agent's preferences in the face of uncertainty.
 	
-	\textbf{Expected utility criterion:} The agent prefers \(X\) to \(Y\) if :
+	\textbf{Expected utility criterion:} The agent prefers \(X\) to \(Y\) if:
 	\[
 	\mathbb{E}[u(X)] > \mathbb{E}[u(Y)]
 	\]
@@ -29,15 +29,15 @@
 	
 	\textbf{Properties of \(u\):}
 	\begin{itemize}
-		\item \(u'\! > 0\) : the agent prefers more wealth (monotonicity)
-		\item \(u'' < 0\) : the agent is risk averse (concavity)
+		\item \(u'\! > 0\): the agent prefers more wealth (monotonicity)
+		\item \(u'' < 0\): the agent is risk averse (concavity)
 	\end{itemize}
 	
-	\textbf{Classic examples :}
+	\textbf{Classic examples:}
 	\begin{itemize}
 		\item \textit{Linear} (risk neutral): \(u(x) = x\)
-		\item \textit{Logarithmic} : \(u(x) = \ln(x)\)
-		\item \textit{CRRA}  (constant relative risk aversion): \(u(x) = \frac{x^{1 - \gamma}}{1 - \gamma}\), \(\gamma \ne 1\)
+		\item \textit{Logarithmic}: \(u(x) = \ln(x)\)
+		\item \textit{CRRA}  (const. relative risk aversion): \(u(x) = \frac{x^{1 - \gamma}}{1 - \gamma}\), \(\gamma \ne 1\)
 		\item \textit{CARA}  (constant absolute risk aversion): \(u(x) = -e^{-a x}\)
 	\end{itemize}
 	
@@ -46,7 +46,7 @@
 \hrule
 
 \begin{f}[Risk aversion]
-	An agent is said to be \textbf{risk-averse} (or risk-phobic) if:
+	An agent is said to be strictly \textbf{risk-averse} (or risk-phobic) if:
 	\[
 	u(\mathbb{E}[X]) > \mathbb{E}[u(X)]
 	\]
@@ -54,17 +54,17 @@
 \end{f}
 
 \begin{f}[Measurement of risk aversion]
-	\textbf{Absolute Aversion Index} :
+	\textbf{Absolute Aversion Index}:
 	\[
 	A_a(x) = -\frac{u''(x)}{u'(x)}
 	\]
 	
-	\textbf{Relative Aversion Index} :
+	\textbf{Relative Aversion Index}:
 	\[
 	A_r(x) = -x \cdot \frac{u''(x)}{u'(x)}
 	\]
 	
-	\textbf{Jensen's inequality (concave case)} :
+	\textbf{Jensen's inequality (concave case)}:
 	\[
 	u(\mathbb{E}[X]) \geq \mathbb{E}[u(X)]
 	\]
@@ -94,8 +94,8 @@ Conversely, the \textbf{compensatory bonus} \(\tilde{\pi}\) is the amount that m
 	
 	Let's have two assets:
 	\begin{itemize}
-		\item \(A\) : risk
-		\item \(B\) : certain, with \(\mathbb{E}[A] = B\)
+		\item \(A\): risk
+		\item \(B\): certain, with \(\mathbb{E}[A] = B\)
 	\end{itemize}
 	
 	A risk-averse agent prefers a combination \(Z = \alpha A + (1 - \alpha) B\), with \(0 < \alpha < 1\), to the risky asset alone.
@@ -106,7 +106,7 @@ Conversely, the \textbf{compensatory bonus} \(\tilde{\pi}\) is the amount that m
 	
 	\textbf{Optimal portfolio}: choice of weights \((w_i)\) maximizing expected utility:
 	\[
-	\max \mathbb{E}[u(X)], \quad \text{où } X = \sum_{i} w_i X_i, \quad \text{s.c. } \sum w_i = 1
+	\max \mathbb{E}[u(X)], \quad \text{where } X = \sum_{i} w_i X_i, \quad \text{s.c. } \sum w_i = 1
 	\]
 	
 	\textbf{Principle}: diversification reduces risk (variance) without affecting expectation.
@@ -123,12 +123,12 @@ Conversely, the \textbf{compensatory bonus} \(\tilde{\pi}\) is the amount that m
 	
 	\textbf{Steps of the method:}
 	\begin{enumerate}
-		\item \textbf{Identification} : determine the objective function \(f(\boldsymbol{x})\) and the constraint \(g(\boldsymbol{x}) = c\)
-		\item \textbf{Lagrangian} :
+		\item \textbf{Identification}: determine the objective function \(f(\boldsymbol{x})\) and the constraint \(g(\boldsymbol{x}) = c\)
+		\item \textbf{Lagrangian}:
 		\[
 		\mathcal{L}(\boldsymbol{x}, \lambda) = f(\boldsymbol{x}) + \lambda (g(\boldsymbol{x}) - c)
 		\]
-		\item \textbf{System of equations} : solve
+		\item \textbf{System of equations}: solve
 		\[
 		\nabla_{\boldsymbol{x}} \mathcal{L} = \nabla f(\boldsymbol{x}) + \lambda \nabla g(\boldsymbol{x}) = \boldsymbol{0}, \quad
 		\frac{\partial \mathcal{L}}{\partial \lambda} = g(\boldsymbol{x}) - c = 0
@@ -137,7 +137,7 @@ Conversely, the \textbf{compensatory bonus} \(\tilde{\pi}\) is the amount that m
 		\item \textbf{Verification}: ensure that the solutions satisfy the constraint and the type of optimum (max/min)
 	\end{enumerate}
 	
-	\textbf{Example (dimension 2)} : maximize \(f(x, y) = xy\) under the constraint \(x + y = 10\)
+	\textbf{Example (dimension 2)}: maximize \(f(x, y) = xy\) under the constraint \(x + y = 10\)
 	
 	\[
 	\mathcal{L}(x, y, \lambda) = xy + \lambda (x + y - 10)
@@ -172,13 +172,13 @@ Conversely, the \textbf{compensatory bonus} \(\tilde{\pi}\) is the amount that m
 
 		\textbf{Example (Optimal choice and budget constraint)}
 	
-	A rational agent is faced with a consumption choice \((c_1, c_2)\) between two goods, under the constraint :
+	A rational agent is faced with a consumption choice \((c_1, c_2)\) between two goods, under the constraint:
 	\[
 	p_1 c_1 + p_2 c_2 = R
 	\]
 	where \(p_1, p_2\) are prices and \(R\) total revenue.
 	
-	\textbf{Issue} :
+	\textbf{Issue}:
 	\(
 	\max_{c_1, c_2} u(c_1, c_2) \quad \text{s.t. } p_1 c_1 + p_2 c_2 = R\)
 
@@ -188,7 +188,7 @@ Conversely, the \textbf{compensatory bonus} \(\tilde{\pi}\) is the amount that m
 	\mathcal{L}(c_1, c_2, \lambda) = u(c_1, c_2) + \lambda (R - p_1 c_1 - p_2 c_2)
 	\]
 	
-	\textbf{First order conditions (FOC)} :
+	\textbf{First order conditions (FOC)}:
 	\[
 	\begin{cases}
 		\frac{\partial u}{\partial c_1} = \lambda p_1 \\
@@ -197,7 +197,7 @@ Conversely, the \textbf{compensatory bonus} \(\tilde{\pi}\) is the amount that m
 	\end{cases}
 	\]
 	
-	By dividing the first two equations :
+	By dividing the first two equations:
 	\[
 	\frac{\partial u / \partial c_1}{\partial u / \partial c_2} = \frac{p_1}{p_2}
 	\]
@@ -211,7 +211,7 @@ Conversely, the \textbf{compensatory bonus} \(\tilde{\pi}\) is the amount that m
 	
 An agent has an initial wealth \(w\) and faces a random loss \(L\). There exists an \textbf{insurance demand} for the insurance that pays the indemnity \(0<I(L)<L\) iff \(u(w-\pi_I) \geq \mathbb{E}(u(w-L))\) and the \textbf{optimal insurance} maximizes \(u(w-\pi_I)\).
 
-In Mosin (1968) or Borch (1961) or Smith (1968), the loss model \(L\) is simply defined by \(s\) between 0 and \(w\) :
+In Mosin (1968) or Borch (1961) or Smith (1968), the loss model \(L\) is simply defined by \(s\) between 0 and \(w\):
 	\[
 	L=\left\{\begin{array}{l}
 		0 \text { with prob. } 1-p \\
@@ -221,8 +221,8 @@ In Mosin (1968) or Borch (1961) or Smith (1968), the loss model \(L\) is simply 
 The premium becomes \(\pi_I=(1+\lambda) \mathbb{E}(I(L))=(1+\lambda) p I(s)\) with \(\lambda\) a loading. We denote by \(\pi\) the case where \(I(L)=L\) with \(\pi= p s\). If \(\lambda=0\), then we speak of a pure or actuarially fair premium.
 \medskip
 
-\textbf{Co-insurance} (risk sharing) :
-\(I(l)=\alpha l\) knowing \(L=l\) for \(\alpha \in[0,1]\), \(\pi_I(\alpha)=\alpha \pi\) and :
+\textbf{Co-insurance} (risk sharing):
+\(I(l)=\alpha l\) knowing \(L=l\) for \(\alpha \in[0,1]\), \(\pi_I(\alpha)=\alpha \pi\) and:
 \[
 w_{f}=w-L+I(L)-\pi(\alpha)=w-L+\alpha L-\alpha \pi=w-(1-\alpha) L-\alpha \pi
 \]
@@ -234,8 +234,8 @@ U(\alpha)%=\mathbb{E}(u(w-(1-\alpha) L-\alpha \pi))
 Partial insurance (\(\alpha^{\star}<1\)) is optimal iff \(\lambda>0\). Total insurance (\(\alpha^{\star}=1\)) is optimal if the loading is zero.
 \medskip
 
-\textbf{Insurance with deductible} (self-insurance portion):
-With deductible \(d\) the insurer pays an indemnity \(I(l)=(l-d)_{+}\) knowing \(L=l\).
+\textbf{Insurance with deductible} \(d\) (self-insurance portion):
+The insurer pays an indemnity \(I(l)=(l-d)_{+}\) knowing \(L=l\).
 \[
 \pi(d)=(1+\lambda) E\left((L-d)_{+}\right)=(1+\lambda)(s-d) p
 \]
@@ -281,22 +281,21 @@ The random loss risk \(L>0\) is defined on \(\Re\), with distribution function \
 		s \text { with probability } p_{i} .
 	\end{array}\right.
 	\]
-Market probability :
+Market probability:
 	\[
 	p_{m}=\theta p_{H}+(1-\theta) p_{Lo} .
 	\]
-\medskip
 
 \textbf{Absence of adverse selection:} In this model, in the presence of total information, the insurer prefers individual insurance \(I_{i}=s\) and \(\pi_{i}=s p_{i}\), \(\forall i\).
 
-\textbf{The adverse selection problem : }
+\textbf{The adverse selection problem: }
 The insurer offers a non-individualized contract from the market \(M=\left(\pi_{m}=p_{m} I, I_{m}(s)=I(s)\right)\), which does not depend on \(i\). The final fortune of an individual of type \(i\) is \(W_{i}^{m}=w-\pi_{m}-X_{i}+I_{m}\).
 
 In the presence of a single contract, individuals of type \(H\) prefer an insurance contract such that \(I_{H}(s)=s\) and \(\pi_{H}=s p_{m}\), while individuals of type \(Lo\) prefer partial coverage with \(I_{L}^{\star}<s\) and \(\pi_{Lo}=I_{L}^{\star} p_{m}\).
 \medskip
 
-\textbf{Moral hazard :}
-Insuring him reduces or interrupts his efforts now that he is insured. The efforts of
+\textbf{Moral hazard:}
+Insuring the risk reduces or interrupts the insured's efforts. The efforts of
 \begin{itemize}
 	\item prevention reduces the probability of disaster,
 	\item protection reduces the amount of loss.

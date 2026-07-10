@@ -4,7 +4,7 @@
 
 \begin{f}[Non-life insurance pricing]
 	
-A general approach, but not exhaustive, because there are many possibilities : \vspace{4mm}
+A general approach, but not exhaustive, because there are many possibilities: \vspace{4mm}
 
 	
 \resizebox{\linewidth}{!}
@@ -19,10 +19,10 @@ A general approach, but not exhaustive, because there are many possibilities : \
 		%
 		\node[below =of method] (glm) {GLM / Logistics Models\\ (Poisson, Gamma,...)};
 		\node[below =of glm] (Seg) {Segmentation \\ (CART, Lasso, ...)};
-		\node[below =of Seg] (ml) {GAM, Machine learning\\ (Random Forest, Gradian Boosting,...) };
+		\node[below =of Seg] (ml) {GAM, Machine learning\\ (Random Forest, Gradient Boosting,...) };
 		%
 		\node[left=of Seg] (fit) {Adjusting models};
-		\node[left=of fit] (eval) {Validation :\\ residues, Gini, AIC, etc.};
+		\node[left=of fit] (eval) {Validation:\\ residues, Gini, AIC, etc.};
 		\node[below=of eval] (pure) {Pure premium estimate};
 		\node[below=of pure] (loadings) {Charges: fees, margin, taxes};
 		\node[right=of loadings] (final) {Commercial bonus};
@@ -50,7 +50,7 @@ A general approach, but not exhaustive, because there are many possibilities : \
 \begin{f}[General structure of insurance data]
 
 	
-A classic data structure in insurance. Here again, the possibilities are numerous. :
+A classic data structure in insurance. Here again, the possibilities are numerous.:
 
 
 
@@ -116,7 +116,7 @@ A classic data structure in insurance. Here again, the possibilities are numerou
 The non-life actuary mainly assesses
 the following provisions:
 \begin{itemize}
-	\item Reserves for claims reported but not settel (RBNS).
+	\item Reserves for claims reported but not settled (RBNS).
 	\item Reserve for claims incurred but not reported (IBNR).
 	\item Reserves for unearned premiums.
 	\item Reserves for outstanding risks (non-life).
@@ -197,7 +197,7 @@ With the notation \(f_{i, k}= \frac{C_{i, k+1}}{C_{i, k}}\),  \(\hat{f}_{k}\) is
 \begin{align*}
 	\hat{f}_{k}&=\frac{\sum_{i=1}^{n-k}{\color{BleuProfondIRA} C_{i, k}}\times \color{OrangeProfondIRA}f_{i, k}}{\color{BleuProfondIRA}\sum_{i=1}^{n-k} C_{i k}}
 \end{align*}	
-The variance is written :
+The variance is written:
 \begin{align*}
 	\hat{\sigma}_{k}^{2}&=\frac{1}{n-k-1} \sum_{i=1}^{n-k} C_{i k}\left(\frac{C_{i, k+1}}{C_{i k}}-\hat{f}_{k}\right)^{2} \\
 	&=\frac{1}{n-k-1} \sum_{i=1}^{n-k}  \left(\frac{\color{BleuProfondIRA} C_{i, k+1}-{\color{BleuProfondIRA} C_{i, k}} \hat{f}_{k}}{\color{BleuProfondIRA} \sqrt{C_{i, k}}}\right)^{2} 
@@ -227,7 +227,7 @@ The variance is written :
 %		node[below] {\(\hat{\sigma}_{k}^{2}\)}; 
 %	\end{tikzpicture}
 %\end{center}
-%où \(\oslash\) désigne la division de Hamadard désigné par \(/\) en iml (ou division élément par élément de deux matrices).
+%where \(\oslash\) désigne la division de Hamadard désigné par \(/\) en iml (ou division élément par élément de deux matrices).
 %
 %Il n'y a pas besoin d'enlever les valeurs de la diagonale de la première matrice car on ajoute des valeurs manquantes avec la deuxième matrice.
 
@@ -353,7 +353,7 @@ Panjer's algorithm requires the discretization of the variable \(X_i\).
 
 \begin{f}[Panjer and Poisson's Law]
 	When the frequency follows a Poisson distribution, this implies that {\color{OrangeProfondIRA} \(a=0\) and \(b=\lambda\).}
-	The result is simplified :
+	The result is simplified:
 	\[
 \begin{cases}
 		g_0= e^{-\lambda (1-f_0)}
@@ -368,7 +368,7 @@ Panjer's algorithm requires the discretization of the variable \(X_i\).
 	
 	Let \(\tau_1\) be the first instant where \(R_t<\kappa(=\kappa_0)\). We then set \(L_1=\kappa -R_{\tau_1}\).
 	We restart the process with \(\kappa_1=\kappa_0-R_{\tau_1}\) to find \(\tau_2\) and \(L_2=\kappa_1 -R_{\tau_2}\).
-	Continuing in this way, we see that :
+	Continuing in this way, we see that:
 	\[
 	M=\sup_{t\geq 0}\{ S_t -ct \} =\sum_{k=1}^{K}L_k
 	\]

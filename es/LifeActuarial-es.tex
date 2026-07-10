@@ -283,7 +283,7 @@ a_{x:\lcroof{n}} =
 \begin{f}[Prestaciones por muerte o supervivencia]
 
 % !TeX spellcheck = es_ES
-\textbf{Beneficios por muerte}(\engl{Whole life insurance } anotado \({SP}_{x}\) or \({A}_{x}\))
+\textbf{Beneficios por muerte} (\engl{Whole life insurance } anotado \({SP}_{x}\) or \({A}_{x}\))
 
 \(A_x\) indica un beneficio por muerte al final del año de la muerte (monto de 1), independientemente de la fecha de ocurrencia, para una persona asegurada a la edad \(x\) en el momento de la suscripción.
 
@@ -456,7 +456,7 @@ o \({}_n E_x\).
 \draw[arrows={-Stealth[length=4, inset=0]}, line width=1] (-.5,0) -- (\w,0);
 \end{tikzpicture}
 	\[
-	={}_n E_x={}_n p_x .v^n=\frac{l_{x+n}}{l_x} . v^n =\frac{D_{x+n}}{D_{x}}
+	{}_n E_x={}_n p_x .v^n=\frac{l_{x+n}}{l_x} . v^n =\frac{D_{x+n}}{D_{x}}
 	\]
 Prestación por fallecimiento con pago del capital en caso de supervivencia (\engl{Endowment})
 \[A_{x:\lcroof{n}}=\termins{x}{n}+\lcend{A}{x}{n}\]
@@ -565,7 +565,7 @@ La barra vertical indica condicionalidad :
 \end{tikzpicture}
 \end{f}
 
-\begin{f}[Esquemas simplificados de precios para primas periódicas y reservas]
+\begin{f}[Esquema simplificado de precios para primas periódicas y reservas]
 	
 \tikzstyle{startstop} = [rectangle, rounded corners, text width=4cm, minimum height=1cm,text centered, draw=black, fill=BleuProfondIRA!40]
 \tikzstyle{process} = [rectangle, minimum width=4cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=OrangeProfondIRA!40]
@@ -576,10 +576,10 @@ La barra vertical indica condicionalidad :
 \begin{tikzpicture}[node distance=35mm and 100mm]
 	\node (pu) [startstop] {Prima Única del servicio\\ anotado \(PU(.)\) o \(PV_0(.)\)};
 	\node  [below left of=pu, text width=55mm, node distance=18mm, xshift=12mm] {El punto es \(A\) o \(a\) o \(E\) o ...\\
-	avec \(x,k,n,m,K...\)};
+	con \(x,k,n,m,K...\)};
 	\node (puu) [startstop, right of=pu, node distance=50mm] {Valor de una prima periódica unitaria\\ anotada \(PPU_0\) o \(VP_P\)};
 	\node  [below of=puu, text width=3cm, node distance=12mm] { \(PPU=_{m'|}\ddot{a}_{x:\lcroof{n'}}^{(k')} \)};
-	\node (ppp) [startstop, below of=pu] {Prime Pure Périodique\\ \(PPP\)};
+	\node (ppp) [startstop, below of=pu] {Prima Pura Periódica\\ \(PPP\)};
 	\node  [below right of=ppp, text width=3cm, node distance=25mm, yshift=6mm] {\(\displaystyle PPP=\frac{PU(.)}{PPU_0}\)};
 	\node (ppc) [startstop, right of=ppp, node distance=50mm] {Prima Periódica Cobrada \(PPC\)};
 	\node  [below of=ppc, node distance=12mm] {\(\displaystyle PPC=\frac{PPP(1+\lambda)}{1-TxCom}\)};
