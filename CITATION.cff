@@ -1,0 +1,34 @@
+cff-version: 1.0.0
+message: "Si vous utilisez ce document, merci de le citer comme suit."
+title: "Actuarial Formula Cheat Sheet"
+type: dataset
+authors:
+  - family-names: "Phélippé-Guinvarc'h"
+    given-names: "Martial"
+    affiliation: "Le Mans Université"
+    website: "https://sites.google.com/site/martialphelippeguinvarch/home"
+  - family-names: "Moreno Porras"
+    given-names: "Marcelo"
+    affiliation: "Universidad Rey Juan Carlos"
+    website: "https://servicios.urjc.es/pdi/ver/marcelo.moreno"
+repository-code: "https://github.com/MartialP-G/ActuarialFormulaSheet"
+url: "https://github.com/MartialP-G/ActuarialFormulaSheet"
+abstract: >-
+  Actuarial formula cheat sheet created using LaTeX that includes
+  essential formulas for actuarial science including probability
+  distributions, life tables, annuities, insurance calculations,
+  risk theory, and financial mathematics concepts used in actuarial
+  practice. Available in French, English, and Spanish.
+keywords:
+  - actuarial science
+  - actuarial mathematics
+  - life tables
+  - annuities
+  - insurance
+  - risk theory
+  - credibility theory
+  - financial mathematics
+  - cheat sheet
+license: CC-BY-4.0
+version: "1.0.0"
+date-released: "2026-07-10"
