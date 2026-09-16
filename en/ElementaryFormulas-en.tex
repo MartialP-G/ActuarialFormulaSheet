@@ -171,13 +171,18 @@ The function \(\Gamma\) can be seen as the extension of the factorial: \(\Gamma(
 	This series converges for all \( x \in \mathbb{R} \) and allows us to define the exponential as an infinite sum.
 	
 	
-	The natural logarithm function \( \ln(x) \) is defined as the antiderivative of the function \( \frac{1}{x} \). In other words:
-	
+	The natural logarithm function \( \ln(x) \) is defined as the antiderivative of the function \( \frac{1}{x} \) :	
 	\[
 	\frac{d}{dx} \ln(x) = \frac{1}{x}
 	\]
 	
 	with the condition \( \ln(1) = 0 \). This definition allows us to establish the link between the exponential and the logarithm via inversion: \( e^{\ln(x)} = x \) for \( x > 0 \).
+	%
+	Its infinite series expansion around \(1\) is:
+	\[
+	\ln(x+1) = \sum_{n=1}^{\infty} (-1)^{n+1}\frac{(x)^n}{n}% = (x-1) - \frac{(x-1)^2}{2} + \frac{(x-1)^3}{3} - \frac{(x-1)^4}{4} + \cdots
+	\text{converges for \(\lvert x\rvert < 1\).}
+	\]
 	
 \end{f}
 

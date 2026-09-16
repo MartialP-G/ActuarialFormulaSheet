@@ -169,16 +169,21 @@ Para un número entero positivo \(n\),
 	e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots
 	\]
 	
-	Esta serie converge para todo \( x \in \mathbb{R} \) y permite definir la función exponencial como una suma infinita.
+	Todo converge para todo \( x \in \mathbb{R} \) y permite definir la función exponencial como una suma infinita.
 	
 	
-	La función logaritmo natural \( \ln(x) \) se define como la primitiva de la función \( \frac{1}{x} \). Dicho de otro modo:
-	
+	La función logaritmo natural \( \ln(x) \) se define como la primitiva de la función \( \frac{1}{x} \) :
 	\[
 	\frac{d}{dx} \ln(x) = \frac{1}{x}
 	\]
 	
 	con la condición \( \ln(1) = 0 \). Esta definición permite establecer la relación entre la función exponencial y el logaritmo mediante la inversión: \( e^{\ln(x)} = x \) para \( x > 0 \).
+		%
+	Su serie completa en torno a \(1\) es:
+	\[
+	\ln(x+1) = \sum_{n=1}^{\infty} (-1)^{n+1}\frac{(x)^n}{n}% = (x-1) - \frac{(x-1)^2}{2} + \frac{(x-1)^3}{3} - \frac{(x-1)^4}{4} + \cdots
+	\text{converge para \(\lvert x\rvert < 1\).}
+	\]
 	
 \end{f}
 
