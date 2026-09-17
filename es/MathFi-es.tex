@@ -69,26 +69,36 @@ V_n=P(1+i)^n%=P\left(1+\frac{p}{100}\right)^n
 \emph{Interés continuo \(r\)}
 \[V_t=V_0\ e^{rt}\]
 
-\emph{Tasa efectiva \(i_e\)}
+\emph{Tasa nominal}
+
+es la tasa de referencia anual \(i^{(m)}\) (o tasa \textbf{nominal}), convertible en tasa periódica para \(m\in \mathbb{N} \geq 1\) períodos.
+\smallskip
+
+\emph{Tasa periódica \(i_m=i^{(m)}/m\)}
+
+corresponde a la tasa nominal dividida por el número de períodos \(m\) en un año.
+Si la tasa periódica es semanal, será igual a la tasa nominal dividida por 52.
+\smallskip
+
+\emph{La tasa efectiva \textbf{anual} \(i_a\)}
+
+resulta de la composición de la tasa periódica a lo largo de un año
 \[
-i_e=\left( 1+\frac{i}{m}\right) ^{m}-1
+i_a=\left( 1+i_m\right)^{m}-1=\left( 1+\frac{i^{(m)}}{m}\right)^{m}-1
 \]
-donde \(i\) es la tasa nominal y \(m\) el número de períodos en un año.
 
-\emph{Tasa equivalente \(i^{(m)}\)}
+\emph{Tasa efectiva \textbf{por período} \(i_e\)}
+
+A la inversa, cuando se conoce la tasa \(i_a\), la tasa efectiva correspondiente a un período es 
 \[
-i^{(m)}=m\left( (1+i)^{1 / m}-1\right) 
+i_e=\left( (1+i_a)^{1 / m}-1\right) 
 \]
 
-\emph{Tasa nominal \(i\) y tasa periódica}
-
-La tasa \textbf{nominal} o \textbf{facial} permite calcular el interés a pagar en un año.
-La tasa \textbf{periódica} corresponde a la tasa nominal dividida por el número de períodos en un año \(i/m\).
-Si la tasa periódica es semanal, será igual al tipo nominal dividido entre 52.
+\(i\) puede ser negativo, pero se supondrá que \(i>-1\), de modo que el factor de acumulación \(1+i\) siga siendo estrictamente positivo.
 \end{f}
 \hrule
 
-\begin{f}[Valeur actuelle et valeur future]
+\begin{f}[Valor actual y valor futuro]
 
 El valor actual (VP) representa el capital que debe invertirse hoy a una tasa de interés compuesta anual \(i\) para obtener flujos de efectivo futuros (\(F_k\)) en tiempos \(t_k\):
 \begin{equation}

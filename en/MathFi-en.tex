@@ -69,26 +69,36 @@ V_n=P(1+i)^n%=P\left(1+\frac{p}{100}\right)^n
 \emph{Continuous interest \(r\)}
 \[V_t=V_0\ e^{rt}\]
 
-\emph{Effective rate \(i_e\)}
-\[
-i_e=\left( 1+\frac{i}{m}\right) ^{m}-1
-\]
-where \(i\) is the nominal rate and \(m\) the number of periods in a year.
+\emph{Nominal rate}
 
-\emph{Equivalent rate \(i^{(m)}\)}
-\[
-i^{(m)}=m\left( (1+i)^{1 / m}-1\right) 
-\]
+is the annual reference rate \(i^{(m)}\) (or \textbf{face} rate), which can be converted into a periodic rate over \(m\in \mathbb{N} \geq 1\) periods.
+\smallskip
 
-\emph{Nominal rate \(i\) and periodic rate}
+\emph{Periodic rate \(i_m=i^{(m)}/m\)}
 
-The \textbf{nominal} or \textbf{face} rate allows calculating the interest due over one year.
-The \textbf{periodic} rate corresponds to the nominal rate divided by the number of periods in a year \(i/m\).
+corresponds to the nominal rate divided by the number of periods \(m\) in a year.
 If the periodic rate is weekly, it will be equal to the nominal rate divided by 52.
+\smallskip
+
+\emph{The \textbf{annual} effective rate \(i_a\)}
+
+is obtained by compounding the periodic rate over one year
+\[
+i_a=\left( 1+i_m\right)^{m}-1=\left( 1+\frac{i^{(m)}}{m}\right)^{m}-1
+\]
+
+\emph{Effective rate \textbf{per period} \(i_e\)}
+
+Conversely, when the \textbf{effective annual} rate \(i_a\) is known, the effective rate corresponding to a single period is 
+\[
+i_e=\left( (1+i_a)^{1 / m}-1\right) 
+\]
+
+\(i\) may be negative, but we shall assume \(i>-1\), so that the accumulation factor \(1+i\) remains strictly positive.
 \end{f}
 \hrule
 
-\begin{f}[Valor presente y valor futuro]
+\begin{f}[Present value and future value]
 
 The present value (PV) represents the capital that must be invested today at an annual compound interest rate \(i\) to obtain future cash flows (\(F_k\)) at times \(t_k\):
 \begin{equation}
